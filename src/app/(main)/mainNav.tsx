@@ -53,6 +53,7 @@ export const MainNav: FC = () => {
               <Link href="/online-courses/color-consultant" className="dropdown-item" onClick={handleClick}>Color Consultant</Link>
               <Link href="/online-courses/aging-in-place" className="dropdown-item" onClick={handleClick}>Aging in Place</Link>
               <Link href="/online-courses/virtual-design" className="dropdown-item" onClick={handleClick}>Virtual Design</Link>
+              <Link href="/online-courses/accelerate-your-design-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
               <li><hr className="dropdown-divider" /></li>
               <Link href="/online-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
             </NavDropdown>

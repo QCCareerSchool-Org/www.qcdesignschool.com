@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import styles from './enrollButton.module.scss';
+import ForwardArrowIcon from '@/components/forward-arrow.svg';
 
 type Props = {
   courseCodes: string[];
@@ -12,6 +13,6 @@ export const EnrollButton: FC<Props> = ({ courseCodes }) => {
     href += `c=${encodeURIComponent(c)}`;
   }
   return (
-    <a href={href} className={`btn btn-lg ${styles.button}`}>Enroll Now</a>
+    <a href={href} className={`btn btn-lg ${styles.button}`}>Enroll Now<div className={styles.icon}><ForwardArrowIcon /></div></a>
   );
 };
