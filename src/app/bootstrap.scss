@@ -1,0 +1,460 @@
+:root {
+  --qc-color-text: #506172;
+  --qc-color-headings: #02013f;
+  --qc-color-dark-blue: #0a2540;
+  --qc-color-navy: #010025;
+  --qc-color-navy-gradient-start: #0a2540;
+  --qc-color-navy-gradient-end: #010025;
+  --qc-color-light-gold: #faf0b6;
+  --qc-color-gold: #e1bc93;
+  --qc-color-dark-gold: #c19e76;
+  --qc-color-light-blue-steel: #d9e5f1;
+  --qc-color-blue-steel: #506172;
+  --qc-color-cobal-grey: #bcbccb;
+  --qc-color-light: #f8f8fb;
+  --qc-color-light-stroke: #b5c3d1;
+  
+  --qc-section-padding: 4rem;
+  @media only screen and (min-width: 768px) {
+    --qc-section-padding: 5rem;
+  }
+  @media only screen and (min-width: 992px) {
+    --qc-section-padding: 6rem;
+  }
+  @media only screen and (min-width: 1200px) {
+    --qc-section-padding: 7rem;
+  }
+}
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "~bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+$font-family-sans-serif: var(--qc-neue-haas-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: var(--qc-neue-haas-display), serif;
+$headings-font-weight: 600;
+$lead-font-size: 1.125rem;
+$lead-font-weight: 400; /* no 300 available */
+
+$body-color: #506172;
+$headings-color: var(--qc-color-headings);
+
+$form-label-margin-bottom: 0.25rem;
+
+$container-padding-x: 3rem;
+
+$focus-ring-opacity: 0.5;
+$focus-ring-width: 0.125rem;
+
+$headings-margin-bottom: 0.5rem;
+
+$primary: #2840e0;
+$light: #f8f8fb;
+
+// $btn-padding-y: 0.75rem;
+$btn-padding-x: 1.5rem;
+// $btn-font-size: 1.125rem;
+$btn-font-weight: 500;
+$btn-border-radius: 1.5rem; 
+
+$btn-padding-y-lg: 0.75rem;
+$btn-padding-x-lg: 1.5rem;
+$btn-font-size-lg: 1.125rem;
+$btn-border-radius-lg: 1.65625rem; 
+
+$navbar-nav-link-padding-x: 1rem;
+$navbar-padding-y: 0.5rem;
+
+$navbar-light-toggler-border-color: none;
+$navbar-dark-toggler-border-color: none;
+$navbar-toggler-focus-width: 0;
+
+$dropdown-padding-x: 0.5rem;
+$dropdown-padding-y: 1rem;
+
+$accordion-border-radius: 1.5rem;
+$card-border-radius: 1.5rem;
+$card-spacer-y: 2rem;
+$card-spacer-x: 2rem;
+
+$accordion-padding-x: 1.5rem;
+$accordion-padding-y: 1.5rem;
+$accordion-border-color: var(--qc-color-light-stroke);
+$accordion-button-active-bg: white;
+$accordion-button-focus-box-shadow: none;
+$accordion-button-active-color: inherit;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+  "navy": #010025,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 5. Include remainder of required parts
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/carousel";
+@import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/placeholders";
+@import "~bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "~bootstrap/scss/utilities/api";
+
+body {
+  overflow-y: scroll; /* Show scrollbars */
+  --scrollbar-width: calc(100vw - 100%);
+}
+
+.btn-primary {
+  color: white;
+  &:hover, &:focus { color: white; }
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--qc-section-padding) 0;
+}
+
+section:first-of-type {
+  padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
+}   
+
+section > div.container {
+  position: relative; /* so that if we use a cover image, the content will display on top */
+}
+
+.p-s { padding: var(--qc-section-padding); }
+.py-s { padding-top: var(--qc-section-padding); padding-bottom: var(--qc-section-padding); }
+.px-s { padding-left: var(--qc-section-padding); padding-right: var(--qc-section-padding); }
+.pt-s { padding-top: var(--qc-section-padding); }
+.pb-s { padding-bottom: var(--qc-section-padding); }
+.ps-s { padding-left: var(--qc-section-padding); }
+.pe-s { padding-right: var(--qc-section-padding); }
+
+.m-s { margin: var(--qc-section-padding); }
+.my-s { margin-top: var(--qc-section-padding); margin-bottom: var(--qc-section-padding); }
+.mx-s { margin-left: var(--qc-section-padding); margin-right: var(--qc-section-padding); }
+.mt-s { margin-top: var(--qc-section-padding); }
+.mb-s { margin-bottom: var(--qc-section-padding); }
+.ms-s { margin-left: var(--qc-section-padding); }
+.me-s { margin-right: var(--qc-section-padding); }
+
+.gx-s { --bs-gutter-x: var(--qc-section-padding); }
+.gy-s { --bs-gutter-y: var(--qc-section-padding); }
+.g-s { --bs-gutter-x: var(--qc-section-padding); --bs-gutter-y: var(--qc-section-padding); }
+
+@include media-breakpoint-up(sm) {
+  .p-sm-s { padding: var(--qc-section-padding) !important; }
+  .py-sm-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-sm-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-sm-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-sm-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-sm-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-sm-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-sm-s { margin: var(--qc-section-padding) !important; }
+  .my-sm-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-sm-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-sm-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-sm-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-sm-s { margin-left: var(--qc-section-padding) !important; }
+  .me-sm-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-sm-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-sm-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-sm-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+@include media-breakpoint-up(md) {
+  .p-md-s { padding: var(--qc-section-padding) !important; }
+  .py-md-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-md-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-md-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-md-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-md-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-md-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-md-s { margin: var(--qc-section-padding) !important; }
+  .my-md-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-md-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important }
+  .mt-md-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-md-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-md-s { margin-left: var(--qc-section-padding) !important; }
+  .me-md-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-md-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-md-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-md-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+@include media-breakpoint-up(lg) {
+  .p-lg-s { padding: var(--qc-section-padding) !important; }
+  .py-lg-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-lg-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-lg-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-lg-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-lg-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-lg-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-lg-s { margin: var(--qc-section-padding) !important; }
+  .my-lg-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-lg-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-lg-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-lg-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-lg-s { margin-left: var(--qc-section-padding) !important; }
+  .me-lg-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-lg-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-lg-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-lg-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+@include media-breakpoint-up(xl) {
+  .p-xl-s { padding: var(--qc-section-padding) !important; }
+  .py-xl-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-xl-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-xl-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-xl-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-xl-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-xl-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-xl-s { margin: var(--qc-section-padding) !important; }
+  .my-xl-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-xl-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-xl-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-xl-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-xl-s { margin-left: var(--qc-section-padding) !important; }
+  .me-xl-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-xl-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-xl-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-xl-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+@include media-breakpoint-up(xxl) {
+  .p-xxl-s { padding: var(--qc-section-padding) !important; }
+  .py-xxl-s { padding-top: var(--qc-section-padding) !important; padding-bottom: var(--qc-section-padding) !important; }
+  .px-xxl-s { padding-left: var(--qc-section-padding) !important; padding-right: var(--qc-section-padding) !important; }
+  .pt-xxl-s { padding-top: var(--qc-section-padding) !important; }
+  .pb-xxl-s { padding-bottom: var(--qc-section-padding) !important; }
+  .ps-xxl-s { padding-left: var(--qc-section-padding) !important; }
+  .pe-xxl-s { padding-right: var(--qc-section-padding) !important; }
+
+  .m-xxl-s { margin: var(--qc-section-padding) !important; }
+  .my-xxl-s { margin-top: var(--qc-section-padding) !important; margin-bottom: var(--qc-section-padding) !important; }
+  .mx-xxl-s { margin-left: var(--qc-section-padding) !important; margin-right: var(--qc-section-padding) !important; }
+  .mt-xxl-s { margin-top: var(--qc-section-padding) !important; }
+  .mb-xxl-s { margin-bottom: var(--qc-section-padding) !important; }
+  .ms-xxl-s { margin-left: var(--qc-section-padding) !important; }
+  .me-xxl-s { margin-right: var(--qc-section-padding) !important; }
+
+  .gx-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; }
+  .gy-xxl-s { --bs-gutter-y: var(--qc-section-padding) !important; }
+  .g-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
+}
+
+section.noPadding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.noPadding > div.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+h1, .h1 { font-size: 2.75rem; line-height: 1.2; }
+h2, .h2 { font-size: 2.25rem; line-height: 1.2; }
+h3, .h3 { font-size: 2rem; line-height: 1.2; }
+h4, .h4 { font-size: 1.5rem; line-height: 1.4; }
+h5, .h5 { font-size: 1.25rem; line-height: 1.4; font-family: $font-family-sans-serif; font-weight: 500;}
+h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-serif; }
+
+@include media-breakpoint-up(lg) {
+  h1, .h1 { font-size: 3.75rem; line-height: 1.2; }
+  h2, .h2 { font-size: 2.875rem; line-height: 1.2; }
+  h3, .h3 { font-size: 2.5rem; line-height: 1.2; }
+  h4, .h4 { font-size: 2rem; line-height: 1.3; }
+  h5, .h5 { font-size: 1.5rem; line-height: 1.4; }
+  h6, .h6 { font-size: 1.25rem; line-height: 1.4; }
+}
+
+@include media-breakpoint-up(xl) {
+  h1, .h1 { font-size: 4.125rem; line-height: 1.2; }
+  h2, .h2 { font-size: 3rem; line-height: 1.2; }
+}
+
+.text-white {
+  h1, .h1 { color: white; }
+  h2, .h2 { color: white; }
+  h3, .h3 { color: white; }
+  h4, .h4 { color: white; }
+  h5, .h5 { color: white; }
+  h6, .h6 { color: white; }
+}
+
+// .navbar { font-size: 0.9375rem; }
+// .navbar .btn { font-size: 0.9375rem; }
+
+#navLogo {
+  position: relative;
+  top: -1px;
+  @include media-breakpoint-up(lg) { top: -2px; }
+}
+
+.text-dark-blue { color: var(--qc-color-dark-blue); }
+
+@include media-breakpoint-up(lg) {
+  .navbar { padding-top: 1rem; padding-bottom: 1rem; }
+}
+
+@include media-breakpoint-up(xl) {
+  .navbar { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+}
+
+.gold { color: var(--qc-color-gold); }
+.lightGold { color: var(--qc-color-light-gold); }
+
+.btn-outline-grey {
+  --bs-btn-color: var(--qc-color-text);
+  --bs-btn-border-color: #B5C3D1;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #B5C3D1;
+  --bs-btn-hover-border-color: #B5C3D1;
+  --bs-btn-focus-shadow-rgb: 181, 195, 209;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #B5C3D1;
+  --bs-btn-active-border-color: #B5C3D1;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #B5C3D1;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #B5C3D1;
+  --bs-gradient: none;
+}
+
+.btn-grey {
+  --bs-btn-color: #000;
+  --bs-btn-bg: #B5C3D1;
+  --bs-btn-border-color: #B5C3D1;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #c0ccd8;
+  --bs-btn-hover-border-color: #bcc9d6;
+  --bs-btn-focus-shadow-rgb: 154, 166, 178;
+  --bs-btn-active-color: #000;
+  --bs-btn-active-bg: #c4cfda;
+  --bs-btn-active-border-color: #bcc9d6;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: #B5C3D1;
+  --bs-btn-disabled-border-color: #B5C3D1;
+}
+
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+.accordion-body { padding-top: 0; }
+
+.tooltip { 
+  --bs-tooltip-max-width: 400px;
+  --bs-tooltip-border-radius: 0.25rem;
+  --bs-tooltip-bg: var(--qc-color-navy);
+  --bs-tooltip-padding-x: 0.75rem;
+  --bs-tooltip-padding-y: 0.75rem;
+  .tooltip-inner {
+    text-align: left;
+  }
+}
+
+.btn-medium {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #898994;
+  --bs-btn-border-color: #898994;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #424649;
+  --bs-btn-hover-border-color: #373b3e;
+  --bs-btn-focus-shadow-rgb: 66, 70, 73;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4d5154;
+  --bs-btn-active-border-color: #373b3e;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4d5760;
+  --bs-btn-disabled-border-color: #4d5760;
+}
+
+.btn-outline-medium {
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: var(--qc-color-cobal-grey);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #4d5760;
+  --bs-btn-hover-border-color: #4d5760;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #4d5760;
+  --bs-btn-active-border-color: #4d5760;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #4d5760;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #4d5760;
+  --bs-gradient: none;
+}
+
+.btn-none {
+  --bs-btn-color: inherit;
+  --bs-btn-bg: inherit;
+  --bs-btn-border-color: inherit;
+  --bs-btn-hover-color: inherit;
+  --bs-btn-hover-bg: inherit;
+  --bs-btn-hover-border-color: inherit;
+  --bs-btn-focus-shadow-rgb: 66, 70, 73;
+  --bs-btn-active-color: inherit;
+  --bs-btn-active-bg: inherit;
+  --bs-btn-active-border-color: inherit;
+  --bs-btn-active-shadow: none;
+  --bs-btn-disabled-color: inherit;
+  --bs-btn-disabled-bg: inherit;
+  --bs-btn-disabled-border-color: inherit;
+}
+
+.dropdown-menu {
+  --bs-dropdown-padding-y: 0.5rem;
+}

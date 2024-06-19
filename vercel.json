@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
+  ]
+}
