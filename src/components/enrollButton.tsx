@@ -1,5 +1,7 @@
 import type { FC } from 'react';
 
+import styles from './enrollButton.module.scss';
+
 type Props = {
   courseCodes: string[];
 };
@@ -10,6 +12,6 @@ export const EnrollButton: FC<Props> = ({ courseCodes }) => {
     href += `c=${encodeURIComponent(c)}`;
   }
   return (
-    <a href={href} className="btn btn-lg btn-primary">Enroll Now</a>
+    <a href={href} className={`btn btn-lg ${styles.button}`}>Enroll Now</a>
   );
 };
