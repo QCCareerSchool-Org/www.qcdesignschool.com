@@ -6,7 +6,8 @@
   --qc-color-navy-gradient-start: #0a2540;
   --qc-color-navy-gradient-end: #010025;
   --qc-color-light-gold: #faf0b6;
-  --qc-color-gold: #e1bc93;
+  --qc-color-gold: #faf0b6;
+  --qc-color-tan: #e1bc93;
   --qc-color-dark-gold: #c19e76;
   --qc-color-light-blue-steel: #d9e5f1;
   --qc-color-blue-steel: #506172;
@@ -144,8 +145,8 @@ body {
 }
 
 .btn-primary {
-  color: white;
-  &:hover, &:focus { color: white; }
+  color: white !important;
+  &:hover, &:focus { color: white !important; }
 }
 
 section {
@@ -461,4 +462,8 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 
 .btn-lg {
   --bs-btn-line-height: normal;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
