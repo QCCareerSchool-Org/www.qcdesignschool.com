@@ -1,3 +1,7 @@
 .section {
-  background-color: #be5e8e;
+  background-color: #d881ab;
+  background: linear-gradient(90deg, #d782ab, #d881ab, #d984ad);
+  @media screen and (max-width: 991.9px) {
+    padding-bottom: 0;
+  }
 }

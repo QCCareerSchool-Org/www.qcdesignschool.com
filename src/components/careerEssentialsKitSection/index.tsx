@@ -1,22 +1,30 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 
+import { SectionBackground } from '../sectionBackground';
+import DesktopBackgroundImage from './desktop-bg.jpg';
 import styles from './index.module.scss';
+import MobileImage from './mobile.jpg';
 
 export const CareerEssentialsKitSection: FC = () => (
-  <section className={`${styles.section} text-white`}>
-    <div className="container">
-      <div className="row">
-        <div className="col-12 col-lg-7 col-xxl-6">
-          <h2 className="mb-3">Free Career Essentials Kit</h2>
-          <p>When you enroll with QC Design School, you'll get exclusive access to The Career Essentials Collection. This bonus is designed to equip you with the professional tools needed to excel in the design industry. The collection includes essential resources such as:</p>
-          <ul className="mb-0">
-            <li><strong>Invoice Template:</strong> Streamline your billing process and present a polished, professional image to your clients.</li>
-            <li><strong>Contract Template:</strong> Protect your business with a contract template tailored to home designers.</li>
-            <li><strong>Social Media Templates:</strong> Boost your online presence and engage with your audience using our customizable social media templates.</li>
-            <li><strong>4 Months of Free Design Software:</strong> Access DesignFiles, a state-of-the-art design software package for free, allowing you to create stunning, professional designs with ease.</li>
-          </ul>
+  <>
+    <section className={`${styles.section} text-white text-shadow`}>
+      <div className="d-none d-lg-block"><SectionBackground src={DesktopBackgroundImage} objectPosition={'100% 50%'} /></div>
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-lg-7 col-xxl-6">
+            <h2 className="mb-3">Free Career Essentials Kit</h2>
+            <p>Enroll with QC Design School and gain exclusive access to The Career Essentials Collection, designed to equip you with professional tools for success in the design industry. This bonus includes:</p>
+            <ul className="mb-0">
+              <li><strong>Invoice Template:</strong> Streamline billing and present a professional image.</li>
+              <li><strong>Contract Template:</strong> Protect your business with a tailored contract for home designers.</li>
+              <li><strong>Social Media Template:</strong> Enhance your online presence with customizable templates.</li>
+              <li><strong>4 Months of Free Design Software:</strong> Access DesignFiles to create professional designs effortlessly.</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div className="d-lg-none"><Image src={MobileImage} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+    </section>
+  </>
 );

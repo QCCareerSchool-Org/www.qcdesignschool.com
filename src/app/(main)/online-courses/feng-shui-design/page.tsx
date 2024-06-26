@@ -69,7 +69,7 @@ const FengShuiDesignPage: PageComponent = () => (
             <p>QC's comprehensive Feng Shui Design course will show you how to:</p>
             <ul className="mb-0">
               <li>Design spaces and restore balance in your clients' lives using feng shui principles</li>
-              <li>Master ch'i flow, the Five Elements, Yin and Yang energy and the bagua map</li>
+              <li>Master ch'i flow, the Five Elements, yin and yang energy and the bagua map</li>
               <li>Work with a variety of budget types, design requirements and different client personalities</li>
               <li>Use feng shui symbols and cleansing rituals to restore harmony in your clients' homes</li>
               <li>Build your brand and market your new feng shui design business</li>
