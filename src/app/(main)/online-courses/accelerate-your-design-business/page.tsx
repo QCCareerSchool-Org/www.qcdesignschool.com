@@ -42,7 +42,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Accelerate Your Business certification course provides students with the most comprehensive training available to succeed in the home design industry.</p>
+            <p className="lead mb-4">QC's Accelerate Your Business training provides students with the most comprehensive training available to succeed in the home design industry.</p>
             <ul>
               <li>Made for design entrepreneurs&mdash;learn how to grow and expand your existing interior decorating & design business</li>
               <li>Personalized feedback & advice on your assignments from our top industry design experts</li>
