@@ -5,6 +5,7 @@ import { SectionBackground } from '../sectionBackground';
 import DesktopBackgroundImage from './desktop-bg.jpg';
 import styles from './index.module.scss';
 import MobileImage from './mobile.jpg';
+import TabletImage from './tablet.jpg';
 
 export const CareerEssentialsKitSection: FC = () => (
   <>
@@ -24,7 +25,8 @@ export const CareerEssentialsKitSection: FC = () => (
           </div>
         </div>
       </div>
-      <div className="d-lg-none"><Image src={MobileImage} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+      <div className="d-none d-md-block d-lg-none"><Image src={TabletImage} alt="" style={{ width: '100%', height: 'auto' }} /></div>
+      <div className="d-md-none"><Image src={MobileImage} alt="" style={{ width: '100%', height: 'auto' }} /></div>
     </section>
   </>
 );

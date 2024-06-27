@@ -91,7 +91,7 @@ const ColorConsultantPage: PageComponent = () => (
               <CertificationLogo height="200" className="mb-3" alt="International Color Consulting Professional (ICCP) certification logo" />
             </div>
             <p className="mb-3 small gold">International Color Consulting Professional&trade; (ICCP&trade;)</p>
-            <h2 className="text-white mb-3">QC's Color Consultant Certification</h2>
+            <h2 className="text-white mb-3">Your Color Consultant Certification</h2>
             <p>Once you graduate from your Color Consultant course, you'll receive a certification and be able to use the designation of International Color Consulting Professional (ICCP).</p>
             <p className="mb-0">This certification demonstrates that you have successfully completed Color Consultant training and that you possess all the skills and knowledge required to create functional and comfortable homes.</p>
           </div>
@@ -111,7 +111,7 @@ const ColorConsultantPage: PageComponent = () => (
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your career as a color consultant"
+      title="Ready to start your career as a color consultant?"
       text="Become professionally certified with QC's online Color Consultant training"
       courseCodes={courseCodes}
     />

@@ -45,7 +45,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
             <p className="lead mb-4">QC's Accelerate Your Business training provides students with the most comprehensive training available to succeed in the home design industry.</p>
             <ul>
               <li>Made for design entrepreneurs&mdash;learn how to grow and expand your existing interior decorating & design business</li>
-              <li>Personalized feedback & advice on your assignments from our top industry design experts</li>
+              <li>Personalized feedback &amp; advice on your assignments from our top industry design experts</li>
               <li>Thriving virtual community to connect with other decorators, get feedback and gain exclusive access to bonus materials</li>
               <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
             </ul>

@@ -27,7 +27,7 @@ export const OutlineSection: FC<Props> = ({ className }) => (
           <CourseOutline title="Creating a Color Palette" src={Part2Image} className="mb-3">
             <p className="small">Bring a color palette to life using elements such as furniture, appliances, flooring and interior painting. Discover how to choose the right paint finishes, as well as ceiling, trim and wallpaper colors. Learn Jane Lockhart's secrets for designing with textiles, arranging accessories and building a strong relationship between art and design in your client's home.  Enhance curb appeal and entice buyers by designing exterior color schemes.</p>
           </CourseOutline>
-          <CourseOutline title="Color Consulting Services" src={Part3Image} className="mb-3">
+          <CourseOutline title="Color Consulting Services" src={Part3Image}>
             <p className="small">Find out how to expand your client base as a color consultant. You'll learn to consult on corporate color palettes that align with company goals. Explore color psychology in the office, and help retail brands appeal to customers using color. Follow Jane Lockhart's steps for conducting a color consultation, including working with contractors, managing client relationships, and working with color planning software. Establish yourself as a color expert and build a successful business by creating your brand, identifying target clientele, setting your prices, and marketing your services.
             </p>
           </CourseOutline>

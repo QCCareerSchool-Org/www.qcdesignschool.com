@@ -23,7 +23,7 @@ export const OutlineSection: FC = () => (
           <CourseOutline title="Components of Event Decor" src={Part2Image} className="mb-3">
             <p className="small">Discover the decor items you'll use to execute breathtaking events. Study popular types of flowers, the cost of each and which flowers work well together in a design. You'll learn to work with florists to plan the perfect arrangements for your events. Find out how to match different centerpieces with a number of table styles, and make an impression with your table decor. Learn how you can use lighting to create the perfect mood and ambiance for your event. In this unit, you'll explore options for renting event decor and equipment and consider how to develop positive relationships with event vendors.</p>
           </CourseOutline>
-          <CourseOutline title="Build Your Career in Event Decor" src={Part3Image} className="mb-3">
+          <CourseOutline title="Build Your Career in Event Decor" src={Part3Image}>
             <p className="small">Explore the steps you'll take to start your own event decor business. Decide which services you'll offer to clients, and think about how much you'll charge for each service. Learn how to build a brand that stands out in the event and design industries and attracts your target market. In this unit, you'll practice important strategies to maximize your productivity and manage your business effectively.</p>
           </CourseOutline>
         </div>
