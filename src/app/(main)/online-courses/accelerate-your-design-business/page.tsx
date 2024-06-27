@@ -1,15 +1,21 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { OutlineSection } from './_outlineSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { CourseType } from '@/components/courseType';
+import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -51,7 +57,37 @@ const AccelerateYourBusinessPage: PageComponent = () => (
       </div>
     </section>
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <section>
+      <div className="container">
+        <div className="row align-items-center justify-content-center g-s">
+          <div className="col-12 col-lg-6">
+            <h2>Here's What You'll Learn</h2>
+            <p>QC's Accelerate Your Business training will show you how to:</p>
+            <ul className="mb-0">
+              <li>Build your customer personas and create a brand that speaks to potential clients</li>
+              <li>Critique and improve your online presence and communication</li>
+              <li>Work with a variety of budget types, design requirements and different client personalities</li>
+              <li>Build your brand and market yourself effectively both online and offline</li>
+              <li>Master effective project and time management techniques</li>
+              <li>Plan and develop a professional design portfolio that helps you land new clients and stand out from the competition</li>
+            </ul>
+          </div>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+            <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <OutlineSection className="bg-light" />
+    <VirtualCommunitySection />
+    <TestimonialSection id="DT-0001" />
+    <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
+    <GetStartedSection
+      title="Ready to expand your home design & decorating business?"
+      text="Take QC's Accelerate Your Business training"
+      courseCodes={courseCodes}
+    />
   </div>
 );
 

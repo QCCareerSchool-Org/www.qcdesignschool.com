@@ -1,15 +1,24 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { OutlineSection } from './_outlineSection';
+import CertificationBackgroundImage from './cert-bg.jpg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import CertificationLogo from '@/components/certificationLogos/iccp.svg';
 import { CourseType } from '@/components/courseType';
+import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
@@ -52,7 +61,60 @@ const ColorConsultantPage: PageComponent = () => (
       </div>
     </section>
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <section>
+      <div className="container">
+        <div className="row align-items-center justify-content-center g-s">
+          <div className="col-12 col-lg-6">
+            <h2>Here's What You'll Learn</h2>
+            <p>QC's comprehensive Color Consultant course will show you how to:</p>
+            <ul className="mb-0">
+              <li>Master the theoretical and practical skills you need to design custom interiors</li>
+              <li>Confidently consult on color topics including how lighting and undertones affect color choices, how to work with open-concept spaces, and more</li>
+              <li>Work with a variety of budget types, design requirements, and different client personalities</li>
+              <li>Understand designing with textiles, arranging accessories, and building a strong relationship between art and design</li>
+              <li>Build your brand and market your new Color Consulting business</li>
+              <li>Plan and develop a professional portfolio that helps you land new clients</li>
+            </ul>
+          </div>
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+            <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="text-white text-shadow">
+      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
+            <div>
+              <CertificationLogo height="200" className="mb-3" alt="International Color Consulting Professional (ICCP) certification logo" />
+            </div>
+            <p className="mb-3 small gold">International Color Consulting Professional&trade; (ICCP&trade;)</p>
+            <h2 className="text-white mb-3">QC's Color Consultant Certification</h2>
+            <p>Once you graduate from your Color Consultant course, you'll receive a certification and be able to use the designation of International Color Consulting Professional (ICCP).</p>
+            <p className="mb-0">This certification demonstrates that you have successfully completed Color Consultant training and that you possess all the skills and knowledge required to create functional and comfortable homes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <VirtualCommunitySection />
+    <TestimonialSection id="DT-0001" />
+    <section className="bg-light">
+      <div className="container">
+        <JaneLockhartCircle />
+        <p>Jane Lockhart</p>
+        <p>Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline.</p>
+      </div>
+    </section>
+    <OutlineSection />
+    <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
+    <GetStartedSection
+      title="Ready to start your career as a color consultant"
+      text="Become professionally certified with QC's online Color Consultant training"
+      courseCodes={courseCodes}
+    />
   </div>
 );
 
