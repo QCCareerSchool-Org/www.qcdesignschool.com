@@ -58,7 +58,7 @@ export const MainNav: FC = () => {
               <li><hr className="dropdown-divider" /></li>
               <Link href="/online-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
             </NavDropdown>
-            <Link href="/free-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
+            <Link href="/free-course-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
             <Link href="/tutors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Tutors</Link>
             <Link href="/about-qc" className="nav-link" onClick={handleClick}>About QC</Link>
