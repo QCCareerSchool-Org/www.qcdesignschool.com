@@ -12,9 +12,10 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Interior Decorating Course',
+  title: 'Interior Decorating Course - QC Design School',
 };
 
+const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = () => (
@@ -24,7 +25,7 @@ const InteriorDecoratingPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Foundation Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Interior Decorating Course</h1>
               <p className="h5 mb-3 mb-xl-5">Become a Certified Home Designer</p>
               <div className="d-flex justify-content-center justify-content-md-start">

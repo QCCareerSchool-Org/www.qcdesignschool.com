@@ -3,9 +3,10 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import Part1Image from './Becoming a Color Consultant.jpg';
-import Part3Image from './Color Consulting Services.jpg';
-import Part2Image from './Creating a Color Palette.jpg';
+import Part3Image from './Build an Online Presence.jpg';
+import Part1Image from './Establish Your Brand and Business Goals.jpg';
+import Part2Image from './Showcase Your Business to Prospective Clients.jpg';
+import Part4Image from './Successful Project Management.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
 type Props = {
@@ -18,18 +19,20 @@ export const OutlineSection: FC<Props> = ({ className }) => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">The Color Consultant course is divided into three parts, each comprising separate training units.</p>
+          <p className="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dui lacus, tempus aliquam enim sed, dictum pharetra magna. Nam sit amet ante a justo mattis vehicula. Nulla ultrices viverra orci, nec interdum massa fermentum quis.</p>
         </div>
         <div className="col-12 col-xl-10">
-          <CourseOutline title="Becoming a Color Consultant" src={Part1Image} open className="mb-3">
+          <CourseOutline title="Establish Your Brand and Business Goals" src={Part1Image} open className="mb-3">
             <p className="small">Find out who hires color consultants and how you can be successful in this role. Explore the color wheel, color terminology and color schemes, as well as the principles of design that can be applied to color theory. Delve into factors that influence color perception, such as lighting, undertones, and texture. You'll explore the fascinating world of color psychology, and learn how to build custom color palettes for clients, determine focal points in the home and create cohesive looks in challenging spaces.</p>
           </CourseOutline>
-          <CourseOutline title="Creating a Color Palette" src={Part2Image} className="mb-3">
-            <p className="small">Bring a color palette to life using elements such as furniture, appliances, flooring and interior painting. Discover how to choose the right paint finishes, as well as ceiling, trim and wallpaper colors. Learn Jane Lockhart's secrets for designing with textiles, arranging accessories and building a strong relationship between art and design in your client's home.  Enhance curb appeal and entice buyers by designing exterior color schemes.</p>
+          <CourseOutline title="Build an Online Presence" src={Part2Image} className="mb-3">
+            <p className="small">Now that you have a better understanding of branding, you'll start to put that knowledge to good use as you explore your online presence, from your website to your social media presence. You'll learn about what makes a &ldquo;good&rdquo; website, how to effectively manage your social media presence, how to handle negative reviews, marketing your business online, the art of blogging, content marketing and more.</p>
           </CourseOutline>
-          <CourseOutline title="Color Consulting Services" src={Part3Image}>
-            <p className="small">Find out how to expand your client base as a color consultant. You'll learn to consult on corporate color palettes that align with company goals. Explore color psychology in the office, and help retail brands appeal to customers using color. Follow Jane Lockhart's steps for conducting a color consultation, including working with contractors, managing client relationships, and working with color planning software. Establish yourself as a color expert and build a successful business by creating your brand, identifying target clientele, setting your prices, and marketing your services.
-            </p>
+          <CourseOutline title="Showcase Your Business to Prospective Clients" src={Part3Image} className="mb-3">
+            <p className="small">Discover how to present your business to attractive prospective clients. You'll learn to develop an eye-catching professional portfolio to showcase your skills, and practice effective communication strategies for working with clients. You'll study the process of creating high-quality client proposals to sell your services.</p>
+          </CourseOutline>
+          <CourseOutline title="Successful Project Management" src={Part4Image}>
+            <p className="small">This section of the course dives into the inner workings of your business. You'll look into different tools you can use to stay organized and to manage your projects. You'll also start to look into financial management solutions that can help keep your business on track. Finally, you'll discover the practicalities of building a budget, and the best methods of collecting payments from clients.</p>
           </CourseOutline>
         </div>
         <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">

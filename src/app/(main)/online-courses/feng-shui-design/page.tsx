@@ -22,10 +22,10 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Feng Shui Design Course',
+  title: 'Feng Shui Design Course - QC Design School',
 };
 
-const testimonialIds = [ 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001' ];
+const testimonialIds = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'fs' ];
 
 const FengShuiDesignPage: PageComponent = () => (
@@ -35,7 +35,7 @@ const FengShuiDesignPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">AFDP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Feng Shui Design Course</h1>
               <p className="h5 mb-3 mb-xl-5">Become a Certified Feng Shui Designer</p>
               <div className="d-flex justify-content-center justify-content-md-start">
@@ -60,7 +60,7 @@ const FengShuiDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -99,7 +99,7 @@ const FengShuiDesignPage: PageComponent = () => (
       </div>
     </section>
     <VirtualCommunitySection />
-    <TestimonialSection id="DT-0001" />
+    <TestimonialSection id="TD-0001" />
     <section className="bg-light">
       <div className="container">
         <IvyEllerbyCircle />

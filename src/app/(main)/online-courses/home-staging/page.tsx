@@ -13,10 +13,10 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Home Staging Course',
+  title: 'Home Staging Course - QC Design School',
 };
 
-const testimonialIds = [ 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001' ];
+const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const HomeStagingPage: PageComponent = () => (
@@ -26,7 +26,7 @@ const HomeStagingPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">ISRP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Home Staging Course</h1>
               <p className="h5 mb-3 mb-xl-5">Become a ...</p>
               <div className="d-flex justify-content-center justify-content-md-start">
@@ -47,7 +47,7 @@ const HomeStagingPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <PaymentPlanSection courseCodes={courseCodes} />
   </div>
 );

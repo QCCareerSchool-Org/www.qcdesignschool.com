@@ -19,10 +19,10 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Accelerate Your Business',
+  title: 'Accelerate Your Business - QC Design School',
 };
 
-const testimonialIds = [ 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001' ];
+const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'eb' ];
 
 const AccelerateYourBusinessPage: PageComponent = () => (
@@ -32,7 +32,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">Specialty Training</CourseType>
               <h1 className="mb-2 mb-xl-4">Accelerate Your Business</h1>
               <p className="h5 mb-3 mb-xl-5">Take Your Design Business to the Next Level</p>
               <div className="d-flex justify-content-center justify-content-md-start">
@@ -44,8 +44,8 @@ const AccelerateYourBusinessPage: PageComponent = () => (
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
             <p className="lead mb-4">QC's Accelerate Your Business training provides students with the most comprehensive training available to succeed in the home design industry.</p>
             <ul>
-              <li>Made for design entrepreneurs&mdash;learn how to grow and expand your existing interior decorating & design business</li>
-              <li>Personalized feedback &amp; advice on your assignments from our top industry design experts</li>
+              <li>Made for design entrepreneurs&mdash;learn how to grow and expand your existing interior decorating and design business</li>
+              <li>Personalized feedback and advice on your assignments from our top industry design experts</li>
               <li>Thriving virtual community to connect with other decorators, get feedback and gain exclusive access to bonus materials</li>
               <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
             </ul>
@@ -56,7 +56,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -80,7 +80,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </section>
     <OutlineSection className="bg-light" />
     <VirtualCommunitySection />
-    <TestimonialSection id="DT-0001" />
+    <TestimonialSection id="TD-0001" />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection

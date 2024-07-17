@@ -17,15 +17,15 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { TammyHartCircle } from '@/components/tutors/tammyHart';
+import TammyHartCollageImage from '@/components/tutors/tammyHeartCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Aging in Place Course',
+  title: 'Aging in Place Course - QC Design School',
 };
 
-const testimonialIds = [ 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001' ];
+const testimonialIds = [ 'TD-0002', 'TD-0005', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'ap' ];
 
 const AgingInPlacePage: PageComponent = () => (
@@ -35,7 +35,7 @@ const AgingInPlacePage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">APDP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Aging in Place Course</h1>
               <p className="h5 mb-3 mb-xl-5">Expand Your Home Design Career</p>
               <div className="d-flex justify-content-center justify-content-md-start">
@@ -60,19 +60,19 @@ const AgingInPlacePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
           <div className="col-12 col-lg-6">
             <h2>Here's What You'll Learn</h2>
-            <p>QC's comprehensive Color Consultant course will show you how to:</p>
+            <p>QC's comprehensive Aging In Place course will show you how to:</p>
             <ul className="mb-0">
-              <li>Master the theoretical and practical skills you need to design custom interiors</li>
-              <li>Confidently consult on color topics including how lighting and undertones affect color choices, how to work with open-concept spaces, and more</li>
-              <li>Work with a variety of budget types, design requirements, and different client personalities</li>
-              <li>Understand designing with textiles, arranging accessories, and building a strong relationship between art and design</li>
-              <li>Build your brand and market your new Color Consulting business</li>
+              <li>Design a home or living space that's safe and convenient for any client with aging concerns</li>
+              <li>Understand common physiological changes, medical conditions, and lifestyle changes people experience as they age</li>
+              <li>Work with a variety of budget types, design requirements and different client personalities</li>
+              <li>Incorporate decluttering and home transition services into your home design business</li>
+              <li>Build your brand and market your new aging in place services</li>
               <li>Plan and develop a professional portfolio that helps you land new clients</li>
             </ul>
           </div>
@@ -98,15 +98,22 @@ const AgingInPlacePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <VirtualCommunitySection />
-    <TestimonialSection id="DT-0001" />
+    <TestimonialSection id="TD-0001" />
     <section className="bg-light">
       <div className="container">
-        <TammyHartCircle />
-        <p>Tammy Hart</p>
-        <p>Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show.</p>
+        <div className="row justify-content-center align-items-center g-lg-s">
+          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
+            <h2>Meet Your Aging in Place Instructor</h2>
+            <p className="mb-0">Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show.</p>
+          </div>
+          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
+            <Image src={TammyHartCollageImage} alt="Tammy Hart" className="img-fluid" />
+          </div>
+        </div>
       </div>
     </section>
+    <VirtualCommunitySection />
+    <TestimonialSection id="TD-0001" />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

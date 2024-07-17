@@ -1,1 +1,12 @@
-export { default as JohnSmith } from './house-md-dr-gregory-house-hugh-laurie.jpg';
+export { default as NatalieMireault } from './TD-0001-natalie-mireault.jpg';
+export { default as SaraJones } from './TD-0002-sara-jones.jpg';
+export { default as PaolaFasca } from './TD-0003-paola-fasca.jpg';
+export { default as RachealStafford } from './TD-0004-rachael-stafford.jpg';
+export { default as AlciaOsenenko } from './TD-0005-alicia-osenenko.jpg';
+export { default as JamieCromar } from './TD-0006-jamie-cromar.jpg';
+export { default as DeborahSoulier } from './TD-0007-deborah-soulier.jpg';
+export { default as SarahKirkpatrick } from './TD-0008-sarah-kirkpatrick.jpg';
+export { default as MariannaZimmerman } from './TD-0009-marianna-zimmerman.jpg';
+export { default as DawnMarieClunas } from './TD-0010-dawn-marie-clunas.jpg';
+export { default as ChantalMarion } from './TD-0011-chantal-marion.jpg';
+export { default as BradleyRyanSchlagheck } from './TD-0012-bradley-ryan-schlagheck.jpg';

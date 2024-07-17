@@ -43,11 +43,11 @@ export const MainNav: FC = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <NavDropdown title="Courses" id="courses-nav-dropdown">
-              <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Foundation Courses</li>
+              {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Foundation Courses</li> */}
               <Link href="/online-courses/interior-decorating" className="dropdown-item" onClick={handleClick}>Interior Decorating</Link>
               <Link href="/online-courses/home-staging" className="dropdown-item" onClick={handleClick}>Home Staging</Link>
-              <li><hr className="dropdown-divider" /></li>
-              <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Specialty Courses</li>
+              {/* <li><hr className="dropdown-divider" /></li> */}
+              {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Specialty Courses</li> */}
               <Link href="/online-courses/feng-shui-design" className="dropdown-item" onClick={handleClick}>Feng Shui Design</Link>
               <Link href="/online-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
               <Link href="/online-courses/color-consultant" className="dropdown-item" onClick={handleClick}>Color Consultant</Link>

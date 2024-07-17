@@ -17,15 +17,15 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
+import JaneLockhartCollageImage from '@/components/tutors/janeLockhartCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Color Consultant Course',
+  title: 'Color Consultant Course - QC Design School',
 };
 
-const testimonialIds = [ 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001', 'DT-0001' ];
+const testimonialIds = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'cc' ];
 
 const ColorConsultantPage: PageComponent = () => (
@@ -35,7 +35,7 @@ const ColorConsultantPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
-              <CourseType className="mb-2 mb-xl-4">Specialty Course</CourseType>
+              <CourseType className="mb-2 mb-xl-4">ICCP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Color Consultant Course</h1>
               <p className="h5 mb-3 mb-xl-5">Become a Certified Color Consultant</p>
               <div className="d-flex justify-content-center justify-content-md-start">
@@ -60,7 +60,7 @@ const ColorConsultantPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -99,12 +99,18 @@ const ColorConsultantPage: PageComponent = () => (
       </div>
     </section>
     <VirtualCommunitySection />
-    <TestimonialSection id="DT-0001" />
+    <TestimonialSection id="TD-0001" />
     <section className="bg-light">
       <div className="container">
-        <JaneLockhartCircle />
-        <p>Jane Lockhart</p>
-        <p>Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline.</p>
+        <div className="row justify-content-center align-items-center g-lg-s">
+          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
+            <h2>Meet Your Aging in Place Instructor</h2>
+            <p className="mb-0">Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show.</p>
+          </div>
+          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
+            <Image src={JaneLockhartCollageImage} alt="Tammy Hart" className="img-fluid" />
+          </div>
+        </div>
       </div>
     </section>
     <OutlineSection />
