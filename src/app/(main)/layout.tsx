@@ -7,7 +7,7 @@ import type { LayoutComponent } from '@/app/serverComponent';
 import '@/app/bootstrap.scss';
 
 export const metadata: Metadata = {
-  title: 'QC Event School',
+  title: 'QC Design School',
 };
 
 const MainLayout: LayoutComponent = ({ children }) => {

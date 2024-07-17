@@ -17,7 +17,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Virtual Design Training - QC Design School',
+  title: 'Virtual Design - QC Design School',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0011', 'TD-0012' ];
@@ -32,7 +32,7 @@ const VirtualDesignPage: PageComponent = () => {
             <div className="col-12">
               <Hero src={HeroImage} priority objectPosition="100% 0">
                 <CourseType className="mb-2 mb-xl-4">Specialty Training</CourseType>
-                <h1 className="mb-2 mb-xl-4">Virtual Design Training</h1>
+                <h1 className="mb-2 mb-xl-4">Virtual Design</h1>
                 <p className="h5 mb-3 mb-xl-5">Expand Your Design Services Online</p>
                 <div className="d-flex justify-content-center justify-content-md-start">
                   <HeroButtons courseCodes={courseCodes} />

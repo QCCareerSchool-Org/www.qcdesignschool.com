@@ -46,12 +46,15 @@ export const MainNav: FC = () => {
               {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Foundation Courses</li> */}
               <Link href="/online-courses/interior-decorating" className="dropdown-item" onClick={handleClick}>Interior Decorating</Link>
               <Link href="/online-courses/home-staging" className="dropdown-item" onClick={handleClick}>Home Staging</Link>
+              <Link href="/online-courses/landscape-design" className="dropdown-item" onClick={handleClick}>Landscape Design</Link>
               {/* <li><hr className="dropdown-divider" /></li> */}
               {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '1rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Specialty Courses</li> */}
               <Link href="/online-courses/feng-shui-design" className="dropdown-item" onClick={handleClick}>Feng Shui Design</Link>
+              <Link href="/online-courses/professional-organizing" className="dropdown-item" onClick={handleClick}>Professional Organizing</Link>
               <Link href="/online-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
               <Link href="/online-courses/color-consultant" className="dropdown-item" onClick={handleClick}>Color Consultant</Link>
               <Link href="/online-courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
+              <Link href="/online-courses/staging-for-designers" className="dropdown-item" onClick={handleClick}>Staging For Designers</Link>
               <Link href="/online-courses/aging-in-place" className="dropdown-item" onClick={handleClick}>Aging in Place</Link>
               <Link href="/online-courses/virtual-design" className="dropdown-item" onClick={handleClick}>Virtual Design</Link>
               <Link href="/online-courses/accelerate-your-design-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>

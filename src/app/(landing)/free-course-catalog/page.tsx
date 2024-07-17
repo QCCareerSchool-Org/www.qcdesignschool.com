@@ -13,7 +13,7 @@ import DownloadIcon from '@/components/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
-  title: 'Free Catalog - QC Event School',
+  title: 'Free Catalog - QC Design School',
 };
 
 const FreeCatalogPage: PageComponent = () => {
@@ -23,7 +23,7 @@ const FreeCatalogPage: PageComponent = () => {
       <HeroSection />
       <IndustrySection />
       <JoinQCSection />
-      <TestimonialSection id="TE-0006" />
+      <TestimonialSection id="TD-0006" />
       <CertificationSection />
       <AboutSection />
       <BottomSection>

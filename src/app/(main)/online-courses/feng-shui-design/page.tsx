@@ -17,7 +17,7 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { IvyEllerbyCircle } from '@/components/tutors/ivyEllerby';
+import IvyEllerbyCollageImage from '@/components/tutors/ivyEllerbyCollage-transparent.png';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -102,9 +102,15 @@ const FengShuiDesignPage: PageComponent = () => (
     <TestimonialSection id="TD-0001" />
     <section className="bg-light">
       <div className="container">
-        <IvyEllerbyCircle />
-        <p>Ivy Ellerby</p>
-        <p>Accredited Staging Professional, Advanced Feng Shui Design Professional, and consultant at Eastern Design and Home Staging, Ivy blends her background in clinical and experimental psychology to enhance harmony and balance in homes.</p>
+        <div className="row justify-content-center align-items-center g-lg-s">
+          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
+            <h2>Meet Your Feng Shui Instructor</h2>
+            <p className="mb-0">Accredited Staging Professional, Advanced Feng Shui Design Professional, and consultant at Eastern Design and Home Staging, Ivy blends her background in clinical and experimental psychology to enhance harmony and balance in homes.</p>
+          </div>
+          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
+            <Image src={IvyEllerbyCollageImage} alt="Ivy Ellerby" className="img-fluid" />
+          </div>
+        </div>
       </div>
     </section>
     <OutlineSection />

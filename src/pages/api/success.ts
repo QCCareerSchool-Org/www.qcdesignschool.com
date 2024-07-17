@@ -27,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const marketing = 'marketing' in body && body.marketing !== null && typeof body.marketing === 'object' ? body.marketing : undefined;
     if (emailAddress) {
       const payload = {
-        school: 'QC Event School',
+        school: 'QC Design School',
         emailAddress,
         firstName,
         lastName,

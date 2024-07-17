@@ -6,7 +6,7 @@ import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - QC Event School',
+  title: 'Page Not Found - QC Design School',
 };
 
 const NotFoundPage: PageComponent = () => {
@@ -17,7 +17,7 @@ const NotFoundPage: PageComponent = () => {
         <p>Sorry, we could not find the requested page</p>
         <div className="d-flex justify-content-center">
           <Link href="/" className="btn btn-primary me-3">Home Page</Link>
-          <Link href="/online-event-courses" className="btn btn-outline-dark">Course List</Link>
+          <Link href="/online-courses" className="btn btn-outline-dark">Course List</Link>
         </div>
       </div>
     </MainLayout>

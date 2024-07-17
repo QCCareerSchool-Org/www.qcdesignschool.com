@@ -44,7 +44,7 @@ export const BrochureForm: FC<Props> = props => {
   return (
     <form action={props.action} method="post" className={styles.brochureForm}>
       <input type="hidden" name="g-recaptcha-response" value={token} />
-      <input type="hidden" name="school" value="QC Event School" />
+      <input type="hidden" name="school" value="QC Design School" />
       <input type="hidden" name="testGroup" value={props.testGroup} />
       <input type="hidden" name="countryCode" value={props.countryCode} />
       <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />

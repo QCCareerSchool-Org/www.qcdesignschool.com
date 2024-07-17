@@ -1,7 +1,7 @@
-export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ed' | 'cc' | 'fd' | 'ap' | 'eb' | 'vd';
+export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'eb' | 'vd';
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'cc', 'fd', 'ap', 'eb', 'vd' ].includes(obj);
+  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'eb', 'vd' ].includes(obj);
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
@@ -18,6 +18,8 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Professional Organizing Course';
     case 'ed':
       return 'Event Decor Course';
+    case 'ld':
+      return 'Landscape Design Course';
     case 'cc':
       return 'Color Consultant Course';
     case 'fd':
