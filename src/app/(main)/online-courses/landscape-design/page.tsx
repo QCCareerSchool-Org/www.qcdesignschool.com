@@ -15,9 +15,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import ChrisTuccioCollageImage from '@/components/tutors/chrisTuccioCollage-white.jpg';
+import TutorImage from '@/components/tutors/chrisTuccioCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -101,19 +102,13 @@ const LandscapeDesignPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center align-items-center g-lg-s">
-          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
-            <h2>Meet Your Landscape Design Instructor</h2>
-            <p className="mb-0">Chris Tuccio, professor and Program Coordinator of Horticulture & Landscape Design at Naugatuck Valley Community College, holds a Master's in Landscape Architecture from Harvard. He also serves on the CT Horticulture Society Board and manages Draftscapes.</p>
-          </div>
-          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
-            <Image src={ChrisTuccioCollageImage} alt="Chris Tuccio" className="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <SingleTutorSection
+      courseName="Landscape Design"
+      description="Chris Tuccio, professor and Program Coordinator of Horticulture & Landscape Design at Naugatuck Valley Community College, holds a Master's in Landscape Architecture from Harvard. He also serves on the CT Horticulture Society Board and manages Draftscapes."
+      src={TutorImage}
+      alt="Chris Tuccio"
+      className="bg-light"
+    />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

@@ -15,9 +15,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import TammyHartCollageImage from '@/components/tutors/tammyHeartCollage-light.jpg';
+import TutorImage from '@/components/tutors/tammyHeartCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -99,19 +100,13 @@ const AgingInPlacePage: PageComponent = () => (
       </div>
     </section>
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center align-items-center g-lg-s">
-          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
-            <h2>Meet Your Aging in Place Instructor</h2>
-            <p className="mb-0">Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show.</p>
-          </div>
-          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
-            <Image src={TammyHartCollageImage} alt="Tammy Hart" className="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <SingleTutorSection
+      courseName="Aging in Place"
+      description="Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show."
+      src={TutorImage}
+      alt="Tammy Hart"
+      className="bg-light"
+    />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
     <OutlineSection />

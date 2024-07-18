@@ -8,7 +8,6 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CandiceSection } from '@/components/candiceSection';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import CertificationLogo from '@/components/certificationLogos/iedp.svg';
 import { CourseType } from '@/components/courseType';
@@ -16,8 +15,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import TutorImage from '@/components/tutors/candiceCoppolaCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -100,7 +101,13 @@ const EventDecorPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <CandiceSection className="bg-light" />
+    <SingleTutorSection
+      courseName="Event Decor"
+      description="Candice Coppola is an incredibly talented entrepreneur and former owner of a wedding planning & design business called Jubilee Events. With her unique flair, she's created amazing events all over the world, from New York to Fiji, and even Costa Rica. She's no stranger to big budgets either, managing events that cost upwards of $1,000,000! With her wealth of knowledge and experience, Candice is a passionate and driven coach, instructor, and mentor, helping aspiring individuals in the event-planning business reach their entrepreneurial goals."
+      src={TutorImage}
+      alt="Angie Chapman"
+      className="bg-light"
+    />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

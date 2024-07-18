@@ -15,9 +15,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import ChrisTuccioCollageImage from '@/components/tutors/chrisTuccioCollage-white.jpg';
+import TutorImage from '@/components/tutors/angieChapmanCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -101,19 +102,13 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center align-items-center g-lg-s">
-          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
-            <h2>Meet Your Professional Organizing Instructor</h2>
-            <p className="mb-0">Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become a sought-after designer.</p>
-          </div>
-          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
-            <Image src={ChrisTuccioCollageImage} alt="Angie Chapman" className="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <SingleTutorSection
+      courseName="Professional Organizing"
+      description="Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become a sought-after designer."
+      src={TutorImage}
+      alt="Angie Chapman"
+      className="bg-light"
+    />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

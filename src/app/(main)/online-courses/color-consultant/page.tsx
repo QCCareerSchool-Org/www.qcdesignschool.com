@@ -15,9 +15,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import JaneLockhartCollageImage from '@/components/tutors/janeLockhartCollage-light.jpg';
+import TutorImage from '@/components/tutors/janeLockhartCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -100,19 +101,13 @@ const ColorConsultantPage: PageComponent = () => (
     </section>
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center align-items-center g-lg-s">
-          <div className="col-12 col-lg-6 col-xl-7 col-xxl-6 mb-5 mb-lg-0">
-            <h2>Meet Your Color Consultant Instructor</h2>
-            <p className="mb-0">Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline.</p>
-          </div>
-          <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
-            <Image src={JaneLockhartCollageImage} alt="Jane Lockhart" className="img-fluid" />
-          </div>
-        </div>
-      </div>
-    </section>
+    <SingleTutorSection
+      courseName="Color Consultant"
+      description="Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline."
+      src={TutorImage}
+      alt="Jane Lockhart"
+      className="bg-light"
+    />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
