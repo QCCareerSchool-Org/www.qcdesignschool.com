@@ -12,9 +12,26 @@
 
   .imageWrapper {
     position: relative;
+    height: 140px;
+    @media only screen and (min-width: 576px)  { height: 160px; }
+    @media only screen and (min-width: 768px)  { }
+    @media only screen and (min-width: 992px)  { }
+    @media only screen and (min-width: 1200px)  { }
+    @media only screen and (min-width: 1400px)  { }
   }
 
-  .certification {
+  .imageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-top-left-radius: var(--bs-card-border-radius);
+    border-top-right-radius: var(--bs-card-border-radius);
+  }
+
+  .overlayContent {
     position: absolute;
     top: 50%;
     left: 1rem;
@@ -22,6 +39,16 @@
     @media only screen and (min-width: 576px) {
       left: 2rem;
     }
+    h2 { color: white; text-shadow: 1px 1px 0 rgba(0,0,0,0.5) }
+  }
+
+  .subtitle {
+    color: var(--qc-color-gold);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.25rem;
+    text-shadow: none !important;
   }
 
   .message {

@@ -2,9 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { CourseCardCertifcation } from '../courseCardCertification';
 import { getHeroImage } from '../hero/getHeroImage';
-import { CardDiscount } from './cardDiscount';
 import { CardPrice } from './cardPrice';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
@@ -14,7 +12,7 @@ import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
   courseCode: CourseCode;
-  // name: string | JSX.Element;
+  subtitle?: string;
   description: string;
   href: string;
   message?: string;
@@ -27,24 +25,24 @@ export const CourseTuitionCard: FC<Props> = async props => {
   return (
     <div className={`${styles.courseCard} card`}>
       <div className={styles.imageWrapper}>
-        <Image src={getHeroImage(props.courseCode)} className="card-img-top" style={{ height: 'auto' }} alt="" />
-        <div className={styles.certification}>
-          <CourseCardCertifcation courseCode={props.courseCode} />
+        <Image src={getHeroImage(props.courseCode)} className="card-img-top" fill style={{ objectFit: 'cover' }} alt="" />
+        <div className={styles.imageOverlay} />
+        <div className={styles.overlayContent}>
+          {props.subtitle && <div className={styles.subtitle}>{props.subtitle}</div>}
+          <h2 className="h4 mb-0">{getCourseName(props.courseCode)}</h2>
         </div>
         {props.message && <div className={styles.message}>{props.message}</div>}
       </div>
       <div className={`${styles.courseCardBody} card-body`}>
         <div>
-          {price && <CardDiscount price={price} />}
-          <h2 className="h4">{getCourseName(props.courseCode)}</h2>
           <p>{props.description}</p>
           {price && <CardPrice price={price} />}
         </div>
         <div className="d-flex flex-column flex-sm-row">
           <Link href={props.href} className="d-lg-none btn btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
           <Link href={props.href} className="d-none d-lg-block btn btn-lg btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
-          <Link href={enrollLink} className="d-lg-none btn btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll<span className="ms-3"><ChevronIcon /></span></Link>
-          <Link href={enrollLink} className="d-none d-lg-block btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll<span className="ms-3"><ChevronIcon /></span></Link>
+          <Link href={enrollLink} className="d-lg-none btn btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
+          <Link href={enrollLink} className="d-none d-lg-block btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
         </div>
       </div>
     </div>

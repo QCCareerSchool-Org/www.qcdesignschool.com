@@ -19,6 +19,7 @@ const CoursesPage: PageComponent = () => (
           <LargeColumn>
             <CourseTuitionCard
               courseCode="i2"
+              subtitle="IDDP™ Certification"
               description="Dive into the world of design and transform spaces into works of art. Our most popular course is your gateway to mastering aesthetic enhancement and client satisfaction."
               href="/online-courses/interior-decorating"
               message="Most Popular"
@@ -28,6 +29,7 @@ const CoursesPage: PageComponent = () => (
           <LargeColumn>
             <CourseTuitionCard
               courseCode="ld"
+              subtitle="ILDP™ Certification"
               description="Transform homes with stunning outdoor spaces. Join our top-rated landscape design course and master essential skills in months. Dive into a booming industry and start your dream career."
               href="/online-courses/landscape-design"
               showPrice
@@ -36,6 +38,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="st"
+              subtitle="ISRP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/home-staging"
               showPrice
@@ -44,6 +47,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="po"
+              subtitle="AIOP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/professional-organizing"
               showPrice
@@ -52,6 +56,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="fs"
+              subtitle="AFDP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/feng-shui-design"
               showPrice
@@ -60,6 +65,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="cc"
+              subtitle="ICCP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/color-consultant"
               showPrice
@@ -68,6 +74,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="fd"
+              subtitle="IFDP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/floral-design"
               showPrice
@@ -76,6 +83,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="ed"
+              subtitle="IEDP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/event-decor"
               showPrice
@@ -84,6 +92,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="ap"
+              subtitle="APDP™ Certification"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/aging-in-place"
               showPrice
@@ -92,6 +101,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="eb"
+              subtitle="Specialty Training"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/accelerate-your-design-business"
               showPrice
@@ -100,6 +110,7 @@ const CoursesPage: PageComponent = () => (
           <SmallColumn>
             <CourseTuitionCard
               courseCode="vd"
+              subtitle="Specialty Training"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/virtual-design"
               showPrice

@@ -51,7 +51,7 @@ const FengShuiDesignPage: PageComponent = () => (
               <li>No previous training required&mdash;our premium Feng Shui Design course is designed to take you from beginner to expert</li>
               <li>Personalized feedback and advice on your assignments from our top industry home design experts</li>
               <li>Thriving virtual community to connect with other home designers, get feedback and gain exclusive access to bonus material</li>
-              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified Feng Shui professional</li>
+              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified feng shui professional</li>
               <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada and more</li>
             </ul>
           </div>
