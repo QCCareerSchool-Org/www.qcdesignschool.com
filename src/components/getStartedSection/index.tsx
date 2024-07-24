@@ -16,7 +16,7 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonT
   if (buttonHref) {
     href = buttonHref;
   } else {
-    href = 'https://enroll.qceventplanning.com';
+    href = 'https://enroll.qcdesignschool.com';
     if (courseCodes) {
       href += '?' + courseCodes?.map(c => `c=${encodeURIComponent(c)}`).join('&');
     }

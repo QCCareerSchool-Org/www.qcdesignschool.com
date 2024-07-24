@@ -37,23 +37,18 @@ const StagingForDesignersPage: PageComponent = () => (
           <div className="col-12">
             <Hero src={HeroImage} priority objectPosition="100% 0">
               <CourseType className="mb-2 mb-xl-4">ISRP&trade; Certification</CourseType>
-              <h1 className="mb-2 mb-xl-4">Home Staging Course</h1>
-              <p className="h5 mb-3 mb-xl-5">Become a Certified Home Stager</p>
+              <h1 className="mb-2 mb-xl-4">Staging for Designers Course</h1>
+              <p className="h5 mb-3 mb-xl-5">Elevate Your Home Design Expertise</p>
               <div className="d-flex justify-content-center justify-content-md-start">
                 <HeroButtons courseCodes={courseCodes} />
               </div>
             </Hero>
           </div>
           <div className="col-12 col-lg-6">
-            <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Home Staging certification course provides students with the most comprehensive training available to succeed in the staging industry.</p>
-            <ul>
-              <li>No previous training required&mdash;our premium Home Staging course is designed to take you from beginner to expert</li>
-              <li>Personalized feedback and advice on your assignments from our top staging-industry experts</li>
-              <li>Thriving virtual community to connect with other stagers, get feedback, and gain exclusive access to bonus material</li>
-              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified home stager</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
-            </ul>
+            <h2 className="mb-4">Get Certified as a Home Stager Quickly</h2>
+            <p className="lead mb-4">This course can only be taken with QC's Interior Decorating Certification course. Want to start your career as a Home Stager? Consider our Home Staging Certification course.</p>
+            <p>As a certified interior decorator, you already know all the ins and outs of working with clients to redesign their spaces. Now you can build on your existing design training by learning how to prepare homes for sale.</p>
+            <p className="mb-0"><strong>The Staging for Designers course is a condensed version of the Home Staging course and allows trained interior decorators to upgrade their expertise and offer home staging services.</strong> Earn your designation as an International Staging and Redesign Professional in this streamlined course created specifically for interior decorators.</p>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
@@ -67,15 +62,15 @@ const StagingForDesignersPage: PageComponent = () => (
         <div className="row align-items-center justify-content-center g-s">
           <div className="col-12 col-lg-6">
             <h2>Here's What You'll Learn</h2>
-            <p>QC's comprehensive Home Staging course will show you how to:</p>
+            <p>QC's comprehensive Staging for Designers course will show you how to:</p>
             <ul className="mb-0">
-              <li>Develop the skills to enhance your client's home using existing items in the space</li>
-              <li>Create color palettes, accessorizing plans, and curb appeal strategies</li>
-              <li>Work with a variety of budget types, design requirements and different client personalities</li>
-              <li>Create excellent first impressions by decluttering the home and enhancing curb appeal</li>
-              <li>Incorporate the right lighting and window treatments to wow potential buyers</li>
-              <li>Build your brand and market your new home staging business</li>
-              <li>Plan and develop a professional portfolio that helps you land new clients</li>
+              <li>Design homes to attract buyers and sell at the best price</li>
+              <li>Declutter and enhance curb appeal for memorable first impressions</li>
+              <li>Assess and depersonalize clients' homes, redesigning and improving curb appeal</li>
+              <li>Collaborate with real estate agents to grow your business</li>
+              <li>Conduct market research to sell home staging services and boost profitability</li>
+              <li>Build and market your home staging brand</li>
+              <li>Develop a professional portfolio to attract new clients</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -94,8 +89,8 @@ const StagingForDesignersPage: PageComponent = () => (
             </div>
             <p className="mb-3 small gold">International Staging and Redesign Professional&trade; (ISRP&trade;)</p>
             <h2 className="text-white mb-3">Your Home Staging Certification</h2>
-            <p>Once you graduate from your home staging course, you'll receive a certification and be able to use the designation of International Staging and Redesign Professional (ISRP).</p>
-            <p className="mb-0">This certification demonstrates that you have successfully completed home stager training and that you possess all the skills and knowledge required to create functional and comfortable homes.</p>
+            <p>Once you graduate from QC's Staging for Designers course, you'll receive the unique International Staging and Redesign Professional (ISRP) double certification.</p>
+            <p className="mb-0">This certificate of completion demonstrates that you possess the home staging training needed to succeed in the real estate and redesign industries.</p>
           </div>
         </div>
       </div>
@@ -128,8 +123,8 @@ const StagingForDesignersPage: PageComponent = () => (
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your career as a home stager?"
-      text="Become professionally certified with QC's online home staging training"
+      title="Ready to add home staging to your design expertise?"
+      text="Become professionally certified with QC’s online Staging for Designers training"
       courseCodes={courseCodes}
     />
   </div>

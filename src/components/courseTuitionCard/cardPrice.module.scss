@@ -1,0 +1,16 @@
+.price {
+  margin-bottom: 1rem;
+
+  .originalPrice {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #aaa;
+    margin-right: 0.5rem;
+  }
+  
+  .discountedPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--bs-heading-color);
+  }
+}

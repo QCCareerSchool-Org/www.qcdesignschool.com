@@ -1,0 +1,9 @@
+.discount {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+
+  .savings {
+    color: var(--qc-color-red-cta);
+    text-transform: uppercase;
+  }
+}

@@ -7,28 +7,28 @@ export const isCourseCode = (obj: unknown): obj is CourseCode => {
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'i2':
-      return 'Interior Decorating Course';
+      return 'Interior Decorating';
     case 'st':
-      return 'Home Staging Course';
+      return 'Home Staging';
     case 'ms':
-      return 'Staging for Designers Course';
+      return 'Staging for Designers';
     case 'fs':
-      return 'Feng Shui Design Course';
+      return 'Feng Shui Design';
     case 'po':
-      return 'Professional Organizing Course';
+      return 'Professional Organizing';
     case 'ed':
-      return 'Event Decor Course';
+      return 'Event Decor';
     case 'ld':
-      return 'Landscape Design Course';
+      return 'Landscape Design';
     case 'cc':
-      return 'Color Consultant Course';
+      return 'Color Consultant';
     case 'fd':
-      return 'Floral Design Course';
+      return 'Floral Design';
     case 'ap':
-      return 'Aging in Place Course';
+      return 'Aging in Place';
     case 'eb':
-      return 'Accelerate Your Design Business Course';
+      return 'Accelerate Your Design Business';
     case 'vd':
-      return 'Virtual Design Training';
+      return 'Virtual Design';
   }
 };
