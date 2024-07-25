@@ -24,7 +24,7 @@ const HomePage: PageComponent = () => (
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-sm-8 col-md-8 col-lg-6 col-xxl-5">
+          <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
             <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
             <Link href="/online-courses" className="btn btn-navy btn-lg">Browse Courses</Link>
           </div>
