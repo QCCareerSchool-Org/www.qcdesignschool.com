@@ -24,6 +24,7 @@ const CoursesPage: PageComponent = () => (
               href="/online-courses/interior-decorating"
               message="Most Popular"
               showPrice
+              showEnrollLink
             />
           </LargeColumn>
           <LargeColumn>
@@ -33,6 +34,7 @@ const CoursesPage: PageComponent = () => (
               description="Transform homes with stunning outdoor spaces. Join our top-rated landscape design course and master essential skills in months. Dive into a booming industry and start your dream career."
               href="/online-courses/landscape-design"
               showPrice
+              showEnrollLink
             />
           </LargeColumn>
           <SmallColumn>
@@ -42,6 +44,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/home-staging"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -51,6 +54,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/professional-organizing"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -60,6 +64,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/feng-shui-design"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -69,6 +74,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/color-consultant"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -78,6 +84,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/floral-design"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -87,6 +94,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/event-decor"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -96,6 +104,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/aging-in-place"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -105,6 +114,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/accelerate-your-design-business"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
           <SmallColumn>
@@ -114,6 +124,7 @@ const CoursesPage: PageComponent = () => (
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
               href="/online-courses/virtual-design"
               showPrice
+              showEnrollLink
             />
           </SmallColumn>
         </div>
