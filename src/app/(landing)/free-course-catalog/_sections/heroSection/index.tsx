@@ -17,7 +17,8 @@ export const HeroSection: FC = () => {
           <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
             <div className={`card bg-light ${styles.card}`}>
               <div className="card-body">
-                <h1 className="h3 mb-3 text-navy">Get a Free Event &amp; Wedding Planning Course Catalog</h1>
+                <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
+                <h3 className="h6 mb-4 text-navy">Download the Course Catalog</h3>
                 <div className={styles.formWrapper}>
                   <BrochureForm
                     action="https://captcha.qccareerschool.com/2fb03662-172b-11ed-a5a8-bc764e017ab0"

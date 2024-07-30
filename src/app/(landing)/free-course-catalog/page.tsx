@@ -6,10 +6,10 @@ import { Header } from '../header';
 import { AboutSection } from './_sections/aboutSection';
 import { CertificationSection } from './_sections/certificationSection';
 import { HeroSection } from './_sections/heroSection';
-import { IndustrySection } from './_sections/industrySection';
+import { HowYoullLearnSection } from './_sections/howYoullLearnSection';
 import { JoinQCSection } from './_sections/joinQCSection';
 import type { PageComponent } from '@/app/serverComponent';
-import DownloadIcon from '@/components/download.svg';
+import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ const FreeCatalogPage: PageComponent = () => {
     <>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <HeroSection />
-      <IndustrySection />
+      <HowYoullLearnSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
       <CertificationSection />

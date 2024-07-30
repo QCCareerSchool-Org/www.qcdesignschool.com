@@ -5,7 +5,7 @@ import { useCallback, useId, useState } from 'react';
 
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import styles from './index.module.scss';
-import DownloadIcon from '@/components/download.svg';
+import DownloadIcon from '@/components/icons/download.svg';
 
 type Props = {
   action: string;
@@ -65,7 +65,7 @@ export const BrochureForm: FC<Props> = props => {
           </label>
         </div>
       </div>
-      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get The Catalog'}</button>
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );

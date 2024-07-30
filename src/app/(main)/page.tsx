@@ -13,11 +13,11 @@ import WhyQCImage from './why-qc.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
-import BookIcon from '@/components/icons/book.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
+import OpenBookIcon from '@/components/icons/open-book.svg';
 import ShieldIcon from '@/components/icons/shield.svg';
 import UserVoiceIcon from '@/components/icons/user-voice.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -41,7 +41,7 @@ const HomePage: PageComponent = () => (
         <div className="row">
           <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
             <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
-            <Link href="/online-courses" className="btn btn-navy btn-lg"><BookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
+            <Link href="/online-courses" className="btn btn-navy btn-lg"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ const HomePage: PageComponent = () => (
             <MagnifyingGlassIcon height="28" className="mb-3" />
             <h3 className="h4 mb-3">Explore More Paths in Design and Styling</h3>
             <p className="lead mb-4">Looking to broaden your horizons? Our comprehensive catalog offers a range of courses to suit your unique interests and career aspirations. From foundational skills to specialized techniques, let your creativity flow and your professional prowess grow.</p>
-            <Link href="/online-courses" className="btn btn-primary"><BookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
+            <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
           </div>
         </div>
       </div>

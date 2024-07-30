@@ -1,0 +1,5 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<path fill="none" stroke="currentColor" stroke-width="3" stroke-miterlimit="10" d="M30,30.5H6.406c-3.875,0-3.875-7,0-7H30"/>
+<path fill="none" stroke="currentColor" stroke-width="3" stroke-miterlimit="10" d="M3.5,26.875V4c0-1.5,1-2.5,2.5-2.5h20 c1.5,0,2.5,1,2.5,2.5v18"/>
+<polyline points="17.691,3 17.691,13.927 17.691,3 23.936,3 23.936,13.927 20.814,12.366 17.691,13.927" fill="currentColor"/>
+</svg>

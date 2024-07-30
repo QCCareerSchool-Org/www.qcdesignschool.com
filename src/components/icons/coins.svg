@@ -1,0 +1,9 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg stroke="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<ellipse fill="none" stroke-width="3" stroke-miterlimit="10" cx="16" cy="6.021" rx="11.3" ry="4.521"/>
+<path fill="none" stroke-width="3" stroke-miterlimit="10" d="M4.7,19.328c0,2.496,5.059,4.52,11.3,4.52 c6.24,0,11.3-2.023,11.3-4.52l0,0"/>
+<path fill="none" stroke-width="3" stroke-miterlimit="10" d="M4.7,25.98c0,2.496,5.059,4.52,11.3,4.52	c6.24,0,11.3-2.023,11.3-4.52l0,0"/>
+<path fill="none" stroke-width="3" stroke-miterlimit="10" d="M4.7,12.676c0,2.496,5.059,4.519,11.3,4.519 c6.24,0,11.3-2.022,11.3-4.519v-0.001"/>
+<line fill="none" stroke-width="3" stroke-miterlimit="10" x1="4.7" y1="6.021" x2="4.7" y2="25.98"/>
+<line fill="none" stroke-width="3" stroke-miterlimit="10" x1="27.3" y1="6.021" x2="27.3" y2="25.98"/>
+</svg>
