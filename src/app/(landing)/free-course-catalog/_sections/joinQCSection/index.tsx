@@ -13,7 +13,7 @@ const iconHeight = 40;
 export const JoinQCSection: FC = () => (
   <section className="bg-light">
     <div className="container text-center">
-      <h2 className="h3 mb-4">Join QC Event School</h2>
+      <h2 className="h3 mb-4">Join QC Design School</h2>
       <p className="lead mb-4">QC's design courses provide you with:</p>
       <div className="row justify-content-center g-4">
         <div className="col-12 col-md-6 col-lg-4">

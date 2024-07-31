@@ -34,7 +34,7 @@ export const CourseTuitionCard: FC<Props> = async props => {
               <div className={styles.imageOverlay} />
               <div className={styles.overlayContent}>
                 {props.subtitle && <div className={styles.subtitle}>{props.subtitle}</div>}
-                <h3 className="h4 mb-0">{getCourseName(props.courseCode)}</h3>
+                <h3 className="h4 mb-0 text-white">{getCourseName(props.courseCode)}</h3>
               </div>
             </>
           )

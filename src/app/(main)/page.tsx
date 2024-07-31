@@ -53,22 +53,22 @@ const HomePage: PageComponent = () => (
             <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Design School</h2>
             <div className="row g-5 g-lg-4 g-xxl-5">
               <div className="col-12 col-lg-6">
-                <BriefcaseIcon className="d-lg-none d-xxl-block mb-3" />
+                <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Learn From Expert Instructors</h3>
                 <p className="mb-0">We've hand-selected the top design professionals in the industry to guide you through your course material.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <UserVoiceIcon className="d-lg-none d-xxl-block mb-3" />
+                <UserVoiceIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Flexible Online Training</h3>
                 <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and get access to bonus career training in our private virtual community!</p>
               </div>
               <div className="col-12 col-lg-6">
-                <CertificationIcon className="d-lg-none d-xxl-block mb-3" />
+                <CertificationIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Industry-Recognized Certifications</h3>
                 <p className="mb-0">Graduate with professional home design certifications and open up a world of career &amp; business opportunities.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <ObjectsVerticalBottomIcon className="d-lg-none d-xxl-block mb-3" />
+                <ObjectsVerticalBottomIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Business Training Included</h3>
                 <p className="mb-0">Each course includes built-in business training to help you launch your career and grow your clientele as a newly certified designer.</p>
               </div>

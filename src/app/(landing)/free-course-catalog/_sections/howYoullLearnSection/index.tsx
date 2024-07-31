@@ -12,8 +12,8 @@ const iconHeight = '1.5rem';
 export const HowYoullLearnSection: FC = () => (
   <section>
     <div className="container">
-      <div className="row align-items-center justify-content-center">
-        <div className="col-12 col-sm-10 col-md-8 col-lg-5 col-xxl-6 mb-5 mb-lg-0">
+      <div className="row align-items-center justify-content-center g-s">
+        <div className="col-12 col-sm-10 col-md-8 col-lg-5 col-xxl-6">
           <Image src={HowYoullLearnImage} className={styles.howYoullLearn} alt="" />
         </div>
         <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
