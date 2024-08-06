@@ -7,7 +7,7 @@ export const AboutSection: FC = () => (
   <section className={styles.aboutSection}>
     <div className="container">
       <div className="row justify-content-center">
-        <div className="col-12 col-lg-10 col-xl-9 col-xxl-8 text-center">
+        <div className="col-12 col-lg-10 col-xl-9 col-xxl-8 text-lg-center">
           <ShieldIcon className="mb-4" />
           <div className={`${styles.gold} mb-4`}>Celebrating 40 Years</div>
           <h2 className="h3 mb-4">About QC Design School</h2>

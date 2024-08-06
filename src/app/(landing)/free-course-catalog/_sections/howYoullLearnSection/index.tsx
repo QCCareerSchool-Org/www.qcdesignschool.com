@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import HowYoullLearnImage from './how-youll-learn.jpg';
 import styles from './index.module.scss';
 import BookHeartIcon from '@/components/icons/book-heart.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
+import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 const iconHeight = '1.5rem';
 

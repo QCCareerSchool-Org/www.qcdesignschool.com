@@ -11,7 +11,7 @@ export const HeroSection: FC = () => {
   const { testGroup, countryCode, provinceCode } = getData();
   return (
     <section className="text-white">
-      <BackgroundImage desktopSrc={HeroDesktopImage} mobileSrc={HeroMobileImage} />
+      <BackgroundImage desktopSrc={HeroDesktopImage} mobileSrc={HeroMobileImage} mobileObjectPosition="50% 100%" />
       <div className="container">
         <div className="row g-0">
           <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
