@@ -3,6 +3,7 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
+import { brevoIdentify } from '@/lib/brevo';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/gtag';
 import { trustPulseLead } from '@/lib/trustpulse';
@@ -12,9 +13,10 @@ type Props = {
   firstName?: string;
   ipAddress?: string;
   leadId?: string;
+  conversionId: string;
 };
 
-export const Processing: FC<Props> = props => {
+export const LeadProcessing: FC<Props> = props => {
   const effectCalled = useRef(false);
 
   useEffect(() => {
@@ -27,18 +29,16 @@ export const Processing: FC<Props> = props => {
     effectCalled.current = true;
     gaUserData({ email: props.emailAddress });
     fbqLead(props.leadId);
-    gaEvent('conversion', {
-      send_to: 'AW-1071836607/9wB_CNvknggQv9uL_wM', // eslint-disable-line camelcase
-      value: 1.0,
-      currency: 'USD',
-    });
+    // eslint-disable-next-line camelcase
+    gaEvent('conversion', { send_to: props.conversionId });
     void trustPulseLead({
       emailAddress: props.emailAddress ?? null,
       firstName: props.firstName ?? null,
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
-  }, [ props.emailAddress, props.firstName, props.ipAddress, props.leadId ]);
+    brevoIdentify(props.emailAddress);
+  }, [ props.emailAddress, props.firstName, props.ipAddress, props.leadId, props.conversionId ]);
 
   return null;
 };

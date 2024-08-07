@@ -3,8 +3,8 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { LeadProcessing } from '../../../components/leadProcessing';
 import CatalogImage from './catalog.jpg';
-import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/icons/download.svg';
 import { Logo } from '@/components/logo';
@@ -23,7 +23,7 @@ const ThankYouCourseCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
-      <Processing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} />
+      <LeadProcessing emailAddress={emailAddress} firstName={firstName} ipAddress={ipAddress} leadId={leadId} conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw" />
       <section className="p-0" />
       <section>
         <div className="container">

@@ -46,7 +46,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                   <h3 className="h6 mb-4 text-navy">Download the Course Catalog</h3>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation="http://www.qcdesignschool.com/thank-you-brevo-test"
+                      successLocation="https://www-qcdesignschool-com.vercel.app/thank-you-interior-decorating-course-catalog"
                       listId={4}
                       countryCode={countryCode}
                       provinceCode={provinceCode}

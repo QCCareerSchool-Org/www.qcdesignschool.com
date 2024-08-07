@@ -5,7 +5,7 @@ import { useCallback, useId, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import styles from './index.module.scss';
-import DownloadIcon from '@/components/download.svg';
+import DownloadIcon from '@/components/icons/download.svg';
 
 type Props = {
   successLocation: string;
