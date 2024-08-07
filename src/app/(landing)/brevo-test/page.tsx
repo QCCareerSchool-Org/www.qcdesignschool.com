@@ -47,7 +47,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                   <div className={styles.formWrapper}>
                     <BrevoForm
                       successLocation="https://www-qcdesignschool-com.vercel.app/thank-you-interior-decorating-course-catalog"
-                      listId={4}
+                      listId={7}
                       countryCode={countryCode}
                       provinceCode={provinceCode}
                       gclid={gclid}
