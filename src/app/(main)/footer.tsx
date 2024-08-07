@@ -26,10 +26,10 @@ export const Footer: FC = () => {
           <div className={styles.column0}>
             <div className="mb-4"><Logo height={22} /></div>
             <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
-            <Link href="/free-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
+            <Link href="/free-course-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
           </div>
           <div className={styles.column1}>
-            <h3 className={`h6 ${styles.columnHeader}`}><Link href="/online-event-courses">Popular Courses</Link></h3>
+            <h3 className={`h6 ${styles.columnHeader}`}><Link href="/online-courses">Popular Courses</Link></h3>
             <ul className={styles.linkList}>
               <FooterColumn1 />
             </ul>

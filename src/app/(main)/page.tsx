@@ -6,12 +6,11 @@ import type { FC, PropsWithChildren } from 'react';
 import type { PageComponent } from '../serverComponent';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
-import NetworkBackgroundImageDesktop from './network-associations-bg-desktop.jpg';
-import NetworkBackgroundImageMobile from './network-associations-bg-mobile.jpg';
 import styles from './page.module.scss';
 import WhyQCImage from './why-qc.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
+import { DesignNetworksSection } from '@/components/designNetworksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
@@ -118,18 +117,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section style={{ backgroundColor: '#4c99fd' }} className="pb-0 pb-lg-s">
-      <Image src={NetworkBackgroundImageDesktop} placeholder="blur" alt="" fill sizes="100vw" style={{ objectFit: 'cover' }} className="d-none d-lg-block" />
-      <div className="container text-white">
-        <div className="row justify-content-end g-s">
-          <div className="col-12 col-lg-6">
-            <h2 className="h3 mb-3">Explore Professional Design Networks</h2>
-            <p className="mb-0">QC Design School connects you to the heart of the design world, with affiliations to top industry associations across North America. Elevate your professional profile, network with leaders, and access exclusive resources through these esteemed organizations.</p>
-          </div>
-        </div>
-      </div>
-      <Image src={NetworkBackgroundImageMobile} placeholder="blur" alt="" className="d-lg-none" style={{ width: '100%', height: 'auto' }} />
-    </section>
+    <DesignNetworksSection />
     <section>
       <div className="container">
         <div className="row justify-content-center">
