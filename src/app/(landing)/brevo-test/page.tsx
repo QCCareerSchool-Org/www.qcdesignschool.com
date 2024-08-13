@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: 'Free Catalog - QC Design School',
 };
 
+const brevoListId = 7;
+const brevoEmailTemplateId = 33;
+
 const FreeCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
   const gclid = getParam(searchParams.gclid);
@@ -46,8 +49,9 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
                   <h3 className="h6 mb-4 text-navy">Download the Course Catalog</h3>
                   <div className={styles.formWrapper}>
                     <BrevoForm
-                      successLocation="https://www-qcdesignschool-com.vercel.app/thank-you-interior-decorating-course-catalog"
-                      listId={7}
+                      successLocation={`${process.env.DOMAIN}/thank-you-interior-decorating-course-catalog`}
+                      listId={brevoListId}
+                      emailTemplateId={brevoEmailTemplateId}
                       countryCode={countryCode}
                       provinceCode={provinceCode}
                       gclid={gclid}

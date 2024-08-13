@@ -10,6 +10,7 @@ import DownloadIcon from '@/components/icons/download.svg';
 type Props = {
   successLocation: string;
   listId: number;
+  emailTemplateId?: number;
   countryCode: string;
   provinceCode: string | null;
   buttonText?: string;
@@ -22,6 +23,7 @@ type Props = {
   utmCampaign?: string;
   utmContent?: string;
   utmTerm?: string;
+  courseCodes?: string[];
 };
 
 export const BrevoForm: FC<Props> = props => {
@@ -55,13 +57,15 @@ export const BrevoForm: FC<Props> = props => {
       <input type="hidden" name="listId" value={props.listId} />
       <input type="hidden" name="countryCode" value={props.countryCode} />
       <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
+      {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
+      {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
       {props.utmMedium && <input type="hidden" name="utmMedium" value={props.utmMedium} />}
       {props.utmCampaign && <input type="hidden" name="utmCampaign" value={props.utmCampaign} />}
-      {props.utmContent && <input type="hidden" name="utmSource" value={props.utmContent} />}
-      {props.utmTerm && <input type="hidden" name="utmSource" value={props.utmTerm} />}
+      {props.utmContent && <input type="hidden" name="utmContent" value={props.utmContent} />}
+      {props.utmTerm && <input type="hidden" name="utmTerm" value={props.utmTerm} />}
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}firstName`} className="form-label">Name</label>}
         <input onChange={handleFirstNameChange} value={firstName} type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
