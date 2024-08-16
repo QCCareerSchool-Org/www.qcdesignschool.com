@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { ChatLink } from '@/components/chat';
 import { GetStartedSection } from '@/components/getStartedSection';
-import BarChartIcon from '@/components/icons/bar-chart.svg';
 import EnvelopeIcon from '@/components/icons/envelope.svg';
 import MapIcon from '@/components/icons/map.svg';
 import PhoneIcon from '@/components/icons/phone.svg';
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const iconHeight = 32;
 
-const AboutPage: PageComponent = () => (
+const ContactPage: PageComponent = () => (
   <div>
     <section>
       <div className="container">
@@ -43,7 +43,7 @@ const AboutPage: PageComponent = () => (
             <MapIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
             <h2 className="h4">Chat</h2>
             <p>Have an urgent question? Our Student Support Specialists are standing by for a quick chat!</p>
-            <a href="" className={styles.blackLink}>Chat with Support</a>
+            <ChatLink color="black" />
           </div>
         </div>
       </div>
@@ -56,4 +56,4 @@ const AboutPage: PageComponent = () => (
   </div>
 );
 
-export default AboutPage;
+export default ContactPage;
