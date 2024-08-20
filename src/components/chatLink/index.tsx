@@ -1,12 +1,12 @@
 'use client';
 
-import type { FC, MouseEventHandler } from 'react';
+import type { CSSProperties, FC, MouseEventHandler } from 'react';
 
-interface ChatLinkProps {
-  color?: string;
+interface Props {
+  color?: CSSProperties['color'];
 }
 
-export const ChatLink: FC<ChatLinkProps> = ({ color }) => {
+export const ChatLink: FC<Props> = ({ color }) => {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
     window.LC_API?.open_chat_window?.();
