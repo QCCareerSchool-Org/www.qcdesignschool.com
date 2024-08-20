@@ -51,7 +51,7 @@ const ContactPage: PageComponent = () => (
     <GetStartedSection
       title="Ready to Enroll?"
       text="You can get started with QC Design School whenever you like! When you enroll, you'll receive a login to the Online Student Center where you can access your course online."
-      buttonText="Enroll Today"
+      buttonText="Enroll Online"
     />
   </div>
 );
