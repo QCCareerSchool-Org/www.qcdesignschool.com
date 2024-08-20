@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import { ChatLink } from '@/components/chat';
+import { ChatLink } from '@/components/chatLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import EnvelopeIcon from '@/components/icons/envelope.svg';
 import MapIcon from '@/components/icons/map.svg';
@@ -17,7 +17,8 @@ const iconHeight = 32;
 
 const ContactPage: PageComponent = () => {
   const { countryCode } = getData();
-  return (
+
+  return(
     <div>
       <section>
         <div className="container">
@@ -39,13 +40,13 @@ const ContactPage: PageComponent = () => {
               <PhoneIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
               <h2 className="h4">Phone</h2>
               <p>Connect with a student advisor for guidance on enrolling with QC or assistance with your courses and assignments.</p>
-              <TelephoneLink className={styles.blackLink} countryCode={countryCode} />
+              <TelephoneLink countryCode={countryCode} className={styles.blackLink} />
             </div>
             <div className="col-12 col-md-8 col-lg-4 text-center">
               <MapIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
               <h2 className="h4">Chat</h2>
               <p>Have an urgent question? Our Student Support Specialists are standing by for a quick chat!</p>
-              <ChatLink color="black" />
+              <ChatLink className={styles.blackLink} />
             </div>
           </div>
         </div>
