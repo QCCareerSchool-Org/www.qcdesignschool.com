@@ -25,9 +25,7 @@ const ContactPage: PageComponent = () => {
             <div className="col-12 col-md-10 col-lg-7 text-center">
               <p className="text-primary fw-bold">We want to hear from you!</p>
               <h1>Contact Us</h1>
-              <p className="mb-0">
-                Whether you're a prospective student curious about QC's courses or tuition, or a current student with questions about an assignment, we're here to assist you in any way possible.
-              </p>
+              <p className="mb-0">Whether you're a prospective student curious about QC's courses or tuition, or a current student with questions about an assignment, we're here to assist you in any way possible.</p>
             </div>
           </div>
           <div className="row justify-content-center g-4 g-lg-s">
