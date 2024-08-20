@@ -1,0 +1,5 @@
+// linking like this <a href="#headerId"> shouldn't hide the element under the nav
+// this class fixed that (if the size of the nav changes, it may need to be adjusted)
+.scrollMarginTop {
+	scroll-margin-top: 100px;
+}
