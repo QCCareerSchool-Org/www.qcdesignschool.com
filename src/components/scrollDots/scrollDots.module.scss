@@ -1,0 +1,24 @@
+.dot {
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  margin: 0 10px;
+}
+
+.dot:hover {
+  cursor: pointer;
+}
+
+.activeDot {
+  background-color: var(--qc-color-primary);
+}
+
+.arrowIcon {
+  height: 25px;
+  margin: 0 10px;
+}
+
+.arrowIcon:hover {
+  cursor: pointer;
+}
