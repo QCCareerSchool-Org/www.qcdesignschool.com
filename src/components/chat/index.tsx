@@ -12,5 +12,5 @@ export const ChatLink: FC<ChatLinkProps> = ({ color }) => {
     window.LC_API?.open_chat_window?.();
   };
 
-  return <a onClick={handleClick} href="#" style={{ color: color }}>Chat with Support</a>;
+  return <a onClick={handleClick} href="#" style={{ color }}>Chat with Support</a>;
 };
