@@ -7,31 +7,27 @@ import PatriziaBolandImage from '@/components/tutors/patrizia.jpg';
 export const tutors = [
   {
     name: 'Angie Chapman',
-    subHeading: 'Principal at Experience Events and Managing Director, Ingenuity Cleveland',
-    text: 'Alyssa has over a decade of event operations experience ranging from leading multinational business-to-business conferences, festivals and tradeshows, press conferences, large-scale fundraisers, complex social events and more.',
+    text: 'Award-winning interior design consultant and QC tutor Angie Chapman has always loved all aspects of interior design, decorating and architecture. After receiving diplomas in both Interior Design and Decorating and Home Staging from the Sheffield School of Interior Design, Angie started her own business, Interiors Just for You, in Peterborough, Ontario in 1998.',
     src: AngieChapmanImage,
   },
   {
     name: 'Ivy Ellerby',
-    subHeading: 'Owner and Manager of Imagine Events, Wedding and Event Planning',
-    text: 'Angela became certified as an event and wedding planner in 2009, and graduated from QC Event School as an International Wedding Planning Professional. Now, Angela has over 10 successful years in business leading her own company and has worked for multiple non-profit organizations, bringing knowledge and experience to her role as an event planner.',
+    text: 'For Accredited Staging Professional and Advanced Feng Shui Design Professional Ivy Ellerby, the inspiration to pursue a design career started at a very young age. Ivy\'s background in clinical and experimental psychology allows her to use feng shui to increase harmony and balance in her clients\' homes.',
     src: IvyEllerbyImage,
   },
   {
     name: 'Christina Kittelstad',
-    text: 'An event & wedding planner with over 20 years in event management, Heather has produced a vast array of events in her diverse career, including hosting First Lady Michelle Obama at Spelman\'s Commencement.',
+    text: 'Christina Kittelstad is an accomplished color expert and owner of Spiral Design Color Consulting in Lakewood, Colorado. Through her lifelong passion for all things color, Christina brings a high level of creativity, professionalism, and talent to every project. She partners with residential and commercial clients and is best known for creating beautiful, functional spaces on any budget. She provides clients with a strong sense of style and personality that is uniquely their own.',
     src: ChristineKittelstadImage,
   },
   {
     name: 'Patrizia Boland',
-    subHeading: 'Owner of Grazie Gifts With over 9 years of experience',
-    text: 'Anita thrives on the challenge of creating proposals within budget, and coordinating entire themed events starting from the simplest spark of inspiration.',
+    text: 'Designing interiors and my beautiful family are the two greatest passions in Patrizia\'s life. Patrizia graduated from QC Design School as a certified International Design and Decorating Professional and went on to launch Boland Designs. Her approach to design is to take a holistic view of the client\'s entire space and how they wish to live in it. Patrizia enjoys helping transform her client\'s space into a beautiful environment that reflects their personality and functionality.',
     src: PatriziaBolandImage,
   },
   {
     name: 'Jane Lockhart',
-    subHeading: 'Owner and lead planner for Ashley Brooke Weddings',
-    text: 'With 10 years of experience in the wedding industry, she specializes in wedding planning, design and coordination and loves being able to create weddings that are unique to each of her couples.',
+    text: 'Many will recognize Jane from her television show, Color Confidential, which airs on both HGTV and W Network. Jane uses both her design expertise and kind demeanor to help people overcome their fear of color. As the host of QC Design School\'s Color Consultant course videos, Jane teaches students how to use the color wheel in order to help clients choose the best colors for their home. She demonstrates how to conduct a professional color consultation, as well as how to build a strong relationship between art and design in the home.',
     src: JaneLockhartImage,
   },
 ];

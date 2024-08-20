@@ -17,11 +17,11 @@ const TutorsPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12 col-xl-10 col-xxl-8 text-xl-center">
             <h1 className="mb-3">QC Design School Tutors</h1>
-            <p className="lead mb-0">Once you enroll with QC Design School, you'll be matched with a personal tutor who will review your work and provide you with in-depth feedback and advice. Our accomplished tutors have years of experience in the event industry and are eager to share their professional insights with you.</p>
+            <p className="lead mb-0">Once you enroll with QC Design School, you'll be matched with a personal tutor who will review your work and provide you with in-depth feedback and advice. Our accomplished tutors have years of experience in the industry and are eager to share their professional insights with you.</p>
           </div>
           {tutors.map((t, i) => (
             <div key={i} className="col-12">
-              <Blurb name={t.name} subHeading={t.subHeading} text={t.text} src={t.src} priority={i <= 1} />
+              <Blurb name={t.name} text={t.text} src={t.src} priority={i <= 1} />
             </div>
           ))}
         </div>
