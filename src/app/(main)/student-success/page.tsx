@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { StudentFeatureSection } from '@/components/studentFeatureSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ const StudentSuccessPage: PageComponent = () => {
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} title="What our Students and Grads are Saying" className="bg-light" />
-      <StudentFeatureSection testimonials={testimonialIds} />
+      <CarouselSection />
       <GetStartedSection
         title="Ready to Start Your Career in Design?"
       />
