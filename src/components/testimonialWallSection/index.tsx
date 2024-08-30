@@ -14,13 +14,14 @@ type Props = {
   hideHeading?: boolean;
 };
 
-export const TestimonialWallSection: FC<Props> = ({ h, title, courseCodes, testimonialIds, className, hideHeading }) => (
+export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading }) => (
   <section className={className}>
     <div className="container">
       {!hideHeading && (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
-            <h2 className={`mb-4 ${headerClass(h)}`}>{title ?? 'Hear From Students and Grads'}</h2>            <p className="lead mb-5">We've helped 8000+ students and graduates start their own successful event and wedding planning business!</p>
+            <h2 className={`mb-4 ${headerClass(h)}`}>{'Hear From Students and Grads'}</h2>
+            <p className="lead mb-5">We've helped 8000+ students and graduates start their own successful event and wedding planning business!</p>
           </div>
         </div>
       )}
