@@ -1,0 +1,11 @@
+.moneyBackHeader {
+  font-size: 1.125rem;
+  color: var(--qc-color-dark-gold);
+  text-transform: uppercase;
+}
+
+.page {
+  .whyQCImage {
+    margin-bottom: -12.5%; // to account for the drop shadow
+  }
+}

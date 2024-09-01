@@ -1,8 +1,4 @@
-import type { Metadata } from 'next';
-import Image from 'next/image';
-import type { PageComponent } from '../../serverComponent';
-import { OutlineSection } from './_outlineSection';
-import WhatYoullLearnImage from './images/what-youll-learn.jpg';
+import type { FC } from 'react';
 import styles from './page.module.scss';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { CertificationSection } from '@/components/certificationSection';
@@ -14,45 +10,15 @@ import { AngieChapmanCircle } from '@/components/tutors/angieChapman';
 import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
-export const metadata: Metadata = {
-  title: 'Become a Home Designer - QC Design School',
+type Props = {
+  IntroSection: FC;
+  OutlineSection: FC;
+  testimonialIds: string[];
 };
 
-const testimonialIds = [
-  'TD-0001',
-  'TD-0002',
-  'TD-0003',
-  'TD-0004',
-  'TD-0005',
-  'TD-0006',
-];
-
-const BecomeAHomeDesignerPage: PageComponent = () => (
+export const OnlineCoursePageRM: FC<Props> = ({ IntroSection, OutlineSection, testimonialIds }) => (
   <div>
-    <section>
-      <div className="container">
-        <div className="row justify-content-center g-5 align-items-center">
-          <div className="col-12 col-lg-7 mb-3">
-            <h1>Launch Your Career in Home Staging</h1>
-            <p className="lead">Learn online and become a Certified Home Stager with QC's professional courses. With QC's Home Staging Course, you'll receive:</p>
-            <ul>
-              <li>Professional and industry-leading content</li>
-              <li>An International Staging and Redesign Professional (ISRP™) double certification</li>
-              <li>Full business training to prepare you for a new career</li>
-              <li>14 full-color home staging and redesign lesson books, and 3 bonus online texts</li>
-              <li>A professional starter kit which includes a set of watercolor paints, a furniture template, a scale ruler, a paintbrush, and more!</li>
-              <li>One-on-one mentoring throughout your course</li>
-              <li>50% off all additional courses so you can continue mastering your skills</li>
-            </ul>
-          </div>
-          <div className="col-10 col-sm-7 col-lg-5">
-            <div className={styles.imageContainer}>
-              <Image src={WhatYoullLearnImage} alt="" className={styles.mainImage} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <IntroSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection
@@ -63,7 +29,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
       <div className="container">
         <div className="row mb-5">
           <div className="col-12 col-md-10 col-lg-7">
-            <h2>Meet Your Home Staging Experts</h2>
+            <h2>Meet Your Interior Design Experts</h2>
             <p className="lead mb-0">QC is proud to work with leaders of the global design industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring designers around the globe.</p>
           </div>
         </div>
@@ -83,7 +49,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
     </section>
     <OutlineSection />
     <CareerEssentialsKitSection />
-    <TestimonialSection id="TD-0001" />
+    <TestimonialSection id={testimonialIds[0]} />
     <section className="bg-light">
       <div className="container">
         <div className="row justify-content-center">
@@ -102,5 +68,3 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
     />
   </div>
 );
-
-export default BecomeAHomeDesignerPage;
