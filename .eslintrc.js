@@ -118,6 +118,7 @@ module.exports = {
     'object-curly-newline': 'error',
     'object-curly-spacing': 'off', // handled by @typescript-eslint plugin
     'object-property-newline': [ 'error', { allowAllPropertiesOnSameLine: true } ],
+    'object-shorthand': 'error',
     'one-var': [ 'error', 'never' ],
     'padding-line-between-statements': [
       'error',

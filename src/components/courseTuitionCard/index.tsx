@@ -10,6 +10,7 @@ import styles from './index.module.scss';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
+import { getData } from '@/lib/getData';
 
 type Props = {
   courseCode: CourseCode;
@@ -22,7 +23,8 @@ type Props = {
 };
 
 export const CourseTuitionCard: FC<Props> = async props => {
-  const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode: 'ca', provinceCode: 'on' }) : null;
+  const { countryCode, provinceCode } = getData();
+  const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode, provinceCode: provinceCode ?? undefined }) : null;
   const enrollLink = `https://enroll.qcdesignschool.com?c=${encodeURIComponent(props.courseCode)}`;
   return (
     <div className={`${styles.courseCard} card`}>
