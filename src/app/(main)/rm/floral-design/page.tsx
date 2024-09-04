@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import type { FC } from 'react';
 import { OutlineSection } from '../../online-courses/floral-design/_outlineSection';
+import WhyQCImage from '../../online-courses/floral-design/what-youll-learn.jpg';
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
-import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
