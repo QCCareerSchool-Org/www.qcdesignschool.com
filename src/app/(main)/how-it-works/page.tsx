@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+
 import Link from 'next/link';
+import { CertificationSection } from '../online-courses/interior-decorating/certificationSection';
 import type { PageComponent } from '@/app/serverComponent';
-import { CertificationSectionSmall } from '@/components/certifications/interior-decorating';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
@@ -14,13 +15,13 @@ const HowItWorksPage: PageComponent = () => {
     <div>
       <section>
         <div className="container">
-          <div className="row justify-content-center align-items-center mb-5 g-4">
+          <div className="row justify-content-center g-s">
             <div className="col-12 col-lg-6">
-              <h1>How QC's Online Design Training Works</h1>
+              <h1 className="h2 mb-4">How QC's Online Design Training Works</h1>
               <p className="mb-0">QC Design School's online courses provide you with a classroom-like education from the comforts of your home. Life can be hectic, and that's why online courses can be completed on your own time and at your own pace. QC offers home design classes that provide students with hands-on training and personal feedback every step of the way.</p>
             </div>
             <div className="col-12 col-lg-6">
-              <ul className="row g-3">
+              <ul className="mb-0">
                 <li className="col-12">Each <Link href="/online-courses" className="text-decoration-none">online design course</Link> comes with digital texts, video tutorials, plus customizable business forms and templates.</li>
                 <li className="col-12">You'll complete theory-based AND practical assignments, and submit them directly to QC's Online Student Center. Your tutor, who is an expert in the design industry, reviews your work and provides you with detailed audio feedback and a letter grade.</li>
                 <li className="col-12">Contact the Student Support Team whenever you need additional help or advice with QC's design courses.</li>
@@ -50,14 +51,12 @@ const HowItWorksPage: PageComponent = () => {
             </div>
           </div>
         </div>
-
       </section>
-      <CertificationSectionSmall />
+      <CertificationSection />
       <GetStartedSection
         title="Start Your Design Career Today!"
         text="It's never too late to start a career you'll love. Enroll in an online course with QC and become a certified design professional today!"
         buttonText="View Courses"
-        buttonHref="/online-courses"
       />
     </div>
   );
