@@ -3,12 +3,13 @@ import type { FC } from 'react';
 
 export const FooterColumn1: FC = () => (
   <>
-    <li><Link href="/online-event-courses/event-and-wedding-planning">Event &amp; Wedding Planning</Link></li>
-    <li><Link href="/online-event-courses/corporate-event-planning">Corporate Event Planning</Link></li>
-    <li><Link href="/online-event-courses/wedding-planning">Wedding Planning</Link></li>
-    <li><Link href="/online-event-courses/event-decor">Event Decor</Link></li>
-    <li><Link href="/online-event-courses/floral-design">Floral Design</Link></li>
-    <li><Link href="/online-event-courses/luxury-wedding-and-event-planning">Luxury Wedding<span className="d-lg-none d-xl-inline"> &amp; Event</span> Planning</Link></li>
-    <li><Link href="/online-event-courses/destination-wedding-planning">Destination Wedding Planning</Link></li>
+    <li><Link href="/online-courses/interior-decorating">Interior Decorating</Link></li>
+    <li><Link href="/online-courses/home-staging">Home Staging</Link></li>
+    <li><Link href="/online-courses/landscape-design">Landscape Design</Link></li>
+    <li><Link href="/online-courses/feng-shui-design">Feng Shui Design</Link></li>
+    <li><Link href="/online-courses/professional-organizing">Professional Organizing</Link></li>
+    <li><Link href="/online-courses/event-decor">Event Decor</Link></li>
+    <li><Link href="/online-courses/color-consultant">Color Consultant</Link></li>
+    <li><Link href="/online-courses/floral-design">Floral Design</Link></li>
   </>
 );
