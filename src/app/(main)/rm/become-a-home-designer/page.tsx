@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
-import type { PageComponent } from '../../serverComponent';
+import type { PageComponent } from '../../../serverComponent';
 import { InfoSection } from './infoSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import { GetStartedSection } from '@/components/getStartedSection';
