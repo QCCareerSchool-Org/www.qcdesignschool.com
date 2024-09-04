@@ -7,6 +7,7 @@ import WhyQCImage from '../../online-courses/feng-shui-design/what-youll-learn.j
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/feng-shui';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course - QC Design School',
@@ -41,6 +42,7 @@ const FengShuiDesignPage: PageComponent = () => (
   <OnlineCoursePageRM
     testimonialIds={testimonialIds}
     OutlineSection={OutlineSection}
+    CertificationSection={CertificationSection}
     IntroSection={IntroSection}
   />
 );

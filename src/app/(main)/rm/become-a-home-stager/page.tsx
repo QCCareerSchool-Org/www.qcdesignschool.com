@@ -6,6 +6,7 @@ import WhyQCImage from '../../online-courses/home-staging/what-youll-learn.jpg';
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/home-staging';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer - QC Design School',
@@ -49,6 +50,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
   <OnlineCoursePageRM
     testimonialIds={testimonialIds}
     OutlineSection={OutlineSection}
+    CertificationSection={CertificationSection}
     IntroSection={IntroSection}
   />
 );

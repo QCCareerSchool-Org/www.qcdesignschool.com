@@ -6,6 +6,7 @@ import WhyQCImage from '../../online-courses/color-consultant/what-youll-learn.j
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/color-consultant';
 
 export const metadata: Metadata = {
   title: 'Color Consultant Course - QC Design School',
@@ -40,6 +41,7 @@ const ColorConsultantPage: PageComponent = () => (
   <OnlineCoursePageRM
     testimonialIds={testimonialIds}
     OutlineSection={OutlineSection}
+    CertificationSection={CertificationSection}
     IntroSection={IntroSection}
   />
 );

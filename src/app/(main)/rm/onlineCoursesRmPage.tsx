@@ -1,7 +1,6 @@
 import type { FC } from 'react';
 import styles from './page.module.scss';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import { CertificationSection } from '@/components/certificationSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import ShieldIcon from '@/components/icons/shield.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
@@ -13,18 +12,16 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 type Props = {
   IntroSection: FC;
   OutlineSection: FC;
+  CertificationSection: FC;
   testimonialIds: string[];
 };
 
-export const OnlineCoursePageRM: FC<Props> = ({ IntroSection, OutlineSection, testimonialIds }) => (
+export const OnlineCoursePageRM: FC<Props> = ({ IntroSection, OutlineSection, CertificationSection, testimonialIds }) => (
   <div>
     <IntroSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
-    <VirtualCommunitySection
-      text="We're here to inspire, inform, and innovate your educational journey. Discover the vibrant heart of our Virtual Community, where students and graduates connect to mentor, share insights, and grow together. Tap into free webinars for deep dives into design and industry secrets, and join lively chats for discussions that range from studies to career paths."
-      callToAction="Join us in shaping the future of design innovation."
-    />
+    <VirtualCommunitySection />
     <section className="bg-light">
       <div className="container">
         <div className="row mb-5">

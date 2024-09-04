@@ -6,6 +6,7 @@ import WhyQCImage from '../../online-courses/professional-organizing/what-youll-
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/professional-organizing';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course - QC Design School',
@@ -40,6 +41,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
   <OnlineCoursePageRM
     testimonialIds={testimonialIds}
     OutlineSection={OutlineSection}
+    CertificationSection={CertificationSection}
     IntroSection={IntroSection}
   />
 );

@@ -6,6 +6,7 @@ import WhyQCImage from '../../online-courses/interior-decorating/what-youll-lear
 import { OnlineCoursePageRM } from '../onlineCoursesRmPage';
 import styles from '../page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/interior-decorating';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating Course - QC Design School',
@@ -40,6 +41,7 @@ const InteriorDecoratingPage: PageComponent = () => (
   <OnlineCoursePageRM
     testimonialIds={testimonialIds}
     OutlineSection={OutlineSection}
+    CertificationSection={CertificationSection}
     IntroSection={IntroSection}
   />
 );
