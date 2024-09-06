@@ -11,9 +11,10 @@ type Props = {
   testimonialIds: string[];
   className?: string;
   hideHeading?: boolean;
+  title?: string;
 };
 
-export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading }) => (
+export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading, title }) => (
   <section className={className}>
     <div className="container">
       {!hideHeading && (
