@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Blurb } from './blurb';
-import { CommunitySection } from './communitySection';
 import { tutors } from './tutorInformation';
 import type { PageComponent } from '@/app/serverComponent';
 import { TestimonialSection } from '@/components/testimonialSection';
+import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
 export const metadata: Metadata = {
   title: 'Tutors - QC Event School',
@@ -27,7 +27,7 @@ const TutorsPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <CommunitySection />
+    <VirtualCommunitySection />
     <TestimonialSection id="TD-0013" />
     <section className="bg-navy text-white">
       <div className="container">
