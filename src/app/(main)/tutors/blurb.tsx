@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import styles from './blurb.module.css';
+import styles from './blurb.module.scss';
 
 type Props = {
   name: string;
