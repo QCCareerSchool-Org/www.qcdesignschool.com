@@ -19,7 +19,7 @@ const portfolioImages = [
   { src: Image06 },
 ];
 
-export const GiannaLucheseShowcase: FC = () => (
+export const GiannaLucheseShowcase = (
   <Showcase
     name="Gianna Luchese"
     credentials="Event & Wedding Planning"
