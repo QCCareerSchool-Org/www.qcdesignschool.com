@@ -1,19 +1,22 @@
 'use client';
 
-import type { FC } from 'react';
-import { memo, useCallback, useState } from 'react';
+import type { FC, ReactNode } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 
 import { CarouselNav } from './CarouselNav';
 import styles from './index.module.scss';
 import { SlideContainer } from './SlideContainer';
+import ArrowImage from '@/components/icons/right-arrow-thin.svg';
 
 type Props = {
-  slides: FC[];
+  slides: ReactNode[];
+  sideArrows?: boolean;
 };
 
-export const Carousel: FC<Props> = memo(({ slides }) => {
+export const Carousel: FC<Props> = memo(({ slides, sideArrows }) => {
   const numPages = slides.length;
   const [ currentPage, setCurrentPage ] = useState(0);
+  const [ arrowOverride, setArrowOverride ] = useState<boolean>();
   const [ heights, setHeights ] = useState<number[]>(new Array(numPages).fill(0));
 
   const handleNext = useCallback((): void => {
@@ -36,14 +39,38 @@ export const Carousel: FC<Props> = memo(({ slides }) => {
     });
   }, []);
 
-  const maxHeight = heights.reduce((prev, cur) => (cur > prev ? cur : prev), 0);
+  useEffect(() => {
+    const handleResize = (): void => {
+      setArrowOverride(window.innerWidth < 768);
+    };
 
+    // Add event listener to handle window resize
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const maxHeight = heights.reduce((prev, cur) => (cur > prev ? cur : prev), 0);
   return (
     <>
       <div className={styles.slideWrapper} style={{ height: maxHeight }}>
         {slides.map((Slide, i) => (
           <SlideContainer key={i} show={currentPage === i} index={i} onHeightChange={handleHeightChange}>
-            <Slide />
+            {(sideArrows && !arrowOverride) &&
+              <span>
+                <ArrowImage onClick={handlePrev} alt="Prev" className={styles.arrowImage} style={{ transform: 'scaleX(-1)' }} />
+              </span>
+            }
+            {Slide}
+            {(sideArrows && !arrowOverride) &&
+              <span>
+                <ArrowImage onClick={handleNext} alt="Next" className={styles.arrowImage} />
+              </span>
+            }
+
           </SlideContainer>
         ))}
       </div>
@@ -54,6 +81,7 @@ export const Carousel: FC<Props> = memo(({ slides }) => {
           onNext={handleNext}
           onPrev={handlePrev}
           onClick={handleClick}
+          disableArrows={(sideArrows && !arrowOverride)}
         />
       </div>
     </>

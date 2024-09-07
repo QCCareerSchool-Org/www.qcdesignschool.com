@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Carousel } from '@/components/carousel';
 import { CherelleJosephShowcase } from '@/components/showcase/cherelleJoseph';
@@ -9,7 +9,7 @@ import { JennaPelcherShowcase } from '@/components/showcase/jenna-pelcher';
 import { MadysonBellShowcase } from '@/components/showcase/madyson-bell';
 import { TazmanBakerShowcase } from '@/components/showcase/tazman-baker';
 
-const slides = [ CherelleJosephShowcase, JennaPelcherShowcase, MadysonBellShowcase, TazmanBakerShowcase, GiannaLucheseShowcase ];
+const slides: ReactNode[] = [ CherelleJosephShowcase, JennaPelcherShowcase, MadysonBellShowcase, TazmanBakerShowcase, GiannaLucheseShowcase ];
 
 export const CarouselSection: FC = () => (
   <section>

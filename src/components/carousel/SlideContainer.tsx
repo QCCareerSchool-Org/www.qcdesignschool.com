@@ -34,7 +34,7 @@ export const SlideContainer: FC<PropsWithChildren<Props>> = ({ show, index, onHe
   }, [ onHeightChange ]);
 
   return (
-    <div ref={ref} className={`${styles.slideContainer} ${show ? styles.show : undefined}`}>
+    <div ref={ref} className={`${styles.slideContainer} ${show ? styles.show : undefined} d-flex align-items-center`}>
       {children}
     </div>
   );
