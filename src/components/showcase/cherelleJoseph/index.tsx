@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 import Image1 from './1.jpg';
 import Image2 from './2.jpg';
 import Image3 from './3.jpg';

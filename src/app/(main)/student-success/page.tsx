@@ -31,7 +31,7 @@ const StudentSuccessPage: PageComponent = () => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} title="What our Students and Grads are Saying" className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <CarouselSection />
       <GetStartedSection
         title="Ready to Start Your Career in Design?"
