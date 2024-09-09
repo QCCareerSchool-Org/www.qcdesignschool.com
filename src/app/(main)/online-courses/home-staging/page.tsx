@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
+import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import { CertificationSection } from '@/components/certifications/home-staging';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
@@ -16,8 +17,6 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { AngieChapmanCircle } from '@/components/tutors/angieChapman';
-import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -86,28 +85,7 @@ const HomeStagingPage: PageComponent = () => (
     <CertificationSection />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-12 col-md-10 col-lg-7">
-            <h2>Meet Your Home Staging Experts</h2>
-            <p className="lead mb-0">QC is proud to work with leaders of the global design industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring designers around the globe.</p>
-          </div>
-        </div>
-        <div className="row g-5 g-lg-s">
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><JaneLockhartCircle /></div>
-            <h3 className="h4">Jane Lockhart</h3>
-            <p className="mb-0">Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline.</p>
-          </div>
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><AngieChapmanCircle /></div>
-            <h3 className="h4">Angie Chapman</h3>
-            <p className="mb-0">Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become an sought-after designer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

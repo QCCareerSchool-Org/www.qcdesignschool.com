@@ -2,22 +2,21 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
+import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import { CertificationSection } from '@/components/certifications/feng-shui';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import TutorImage from '@/components/tutors/ivyEllerbyCollage-transparent.png';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -85,13 +84,7 @@ const FengShuiDesignPage: PageComponent = () => (
     <CertificationSection />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <SingleTutorSection
-      courseName="Feng Shui"
-      description="Accredited Staging Professional, Advanced Feng Shui Design Professional, and consultant at Eastern Design and Home Staging, Ivy Ellerby blends her background in clinical and experimental psychology to enhance harmony and balance in homes."
-      src={TutorImage}
-      alt="Ivy Ellerby"
-      className="bg-light"
-    />
+    <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
