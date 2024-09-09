@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+
 import { Blurb } from './blurb';
 import { tutors } from './tutorInformation';
 import type { PageComponent } from '@/app/serverComponent';
@@ -21,7 +22,7 @@ const TutorsPage: PageComponent = () => (
           </div>
           {tutors.map((t, i) => (
             <div key={i} className="col-12">
-              <Blurb name={t.name} text={t.text} src={t.src} priority={i <= 1} />
+              <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
             </div>
           ))}
         </div>

@@ -7,12 +7,12 @@ import styles from './blurb.module.scss';
 type Props = {
   name: string;
   subHeading?: string;
-  text: string;
+  description: string;
   src: StaticImageData;
   priority?: boolean;
 };
 
-export const Blurb: FC<Props> = ({ name, subHeading, text, src, priority }) => (
+export const Blurb: FC<Props> = ({ name, subHeading, description: text, src, priority }) => (
   <div className={styles.blurb}>
     <div className={styles.content}>
       <h2 className="h3 mb-2 mb-xl-3">{name}</h2>
