@@ -1,4 +1,5 @@
 import type { StaticImageData } from 'next/image';
+
 import AngieChapmanImage from '@/components/tutors/angieChapman.jpg';
 import ChristineKittelstadImage from '@/components/tutors/christina.jpg';
 import IvyEllerbyImage from '@/components/tutors/ivyEllerby.jpg';
