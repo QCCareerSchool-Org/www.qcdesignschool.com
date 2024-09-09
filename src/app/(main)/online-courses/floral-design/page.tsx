@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
-import CertificationBackgroundImage from './cert-bg.jpg';
+import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import CertificationLogo from '@/components/certificationLogos/ifdp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
@@ -17,8 +17,6 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { MwaiYeboahCircle } from '@/components/tutors/mwaiYeboah';
-import { ReneeTucciCircle } from '@/components/tutors/reneeTucci';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -83,46 +81,10 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section className="text-white text-shadow">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <div>
-              <CertificationLogo height="200" className="mb-3" alt="International Floral Design Professional (IFDP) certification logo" />
-            </div>
-            <p className="mb-3 small gold">International Floral Design Professional&trade; (IFDP&trade;)</p>
-            <h2 className="text-white mb-3">Your Floral Design Certification</h2>
-            <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Floral Design Professional (IFDP).</p>
-            <p className="mb-0">This certification demonstrates that you have successfully completed professional Floral Design training and that you possess all the skills and knowledge required to create beautiful floral arrangements.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <CertificationSection />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-12 col-md-10 col-lg-7">
-            <h2>Meet Your Floral Design Experts</h2>
-            <p className="lead mb-0">QC is proud to work with leaders of the global design industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring designers around the globe.</p>
-          </div>
-        </div>
-        <div className="row g-5 g-lg-s">
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><ReneeTucciCircle /></div>
-            <h3 className="h4">Renee Tucci</h3>
-            <p className="mb-0">With over 20 years of floral design experience, Renee Tucci, recognized by the American Institute of Floral Designers and Professional Floral Communicators International, is a dedicated instructor in the QC course, guiding students to master the art of floral design.</p>
-          </div>
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><MwaiYeboahCircle /></div>
-            <h3 className="h4">Mwai Yeboah</h3>
-            <p className="mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
