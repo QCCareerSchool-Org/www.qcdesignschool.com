@@ -1,4 +1,3 @@
-import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
@@ -55,7 +54,7 @@ const EnrollmentAgreementGBPage: PageComponent = () => (
     <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with QC. Please contact the School for further details.</p>
     <h2>10. Contact Information</h2>
     <p>QC Quality of Course Ltd.<br />Company Registration Number: 6766876</p>
-    <p>Email: <InfoEmailAddress /><br />Phone: 0800 066 4734</p>
+    <p>Email: info@qccareerschool.com<br />Phone: 0800 066 4734</p>
     <table>
       <tbody>
         <tr>

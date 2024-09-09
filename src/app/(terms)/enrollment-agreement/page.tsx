@@ -1,4 +1,3 @@
-import { InfoEmailAddress } from '../infoEmailAddress';
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 
@@ -55,7 +54,7 @@ const EnrollmentAgreementPage: PageComponent = () => (
     <p>If you are under 18 or under the age of majority in your state/province, you will need a parental consent form in order to enroll with Winghill. Please contact the School for further details.</p>
     <h2>10. Contact Information</h2>
     <p>QC Quality of Course Inc.<br />Corporation Number: 208502-0<br />Business Number (BN): 105927339RC0001</p>
-    <p>Email: <InfoEmailAddress /><br />Phone: 1-613-749-8248</p>
+    <p>Email: info@qccareerschool.com<br />Phone: 1-613-749-8248</p>
     <table>
       <tbody>
         <tr>
