@@ -7,7 +7,6 @@ type HeaderSize = 1 | 2 | 3 | 4 | 5 | 6;
 
 type Props = {
   h?: HeaderSize;
-  title?: string;
   courseCodes?: CourseCode[];
   testimonialIds: string[];
   className?: string;
