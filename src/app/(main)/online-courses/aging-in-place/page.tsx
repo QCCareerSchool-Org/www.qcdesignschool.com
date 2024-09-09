@@ -2,23 +2,21 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
-import CertificationBackgroundImage from './cert-bg.jpg';
+import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import CertificationLogo from '@/components/certificationLogos/apdp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { SingleTutorSection } from '@/components/singleTutorSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import TutorImage from '@/components/tutors/tammyHeartCollage-light.jpg';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -83,30 +81,9 @@ const AgingInPlacePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section className="text-white text-shadow">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <div>
-              <CertificationLogo height="200" className="mb-3" alt="Aging in Place Professional (APDP) certification logo" />
-            </div>
-            <p className="mb-3 small gold">Aging in Place Professional&trade; (APDP&trade;)</p>
-            <h2 className="text-white mb-3">Your Aging in Place Certification</h2>
-            <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of Aging in Place Professional (APDP).</p>
-            <p className="mb-0">This certification demonstrates that you have successfully completed professional aging in place training and that you possess all the skills and knowledge required to create comfortable and functional homes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <CertificationSection />
     <TestimonialSection id="TD-0001" />
-    <SingleTutorSection
-      courseName="Aging in Place"
-      description="Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show."
-      src={TutorImage}
-      alt="Tammy Hart"
-      className="bg-light"
-    />
+    <TutorSection className="bg-light" />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
     <OutlineSection />
