@@ -6,7 +6,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
-  title: 'How it Works - QC Design School',
+  title: 'How It Works - QC Design School',
 };
 
 const HowItWorksPage: PageComponent = () => (
