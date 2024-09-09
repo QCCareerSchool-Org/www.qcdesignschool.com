@@ -10,3 +10,4 @@ export { default as MariannaZimmerman } from './TD-0009-marianna-zimmerman.jpg';
 export { default as DawnMarieClunas } from './TD-0010-dawn-marie-clunas.jpg';
 export { default as ChantalMarion } from './TD-0011-chantal-marion.jpg';
 export { default as BradleyRyanSchlagheck } from './TD-0012-bradley-ryan-schlagheck.jpg';
+export { default as KatherineSnow } from './TD-0013-katherine-snow.jpg';

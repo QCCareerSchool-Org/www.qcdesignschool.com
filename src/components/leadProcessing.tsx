@@ -3,15 +3,15 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
-import { brevoIdentify } from '@/lib/brevo';
+import { brevoIdentifyLead } from '@/lib/brevo';
 import { fbqLead } from '@/lib/fbq';
 import { gaEvent, gaUserData } from '@/lib/gtag';
 import { trustPulseLead } from '@/lib/trustpulse';
 
 type Props = {
   emailAddress?: string;
-  countryCode: string;
-  provinceCode: string | null;
+  countryCode?: string;
+  provinceCode?: string;
   firstName?: string;
   lastName?: string;
   ipAddress?: string;
@@ -40,7 +40,7 @@ export const LeadProcessing: FC<Props> = props => {
       postalCode: null,
       ipAddress: props.ipAddress ?? null,
     });
-    brevoIdentify(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
+    brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
   }, [ props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
 
   return null;
