@@ -1,0 +1,25 @@
+.profileImage {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+.profileImageContainer {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+.profileText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.profileIcon {
+  display: flex;
+  align-items: center;
+}
