@@ -1,8 +1,9 @@
 'use client';
 
-import type { ChangeEventHandler, FC } from 'react';
-import { useCallback, useId, useState } from 'react';
+import type { ChangeEventHandler, FC, FormEventHandler } from 'react';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { v1 } from 'uuid';
 
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
@@ -32,7 +33,9 @@ export const BrevoForm: FC<Props> = props => {
   const [ lastName, setLastName ] = useState('');
   const [ emailAddress, setEmailAddress ] = useState('');
   const [ token, setToken ] = useState<string>();
-  const [ refreshReCaptcha ] = useState(false);
+  const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
+  const submitting = useRef(false);
+  const [ disabled, setDisabled ] = useState(true);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setFirstName(e.target.value);
@@ -50,13 +53,46 @@ export const BrevoForm: FC<Props> = props => {
     setToken(t);
   }, []);
 
+  // Google reCaptcha token expires after 2 minutes
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setRefreshReCaptcha(r => !r);
+    }, 90_000); // 90 seconds
+
+    return (): void => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDisabled(false);
+    }, 1_000);
+
+    return (): void => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  const handleSubmit: FormEventHandler = e => {
+    if (submitting.current || disabled) {
+      e.preventDefault();
+      return false;
+    }
+    submitting.current = true;
+
+    setTimeout(() => { submitting.current = false; }, 10_000);
+
+    return true;
+  };
+
   return (
-    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm}>
+    <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <input type="hidden" name="g-recaptcha-response" value={token} />
+      <input type="hidden" name="school" value="QC Design School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       <input type="hidden" name="listId" value={props.listId} />
-      <input type="hidden" name="countryCode" value={props.countryCode} />
-      <input type="hidden" name="provinceCode" value={props.provinceCode ?? ''} />
+      <input type="hidden" name="nonce" value={v1()} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
@@ -83,7 +119,7 @@ export const BrevoForm: FC<Props> = props => {
           </label>
         </div>
       </div>
-      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );
