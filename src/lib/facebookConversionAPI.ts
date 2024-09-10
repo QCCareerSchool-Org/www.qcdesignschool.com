@@ -1,12 +1,21 @@
+'server only';
+
 import { createHash } from 'crypto';
 
 import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v20.0';
-const datasetId = '520626392908502';
+const datasetId = '5372705592757225';
 const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
 
-export const fbPostPurchase = async (enrollment: Enrollment, eventSourceUrl: string | undefined, clientIPAddress: string | undefined, clientUserAgent: string | undefined, fbc?: string, fbp?: string): Promise<unknown> => {
+export const fbPostPurchase = async (
+  enrollment: Enrollment,
+  eventSourceUrl: string,
+  clientIPAddress: string | null,
+  clientUserAgent: string | null,
+  fbc?: string,
+  fbp?: string,
+): Promise<unknown> => {
   const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
 
   const eventTime = enrollment.transactionTime ?? new Date();
@@ -27,8 +36,8 @@ export const fbPostPurchase = async (enrollment: Enrollment, eventSourceUrl: str
           st: enrollment.provinceCode ? hash(normalizeState(enrollment.provinceCode)) : undefined,
           zp: enrollment.postalCode ? hash(normalizeZipCode(enrollment.postalCode, enrollment.countryCode)) : undefined,
           country: hash(enrollment.countryCode.toLowerCase()),
-          client_ip_address: clientIPAddress, // eslint-disable-line camelcase
-          client_user_agent: clientUserAgent, // eslint-disable-line camelcase
+          client_ip_address: clientIPAddress ?? undefined, // eslint-disable-line camelcase
+          client_user_agent: clientUserAgent ?? undefined, // eslint-disable-line camelcase
           fbc,
           fbp,
         },
@@ -56,7 +65,19 @@ export const fbPostPurchase = async (enrollment: Enrollment, eventSourceUrl: str
   return response.json();
 };
 
-export const fbPostLead = async (eventId: string, eventTime: Date, emailAddress: string, firstName: string | undefined, lastName: string | undefined, countryCode: string | undefined, eventSourceUrl: string | undefined, clientIPAddress: string | undefined, clientUserAgent: string | undefined, fbc?: string, fbp?: string): Promise<unknown> => {
+export const fbPostLead = async (
+  eventId: string,
+  eventTime: Date,
+  emailAddress: string,
+  firstName: string | undefined,
+  lastName: string | undefined,
+  countryCode: string | undefined,
+  eventSourceUrl: string | undefined,
+  clientIPAddress: string | undefined,
+  clientUserAgent: string | undefined,
+  fbc?: string,
+  fbp?: string,
+): Promise<unknown> => {
   const url = `https://graph.facebook.com/${apiVersion}/${datasetId}/events?access_token=${accessToken}`;
 
   const body: { data: LeadConversion[] } = {
@@ -163,6 +184,15 @@ type UserData = {
   fbp?: string;
 };
 
+type LeadConversion = {
+  event_name: 'Lead';
+  event_time: number;
+  action_source: ActionSource;
+  user_data: UserData;
+  event_source_url?: string;
+  event_id: string;
+};
+
 type CustomData = {
   value: number;
   currency: 'CAD' | 'USD' | 'GBP' | 'AUD' | 'NZD';
@@ -174,15 +204,6 @@ type PurchaseConversion = {
   action_source: ActionSource;
   user_data: UserData;
   custom_data: CustomData;
-  event_source_url?: string;
-  event_id: string;
-};
-
-type LeadConversion = {
-  event_name: 'Lead';
-  event_time: number;
-  action_source: ActionSource;
-  user_data: UserData;
   event_source_url?: string;
   event_id: string;
 };
