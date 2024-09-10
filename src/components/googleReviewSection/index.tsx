@@ -1,9 +1,11 @@
 import Image from 'next/image';
 import type { FC } from 'react';
+
 import { Carousel } from '../carousel';
 import { Star } from '../testimonial/star';
-import { default as googleImage } from './googleLogo.png';
+import GoogleImage from './googleLogo.png';
 import styles from './index.module.scss';
+import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 import { reviewData } from './reviewData';
 
@@ -15,13 +17,15 @@ export const GoogleReviewSection: FC = () => (
   </section>
 );
 
-const GoogleReview: FC<ReviewData> = ({ name, reviewText, image }) => (
+const GoogleReview: FC<ReviewData> = ({ name, initial, backgroundColor, reviewText }) => (
   <div className="row justify-content-center">
     <div className="col-12 col-md-10 col-lg-8 text-center">
-      <Image src={googleImage} alt="" className={styles.googleLogo} />
+      <Image src={GoogleImage} alt="" className={styles.googleLogo} />
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled />)}</div>
-      <p className="fw-bold">&quot;{reviewText}&quot;</p>
-      <Image src={image} alt="" className="m-3" />
+      <p className="fw-bold mb-4">&quot;{reviewText}&quot;</p>
+      <div className="d-flex justify-content-center mb-2">
+        <InitialCircle initial={initial} backgroundColor={backgroundColor} />
+      </div>
       <p className="fw-bold">{name}</p>
     </div>
   </div>
