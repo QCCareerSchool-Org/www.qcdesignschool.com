@@ -46,7 +46,6 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GoogleReviewSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
