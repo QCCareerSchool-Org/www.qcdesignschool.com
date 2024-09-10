@@ -12,6 +12,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DesignNetworksSection } from '@/components/designNetworksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
@@ -45,6 +46,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <GoogleReviewSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
