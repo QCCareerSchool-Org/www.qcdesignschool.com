@@ -21,7 +21,7 @@ export const reviewData: ReviewData[] = [
     reviewText: "My experience during completing my schooling was great. My tutors were very helpful and gave me lots of tips to help me in the future. I fully recommend this school to help start your next chapter towards your goals, I'm now done my schooling and working towards next steps in starting my own company or working with others in near future.",
   },
   {
-    name: 'Empathy2 tempo',
+    name: 'empathy2 tempo',
     initial: 'E',
     backgroundColor: 'green',
     reviewText: "I've really enjoyed my experience with QC Design School. The instruction is in real time practical everyday life scenarios. The instructors give great insight on their experience in the field as well.",
