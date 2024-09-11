@@ -1,7 +1,7 @@
 'use client';
 
-import type { FC, ReactNode } from 'react';
-import { memo, useCallback, useEffect, useState } from 'react';
+import type { FC, ReactNode, TouchEventHandler } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import { CarouselNav } from './CarouselNav';
 import styles from './index.module.scss';
@@ -12,6 +12,9 @@ type Props = {
   slides: ReactNode[];
   sideArrows?: boolean;
 };
+
+const minXSwipeDistance = 50;
+const maxYSwipeDistance = 50;
 
 export const Carousel: FC<Props> = memo(({ slides, sideArrows }) => {
   const numPages = slides.length;
@@ -53,12 +56,51 @@ export const Carousel: FC<Props> = memo(({ slides, sideArrows }) => {
     };
   }, []);
 
-  const maxHeight = heights.reduce((prev, cur) => (cur > prev ? cur : prev), 0);
+  const touch = useRef<{ startX?: number; startY?: number; endX?: number; endY?: number }>({ });
+
+  const handleTouchStart: TouchEventHandler = useCallback(e => {
+    touch.current.endX = undefined;
+    touch.current.endY = undefined;
+    touch.current.startX = e.targetTouches[0].clientX;
+    touch.current.startY = e.targetTouches[0].clientY;
+  }, []);
+
+  const handleTouchMove: TouchEventHandler = useCallback(e => {
+    touch.current.endX = e.targetTouches[0].clientX;
+    touch.current.endY = e.targetTouches[0].clientY;
+  }, []);
+
+  const handleTouchEnd: TouchEventHandler = useCallback(() => {
+    if (!touch.current.startX || !touch.current.endX || !touch.current.startY || !touch.current.endY) {
+      return;
+    }
+    const distanceX = touch.current.startX - touch.current.endX;
+    const distanceY = touch.current.startY - touch.current.endY;
+    if (distanceY > maxYSwipeDistance || distanceY < -maxYSwipeDistance) {
+      return;
+    }
+    const isLeftSwipe = distanceX > minXSwipeDistance;
+    const isRightSwipe = distanceX < -minXSwipeDistance;
+    if (isLeftSwipe) {
+      setCurrentPage(c => (c < numPages - 1 ? c + 1 : 0));
+      if ('vibrate' in navigator) {
+        navigator.vibrate([ 5 ]);
+      }
+    }
+    if (isRightSwipe) {
+      setCurrentPage(c => (c > 0 ? c - 1 : numPages - 1));
+      if ('vibrate' in navigator) {
+        navigator.vibrate([ 5 ]);
+      }
+    }
+  }, [ numPages ]);
+
+  const maxHeight = Math.max(...heights, 250);
   return (
     <>
-      <div className={styles.slideWrapper} style={{ height: maxHeight }}>
+      <div className={styles.slideWrapper} style={{ minHeight: maxHeight }}>
         {slides.map((Slide, i) => (
-          <SlideContainer key={i} show={currentPage === i} index={i} onHeightChange={handleHeightChange}>
+          <SlideContainer key={i} show={currentPage === i} index={i} onHeightChange={handleHeightChange} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
             {(sideArrows && !arrowOverride) &&
               <span>
                 <ArrowImage onClick={handlePrev} alt="Prev" className={styles.arrowImage} style={{ transform: 'scaleX(-1)' }} />
@@ -70,7 +112,6 @@ export const Carousel: FC<Props> = memo(({ slides, sideArrows }) => {
                 <ArrowImage onClick={handleNext} alt="Next" className={styles.arrowImage} />
               </span>
             }
-
           </SlideContainer>
         ))}
       </div>
