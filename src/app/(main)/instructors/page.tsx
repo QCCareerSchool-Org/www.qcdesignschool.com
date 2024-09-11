@@ -8,7 +8,7 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
 export const metadata: Metadata = {
-  title: 'Tutors - QC Event School',
+  title: 'Instructors - QC Design School',
 };
 
 const TutorsPage: PageComponent = () => (

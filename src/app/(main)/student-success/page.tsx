@@ -23,7 +23,7 @@ const StudentSuccessPage: PageComponent = () => {
     <>
       <section>
         <div className="container">
-          <div className="row justify-content-center mb-5">
+          <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-7 text-center">
               <h1>Student Success</h1>
               <p className="mb-0">Explore the success stories of our students and graduates, and take a look at the impressive event works crafted by our talented students.</p>
