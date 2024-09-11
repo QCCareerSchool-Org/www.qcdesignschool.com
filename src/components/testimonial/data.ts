@@ -111,4 +111,12 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.BradleyRyanSchlagheck,
     stars: 5,
   },
+  'TD-0013': {
+    name: 'Katherine Snow',
+    courses: [],
+    short: [],
+    long: [ 'I chose QC for its stellar reviews and professional website. The reputable tutors allowed me to enhance my skills. The option for easy payments made continuing my education hassle-free, enabling me to keep moving forward. The tutors were not only great but also helpful and knowledgeable, making my time truly enjoyable.' ],
+    image: Images.KatherineSnow,
+    stars: 5,
+  },
 };

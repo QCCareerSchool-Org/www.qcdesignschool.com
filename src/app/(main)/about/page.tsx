@@ -41,12 +41,12 @@ const AboutPage: PageComponent = () => (
             <BBBIcon height={iconSize} className={styles.goldIcon} />
             <h2 className="h4 mb-3">BBB Accreditation</h2>
             <p>QC is happy to celebrate 15 years of accreditation with the Better Business Bureau.</p>
-            <p className="mb-0">Are you hesitant about enrolling in an online course? Rest assured that QC has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau. QC Event School has had thousands of satisfied students take these courses, and many students are now running their own successful businesses. See our BBB review.</p>
+            <p className="mb-0">Are you hesitant about enrolling in an online course? Rest assured that QC has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau. QC Design School has had thousands of satisfied students take these courses, and many students are now running their own successful businesses. See our BBB review.</p>
           </div>
           <div className="col-12 col-lg-6">
             <ShieldIcon height={iconSize} className={styles.goldIcon} />
             <h2 className="h4 mb-3">21-Day Money-Back Guarantee</h2>
-            <p>Once you enroll with QC Event School, you'll be protected by a money-back guarantee!</p>
+            <p>Once you enroll with QC Design School, you'll be protected by a money-back guarantee!</p>
             <p className="mb-0">Once your enrollment has been processed, you have 21 days to review the course materials and decide whether you want to continue. If you decide this course isn't the right course for you, simply contact the school to request a full refund.Additional information on QC's money-back guarantee is available in your enrollment</p>
           </div>
         </div>

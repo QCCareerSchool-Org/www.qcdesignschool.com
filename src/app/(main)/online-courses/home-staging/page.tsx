@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
-import CertificationBackgroundImage from './cert-bg.jpg';
+import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
-import CertificationLogo from '@/components/certificationLogos/isrp.svg';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { Hero } from '@/components/hero';
@@ -17,8 +17,6 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { AngieChapmanCircle } from '@/components/tutors/angieChapman';
-import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
@@ -84,46 +82,10 @@ const HomeStagingPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section className="text-white text-shadow">
-      <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-lg-8 col-xxl-6 text-center">
-            <div>
-              <CertificationLogo height="200" className="mb-3" alt="International Staging and Redesign Professional (ISRP) certification logo" />
-            </div>
-            <p className="mb-3 small gold">International Staging and Redesign Professional&trade; (ISRP&trade;)</p>
-            <h2 className="text-white mb-3">Your Home Staging Certification</h2>
-            <p>Once you graduate from your home staging course, you'll receive a certification and be able to use the designation of International Staging and Redesign Professional (ISRP).</p>
-            <p className="mb-0">This certification demonstrates that you have successfully completed home stager training and that you possess all the skills and knowledge required to create functional and comfortable homes.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <CertificationSection />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />
-    <section className="bg-light">
-      <div className="container">
-        <div className="row mb-5">
-          <div className="col-12 col-md-10 col-lg-7">
-            <h2>Meet Your Home Staging Experts</h2>
-            <p className="lead mb-0">QC is proud to work with leaders of the global design industry to develop our courses. Our international team of instructors bring diverse experience and skills to aspiring designers around the globe.</p>
-          </div>
-        </div>
-        <div className="row g-5 g-lg-s">
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><JaneLockhartCircle /></div>
-            <h3 className="h4">Jane Lockhart</h3>
-            <p className="mb-0">Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline.</p>
-          </div>
-          <div className="col-12 col-lg-6">
-            <div className="mb-3"><AngieChapmanCircle /></div>
-            <h3 className="h4">Angie Chapman</h3>
-            <p className="mb-0">Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become an sought-after designer.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />

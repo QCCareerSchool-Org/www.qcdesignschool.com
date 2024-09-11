@@ -1,6 +1,6 @@
 'use client';
 
-import type { ChangeEventHandler, FC, FormEventHandler } from 'react';
+import type { ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
 import { useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { v1 } from 'uuid';
@@ -12,8 +12,6 @@ type Props = {
   successLocation: string;
   listId: number;
   emailTemplateId?: number;
-  countryCode: string;
-  provinceCode: string | null;
   buttonText?: string;
   buttonClassName?: string;
   placeholders?: boolean;
@@ -25,6 +23,8 @@ type Props = {
   utmContent?: string;
   utmTerm?: string;
   courseCodes?: string[];
+  button?: ReactElement;
+  referrer: string | null;
 };
 
 export const BrevoForm: FC<Props> = props => {
@@ -35,6 +35,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ token, setToken ] = useState<string>();
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
+  const [ disabled, setDisabled ] = useState(true);
 
   const handleFirstNameChange: ChangeEventHandler<HTMLInputElement> = e => {
     setFirstName(e.target.value);
@@ -63,8 +64,18 @@ export const BrevoForm: FC<Props> = props => {
     };
   }, []);
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDisabled(false);
+    }, 1_000);
+
+    return (): void => {
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   const handleSubmit: FormEventHandler = e => {
-    if (submitting.current) {
+    if (submitting.current || disabled) {
       e.preventDefault();
       return false;
     }
@@ -77,11 +88,11 @@ export const BrevoForm: FC<Props> = props => {
 
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
+      <input type="hidden" name="nonce" value={v1()} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Design School" />
       <input type="hidden" name="successLocation" value={props.successLocation} />
       <input type="hidden" name="listId" value={props.listId} />
-      <input type="hidden" name="nonce" value={v1()} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
@@ -91,6 +102,7 @@ export const BrevoForm: FC<Props> = props => {
       {props.utmCampaign && <input type="hidden" name="utmCampaign" value={props.utmCampaign} />}
       {props.utmContent && <input type="hidden" name="utmContent" value={props.utmContent} />}
       {props.utmTerm && <input type="hidden" name="utmTerm" value={props.utmTerm} />}
+      {props.referrer && <input type="hidden" name="referrer" value={props.referrer} />}
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}firstName`} className="form-label">Name</label>}
         <input onChange={handleFirstNameChange} value={firstName} type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
@@ -108,7 +120,12 @@ export const BrevoForm: FC<Props> = props => {
           </label>
         </div>
       </div>
-      <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+      {props.button
+        ? <>{props.button}</>
+        : (
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+        )
+      }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
     </form>
   );

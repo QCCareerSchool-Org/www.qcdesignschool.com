@@ -4,11 +4,22 @@ import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
 import styles from './index.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrochureForm } from '@/components/brochureForm';
-import { getData } from '@/lib/getData';
+import { BrevoForm } from '@/components/brevoForm';
 
-export const HeroSection: FC = () => {
-  const { testGroup, countryCode, provinceCode } = getData();
+type Props = {
+  brevoListId: number;
+  brevoEmailTemplateId: number;
+  gclid?: string;
+  msclkid?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  utmTerm?: string;
+  referrer: string | null;
+};
+
+export const HeroSection: FC<Props> = props => {
   return (
     <section className="text-white">
       <BackgroundImage desktopSrc={HeroDesktopImage} mobileSrc={HeroMobileImage} mobileObjectPosition="50% 100%" />
@@ -20,11 +31,18 @@ export const HeroSection: FC = () => {
                 <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Course Catalog</h3>
                 <div className={styles.formWrapper}>
-                  <BrochureForm
-                    action="https://captcha.qccareerschool.com/2fb03662-172b-11ed-a5a8-bc764e017ab0"
-                    testGroup={testGroup}
-                    countryCode={countryCode}
-                    provinceCode={provinceCode}
+                  <BrevoForm
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-interior-decorating-course-catalog`}
+                    listId={props.brevoListId}
+                    emailTemplateId={props.brevoEmailTemplateId}
+                    gclid={props.gclid}
+                    msclkid={props.msclkid}
+                    utmSource={props.utmSource}
+                    utmMedium={props.utmMedium}
+                    utmCampaign={props.utmCampaign}
+                    utmContent={props.utmContent}
+                    utmTerm={props.utmTerm}
+                    referrer={props.referrer}
                     placeholders
                   />
                 </div>

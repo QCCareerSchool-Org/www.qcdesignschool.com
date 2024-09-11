@@ -6,4 +6,4 @@ type Props = {
   height: number;
 };
 
-export const Logo: FC<Props> = ({ height }) => <LogoImage alt="QC Event School" style={{ height, width: 'auto' }} />;
+export const Logo: FC<Props> = ({ height }) => <LogoImage alt="QC Design School" style={{ height, width: 'auto' }} />;

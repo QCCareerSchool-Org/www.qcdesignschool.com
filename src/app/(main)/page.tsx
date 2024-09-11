@@ -12,12 +12,13 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DesignNetworksSection } from '@/components/designNetworksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { GuaranteeSection } from '@/components/guaranteeSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
-import ShieldIcon from '@/components/icons/shield.svg';
 import UserVoiceIcon from '@/components/icons/user-voice.svg';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
@@ -45,6 +46,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <GoogleReviewSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
@@ -118,18 +120,7 @@ const HomePage: PageComponent = () => (
       </div>
     </section>
     <DesignNetworksSection />
-    <section>
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-md-10 col-lg-8 col-xxl-6 text-center">
-            <ShieldIcon height="32" className="mb-3" />
-            <h2 className={`${styles.moneyBackHeader} mb-3`}>21-Day Money-Back Guarantee</h2>
-            <h3 className={`${styles.riskFreeHeader} mb-3`}>Try Any Course 100% Risk Free</h3>
-            <p className="mb-0">After enrolling, you have 21 days to review your course materials. If the course isn't right for you, simply contact us for a full refund!</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <GuaranteeSection />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"
       text="Become Professionally Certified with QC's Online Design Training"
