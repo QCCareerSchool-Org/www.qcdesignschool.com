@@ -17,6 +17,7 @@ type Props = {
   utmContent?: string;
   utmTerm?: string;
   referrer: string | null;
+  professionTitle: string;
 };
 
 export const HeroSection: FC<Props> = props => {
@@ -28,7 +29,7 @@ export const HeroSection: FC<Props> = props => {
           <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
             <div className={`card bg-light ${styles.card}`}>
               <div className="card-body">
-                <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
+                <h1 className="h3 mb-3 text-navy">Become a {props.professionTitle}</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Course Catalog</h3>
                 <div className={styles.formWrapper}>
                   <BrevoForm

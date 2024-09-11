@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import { CertificationSection } from '../../(main)/online-courses/home-staging/certificationSection';
 import { brevoEmailTemplateId, brevoListId } from '../constants';
 import { FreeCatalogComponent } from '../freeCatalogComponent';
 import { HeroSection } from '../freeCatalogComponent/_sections/heroSection';
 import { Header } from '../header';
-import { CertificationSection } from './certificationSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/icons/download.svg';
 import { getParam } from '@/lib/getParam';
@@ -37,9 +37,9 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         utmContent={utmContent}
         utmTerm={utmTerm}
         referrer={referrer}
-        professionTitle="Home Designer"
+        professionTitle="Home Stager"
       />
-      <FreeCatalogComponent courseName="Home Design" professionTitle="Home Designer" CertificationSection={CertificationSection} />
+      <FreeCatalogComponent courseName="Home Staging" professionTitle="Home Stager" CertificationSection={CertificationSection} />
     </>
   );
 };

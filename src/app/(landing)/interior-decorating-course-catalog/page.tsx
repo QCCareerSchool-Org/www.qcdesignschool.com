@@ -4,8 +4,8 @@ import { brevoEmailTemplateId, brevoListId } from '../constants';
 import { FreeCatalogComponent } from '../freeCatalogComponent';
 import { HeroSection } from '../freeCatalogComponent/_sections/heroSection';
 import { Header } from '../header';
-import { CertificationSection } from './certificationSection';
 import type { PageComponent } from '@/app/serverComponent';
+import { CertificationSection } from '@/components/certifications/interior-decorating';
 import DownloadIcon from '@/components/icons/download.svg';
 import { getParam } from '@/lib/getParam';
 
@@ -23,6 +23,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
   const utmTerm = getParam(searchParams.utm_term);
   const headerList = headers();
   const referrer = headerList.get('referer');
+
   return(
     <>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
@@ -37,9 +38,9 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         utmContent={utmContent}
         utmTerm={utmTerm}
         referrer={referrer}
-        professionTitle="Home Designer"
+        professionTitle="Interior Decorator"
       />
-      <FreeCatalogComponent courseName="Home Design" professionTitle="Home Designer" CertificationSection={CertificationSection} />
+      <FreeCatalogComponent courseName="Interior Decorating" professionTitle="Interior Decorator" CertificationSection={CertificationSection} />
     </>
   );
 };
