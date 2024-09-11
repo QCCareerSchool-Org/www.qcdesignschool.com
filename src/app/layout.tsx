@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
@@ -43,7 +44,6 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>
-      <LayoutClient />
     </html>
   );
 };
