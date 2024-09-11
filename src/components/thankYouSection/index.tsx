@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 import CatalogImage from './catalog.jpg';
-import styles from './topSection.module.scss';
+import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
 import { Logo } from '@/components/logo';
 
@@ -13,7 +13,7 @@ type Props = {
   firstName?: string;
 };
 
-export const TopSection: FC<Props> = ({ courseName, emailAddress, firstName }) => (
+export const ThankYouSection: FC<Props> = ({ courseName, emailAddress, firstName }) => (
   <section>
     <div className="container">
       <div className="row g-s">
@@ -32,7 +32,7 @@ export const TopSection: FC<Props> = ({ courseName, emailAddress, firstName }) =
         </div>
         <div className="col-10 col-md-8 col-lg-5 col-xxl-4 text-center">
           <Link href="/catalog.pdf" download>
-            <Image src={CatalogImage} placeholder="blur" priority alt="QC Event School course catalog" className={`${styles.brochure} img-fluid`} />
+            <Image src={CatalogImage} placeholder="blur" priority alt="QC Design School course catalog" className={`${styles.brochure} img-fluid`} />
           </Link>
         </div>
       </div>

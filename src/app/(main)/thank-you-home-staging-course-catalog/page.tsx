@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
-import { ThreeReasonsSection } from '../threeReasonsSection';
-import { TopSection } from '../topSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { ThankYouSection } from '@/components/thankYouSection';
+import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Course Catalog - QC Design School',
+  title: 'Your Home Staging Course Catalog - QC Design School',
 };
 
-const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
+const ThankYouHomeStagingCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
@@ -46,10 +46,10 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      <TopSection courseName="Home Staging" firstName={firstName} emailAddress={emailAddress} />
+      <ThankYouSection courseName="Home Staging" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
     </>
   );
 };
 
-export default ThankYouCourseCatalogPage;
+export default ThankYouHomeStagingCourseCatalogPage;
