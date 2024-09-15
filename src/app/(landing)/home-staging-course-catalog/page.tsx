@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { CertificationSection } from '../../(main)/online-courses/home-staging/certificationSection';
+import { SplitCertificationSection } from '../../(main)/online-courses/home-staging/certificationSection';
 import { brevoEmailTemplateId, brevoListId } from '../constants';
 import { FreeCatalogComponent } from '../freeCatalogComponent';
 import { HeroSection } from '../freeCatalogComponent/_sections/heroSection';
@@ -39,7 +39,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         referrer={referrer}
         professionTitle="Home Stager"
       />
-      <FreeCatalogComponent courseName="Home Staging" professionTitle="Home Stager" CertificationSection={CertificationSection} />
+      <FreeCatalogComponent courseName="Home Staging" professionTitle="Home Stager" CertificationSection={SplitCertificationSection} />
     </>
   );
 };

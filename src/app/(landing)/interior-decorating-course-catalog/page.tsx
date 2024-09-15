@@ -5,7 +5,7 @@ import { FreeCatalogComponent } from '../freeCatalogComponent';
 import { HeroSection } from '../freeCatalogComponent/_sections/heroSection';
 import { Header } from '../header';
 import type { PageComponent } from '@/app/serverComponent';
-import { CertificationSection } from '@/components/certifications/interior-decorating';
+import { SplitCertificationSection } from '@/components/certifications/interior-decorating';
 import DownloadIcon from '@/components/icons/download.svg';
 import { getParam } from '@/lib/getParam';
 
@@ -40,7 +40,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         referrer={referrer}
         professionTitle="Interior Decorator"
       />
-      <FreeCatalogComponent courseName="Interior Decorating" professionTitle="Interior Decorator" CertificationSection={CertificationSection} />
+      <FreeCatalogComponent courseName="Interior Decorating" professionTitle="Interior Decorator" CertificationSection={SplitCertificationSection} />
     </>
   );
 };

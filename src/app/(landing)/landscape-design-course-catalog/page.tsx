@@ -4,6 +4,7 @@ import { brevoEmailTemplateId, brevoListId } from '../constants';
 import { FreeCatalogComponent } from '../freeCatalogComponent';
 import { HeroSection } from '../freeCatalogComponent/_sections/heroSection';
 import { Header } from '../header';
+import { SplitCertificationSection } from '@/app/(main)/online-courses/landscape-design/certificationSection';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/icons/download.svg';
 import { getParam } from '@/lib/getParam';
@@ -38,7 +39,7 @@ const FreeCatalogPage: PageComponent = ({ searchParams }) => {
         referrer={referrer}
         professionTitle="Landscape Designer"
       />
-      <FreeCatalogComponent courseName="Landscape Design" professionTitle="Landscape Designer" CertificationSection={() => <></>} />
+      <FreeCatalogComponent courseName="Landscape Design" professionTitle="Landscape Designer" CertificationSection={SplitCertificationSection} />
     </>
   );
 };
