@@ -37,7 +37,7 @@ export const reviewData: ReviewData[] = [
     backgroundColor: 'green',
     imageSrc: Empathy2TempoImage,
     reviewText: "I've really enjoyed my experience with QC Design School. The instruction is in real time practical everyday life scenarios. The instructors give great insight on their experience in the field as well.",
-    size: 1.5,
+    size: 1.25,
     rating: 5,
   },
   {
