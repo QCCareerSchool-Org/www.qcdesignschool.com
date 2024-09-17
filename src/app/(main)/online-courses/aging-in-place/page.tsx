@@ -44,13 +44,13 @@ const AgingInPlacePage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Aging in Place certification course provides students with the most comprehensive training available to expand your services in the home design industry.</p>
+            <p className="lead mb-4">With QC's Aging in Place certification course, you'll gain the expertise you need to create safe, stylish and functional living spaces for aging clients. QC's comprehensive online curriculum covers everything from accessible design principles to personalized design solutions for your clients to ensure you have the skills and expert knowledge you need to stand out in the home design industry.</p>
             <ul>
-              <li>With QC's Aging in Place course, you'll use build on your existing design knowledge to create safe, functional and beautiful spaces for any client with aging concerns</li>
-              <li>Personalized feedback and advice on your assignments from our top design industry design experts</li>
-              <li>Thriving virtual community to connect with other decorators, get feedback and gain exclusive access to bonus materials</li>
-              <li>Built-in business training and real-world templates to help you launch your design career and expand your clientele with aging in place services</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
+              <li>Build on your existing design knowledge by expanding your skills and set yourself apart in the design industry</li>
+              <li>Receive personalized feedback and advice on your assignments from our top industry design & decorating experts</li>
+              <li>Join a thriving virtual community to connect with other design professionals  and gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele with aging in place services</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, DesignFiles, SampleBoard and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

@@ -40,13 +40,12 @@ const VirtualDesignPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Virtual Design training provides students with the most comprehensive training available to help them expand their home design business.</p>
+            <p className="lead mb-4">QC's Virtual Design training prepares you with the skills you need to expand your clientele to reach a global audience. You'll modernize your business and impress clients with this training resource and certificate.</p>
             <ul>
               <li>Revolutionize and expand your business by offering virtual services to your design clients</li>
-              <li>Personalized feedback and advice on your assignments from our top industry design experts</li>
-              <li>Thriving virtual community to connect with other decorators, get feedback and gain exclusive access to bonus materials</li>
-              <li>Built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior decorator</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
+              <li>Join a thriving virtual community to connect with other decorators and gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele with online services</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez DesignFiles, and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

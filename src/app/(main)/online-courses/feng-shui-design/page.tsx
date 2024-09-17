@@ -44,13 +44,13 @@ const FengShuiDesignPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Feng Shui Design certification course provides students with the most comprehensive training available to succeed in the home design industry.</p>
+            <p className="lead mb-4">QC's online Feng Shui Design certification course covers all the essential components you need to launch a rewarding career restoring harmony and balance to your clients' spaces. QC's expert-led curriculum prepares you for any project by delving into the core principles of Feng Shui design including energy flow, color harmony and spatial arrangement.</p>
             <ul>
-              <li>No previous training required&mdash;our premium Feng Shui Design course is designed to take you from beginner to expert</li>
-              <li>Personalized feedback and advice on your assignments from our top industry home design experts</li>
-              <li>Thriving virtual community to connect with other home designers, get feedback and gain exclusive access to bonus material</li>
-              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified feng shui professional</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada and more</li>
+              <li>Get started now — QC's premium Feng Shui Design course will take you from beginner to expert with no previous training required</li>
+              <li>Receive personalized feedback and advice on your assignments from our top industry home design experts</li>
+              <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material and expert-led webinars</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified feng shui professional</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez, and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

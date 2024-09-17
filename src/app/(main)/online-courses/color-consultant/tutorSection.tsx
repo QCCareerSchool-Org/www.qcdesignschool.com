@@ -12,7 +12,7 @@ export const TutorSection: FC<Props> = ({ className }) => (
     courseName="Color Consultant"
     description="Many recognize Jane from her show, Color Confidential, on HGTV and W Network. She is also the best-selling author of two books and frequently lends her design expertise to Canadian television shows including The Marilyn Denis Show and Cityline."
     src={TutorImage}
-    alt="Jane Lockhart"
+    tutorName="Jane Lockhart"
     className={className}
   />
 );
