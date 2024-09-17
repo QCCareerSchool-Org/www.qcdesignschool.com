@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';

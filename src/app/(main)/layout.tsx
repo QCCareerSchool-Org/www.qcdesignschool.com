@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { Footer } from './footer';
 import { Header } from './header';
+import { LayoutClient } from '../layoutClient';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';
@@ -16,6 +18,9 @@ const MainLayout: LayoutComponent = ({ children }) => {
       <Header />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
+      <Suspense>
+        <LayoutClient />
+      </Suspense>
     </>
   );
 };

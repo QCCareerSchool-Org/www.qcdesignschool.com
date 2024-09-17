@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
-import type { PageComponent } from '../serverComponent';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
 import WhyQCImage from './why-qc.jpg';
+import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DesignNetworksSection } from '@/components/designNetworksSection';
@@ -31,7 +31,7 @@ const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 
 const HomePage: PageComponent = () => (
   <div className={styles.page}>
     <section className={styles.heroSection}>
-      <BackgroundImage priority desktopSrc={HeroImageDesktop} mobileSrc={HeroImageMobile} breakpoint="md" desktopObjectPosition="87.5% 50%" mobileObjectPosition="50% 100%" />
+      <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">

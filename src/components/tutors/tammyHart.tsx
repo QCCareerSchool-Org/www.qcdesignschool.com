@@ -1,7 +1,7 @@
 import type { FC } from 'react';
-import { ImageCircle } from '../imageCircle';
 
 import TammyHartImage from './tammyHart.jpg';
+import { ImageCircle } from '../imageCircle';
 
 type Props = {
   size?: number;

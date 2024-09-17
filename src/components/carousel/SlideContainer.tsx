@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren, TouchEventHandler } from 'react';
 import { useEffect, useRef } from 'react';
 
 import styles from './index.module.scss';
@@ -9,33 +9,33 @@ type Props = {
   show: boolean;
   index: number;
   onHeightChange: (index: number, height: number) => void;
+  onTouchStart: TouchEventHandler;
+  onTouchMove: TouchEventHandler;
+  onTouchEnd: TouchEventHandler;
 };
 
-export const SlideContainer: FC<PropsWithChildren<Props>> = ({ show, index, onHeightChange, children }) => {
+export const SlideContainer: FC<PropsWithChildren<Props>> = props => {
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    //
-  }, [ show ]);
 
   useEffect(() => {
     if (ref.current) {
       const element = ref.current;
 
       const handler = (): void => {
-        onHeightChange(index, element.clientHeight);
+        props.onHeightChange(props.index, element.clientHeight);
+        console.log('index ' + props.index + ' has height ' + element.clientHeight);
       };
 
-      element.addEventListener('resize', handler);
+      window.addEventListener('resize', handler);
       handler();
 
-      return () => element.removeEventListener('resize', handler);
+      return () => window.removeEventListener('resize', handler);
     }
-  }, [ onHeightChange, index ]);
+  }, [ props ]);
 
   return (
-    <div ref={ref} className={`${styles.slideContainer} ${show ? styles.show : undefined} d-flex align-items-center`}>
-      {children}
+    <div ref={ref} className={`${styles.slideContainer} ${props.show ? styles.show : undefined} d-flex align-items-center`} onTouchStart={props.onTouchStart} onTouchMove={props.onTouchMove} onTouchEnd={props.onTouchEnd}>
+      {props.children}
     </div>
   );
 };

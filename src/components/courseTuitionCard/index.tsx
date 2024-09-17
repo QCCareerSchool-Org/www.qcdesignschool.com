@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { getCertification } from '../certificationLogos';
-import { getHeroImage } from '../hero/getHeroImage';
 import { CardPrice } from './cardPrice';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
+import { getCertification } from '../certificationLogos';
+import { getHeroImage } from '../hero/getHeroImage';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
@@ -20,12 +20,13 @@ type Props = {
   message?: string;
   showPrice?: boolean;
   showEnrollLink?: boolean;
+  enrollLink?: string;
 };
 
 export const CourseTuitionCard: FC<Props> = async props => {
   const { countryCode, provinceCode } = getData();
   const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode, provinceCode: provinceCode ?? undefined }) : null;
-  const enrollLink = `https://enroll.qcdesignschool.com?c=${encodeURIComponent(props.courseCode)}`;
+  const enrollLink = `${props.enrollLink ?? 'https://enroll.qcdesignschool.com'}?c=${encodeURIComponent(props.courseCode)}`;
   return (
     <div className={`${styles.courseCard} card`}>
       <div className={styles.imageWrapper}>
