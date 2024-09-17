@@ -20,12 +20,13 @@ type Props = {
   message?: string;
   showPrice?: boolean;
   showEnrollLink?: boolean;
+  enrollLink?: string;
 };
 
 export const CourseTuitionCard: FC<Props> = async props => {
   const { countryCode, provinceCode } = getData();
   const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode, provinceCode: provinceCode ?? undefined }) : null;
-  const enrollLink = `https://enroll.qcdesignschool.com?c=${encodeURIComponent(props.courseCode)}`;
+  const enrollLink = `${props.enrollLink ?? 'https://enroll.qcdesignschool.com'}?c=${encodeURIComponent(props.courseCode)}`;
   return (
     <div className={`${styles.courseCard} card`}>
       <div className={styles.imageWrapper}>
