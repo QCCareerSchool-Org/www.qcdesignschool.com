@@ -26,7 +26,7 @@ const testimonialIds = [
 const YourCareerPage: PageComponent = () => (
   <div>
     <section className={styles.heroSection}>
-      <BackgroundImage priority desktopSrc={HeroImageDesktop} mobileSrc={HeroImageMobile} breakpoint="md" desktopObjectPosition="87.5% 50%" mobileObjectPosition="50% 100%" />
+      <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">

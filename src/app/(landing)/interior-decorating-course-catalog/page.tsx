@@ -10,8 +10,7 @@ import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
-import HeroDesktopImage from './hero-large.jpg';
-import HeroMobileImage from './hero-small.jpg';
+import HeroImage from './hero.jpg';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -22,13 +21,13 @@ import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Catalog - QC Design School',
+  title: 'Free Interior Decorating Course Catalog - QC Design School',
 };
 
-const brevoListId = 7; // General Leads
+const brevoListId = 18; // Interior Decorating Leads
 const brevoEmailTemplateId = 58; // General
 
-const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
+const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -43,12 +42,12 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
     <>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
-        <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} />
+        <BackgroundImage src={HeroImage} />
         <div className="container">
           <div className="row g-0">
-            <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
+            <div className="col-12 col-md-7 col-lg-6 col-xl-5">
               <FormCard>
-                <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
+                <h1 className="h2 mb-3 text-navy">Become an Interior Decorator</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
@@ -98,4 +97,4 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
   );
 };
 
-export default FreeCourseCatalogPage;
+export default InteriorDecoratingCatalogPage;
