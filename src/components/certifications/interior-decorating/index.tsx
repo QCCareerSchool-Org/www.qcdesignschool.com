@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { FC } from 'react';
+
 import CertificationBackgroundImage from './cert-bg.jpg';
 import CertificationLogo from '@/components/certificationLogos/iddp.svg';
 

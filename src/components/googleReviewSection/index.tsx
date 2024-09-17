@@ -5,13 +5,13 @@ import type { FC } from 'react';
 import Carousel from 'react-multi-carousel';
 import type { ResponsiveType } from 'react-multi-carousel';
 
-import { ImageCircle } from '../imageCircle';
-import { Star } from '../testimonial/star';
 import GoogleImage from './googleLogo.png';
 import styles from './index.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 import { reviewData } from './reviewData';
+import { ImageCircle } from '../imageCircle';
+import { Star } from '../testimonial/star';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 const responsive: ResponsiveType = {

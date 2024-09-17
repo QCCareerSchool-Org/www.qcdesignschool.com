@@ -2,11 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { getCertification } from '../certificationLogos';
-import { getHeroImage } from '../hero/getHeroImage';
 import { CardPrice } from './cardPrice';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
+import { getCertification } from '../certificationLogos';
+import { getHeroImage } from '../hero/getHeroImage';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
