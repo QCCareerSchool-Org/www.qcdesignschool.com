@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import { SectionBackground } from '../sectionBackground';
 import DesktopBackgroundImage from './desktop-bg.jpg';
 import styles from './index.module.scss';
 import MobileImage from './mobile.jpg';
 import TabletImage from './tablet.jpg';
+import { SectionBackground } from '../sectionBackground';
 
 export const CareerEssentialsKitSection: FC = () => (
   <>

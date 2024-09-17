@@ -31,7 +31,7 @@ export const SlideContainer: FC<PropsWithChildren<Props>> = props => {
 
       return () => window.removeEventListener('resize', handler);
     }
-  }, [ props.index, props.onHeightChange ]);
+  }, [ props ]);
 
   return (
     <div ref={ref} className={`${styles.slideContainer} ${props.show ? styles.show : undefined} d-flex align-items-center`} onTouchStart={props.onTouchStart} onTouchMove={props.onTouchMove} onTouchEnd={props.onTouchEnd}>

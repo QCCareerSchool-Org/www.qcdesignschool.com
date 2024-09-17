@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
-import { LayoutClient } from '../layoutClient';
 import { Footer } from './footer';
 import { Header } from './header';
+import { LayoutClient } from '../layoutClient';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';

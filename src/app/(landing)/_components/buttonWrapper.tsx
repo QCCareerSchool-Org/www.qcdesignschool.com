@@ -1,6 +1,7 @@
 'use client';
 
 import type { FC, PropsWithChildren } from 'react';
+
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 

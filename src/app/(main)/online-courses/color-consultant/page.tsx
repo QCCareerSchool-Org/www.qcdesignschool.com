@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';

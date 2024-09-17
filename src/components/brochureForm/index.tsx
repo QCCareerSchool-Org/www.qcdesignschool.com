@@ -2,8 +2,8 @@
 
 import type { ChangeEventHandler, FC } from 'react';
 import { useCallback, useId, useState } from 'react';
-
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
+
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
 

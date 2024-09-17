@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';

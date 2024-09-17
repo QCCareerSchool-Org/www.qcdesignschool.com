@@ -216,7 +216,11 @@ module.exports = {
     'react/self-closing-comp': 'error',
 
     // import rules
-    'import/order': [ 'error', { alphabetize: { order: 'asc', caseInsensitive: true } } ],
+    'import/order': [ 'error', {
+      'alphabetize': { order: 'asc', caseInsensitive: true },
+      'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index' ] ],
+      'newlines-between': 'always',
+    } ],
 
     // jest rules
     'jest/consistent-test-it': [ 'error', { fn: 'it' } ],
