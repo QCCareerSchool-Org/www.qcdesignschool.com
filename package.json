@@ -27,7 +27,6 @@
     "react-multi-carousel": "^2.8.5",
     "sass": "^1.69.5",
     "server-only": "^0.0.1",
-    "sharp": "^0.33.5",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
