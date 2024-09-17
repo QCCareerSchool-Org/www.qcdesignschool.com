@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+
 import { LayoutClient } from '../layoutClient';
 import type { LayoutComponent } from '@/app/serverComponent';
 
