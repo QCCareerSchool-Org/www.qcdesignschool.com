@@ -1,4 +1,4 @@
-import { Footer } from './footer';
+import { Footer } from './_components/footer';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';

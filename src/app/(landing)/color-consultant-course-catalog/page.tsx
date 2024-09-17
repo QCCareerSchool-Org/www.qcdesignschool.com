@@ -10,25 +10,24 @@ import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
-import HeroDesktopImage from './hero-large.jpg';
-import HeroMobileImage from './hero-small.jpg';
-import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
+import HeroImage from './hero.jpg';
+import CertificationBackgroundImage from '@/app/(main)/online-courses/color-consultant/cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
-import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import CertificationIcon from '@/components/certificationLogos/iccp.svg';
 import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Catalog - QC Design School',
+  title: 'Free Color Consultant Course Catalog - QC Design School',
 };
 
 const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
 
-const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
+const ColorConsultantCourseCatalogPage: PageComponent = ({ searchParams }) => {
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -43,16 +42,16 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
     <>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
-        <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} />
+        <BackgroundImage src={HeroImage} />
         <div className="container">
           <div className="row g-0">
-            <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
+            <div className="col-12 col-md-7 col-lg-6 col-xl-5">
               <FormCard>
-                <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
+                <h1 className="h2 mb-3 text-navy">Become a Color Consultant</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-interior-decorating-course-catalog`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-color-consultant-course-catalog`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
@@ -74,15 +73,15 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
       <HowYoullLearnSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>
-        <h2 className="h3">Your Design Certification</h2>
-        <p>Once you've completed your online design course, you'll graduate with a certification of completion and a professional designation that is yours to use for life.</p>
-        <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to create beautiful and comfortable spaces for your clients.</p>
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP™) certification" />}>
+        <h2 className="h3">Your Color Consultant Certification</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim lorem, convallis ac cursus ac, mollis sed dui. Etiam et lectus imperdiet, aliquet mi ut, tempor nulla.</p>
+        <p>Maecenas euismod scelerisque mauris. Maecenas a nibh vel purus iaculis sodales ac id ipsum. Integer sollicitudin mollis dui. In nec nibh ultricies, pharetra neque eu, sollicitudin diam. Etiam odio metus, consequat in mi quis, faucibus posuere elit.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
-          <li>Launch your own home design and decorating business with comprehensive business training included in your course</li>
-          <li>Secure a position at an established design and decorating firm</li>
-          <li>Offer expert consulting services to both residential and commercial clients</li>
+          <li>Sed urna urna, molestie vitae ipsum vitae, venenatis rhoncus arcu. Aliquam ultrices accumsan urna, at gravida quam</li>
+          <li>Morbi imperdiet quis dolor et blandit. Ut gravida quis urna vel molestie. Nulla et enim odio</li>
+          <li>Pellentesque pretium dui a leo molestie mattis. Fusce in diam in neque fringilla pharetra</li>
         </ul>
       </CertificationSection>
       <AboutSection />
@@ -98,4 +97,4 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
   );
 };
 
-export default FreeCourseCatalogPage;
+export default ColorConsultantCourseCatalogPage;

@@ -9,7 +9,7 @@ import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 const iconHeight = '1.5rem';
 
-export const HowYoullLearnSection: FC<{ professionTitle: string }> = ({ professionTitle }) => (
+export const HowYoullLearnSection: FC = () => (
   <section>
     <div className="container">
       <div className="row align-items-center justify-content-center g-s">
@@ -18,12 +18,12 @@ export const HowYoullLearnSection: FC<{ professionTitle: string }> = ({ professi
         </div>
         <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
           <h2 className="h3 mb-4">How You'll Learn</h2>
-          <p className="lead fw-bold mb-4">You don't need a university degree to become a {professionTitle}!</p>
+          <p className="lead fw-bold mb-4">You don't need a university degree to become a home designer!</p>
           <p className="mb-4">With QC Design School, youll receive high-quality, comprehensive training to start a successful career without the high tuition fees of associate degree programs.</p>
           <ul className={`${styles.list} list-unstyled mb-0`}>
             <li><div className={styles.listWrapper}><div className={styles.listIcon}><CheckCircleIcon height={iconHeight} style={{ position: 'relative', top: -1 }} /></div><div className={styles.listText}><strong>Enroll Today & Start</strong>&mdash;Enroll anytime! Access your course online in two business days and get bonus materials by mail.</div></div></li>
             <li><div className={styles.listWrapper}><div className={styles.listIcon}><BookHeartIcon height={iconHeight} style={{ position: 'relative', top: -1 }} /></div><div className={styles.listText}><strong>Study & Submit Assignments</strong>&mdash;Upload your work to the Online Student Center and get personalized audio feedback.</div></div></li>
-            <li><div className={styles.listWrapper}><div className={styles.listIcon}><CertificationIcon height={iconHeight} style={{ position: 'relative', top: -1 }} /></div><div className={styles.listText}><strong>Graduate as a {professionTitle}</strong>&mdash;Finish in as little as 3 months, earn your certification, and start booking clients.</div></div></li>
+            <li><div className={styles.listWrapper}><div className={styles.listIcon}><CertificationIcon height={iconHeight} style={{ position: 'relative', top: -1 }} /></div><div className={styles.listText}><strong>Graduate as a Home Designer</strong>&mdash;Finish in as little as 3 months, earn your certification, and start booking clients.</div></div></li>
           </ul>
         </div>
       </div>
