@@ -6,6 +6,7 @@ import type { FC, PropsWithChildren } from 'react';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
+import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -47,6 +48,7 @@ const HomePage: PageComponent = () => (
       </div>
     </section>
     <GoogleReviewSection />
+    <StatsSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
