@@ -2,13 +2,13 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
-import { BottomSection } from '../bottomSection';
-import { Header } from '../header';
 import { AboutSection } from './_sections/aboutSection';
 import { CertificationSection } from './_sections/certificationSection';
 import { HeroSection } from './_sections/heroSection';
 import { HowYoullLearnSection } from './_sections/howYoullLearnSection';
 import { JoinQCSection } from './_sections/joinQCSection';
+import { BottomSection } from '../bottomSection';
+import { Header } from '../header';
 import type { PageComponent } from '@/app/serverComponent';
 import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';

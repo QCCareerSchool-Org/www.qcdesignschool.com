@@ -1,6 +1,6 @@
 import Link from 'next/link';
-
 import type { FC } from 'react';
+
 import CheckIcon from '@/components/icons/check-circle.svg';
 import BookIcon from '@/components/icons/open-book.svg';
 import QLogoIcon from '@/components/icons/q-logo.svg';

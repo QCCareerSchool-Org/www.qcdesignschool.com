@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import HeroImageDesktop from '../hero-desktop.jpg';
-import HeroImageMobile from '../hero-mobile.jpg';
 import { InfoSection } from './infoSection';
 import styles from './page.module.scss';
+import HeroImageDesktop from '../hero-desktop.jpg';
+import HeroImageMobile from '../hero-mobile.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';

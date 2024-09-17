@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 
-import { LayoutClient } from '../layoutClient';
 import { Footer } from './footer';
+import { LayoutClient } from '../layoutClient';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';
