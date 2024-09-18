@@ -9,6 +9,7 @@ import styles from '../index.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -43,13 +44,14 @@ const InteriorDecoratingPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <GetStartedSection title="Ready to start your home design & decorating career?" buttonText="Enroll Now" />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
-    <TestimonialSection id="TD-0006" />
+    <GoogleReviewSection />
     <GuaranteeSection className="bg-light" />
     <GetStartedSection
       title="Ready to start your home design & decorating career?"

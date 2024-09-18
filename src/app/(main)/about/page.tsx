@@ -26,8 +26,8 @@ const AboutPage: PageComponent = () => (
           <div className="col-12 col-lg-6 col-xxl-7">
             <p className={styles.years}>Celebrating 40 Years</p>
             <h1 className="mb-3">About QC</h1>
-            <p>QC Design School is a faculty of QC Career School, an online international school educating creative professionals through distance education for 40 years. QC's design courses provide the best design training possible from the comfort of your own home. Since 2007, QC Design School has had thousands of dedicated students graduate and begin their careers in the design industry.</p>
-            <p className="mb-5">Each year, QC improves the student experience by updating course content to reflect the latest industry trends. QC Design School is proud to provide students with an industry-leading support system with the goal of developing a personal relationship with each and every student. With continuous innovation and a genuine commitment to students' success, QC will always provide a world-class learning experience</p>
+            <p>QC Career School has been at the forefront of distance education, training aspiring professionals worldwide for over four decades. As a faculty of QC Career School, QC Design School offers flexible, high-quality online training to ensure students can receive a top-tier design education from the comfort of their homes. Since 2007, QC Design School has had thousands of dedicated students graduate and begin their careers in the design industry.</p>
+            <p className="mb-5">Each year, QC improves the student experience by updating course content to reflect the latest industry trends. QC Design School is proud to provide students with an industry-leading support system with the goal of developing a personal relationship with each and every student. With continuous innovation and a genuine commitment to students' success, QC will always provide a world-class learning experience.</p>
             <Link href="/online-courses" className="btn btn-lg btn-outline-dark">View Courses</Link>
           </div>
         </div>
@@ -39,9 +39,9 @@ const AboutPage: PageComponent = () => (
         <div className="row g-5 g-xl-s">
           <div className="col-12 col-lg-6">
             <BBBIcon height={iconSize} className={styles.goldIcon} />
-            <h2 className="h4 mb-3">BBB Accreditation</h2>
-            <p>QC is happy to celebrate 15 years of accreditation with the Better Business Bureau.</p>
-            <p className="mb-0">Are you hesitant about enrolling in an online course? Rest assured that QC has the highest possible consumer satisfaction rating (A+) with the Better Business Bureau. QC Design School has had thousands of satisfied students take these courses, and many students are now running their own successful businesses. See our BBB review.</p>
+            <h2 className="h4 mb-3">20 Years of Accreditation with the BBB</h2>
+            <p>QC is proud to have held the highest possible consumer satisfaction rating with the Better Business Bureau for over 20 years. Our A+ rating reflects our commitment to quality and student satisfaction.</p>
+            <p className="mb-0">QC Design School has had thousands of satisfied students take our courses, with many going to launch lucrative design businesses and build successful careers.</p>
           </div>
           <div className="col-12 col-lg-6">
             <ShieldIcon height={iconSize} className={styles.goldIcon} />

@@ -28,14 +28,16 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
         <div className="row align-items-center justify-content-center g-5 g-lg-s">
           <div className="col-12 col-lg-6">
             <h1 className="h2 mb-4">Become a Home Designer with Online Training</h1>
-            <p className="lead">Start your dream career and become a certified design professional with QC's professional courses. With QC's courses, you'll receive:</p>
+            <p className="lead">Start your dream career and become an Internationally Certified design professional with QC's professional courses.</p>
+            <p>With QC's courses, you'll receive:</p>
             <ul className="mb-0">
               <li>Professional and industry-leading content</li>
-              <li>Full business training to prepare you for a new career</li>
+              <li>Full business training complete with custom templates to prepare you for a new career</li>
               <li>An international certification when you complete your course</li>
-              <li>Digital learning materials</li>
-              <li>Access to professional design associations to help network and further develop your skills</li>
-              <li>One-on-one mentoring throughout your course from a professional designer</li>
+              <li>Interactive digital lessons and detailed instructional videos with industry experts</li>
+              <li>Access to professional design associations to help you network and further develop your skills</li>
+              <li>One-on-one mentoring from a professional designer throughout your course</li>
+              <li>Support and guidance from QC's dedicated team of student advisors, available 7 days a week</li>
               <li>50% off all additional courses so you can continue mastering your skills</li>
             </ul>
           </div>
