@@ -14,7 +14,7 @@ import { Star } from '../testimonial/star';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 const responsive: ResponsiveType = {
-  xs: {
+  all: {
     breakpoint: { max: 9999, min: 0 },
     items: 1,
   },

@@ -1,3 +1,5 @@
+import type { FC } from 'react';
+
 import Image01 from './01.jpg';
 import Image02 from './02.jpg';
 import Image03 from './03.jpg';
@@ -17,7 +19,7 @@ const portfolioImages = [
   { src: Image06 },
 ];
 
-export const GiannaLucheseShowcase = (
+export const GiannaLucheseShowcase: FC = () => (
   <Showcase
     name="Gianna Luchese"
     credentials="Event & Wedding Planning"

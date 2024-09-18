@@ -10,3 +10,10 @@
 .react-multi-carousel-dot--active button {
   background-color: #02013f;
 }
+
+.react-multi-carousel-dot-list {
+  position: initial;
+}
+.react-multi-carousel-list .react-multi-carousel-dot-list {
+  position: absolute;
+}
