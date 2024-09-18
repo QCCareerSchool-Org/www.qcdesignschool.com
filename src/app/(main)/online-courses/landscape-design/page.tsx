@@ -46,7 +46,7 @@ const LandscapeDesignPage: PageComponent = () => (
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
             <p className="lead mb-4">QC's Landscape Design certification course provides comprehensive online training to set you up for success in the thriving landscape design industry. QC's immersive curriculum details everything from plant selection and garden design to outdoor rooms, site plans and working with contractors to ensure you're fully prepared to design breathtaking landscapes from start to finish.</p>
             <ul>
-              <li>Get started now — our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
+              <li>Get started now—our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top landscape industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material</li>
               <li>Access exclusive tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
