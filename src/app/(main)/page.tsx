@@ -11,7 +11,6 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
-import { DesignNetworksSection } from '@/components/designNetworksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
@@ -20,6 +19,7 @@ import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import UserVoiceIcon from '@/components/icons/user-voice.svg';
+import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
@@ -119,7 +119,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <DesignNetworksSection />
+    <SupportSection />
     <GuaranteeSection />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"
