@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
@@ -14,15 +15,16 @@ const FAQPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
-            <h1 className="mb-4 text-center">FAQ</h1>
-
+            <h1 className="mb-2 text-center">FAQ</h1>
+            <p className="mb-5 text-center col-lg-8 m-auto">
+              Explore these frequently asked questions and learn how QC Design School equips you with the skills you need to launch your career!
+            </p>
             <nav className="d-none d-md-flex flex-row text-center justify-content-between fw-bold">
-              <a className="text-reset text-decoration-none" href="#beforeEnroll">Before You Enroll</a>
-              <a className="text-reset text-decoration-none" href="#whileYouLearn">While You Learn</a>
-              <a className="text-reset text-decoration-none" href="#afterYouGraduate">After You Graduate</a>
-              <a className="text-reset text-decoration-none" href="#aboutQC">About QC Design School</a>
+              <a className="text-decoration-none" href="#beforeEnroll">Before You Enroll</a>
+              <a className="text-decoration-none" href="#whileYouLearn">While You Learn</a>
+              <a className="text-decoration-none" href="#afterYouGraduate">After You Graduate</a>
+              <a className="text-decoration-none" href="#aboutQC">About QC Design School</a>
             </nav>
-
             <div className={styles.faqGroup} id="beforeEnroll">
               <h2 className="mb-3 h3">Before You Enroll</h2>
               <h3 className="h5">Is QC an accredited online design school?</h3>
@@ -44,14 +46,13 @@ const FAQPage: PageComponent = () => (
               <h3 className="h5">How long will it take to complete my online design class?</h3>
               <p>With QC Design School's online courses, you work entirely at your own pace and decide how much time per week you want to spend developing your skills. Typically, students who work on their assignments for a short period each week will complete their design course within four to six months. You have two full years to complete your design course, so you can schedule your online design training around your lifestyle!</p>
               <h3 className="h5">What do I do if I get stuck on a design assignment?</h3>
-              <p>If you have questions about your QC design course, you can contact your Student Support Team by phone, email, or Live Chat. The team will always be happy to answer your design questions or get answers from your tutor. You can also get help and advice from your peers on the QC student forum or from the QC Design School community on Facebook.</p>
+              <p>If you have questions about your QC design course, you can contact your Student Advisors by phone, email, or Live Chat. The team will always be happy to answer your design questions or get answers from your tutor. You can also get help and advice from your peers in the QC Design School Virtual Community.</p>
               <h3 className="h5">Are there any technology requirements to complete my design training online?</h3>
               <p>Yes, you will need:</p>
               <ul>
                 <li>A desktop computer, tablet, or laptop</li>
                 <li>A digital camera or smartphone/tablet that is capable of taking photos</li>
                 <li>An up-to-date Internet browser</li>
-                <li>An up-to-date Adobe Reader program</li>
               </ul>
               <h3 className="h5">Are there any items required to complete my design training online?</h3>
               <p>Many of our courses include practical, hands-on assignments that require industry-standard tools and art supplies. Specific items needed include:</p>
@@ -77,7 +78,7 @@ const FAQPage: PageComponent = () => (
               <h3 className="h5">Do I have to pay an annual fee to QC or join an organization in order to keep my online design certification?</h3>
               <p>No. Unlike other online design programs, QC Design School recognizes your right to use your professional design certificate and designation free of charge, for life.</p>
               <h3 className="h5">How will QC help me start my design career once I've finished the courses?</h3>
-              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center. Design students also receive free online business training which prepares them to run their own home design business. You can always reach out to the Student Support Team for ongoing support and guidance throughout your design career.</p>
+              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center, including free online business training which prepares students to run their own home design businesses. You’ll also have access to QC’s Virtual Community, where you can network with other design professionals and access free webinars. You can always reach out to the Student Support Team for ongoing support and guidance.</p>
               <h3 className="h5">If I take a QC design course, will I be able to start my own business?</h3>
               <p>Yes—QC's online design classes include complete business training. You'll learn how to set up and promote your design services, and you'll receive professional advice during and after your design course.</p>
             </div>
@@ -85,9 +86,9 @@ const FAQPage: PageComponent = () => (
             <div className={styles.faqGroup} id="aboutQC">
               <h2 className="mb-3 h3">About QC Design School</h2>
               <h3 className="h5">Will QC's online design courses give you the training and certification you need to become a design professional?</h3>
-              <p>Explore some frequently asked questions below and learn how QC Design School equips you with the skills you need to launch your career!</p>
+              <p>Absolutely! QC Design School equips you with the skills you need to launch your career through comprehensive course lessons to develop your design skills, and free business training included in each course. You'll graduate with all the skills you need to create beautiful design plans, work successfully with clients and launch a thriving business. Plus, you'll have an internationally recognized certification that sets you apart from the competition.</p>
               <h3 className="h5">Does the tuition cover all costs of QC's design courses?</h3>
-              <p>Yes, your design school tuition covers the cost of your online course texts, reference books, art supplies, videos, and access to the Online Student Center. You'll also receive personal advice from your tutor, a working professional in the design industry. There are no additional fees once you graduate, and your professional designation and certification are yours to use throughout your career—no membership fees.</p>
+              <p>Yes, your design school tuition covers the cost of your online course lessons, videos, assignments and access to the Online Student Center. You'll also receive personal advice from your tutor, a working professional in the design industry. There are no additional fees once you graduate, and your professional designation and certification are yours to use throughout your career—no membership fees.</p>
               <h3 className="h5">Do I need a certification or license to work as an interior decorator?</h3>
               <p>No, a license, degree, or certification is NOT required to work as an interior decorator. Certification courses teach you how to work on interior decorating projects successfully. QC's courses only require that you achieve a C+ in order to graduate, and your certification is yours to use for the rest of your career with no additional fees.</p>
               <h3 className="h5">What's the difference between interior decorating and interior design?</h3>
@@ -99,7 +100,7 @@ const FAQPage: PageComponent = () => (
     </section>
     <GetStartedSection
       title="Have Another Question?"
-      text="Feel free to contact the school anytime to learn more about payment plans, career options for event planners, and studying online!"
+      text="Feel free to contact the school anytime to learn more about payment plans, career options for home designers, and studying online!"
       buttonText="Contact Us"
       buttonHref="/contact-us"
     />

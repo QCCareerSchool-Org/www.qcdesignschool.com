@@ -12,7 +12,7 @@ export const TutorSection: FC<Props> = ({ className }) => (
     courseName="Professional Organizing"
     description="Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become a sought-after designer."
     src={TutorImage}
-    alt="Angie Chapman"
+    tutorName="Angie Chapman"
     className={className}
   />
 );

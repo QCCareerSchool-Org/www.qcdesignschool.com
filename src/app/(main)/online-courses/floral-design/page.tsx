@@ -44,13 +44,12 @@ const FloralDesignPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Floral Design certification course provides students with the most comprehensive training available to succeed in the design industry.</p>
+            <p className="lead mb-4">QC's online Floral Design certification course provides an extensive curriculum that details everything from fundamental design principles to advanced techniques in decorative arrangements, bouquet designs, and more. This program is your key to mastering the art of floral design and launching a successful career in this thriving sector of the design industry.</p>
             <ul>
-              <li>No previous training required&mdash;our premium Floral Design course is designed to help you launch your career in the floral design industry</li>
-              <li>Personalized feedback and advice on your assignments from our top design industry & floral experts</li>
-              <li>Thriving virtual community to connect with other designers, get feedback, and gain exclusive access to bonus materials</li>
-              <li>Built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified Floral Designer</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
+              <li>Get started now—our premium Floral Design course is designed to take you from beginner to expert with no previous training required</li>
+              <li>Receive personalized feedback and advice on your assignments from our top industry experts</li>
+              <li>Join a thriving virtual community to connect with other industry professionals and gain exclusive access to bonus materials</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified Floral Designer</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -67,8 +66,8 @@ const FloralDesignPage: PageComponent = () => (
             <h2>Here's What You'll Learn</h2>
             <p>QC's comprehensive Floral Design course will show you how to:</p>
             <ul className="mb-0">
-              <li>Learn about flower selection, placement and methods to polish your designs</li>
-              <li>Study the most common types of flowers and design arrangements clients love</li>
+              <li>Perfect your flower selection, placement and methods to create polished designs</li>
+              <li>Identify and prepare the most common types of flowers to design arrangements clients love</li>
               <li>Work with a variety of budget types, design requirements and different client personalities</li>
               <li>Master plant care and anatomy to ensure you can create long-lasting designs</li>
               <li>Build your brand and market your new floral design business</li>

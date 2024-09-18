@@ -44,13 +44,13 @@ const LandscapeDesignPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Landscape Design certification course provides students with the most comprehensive training available to succeed in the landscape design industry.</p>
+            <p className="lead mb-4">QC's Landscape Design certification course provides comprehensive online training to set you up for success in the thriving landscape design industry. QC's immersive curriculum details everything from plant selection and garden design to outdoor rooms, site plans and working with contractors to ensure you're fully prepared to design breathtaking landscapes from start to finish.</p>
             <ul>
-              <li>No previous training required&mdash;our premium Landscape Design course is designed to take you from beginner to expert</li>
-              <li>Personalized feedback and advice on your assignments from our top landscape industry experts</li>
-              <li>Thriving virtual community to connect with other landscape designers, get feedback, and gain exclusive access to bonus material</li>
-              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified Landscape Designer</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
+              <li>Get started now—our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
+              <li>Receive personalized feedback and advice on your assignments from our top landscape industry experts</li>
+              <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material</li>
+              <li>Access exclusive tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified landscape designer</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -90,8 +90,8 @@ const LandscapeDesignPage: PageComponent = () => (
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your home design & decorating career?"
-      text="Become professionally certified with QC's online interior decorating training"
+      title="Ready to start your career in landscape design?"
+      text="Become professionally certified with QC's online landscape design training"
       courseCodes={courseCodes}
     />
   </div>

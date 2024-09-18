@@ -44,13 +44,13 @@ const InteriorDecoratingPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Interior Decorating certification course provides students with the most comprehensive training available to succeed in the home design industry.</p>
+            <p className="lead mb-4">QC's online Interior Decorating certification course provides the most comprehensive training available to ensure your success in the home design industry. You'll master everything from color theory and space planning to client communication and design execution so that you're fully equipped to thrive in this dynamic field. </p>
             <ul>
-              <li>No previous training is required&mdash;our premium interior decorating course is designed to take you from beginner to expert</li>
-              <li>Personalized feedback and advice on your assignments from our top industry design experts</li>
-              <li>Thriving virtual community to connect with other decorators, get feedback and gain exclusive access to bonus materials</li>
-              <li>Built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior decorator</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada, and more</li>
+              <li>Get started now—our premium interior decorating course is designed to take you from beginner to expert with no previous training required</li>
+              <li>Receive personalized feedback and advice on your assignments from our top industry design experts</li>
+              <li>Join a thriving virtual community to connect with other decoratorsand gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior decorator</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Decorators & Designers Association of Canada, Placez and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

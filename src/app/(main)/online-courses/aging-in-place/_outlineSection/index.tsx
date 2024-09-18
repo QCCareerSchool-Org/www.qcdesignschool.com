@@ -14,7 +14,7 @@ export const OutlineSection: FC = () => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dui lacus, tempus aliquam enim sed, dictum pharetra magna. Nam sit amet ante a justo mattis vehicula. Nulla ultrices viverra orci, nec interdum massa fermentum quis.</p>
+          <p className="lead mb-0">QC's Aging in Place Design course is divided into three specialized training units designed to improve your skills and develop your expertise in universal design.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="Introduction to Aging in Place Design" src={Part1Image} open className="mb-3">
@@ -29,7 +29,7 @@ export const OutlineSection: FC = () => (
         </div>
         <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
           <h3 className="h5 mb-3">Have Questions About the Course?</h3>
-          <p className="lead mb-3">Don't hesitate to reach out to our dedicated student support team for guidance and support. <strong>Your success is our priority!</strong></p>
+          <p className="lead mb-3">Don't hesitate to reach out to our dedicated team of student advisors for guidance and support. <strong>Your success is our priority!</strong></p>
           <Link href="/contact-us" className="btn btn-outline-grey">Contact Us</Link>
         </div>
       </div>
