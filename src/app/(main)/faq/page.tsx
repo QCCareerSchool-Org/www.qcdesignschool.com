@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
@@ -78,7 +77,7 @@ const FAQPage: PageComponent = () => (
               <h3 className="h5">Do I have to pay an annual fee to QC or join an organization in order to keep my online design certification?</h3>
               <p>No. Unlike other online design programs, QC Design School recognizes your right to use your professional design certificate and designation free of charge, for life.</p>
               <h3 className="h5">How will QC help me start my design career once I've finished the courses?</h3>
-              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center, including free online business training which prepares students to run their own home design businesses. You’ll also have access to QC’s Virtual Community, where you can network with other design professionals and access free webinars. You can always reach out to the Student Support Team for ongoing support and guidance.</p>
+              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center, including free online business training which prepares students to run their own home design businesses. You'll also have access to QC's Virtual Community, where you can network with other design professionals and access free webinars. You can always reach out to the Student Support Team for ongoing support and guidance.</p>
               <h3 className="h5">If I take a QC design course, will I be able to start my own business?</h3>
               <p>Yes—QC's online design classes include complete business training. You'll learn how to set up and promote your design services, and you'll receive professional advice during and after your design course.</p>
             </div>
