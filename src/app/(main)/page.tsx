@@ -6,13 +6,12 @@ import type { FC, PropsWithChildren } from 'react';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
+import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
-import { DesignNetworksSection } from '@/components/designNetworksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
@@ -20,6 +19,7 @@ import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import UserVoiceIcon from '@/components/icons/user-voice.svg';
+import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
@@ -46,7 +46,6 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GoogleReviewSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
@@ -81,6 +80,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <StatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <section>
       <div className="container">
@@ -119,7 +119,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <DesignNetworksSection />
+    <SupportSection />
     <GuaranteeSection />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"
