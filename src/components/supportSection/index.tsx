@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
-import SupportTeamImage from './support-team.png';
+import StudentSupportImage from './student-support.jpg';
 import ChatIcon from '@/components/icons/chat.svg';
 
 export const SupportSection: FC = () => (
@@ -11,7 +11,7 @@ export const SupportSection: FC = () => (
     <div className="container">
       <div className="row justify-content-center g-5 g-xl-s">
         <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-          <Image src={SupportTeamImage} alt="" className="img-fluid" />
+          <Image src={StudentSupportImage} alt="" className="img-fluid" />
         </div>
         <div className="col-12 col-lg-6">
           <h2 className="mb-4">Real Support &amp; Guidance, Every Step of the Way</h2>
