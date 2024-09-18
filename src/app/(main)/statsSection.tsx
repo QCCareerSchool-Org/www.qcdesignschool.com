@@ -4,12 +4,12 @@ import type { FC } from 'react';
 import { useRef } from 'react';
 import { useCountUp } from 'react-use-count-up';
 
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import styles from './statsSection.module.scss';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const duration = 2_000; // 2 seconds
 
-const studentsFormatter = (n: number): string => `${n.toFixed(0)}K`
+const studentsFormatter = (n: number): string => `${n.toFixed(0)}K`;
 
 export const StatsSection: FC = () => {
   const studentsRef = useRef<HTMLDivElement>(null);
@@ -21,8 +21,8 @@ export const StatsSection: FC = () => {
   const expertsStart = useIntersectionObserver(expertsRef);
 
   const students = useCountUp({ start: 0, end: 45, duration, started: studentsStart, easingFunction: 'easeOutCubic', formatter: studentsFormatter });
-  const years = useCountUp({ start: 0, end: 40, duration, started: yearsStart, easingFunction: 'easeOutCubic', });
-  const experts = useCountUp({ start: 0, end: 20, duration, started: expertsStart, easingFunction: 'easeOutCubic', });
+  const years = useCountUp({ start: 0, end: 40, duration, started: yearsStart, easingFunction: 'easeOutCubic' });
+  const experts = useCountUp({ start: 0, end: 20, duration, started: expertsStart, easingFunction: 'easeOutCubic' });
 
   return (
     <section className="bg-navy text-white">
