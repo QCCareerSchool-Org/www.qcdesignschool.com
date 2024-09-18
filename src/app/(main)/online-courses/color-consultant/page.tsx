@@ -12,10 +12,10 @@ import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -44,13 +44,13 @@ const ColorConsultantPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Color Consultant certification course provides students with the most comprehensive training available to succeed in the color consulting and home design industry.</p>
+            <p className="lead mb-4">QC's Color Consultant certification course offers an unparalleled online curriculum to equip you with the practical skills and expert knowledge you need to excel in the home design industry. You'll delve into the psychology of color and study advanced topics in color theory and design so that you're ready to wow every client.</p>
             <ul>
-              <li>No previous training required&mdash;our premium Color Consultant course is designed to take you from beginner to expert</li>
-              <li>Personalized feedback and advice on your assignments from our top industry staging experts</li>
-              <li>Thriving virtual community to connect with other Color Consultants, get feedback, and gain exclusive access to bonus material</li>
-              <li>Built-in business training and real-world templates to help you launch your career and grow your clientele as a certified Color Consultant</li>
-              <li>Discounts and affiliations with top organizations including the American Society of Professional Organizers, Decorators & Designers Association of Canada and more</li>
+              <li>Get started now—our premium Color Consultant course is designed to take you from beginner to expert with no previous training required</li>
+              <li>Receive personalized feedback and advice on your assignments from our top industry design & decorating experts</li>
+              <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified Color Consultant</li>
+              <li>Enjoy discounts and affiliations with top organizations including the Inter-Society Color Council (SCC), DesignFiles, SampleBoard, and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -83,7 +83,7 @@ const ColorConsultantPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />

@@ -12,7 +12,7 @@ export const TutorSection: FC<Props> = ({ className }) => (
     courseName="Aging in Place"
     description="Tammy Hart is the owner of Designer Chick Co. She also served as a director on the National Board for DDA. Tammy has presented at IIDEXCanada and The Small Business Forum, been featured in East of the City Magazine, and appeared on the Rogers Daytime Durham talk show."
     src={TutorImage}
-    alt="Tammy Hart"
+    tutorName="Tammy Hart"
     className={className}
   />
 );
