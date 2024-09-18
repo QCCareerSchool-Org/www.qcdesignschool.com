@@ -47,8 +47,6 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GoogleReviewSection />
-    <StatsSection />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-4 g-xl-5 g-xxl-s">
@@ -83,6 +81,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <StatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <section>
       <div className="container">

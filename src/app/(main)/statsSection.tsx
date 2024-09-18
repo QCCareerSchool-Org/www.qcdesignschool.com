@@ -1,49 +1,47 @@
 'use client';
 
 import type { FC } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useCountUp } from 'react-use-count-up';
+
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import styles from './statsSection.module.scss';
 
 const duration = 2_000; // 2 seconds
 
+const studentsFormatter = (n: number): string => `${n.toFixed(0)}K`
+
 export const StatsSection: FC = () => {
-  const [ started, setStarted ] = useState(false);
-  const students = useCountUp({ start: 0, end: 40_000, duration, started, easingFunction: 'easeOutCubic' });
-  const foo = useCountUp({ start: 0, end: 20, duration, started, easingFunction: 'easeOutCubic' });
-  const bar = useCountUp({ start: 0, end: 2310, duration, started, easingFunction: 'easeOutCubic' });
+  const studentsRef = useRef<HTMLDivElement>(null);
+  const yearsRef = useRef<HTMLDivElement>(null);
+  const expertsRef = useRef<HTMLDivElement>(null);
 
-  const ref = useRef<HTMLDivElement>(null);
+  const studentsStart = useIntersectionObserver(studentsRef);
+  const yearsStart = useIntersectionObserver(yearsRef);
+  const expertsStart = useIntersectionObserver(expertsRef);
 
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-
-    const currentRef = ref.current;
-
-    const observer = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
-        setStarted(true);
-      }
-    });
-
-    observer.observe(currentRef);
-
-    return () => { observer.unobserve(currentRef); };
-  }, []);
+  const students = useCountUp({ start: 0, end: 45, duration, started: studentsStart, easingFunction: 'easeOutCubic', formatter: studentsFormatter });
+  const years = useCountUp({ start: 0, end: 40, duration, started: yearsStart, easingFunction: 'easeOutCubic', });
+  const experts = useCountUp({ start: 0, end: 20, duration, started: expertsStart, easingFunction: 'easeOutCubic', });
 
   return (
     <section className="bg-navy text-white">
-      <div className="container" ref={ref}>
+      <div className="container">
         <div className="row text-center">
-          <div className="col-12 col-lg-4">
-            {students}
+          <div ref={studentsRef} className="col-12 col-lg-4 mb-s mb-lg-0">
+            <div className={styles.count}>{students}</div>
+            <h6>Students &amp; Graduates</h6>
+            <small>Inspiring the Next Generation of Professionals</small>
           </div>
-          <div className="col-12 col-lg-4">
-            {foo}
+          <div ref={yearsRef} className="col-12 col-lg-4 mb-s mb-lg-0">
+            <div className={styles.count}>{years}</div>
+            <h6>Years in Business</h6>
+            <small>Pioneering Education Since 1984</small>
           </div>
-          <div className="col-12 col-lg-4">
-            {bar}
+          <div ref={expertsRef} className="col-12 col-lg-4">
+            <div className={styles.count}>{experts}</div>
+            <h6>Experts</h6>
+            <small>Providing Insights for Real-World Success</small>
           </div>
         </div>
       </div>
