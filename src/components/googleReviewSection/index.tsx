@@ -23,13 +23,16 @@ const responsive: ResponsiveType = {
 
 // this will prioritize based on course code, and then priority
 const sortReviewData = (data: ReviewData[], course?: CourseCode): ReviewData[] => {
+
+  const highestPossiblePriority = Priority.HIGH;
   const addPriorityScore = (baseScore: number, priority: Priority | undefined): number => {
     if (!priority) { priority = Priority.NORMAL; }
     return baseScore + priority;
   };
-  const highestPossiblePriority = Priority.HIGH;
+
   // score both the courses, then return the difference
   data.sort((a, b) => {
+
     const scoreA = course && a.courseCodes?.includes(course)
       ? addPriorityScore(highestPossiblePriority + 1, a.priority)
       : addPriorityScore(0, a.priority);
