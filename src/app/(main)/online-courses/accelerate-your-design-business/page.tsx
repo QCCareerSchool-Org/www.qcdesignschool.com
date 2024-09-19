@@ -10,10 +10,10 @@ import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -81,7 +81,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </section>
     <OutlineSection className="bg-light" />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="eb" />
     <CareerEssentialsKitSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection

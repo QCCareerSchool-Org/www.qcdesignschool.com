@@ -8,10 +8,10 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -74,7 +74,7 @@ const VirtualDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialSection id="TD-0001" className="bg-light" />
+    <GoogleReviewSection courseCode="vd" />
     <VirtualCommunitySection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
