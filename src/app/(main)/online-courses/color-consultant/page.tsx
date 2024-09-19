@@ -83,7 +83,7 @@ const ColorConsultantPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection />
+    <GoogleReviewSection courseCode="cc" />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitSection />
