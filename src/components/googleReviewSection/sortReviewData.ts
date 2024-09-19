@@ -2,27 +2,29 @@ import { Priority } from './reviewData';
 import type { ReviewData } from './reviewData';
 import type { CourseCode } from '@/domain/courseCode';
 
-// this will prioritize based on course code, and then priority
-export const sortReviewData = (data: ReviewData[], course?: CourseCode): ReviewData[] => {
+type CompareFunction<T> = (a: T, b: T) => number;
 
-  const highestPossiblePriority = Priority.HIGH;
-  const addPriorityScore = (baseScore: number, priority: Priority | undefined): number => {
-    if (!priority) { priority = Priority.NORMAL; }
-    return baseScore + priority;
-  };
+const highestPossiblePriority = Priority.HIGH;
 
-  // score both the courses, then return the difference
-  data.sort((a, b) => {
+/**
+ * Creates a ReviewData compare function.
+ *
+ * Prioritizes based on course code, and then the review's own priority.
+ * @param courseCode the course code to give priority to.
+ * @returns a compare function.
+ */
+export const compareReviews = (courseCode?: CourseCode): CompareFunction<ReviewData> => (a, b) => {
+  const scoreA = courseCode && a.courseCodes?.includes(courseCode)
+    ? addPriorityScore(highestPossiblePriority + 1, a.priority)
+    : addPriorityScore(0, a.priority);
 
-    const scoreA = course && a.courseCodes?.includes(course)
-      ? addPriorityScore(highestPossiblePriority + 1, a.priority)
-      : addPriorityScore(0, a.priority);
+  const scoreB = courseCode && b.courseCodes?.includes(courseCode)
+    ? addPriorityScore(highestPossiblePriority + 1, b.priority)
+    : addPriorityScore(0, b.priority);
 
-    const scoreB = course && b.courseCodes?.includes(course)
-      ? addPriorityScore(highestPossiblePriority + 1, b.priority)
-      : addPriorityScore(0, b.priority);
+  return scoreA - scoreB;
+};
 
-    return scoreB - scoreA;
-  });
-  return data;
+const addPriorityScore = (baseScore: number, priority?: Priority): number => {
+  return baseScore + (priority ?? Priority.NORMAL);
 };
