@@ -70,9 +70,9 @@ export const GoogleReviewSection: FC<{ courseCode?: CourseCode }> = ({ courseCod
   );
 };
 
-const GoogleReview: FC<ReviewData> = ({ name, imageSrc, reviewText, size, backgroundColor, rating, initial }) => (
+const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating }) => (
   <div className={styles.wrapper}>
-    <div className="mb-3">{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < rating} />)}</div>
+    <div className="mb-3">{Array(5).fill(null).map((_, i) => <Star key={i} filled={rating < i} />)}</div>
     <p className="fw-bold mb-4" style={size ? { fontSize: `${size}rem` } : undefined}>&quot;{reviewText}&quot;</p>
     <div className="d-flex justify-content-center mb-2">
       {imageSrc
