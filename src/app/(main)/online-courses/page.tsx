@@ -41,7 +41,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="st"
               subtitle="ISRP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Discover the art of home staging and transform clients' spaces into buyer-ready showcases. QC's Home Staging course equips you with the professional skills to create stunning spaces that captivate buyers and boost property appeal."
               href="/online-courses/home-staging"
               showPrice
               showEnrollLink
@@ -51,7 +51,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="po"
               subtitle="AIOP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Bring order and productivity back into your clients' lives with QC's Professional Organizing course. Gain the expert skills needed to transform cluttered spaces into organized, stress-free environments."
               href="/online-courses/professional-organizing"
               showPrice
               showEnrollLink
@@ -61,7 +61,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="fs"
               subtitle="AFDP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Master the principles of Feng Shui to enhance any home or office design. QC's Feng Shui Design course equips you to create harmonious, balanced spaces that boost your clients' well-being."
               href="/online-courses/feng-shui-design"
               showPrice
               showEnrollLink
@@ -71,7 +71,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="cc"
               subtitle="ICCP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Explore advanced techniques using undertones and lighting to select the perfect colors for any space. Guided by expert Jane Lockhart, QC's Color Consultant course will help you elevate your skills and expand your design services."
               href="/online-courses/color-consultant"
               showPrice
               showEnrollLink
@@ -81,7 +81,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="fd"
               subtitle="IFDP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Dive into the world of floral design by launching your own business, working with a seasoned floral designer or incorporating floral design skills into an existing home design career. Learn to create stunning arrangements for any occasion."
               href="/online-courses/floral-design"
               showPrice
               showEnrollLink
@@ -91,7 +91,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="ed"
               subtitle="IEDP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Expand your creative skills and discover how you can design an event's mood and aesthetic experience with QC's Event Decor course. Learn to coordinate lighting, color, and decor to suit a theme and bring your clients' visions to life."
               href="/online-courses/event-decor"
               showPrice
               showEnrollLink
@@ -101,7 +101,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="ap"
               subtitle="APDP™ Certification"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Specialize your design services with QC's Aging in Place course and help clients with aging concerns to remain in their homes. This in-demand certification empowers you to design beautiful spaces that support your clients' independence and comfort."
               href="/online-courses/aging-in-place"
               showPrice
               showEnrollLink
@@ -111,7 +111,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="eb"
               subtitle="Specialty Training"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Achieve your business goals with QC's Accelerate Your Business training. You'll create customer personas, enhance your online presence and develop marketing strategies to take your design business to the next level."
               href="/online-courses/accelerate-your-design-business"
               showPrice
               showEnrollLink
@@ -121,7 +121,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="vd"
               subtitle="Specialty Training"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat elit nunc, id pretium dui mollis eget. Morbi pulvinar, metus in pharetra congue, lectus orci vulputate nisi, eget venenatis dolor sem quis tortor."
+              description="Expand your design business by taking your services online with QC's Virtual Design Training. Discover how you can offer a range of online services, from consultations to full redesigns, and grow your clientele."
               href="/online-courses/virtual-design"
               showPrice
               showEnrollLink
