@@ -469,3 +469,8 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 .text-shadow {
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
+
+::selection {
+  background: var(--qc-color-dark-gold);
+  color: black;
+}
