@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 
 import { GoogleReview } from './googleReview';
 import { reviewData } from './reviewData';
-import { compareReviews } from './sortReviewData';
+import { getCompareFunction } from './sortReviewData';
 import type { CourseCode } from '@/domain/courseCode';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
@@ -22,7 +22,7 @@ const responsive: ResponsiveType = {
 };
 
 export const GoogleCarousel: FC<Props> = memo(({ mobile, courseCode }) => {
-  const sortedReviewData = reviewData.sort(compareReviews(courseCode));
+  const sortedReviewData = reviewData.sort(getCompareFunction(courseCode));
   const carouselRef = useRef(null);
   const intersection = useIntersectionObserver(carouselRef);
 

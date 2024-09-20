@@ -13,7 +13,7 @@ const highestPossiblePriority = Priority.HIGH;
  * @param courseCode the course code to give priority to.
  * @returns a compare function.
  */
-export const compareReviews = (courseCode?: CourseCode): CompareFunction<ReviewData> => (a, b) => {
+export const getCompareFunction = (courseCode?: CourseCode): CompareFunction<ReviewData> => (a, b) => {
   const scoreA = courseCode && a.courseCodes?.includes(courseCode)
     ? addPriorityScore(highestPossiblePriority + 1, a.priority)
     : addPriorityScore(0, a.priority);
