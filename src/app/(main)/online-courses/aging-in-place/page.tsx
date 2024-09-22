@@ -12,6 +12,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -82,7 +83,7 @@ const AgingInPlacePage: PageComponent = () => (
       </div>
     </section>
     <CertificationSection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="ap" />
     <TutorSection className="bg-light" />
     <VirtualCommunitySection />
     <TestimonialSection id="TD-0001" />

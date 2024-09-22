@@ -5,12 +5,12 @@ import DesktopBackgroundImage from './desktop-bg.jpg';
 import styles from './index.module.scss';
 import MobileImage from './mobile.jpg';
 import TabletImage from './tablet.jpg';
-import { SectionBackground } from '../sectionBackground';
+import { BackgroundImage } from '../backgroundImage';
 
 export const CareerEssentialsKitSection: FC = () => (
   <>
     <section className={`${styles.section} text-white text-shadow`}>
-      <div className="d-none d-lg-block"><SectionBackground src={DesktopBackgroundImage} objectPosition={'100% 50%'} /></div>
+      <div className="d-none d-lg-block"><BackgroundImage src={DesktopBackgroundImage} objectPosition={'100% 50%'} /></div>
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-7 col-xxl-6">

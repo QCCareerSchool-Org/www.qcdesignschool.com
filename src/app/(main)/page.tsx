@@ -13,12 +13,12 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import BookReaderIcon from '@/components/icons/book-reader.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
-import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
-import UserVoiceIcon from '@/components/icons/user-voice.svg';
+import TimerIcon from '@/components/icons/timer.svg';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
@@ -53,24 +53,24 @@ const HomePage: PageComponent = () => (
             <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Design School</h2>
             <div className="row g-5 g-lg-4 g-xxl-5">
               <div className="col-12 col-lg-6">
-                <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <BookReaderIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Learn From Expert Instructors</h3>
-                <p className="mb-0">We've hand-selected the top design professionals in the industry to guide you through your course material.</p>
+                <p className="mb-0">We've hand-selected the top design professionals in the industry to develop top-tier courses and guide you through your learning experience.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <UserVoiceIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Flexible Online Training</h3>
-                <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and get access to bonus career training in our private virtual community!</p>
+                <TimerIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <h3 className="h6 mb-3">Enjoy Self-Paced Learning</h3>
+                <p className="mb-0">QC provides a fully online education so that you can learn at your own pace with support from student advisors, tutors and a network of peers in our private virtual community!</p>
               </div>
               <div className="col-12 col-lg-6">
                 <CertificationIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Industry-Recognized Certifications</h3>
-                <p className="mb-0">Graduate with professional home design certifications and open up a world of career &amp; business opportunities.</p>
+                <h3 className="h6 mb-3"><span className="d-lg-none d-xxl-inline">Earn </span>Industry-Recognized Certifications</h3>
+                <p className="mb-0">Graduate with professional home design certifications that will open up a world of career &amp; business opportunities to jumpstart your career in the booming design industry.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <ObjectsVerticalBottomIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Business Training Included</h3>
-                <p className="mb-0">Each course includes built-in business training to help you launch your career and grow your clientele as a newly certified designer.</p>
+                <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <h3 className="h6 mb-3">Prepare for a Successful Career</h3>
+                <p className="mb-0">Each course includes built-in business training and expert-led webinars to help you launch your career and grow your clientele as a newly certified designer.</p>
               </div>
             </div>
           </div>
