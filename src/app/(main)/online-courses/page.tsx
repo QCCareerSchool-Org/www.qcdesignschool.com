@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { TestimonialSection } from '@/components/testimonialSection';
 
 const CoursesPage: PageComponent = () => (
@@ -20,7 +21,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="i2"
               subtitle="IDDP™ Certification"
-              description="Dive into the world of design and transform spaces into works of art. Our most popular course is your gateway to mastering aesthetic enhancement and client satisfaction."
+              description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
               href="/online-courses/interior-decorating"
               message="Most Popular"
               showPrice
@@ -31,7 +32,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="ld"
               subtitle="ILDP™ Certification"
-              description="Transform homes with stunning outdoor spaces. Join our top-rated landscape design course and master essential skills in months. Dive into a booming industry and start your dream career."
+              description="Launch your career in the fast-growing landscape design industry with QC's professional certification course. You'll gain the professional skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
               href="/online-courses/landscape-design"
               showPrice
               showEnrollLink
@@ -130,7 +131,7 @@ const CoursesPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialSection id="TD-0001" className="bg-light" />
+    <GoogleReviewSection />
     <GetStartedSection
       title="Get Started Today"
       text="Enroll Online and Start on Your Path to Becoming a Certified Designer"

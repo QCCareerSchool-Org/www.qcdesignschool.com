@@ -20,11 +20,22 @@ const TutorsPage: PageComponent = () => (
             <h1 className="mb-3">QC Design School Instructors</h1>
             <p className="lead mb-0">Once you enroll with QC Design School, you'll be matched with a personal instructor who will review your work and provide you with in-depth feedback and advice. You'll also have the opportunity to learn from top industry experts who have worked with QC to develop your cutting-edge course materials. Our accomplished instructors have years of experience in the industry and are eager to share their professional insights with you.</p>
           </div>
-          {tutors.map((t, i) => (
-            <div key={i} className="col-12">
-              <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
-            </div>
-          ))}
+          <div className="row justify-content-center g-5">
+            <h2 className="text-center my-0">Instructors</h2>
+            {tutors.map((t, i) => t.type === 'instructor' && (
+              <div key={i}>
+                <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
+              </div>
+            ))}
+          </div>
+          <div className="row justify-content-center g-5 mt-s">
+            <h2 className="text-center my-0">QC Experts</h2>
+            {tutors.map((t, i) => t.type === 'expert' && (
+              <div key={i}>
+                <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
