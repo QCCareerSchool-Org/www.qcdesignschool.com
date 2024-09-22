@@ -4,7 +4,7 @@ import Image from 'next/image';
 import ChrisCircle from './images/chris_circle.png';
 import DaveCircle from './images/dave_circle.png';
 import FoundersImage from './images/founders.png';
-import JoannaCircle from './images/joanna_circle.png';
+import JoanneCircle from './images/joanne_circle.png';
 import KaylaCircle from './images/kayla_circle.jpg';
 import StudentSupportImage from './images/student_support.png';
 import styles from './page.module.scss';
@@ -46,7 +46,7 @@ const AboutPage: PageComponent = () => (
         <div className="row g-5 g-lg-s">
           <div className="col-12 col-lg-6">
             <div className="mb-3">
-              <ImageCircle src={JoannaCircle} alt="Joanne, CEO" size={imageSize} imagePositionX={40} />
+              <ImageCircle src={JoanneCircle} alt="Joanne, CEO" size={imageSize} imagePositionX={40} />
             </div>
             <h3 className="h4">Joanne, CEO</h3>
             <p className="mb-0">At QC, my team develops the systems that make your learning experience run seamlessly. We have created a custom online learning portal designed specifically to meet your needs as a QC student. When you log in to your course, you'll find everything you need right at your fingertips. You'll have access to interactive course lessons and videos, assignments, feedback from expert tutors, special discounts, and important account details. My job is to make sure your online experience is straightforward and enjoyable so that you can focus on your studies.</p>
