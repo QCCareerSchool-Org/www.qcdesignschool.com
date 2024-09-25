@@ -6,23 +6,22 @@ import DaveCircle from './images/dave_circle.png';
 import FoundersImage from './images/founders.png';
 import JoanneCircle from './images/joanne_circle.png';
 import KaylaCircle from './images/kayla_circle.jpg';
-import StudentSupportImage from './images/student_support.png';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import ChatIcon from '@/components/icons/chat.svg';
 import { ImageCircle } from '@/components/imageCircle';
+import { SupportSection } from '@/components/supportSection';
 
 const imageSize = 200;
 
 export const metadata: Metadata = {
-  title: 'Meet The Team - QC Design School',
+  title: 'Meet the Team - QC Design School',
 };
 
 const AboutPage: PageComponent = () => (
   <div className={styles.aboutPage}>
     <section>
       <div className="container">
-        <h1 className="text-center mb-5">Meet The Team</h1>
+        <h1 className="text-center mb-5">Meet the Team</h1>
         <div className="row align-items-center g-4 g-xl-s">
           <div className="col-12 col-lg-6">
             <h2 className="mb-3 h4">Visionaries Behind QC Career School's Legacy of Excellence</h2>
@@ -87,25 +86,7 @@ const AboutPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <section className={`${styles.studentSupportSection} pb-lg-0 pt-0`}>
-      <div className="container text-white">
-        <div className="row align-items-center g-4 g-xl-s">
-          <div className="col-12 col-lg-7">
-            <Image src={StudentSupportImage} alt="" className={`img-fluid`} />
-          </div>
-          <div className="col-12 col-lg-5">
-            <h2 className="mb-3 h4">Real Support. Real Answers. Every Step Forward.</h2>
-            <p>Our expert team is here to help you select the right course, navigate your materials, and stay on track to reach your career goals. Available 7 days a week by phone, email, or live chat, we ensure you get the support you need—whether it's advice, troubleshooting, or planning your next step.</p>
-            <button className="btn btn-primary">
-              <span className="text-light">
-                <ChatIcon height="16" className="me-3" style={{ position: 'relative', top: -1 }} />
-              </span>
-              <span className="d-none d-sm-inline">Talk to Us Today</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SupportSection />
   </div>
 );
 
