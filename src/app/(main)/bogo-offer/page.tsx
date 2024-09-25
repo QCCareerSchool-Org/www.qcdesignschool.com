@@ -13,8 +13,8 @@ const CoursesPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-4 mb-5">
           <div className="col-12 col-md-8 text-center">
-            <h1 className="mb-4">Online Design Courses</h1>
-            <p className="lead mb-0">Discover the wide range of courses offered by QC Design School.</p>
+            <h1 className="mb-4">Online Courses</h1>
+            <p className="lead mb-0"> QC has over 10 professional design certifications you can choose from! For a limited time, enroll in any design course and get $100 off your tuition plus a second course free. This is the perfect opportunity to specialize in your design training and become a certified expert.</p>
           </div>
         </div>
         <div className="row justify-content-center g-4">
@@ -147,15 +147,12 @@ const CoursesPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-9 text-md-center">
-            <h2 className="mb-3">Get Your Second Course FREE!</h2>
-            <p>Enroll in a foundation course and receive any additional course for free.</p>
-            <p>Foundation courses prepare you to work in the design industry. Advanced and specialty courses help enhance your career and grow your business. At QC, your professional development matters!</p>
-            <p className="mb-0">Check out popular professional development training paths most QC students and graduates follow. Find the training plan that best suits your career goals!</p>
+            <h2 className="mb-3">Your Second Certification is Free!</h2>
+            <p>Enroll now and get started on your path to becoming a certified interior decorator.</p>
           </div>
         </div>
       </div>
     </section>
-    <TestimonialSection id="TD-0001" className="bg-light" />
     <GetStartedSection
       title="Get Started Today"
       text="Enroll Online and Start on Your Path to Becoming a Certified Designer"
