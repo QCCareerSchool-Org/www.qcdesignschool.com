@@ -3,7 +3,6 @@ import type { FC, PropsWithChildren } from 'react';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 

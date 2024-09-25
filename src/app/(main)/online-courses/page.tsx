@@ -4,7 +4,6 @@ import type { PageComponent } from '@/app/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 
 const CoursesPage: PageComponent = () => (
   <div>

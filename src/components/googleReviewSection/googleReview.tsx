@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import type { ReviewData } from './reviewData';
-import { ImageCircle } from '../imageCircle';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
+import type { ReviewData } from './reviewData';
+import { ImageCircle } from '../imageCircle';
 import { Star } from '../testimonial/star';
 
 export const GoogleReview: FC<ReviewData> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating }) => (
