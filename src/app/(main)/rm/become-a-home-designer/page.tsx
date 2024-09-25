@@ -47,6 +47,10 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <GetStartedSection
+      title="Ready to Start your career in Home Design?"
+      buttonText="Enroll Now"
+    />
     <InfoSection className="bg-light" />
     <TestimonialWallSection testimonialIds={testimonialIds} />
     <PerksSection className="bg-light" />
