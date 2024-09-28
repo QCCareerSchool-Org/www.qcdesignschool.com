@@ -16,6 +16,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
@@ -70,17 +71,19 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
-      <HowYoullLearnSection />
+      <HowYoullLearnSection graduateTitle="Interior Decorator" />
+      <GoogleReviewSection courseCode="i2" />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>
         <h2 className="h3">Your Design Certification</h2>
-        <p>Once you've completed your online design course, you'll graduate with a certification of completion and a professional designation that is yours to use for life.</p>
-        <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to create beautiful and comfortable spaces for your clients.</p>
+        <p>Once you've completed the Interior Decorating Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
           <li>Launch your own home design and decorating business with comprehensive business training included in your course</li>
           <li>Secure a position at an established design and decorating firm</li>
+          <li>Design corporate offices, conference rooms, and retail stores</li>
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
       </CertificationSection>
