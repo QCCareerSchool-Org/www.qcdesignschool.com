@@ -2,7 +2,7 @@ import Image from 'next/image';
 import type { FC } from 'react';
 
 import { preferredPartners, professionalAssociations } from './designAssociations';
-import styles from './page.module.scss';
+import styles from './designAssociationSection.module.scss';
 
 type Props = {
   className?: string;
