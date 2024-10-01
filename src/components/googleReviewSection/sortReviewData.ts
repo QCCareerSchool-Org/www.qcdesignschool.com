@@ -22,7 +22,7 @@ export const getCompareFunction = (courseCode?: CourseCode): CompareFunction<Rev
     ? addPriorityScore(highestPossiblePriority + 1, b.priority)
     : addPriorityScore(0, b.priority);
 
-  return scoreA - scoreB;
+  return scoreB - scoreA;
 };
 
 const addPriorityScore = (baseScore: number, priority?: Priority): number => {

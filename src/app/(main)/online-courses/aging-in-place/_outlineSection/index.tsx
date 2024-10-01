@@ -18,13 +18,13 @@ export const OutlineSection: FC = () => (
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="Introduction to Aging in Place Design" src={Part1Image} open className="mb-3">
-            <p className="small">Learn about the importance of creating a strong brand identity for your business and how to target your ideal clients. You'll introduce your business and goals to your tutor, and establish your brand while developing your customer personas. Finally, you'll start to plan different types of promotions you might run for your business.</p>
+            <p>This first unit will introduce you to the Aging in Place (AIP) design industry. You'll learn about the responsibilities of an AIP designer and how AIP services differ from other types of design work. You'll also learn about common physiological changes, medical conditions, and lifestyle changes people experience as they age, and about all of the different housing and support options available to people facing aging-related challenges. This unit will also teach you how act as an AIP educator and market your services effectively.</p>
           </CourseOutline>
           <CourseOutline title="Applying Universal Design Principles" src={Part2Image} className="mb-3">
-            <p className="small">Now that you have a better understanding of branding, you'll start to put that knowledge to good use as you explore your online presence, from your website to your social media presence. You'll learn about what makes a &ldquo;good&rdquo; website, how to effectively manage your social media presence, how to handle negative reviews, marketing your business online, the art of blogging, content marketing and more.</p>
+            <p>Unit B focuses on developing the skills required to assess client needs, evaluate homes from an AIP perspective, and create AIP modification plans. You'll start by learning about the design standards Aging in Place professionals use to guide their work, including universal design, accessible design and visitable design. You'll then learn how to apply these principles to assess clients' homes and make effective design recommendations. This unit will also teach you how you can incorporate decluttering and home transition services into your AIP business.</p>
           </CourseOutline>
           <CourseOutline title="Final Project" src={Part3Image}>
-            <p className="small">Discover how to present your business to attractive prospective clients. You'll learn to develop an eye-catching professional portfolio to showcase your skills, and practice effective communication strategies for working with clients. You'll study the process of creating high-quality client proposals to sell your services.</p>
+            <p>Unit C is your final project for the course. This unit will ask you to work with the home of a friend or relative. The home's resident(s) can be any age and at any stage of life. You will simply be assessing the home as if it belonged to an AIP client. You'll assess your mock client's home, conduct a needs assessment, create a design plan, and explain your reasoning to your tutor who will provide detailed feedback on your full approach, as always.</p>
           </CourseOutline>
         </div>
         <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
