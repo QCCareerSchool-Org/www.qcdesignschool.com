@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import MwaiYeboahImage from './mwaiYeboah.jpg';
 import { ImageCircle } from '../imageCircle';
+import MwaiYeboahImage from './mwaiYeboah.jpg';
 
 type Props = {
   size?: number;
