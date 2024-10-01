@@ -18,12 +18,12 @@ export const InfoSection: FC<Props> = ({ className }) => (
         <div className="col-12 col-sm-10 col-xl-4">
           <BriefcaseIcon height={iconHeight} className={`${styles.cobaltGrey} mb-3`} />
           <h2 className="h4 mb-3">Start Your Own Design Business</h2>
-          <p>QC Design School prepares you to become a successful design professional and business owner. Optional business training in every course covers setting up your company, writing an effective business plan, and marketing your services. You'll gain the skills needed to run your own successful design business in any design stream.</p>
+          <p>QC Design School prepares you to become a successful design professional and business owner. Every course includes optional business training to guide you through setting up your company, writing an effective business plan, and marketing your services. You'll gain the skills needed to run your own successful design business in any design stream.</p>
         </div>
         <div className="col-12 col-sm-10 col-xl-4">
           <BarChartIcon height={iconHeight} className={`${styles.cobaltGrey} mb-3`} />
           <h2 className="h4 mb-3">Expand Your Existing Business</h2>
-          <p>If you're a seasoned design professional and are looking to take your career to the next level, adding a specialization and certification to your business is a great way to achieve this goal! Every stream in the home design industry complements the others. Offering more than once service in your design business can increase your revenue and improve client retention.</p>
+          <p>If you're a seasoned design professional aiming to take your career to the next level, specializing your skills and earning certifications will be key to reaching this goal.! Expanding your services allows you to enhance your skills and reach more clients. You'll increase yoru revenue and improve client satisfaction!</p>
         </div>
         <div className="col-12 col-sm-10 col-xl-4">
           <RulerIcon height={iconHeight} className={`${styles.cobaltGrey} mb-3`} />

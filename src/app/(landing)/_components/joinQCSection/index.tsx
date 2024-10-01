@@ -23,8 +23,8 @@ export const JoinQCSection: FC = () => (
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BookWithBookmarkIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
-          <h3 className="h6 mb-4">Low Tution Cost</h3>
-          <p className="mb-0">Get practical design knowledge and more—all the training you need without the high tuition</p>
+          <h3 className="h6 mb-4">Flexible Payment Options</h3>
+          <p className="mb-0">Get practical design knowledge and more with flexible payment options and affordable tuition.</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BarChartIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
@@ -43,8 +43,8 @@ export const JoinQCSection: FC = () => (
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <CoinsIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
-          <h3 className="h6 mb-4">Flexible Payment Options</h3>
-          <p className="mb-0">Flexible tuition payment options with no hidden fees or additional costs</p>
+          <h3 className="h6 mb-4">Virtual Community</h3>
+          <p className="mb-0">Join a vibrant virtual community of designers and access expert-led webinars</p>
         </div>
       </div>
     </div>

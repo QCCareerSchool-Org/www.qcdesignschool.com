@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import { InfoSection } from './infoSection';
-import styles from './page.module.scss';
 import HeroImageDesktop from '../hero-desktop.jpg';
 import HeroImageMobile from '../hero-mobile.jpg';
+import { InfoSection } from './infoSection';
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -35,7 +35,7 @@ const YourCareerPage: PageComponent = () => (
         </div>
         <div className="row">
           <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
-            <p className="lead mb-5"><strong>Start your career as a design professional!</strong> Each of QC's courses provides you with all the information, tools, and skills needed to succeed in your desired design niche. You'll be able to start your dream career in this competitive industry.</p>
+            <p className="lead mb-5"><strong>Start your career as a design professional!</strong> QC's comprehensive courses offer everything you need to excel in your chosen design niche. Each course will provide you with all the skills, tools and industry knowledge to start your dream career in the competitive design world.</p>
           </div>
         </div>
       </div>

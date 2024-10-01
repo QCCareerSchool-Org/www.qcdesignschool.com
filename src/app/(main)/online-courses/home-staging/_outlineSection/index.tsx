@@ -45,7 +45,7 @@ export const OutlineSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6 text-center">
           <h3 className="h5 mb-3">Have Questions About the Course?</h3>
-          <p className="lead mb-3">Don't hesitate to reach out to our dedicated team of student advisors for guidance and support. <strong>Your success is our priority!</strong></p>
+          <p className="lead mb-3">Don't hesitate to reach out to QC's dedicated team of student advisors for guidance and support. <strong>Your success is our priority!</strong></p>
           <Link href="/contact-us" className="btn btn-outline-grey">Contact Us</Link>
         </div>
       </div>
