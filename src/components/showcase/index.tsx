@@ -2,9 +2,9 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import { type FC, useReducer } from 'react';
 
+import { ImageCircle } from '../imageCircle';
 import { Portfolio } from './portfolio';
 import SeeMyWorkIcon from './see-my-work.svg';
-import { ImageCircle } from '../imageCircle';
 
 type PortfolioImage = {
   src: StaticImageData;
