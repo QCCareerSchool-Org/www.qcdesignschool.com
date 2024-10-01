@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
+import type { PageComponent } from '../serverComponent';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';

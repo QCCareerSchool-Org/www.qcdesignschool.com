@@ -218,8 +218,8 @@ module.exports = {
     // import rules
     'import/order': [ 'error', {
       'alphabetize': { order: 'asc', caseInsensitive: true },
-      'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index' ] ],
-      'newlines-between': 'always',
+      // 'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index' ] ],
+      // 'newlines-between': 'always',
     } ],
 
     // jest rules

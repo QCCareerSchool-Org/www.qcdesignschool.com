@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
-import HeroImage from './hero.jpg';
 import { AboutSection } from '../_components/aboutSection';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
@@ -11,6 +10,7 @@ import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
+import HeroImage from './hero.jpg';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
