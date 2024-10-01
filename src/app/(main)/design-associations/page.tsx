@@ -1,48 +1,32 @@
 import type { Metadata } from 'next';
 
-import Background from './background.jpeg';
+import Background from './background.jpg';
 import { DesignAssociationSection } from './designAssociationSection';
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 export const metadata: Metadata = {
-  title: 'QC Design School',
+  title: 'Preferred Partners - QC Design School',
 };
 
 const HomePage: PageComponent = () => (
-  <div>
-    {/* two different displays based on size */}
-    <section className="d-none d-md-block">
-      <BackgroundImage priority src={Background} />
-      <div className="container text-white">
-        <div className="row justify-content-end">
-          <div className="col-md-6 col-lg-5 ">
-            <h1 className="mb-4">Professional Associations & Preferred Partners</h1>
-          </div>
-        </div>
-        <div className="row justify-content-end">
-          <div className="col-md-6 col-lg-5">
-            <p className="lead mb-5">Design associations offer opportunities to network and enhance your professional skills. Students and graduates of QC Design School have access to the following associations:</p>
-          </div>
-        </div>
+  <>
+    <section className="bg-light">
+      <div className="d-none d-md-block">
+        <BackgroundImage priority src={Background} />
       </div>
-    </section>
-    <section className="d-block d-md-none">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6 col-lg-5 ">
-            <h1 className="mb-4">Professional Associations & Preferred Partners</h1>
-          </div>
-        </div>
-        <div className="row">
+      <div className={`container ${styles.container}`}>
+        <div className="row justify-content-end">
           <div className="col-md-6 col-lg-5">
-            <p className="lead mb-5">Design associations offer opportunities to network and enhance your professional skills. Students and graduates of QC Design School have access to the following associations:</p>
+            <h1 className="mb-4">Professional Associations & Preferred Partners</h1>
+            <p className="lead mb-0">Design associations offer opportunities to network and enhance your professional skills. Students and graduates of QC Design School have access to the following associations:</p>
           </div>
         </div>
       </div>
     </section>
     <DesignAssociationSection />
-  </div>
+  </>
 );
 
 export default HomePage;

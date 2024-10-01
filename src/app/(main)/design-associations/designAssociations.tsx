@@ -1,6 +1,5 @@
 import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
-import React from 'react';
 
 import { ASOP, CARAHS, DDA, ISC, Placez, PlanningWiz, POC, RESA, SampleBoard, TheBoard, ThreeDream, ViewItTech } from './images';
 
@@ -13,30 +12,30 @@ export type DesignAssociation = {
 export const professionalAssociations: DesignAssociation[] = [
   {
     name: 'Decorators & Designers Association of Canada (DDA)',
-    description: <>
-      A professional not-for-profit association representing home decorators, designers, and design-related businesses across Canada, the Decorators & Designers Association of Canada (DDA) provides industry-specific resources to its members. The DDA recognizes QC Design School as an approved educational institution. Canadian students and graduates of QC Design School's interior decorating course are eligible to join DDA. For more information on their available membership types, please visit <a href="https://ddacanada.com">ddacanada.com</a>.
-    </>,
+    description: (
+      <>A professional not-for-profit association representing home decorators, designers, and design-related businesses across Canada, the Decorators & Designers Association of Canada (DDA) provides industry-specific resources to its members. The DDA recognizes QC Design School as an approved educational institution. Canadian students and graduates of QC Design School's interior decorating course are eligible to join DDA. For more information on their available membership types, please visit <a href="https://ddacanada.com" target="_blank" rel="noreferrer">ddacanada.com</a>.</>
+    ),
     image: DDA,
   },
   {
     name: 'Real Estate Staging Association (RESA)',
-    description: <>
-      The Real Estate Staging Association (RESA) provides support to all professional real estate stagers in the United States and Canada. All home staging and design professionals are eligible for memberships with RESA, and members receive marketing assistance, peer-to-peer support, newsletters, and access to business resources. For more information on membership, visit <a href="https://realestatestagingassociation.com">realestatestagingassociation.com</a>.
-    </>,
+    description: (
+      <>The Real Estate Staging Association (RESA) provides support to all professional real estate stagers in the United States and Canada. All home staging and design professionals are eligible for memberships with RESA, and members receive marketing assistance, peer-to-peer support, newsletters, and access to business resources. For more information on membership, visit <a href="https://realestatestagingassociation.com" target="_blank" rel="noreferrer">realestatestagingassociation.com</a>.</>
+    ),
     image: RESA,
   },
   {
     name: 'Canadian Association of Renovators and Home Stagers (CARAHS)',
-    description: <>
-      Canadian-based students and graduates of QC can join the Canadian Association of Renovators and Home Stagers (CARAHS). This non-profit organization aims to unite people with complementary backgrounds and help them through education and networking. Members of CARAHS include home staging professionals and color consultants. Benefits of membership include discounts, business resources, website listings, free workshops, and discounted courses. For more information on the available membership types, visit <a href="https://carahs.org">carahs.org</a>.
-    </>,
+    description: (
+      <>Canadian-based students and graduates of QC can join the Canadian Association of Renovators and Home Stagers (CARAHS). This non-profit organization aims to unite people with complementary backgrounds and help them through education and networking. Members of CARAHS include home staging professionals and color consultants. Benefits of membership include discounts, business resources, website listings, free workshops, and discounted courses. For more information on the available membership types, visit <a href="https://carahs.org" target="_blank" rel="noreferrer">carahs.org</a>.</>
+    ),
     image: CARAHS,
   },
   {
     name: 'Professional Organizers in Canada (POC)',
-    description: <>
-      For QC Design School students and graduates who want to expand their networking opportunities, joining Professional Organizers in Canada (POC) is an excellent choice. This association provides members with support by providing access to tools, training, and resources to grow their own businesses. Students enrolled in professional organizing courses, as well as graduates, will enjoy monthly newsletters, discounted conferences, free local meetings, and access to business insurance. For more information on the available membership types, visit <a href="https://organizersincanada.com">organizersincanada.com</a>.
-    </>,
+    description: (
+      <>For QC Design School students and graduates who want to expand their networking opportunities, joining Professional Organizers in Canada (POC) is an excellent choice. This association provides members with support by providing access to tools, training, and resources to grow their own businesses. Students enrolled in professional organizing courses, as well as graduates, will enjoy monthly newsletters, discounted conferences, free local meetings, and access to business insurance. For more information on the available membership types, visit <a href="https://organizersincanada.com" target="_blank" rel="noreferrer">organizersincanada.com</a>.</>
+    ),
     image: POC,
   },
   {
@@ -74,7 +73,7 @@ export const preferredPartners: DesignAssociation[] = [
   },
   {
     name: 'SampleBoard',
-    description: 'Whether you’re planning a complete home redesign or simply giving a room a fresh new look, your clients want to see a visual representation of your ideas in a well thought out and professional manner. SampleBoard.com allows you to prepare an online inspiration board in just minutes. QC students can receive a monthly recurring 50% discount off the Pro plan (15 boards per month), every month as long as the account remains active. Graduates are also eligible for special pricing.',
+    description: 'Whether you\'re planning a complete home redesign or simply giving a room a fresh new look, your clients want to see a visual representation of your ideas in a well thought out and professional manner. SampleBoard.com allows you to prepare an online inspiration board in just minutes. QC students can receive a monthly recurring 50% discount off the Pro plan (15 boards per month), every month as long as the account remains active. Graduates are also eligible for special pricing.',
     image: SampleBoard,
   },
   {
