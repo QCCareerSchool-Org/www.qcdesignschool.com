@@ -1,6 +1,8 @@
+import Image from 'next/image';
 import type { FC } from 'react';
 
 import { preferredPartners, professionalAssociations } from './designAssociations';
+import styles from './page.module.scss';
 
 export const DesignAssociationSection: FC = () => (
   <section className="container">
@@ -12,6 +14,7 @@ export const DesignAssociationSection: FC = () => (
     <div className="row g-5">
       {professionalAssociations.map((association, index) => (
         <div className="col-12 col-md-6 col-lg-4 mb-3" key={index}>
+          <Image src={association.image} alt="" className={`${styles.logo}`} />
           <h6>{association.name}</h6>
           <p>{association.description}</p>
         </div>
@@ -26,6 +29,7 @@ export const DesignAssociationSection: FC = () => (
     <div className="row g-5">
       {preferredPartners.map((association, index) => (
         <div className="col-12 col-md-6 col-lg-4 mb-3" key={index}>
+          <Image src={association.image} alt="" className={`${styles.logo}`} />
           <h6>{association.name}</h6>
           <p>{association.description}</p>
         </div>

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 const HomePage: PageComponent = () => (
   <div>
+    {/* two different displays based on size */}
     <section className="d-none d-md-block">
       <BackgroundImage priority src={Background} />
       <div className="container text-white">
