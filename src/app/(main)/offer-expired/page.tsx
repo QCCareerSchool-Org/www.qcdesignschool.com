@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import Background from './background.jpeg';
+import Background from './background.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
@@ -8,7 +8,7 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
-  title: 'QC Design School',
+  title: 'Offer Expired - QC Design School',
 };
 
 const OfferExpiredPage: PageComponent = () => {
