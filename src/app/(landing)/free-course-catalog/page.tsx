@@ -17,6 +17,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
@@ -71,7 +72,8 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
-      <HowYoullLearnSection />
+      <HowYoullLearnSection graduateTitle="Home Designer" />
+      <GoogleReviewSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>
