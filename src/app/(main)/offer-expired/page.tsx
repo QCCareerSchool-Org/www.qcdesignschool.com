@@ -16,7 +16,7 @@ const OfferExpiredPage: PageComponent = () => {
   return (
     <section>
       <BackgroundImage priority src={Background} />
-      <div className="container py-5 text-white text-center">
+      <div className="container text-white text-center">
         <div className="row justify-content-center ">
           <div className="col-12 col-md-10 col-lg-8 col-xxl-6">
             <h1 className="mb-4">Oops! Your Offer Has Expired!</h1>
@@ -25,8 +25,10 @@ const OfferExpiredPage: PageComponent = () => {
         <div className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8 col-xxl-6">
             <p className="lead mb-4">But there may be something else we can do for you. Talk to one of our Student Advisors to learn about all of QC's special offers and discounts.</p>
-            <TelephoneLink countryCode={countryCode} className="btn btn-outline-light m-2" linkText="Call Us Now" />
-            <ChatLink className="btn btn-primary m-2" />
+            <div className="d-flex justify-content-center">
+              <TelephoneLink countryCode={countryCode} className="btn btn-outline-light me-3" linkText="Call Us Now" />
+              <ChatLink className="btn btn-primary" />
+            </div>
           </div>
         </div>
       </div>
