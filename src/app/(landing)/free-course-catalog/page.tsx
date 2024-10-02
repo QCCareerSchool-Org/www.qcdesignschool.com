@@ -2,8 +2,6 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
-import HeroDesktopImage from './hero-large.jpg';
-import HeroMobileImage from './hero-small.jpg';
 import { AboutSection } from '../_components/aboutSection';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
@@ -12,11 +10,14 @@ import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
+import HeroDesktopImage from './hero-large.jpg';
+import HeroMobileImage from './hero-small.jpg';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { TestimonialSection } from '@/components/testimonialSection';
 import { getParam } from '@/lib/getParam';
@@ -71,7 +72,8 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
-      <HowYoullLearnSection />
+      <HowYoullLearnSection graduateTitle="Home Designer" />
+      <GoogleReviewSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>

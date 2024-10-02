@@ -15,6 +15,9 @@ export const PerksSection: FC<Props> = ({ className }) => (
   <section className={className}>
     <div className="container">
       <div className="row">
+        <div className="col-12 text-center mb-5">
+          <h2>Career Resources</h2>
+        </div>
         <div className="col-12 col-md-6 col-xl-3 mb-4 mb-xl-0">
           <div className="mb-3">
             <Image className={styles.perksImage} src={OnlineStudentCenter} alt="" />
@@ -34,7 +37,7 @@ export const PerksSection: FC<Props> = ({ className }) => (
             <Image className={styles.perksImage} src={NetworkAssociationsImage} alt="" />
           </div>
           <h2 className="h6 mb-3">Eligibility to Join Design Associations</h2>
-          <p className="mb-0">As a QC student or graduate, further develop your professional skills by joining design associations! Professional Organizers in Canada (POC) is just one example of an association that QC students are eligible to join. Members enjoy discounts on workshops and conferences as well as helpful monthly newsletters.</p>
+          <p className="mb-0">As a QC student or graduate, you can further develop your professional skills by joining design associations! Inter-Society Color Council (ISCC) and Real Estate Staging Association (RESA) are just a two examples of associations that QC students are eligible to join. Members enjoy discounts on workshops and conferences as well as helpful monthly newsletters.</p>
         </div>
         <div className="col-12 col-md-6 col-xl-3">
           <div className="mb-3">
