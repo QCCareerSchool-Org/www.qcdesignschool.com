@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ const StudentSuccessPage: PageComponent = () => {
           </div>
         </div>
       </section>
+      <TestimonialVideoSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <CarouselSection />
       <GetStartedSection
