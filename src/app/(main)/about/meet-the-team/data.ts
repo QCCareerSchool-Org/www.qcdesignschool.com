@@ -14,6 +14,7 @@ import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 export type Employee = {
   src: StaticImageData;
   imagePositionX?: number;
+  imagePositionY?: number;
   name: string;
   heading: string;
   description: string;
@@ -64,6 +65,7 @@ export const employees: Employee[] = [
   },
   {
     src: EmilySpragueImage,
+    imagePositionX: 40,
     name: 'Emily Sprague',
     heading: 'Emily, Head of Student Services',
     description: 'My job is to support your education. My team and I are here to help you every step of the way. We can help you choose the best course to meet your needs, develop a plan to achieve your career goals, walkthrough your course materials and celebrate your graduation! You can reach us 7 days a week by phone, email and livechat.',
