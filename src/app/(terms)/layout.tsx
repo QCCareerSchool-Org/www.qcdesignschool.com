@@ -8,9 +8,7 @@ import '@/app/bootstrap.scss';
 const TermsLayout: LayoutComponent = ({ children }) => (
   <>
     <main>{children}</main>
-    <Suspense>
-      <LayoutClient />
-    </Suspense>
+    <Suspense><LayoutClient /></Suspense>
   </>
 );
 

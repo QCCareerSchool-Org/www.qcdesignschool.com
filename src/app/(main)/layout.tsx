@@ -7,6 +7,7 @@ import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
 
 import '@/app/bootstrap.scss';
+import { LiveChat } from '@/scripts/liveChat';
 
 export const metadata: Metadata = {
   title: 'QC Design School',
@@ -18,9 +19,8 @@ const MainLayout: LayoutComponent = ({ children }) => {
       <Header />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
-      <Suspense>
-        <LayoutClient />
-      </Suspense>
+      <LiveChat license={1056788} group={3} />
+      <Suspense><LayoutClient /></Suspense>
     </>
   );
 };

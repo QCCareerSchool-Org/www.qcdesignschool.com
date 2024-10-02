@@ -14,9 +14,7 @@ const LandingLayout: LayoutComponent = ({ children }) => (
   <>
     <main className="flex-shrink-0">{children}</main>
     <Footer />
-    <Suspense>
-      <LayoutClient />
-    </Suspense>
+    <Suspense><LayoutClient /></Suspense>
   </>
 );
 
