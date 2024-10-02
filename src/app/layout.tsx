@@ -36,7 +36,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
         {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
-        <LiveChat license={1056788} group={1} />
+        <LiveChat license={1056788} group={3} />
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>
