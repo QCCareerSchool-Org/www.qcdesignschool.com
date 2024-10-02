@@ -7,7 +7,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - QC Design School',
+  title: 'Student Success - QC Design School',
 };
 
 const StudentSuccessPage: PageComponent = () => {

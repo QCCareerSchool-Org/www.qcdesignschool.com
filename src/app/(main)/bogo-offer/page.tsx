@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import type { FC, PropsWithChildren } from 'react';
 
 import type { PageComponent } from '@/app/serverComponent';
@@ -5,6 +6,10 @@ import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
+
+export const metadata: Metadata = {
+  title: 'Online Courses - QC Design School',
+};
 
 const CoursesPage: PageComponent = () => (
   <div>
