@@ -48,7 +48,7 @@ export const MeetOurTeamSection: FC<Props> = ({ className }) => (
       </div>
 
       <div className="text-center">
-        <Link href="meet-the-team" className="btn btn-primary">Meet the entire QC family!<QIcon height="16" className="ms-2" style={{ position: 'relative', top: -1 }} /></Link>
+        <Link href="/about/meet-the-team" className="btn btn-primary">Meet the entire QC family!<QIcon height="16" className="ms-2" style={{ position: 'relative', top: -1 }} /></Link>
       </div>
     </div>
   </section>

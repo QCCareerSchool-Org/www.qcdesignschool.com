@@ -9,13 +9,14 @@ import { useScreenWidth } from '@/hooks/useScreenWidth';
 
 type Props = {
   courseCode?: CourseCode;
+  className?: string;
 };
 
-export const GoogleReviewSection: FC<Props> = ({ courseCode }) => {
+export const GoogleReviewSection: FC<Props> = ({ courseCode, className }) => {
   const screenWidth = useScreenWidth();
 
   return (
-    <section className="bg-light">
+    <section className={className}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 text-center">
