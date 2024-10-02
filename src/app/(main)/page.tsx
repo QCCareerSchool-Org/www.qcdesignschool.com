@@ -32,7 +32,7 @@ const HomePage: PageComponent = () => (
   <div className={styles.page}>
     <section className={styles.heroSection}>
       <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
-      <div className="container text-white">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
             <h1 className="mb-4">Start a Career in<br />Home Design</h1>
