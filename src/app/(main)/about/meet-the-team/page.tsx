@@ -48,7 +48,19 @@ const MeetTheTeamPage: PageComponent = () => {
  * @param array the entire array
  * @returns the next pair
  */
-// eslint-disable-next-line @typescript-eslint/comma-dangle
-const mapToPairs = <T,>(value: T, index: number, array: T[]): T[][] => (index % 2 === 0 ? [ [ value, array[index + 1] ] ] : []);
+// eslint-disable-next-line @typescript-eslint/comma-dangle (the comma is needed because of jsx)
+const mapToPairs = <T,>(value: T, index: number, array: T[]): T[][] => {
+  // skip odd elements
+  if (index % 2 !== 0) {
+    return [];
+  }
+  // include this element in the pair
+  const nextElement = [ value ];
+  // include the next element if it exists
+  if (typeof array[index + 1] !== 'undefined') {
+    nextElement.push(array[index+1]);
+  }
+  return [ nextElement ];
+};
 
 export default MeetTheTeamPage;
