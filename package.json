@@ -28,7 +28,8 @@
     "react-use-count-up": "^1.0.2",
     "sass": "^1.79.1",
     "server-only": "^0.0.1",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "yet-another-react-lightbox": "^3.21.6"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
