@@ -21,14 +21,16 @@ const responsive: ResponsiveType = {
   },
 };
 
+const autoPlaySpeed = 8000; // 8 seconds
+
 export const GoogleCarousel: FC<Props> = memo(({ mobile, courseCode }) => {
   const sortedReviewData = reviewData.sort(getCompareFunction(courseCode));
   const carouselRef = useRef(null);
-  const intersection = useIntersectionObserver(carouselRef);
+  const intersected = useIntersectionObserver(carouselRef);
 
   return (
     <div ref={carouselRef}>
-      <Carousel ssr responsive={responsive} infinite showDots={mobile} arrows={!mobile} autoPlay={intersection}>
+      <Carousel ssr responsive={responsive} infinite showDots={mobile} arrows={!mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
         {sortedReviewData.map((data, key) => <GoogleReview {...data} key={key} />)}
       </Carousel>
     </div>
