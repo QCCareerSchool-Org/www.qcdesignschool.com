@@ -8,7 +8,7 @@ export const EmployeeColumn: FC<Employee> = ({ src, imagePositionX, imagePositio
     <div className="mb-3">
       <ImageCircle src={src} alt={name} size={200} imagePositionX={imagePositionX} imagePositionY={imagePositionY} />
     </div>
-    <h3 className="h4">{heading}</h3>
+    <h3 className="h6">{heading}</h3>
     <p className="small mb-0">{description}</p>
   </div>
 );
