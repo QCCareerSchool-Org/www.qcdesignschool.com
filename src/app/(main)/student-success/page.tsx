@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
