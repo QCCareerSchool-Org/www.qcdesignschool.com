@@ -36,7 +36,7 @@ const StudentSuccessPage: PageComponent = () => {
       </section>
       <TestimonialVideoSection />
       <TestimonialWallSection testimonialIds={testimonialIds} />
-      <GoogleReviewSection />
+      <GoogleReviewSection className="bg-light" />
       <CarouselSection />
       <GetStartedSection
         title="Ready to Start Your Career in Design?"
