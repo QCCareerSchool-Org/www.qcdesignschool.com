@@ -32,7 +32,7 @@ const HomePage: PageComponent = () => (
   <div className={styles.page}>
     <section className={styles.heroSection}>
       <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
-      <div className="container">
+      <div className="container text-white">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
             <h1 className="mb-4">Start a Career in<br />Home Design</h1>
@@ -70,7 +70,7 @@ const HomePage: PageComponent = () => (
               <div className="col-12 col-lg-6">
                 <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Prepare for a Successful Career</h3>
-                <p className="mb-0">Each course includes built-in business training and expert-led webinars to help you launch your career and grow your clientele as a newly certified designer.</p>
+                <p className="mb-0">Each course includes built-in business training, expert-led instructional videos and live training webinars to help you launch your career and grow your clientele as a newly certified designer.</p>
               </div>
             </div>
           </div>
@@ -90,30 +90,32 @@ const HomePage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="i2"
               subtitle="IDDP™ Certification"
-              description="Dive into the world of design and transform spaces into works of art. Our most popular course is your gateway to mastering aesthetic enhancement and client satisfaction."
+              description="Dive into the design industry and create custom interiors that perfectly align with your clients’ goals. QC’s most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
               href="/online-courses/interior-decorating"
             />
           </SmallColumn>
           <SmallColumn>
             <CourseTuitionCard
-              courseCode="st" subtitle="ISRP™ Certification"
-              description="Discover the key principles of home staging with our essential course that stands at the core of our design curriculum. Begin your journey into the dynamic world of home presentation and property appeal."
+              courseCode="st"
+              subtitle="ISRP™ Certification"
+              description="Discover the art of home staging and transform clients’ spaces into buyer-ready showcases. QC’s Home Staging course equips you with the professional skills to create stunning spaces that captivate buyers and boost property appeal."
               href="/online-courses/home-staging"
             />
           </SmallColumn>
           <SmallColumn className="d-lg-none d-xl-flex">
             <CourseTuitionCard
-              courseCode="po" subtitle="AIOP™ Certification"
-              description="Strike the perfect balance between functionality and style. This course equips you with the skills to declutter and reorganize spaces for optimum efficiency and design."
-              href="/online-courses/professional-organizing"
+              courseCode="ld"
+              subtitle="ILDP™ Certification"
+              description="Launch your career in the fast-growing landscape design industry with QC’s professional certification course. You’ll gain the professional skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
+              href="/online-courses/landscape-design"
             />
           </SmallColumn>
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 text-center">
             <MagnifyingGlassIcon height="28" className="mb-3" />
-            <h3 className="h4 mb-3">Explore More Paths in Design and Styling</h3>
-            <p className="lead mb-4">Looking to broaden your horizons? Our comprehensive catalog offers a range of courses to suit your unique interests and career aspirations. From foundational skills to specialized techniques, let your creativity flow and your professional prowess grow.</p>
+            <h3 className="h4 mb-3">Explore More Paths in Design</h3>
+            <p className="lead mb-4">Looking to expand your skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the world of design!</p>
             <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
           </div>
         </div>
