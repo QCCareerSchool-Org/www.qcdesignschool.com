@@ -7,7 +7,6 @@ import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
-import { LiveChat } from '@/scripts/liveChat';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { PerfectAudience } from '@/scripts/perfectAudience';
 import { Tiktok } from '@/scripts/tiktok';
