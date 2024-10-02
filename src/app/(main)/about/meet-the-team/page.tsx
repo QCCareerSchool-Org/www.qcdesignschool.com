@@ -36,7 +36,7 @@ const MeetTheTeamPage: PageComponent = () => {
         </section>
       ))}
       <GoogleReviewSection className={employeePairs.length % 2 === 0 ? 'bg-light' : undefined} />
-      <GetStartedSection title="Get Started Today" text="Unlock your potential and the step towards a rewarding career. Enroll now and join thousands of students who’ve turned their passion into success." />
+      <GetStartedSection title="Get Started Today" text="Unlock your potential and the step towards a rewarding career. Enroll now and join thousands of students who\'ve turned their passion into success." />
     </>
   );
 };
@@ -48,7 +48,7 @@ const MeetTheTeamPage: PageComponent = () => {
  * @param array the entire array
  * @returns the next pair
  */
-// eslint-disable-next-line @typescript-eslint/comma-dangle (the comma is needed because of jsx)
+// eslint-disable-next-line @typescript-eslint/comma-dangle
 const mapToPairs = <T,>(value: T, index: number, array: T[]): T[][] => {
   // skip odd elements
   if (index % 2 !== 0) {
@@ -58,7 +58,7 @@ const mapToPairs = <T,>(value: T, index: number, array: T[]): T[][] => {
   const nextElement = [ value ];
   // include the next element if it exists
   if (typeof array[index + 1] !== 'undefined') {
-    nextElement.push(array[index+1]);
+    nextElement.push(array[index + 1]);
   }
   return [ nextElement ];
 };
