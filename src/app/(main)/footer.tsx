@@ -11,10 +11,10 @@ import styles from './footer.module.scss';
 import { FooterColumn1 } from './footerColumn1';
 import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
+import BBBIcon from '@/components/bbb.svg';
 import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { getData } from '@/lib/getData';
-import BBBIcon from '@/components/bbb.svg';
 
 export const Footer: FC = () => {
   const { countryCode } = getData();
