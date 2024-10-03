@@ -14,6 +14,7 @@ import { FooterColumn3 } from './footerColumn3';
 import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { getData } from '@/lib/getData';
+import BBBIcon from '@/components/bbb.svg';
 
 export const Footer: FC = () => {
   const { countryCode } = getData();
@@ -24,9 +25,19 @@ export const Footer: FC = () => {
       <div className="container">
         <div className="row">
           <div className={styles.column0}>
-            <div className="mb-4"><Logo height={22} /></div>
-            <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
-            <Link href="/free-course-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
+            <div className="d-flex h-100 flex-column justify-content-between">
+              <div className="mb-5">
+                <div className="mb-4"><Logo height={22} /></div>
+                <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
+                <Link href="/free-course-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
+              </div>
+              <div style={{ width: 100 }}>
+                <div className="d-flex flex-column align-items-center">
+                  <div className="mb-2"><BBBIcon /></div>
+                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">Accredited A+</a>
+                </div>
+              </div>
+            </div>
           </div>
           <div className={styles.column1}>
             <h3 className={`h6 ${styles.columnHeader}`}><Link href="/online-courses">Popular Courses</Link></h3>
@@ -54,7 +65,6 @@ export const Footer: FC = () => {
               <div className="me-md-3 mb-1 mb-md-0">&copy; {new Date().getFullYear()} QC Design School</div>
               <div className="d-flex flex-column flex-sm-row">
                 <div className="me-sm-3"><Link href="/terms">Privacy Policy</Link></div>
-                <div className="me-sm-3"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">BBB Accredited A+</a></div>
                 <a href="https://www.qccareerschool.com" target="_blank" rel="noreferrer">QC Career School</a>
               </div>
             </div>
