@@ -33,8 +33,8 @@ export const Footer: FC = () => {
               </div>
               <div style={{ width: 100 }}>
                 <div className="d-flex flex-column align-items-center">
-                  <div className="mb-2"><BBBIcon /></div>
-                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer">Accredited A+</a>
+                  <div className="mb-2"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer"><BBBIcon /></a></div>
+                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small"><span style={{ marginLeft: '0.375rem' }}>Accredited A+</span></a>
                 </div>
               </div>
             </div>
