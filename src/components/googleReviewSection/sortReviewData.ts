@@ -1,5 +1,5 @@
-import { Priority } from './reviewData';
 import type { ReviewData } from './reviewData';
+import { Priority } from './reviewData';
 import type { CourseCode } from '@/domain/courseCode';
 
 type CompareFunction<T> = (a: T, b: T) => number;

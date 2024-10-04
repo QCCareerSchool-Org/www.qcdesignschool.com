@@ -3,8 +3,8 @@
 import type { FC } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
-import type { Testimonial } from '../testimonial/data';
 import styles from './index.module.css';
+import type { Testimonial } from '../testimonial/data';
 import { getCourseName } from '@/domain/courseCode';
 
 type Props = {
