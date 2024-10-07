@@ -31,8 +31,8 @@ const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 
 const HomePage: PageComponent = () => (
   <div className={styles.page}>
     <section className={styles.heroSection}>
-      <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
-      <div className="container">
+      <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />
+      <div className="container text-white text-shadow">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
             <h1 className="mb-4">Start a Career in<br />Home Design</h1>
