@@ -1,22 +1,25 @@
-import Image from 'next/image';
 import type { FC } from 'react';
 
 import CertificationBackgroundImage from './cert-bg.jpg';
+import { BackgroundImage } from '@/components/backgroundImage';
 import CertificationLogo from '@/components/certificationLogos/iddp.svg';
+import { Overlay } from '@/components/overlay';
 
 export const CertificationSection: FC = () => (
   <section className="text-white text-shadow">
-    <Image src={CertificationBackgroundImage} fill placeholder="blur" alt="" sizes="100vw" style={{ objectFit: 'cover' }} />
+    <BackgroundImage src={CertificationBackgroundImage} />
+    <Overlay backgroundColor="rgba(0,0,0,0.2)" />
     <div className="container">
-      <div className="row justify-content-center align-items-center">
-        <div className="col-12 col-md-4 text-center">
+      <div className="row justify-content-center align-items-center g-4">
+        <div className="col-12 col-lg-4 text-center">
           <CertificationLogo height="200" className="mb-3" alt="International Design and Decorating Professional (IDDP) certification logo" />
         </div>
-        <div className="col-12 col-md-7">
+        <div className="col-12 col-lg-8">
           <h2 className="text-white mb-3">Become a Certified Design Professional with QC Design School!</h2>
-          <p>Once you have successfully completed all of your assignments and your tuition has been paid in full, you'll be all set to graduate from QC Design School! Your certificate of completion will be sent straight to you so you can begin your exciting career as a home designer.</p>        </div>
+          <p>Once you have successfully completed all of your assignments and your tuition has been paid in full, you'll be all set to graduate from QC Design School! Your certificate of completion will be sent straight to you so you can begin your exciting career as a home designer.</p>
+          <div className="d-lg-none" style={{ height: 100 }} />
+        </div>
       </div>
     </div>
   </section>
-
 );

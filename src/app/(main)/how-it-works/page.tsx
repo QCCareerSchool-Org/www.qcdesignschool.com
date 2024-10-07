@@ -56,16 +56,17 @@ const HowItWorksPage: PageComponent = () => (
             <FeedbackIcon width={iconSize} className="text-primary mb-1" />
             <p className="text-primary fw-bold text-uppercase">Step 3</p>
             <h2 className="h4">Review Your Feedback</h2>
-            <p>In their feedback, your tutor will identify areas of opportunity and highlight your areas of strength. You'll review this advice to improve your skills for the next unit. With each assignment, you'll build on the materials you've learned, to develop your skills as a professional home designer.</p>
+            <p>In their feedback, your tutor will identify areas of opportunity and highlight your areas of strength. You'll review this advice to improve your skills for the next unit. With each assignment, you'll build on the materials you've learned to develop your skills as a design professional.</p>
           </div>
         </div>
       </div>
     </section>
     <CertificationSection />
+    <CertificationSection />
     <GoogleReviewSection />
     <GetStartedSection
       title="Start Your Design Career Today!"
-      text="It's never too late to start a career you'll love. Enroll in an online course with QC and become a certified design professional today!"
+      text="It's never too late to start a career you'll love. Enroll in an online course with QC today and become a certified design professional!"
       buttonText="View Courses"
       buttonHref="/online-courses"
     />
