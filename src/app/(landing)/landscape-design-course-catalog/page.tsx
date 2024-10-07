@@ -75,7 +75,11 @@ const LandscapeDesignCourseCatalogPage: PageComponent = ({ searchParams }) => {
       <GoogleReviewSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Landscape Design Professional (ILDP™) certification" />}>
+      <CertificationSection
+        backgroundImageSrc={CertificationBackgroundImage}
+        certification={<CertificationIcon alt="International Landscape Design Professional (ILDP™) certification" />}
+        overlayColor="rgb(0,0,0,0.2)"
+      >
         <h2 className="h3">Your Landscape Design Certification</h2>
         <p>Once you've completed the Landscape Design course online, you'll graduate with the International Landscape Design Professional™ (ILDP™) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed professional landscape design training and you possess all the skills and knowledge required to be successful in the industry.</p>

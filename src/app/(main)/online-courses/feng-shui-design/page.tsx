@@ -9,7 +9,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -86,7 +86,7 @@ const FengShuiDesignPage: PageComponent = () => (
     <GoogleReviewSection courseCode="fs" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to start your career as a feng shui designer?"

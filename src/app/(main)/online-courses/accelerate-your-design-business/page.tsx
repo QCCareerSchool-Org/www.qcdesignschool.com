@@ -7,7 +7,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -82,7 +82,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     <OutlineSection className="bg-light" />
     <VirtualCommunitySection />
     <GoogleReviewSection courseCode="eb" />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to expand your home design & decorating business?"

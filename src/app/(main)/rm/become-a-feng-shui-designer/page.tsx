@@ -7,7 +7,7 @@ import { TutorSection } from '../../online-courses/feng-shui-design/tutorSection
 import WhyQCImage from '../../online-courses/feng-shui-design/what-youll-learn.jpg';
 import styles from '../index.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -56,7 +56,7 @@ const FengShuiDesignPage: PageComponent = () => (
     <VirtualCommunitySection />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitCanvaSection />
     <GoogleReviewSection courseCode="fs" />
     <GuaranteeSection className="bg-light" />
     <GetStartedSection

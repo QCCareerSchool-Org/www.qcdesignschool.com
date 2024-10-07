@@ -6,6 +6,7 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -74,6 +75,7 @@ const VirtualDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <CareerEssentialsKitDesignFilesSection />
     <GoogleReviewSection courseCode="vd" />
     <VirtualCommunitySection />
     <PaymentPlanSection courseCodes={courseCodes} />

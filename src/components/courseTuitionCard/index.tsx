@@ -64,8 +64,8 @@ export const CourseTuitionCard: FC<Props> = async props => {
               <>
                 <Link href={props.href} className="d-lg-none btn btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
                 <Link href={props.href} className="d-none d-lg-block btn btn-lg btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
-                <Link href={enrollLink} className="d-lg-none btn btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
-                <Link href={enrollLink} className="d-none d-lg-block btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
+                <Link href={enrollLink} className="d-lg-none btn btn-none text-dark" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
+                <Link href={enrollLink} className="d-none d-lg-block btn btn-none btn-lg text-dark" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
               </>
             )
             : (

@@ -75,7 +75,11 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
       <GoogleReviewSection courseCode="i2" />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>
+      <CertificationSection
+        backgroundImageSrc={CertificationBackgroundImage}
+        certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}
+        overlayColor="rgb(0,0,0,0.2)"
+      >
         <h2 className="h3">Your Design Certification</h2>
         <p>Once you've completed the Interior Decorating Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to be successful in the industry.</p>
@@ -86,6 +90,8 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
           <li>Design corporate offices, conference rooms, and retail stores</li>
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
+        <div className="d-none d-lg-block d-xxl-none" style={{ height: 100 }} />
+        <div className="d-lg-none" style={{ height: 180 }} />
       </CertificationSection>
       <AboutSection />
       <BottomSection>

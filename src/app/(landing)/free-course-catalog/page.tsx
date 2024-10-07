@@ -76,7 +76,11 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
       <GoogleReviewSection />
       <JoinQCSection />
       <TestimonialSection id="TD-0006" />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}>
+      <CertificationSection
+        backgroundImageSrc={CertificationBackgroundImage}
+        certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}
+        overlayColor="rgb(0,0,0,0.2)"
+      >
         <h2 className="h3">Your Design Certification</h2>
         <p>Once you've completed your online design course, you'll graduate with a certification of completion and a professional designation that is yours to use for life.</p>
         <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to create beautiful and comfortable spaces for your clients.</p>
@@ -86,6 +90,8 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
           <li>Secure a position at an established design and decorating firm</li>
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
+        <div className="d-none d-lg-block d-xxl-none" style={{ height: 100 }} />
+        <div className="d-lg-none" style={{ height: 180 }} />
       </CertificationSection>
       <AboutSection />
       <BottomSection>

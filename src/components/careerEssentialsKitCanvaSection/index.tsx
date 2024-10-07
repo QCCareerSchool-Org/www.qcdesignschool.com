@@ -7,7 +7,7 @@ import styles from './index.module.scss';
 import MobileImage from './mobile.jpg';
 import TabletImage from './tablet.jpg';
 
-export const CareerEssentialsKitSection: FC = () => (
+export const CareerEssentialsKitCanvaSection: FC = () => (
   <>
     <section className={`${styles.section} text-white text-shadow`}>
       <div className="d-none d-lg-block"><BackgroundImage src={DesktopBackgroundImage} objectPosition={'100% 50%'} /></div>

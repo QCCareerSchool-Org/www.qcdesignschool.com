@@ -62,7 +62,6 @@ const HowItWorksPage: PageComponent = () => (
       </div>
     </section>
     <CertificationSection />
-    <CertificationSection />
     <GoogleReviewSection />
     <GetStartedSection
       title="Start Your Design Career Today!"

@@ -9,7 +9,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -87,7 +87,7 @@ const LandscapeDesignPage: PageComponent = () => (
     <GoogleReviewSection courseCode="ld" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitCanvaSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to start your career in landscape design?"
