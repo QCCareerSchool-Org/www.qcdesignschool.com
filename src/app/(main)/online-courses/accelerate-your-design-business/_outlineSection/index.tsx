@@ -23,7 +23,7 @@ export const OutlineSection: FC<Props> = ({ className }) => (
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="Establish Your Brand and Business Goals" src={Part1Image} open className="mb-3">
-            <p className="small">Learn about the importance of creating a strong brand identity for your business and how to target your ideal clients. You’ll introduce your business and goals to your tutor, and establish your brand while developing your customer personas. Finally, you’ll start to plan different types of promotions you might run for your business.</p>
+            <p className="small">Learn about the importance of creating a strong brand identity for your business and how to target your ideal clients. You'll introduce your business and goals to your tutor, and establish your brand while developing your customer personas. Finally, you'll start to plan different types of promotions you might run for your business.</p>
           </CourseOutline>
           <CourseOutline title="Build an Online Presence" src={Part2Image} className="mb-3">
             <p className="small">Now that you have a better understanding of branding, you'll start to put that knowledge to good use as you explore your online presence, from your website to your social media presence. You'll learn about what makes a &ldquo;good&rdquo; website, how to effectively manage your social media presence, how to handle negative reviews, marketing your business online, the art of blogging, content marketing and more.</p>
