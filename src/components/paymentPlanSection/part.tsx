@@ -4,7 +4,6 @@ import type { FC } from 'react';
 import commonStyles from './commonStyles.module.css';
 import styles from './part.module.scss';
 import type { Price } from '@/domain/price';
-import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -21,7 +20,6 @@ export const Part: FC<Props> = ({ price, href }) => (
       <div className={commonStyles.price}>
         <span className={commonStyles.priceSmall}>
           {price.currency.symbol}
-          {tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}
         </span>
         <span className="text-black">{price.plans.part.deposit}</span>
         <span className={commonStyles.priceSmall}>

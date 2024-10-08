@@ -5,7 +5,6 @@ import commonStyles from './commonStyles.module.css';
 import styles from './full.module.scss';
 import TagIcon from '@/components/icons/tag.svg';
 import type { Price } from '@/domain/price';
-import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -30,7 +29,6 @@ export const Full: FC<Props> = ({ price, href }) => (
         <span>
           <span className={commonStyles.priceSmall}>
             {price.currency.symbol}
-            {tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}
           </span>
           <span>
             {price.plans.full.total}
