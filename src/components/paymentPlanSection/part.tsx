@@ -4,6 +4,7 @@ import type { FC } from 'react';
 import commonStyles from './commonStyles.module.css';
 import styles from './part.module.scss';
 import type { Price } from '@/domain/price';
+import { formatPrice } from '@/lib/formatPrice';
 
 type Props = {
   price: Price;
@@ -21,13 +22,13 @@ export const Part: FC<Props> = ({ price, href }) => (
         <span className={commonStyles.priceSmall}>
           {price.currency.symbol}
         </span>
-        <span className="text-black">{price.plans.part.deposit}</span>
+        <span className="text-black">{formatPrice(price.plans.part.deposit)}</span>
         <span className={commonStyles.priceSmall}>
           /mo
         </span>
       </div>
-      <p className="fw-bold mb-1">12 monthly payments of {price.currency.symbol}{price.plans.part.installmentSize}</p>
-      <p className="fw-bold mb-1">(Total: {price.currency.symbol}{price.plans.part.total})</p>
+      <p className="fw-bold mb-1">12 monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
+      <p className="fw-bold mb-1">(Total: {price.currency.symbol}{formatPrice(price.plans.part.total)})</p>
       <hr className={commonStyles.hr} />
       <Link href={href} className="btn btn-secondary">Enroll Now</Link>
     </div>
