@@ -9,22 +9,20 @@
   color: var(--qc-color-headings);
 }
 
-.saleHeader {
+.message {
   background-color: #FF1717;
-  text-align: center;
-  padding: 10px;
-  font-weight: bold;
   color: white;
-  font-size: 16px;
-  text-transform: uppercase;
 }
 
 .redStrikethrough {
   font-size: 30px;
   position: relative;
-  margin-right: 10px;
+  margin-right: 0.75rem;
+  padding: 0 0.375rem;
   color: lightgrey;
 }
+
+.hr { opacity: 0.625; }
 
 .redStrikethrough::before {
   content: '';
@@ -32,7 +30,15 @@
   left: 0;
   right: 0;
   top: 50%;
-  height: 3px;
+  height: 2px;
   background-color: #FF1717;
   z-index: 1;
+
+  --qc-angle: -3deg;
+
+  -webkit-transform:rotate(var(--qc-angle));
+  -moz-transform:rotate(var(--qc-angle));
+  -ms-transform:rotate(var(--qc-angle));
+  -o-transform:rotate(var(--qc-angle));
+  transform:rotate(var(--qc-angle));
 }

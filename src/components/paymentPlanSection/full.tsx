@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import commonStyles from './commonStyles.module.css';
+import commonStyles from './commonStyles.module.scss';
 import styles from './full.module.scss';
 import TagIcon from '@/components/icons/tag.svg';
 import type { Price } from '@/domain/price';
@@ -13,23 +13,20 @@ type Props = {
 };
 
 export const Full: FC<Props> = ({ price, href }) => (
-  <div className={`${styles.full} card`}>
-    <ul className={`list-group list-group-flush`}>
-      <li className={`${styles.saleHeader} list-group-item d-flex justify-content-center align-items-center`}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} - Limited Time Offer &nbsp;<TagIcon height={20} color="#B20000" />
-      </li>
-    </ul>
-    <div className="card-body">
+  <div className={`${commonStyles.card} ${styles.full} card`}>
+    <div className={`${commonStyles.message} ${styles.message}`}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} - Limited Time Offer &nbsp;<TagIcon height="18" color="#b20000" /></div>
+    <div className={`card-body ${commonStyles.cardBody}`}>
       <h6 className={`${commonStyles.title} text-white`}>Pay in Full</h6>
       <div className={commonStyles.description}>One-time payment of</div>
-      <hr className={commonStyles.hr} />
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
       <div className={commonStyles.price}>
         <span className={styles.redStrikethrough}>{price.currency.symbol}{formatPrice(price.cost)}</span>
-        <span className={`${commonStyles.priceSmall} me-1`}>{price.currency.symbol}</span>{formatPrice(price.plans.full.total)}
+        <span className={`${commonStyles.priceSmall} ${commonStyles.largePriceCurrencySymbolSpacing}`}>{price.currency.symbol}</span>{formatPrice(price.plans.full.total)}
       </div>
       <p className="mb-1">
         <span className="fw-bold">Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span> when you pay in full</p>
       <p className="fw-bold mb-1">(Total: {price.currency.symbol}{formatPrice(price.plans.full.total)})</p>
-      <hr className={commonStyles.hr} />
+      <hr className={`${commonStyles.hr} ${styles.hr}`} />
       <Link href={href} className="btn btn-light">Enroll Now</Link>
     </div>
   </div>

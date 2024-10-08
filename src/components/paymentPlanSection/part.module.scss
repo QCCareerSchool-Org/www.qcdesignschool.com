@@ -1,10 +1,3 @@
 .part {
-  border: 2px solid var(--qc-color-light-stroke);
-}
-
-// this is so it matches the "pay in full" card, since it has a banner on the top
-@media (min-width: 992px) {
-  .partCard {
-    margin-top: 42px;
-  }
+  border: 1px solid var(--qc-color-light-stroke);
 }
