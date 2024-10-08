@@ -5,6 +5,7 @@ import commonStyles from './commonStyles.module.scss';
 import styles from './part.module.scss';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
+import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -19,9 +20,7 @@ export const Part: FC<Props> = ({ price, href }) => (
       <div className={commonStyles.description}>Start for as little as</div>
       <hr className={`${commonStyles.hr} ${styles.hr}`} />
       <div className={commonStyles.price}>
-        <span className={`${commonStyles.priceSmall} ${commonStyles.largePriceCurrencySymbolSpacing}`}>{price.currency.symbol}</span>
-        <span className="text-black">{formatPrice(price.plans.part.deposit)}</span>
-        <span className={commonStyles.priceSmall}>/mo</span>
+        <span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}<span className="text-black">{formatPrice(price.plans.part.deposit)}</span><span className={commonStyles.priceSmall}>/mo</span>
       </div>
       <p className="fw-bold mb-1">{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
       <p className="fw-bold mb-1">(Total: {price.currency.symbol}{formatPrice(price.plans.part.total)})</p>

@@ -6,6 +6,7 @@ import styles from './full.module.scss';
 import TagIcon from '@/components/icons/tag.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
+import { tightNumber } from '@/lib/tightNumber';
 
 type Props = {
   price: Price;
@@ -21,7 +22,7 @@ export const Full: FC<Props> = ({ price, href }) => (
       <hr className={`${commonStyles.hr} ${styles.hr}`} />
       <div className={commonStyles.price}>
         <span className={styles.redStrikethrough}>{price.currency.symbol}{formatPrice(price.cost)}</span>
-        <span className={`${commonStyles.priceSmall} ${commonStyles.largePriceCurrencySymbolSpacing}`}>{price.currency.symbol}</span>{formatPrice(price.plans.full.total)}
+        <span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{tightNumber(price.plans.full.total) && <span style={{ marginRight: '0.25rem' }} />}{formatPrice(price.plans.full.total)}
       </div>
       <p className="mb-1">
         <span className="fw-bold">Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span> when you pay in full</p>
