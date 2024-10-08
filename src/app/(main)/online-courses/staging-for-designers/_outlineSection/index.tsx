@@ -20,7 +20,7 @@ export const OutlineSection: FC<Props> = ({ className }) => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dui lacus, tempus aliquam enim sed, dictum pharetra magna. Nam sit amet ante a justo mattis vehicula. Nulla ultrices viverra orci, nec interdum massa fermentum quis.</p>
+          <p className="lead mb-0">QC's Staging for Designer's course is divided into 5 separate training units, each designed to enhance your staging and design skills alongside the Interior Decorating certification course.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="The Fundamentals of Home Staging" src={Part1Image} open className="mb-3">

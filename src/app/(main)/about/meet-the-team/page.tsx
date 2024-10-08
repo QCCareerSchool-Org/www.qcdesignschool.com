@@ -19,8 +19,8 @@ const MeetTheTeamPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-10 col-xxl-9 text-center">
-              <h1 className="mb-4">Meet the Team<br />Behind Your Success</h1>
-              <p className="mb-0">Our dedicated team at QC Career School is here to guide you every step of the way. From our innovative executive team to our supportive student services and teaching assistants, we are committed to making your learning experience seamless and effective. Discover the leaders who bring expertise and passion to your education.</p>
+              <h1 className="mb-4">Meet the Team<br />Rooting for Your Success</h1>
+              <p className="lead mb-0">At QC, our team is passionate about your education. From QC's innovative executive team to our dedicated student services, we are committed to providing you with the training and support you need to build a successful career. Discover just a few of the people working behind the scenes at QC to help you achieve your dreams.</p>
             </div>
           </div>
         </div>

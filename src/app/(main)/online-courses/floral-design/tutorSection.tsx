@@ -25,7 +25,7 @@ export const TutorSection: FC<Props> = ({ className }) => (
         <div className="col-12 col-lg-6">
           <div className="mb-3"><MwaiYeboahCircle /></div>
           <h3 className="h4">Mwai Yeboah</h3>
-          <p className="mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
+          <p className="mb-0">Mwai Yeboah, founder of Love From Mwai and multi-award-winning planner, specializes in destination wedding planning and luxury floral design. Mawai transforms weddings and events into immersive experiences for luxury clients worldwide.</p>
         </div>
       </div>
     </div>

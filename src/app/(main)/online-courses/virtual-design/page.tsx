@@ -46,7 +46,7 @@ const VirtualDesignPage: PageComponent = () => (
               <li>Revolutionize and expand your business by offering virtual services to your design clients</li>
               <li>Join a thriving virtual community to connect with other decorators and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele with online services</li>
-              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez DesignFiles, and more</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez, SampleBoard, and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import Part2Image from './Build an Online Presence.jpg';
-import Part1Image from './Establish Your Brand and Business Goals.jpg';
-import Part4Image from './Successful Project Management.jpg';
+import Part1Image from './Becoming a Color Consultant.jpg';
+import Part4Image from './Color Consulting Services.jpg';
+import Part2Image from './Creating a Color Palette.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
 export const OutlineSection: FC = () => (

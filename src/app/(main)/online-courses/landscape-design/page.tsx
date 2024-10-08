@@ -49,7 +49,7 @@ const LandscapeDesignPage: PageComponent = () => (
               <li>Get started now—our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top landscape industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material</li>
-              <li>Access exclusive tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
+              <li>Access video tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
               <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified landscape designer</li>
             </ul>
           </div>

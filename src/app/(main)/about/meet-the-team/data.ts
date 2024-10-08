@@ -33,7 +33,7 @@ export const employees: Employee[] = [
     imagePositionX: 45,
     name: 'Kayla Cuggy',
     heading: 'Kayla, COO',
-    description: 'I am dedicated to crafting an unparalleled online learning environment where every student can flourish. In my role as COO of QC Career School, my goal is to cultivate innovation and empower our team to provide a top-notch educational experience. Our team is committed to elevating the standard of online education across the industry, spanning from the quality of our course content to the effectiveness of our student support systems.',
+    description: 'I am dedicated to creating an unparalleled online learning environment where each and every student can flourish. My goal is to cultivate innovation and empower our team to provide you with a top-notch educational experience. The QC team is committed to elevating the standard of online education across the industry, spanning from the quality of our course content to the effectiveness of our student support systems. We strive to ensure that each student has the tools, guidance, and resources they need to achieve their goals and succeed in their chosen career paths.',
   },
   {
     src: DaveWelshImage,
@@ -54,7 +54,7 @@ export const employees: Employee[] = [
     imagePositionX: 45,
     name: 'Chris Breedyk',
     heading: 'Chris, Head of Course Design',
-    description: 'My #1 goal is to design a learning experience that works for you. Whether youre studying on a computer, tablet or smartphone, I want to ensure your experience is the best that it can be. My team continuously updates course materials to keep up with the latest technologies and trends. We design interactive course lessons complete with instructional videos and activities to create an engaging learning environment, as well as practical assignments aimed at developing your skills. I know Ive done my job well when youve completed your course, and had fun doing it!',
+    description: 'My #1 goal is to design a learning experience that works for you. Whether you\'re studying on a computer, tablet, or smartphone, I want to ensure your experience is the best that it can be. My team continuously updates course materials to keep up with the latest technologies and trends. We design interactive course lessons complete with instructional videos and activities to create an engaging learning environment, as well as practical assignments aimed at developing your skills. I know I\'ve done my job well when you\'ve completed your course, and had fun doing it!',
   },
   {
     src: MalcolmAsselinImage,

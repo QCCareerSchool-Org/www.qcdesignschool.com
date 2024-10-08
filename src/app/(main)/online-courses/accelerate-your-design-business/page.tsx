@@ -42,10 +42,10 @@ const AccelerateYourBusinessPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Accelerate Your Business online training provides you with the tools and expertise you need to take your design business to the next level. You'll study advanced marketing techniques and business strategies including search engine optimization, website development and client acquisition so that you're ready to build a scale a thriving business.</p>
+            <p className="lead mb-4">QC's Accelerate Your Business online training provides you with the tools and expertise you need to take your design business to the next level. You'll study advanced marketing techniques and business strategies including search engine optimization, website development and client acquisition so that you're ready to scale a thriving business.</p>
             <ul>
-              <li>Learn how to grow and expand your existing interior decorating and design business - perfect for design entrepreneurs</li>
-              <li>Recieve personalized feedback and advice on your assignments from our top industry design experts</li>
+              <li>Learn how to grow and expand your existing interior decorating and design business&mdash;perfect for design entrepreneurs</li>
+              <li>Recieve personalized feedback and advice on your assignments from our top design-industry experts</li>
               <li>Join a thriving virtual community to connect with other design professionals and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele</li>
               <li>Enjoy discounts and affiliations with top organizations including DesignFiles, the Decorators & Designers Association of Canada, Placez and more</li>

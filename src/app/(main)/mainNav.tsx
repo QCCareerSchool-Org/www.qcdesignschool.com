@@ -54,7 +54,7 @@ export const MainNav: FC = () => {
               <Link href="/online-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
               <Link href="/online-courses/color-consultant" className="dropdown-item" onClick={handleClick}>Color Consultant</Link>
               <Link href="/online-courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
-              <Link href="/online-courses/staging-for-designers" className="dropdown-item" onClick={handleClick}>Staging For Designers</Link>
+              <Link href="/online-courses/staging-for-designers" className="dropdown-item" onClick={handleClick}>Staging for Designers</Link>
               <Link href="/online-courses/aging-in-place" className="dropdown-item" onClick={handleClick}>Aging in Place</Link>
               <Link href="/online-courses/virtual-design" className="dropdown-item" onClick={handleClick}>Virtual Design</Link>
               <Link href="/online-courses/accelerate-your-design-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
