@@ -23,18 +23,8 @@ export const Full: FC<Props> = ({ price, href }) => (
       <div className={commonStyles.description}>One-time payment of</div>
       <hr className={commonStyles.hr} />
       <div className={commonStyles.price}>
-        <span className={styles.redStrikethrough}>
-          {price.currency.symbol}
-          {formatPrice(price.cost)}
-        </span>
-        <span>
-          <span className={commonStyles.priceSmall}>
-            {price.currency.symbol}
-          </span>
-          <span>
-            {formatPrice(price.plans.full.total)}
-          </span>
-        </span>
+        <span className={styles.redStrikethrough}>{price.currency.symbol}{formatPrice(price.cost)}</span>
+        <span className={`${commonStyles.priceSmall} me-1`}>{price.currency.symbol}</span>{formatPrice(price.plans.full.total)}
       </div>
       <p className="mb-1">
         <span className="fw-bold">Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span> when you pay in full</p>

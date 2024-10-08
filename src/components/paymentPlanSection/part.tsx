@@ -13,21 +13,17 @@ type Props = {
 
 export const Part: FC<Props> = ({ price, href }) => (
   <div className={`${styles.part} card`}>
-    {/* this margin is so it matches the  */}
+    {/* this margin is so it matches the full payment plan */}
     <div className={`${styles.partCard} card-body`}>
       <h6 className={`${commonStyles.title} ${styles.dark}`}>{price.plans.part.installments}-Month Installment Plan</h6>
       <div className={commonStyles.description}>Start for as little as</div>
       <hr className={commonStyles.hr} />
       <div className={commonStyles.price}>
-        <span className={commonStyles.priceSmall}>
-          {price.currency.symbol}
-        </span>
+        <span className={`${commonStyles.priceSmall} me-1`}>{price.currency.symbol}</span>
         <span className="text-black">{formatPrice(price.plans.part.deposit)}</span>
-        <span className={commonStyles.priceSmall}>
-          /mo
-        </span>
+        <span className={commonStyles.priceSmall}>/mo</span>
       </div>
-      <p className="fw-bold mb-1">12 monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
+      <p className="fw-bold mb-1">{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
       <p className="fw-bold mb-1">(Total: {price.currency.symbol}{formatPrice(price.plans.part.total)})</p>
       <hr className={commonStyles.hr} />
       <Link href={href} className="btn btn-secondary">Enroll Now</Link>
