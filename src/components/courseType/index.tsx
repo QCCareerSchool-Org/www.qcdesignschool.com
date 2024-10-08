@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import styles from './courseType.module.css';
+import styles from './index.module.css';
 
 type Props = {
   className?: string;

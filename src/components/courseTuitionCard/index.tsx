@@ -7,6 +7,7 @@ import { CardPrice } from './cardPrice';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
 import { getHeroImage } from '../hero/getHeroImage';
+import { Subtitle } from '../subtitle';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
@@ -36,7 +37,7 @@ export const CourseTuitionCard: FC<Props> = async props => {
             <>
               <div className={styles.imageOverlay} />
               <div className={styles.overlayContent}>
-                {props.subtitle && <div className={styles.subtitle}>{props.subtitle}</div>}
+                {props.subtitle && <Subtitle>{props.subtitle}</Subtitle>}
                 <h3 className="h4 mb-0 text-white">{getCourseName(props.courseCode)}</h3>
               </div>
             </>
