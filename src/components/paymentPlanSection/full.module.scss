@@ -1,9 +1,38 @@
 .full {
-  background-color: white;
+  background-color: var(--qc-color-primary);
+  color: white;
   border: none;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.0625);
 }
 
 .dark {
   color: var(--qc-color-headings);
+}
+
+.saleHeader {
+  background-color: #FF1717;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.redStrikethrough {
+  font-size: 30px;
+  position: relative;
+  margin-right: 10px;
+  color: lightgrey;
+}
+
+.redStrikethrough::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  background-color: #FF1717;
+  z-index: 1;
 }
