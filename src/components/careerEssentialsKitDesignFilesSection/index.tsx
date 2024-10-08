@@ -8,9 +8,9 @@ import MobileImage from './mobile.jpg';
 
 export const CareerEssentialsKitDesignFilesSection: FC = () => (
   <>
-    <section className={`${styles.section} text-white text-shadow`}>
+    <section className={`${styles.section} text-white`}>
       <div className="d-none d-lg-block">
-        <BackgroundImage src={DesktopBackgroundImage} objectPosition={'70% 50%'} />
+        <BackgroundImage src={DesktopBackgroundImage} objectPosition="80% 50%" />
       </div>
       <div className="container">
         <div className="row">

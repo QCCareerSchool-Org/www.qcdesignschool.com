@@ -2,5 +2,9 @@
   background-color: #0706c3;
   @media screen and (max-width: 991.9px) {
     padding-bottom: 0;
+    background-color: #000a6b;
+  }
+  @media screen and (min-width: 992px) {
+    text-shadow: var(--qc-text-shadow);
   }
 }

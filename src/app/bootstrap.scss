@@ -16,6 +16,8 @@
   --qc-color-light-stroke: #b5c3d1;
   --qc-color-red-cta: #c60000;
   --qc-color-light-blue: #ced6ff;
+
+  --qc-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -467,7 +469,7 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: var(--qc-text-shadow);
 }
 
 ::selection {
