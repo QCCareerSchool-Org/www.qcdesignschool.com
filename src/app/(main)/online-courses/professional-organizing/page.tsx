@@ -90,7 +90,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your career in professional organizing?"
+      title="Ready to Start Your Career in Professional Organizing?"
       text="Become professionally certified with QC's online professional organizing training"
       courseCodes={courseCodes}
     />

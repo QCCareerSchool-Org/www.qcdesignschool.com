@@ -85,7 +85,7 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to expand your home design & decorating business?"
+      title="Ready to Expand Your Home Design & Decorating Business?"
       text="Take QC's Accelerate Your Business training"
       courseCodes={courseCodes}
     />

@@ -90,7 +90,7 @@ const InteriorDecoratingPage: PageComponent = () => (
     <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your home design & decorating career?"
+      title="Ready to Start Your Home Design & Decorating Career?"
       text="Become professionally certified with QC's online interior decorating training"
       courseCodes={courseCodes}
     />

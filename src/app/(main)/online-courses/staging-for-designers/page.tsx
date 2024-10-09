@@ -85,8 +85,8 @@ const StagingForDesignersPage: PageComponent = () => (
     <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to add home staging to your design expertise?"
-      text="Become professionally certified with QC’s online Staging for Designers training"
+      title="Ready to Add Home Staging to Your Design Expertise?"
+      text="Become professionally certified with QC's online Staging for Designers training"
       courseCodes={courseCodes}
     />
   </div>

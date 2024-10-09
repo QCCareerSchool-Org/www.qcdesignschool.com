@@ -80,7 +80,7 @@ const VirtualDesignPage: PageComponent = () => (
     <VirtualCommunitySection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to expand your design services online?"
+      title="Ready to Expand Your Design Services Online?"
       text="Become professionally certified with QC's online virtual design training"
       courseCodes={courseCodes}
     />
