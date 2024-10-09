@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { OutlineSection } from '../../online-courses/color-consultant/_outlineSection';
 import { CertificationSection } from '../../online-courses/color-consultant/certificationSection';
 import { TutorSection } from '../../online-courses/color-consultant/tutorSection';
 import WhyQCImage from '../../online-courses/color-consultant/what-youll-learn.jpg';
+import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
@@ -30,7 +32,7 @@ const ColorConsultantPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Start Your Design Career as a Color Consultant</h2>
             <p className="lead mb-4">Learn online and become an Internationally Certified Color Consultant with QC's professional course. With QC's Color Consultant Course, you'll receive:</p>
-            <ul>
+            <ul className="mb-4">
               <li>Professional and industry-leading content</li>
               <li>An International Color Consulting Professional™ (ICCP™) certificate when you graduate</li>
               <li>Full business training complete with custom templates to prepare you for a new career</li>
@@ -39,6 +41,7 @@ const ColorConsultantPage: PageComponent = () => (
               <li>Support and guidance from QC's expert team of student advisors, available 7 days a week</li>
               <li>50% off all additional courses so you can continue mastering your skills</li>
             </ul>
+            <Link href={`https://enroll.qcdesignschool.com?${courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&')}`} className="btn btn-primary btn-large">Enroll Now</Link>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
@@ -46,11 +49,7 @@ const ColorConsultantPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GetStartedSection
-      title="Ready to start your career as a color consultant?"
-      buttonText="Enroll Now"
-      courseCodes={courseCodes}
-    />
+    <StatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />

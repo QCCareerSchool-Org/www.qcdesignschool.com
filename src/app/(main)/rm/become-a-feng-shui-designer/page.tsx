@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { OutlineSection } from '../../online-courses/feng-shui-design/_outlineSection';
 import { CertificationSection } from '../../online-courses/feng-shui-design/certificationSection';
 import { TutorSection } from '../../online-courses/feng-shui-design/tutorSection';
 import WhyQCImage from '../../online-courses/feng-shui-design/what-youll-learn.jpg';
+import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -30,7 +32,7 @@ const FengShuiDesignPage: PageComponent = () => (
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Enter the World of Feng Shui Design</h2>
             <p className="lead mb-4">Learn online and become an Internationally Certified Feng Shui Professional with QC's comprehensive course.</p>
-            <ul>
+            <ul className="mb-4">
               <li>Learn online and become an Internationally Certified Feng Shui Professional with QC's comprehensive course.</li>
               <li>An Advanced Feng Shui Design Professionall™ (ASDP™) certificate when you graduate</li>
               <li>Full business training complete with custom templates to prepare you for a new career</li>
@@ -39,6 +41,7 @@ const FengShuiDesignPage: PageComponent = () => (
               <li>Support and guidance from QC's expert team of student advisors, available 7 days a week</li>
               <li>50% off all additional courses so you can continue mastering your skills</li>
             </ul>
+            <Link href={`https://enroll.qcdesignschool.com?${courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&')}`} className="btn btn-primary btn-large">Enroll Now</Link>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
@@ -46,17 +49,13 @@ const FengShuiDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GetStartedSection
-      title="Ready to start your career as a feng shui designer?"
-      buttonText="Enroll Now"
-      courseCodes={courseCodes}
-    />
+    <StatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitCanvaSection />
+    <CareerEssentialsKitDesignFilesSection />
     <GoogleReviewSection courseCode="fs" />
     <GuaranteeSection className="bg-light" />
     <GetStartedSection

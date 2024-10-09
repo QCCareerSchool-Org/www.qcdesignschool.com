@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { OutlineSection } from '../../online-courses/interior-decorating/_outlineSection';
 import { CertificationSection } from '../../online-courses/interior-decorating/certificationSection';
 import { TutorSection } from '../../online-courses/interior-decorating/tutorSection';
 import WhyQCImage from '../../online-courses/interior-decorating/what-youll-learn.jpg';
+import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -30,7 +32,7 @@ const InteriorDecoratingPage: PageComponent = () => (
             <h1 className="h2 mb-4">Enter the World of Interior Decorating</h1>
             <p className="lead">Learn online and become an Internationally Certified Interior Decorator with QC's professional courses.</p>
             <p>With QC's courses, you'll receive:</p>
-            <ul className="mb-0">
+            <ul className="mb-4">
               <li>Professional and industry-leading content</li>
               <li>An International Design & Decorating Professional™ (IDDP™) certificate when you graduate</li>
               <li>Full business training complete with custom templates to prepare you for a new career</li>
@@ -39,6 +41,7 @@ const InteriorDecoratingPage: PageComponent = () => (
               <li>Support and guidance from QC's dedicated team of student advisors, available 7 days a week</li>
               <li>50% off all additional courses so you can continue mastering your skills</li>
             </ul>
+            <Link href={`https://enroll.qcdesignschool.com?${courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&')}`} className="btn btn-primary btn-large">Enroll Now</Link>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
@@ -46,13 +49,13 @@ const InteriorDecoratingPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <GetStartedSection title="Ready to start your home design & decorating career?" buttonText="Enroll Now" />
+    <StatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitCanvaSection />
+    <CareerEssentialsKitDesignFilesSection />
     <GoogleReviewSection courseCode="i2" />
     <GuaranteeSection className="bg-light" />
     <GetStartedSection
