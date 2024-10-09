@@ -10,5 +10,4 @@ export const jacquelineShowcase: StudentShowcase = {
   description: 'Owner and lead stylist of Alluring Interiors, Jacqueline transitioned from nursing to interior design after discovering her passion at Bombay Company, where she excelled in sales and visual coordination. Known for her creativity and vibrant personality, Jacqueline built her brand by staying true to herself and inspiring others to do the same.',
   portfolioImages,
   link: 'https://www.qcdesignschool.com/2016/06/graduate-feature-jacqueline-forde/',
-
 };

@@ -34,15 +34,16 @@ export const Showcase: FC<StudentShowcase> = props => {
             <div className="d-flex">
               {props.iconImage && <div className="me-3"><ImageCircle src={props.iconImage} alt={props.name} /></div>}
               <div className="d-flex justify-content-center flex-column">
-                <h3 className="h6 mb-1">{props.name}</h3>
-                {props.credentials &&
-                  <small>{props.credentials}</small>
-                }
+                <h3 className="h6 mb-0">{props.name}</h3>
+                {props.credentials && <small className="mt-1">{props.credentials}</small>}
               </div>
             </div>
           </div>
           <p className="mb-0">{props.description}</p>
-          {props.portfolioImages && <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}><small style={{ color: 'black', fontWeight: 500 }}><div className="d-inline-block me-2"><SeeMyWorkIcon alt="" /></div>See My Work</small></div>}
+          {props.portfolioImages && (
+            <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}>
+              <small style={{ color: 'black', fontWeight: 500 }}><span className="me-2"><SeeMyWorkIcon height="20" /></span>See My Work</small>
+            </div>)}
         </div>
       </div>
       {props.portfolioImages && <Portfolio name={props.name} show={show} onHide={handleHide} images={props.portfolioImages} />}
