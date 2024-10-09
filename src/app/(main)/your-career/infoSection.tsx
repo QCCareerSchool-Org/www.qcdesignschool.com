@@ -23,7 +23,7 @@ export const InfoSection: FC<Props> = ({ className }) => (
         <div className="col-12 col-sm-10 col-xl-4">
           <BarChartIcon height={iconHeight} className={`${styles.cobaltGrey} mb-3`} />
           <h2 className="h4 mb-3">Expand Your Existing Business</h2>
-          <p>If you're a seasoned design professional aiming to take your career to the next level, specializing your skills and earning certifications will be key to reaching this goal.! Expanding your services allows you to enhance your skills and reach more clients. You'll increase yoru revenue and improve client satisfaction!</p>
+          <p>If you're a seasoned design professional aiming to take your career to the next level, specializing your skills and earning certifications will be key to reaching this goal.! Expanding your services allows you to enhance your skills and reach more clients. You'll increase your revenue and improve client satisfaction!</p>
         </div>
         <div className="col-12 col-sm-10 col-xl-4">
           <RulerIcon height={iconHeight} className={`${styles.cobaltGrey} mb-3`} />

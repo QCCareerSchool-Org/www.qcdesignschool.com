@@ -24,10 +24,10 @@ const testimonialIds = [
 ];
 
 const YourCareerPage: PageComponent = () => (
-  <div>
+  <>
     <section className={styles.heroSection}>
-      <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
-      <div className="container">
+      <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />
+      <div className="container text-white text-shadow">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
             <h1 className="mb-4">Your Home<br />Design Career</h1>
@@ -35,7 +35,7 @@ const YourCareerPage: PageComponent = () => (
         </div>
         <div className="row">
           <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
-            <p className="lead mb-5"><strong>Start your career as a design professional!</strong> QC's comprehensive courses offer everything you need to excel in your chosen design niche. Each course will provide you with all the skills, tools and industry knowledge to start your dream career in the competitive design world.</p>
+            <p className="lead mb-0"><strong>Start your career as a design professional!</strong> QC's comprehensive courses equip you with the essential skills and industy knowledge to excel in your chosen design niche. Each course is  designed to help you confidently launch your dream career in the dynamic design industry.</p>
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ const YourCareerPage: PageComponent = () => (
       buttonText="View Courses"
       buttonHref="/online-courses"
     />
-  </div>
+  </>
 );
 
 export default YourCareerPage;
