@@ -5,7 +5,6 @@ import { LayoutClient } from '../layoutClient';
 import { Footer } from './footer';
 import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
-import '@/app/bootstrap.scss';
 import { LiveChat } from '@/scripts/liveChat';
 
 export const metadata: Metadata = {

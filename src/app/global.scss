@@ -1,3 +1,27 @@
+section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--qc-section-padding) 0;
+}
+
+section:first-of-type {
+  padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
+}   
+
+section > div.container {
+  position: relative; /* so that if we use a cover image, the content will display on top */
+}
+
+section.noPadding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+section.noPadding > div.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .grecaptcha-badge { visibility: hidden; }
 
 @import 'react-multi-carousel/lib/styles.css';

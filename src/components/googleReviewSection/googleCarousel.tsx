@@ -26,7 +26,6 @@ const responsive: ResponsiveType = {
 const autoPlaySpeed = 8000; // 8 seconds
 
 export const GoogleCarousel: FC<Props> = memo(({ mobile, courseCode }) => {
-  console.log('render');
   const sortedReviewData = reviewData.sort(getCompareFunction(courseCode));
   const carouselRef = useRef(null);
   const intersected = useIntersectionObserver(carouselRef);
