@@ -22,7 +22,7 @@ export const Part: FC<Props> = ({ price, href }) => (
       <div className={commonStyles.price}>
         <span className={commonStyles.priceSmall}>{price.currency.symbol}</span>{tightNumber(price.plans.part.deposit) && <span style={{ marginRight: '0.25rem' }} />}<span className="text-black">{formatPrice(price.plans.part.deposit)}</span>
       </div>
-      <p className="fw-bold mb-1">Make {price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
+      <p className="fw-bold mb-1"><span className="d-none d-sm-inline d-md-none d-lg-inline">Make </span>{price.plans.part.installments} monthly payments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</p>
       <p className="fw-bold mb-1">(Total: {price.currency.symbol}{formatPrice(price.plans.part.total)})</p>
       <hr className={`${commonStyles.hr} ${styles.hr}`} />
       <Link href={href} className="btn btn-secondary">Enroll Now</Link>

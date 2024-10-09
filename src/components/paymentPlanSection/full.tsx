@@ -3,6 +3,7 @@ import type { FC } from 'react';
 
 import commonStyles from './commonStyles.module.scss';
 import styles from './full.module.scss';
+import { Zoom } from '../zoom';
 import TagIcon from '@/components/icons/tag.svg';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
@@ -15,7 +16,7 @@ type Props = {
 
 export const Full: FC<Props> = ({ price, href }) => (
   <div className={`${commonStyles.card} ${styles.full} card`}>
-    <div className={`${commonStyles.message} ${styles.message}`}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} - Limited Time Offer &nbsp;<TagIcon height="18" color="#b20000" /></div>
+    <div className={`${commonStyles.message} ${styles.message}`}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)} - Limited Time Offer &nbsp;<Zoom><TagIcon height="18" color="#b20000" /></Zoom></div>
     <div className={`card-body ${commonStyles.cardBody}`}>
       <h6 className={`${commonStyles.title} text-white`}>Pay in Full</h6>
       <div className={commonStyles.description}>One-time payment of</div>

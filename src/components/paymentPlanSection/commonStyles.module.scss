@@ -1,4 +1,15 @@
-.card { overflow: hidden; }
+.card {
+  overflow: hidden;
+  text-align: left;
+  @media only screen and (min-width: 430px) {
+    display: inline-block;
+    width: 380px;
+  }
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    width: auto;
+  }
+}
 
 .cardBody {
   padding: 1rem 1.5rem 1.5rem;
@@ -45,7 +56,6 @@
   }
   font-weight: 600;
   font-family: var(--qc-neue-haas-display);
-  margin-bottom: 0.5rem;
 }
 
 .priceSmall {
