@@ -11,8 +11,6 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 const duration = 2_000; // 2 seconds
 
-const studentsFormatter = (n: number): string => `${n.toFixed(0)}K`;
-
 export const StatsSection: FC = () => {
   const studentsRef = useRef<HTMLDivElement>(null);
   const yearsRef = useRef<HTMLDivElement>(null);
@@ -22,7 +20,7 @@ export const StatsSection: FC = () => {
   const yearsStart = useIntersectionObserver(yearsRef);
   const expertsStart = useIntersectionObserver(expertsRef);
 
-  const students = useCountUp({ start: 0, end: 45, duration, started: studentsStart, easingFunction: 'easeOutCubic', formatter: studentsFormatter });
+  const students = useCountUp({ start: 0, end: 45, duration, started: studentsStart, easingFunction: 'easeOutCubic' });
   const years = useCountUp({ start: 0, end: 40, duration, started: yearsStart, easingFunction: 'easeOutCubic' });
   const experts = useCountUp({ start: 0, end: 20, duration, started: expertsStart, easingFunction: 'easeOutCubic' });
 
@@ -32,7 +30,7 @@ export const StatsSection: FC = () => {
       <div className="container">
         <div className="row text-center">
           <div ref={studentsRef} className="col-12 col-lg-4 mb-s mb-lg-0">
-            <div className={styles.count}>{students}</div>
+            <div className={styles.count}>{students}K</div>
             <h6>Students &amp; Graduates</h6>
             <small className={styles.description}>Inspiring the Next Generation of Professionals</small>
           </div>

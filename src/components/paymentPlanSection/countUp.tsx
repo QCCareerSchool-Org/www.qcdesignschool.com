@@ -9,17 +9,15 @@ type Props = {
   value: number;
 };
 
-const duration = 3000;
+const duration = 2_000; // 2 seconds
 
-const intl = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
-
-const formatter = (n: number): string => intl.format(n);
+// const formatter = (n: number) => n.toString()
 
 export const CountUp: FC<Props> = ({ value }) => {
   const ref = useRef<HTMLElement>(null);
   const intersected = useIntersectionObserver(ref);
 
-  const displayValue = useCountUp({ start: 0, end: value, duration, formatter, easingFunction: 'easeOutQuad', started: intersected });
+  const displayValue = useCountUp({ start: 0, end: value, duration, easingFunction: 'easeOutCubic', started: intersected });
 
   return <span ref={ref}>{displayValue}</span>;
 };

@@ -12,6 +12,7 @@ import { FooterColumn1 } from './footerColumn1';
 import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
 import BBBIcon from '@/components/bbb.svg';
+import FortyYearsIcon from '@/components/icons/40-years.svg';
 import { Logo } from '@/components/logo';
 import { getAddress } from '@/lib/address';
 import { getData } from '@/lib/getData';
@@ -31,10 +32,14 @@ export const Footer: FC = () => {
                 <h2 className="h6 mb-4">Get Started with a Free Course Catalog</h2>
                 <Link href="/free-course-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
               </div>
-              <div style={{ width: 100 }}>
-                <div className="d-flex flex-column align-items-center">
+              <div className="d-flex">
+                <div className="d-flex flex-column align-items-center text-center" style={{ width: 66, marginRight: '1.25rem' }}>
                   <div className="mb-2"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer"><BBBIcon /></a></div>
-                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small"><span style={{ marginLeft: '0.375rem' }}>Accredited A+</span></a>
+                  <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small" style={{ color: 'inherit', lineHeight: '1rem' }}>A+ Rated by the BBB</a>
+                </div>
+                <div className="d-flex flex-column align-items-center text-center" style={{ width: 100 }}>
+                  <div className="mb-2"><FortyYearsIcon height="68" /></div>
+                  <span className="small" style={{ lineHeight: '1rem' }}>Years of Innovation</span>
                 </div>
               </div>
             </div>
