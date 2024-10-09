@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
-    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
+    { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
   ],
   "redirects": [
     { "source": "/become-a-home-designer-rm", "destination": "/rm/become-a-home-designer" },
