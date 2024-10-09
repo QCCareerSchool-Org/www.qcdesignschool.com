@@ -3,6 +3,7 @@ import { cookies, headers } from 'next/headers';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { SupportSection } from '@/components/supportSection';
 import { ThankYouSection } from '@/components/thankYouSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
@@ -26,12 +27,12 @@ const ThankYouProfessionalOrganizingCourseCatalogPage: PageComponent = async ({ 
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  try {
-    if (leadId && emailAddress) {
+  if (leadId && emailAddress) {
+    try {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+    } catch (err) {
+      console.error(err);
     }
-  } catch (err) {
-    console.error(err);
   }
 
   return (
@@ -48,6 +49,7 @@ const ThankYouProfessionalOrganizingCourseCatalogPage: PageComponent = async ({ 
       />
       <ThankYouSection courseName="Professional Organizing" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
+      <SupportSection />
     </>
   );
 };
