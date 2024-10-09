@@ -33,7 +33,7 @@ export const Footer: FC = () => {
                 <Link href="/free-course-catalog" className="btn btn-outline-secondary">Get the Catalog <BookReader height="20" style={{ position: 'relative', top: -2 }} /></Link>
               </div>
               <div className="d-flex">
-                <div className="d-flex flex-column align-items-center text-center" style={{ width: 66, marginRight: '1.25rem' }}>
+                <div className="d-flex flex-column align-items-center text-center" style={{ width: 75, marginRight: '1.25rem' }}>
                   <div className="mb-2"><a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer"><BBBIcon /></a></div>
                   <a href="http://www.bbb.org/ottawa/business-reviews/correspondence-schools/qc-quality-of-course-in-ottawa-on-4175" target="_blank" rel="noreferrer" className="small" style={{ color: 'inherit', lineHeight: '1rem' }}>A+ Rated by the BBB</a>
                 </div>
