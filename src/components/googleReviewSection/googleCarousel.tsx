@@ -1,3 +1,5 @@
+'use client';
+
 import type { FC } from 'react';
 import { memo, useRef } from 'react';
 import type { ResponsiveType } from 'react-multi-carousel';
@@ -24,13 +26,14 @@ const responsive: ResponsiveType = {
 const autoPlaySpeed = 8000; // 8 seconds
 
 export const GoogleCarousel: FC<Props> = memo(({ mobile, courseCode }) => {
+  console.log('render');
   const sortedReviewData = reviewData.sort(getCompareFunction(courseCode));
   const carouselRef = useRef(null);
   const intersected = useIntersectionObserver(carouselRef);
 
   return (
     <div ref={carouselRef}>
-      <Carousel ssr responsive={responsive} infinite showDots={mobile} arrows={!mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
+      <Carousel ssr responsive={responsive} itemClass="d-flex" infinite arrows={!mobile} showDots={mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
         {sortedReviewData.map((data, key) => <GoogleReview {...data} key={key} />)}
       </Carousel>
     </div>

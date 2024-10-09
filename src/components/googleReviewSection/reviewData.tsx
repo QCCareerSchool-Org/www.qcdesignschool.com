@@ -1,13 +1,13 @@
 import type { StaticImageData } from 'next/image';
 import type { CSSProperties } from 'react';
 
-import DeborahHankinsImage from './_images/deborah hankins.png';
-import ElianaVarnadoreImage from './_images/eliana varnadore.png';
-import Empathy2TempoImage from './_images/empathy2 tempo.png';
-import LilyGardeaImage from './_images/Lily Gardea.png';
-import LoryTurnerImage from './_images/lory turner.png';
-import NataleMiraultImage from './_images/natalie mireault.png';
-import PaolaFrascaImage from './_images/paola frasca.png';
+import DeborahHankinsImage from './images/deborah hankins.png';
+import ElianaVarnadoreImage from './images/eliana varnadore.png';
+import Empathy2TempoImage from './images/empathy2 tempo.png';
+import LilyGardeaImage from './images/Lily Gardea.png';
+import LoryTurnerImage from './images/lory turner.png';
+import NataleMiraultImage from './images/natalie mireault.png';
+import PaolaFrascaImage from './images/paola frasca.png';
 import type { CourseCode } from '@/domain/courseCode';
 
 export enum Priority {
