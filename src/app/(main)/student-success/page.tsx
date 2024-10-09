@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { StudentShowcaseCarouselSection } from '@/components/studentShowcaseCarouselSection';
 import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
@@ -37,7 +37,7 @@ const StudentSuccessPage: PageComponent = () => {
       <TestimonialVideoSection />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <GoogleReviewSection className="bg-light" />
-      <CarouselSection />
+      <StudentShowcaseCarouselSection />
       <GetStartedSection
         title="Ready to Start Your Career in Design?"
       />
