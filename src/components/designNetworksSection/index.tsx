@@ -18,7 +18,7 @@ export const DesignNetworksSection: FC<Props> = ({ showLink }) => (
         <div className="col-12 col-lg-6">
           <h2 className="h3 mb-3">Explore Professional Design Networks</h2>
           <p className={showLink ? 'mb-5' : 'mb-0'}>QC Design School connects you to the heart of the design world, with affiliations to top industry associations across North America. Elevate your professional profile, network with leaders, and access exclusive resources through these esteemed organizations.</p>
-          {showLink && <Link href="/" style={{ color: 'inherit', textDecoration: 'none' }}><QIcon height="16" color="#0013DE" style={{ position: 'relative', top: -2, marginRight: '0.675rem' }} />Access Network Resources</Link>}
+          {showLink && <Link href="/design-associations" style={{ color: 'inherit', textDecoration: 'none' }}><QIcon height="16" color="#0013DE" style={{ position: 'relative', top: -2, marginRight: '0.675rem' }} />Access Network Resources</Link>}
         </div>
       </div>
     </div>

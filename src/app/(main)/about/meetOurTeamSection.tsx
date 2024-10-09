@@ -20,7 +20,7 @@ export const MeetOurTeamSection: FC<Props> = ({ className }) => (
       <div className="row justify-content-center mb-5 text-lg-center">
         <div className="col-12 col-lg-10 col-xl-8">
           <h2 className="mb-4">Meet Our Team</h2>
-          <p className="lead mb-0">At QC, we believe that the heart of a great learning experience lies in the people who support you every step of the way. Our dedicated team of experts  are here to ensure that your journey with us is rewarding and personalized. From the first lesson to graduation day, we're committed to helping you succeed and reach your full potential.</p>
+          <p className="lead mb-0">At QC, we believe that support is at the heart of a great learning experience. Our dedicated team is here to ensure that your journey with QC is rewarding and engaging, every step of the way. From your first lesson to graduation day, the QC team is committed to helping you reach your full potential.</p>
         </div>
       </div>
       <div className="row justify-content-center g-5 mb-5">
@@ -48,7 +48,7 @@ export const MeetOurTeamSection: FC<Props> = ({ className }) => (
       </div>
 
       <div className="text-center">
-        <Link href="/about/meet-the-team" className="btn btn-primary">Meet the entire QC family!<QIcon height="16" className="ms-2" style={{ position: 'relative', top: -1 }} /></Link>
+        <Link href="/about/meet-the-team" className="btn btn-primary">Meet More of the QC Team!<QIcon height="16" className="ms-2" style={{ position: 'relative', top: -1 }} /></Link>
       </div>
     </div>
   </section>
