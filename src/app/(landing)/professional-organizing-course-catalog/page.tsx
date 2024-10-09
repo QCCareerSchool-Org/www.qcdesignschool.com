@@ -3,7 +3,6 @@ import { headers } from 'next/headers';
 import Link from 'next/link';
 
 import HeroImage from './background-po.jpg';
-import { AboutSection } from '../_components/aboutSection';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
 import { FormCard } from '../_components/formCard';
@@ -12,13 +11,14 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/professional-organizing/cert-bg.jpg';
+import { StatsSection } from '@/app/(main)/statsSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/aiop.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
-import { TestimonialSection } from '@/components/testimonialSection';
+import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -72,9 +72,8 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = ({ searchParams }
         </div>
       </section>
       <HowYoullLearnSection graduateTitle="Professional Organizer" />
-      <GoogleReviewSection courseCode="po" />
+      <StatsSection />
       <JoinQCSection />
-      <TestimonialSection id="TD-0006" />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="Advanced International Organizing Professional (AIOP™) certification" />}>
         <h2 className="h3">Your Professional Organizing Certification</h2>
         <p>Once you've completed the Professional Organizing course online, you'll graduate with the Advanced International Organizing Professional™ (AIOP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
@@ -87,7 +86,8 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = ({ searchParams }
           <li>Work for corporations or businesses to implement organizing systems</li>
         </ul>
       </CertificationSection>
-      <AboutSection />
+      <GoogleReviewSection courseCode="po" />
+      <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

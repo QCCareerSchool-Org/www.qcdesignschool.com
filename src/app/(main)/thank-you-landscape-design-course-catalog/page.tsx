@@ -49,7 +49,7 @@ const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchP
       />
       <ThankYouSection courseName="Landscape Design" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
-      <SupportSection />
+      <SupportSection showLink />
     </>
   );
 };

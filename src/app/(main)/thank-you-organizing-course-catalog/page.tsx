@@ -49,7 +49,7 @@ const ThankYouProfessionalOrganizingCourseCatalogPage: PageComponent = async ({ 
       />
       <ThankYouSection courseName="Professional Organizing" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
-      <SupportSection />
+      <SupportSection showLink />
     </>
   );
 };

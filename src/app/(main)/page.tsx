@@ -121,7 +121,7 @@ const HomePage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <SupportSection />
+    <SupportSection showLink />
     <GuaranteeSection />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"

@@ -3,7 +3,6 @@ import { headers } from 'next/headers';
 import Link from 'next/link';
 
 import HeroImage from './hero.jpg';
-import { AboutSection } from '../_components/aboutSection';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
 import { FormCard } from '../_components/formCard';
@@ -12,13 +11,14 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
+import { StatsSection } from '@/app/(main)/statsSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
-import { TestimonialSection } from '@/components/testimonialSection';
+import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -72,9 +72,8 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <HowYoullLearnSection graduateTitle="Interior Decorator" />
-      <GoogleReviewSection courseCode="i2" />
+      <StatsSection />
       <JoinQCSection />
-      <TestimonialSection id="TD-0006" />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}
@@ -93,7 +92,8 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
         <div className="d-none d-lg-block d-xxl-none" style={{ height: 100 }} />
         <div className="d-lg-none" style={{ height: 180 }} />
       </CertificationSection>
-      <AboutSection />
+      <GoogleReviewSection courseCode="i2" />
+      <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

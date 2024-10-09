@@ -49,7 +49,7 @@ const ThankYouFengShuiDesignCourseCatalogPage: PageComponent = async ({ searchPa
       />
       <ThankYouSection courseName="Feng Shui Design" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
-      <SupportSection />
+      <SupportSection showLink />
     </>
   );
 };

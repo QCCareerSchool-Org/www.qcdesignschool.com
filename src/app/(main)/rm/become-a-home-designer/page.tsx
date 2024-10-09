@@ -49,7 +49,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
     <StatsSection />
     <InfoSection className="bg-light" />
     <TestimonialWallSection testimonialIds={testimonialIds} />
-    <SupportSection />
+    <SupportSection showLink />
     <PerksSection className="bg-light" />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"

@@ -49,7 +49,7 @@ const ThankYouInteriorDecoratingCourseCatalogPage: PageComponent = async ({ sear
       />
       <ThankYouSection courseName="Interior Decorating" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
-      <SupportSection />
+      <SupportSection showLink />
     </>
   );
 };

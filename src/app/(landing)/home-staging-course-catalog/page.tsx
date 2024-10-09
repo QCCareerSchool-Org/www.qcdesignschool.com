@@ -3,7 +3,6 @@ import { headers } from 'next/headers';
 import Link from 'next/link';
 
 import HeroImage from './hero.jpg';
-import { AboutSection } from '../_components/aboutSection';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
 import { FormCard } from '../_components/formCard';
@@ -12,13 +11,14 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/home-staging/cert-bg.jpg';
+import { StatsSection } from '@/app/(main)/statsSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/isrp.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
-import { TestimonialSection } from '@/components/testimonialSection';
+import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -72,9 +72,8 @@ const HomeStagingCourseCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <HowYoullLearnSection graduateTitle="Home Stager" />
-      <GoogleReviewSection courseCode="st" />
+      <StatsSection />
       <JoinQCSection />
-      <TestimonialSection id="TD-0006" />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Staging and Redesign Professional (ISRP™) certification" />}>
         <h2 className="h3">Your Home Staging Certification</h2>
         <p>Once you've completed the Home Staging course online, youll graduate with the International Staging and Redesign Professional™  (ISRP™) certificate. This internationally recognized professional designation is yours to use for life.</p>
@@ -87,7 +86,8 @@ const HomeStagingCourseCatalogPage: PageComponent = ({ searchParams }) => {
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
       </CertificationSection>
-      <AboutSection />
+      <GoogleReviewSection courseCode="st" />
+      <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">
