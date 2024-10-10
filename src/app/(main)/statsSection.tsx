@@ -31,17 +31,17 @@ export const StatsSection: FC = () => {
         <div className="row text-center">
           <div ref={studentsRef} className="col-12 col-lg-4 mb-s mb-lg-0">
             <div className={styles.count}>{students}K</div>
-            <h6>Students &amp; Graduates</h6>
+            <h3 className="h6">Students &amp; Graduates</h3>
             <small className={styles.description}>Inspiring the Next Generation of Professionals</small>
           </div>
           <div ref={yearsRef} className="col-12 col-lg-4 mb-s mb-lg-0">
             <div className={styles.count}>{years}</div>
-            <h6>Years in Business</h6>
+            <h3 className="h6">Years in Business</h3>
             <small className={styles.description}>Pioneering Education Since 1984</small>
           </div>
           <div ref={expertsRef} className="col-12 col-lg-4">
             <div className={styles.count}>{experts}</div>
-            <h6>Industry Experts</h6>
+            <h3 className="h6">Industry Experts</h3>
             <small className={styles.description}>Providing Insights for Real-World Success</small>
           </div>
         </div>
