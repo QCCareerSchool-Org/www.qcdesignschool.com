@@ -13,6 +13,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
+import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
@@ -27,6 +28,7 @@ const CoursesPage: PageComponent = () => {
 
   return (
     <>
+      <DeadlineFunnelScript />
       <section>
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
