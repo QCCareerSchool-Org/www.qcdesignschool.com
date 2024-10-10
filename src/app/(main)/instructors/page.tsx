@@ -18,7 +18,7 @@ const TutorsPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12 col-xl-10 col-xxl-8 text-xl-center">
             <h1 className="mb-3">QC Design School Instructors</h1>
-            <p className="lead mb-0">QC Design School is proud to work with many successful design industry professionals who will be your instructors as you work toward your certification. Your instructors include personal tutors as well as content experts. Once you enroll in your course, you'll be matched with a personal tutor who will review your work and provide you with in-depth feedback and advice. You'll also have the opportunity to learn from top industry experts who have worked with QC to develop your cutting-edge course materials. Our accomplished instructors have years of experience in the industry and are eager to share their professional insights with you.</p>
+            <p className="lead mb-0">QC Design School is proud to work with many successful design industry professionals who will be your instructors as you work toward your certification. Your instructors include personal tutors, who will provide feedback on your work, as well as content experts, who have worked with QC to develop cutting-edge course materials. Our accomplished instructors have years of experience in the industry and are eager to share their professional insights with you.</p>
           </div>
           <div className="row justify-content-center g-5 mt-s">
             <h2 className="text-center my-0">QC Experts</h2>
