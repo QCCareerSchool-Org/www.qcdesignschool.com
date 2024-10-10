@@ -91,7 +91,7 @@ const LandscapeDesignPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Career in Landscape Design?"
-      text="Become professionally certified with QC's online landscape design training"
+      text="Become professionally certified with QC's online landscape design training."
       courseCodes={courseCodes}
     />
   </div>

@@ -90,7 +90,7 @@ const FengShuiDesignPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Career as a Feng Shui Designer?"
-      text="Become professionally certified with QC's online feng shui design training"
+      text="Become professionally certified with QC's online feng shui design training."
       courseCodes={courseCodes}
     />
   </div>

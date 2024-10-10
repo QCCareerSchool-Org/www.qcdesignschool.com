@@ -90,7 +90,7 @@ const ColorConsultantPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Career as a Color Consultant?"
-      text="Become professionally certified with QC's online Color Consultant training"
+      text="Become professionally certified with QC's online Color Consultant training."
       courseCodes={courseCodes}
     />
   </div>

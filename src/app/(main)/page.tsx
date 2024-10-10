@@ -90,7 +90,7 @@ const HomePage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="i2"
               subtitle="IDDP™ Certification"
-              description="Dive into the design industry and create custom interiors that perfectly align with your clients’ goals. QC’s most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
+              description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
               href="/online-courses/interior-decorating"
             />
           </SmallColumn>
@@ -98,7 +98,7 @@ const HomePage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="st"
               subtitle="ISRP™ Certification"
-              description="Discover the art of home staging and transform clients’ spaces into buyer-ready showcases. QC’s Home Staging course equips you with the professional skills to create stunning spaces that captivate buyers and boost property appeal."
+              description="Discover the art of home staging and transform clients' spaces into buyer-ready showcases. QC's Home Staging course equips you with the professional skills to create stunning spaces that captivate buyers and boost property appeal."
               href="/online-courses/home-staging"
             />
           </SmallColumn>
@@ -106,7 +106,7 @@ const HomePage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="ld"
               subtitle="ILDP™ Certification"
-              description="Launch your career in the fast-growing landscape design industry with QC’s professional certification course. You’ll gain the professional skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
+              description="Launch your career in the fast-growing landscape design industry with QC's professional certification course. You'll gain the expert skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
               href="/online-courses/landscape-design"
             />
           </SmallColumn>
@@ -115,7 +115,7 @@ const HomePage: PageComponent = () => (
           <div className="col-12 col-lg-8 text-center">
             <MagnifyingGlassIcon height="28" className="mb-3" />
             <h3 className="h4 mb-3">Explore More Paths in Design</h3>
-            <p className="lead mb-4">Looking to expand your skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the world of design!</p>
+            <p className="lead mb-4">Looking to expand your design skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the world of design!</p>
             <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
           </div>
         </div>

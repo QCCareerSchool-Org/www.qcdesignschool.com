@@ -87,7 +87,7 @@ const FloralDesignPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Floral Design Career?"
-      text="Become professionally certified with QC's online floral design training"
+      text="Become professionally certified with QC's online floral design training."
       courseCodes={courseCodes}
     />
   </div>

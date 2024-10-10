@@ -48,7 +48,7 @@ const InteriorDecoratingPage: PageComponent = () => (
             <ul>
               <li>Get started now—our premium interior decorating course is designed to take you from beginner to expert with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
-              <li>Join a thriving virtual community to connect with other decoratorsand gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Join a thriving virtual community to connect with other decorators and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior decorator</li>
               <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Decorators & Designers Association of Canada, Placez and more</li>
             </ul>
@@ -91,7 +91,7 @@ const InteriorDecoratingPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Home Design & Decorating Career?"
-      text="Become professionally certified with QC's online interior decorating training"
+      text="Become professionally certified with QC's online interior decorating training."
       courseCodes={courseCodes}
     />
   </div>

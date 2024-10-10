@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import HeroImageDesktop from '../hero-desktop.jpg';
 import HeroImageMobile from '../hero-mobile.jpg';
@@ -35,7 +36,8 @@ const YourCareerPage: PageComponent = () => (
         </div>
         <div className="row">
           <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
-            <p className="lead mb-0"><strong>Start your career as a design professional!</strong> QC's comprehensive courses equip you with the essential skills and industy knowledge to excel in your chosen design niche. Each course is  designed to help you confidently launch your dream career in the dynamic design industry.</p>
+            <p className="lead mb-4"><strong>Start your career as a design professional!</strong> QC's comprehensive courses equip you with the essential skills and industy knowledge to excel in your chosen design niche. Each course is  designed to help you confidently launch your dream career in the dynamic design industry.</p>
+            <Link href="/online-courses" className="btn btn-dark btn-lg">View Courses</Link>
           </div>
         </div>
       </div>
@@ -46,8 +48,6 @@ const YourCareerPage: PageComponent = () => (
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"
       text="Become Professionally Certified with QC's Online Design Training"
-      buttonText="View Courses"
-      buttonHref="/online-courses"
     />
   </>
 );

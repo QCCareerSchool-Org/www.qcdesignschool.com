@@ -90,7 +90,7 @@ const AgingInPlacePage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Expand Your Home Design & Decorating Career?"
-      text="Become professionally certified with QC's online Aging in Place training"
+      text="Become professionally certified with QC's online Aging in Place training."
       courseCodes={courseCodes}
     />
   </div>

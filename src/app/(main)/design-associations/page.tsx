@@ -21,7 +21,7 @@ const HomePage: PageComponent = () => (
         <div className="row justify-content-end">
           <div className="col-md-6 col-xl-5">
             <h1 className="h2 mb-4">Professional Associations &amp; Preferred Partners</h1>
-            <p className="lead mb-0">Design associations offer opportunities to network and enhance your professional skills. Students and graduates of QC Design School have access to the following associations:</p>
+            <p className="lead mb-0">Design associations offer opportunities to network and enhance your professional skills. Students and graduates of QC Design School have access to the following associations.</p>
           </div>
         </div>
       </div>

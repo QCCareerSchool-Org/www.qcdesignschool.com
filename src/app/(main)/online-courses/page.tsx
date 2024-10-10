@@ -36,7 +36,7 @@ const CoursesPage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="ld"
               subtitle="ILDP™ Certification"
-              description="Launch your career in the fast-growing landscape design industry with QC's professional certification course. You'll gain the professional skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
+              description="Launch your career in the fast-growing landscape design industry with QC's professional certification course. You'll gain the expert skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
               href="/online-courses/landscape-design"
               showPrice
               showEnrollLink

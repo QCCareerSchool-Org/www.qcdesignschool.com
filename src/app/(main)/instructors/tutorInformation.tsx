@@ -31,7 +31,7 @@ export const experts: InstructorInformation[] = [
   },
   {
     name: 'Angie Chapman',
-    description: 'Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become an sought-after designer.',
+    description: 'Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become a sought-after designer.',
     src: AngieChapmanImage,
   },
   {
@@ -46,7 +46,7 @@ export const experts: InstructorInformation[] = [
   },
   {
     name: 'Chris Tuccio',
-    description: 'Chris Tuccio, professor and Program Coordinator of Horticulture & Landscape Design at Naugatuck Valley Community College, holds a Master\'s in Landscape Architecture from Harvard. He also serves on the CT Horticulture Society Board and manages Draftscapes',
+    description: 'Chris Tuccio, professor and Program Coordinator of Horticulture & Landscape Design at Naugatuck Valley Community College, holds a Master\'s in Landscape Architecture from Harvard. He also serves on the CT Horticulture Society Board and manages Draftscapes.',
     src: ChrisTuccioImage,
   },
   {
@@ -70,7 +70,7 @@ export const tutors: InstructorInformation[] = [
 
   {
     name: 'Patrizia Boland',
-    description: 'Graduating from QC Design School as a certified International Design and Decorating Professional, Patricia launched Boland Designs. Patrizia’s holistic approach transforms clients’ spaces into beautiful, functional environments reflective of their personalities. As a QC tutor, she helps students achieve their highest potential in the design & decorating industry.',
+    description: 'Graduating from QC Design School as a certified International Design and Decorating Professional, Patrizia launched Boland Designs. Patrizia\'s holistic approach transforms clients’ spaces into beautiful, functional environments reflective of their personalities. As a QC tutor, she helps students achieve their highest potential in the design & decorating industry.',
     src: PatriziaBolandImage,
   },
   {
@@ -78,5 +78,4 @@ export const tutors: InstructorInformation[] = [
     description: 'Darcie Garcia, owner of The Florapest Raleigh, has 32 years of floral industry experience and is an accredited educator by the American Institute of Floral Designers. She has managed large flower shops and traveled nationally to teach. Darcie\'s nurturing approach encourages creativity and confidence, inspiring aspiring designers to excel in the floral industry.',
     src: DarcieGarciaImage,
   },
-
 ];

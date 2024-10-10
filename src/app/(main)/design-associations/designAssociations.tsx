@@ -52,6 +52,11 @@ export const professionalAssociations: DesignAssociation[] = [
 
 export const preferredPartners: DesignAssociation[] = [
   {
+    name: 'DesignFiles',
+    description: 'DesignFiles is an all-in-one design software that allows you to create branded content that you can share with your clients, design beautiful 2D and 3D presentation boards, develop design service packages, invoice your clients, and more. QC students are eligible for an extended free trial and special rate for DesignFile’s Professional Plan.',
+    image: ViewItTech,
+  },
+  {
     name: 'Placez',
     description: 'Placez is an industry-leading diagramming software that allows you to create professional 2D and 3D floor plans. Made for use across a variety of industries, this program allows you to quickly draw and share your design concepts with clients and other designers. QC’s students and graduates are eligible for a 30% discount on Placez products.',
     image: Placez,

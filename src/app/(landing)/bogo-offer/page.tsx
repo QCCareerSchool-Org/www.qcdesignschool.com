@@ -188,6 +188,7 @@ const CoursesPage: PageComponent = () => {
       <GetStartedSection
         title="Get Started Today"
         text="Enroll Online and Start on Your Path to Becoming a Certified Designer"
+        buttonHref={bogoEnrollLink}
       />
     </>
   );

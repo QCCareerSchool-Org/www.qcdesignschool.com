@@ -31,7 +31,7 @@ export const DesignAssociationSection: FC<Props> = ({ className }) => (
           <p>QC Design School has partnered with the following companies to offer exclusive discounts to students and graduates. Use your discounts to further your career in the industry.</p>
         </div>
       </div>
-      <div className="row g-5">
+      <div className="row justify-content-center g-5">
         {preferredPartners.map((partner, index) => (
           <div className="col-12 col-md-6 col-lg-4 mb-3" key={index}>
             <Image src={partner.image} alt="" className={styles.logo} />

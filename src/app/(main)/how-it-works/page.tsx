@@ -56,7 +56,7 @@ const HowItWorksPage: PageComponent = () => (
             <FeedbackIcon width={iconSize} className="text-primary mb-1" />
             <p className="text-primary fw-bold text-uppercase">Step 3</p>
             <h2 className="h4">Review Your Feedback</h2>
-            <p>In their feedback, your tutor will identify areas of opportunity and highlight your areas of strength. You'll review this advice to improve your skills for the next unit. With each assignment, you'll build on the materials you've learned to develop your skills as a design professional.</p>
+            <p>Once you've finished a unit, you'll submit your design assignments through the Online Student Center. Your tutor reviews your work and provides expert feedback. If you ever need help along the way, simply reach out to the School or connect with your peers in the Virtual Community.</p>
           </div>
         </div>
       </div>

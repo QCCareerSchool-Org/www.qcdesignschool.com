@@ -24,7 +24,7 @@ export const JoinQCSection: FC = () => (
         <div className="col-12 col-md-6 col-lg-4">
           <BookWithBookmarkIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
           <h3 className="h6 mb-4">Flexible Payment Options</h3>
-          <p className="mb-0">Get practical design knowledge and more with flexible payment options and affordable tuition.</p>
+          <p className="mb-0">Get practical design knowledge and more with flexible payment options and affordable tuition</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BarChartIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />

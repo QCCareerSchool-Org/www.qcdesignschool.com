@@ -87,7 +87,7 @@ const EventDecorPage: PageComponent = () => (
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
       title="Ready to Start Your Event Decorating Career?"
-      text="Become professionally certified with QC's online event decor training"
+      text="Become professionally certified with QC's online event decor training."
       courseCodes={courseCodes}
     />
   </div>

@@ -26,7 +26,7 @@ export const employees: Employee[] = [
     imagePositionX: 45,
     name: 'Joanne Pendon',
     heading: 'Joanne, CEO',
-    description: 'At QC, my team is committed to delivering innovation and quality at every step of your learning journey. You\'re learning online, but you\'re never alone. We\'ve implemented the latest technology to create a dynamic, interactive experience through our online learning center and virtual community. You\'ll connect with fellow students, industry experts, and tutors, ensuring your learning is not only seamless but also collaborative and engaging. Our goal is to blend innovation with connection, so you always feel supported throughout your journey. Most importantly, we\'re dedicated to providing top-tier education at an affordable price, empowering you to confidently launch a successful business or career.',
+    description: 'At QC, my team is committed to delivering innovation and quality at every step of your learning journey. You\'re learning online, but you\'re never alone. We\'ve implemented the latest technology to create a dynamic, interactive experience through our online learning center and virtual community. You\'ll connect with fellow students, industry experts, and tutors, ensuring your learning is not only seamless but also collaborative and engaging. Our goal is to foster connection so you always feel supported throughout your journey. Most importantly, we\'re dedicated to providing top-tier education at an affordable price, empowering you to confidently launch a successful business or career.',
   },
   {
     src: KaylaCuggyImage,

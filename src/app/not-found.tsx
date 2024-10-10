@@ -73,7 +73,7 @@ const NotFoundPage: PageComponent = () => {
 
         </div>
       </section>
-      <SupportSection />
+      <SupportSection showLink />
     </MainLayout>
   );
 };

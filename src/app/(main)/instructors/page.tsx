@@ -46,7 +46,7 @@ const TutorsPage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-xl-10 col-xxl-8 text-center">
             <h2 className="mb-3">Unlock Your Home Design Potential with Expert Insights!</h2>
-            <p className="lead mb-3">Dive into learning with individualized guidance from renowned experts in the design industry</p>
+            <p className="lead mb-3">Dive into learning with individualized guidance from renowned experts in the design industry.</p>
             <div className="d-flex justify-content-center">
               <Link className="btn btn-primary me-3" href="https://enroll.qcdesignschool.com">Enroll Now</Link>
               <Link className="btn btn-outline-light" href="/online-courses">View Courses</Link>
