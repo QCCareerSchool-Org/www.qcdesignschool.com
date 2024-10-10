@@ -11,3 +11,4 @@ export { default as RESA } from './RESA.jpg';
 export { default as SampleBoard } from './sample-board.jpg';
 export { default as TheBoard } from './the-board.png';
 export { default as ViewItTech } from './view-it-tech.png';
+export { default as DesignFiles } from './designfiles.png';

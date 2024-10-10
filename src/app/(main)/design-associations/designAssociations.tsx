@@ -1,7 +1,7 @@
 import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
 
-import { ASOP, CARAHS, DDA, ISC, Placez, PlanningWiz, POC, RESA, SampleBoard, TheBoard, ThreeDream, ViewItTech } from './images';
+import { ASOP, CARAHS, DDA, DesignFiles, ISC, Placez, PlanningWiz, POC, RESA, SampleBoard, TheBoard, ThreeDream, ViewItTech } from './images';
 
 export type DesignAssociation = {
   name: string;
@@ -54,7 +54,7 @@ export const preferredPartners: DesignAssociation[] = [
   {
     name: 'DesignFiles',
     description: 'DesignFiles is an all-in-one design software that allows you to create branded content that you can share with your clients, design beautiful 2D and 3D presentation boards, develop design service packages, invoice your clients, and more. QC students are eligible for an extended free trial and special rate for DesignFile’s Professional Plan.',
-    image: ViewItTech,
+    image: DesignFiles,
   },
   {
     name: 'Placez',
