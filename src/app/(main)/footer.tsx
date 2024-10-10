@@ -39,7 +39,7 @@ export const Footer: FC = () => {
                 </div>
                 <div className="d-flex flex-column align-items-center text-center" style={{ width: 100 }}>
                   <div className="mb-2"><FortyYearsIcon height="68" /></div>
-                  <span className="small" style={{ lineHeight: '1rem' }}>Years of Innovation</span>
+                  <span className="small" style={{ lineHeight: '1rem' }}>40+ Years of Innovation</span>
                 </div>
               </div>
             </div>
