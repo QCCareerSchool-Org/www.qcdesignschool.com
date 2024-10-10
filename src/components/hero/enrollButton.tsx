@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const EnrollButton: FC<Props> = ({ courseCodes }) => {
-  let href = 'https://enroll.qceventplanning.com?';
+  let href = 'https://enroll.qcdesignschool.com?';
   for (const c of courseCodes) {
     href += `c=${encodeURIComponent(c)}`;
   }
