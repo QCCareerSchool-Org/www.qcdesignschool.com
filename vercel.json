@@ -4,8 +4,9 @@
     { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
   ],
   "redirects": [
+    { "source": "/online-courses/virtual-design-training", "destination": "/online-courses/virtual-design" },
     { "source": "/online-courses/landscape-design-course", "destination": "/online-courses/landscape-design" },
-    
+
     { "source": "/become-a-home-designer-rm", "destination": "/rm/become-a-home-designer" },
     { "source": "/interior-decorating-rm", "destination": "/rm/become-an-interior-decorator" },
     { "source": "/become-home-stager", "destination": "/rm/become-a-home-stager" },
