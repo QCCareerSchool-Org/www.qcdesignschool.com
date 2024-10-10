@@ -6,6 +6,7 @@ import HeroImage from './hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
+import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { GetStartedSection } from '@/components/getStartedSection';
 import QIcon from '@/components/icons/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
@@ -13,7 +14,6 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
-import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
