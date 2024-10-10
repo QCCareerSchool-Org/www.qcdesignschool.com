@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { FaviconMeta } from './favicon';
 import type { LayoutComponent } from './serverComponent';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { Provider } from '@/providers';
@@ -26,6 +27,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} />}
         {process.env.VWO_ID && <VWO id={parseInt(process.env.VWO_ID, 10)} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
+        <FaviconMeta />
       </head>
       <body className="d-flex flex-column h-100">
         <Provider>
