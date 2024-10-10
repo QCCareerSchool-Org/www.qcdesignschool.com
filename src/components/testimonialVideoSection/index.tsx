@@ -21,7 +21,7 @@ export const TestimonialVideoSection: FC = () => {
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12 col-md-10 col-xl-9 col-xxl-8">
               <div className={styles.subtitle}>40 Years of Excellence in Distance Education</div>
-              <h2 className="mb-4">Join <CountUp value={45} />,000+ Student &amp; Graduates Shaping the Future of Design</h2>
+              <h2 className="mb-4">Join <CountUp value={45} />,000+ Students &amp; Graduates Shaping the Future of Design</h2>
               <p className="lead mb-0">With over 45,000 students &amp; graduates and 40 years in distance education, QC Design School empowers your passion for design and transforms it into a successful career. Learn from the best and join a community that's redefining the industry.</p>
             </div>
           </div>

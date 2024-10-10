@@ -13,7 +13,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Become a Home Designer - QC Design School',
+  title: 'Become a Home Designer',
 };
 
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];

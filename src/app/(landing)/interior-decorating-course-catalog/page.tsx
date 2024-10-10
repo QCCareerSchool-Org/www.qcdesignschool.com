@@ -22,7 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Interior Decorating Course Catalog - QC Design School',
+  title: 'Free Interior Decorating Course Catalog',
 };
 
 const brevoListId = 18; // Interior Decorating Leads

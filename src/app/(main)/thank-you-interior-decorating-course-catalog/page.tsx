@@ -10,7 +10,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Interior Decorating Course Catalog - QC Design School',
+  title: 'Your Interior Decorating Course Catalog',
 };
 
 const ThankYouInteriorDecoratingCourseCatalogPage: PageComponent = async ({ searchParams }) => {

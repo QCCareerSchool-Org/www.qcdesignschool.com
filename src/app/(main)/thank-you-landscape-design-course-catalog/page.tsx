@@ -10,7 +10,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Landscape Design Course Catalog - QC Design School',
+  title: 'Your Landscape Design Course Catalog',
 };
 
 const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {

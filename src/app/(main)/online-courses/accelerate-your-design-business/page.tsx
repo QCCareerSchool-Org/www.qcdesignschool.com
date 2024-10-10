@@ -19,7 +19,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Accelerate Your Business - QC Design School',
+  title: 'Accelerate Your Business',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];

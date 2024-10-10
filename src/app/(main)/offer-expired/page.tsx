@@ -8,7 +8,7 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
-  title: 'Offer Expired - QC Design School',
+  title: 'Offer Expired',
 };
 
 const OfferExpiredPage: PageComponent = () => {

@@ -21,7 +21,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Home Staging Course - QC Design School',
+  title: 'Home Staging Course',
 };
 
 const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];

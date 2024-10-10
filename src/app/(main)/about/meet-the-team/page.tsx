@@ -7,7 +7,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 
 export const metadata: Metadata = {
-  title: 'Meet the Team - QC Design School',
+  title: 'Meet the Team',
 };
 
 const MeetTheTeamPage: PageComponent = () => {

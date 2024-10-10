@@ -18,7 +18,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Feng Shui Design Course - QC Design School',
+  title: 'Feng Shui Design Course',
 };
 
 const testimonialIds = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];

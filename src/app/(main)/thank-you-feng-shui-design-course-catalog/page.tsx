@@ -10,7 +10,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Feng Shui Design Course Catalog - QC Design School',
+  title: 'Your Feng Shui Design Course Catalog',
 };
 
 const ThankYouFengShuiDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {

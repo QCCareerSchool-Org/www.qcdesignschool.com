@@ -10,7 +10,8 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Color Consultant Course Catalog - QC Design School',
+  title: 'Your Color Consultant Course Catalog',
+  robots: { index: false },
 };
 
 const ThankYouColorConsultantCourseCatalogPage: PageComponent = async ({ searchParams }) => {

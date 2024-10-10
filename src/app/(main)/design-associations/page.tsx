@@ -8,7 +8,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
-  title: 'Preferred Partners - QC Design School',
+  title: 'Design Associations',
 };
 
 const HomePage: PageComponent = () => (

@@ -22,7 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Professional Organizing Course Catalog - QC Design School',
+  title: 'Free Professional Organizing Course Catalog',
 };
 
 const brevoListId = 19; // Professional Organizing Leads

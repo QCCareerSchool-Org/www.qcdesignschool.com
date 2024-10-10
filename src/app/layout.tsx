@@ -16,7 +16,7 @@ import '@/app/bootstrap.scss';
 import './global.scss';
 
 export const metadata: Metadata = {
-  title: 'QC Design School',
+  title: { default: 'QC Design School', template: '%s - QC Design School' },
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {

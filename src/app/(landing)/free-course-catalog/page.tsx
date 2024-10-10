@@ -23,7 +23,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Catalog - QC Design School',
+  title: 'Free Catalog',
 };
 
 const brevoListId = 7; // General Leads

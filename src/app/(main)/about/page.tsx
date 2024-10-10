@@ -12,7 +12,7 @@ import ShieldIcon from '@/components/icons/shield.svg';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 export const metadata: Metadata = {
-  title: 'About the School - QC Design School',
+  title: 'About the School',
 };
 
 const iconSize = 48;
@@ -27,7 +27,7 @@ const AboutPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6 col-xxl-7">
             <p className={`${styles.years} mb-3`}>Celebrating 40 Years</p>
-            <h1 className="mb-4">About QC</h1>
+            <h1 className="mb-4">About QC Design School</h1>
             <p>QC Career School has been at the forefront of distance education, training aspiring professionals worldwide for over four decades. As a faculty of QC Career School, QC Design School offers flexible, high-quality online training to ensure students can receive a top-tier design education from the comfort of their homes. QC Design School has had thousands of dedicated students graduate and begin their careers in the design industry.</p>
             <p className="mb-5">Each year, QC improves the student experience by updating course content to reflect the latest industry trends. QC Design School is proud to provide students with an industry-leading support system with the goal of developing a personal relationship with each and every student. With continuous innovation and a genuine commitment to students' success, QC will always provide a world-class learning experience.</p>
             <Link href="/online-courses" className="btn btn-lg btn-outline-dark">View Courses</Link>

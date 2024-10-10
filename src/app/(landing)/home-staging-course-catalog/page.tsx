@@ -22,7 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Home Staging Course Catalog - QC Design School',
+  title: 'Free Home Staging Course Catalog',
 };
 
 const brevoListId = 20; // Home Staging Leads

@@ -22,7 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Feng Shui Design Course Catalog - QC Design School',
+  title: 'Free Feng Shui Design Course Catalog',
 };
 
 const brevoListId = 7; // General Leads

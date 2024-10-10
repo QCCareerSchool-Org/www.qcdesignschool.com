@@ -11,7 +11,7 @@ import { PerksSection } from '@/components/perksSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'Become a Home Designer - QC Design School',
+  title: 'Become a Home Designer',
 };
 
 const testimonialIds = [

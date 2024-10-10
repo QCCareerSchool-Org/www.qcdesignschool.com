@@ -11,7 +11,7 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - QC Design School',
+  title: 'Contact Us',
 };
 
 const iconHeight = 32;

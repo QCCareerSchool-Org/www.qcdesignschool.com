@@ -18,7 +18,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Virtual Design - QC Design School',
+  title: 'Virtual Design Course',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0011', 'TD-0012' ];

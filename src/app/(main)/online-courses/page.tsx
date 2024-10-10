@@ -1,9 +1,14 @@
+import type { Metadata } from 'next';
 import type { FC, PropsWithChildren } from 'react';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+
+export const metadata: Metadata = {
+  title: 'Online Courses',
+};
 
 const CoursesPage: PageComponent = () => (
   <div>

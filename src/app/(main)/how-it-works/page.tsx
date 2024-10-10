@@ -11,7 +11,7 @@ import FeedbackIcon from '@/components/icons/check-speech.svg';
 import CheckIcon from '@/components/icons/list-check.svg';
 
 export const metadata: Metadata = {
-  title: 'How It Works - QC Design School',
+  title: 'How It Works',
 };
 
 const iconSize = 24;

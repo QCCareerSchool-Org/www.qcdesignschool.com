@@ -17,7 +17,7 @@ import { getData } from '@/lib/getData';
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
 export const metadata: Metadata = {
-  title: 'Online Courses - QC Design School',
+  title: 'BOGO Limited-Time Offer',
 };
 
 const CoursesPage: PageComponent = () => {

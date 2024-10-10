@@ -22,7 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Free Color Consultant Course Catalog - QC Design School',
+  title: 'Free Color Consultant Course Catalog',
 };
 
 const brevoListId = 7; // General Leads

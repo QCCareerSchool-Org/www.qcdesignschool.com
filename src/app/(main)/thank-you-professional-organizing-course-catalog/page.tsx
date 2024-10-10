@@ -10,7 +10,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Professional Organizing Course Catalog - QC Design School',
+  title: 'Your Professional Organizing Course Catalog',
 };
 
 const ThankYouProfessionalOrganizingCourseCatalogPage: PageComponent = async ({ searchParams }) => {

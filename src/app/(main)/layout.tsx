@@ -7,10 +7,6 @@ import { Header } from './header';
 import type { LayoutComponent } from '@/app/serverComponent';
 import { LiveChat } from '@/scripts/liveChat';
 
-export const metadata: Metadata = {
-  title: 'QC Design School',
-};
-
 const MainLayout: LayoutComponent = ({ children }) => {
   return (
     <>
