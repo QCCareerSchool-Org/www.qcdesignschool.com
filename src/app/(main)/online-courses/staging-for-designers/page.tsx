@@ -9,19 +9,19 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Staging for Designers - QC Design School',
+  title: 'Staging for Designers Course',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -44,7 +44,7 @@ const StagingForDesignersPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Get Certified as a Home Stager Quickly</h2>
-            <p className="lead mb-4">This course can only be taken with QC's Interior Decorating Certification course. Want to start your career as a Home Stager? Consider our Home Staging Certification course.</p>
+            <p className="lead mb-4">This course can only be taken with QC's Interior Decorating Certification course. Want to start your career as a home stager? Consider our Home Staging Certification course.</p>
             <p>As a certified interior decorator, you already know all the ins and outs of working with clients to redesign their spaces. Now you can build on your existing design training by learning how to prepare homes for sale.</p>
             <p className="mb-0"><strong>The Staging for Designers course is a condensed version of the Home Staging course and allows trained interior decorators to upgrade their expertise and offer home staging services.</strong> Earn your designation as an International Staging and Redesign Professional in this streamlined course created specifically for interior decorators.</p>
           </div>
@@ -79,14 +79,14 @@ const StagingForDesignersPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="st" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to add home staging to your design expertise?"
-      text="Become professionally certified with QC’s online Staging for Designers training"
+      title="Ready to Add Home Staging to Your Design Expertise?"
+      text="Become professionally certified with QC's online Staging for Designers training."
       courseCodes={courseCodes}
     />
   </div>

@@ -1,5 +1,5 @@
 :root {
-  --qc-color-primary: #2840e0;  
+  --qc-color-primary: #0013de;  
   --qc-color-text: #506172;
   --qc-color-headings: #02013f;
   --qc-color-dark-blue: #0a2540;
@@ -16,6 +16,8 @@
   --qc-color-light-stroke: #b5c3d1;
   --qc-color-red-cta: #c60000;
   --qc-color-light-blue: #ced6ff;
+
+  --qc-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   
   --qc-section-padding: 4rem;
   @media only screen and (min-width: 768px) {
@@ -80,6 +82,7 @@ $accordion-border-radius: 1.5rem;
 $card-border-radius: 1.5rem;
 $card-spacer-y: 2rem;
 $card-spacer-x: 2rem;
+$border-radius-xl: 1.5rem;
 
 $accordion-padding-x: 1.5rem;
 $accordion-padding-y: 1.5rem;
@@ -149,20 +152,6 @@ body {
 .btn-primary {
   color: white !important;
   &:hover, &:focus { color: white !important; }
-}
-
-section {
-  position: relative;
-  overflow: hidden;
-  padding: var(--qc-section-padding) 0;
-}
-
-section:first-of-type {
-  padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
-}   
-
-section > div.container {
-  position: relative; /* so that if we use a cover image, the content will display on top */
 }
 
 .p-s { padding: var(--qc-section-padding); }
@@ -293,16 +282,6 @@ section > div.container {
   .gx-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; }
   .gy-xxl-s { --bs-gutter-y: var(--qc-section-padding) !important; }
   .g-xxl-s { --bs-gutter-x: var(--qc-section-padding) !important; --bs-gutter-y: var(--qc-section-padding) !important; }
-}
-
-section.noPadding {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-section.noPadding > div.container {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 h1, .h1 { font-size: 2.75rem; line-height: 1.2; }
@@ -467,5 +446,10 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 }
 
 .text-shadow {
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: var(--qc-text-shadow);
+}
+
+::selection {
+  background: var(--qc-color-dark-gold);
+  color: black;
 }

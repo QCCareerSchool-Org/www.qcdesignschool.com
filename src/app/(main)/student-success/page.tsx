@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
 
-import { CarouselSection } from './carouselSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { StudentShowcaseCarouselSection } from '@/components/studentShowcaseCarouselSection';
+import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'Contact Us - QC Design School',
+  title: 'Student Success',
+  description: '',
 };
 
 const StudentSuccessPage: PageComponent = () => {
@@ -27,15 +30,19 @@ const StudentSuccessPage: PageComponent = () => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-7 text-center">
               <h1>Student Success</h1>
-              <p className="mb-0">Explore the success stories of our students and graduates, and take a look at the impressive event works crafted by our talented students.</p>
+              <p className="mb-0">Discover the inspiring success stories of QC Design School graduates, and explore the exceptional designs created by QC's talented students.</p>
             </div>
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
-      <CarouselSection />
+      <TestimonialVideoSection />
+      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <GoogleReviewSection className="bg-light" />
+      <StudentShowcaseCarouselSection />
       <GetStartedSection
         title="Ready to Start Your Career in Design?"
+        buttonHref="/your-career"
+        buttonText="Explore Careers"
       />
     </>
   );

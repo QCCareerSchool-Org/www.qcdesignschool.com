@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
+import { getCertification } from '../certificationLogos';
 import { CardPrice } from './cardPrice';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
-import { getCertification } from '../certificationLogos';
 import { getHeroImage } from '../hero/getHeroImage';
+import { Subtitle } from '../subtitle';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
@@ -36,7 +37,7 @@ export const CourseTuitionCard: FC<Props> = async props => {
             <>
               <div className={styles.imageOverlay} />
               <div className={styles.overlayContent}>
-                {props.subtitle && <div className={styles.subtitle}>{props.subtitle}</div>}
+                {props.subtitle && <Subtitle>{props.subtitle}</Subtitle>}
                 <h3 className="h4 mb-0 text-white">{getCourseName(props.courseCode)}</h3>
               </div>
             </>
@@ -56,24 +57,26 @@ export const CourseTuitionCard: FC<Props> = async props => {
             </>
           )}
           <p>{props.description}</p>
-          {price && <CardPrice price={price} />}
         </div>
-        <div className="d-flex flex-column flex-sm-row">
-          {props.showEnrollLink
-            ? (
-              <>
-                <Link href={props.href} className="d-lg-none btn btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
-                <Link href={props.href} className="d-none d-lg-block btn btn-lg btn-outline-medium mb-2 mb-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
-                <Link href={enrollLink} className="d-lg-none btn btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
-                <Link href={enrollLink} className="d-none d-lg-block btn btn-lg btn-none" style={{ whiteSpace: 'nowrap' }}>Enroll Now<span className="ms-3"><ChevronIcon /></span></Link>
-              </>
-            )
-            : (
-              <>
-                <Link href={props.href} className="d-lg-none btn btn-none p-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More<span className="ms-3"><ChevronIcon /></span></Link>
-                <Link href={props.href} className="d-none d-lg-block btn btn-lg btn-none p-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More<span className="ms-3"><ChevronIcon /></span></Link>
-              </>
-            )}
+        <div className="d-flex flex-column">
+          {price && <CardPrice price={price} />}
+          <div className="d-flex flex-column flex-sm-row">
+            {props.showEnrollLink
+              ? (
+                <>
+                  <Link href={props.href} className="d-xxl-none btn btn-outline-medium mb-2 mb-sm-0 me-sm-2" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
+                  <Link href={props.href} className="d-none d-xxl-block btn btn-lg btn-outline-medium mb-2 mb-sm-0 me-sm-3" style={{ whiteSpace: 'nowrap' }}>Learn More</Link>
+                  <Link href={enrollLink} className="d-xxl-none btn btn-dark" style={{ whiteSpace: 'nowrap' }}>Enroll Now</Link>
+                  <Link href={enrollLink} className="d-none d-xxl-block btn btn-dark btn-lg" style={{ whiteSpace: 'nowrap' }}>Enroll Now</Link>
+                </>
+              )
+              : (
+                <>
+                  <Link href={props.href} className="d-lg-none btn btn-none p-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More<span className="ms-3"><ChevronIcon /></span></Link>
+                  <Link href={props.href} className="d-none d-lg-block btn btn-lg btn-none p-sm-0" style={{ whiteSpace: 'nowrap' }}>Learn More<span className="ms-3"><ChevronIcon /></span></Link>
+                </>
+              )}
+          </div>
         </div>
       </div>
     </div>

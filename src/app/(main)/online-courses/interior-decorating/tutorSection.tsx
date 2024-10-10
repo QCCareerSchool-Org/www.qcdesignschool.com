@@ -25,7 +25,7 @@ export const TutorSection: FC<Props> = ({ className }) => (
         <div className="col-12 col-lg-6">
           <div className="mb-3"><AngieChapmanCircle /></div>
           <h3 className="h4">Angie Chapman</h3>
-          <p className="mb-0">Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become an sought-after designer.</p>
+          <p className="mb-0">Award-winning interior design consultant and founder of Angie Chapman Interiors, Angie is a driving force in the design world. With over 10 years of experience in the industry, she has honed her skills and expertise to become a sought-after designer.</p>
         </div>
       </div>
     </div>

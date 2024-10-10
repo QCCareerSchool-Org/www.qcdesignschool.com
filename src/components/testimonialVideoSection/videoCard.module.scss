@@ -1,0 +1,33 @@
+.videoCard {
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.videoCardDescription {
+  padding: 20px;
+  min-height: 220px; // so they are all consistent if it spills onto a second line
+}
+
+.name {
+  color: var(--qc-color-dark-gold);
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+.thumbnailWrapper {
+  position: relative;
+  cursor: pointer;
+
+  .playIcon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    color: white;
+  }
+}

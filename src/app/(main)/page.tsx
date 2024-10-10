@@ -3,27 +3,27 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
+import type { PageComponent } from '../serverComponent';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import BookReaderIcon from '@/components/icons/book-reader.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
-import ObjectsVerticalBottomIcon from '@/components/icons/objects-vertical-bottom.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
-import UserVoiceIcon from '@/components/icons/user-voice.svg';
+import TimerIcon from '@/components/icons/timer.svg';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
-  title: 'QC Design School',
+  title: { absolute: 'QC Design School' },
 };
 
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
@@ -31,8 +31,8 @@ const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 
 const HomePage: PageComponent = () => (
   <div className={styles.page}>
     <section className={styles.heroSection}>
-      <BackgroundImage priority src={HeroImageDesktop} objectPosition="87.5% 50%" mobile={{ src: HeroImageMobile, breakpoint: 'md', objectPosition: '50% 100%' }} />
-      <div className="container">
+      <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />
+      <div className="container text-white text-shadow">
         <div className="row">
           <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
             <h1 className="mb-4">Start a Career in<br />Home Design</h1>
@@ -53,24 +53,24 @@ const HomePage: PageComponent = () => (
             <h2 className="mb-5 mb-lg-4 mb-xxl-5">Why Choose QC Design School</h2>
             <div className="row g-5 g-lg-4 g-xxl-5">
               <div className="col-12 col-lg-6">
-                <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <BookReaderIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                 <h3 className="h6 mb-3">Learn From Expert Instructors</h3>
-                <p className="mb-0">We've hand-selected the top design professionals in the industry to guide you through your course material.</p>
+                <p className="mb-0">We've hand-selected the top design professionals in the industry to develop top-tier courses and guide you through your learning experience.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <UserVoiceIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Flexible Online Training</h3>
-                <p className="mb-0">QC provides a fully online education&mdash;learn at your own pace and get access to bonus career training in our private virtual community!</p>
+                <TimerIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <h3 className="h6 mb-3">Enjoy Self-Paced Learning</h3>
+                <p className="mb-0">QC provides a fully online education so that you can learn at your own pace with support from student advisors, tutors and a network of peers in our private virtual community!</p>
               </div>
               <div className="col-12 col-lg-6">
                 <CertificationIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Industry-Recognized Certifications</h3>
-                <p className="mb-0">Graduate with professional home design certifications and open up a world of career &amp; business opportunities.</p>
+                <h3 className="h6 mb-3"><span className="d-lg-none d-xxl-inline">Earn </span>Industry-Recognized Certifications</h3>
+                <p className="mb-0">Graduate with professional home design certifications that will open up a world of career &amp; business opportunities to jumpstart your career in the booming design industry.</p>
               </div>
               <div className="col-12 col-lg-6">
-                <ObjectsVerticalBottomIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
-                <h3 className="h6 mb-3">Business Training Included</h3>
-                <p className="mb-0">Each course includes built-in business training to help you launch your career and grow your clientele as a newly certified designer.</p>
+                <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
+                <h3 className="h6 mb-3">Prepare for a Successful Career</h3>
+                <p className="mb-0">Each course includes built-in business training, expert-led instructional videos and live training webinars to help you launch your career and grow your clientele as a newly certified designer.</p>
               </div>
             </div>
           </div>
@@ -90,36 +90,38 @@ const HomePage: PageComponent = () => (
             <CourseTuitionCard
               courseCode="i2"
               subtitle="IDDP™ Certification"
-              description="Dive into the world of design and transform spaces into works of art. Our most popular course is your gateway to mastering aesthetic enhancement and client satisfaction."
+              description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
               href="/online-courses/interior-decorating"
             />
           </SmallColumn>
           <SmallColumn>
             <CourseTuitionCard
-              courseCode="st" subtitle="ISRP™ Certification"
-              description="Discover the key principles of home staging with our essential course that stands at the core of our design curriculum. Begin your journey into the dynamic world of home presentation and property appeal."
+              courseCode="st"
+              subtitle="ISRP™ Certification"
+              description="Discover the art of home staging and transform clients' spaces into buyer-ready showcases. QC's Home Staging course equips you with the professional skills to create stunning spaces that captivate buyers and boost property appeal."
               href="/online-courses/home-staging"
             />
           </SmallColumn>
           <SmallColumn className="d-lg-none d-xl-flex">
             <CourseTuitionCard
-              courseCode="po" subtitle="AIOP™ Certification"
-              description="Strike the perfect balance between functionality and style. This course equips you with the skills to declutter and reorganize spaces for optimum efficiency and design."
-              href="/online-courses/professional-organizing"
+              courseCode="ld"
+              subtitle="ILDP™ Certification"
+              description="Launch your career in the fast-growing landscape design industry with QC's professional certification course. You'll gain the expert skills to create stunning garden designs and outdoor design concepts that ensure your services are in high demand."
+              href="/online-courses/landscape-design"
             />
           </SmallColumn>
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 text-center">
             <MagnifyingGlassIcon height="28" className="mb-3" />
-            <h3 className="h4 mb-3">Explore More Paths in Design and Styling</h3>
-            <p className="lead mb-4">Looking to broaden your horizons? Our comprehensive catalog offers a range of courses to suit your unique interests and career aspirations. From foundational skills to specialized techniques, let your creativity flow and your professional prowess grow.</p>
+            <h3 className="h4 mb-3">Explore More Paths in Design</h3>
+            <p className="lead mb-4">Looking to expand your design skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the world of design!</p>
             <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
           </div>
         </div>
       </div>
     </section>
-    <SupportSection />
+    <SupportSection showLink />
     <GuaranteeSection />
     <GetStartedSection
       title="Ready to Start an Exciting New Career in Home Design?"

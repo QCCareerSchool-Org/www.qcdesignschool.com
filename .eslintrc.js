@@ -217,8 +217,8 @@ module.exports = {
 
     // import rules
     'import/order': [ 'error', {
-      'alphabetize': { order: 'asc', caseInsensitive: true },
-      'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index' ] ],
+      'alphabetize': { order: 'asc', orderImportKind: 'asc', caseInsensitive: true },
+      'groups': [ [ 'builtin', 'external' ], [ 'internal', 'parent', 'sibling', 'index', 'object', 'unknown' ] ],
       'newlines-between': 'always',
     } ],
 

@@ -9,19 +9,19 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Landscape Design Course - QC Design School',
+  title: 'Landscape Design Course',
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
@@ -49,7 +49,7 @@ const LandscapeDesignPage: PageComponent = () => (
               <li>Get started now—our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top landscape industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material</li>
-              <li>Access exclusive tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
+              <li>Access video tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
               <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified landscape designer</li>
             </ul>
           </div>
@@ -84,14 +84,14 @@ const LandscapeDesignPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="ld" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitCanvaSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your career in landscape design?"
-      text="Become professionally certified with QC's online landscape design training"
+      title="Ready to Start Your Career in Landscape Design?"
+      text="Become professionally certified with QC's online landscape design training."
       courseCodes={courseCodes}
     />
   </div>

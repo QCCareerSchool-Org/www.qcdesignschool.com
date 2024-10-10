@@ -7,19 +7,19 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Accelerate Your Business - QC Design School',
+  title: 'Accelerate Your Business',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -42,10 +42,10 @@ const AccelerateYourBusinessPage: PageComponent = () => (
           </div>
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-            <p className="lead mb-4">QC's Accelerate Your Business online training provides you with the tools and expertise you need to take your design business to the next level. You'll study advanced marketing techniques and business strategies including search engine optimization, website development and client acquisition so that you're ready to build a scale a thriving business.</p>
+            <p className="lead mb-4">QC's Accelerate Your Business online training provides you with the tools and expertise you need to take your design business to the next level. You'll study advanced marketing techniques and business strategies including search engine optimization, website development and client acquisition so that you're ready to scale a thriving business.</p>
             <ul>
-              <li>Learn how to grow and expand your existing interior decorating and design business - perfect for design entrepreneurs</li>
-              <li>Recieve personalized feedback and advice on your assignments from our top industry design experts</li>
+              <li>Learn how to grow and expand your existing interior decorating and design business&mdash;perfect for design entrepreneurs</li>
+              <li>Recieve personalized feedback and advice on your assignments from our top design-industry experts</li>
               <li>Join a thriving virtual community to connect with other design professionals and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele</li>
               <li>Enjoy discounts and affiliations with top organizations including DesignFiles, the Decorators & Designers Association of Canada, Placez and more</li>
@@ -81,11 +81,11 @@ const AccelerateYourBusinessPage: PageComponent = () => (
     </section>
     <OutlineSection className="bg-light" />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
-    <CareerEssentialsKitSection />
+    <GoogleReviewSection courseCode="eb" />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to expand your home design & decorating business?"
+      title="Ready to Expand Your Home Design & Decorating Business?"
       text="Take QC's Accelerate Your Business training"
       courseCodes={courseCodes}
     />

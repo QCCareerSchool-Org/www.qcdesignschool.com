@@ -1,16 +1,10 @@
-import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
+import { LayoutClient } from '../layoutClient';
 import { Footer } from './footer';
 import { Header } from './header';
-import { LayoutClient } from '../layoutClient';
 import type { LayoutComponent } from '@/app/serverComponent';
-
-import '@/app/bootstrap.scss';
-
-export const metadata: Metadata = {
-  title: 'QC Design School',
-};
+import { LiveChat } from '@/scripts/liveChat';
 
 const MainLayout: LayoutComponent = ({ children }) => {
   return (
@@ -18,9 +12,8 @@ const MainLayout: LayoutComponent = ({ children }) => {
       <Header />
       <main className="flex-shrink-0">{children}</main>
       <Footer />
-      <Suspense>
-        <LayoutClient />
-      </Suspense>
+      <LiveChat license={1056788} group={3} />
+      <Suspense><LayoutClient /></Suspense>
     </>
   );
 };

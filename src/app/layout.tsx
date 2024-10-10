@@ -7,17 +7,16 @@ import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
-import { LiveChat } from '@/scripts/liveChat';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { PerfectAudience } from '@/scripts/perfectAudience';
 import { Tiktok } from '@/scripts/tiktok';
 import { TrustPulse } from '@/scripts/trustPulse';
 import { VWO } from '@/scripts/vwo';
-
+import '@/app/bootstrap.scss';
 import './global.scss';
 
 export const metadata: Metadata = {
-  title: 'QC Design School',
+  title: { default: 'QC Design School', template: '%s - QC Design School' },
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {
@@ -36,7 +35,6 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
         {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
-        <LiveChat license={1056788} group={1} />
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
       </body>

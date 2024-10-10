@@ -9,19 +9,19 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Professional Organizing Course - QC Design School',
+  title: 'Professional Organizing Course',
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];
@@ -47,7 +47,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
             <p className="lead mb-4">QC's Professional Organizing certification course will jumpstart your career with an in-depth online curriculum covering everything from decluttering techniques and personalized organizing solutions to strategies for working with clients. QC's comprehensive training program will prepare you to design beautiful and organized spaces that transform your clients' lives.</p>
             <ul>
               <li>Get started now—our premium Professional Organizing course is designed to take you from beginner to expert  with no previous training required</li>
-              <li>Receive personalized feedback and advice on your assignments from our top industry design experts</li>
+              <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified professional organizer</li>
               <li>Enjoy discounts and affiliations with top organizations including the American Society of Professional Organizers, DesignFiles, and more</li>
@@ -84,14 +84,14 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="po" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your career in professional organizing?"
-      text="Become professionally certified with QC's online professional organizing training"
+      title="Ready to Start Your Career in Professional Organizing?"
+      text="Become professionally certified with QC's online professional organizing training."
       courseCodes={courseCodes}
     />
   </div>

@@ -1,6 +1,27 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qceventplanning.com/blog/" },
-    { "source": "/blog/:match*", "destination": "https://blog.qceventplanning.com/blog/:match" }
+    { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/" },
+    { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
+  ],
+  "redirects": [
+    { "source": "/become-a-home-designer-rm", "destination": "/rm/become-a-home-designer" },
+    { "source": "/interior-decorating-rm", "destination": "/rm/become-an-interior-decorator" },
+    { "source": "/become-home-stager", "destination": "/rm/become-a-home-stager" },
+    { "source": "/professional-organizing-rm", "destination": "/rm/become-a-professional-organizer" },
+    { "source": "/color-consultant-rm", "destination": "/rm/become-a-color-consultant" },
+    { "source": "/feng-shui-design-rm", "destination": "/rm/become-a-feng-shui-designer" },
+
+    { "source": "/thank-you-organizing-course-catalog", "destination": "/thank-you-professional-organizing-course-catalog" },
+    { "source": "/thank-you-feng-shui-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
+
+    { "source": "/interior-decorating-vs-interior-design", "destination": "/faq" },
+    { "source": "/educational-requirements-for-designers", "destination": "/faq" },
+    { "source": "/educational-requirements-for-interior-decorators", "destination": "/faq" },
+    { "source": "/educational-requirements-for-professional-organizers", "destination": "/faq" },
+    { "source": "/educational-requirements-for-home-stagers", "destination": "/faq" },
+    { "source": "/learning-design-online", "destination": "/faq" },
+    { "source": "/your-design-decorating-salary", "destination": "/faq" },
+
+    { "source": "/tuition", "destination": "/online-courses" }
   ]
 }

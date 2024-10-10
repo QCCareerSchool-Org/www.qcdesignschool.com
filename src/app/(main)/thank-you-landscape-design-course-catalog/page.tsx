@@ -3,13 +3,14 @@ import { cookies, headers } from 'next/headers';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { SupportSection } from '@/components/supportSection';
 import { ThankYouSection } from '@/components/thankYouSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Landscape Design Course Catalog - QC Design School',
+  title: 'Your Landscape Design Course Catalog',
 };
 
 const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {
@@ -26,12 +27,12 @@ const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchP
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
-  try {
-    if (leadId && emailAddress) {
+  if (leadId && emailAddress) {
+    try {
       await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+    } catch (err) {
+      console.error(err);
     }
-  } catch (err) {
-    console.error(err);
   }
 
   return (
@@ -48,6 +49,7 @@ const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchP
       />
       <ThankYouSection courseName="Landscape Design" firstName={firstName} emailAddress={emailAddress} />
       <ThreeReasonsSection />
+      <SupportSection showLink />
     </>
   );
 };

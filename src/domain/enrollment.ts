@@ -7,7 +7,7 @@ import { isSchool } from './school';
 import type { Title } from './title';
 import { isTitle } from './title';
 
-type Course = {
+export type Course = {
   code: string;
   baseCost: number;
   planDiscount: number;

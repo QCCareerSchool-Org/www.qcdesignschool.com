@@ -94,7 +94,7 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
               <h1 className="mb-3">Welcome to QC Design School!</h1>
               <p className="my-4"><strong>Thank you for enrolling with QC Design School! We're thrilled to have you join our community.</strong></p>
               <p>We have safely received your online enrollment application, and it will be processed on the next business day. Once your registration is complete, you'll receive an email with your login information for the online student center.</p>
-              <p>If you have any questions about your course or want to discuss your goals, our friendly and knowledgeable student support specialists are here to help. You can reach us by email at <a href="mailto:info@qceventplanning.com">info@qceventplanning.com</a> or by phone at <span style={{ whiteSpace: 'nowrap' }}><TelephoneLink countryCode={enrollment.countryCode} /></span> seven days a week. We'd love to hear from you and assist you in any way we can.</p>
+              <p>If you have any questions about your course or want to discuss your goals, our friendly and knowledgeable student support specialists are here to help. You can reach us by email at <a href="mailto:info@qcdesignschool.com">info@qcdesignschool.com</a> or by phone at <span style={{ whiteSpace: 'nowrap' }}><TelephoneLink countryCode={enrollment.countryCode} /></span> seven days a week. We'd love to hear from you and assist you in any way we can.</p>
               <p>We're committed to developing a personal relationship with you and being readily available whenever you need us.</p>
               <p><strong>Best of luck with your studies!</strong></p>
               <p><strong>Sincerely,</strong></p>

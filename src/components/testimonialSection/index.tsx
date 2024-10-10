@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
 import type { FC } from 'react';
+import { useMemo } from 'react';
 
-import styles from './index.module.css';
-import { Title } from './title';
 import { ImageCircle } from '../imageCircle';
 import { courseSort } from '../testimonial';
+import styles from './index.module.css';
+import { Title } from './title';
 import { testimonials } from '../testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
 

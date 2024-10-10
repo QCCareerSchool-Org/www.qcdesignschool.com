@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
+
 import styles from '../terms.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Enrollment Agreement',
+};
 
 const EnrollmentAgreementGBPage: PageComponent = () => (
   <div className={styles.terms}>

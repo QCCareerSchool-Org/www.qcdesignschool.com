@@ -6,18 +6,19 @@ import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Virtual Design - QC Design School',
+  title: 'Virtual Design Course',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0011', 'TD-0012' ];
@@ -45,7 +46,7 @@ const VirtualDesignPage: PageComponent = () => (
               <li>Revolutionize and expand your business by offering virtual services to your design clients</li>
               <li>Join a thriving virtual community to connect with other decorators and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele with online services</li>
-              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez DesignFiles, and more</li>
+              <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Placez, SampleBoard, and more</li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -74,11 +75,12 @@ const VirtualDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialSection id="TD-0001" className="bg-light" />
+    <CareerEssentialsKitDesignFilesSection />
+    <GoogleReviewSection courseCode="vd" />
     <VirtualCommunitySection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to expand your design services online?"
+      title="Ready to Expand Your Design Services Online?"
       text="Become professionally certified with QC's online virtual design training"
       courseCodes={courseCodes}
     />

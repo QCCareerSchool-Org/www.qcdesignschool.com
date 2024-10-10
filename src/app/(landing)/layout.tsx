@@ -1,10 +1,8 @@
 import { Suspense } from 'react';
 
-import { Footer } from './_components/footer';
 import { LayoutClient } from '../layoutClient';
+import { Footer } from './_components/footer';
 import type { LayoutComponent } from '@/app/serverComponent';
-
-import '@/app/bootstrap.scss';
 import './landing.scss';
 
 /**
@@ -14,9 +12,7 @@ const LandingLayout: LayoutComponent = ({ children }) => (
   <>
     <main className="flex-shrink-0">{children}</main>
     <Footer />
-    <Suspense>
-      <LayoutClient />
-    </Suspense>
+    <Suspense><LayoutClient /></Suspense>
   </>
 );
 

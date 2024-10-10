@@ -54,17 +54,23 @@ export const MainNav: FC = () => {
               <Link href="/online-courses/event-decor" className="dropdown-item" onClick={handleClick}>Event Decor</Link>
               <Link href="/online-courses/color-consultant" className="dropdown-item" onClick={handleClick}>Color Consultant</Link>
               <Link href="/online-courses/floral-design" className="dropdown-item" onClick={handleClick}>Floral Design</Link>
-              <Link href="/online-courses/staging-for-designers" className="dropdown-item" onClick={handleClick}>Staging For Designers</Link>
+              <Link href="/online-courses/staging-for-designers" className="dropdown-item" onClick={handleClick}>Staging for Designers</Link>
               <Link href="/online-courses/aging-in-place" className="dropdown-item" onClick={handleClick}>Aging in Place</Link>
               <Link href="/online-courses/virtual-design" className="dropdown-item" onClick={handleClick}>Virtual Design</Link>
               <Link href="/online-courses/accelerate-your-design-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
               <li><hr className="dropdown-divider" /></li>
               <Link href="/online-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
+              <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Design Online</Link>
             </NavDropdown>
             <Link href="/free-course-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
             <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
-            <Link href="/tutors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Tutors</Link>
-            <Link href="/about" className="nav-link" onClick={handleClick}>About QC</Link>
+            <Link href="/instructors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Instructors</Link>
+            <NavDropdown title="About" id="about-nav-dropdown">
+              <Link href="/about" className="dropdown-item" onClick={handleClick}>About the School</Link>
+              <Link href="/about/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
+              <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
+              <Link href="/faq" className="dropdown-item" onClick={handleClick}>FAQ</Link>
+            </NavDropdown>
             <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qcdesignschool.com" className="btn btn-primary">Enroll Now</Link></div>
           </Nav>
         </Navbar.Collapse>

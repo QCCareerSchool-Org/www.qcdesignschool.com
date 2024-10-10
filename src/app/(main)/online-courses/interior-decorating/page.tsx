@@ -9,19 +9,19 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CareerEssentialsKitSection } from '@/components/careerEssentialsKitSection';
+import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialSection } from '@/components/testimonialSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
-  title: 'Interior Decorating Course - QC Design School',
+  title: 'Interior Decorating Course',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -47,8 +47,8 @@ const InteriorDecoratingPage: PageComponent = () => (
             <p className="lead mb-4">QC's online Interior Decorating certification course provides the most comprehensive training available to ensure your success in the home design industry. You'll master everything from color theory and space planning to client communication and design execution so that you're fully equipped to thrive in this dynamic field. </p>
             <ul>
               <li>Get started now—our premium interior decorating course is designed to take you from beginner to expert with no previous training required</li>
-              <li>Receive personalized feedback and advice on your assignments from our top industry design experts</li>
-              <li>Join a thriving virtual community to connect with other decoratorsand gain exclusive access to bonus materials and expert-led webinars</li>
+              <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
+              <li>Join a thriving virtual community to connect with other decorators and gain exclusive access to bonus materials and expert-led webinars</li>
               <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior decorator</li>
               <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Decorators & Designers Association of Canada, Placez and more</li>
             </ul>
@@ -84,14 +84,14 @@ const InteriorDecoratingPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <TestimonialSection id="TD-0001" />
+    <GoogleReviewSection courseCode="i2" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <CareerEssentialsKitSection />
+    <CareerEssentialsKitDesignFilesSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection
-      title="Ready to start your home design & decorating career?"
-      text="Become professionally certified with QC's online interior decorating training"
+      title="Ready to Start Your Home Design & Decorating Career?"
+      text="Become professionally certified with QC's online interior decorating training."
       courseCodes={courseCodes}
     />
   </div>

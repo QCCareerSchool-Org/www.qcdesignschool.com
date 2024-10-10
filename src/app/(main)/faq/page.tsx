@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
-  title: 'FAQ - QC Design School',
+  title: 'Frequently Asked Questions',
 };
 
 const FAQPage: PageComponent = () => (
@@ -78,7 +77,7 @@ const FAQPage: PageComponent = () => (
               <h3 className="h5">Do I have to pay an annual fee to QC or join an organization in order to keep my online design certification?</h3>
               <p>No. Unlike other online design programs, QC Design School recognizes your right to use your professional design certificate and designation free of charge, for life.</p>
               <h3 className="h5">How will QC help me start my design career once I've finished the courses?</h3>
-              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center, including free online business training which prepares students to run their own home design businesses. You’ll also have access to QC’s Virtual Community, where you can network with other design professionals and access free webinars. You can always reach out to the Student Support Team for ongoing support and guidance.</p>
+              <p>QC Design School hosts a variety of free career resources for students and graduates in the Online Student Center, including free online business training which prepares students to run their own home design businesses. You'll also have access to QC's Virtual Community, where you can network with other design professionals and access free webinars. You can always reach out to the Student Support Team for ongoing support and guidance.</p>
               <h3 className="h5">If I take a QC design course, will I be able to start my own business?</h3>
               <p>Yes—QC's online design classes include complete business training. You'll learn how to set up and promote your design services, and you'll receive professional advice during and after your design course.</p>
             </div>
@@ -90,7 +89,7 @@ const FAQPage: PageComponent = () => (
               <h3 className="h5">Does the tuition cover all costs of QC's design courses?</h3>
               <p>Yes, your design school tuition covers the cost of your online course lessons, videos, assignments and access to the Online Student Center. You'll also receive personal advice from your tutor, a working professional in the design industry. There are no additional fees once you graduate, and your professional designation and certification are yours to use throughout your career—no membership fees.</p>
               <h3 className="h5">Do I need a certification or license to work as an interior decorator?</h3>
-              <p>No, a license, degree, or certification is NOT required to work as an interior decorator. Certification courses teach you how to work on interior decorating projects successfully. QC's courses only require that you achieve a C+ in order to graduate, and your certification is yours to use for the rest of your career with no additional fees.</p>
+              <p>No, a license, degree, or certification is NOT required to work as an interior decorator. QC's certification course provides you with the necessary skills to work on interior decorating projects successfully. Once you graduate, your professional certification will help you stand out in the design industry. Your certification is yours to use for the rest of your career with no additional fees.</p>
               <h3 className="h5">What's the difference between interior decorating and interior design?</h3>
               <p>Interior design is a highly regulated field requiring a degree, apprenticeship, and licensing. It involves technical knowledge and architectural elements. Interior decorating, on the other hand, does not require a license. As an interior decorator, you work with the existing structure of a space and focus on decorative elements. A professional certificate allows you to work as a decorator or start your own decorating business.</p>
             </div>
