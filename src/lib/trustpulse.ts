@@ -1,24 +1,30 @@
 import type { Enrollment } from '@/domain/enrollment';
 
 const enrollmentUrls = {
-  ep: 'https://hooks.zapier.com/hooks/catch/1909320/35cln6b',
-  wp: 'https://hooks.zapier.com/hooks/catch/1909320/35cljna',
-  ce: 'https://hooks.zapier.com/hooks/catch/1909320/35cey8k',
-  default: 'https://hooks.zapier.com/hooks/catch/1909320/35cl08g',
+  i2: 'https://hooks.zapier.com/hooks/catch/1909320/35zgnyc',
+  st: 'https://hooks.zapier.com/hooks/catch/1909320/35zqydn',
+  po: 'https://hooks.zapier.com/hooks/catch/1909320/35zq3iv',
+  fs: 'https://hooks.zapier.com/hooks/catch/1909320/35zqug1',
+  ld: 'https://hooks.zapier.com/hooks/catch/1909320/35zqh1b',
+  default: 'https://hooks.zapier.com/hooks/catch/1909320/35zgw4g',
 };
 
 const getUrl = (enrollment: Enrollment): string => {
-  return enrollment.courses.some(c => c.code.toUpperCase() === 'EP')
-    ? enrollmentUrls.ep
-    : enrollment.courses.some(c => c.code.toUpperCase() === 'WP')
-      ? enrollmentUrls.wp
-      : enrollment.courses.some(c => c.code.toUpperCase() === 'CE')
-        ? enrollmentUrls.ce
-        : enrollmentUrls.default;
+  return enrollment.courses.some(c => c.code.toUpperCase() === 'I2')
+    ? enrollmentUrls.i2
+    : enrollment.courses.some(c => c.code.toUpperCase() === 'ST')
+      ? enrollmentUrls.st
+      : enrollment.courses.some(c => c.code.toUpperCase() === 'PO')
+        ? enrollmentUrls.po
+        : enrollment.courses.some(c => c.code.toUpperCase() === 'FS')
+          ? enrollmentUrls.fs
+          : enrollment.courses.some(c => c.code.toUpperCase() === 'LD')
+            ? enrollmentUrls.ld
+            : enrollmentUrls.default;
 };
 
 export const trustPulseLead = async (payload: Payload): Promise<void> => {
-  await trustPulse(payload, 'https://hooks.zapier.com/hooks/catch/1909320/35clg2t');
+  await trustPulse(payload, 'https://hooks.zapier.com/hooks/catch/1909320/35z5cnc');
 };
 
 export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
