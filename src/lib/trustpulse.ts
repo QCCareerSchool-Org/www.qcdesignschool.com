@@ -23,10 +23,6 @@ const getUrl = (enrollment: Enrollment): string => {
             : enrollmentUrls.default;
 };
 
-export const trustPulseLead = async (payload: Payload): Promise<void> => {
-  await trustPulse(payload, 'https://hooks.zapier.com/hooks/catch/1909320/35z5cnc');
-};
-
 export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
   const payload: Payload = {
     firstName: enrollment.firstName,
