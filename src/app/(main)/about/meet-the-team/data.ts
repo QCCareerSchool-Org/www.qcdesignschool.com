@@ -39,7 +39,7 @@ export const employees: Employee[] = [
     src: DaveWelshImage,
     imagePositionX: 45,
     name: 'Dave Welsh',
-    heading: 'Dave, Director of IT and Development',
+    heading: 'Dave Welsh, Director of IT and Development',
     description: 'At QC, my team develops the systems that make your learning experience run seamlessly. We have created a custom online learning portal designed specifically to meet your needs as a QC student. When you log in to your course, you\'ll find everything you need right at your fingertips. You\'ll have access to interactive course lessons and videos, assignments, feedback from expert tutors, special discounts, and important account details. My job is to make sure your online experience is straightforward and enjoyable so that you can focus on your studies.',
   },
   {
