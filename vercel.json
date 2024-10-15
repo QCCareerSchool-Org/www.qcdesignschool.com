@@ -4,6 +4,11 @@
     { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
   ],
   "redirects": [
+    { "source": "/terms.html", "destination": "/terms" },
+    { "source": "/terms-gb.html", "destination": "/terms-gb" },
+    { "source": "/enrollment-agreement.html", "destination": "/enrollment-agreement" },
+    { "source": "/enrollment-agreement-gb.html", "destination": "/enrollment-agreement-gb" },
+
     { "source": "/online-courses/virtual-design-training", "destination": "/online-courses/virtual-design" },
     { "source": "/online-courses/landscape-design-course", "destination": "/online-courses/landscape-design" },
 
