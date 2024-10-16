@@ -6,7 +6,7 @@
   "redirects": [
     {
       "source": "/:year(\\d{4}))/:month(\\d{2}/:day(\\d{2})/:path((?!uk/).*)",
-      "destination": "/blog/:year*/:month*/:day*/:path*",
+      "destination": "/blog/:year/:month/:day/:path",
       "permanent": false
     },
 
