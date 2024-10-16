@@ -8,8 +8,14 @@
     { "source": "/author/:path*", "destination": "/blog/author/:path" },
     { "source": "/categories/:path*", "destination": "/blog/categories/:path" },
     { "source": "/tag/:path*", "destination": "/blog/tag/:path" },
+    
     { "source": "/qcdesign/:path*", "destination": "/" },
-
+    { "source": "/courses/:path*", "destination": "/online-courses" },
+    { "source": "/fengshui/:path*", "destination": "/online-courses/feng-shui-design" },
+    { "source": "/calculator", "destination": "/online-courses" },
+    { "source": "/online-courses/tuition", "destination": "/online-courses" },
+    { "source": "/special-offers/:path*", "destination": "/offer-expired" },
+    { "source": "/tutors/:path*", "destination": "/instructors" },
 
     { "source": "/terms.html", "destination": "/terms" },
     { "source": "/terms-gb.html", "destination": "/terms-gb" },
