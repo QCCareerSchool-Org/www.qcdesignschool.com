@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/" },
-    { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
+    { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/:match" }
   ],
   "redirects": [
     { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path", "destination": "/blog/:year/:month/:path" },
