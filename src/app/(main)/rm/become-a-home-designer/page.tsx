@@ -14,6 +14,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer',
+  description: 'Start your career as a Certified Design Professional with QC’s online courses, featuring mentorship, certifications, and 50% off additional courses!',
 };
 
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];

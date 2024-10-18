@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Landscape Design Course',
+  description: "QC's Landscape Design certification provides online training in plant selection, garden design, site planning, and contractor collaboration for success.",
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];

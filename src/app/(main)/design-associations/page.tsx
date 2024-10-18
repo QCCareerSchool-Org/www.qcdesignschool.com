@@ -9,6 +9,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
   title: 'Design Associations',
+  description: 'Join QC Design School to enhance your skills and network through exclusive design associations available to students and graduates.',
 };
 
 const HomePage: PageComponent = () => (
