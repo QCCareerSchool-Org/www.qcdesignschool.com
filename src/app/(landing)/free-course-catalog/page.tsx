@@ -24,6 +24,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Catalog',
+  description: 'Download the QC Design School course catalog to get certified in as little as 3 months with flexible online training and personalized feedback!',
 };
 
 const brevoListId = 7; // General Leads

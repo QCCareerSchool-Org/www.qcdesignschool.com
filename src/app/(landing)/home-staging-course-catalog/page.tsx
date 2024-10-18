@@ -23,6 +23,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Home Staging Course Catalog',
+  description: 'Download the QC Home Staging course catalog to learn staging fundamentals, redesign techniques, and business strategies to boost your career!',
 };
 
 const brevoListId = 20; // Home Staging Leads

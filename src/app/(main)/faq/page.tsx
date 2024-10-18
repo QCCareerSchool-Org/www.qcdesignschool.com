@@ -6,6 +6,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
+  description: "Explore FAQs and discover how QC Design School's accredited online design courses equip you with the skills to become a certified design professional!",
 };
 
 const FAQPage: PageComponent = () => (

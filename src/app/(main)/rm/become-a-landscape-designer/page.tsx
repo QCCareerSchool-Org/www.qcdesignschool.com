@@ -19,6 +19,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Become a Landscape Designer',
+  description: 'Become a Landscape Designer where you create beautiful outdoor spaces. Learn essential skills and start your own business with certification!',
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];

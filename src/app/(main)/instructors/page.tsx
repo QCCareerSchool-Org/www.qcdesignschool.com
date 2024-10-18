@@ -9,6 +9,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
 export const metadata: Metadata = {
   title: 'Instructors',
+  description: 'Enroll at QC Design School to be matched with an expert instructor who offers personalized feedback.',
 };
 
 const TutorsPage: PageComponent = () => (

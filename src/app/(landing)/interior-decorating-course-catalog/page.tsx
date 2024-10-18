@@ -23,6 +23,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Interior Decorating Course Catalog',
+  description: 'Download the QC Interior Decorating course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!',
 };
 
 const brevoListId = 18; // Interior Decorating Leads

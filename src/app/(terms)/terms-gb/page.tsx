@@ -5,6 +5,7 @@ import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy and Terms of Service',
+  description: 'We collect personal information for orders, newsletters, and surveys, using it to improve services and protect your data. No information is sold without consent.',
 };
 
 const TermsPage: PageComponent = () => (

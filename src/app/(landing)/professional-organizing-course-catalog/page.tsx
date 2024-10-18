@@ -23,6 +23,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Professional Organizing Course Catalog',
+  description: 'Download the QC Professional Organizing Course catalog to learn client strategies, decluttering techniques, and start your own organizing business!',
 };
 
 const brevoListId = 19; // Professional Organizing Leads

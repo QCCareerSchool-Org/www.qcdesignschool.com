@@ -18,6 +18,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
+  description: 'Become a Certified Professional Organizer with QC’s online course, featuring an AIOP™ certificate, business training, mentoring, and 50% off additional courses!',
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];

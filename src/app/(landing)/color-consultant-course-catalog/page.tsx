@@ -23,6 +23,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Color Consultant Course Catalog',
+  description: 'Download the QC Design School Color Consultant Course catalog to learn advanced color skills, complete practical assignments, and start your consulting business!',
 };
 
 const brevoListId = 7; // General Leads

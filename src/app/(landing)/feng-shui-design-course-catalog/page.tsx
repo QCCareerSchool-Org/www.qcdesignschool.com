@@ -23,6 +23,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Free Feng Shui Design Course Catalog',
+  description: 'Download the Feng Shui Design Course Catalog for details on certification and resources for your journey as a Feng Shui Professional!',
 };
 
 const brevoListId = 7; // General Leads

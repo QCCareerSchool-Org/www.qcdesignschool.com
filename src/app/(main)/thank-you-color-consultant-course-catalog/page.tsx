@@ -11,6 +11,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Color Consultant Course Catalog',
+  description: 'Your course catalog has been emailed. Download it to explore QC’s Color Consultant Certification and online design courses!',
   robots: { index: false },
 };
 

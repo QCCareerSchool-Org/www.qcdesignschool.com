@@ -24,6 +24,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
+  description: 'QC Design School offers Online Design & Decorating Courses and Certification Programs. Start a flexible design career and become a certified interior decorator today!',
 };
 
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];

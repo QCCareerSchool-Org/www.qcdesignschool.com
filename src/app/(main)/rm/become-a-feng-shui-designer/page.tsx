@@ -19,6 +19,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',
+  description: 'Become a Feng Shui Professional with QC’s online course, featuring an AFDP™ certification, business training, mentoring, and 50% off additional courses!',
 };
 
 const testimonialIds = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
