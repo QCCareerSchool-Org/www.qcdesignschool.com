@@ -36,7 +36,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
             <Hero src={HeroImage} priority objectPosition="100% 0">
               <CourseType className="mb-2 mb-xl-4">AIOP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Professional Organizing Course</h1>
-              <p className="h5 mb-3 mb-xl-5">Become a Certified Professional Organizer</p>
+              <p className="h5 mb-3 mb-xl-5">Become Certified in Professional Organizing </p>
               <div className="d-flex justify-content-center justify-content-md-start">
                 <HeroButtons courseCodes={courseCodes} />
               </div>
@@ -49,7 +49,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
               <li>Get started now—our premium Professional Organizing course is designed to take you from beginner to expert  with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material and expert-led webinars</li>
-              <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified professional organizer</li>
+              <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as an Advanced International Organizing Professional™ (AIOP)™</li>
               <li>Enjoy discounts and affiliations with top organizations including the American Society of Professional Organizers, DesignFiles, and more</li>
             </ul>
           </div>
