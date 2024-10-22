@@ -30,7 +30,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
         <div className="row justify-content-center g-s">
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Start Your Career in Professional Organizing</h2>
-            <p className="lead mb-4">Learn online and become an Internationally Certified Professional Organizer with QC's comprehensive training courses. With QC's Professional Organizing Course, you'll receive:</p>
+            <p className="lead mb-4">Learn online and become an Advanced International Organizing Professional™ (AIOP)™ with QC's comprehensive training courses. With QC's Professional Organizing Course, you'll receive:</p>
             <ul className="mb-4">
               <li>Professional and industry-leading content</li>
               <li>An Advanced International Organizing Professional™ (AIOP™) certificate when you graduate</li>
