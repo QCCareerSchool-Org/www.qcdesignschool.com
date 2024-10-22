@@ -36,7 +36,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
             <Hero src={HeroImage} priority objectPosition="100% 0">
               <CourseType className="mb-2 mb-xl-4">AIOP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Professional Organizing Course</h1>
-              <p className="h5 mb-3 mb-xl-5">Become Certified in Professional Organizing </p>
+              <p className="h5 mb-3 mb-xl-5">Become Certified in Professional Organizing</p>
               <div className="d-flex justify-content-center justify-content-md-start">
                 <HeroButtons courseCodes={courseCodes} />
               </div>
