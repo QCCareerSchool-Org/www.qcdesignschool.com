@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/" },
+    { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/index.php" },
     { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" }
   ],
   "redirects": [
