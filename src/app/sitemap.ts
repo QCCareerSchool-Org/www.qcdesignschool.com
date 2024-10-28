@@ -36,13 +36,13 @@ const getPriority = (url: string): number => {
   if (url === `${prefix}/free-catalog`) {
     return 1;
   }
-  if (url.startsWith(`${prefix}/online-event-courses`)) {
+  if (url.startsWith(`${prefix}/online-courses`)) {
     return 0.9;
   }
-  if (url === `${prefix}/about-qc`) {
+  if (url === `${prefix}/about`) {
     return 0.8;
   }
-  if (url === `${prefix}/contact`) {
+  if (url === `${prefix}/contact-us`) {
     return 0.8;
   }
   return 0.5;
