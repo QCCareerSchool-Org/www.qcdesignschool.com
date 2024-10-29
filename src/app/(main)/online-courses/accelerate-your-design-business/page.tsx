@@ -20,6 +20,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business',
+  description: "Jumpstart your career with QC's \"Accelerate Your Business\" workshop, covering branding, online presence, portfolio development, and project management.",
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];

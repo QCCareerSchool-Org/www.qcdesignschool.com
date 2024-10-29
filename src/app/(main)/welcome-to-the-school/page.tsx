@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
@@ -17,6 +18,11 @@ import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { trustPulseEnrollment } from '@/lib/trustpulse';
 
 const brevoStudentListId = 15;
+
+export const metadata: Metadata = {
+  title: 'Welcome to the School',
+  description: 'Welcome to the School',
+};
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
   const enrollmentIdParam = getParam(searchParams.enrollmentId);

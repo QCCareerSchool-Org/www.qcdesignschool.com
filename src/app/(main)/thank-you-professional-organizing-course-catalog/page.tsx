@@ -11,6 +11,7 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Professional Organizing Course Catalog',
+  description: 'Your course catalog has been emailed. Download it to explore QC’s Professional Organizing Certification and online design courses!',
 };
 
 const ThankYouProfessionalOrganizingCourseCatalogPage: PageComponent = async ({ searchParams }) => {

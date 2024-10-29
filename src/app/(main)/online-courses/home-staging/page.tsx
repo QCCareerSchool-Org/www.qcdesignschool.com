@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Home Staging Course',
+  description: "QC's Home Staging course covers staging fundamentals, decluttering, floorplans, a final project, and business strategies to elevate your career.",
 };
 
 const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
