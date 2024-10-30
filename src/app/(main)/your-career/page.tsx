@@ -13,6 +13,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer',
+  description: 'Launch your design career with QC Design School! Get business training to start your own business, expand your skills, or land design jobs to elevate your career.',
 };
 
 const testimonialIds = [

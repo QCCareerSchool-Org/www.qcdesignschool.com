@@ -8,6 +8,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 
 export const metadata: Metadata = {
   title: 'Meet the Team',
+  description: "Meet the Team at QC Career School. QC's passionate team of experts is dedicated to guiding you through a seamless and effective learning journey.",
 };
 
 const MeetTheTeamPage: PageComponent = () => {
