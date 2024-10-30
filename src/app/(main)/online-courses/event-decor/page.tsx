@@ -21,6 +21,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Event Decor Course',
+  description: 'QC\'s Event Decor Course has three comprehensive parts: event design, decor components, and building a career in the industry.',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -28,7 +29,7 @@ const courseCodes: CourseCode[] = [ 'ed' ];
 
 const EventDecorPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

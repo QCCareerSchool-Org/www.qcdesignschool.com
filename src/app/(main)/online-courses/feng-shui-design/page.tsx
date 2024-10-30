@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',
+  description: 'QC\'s Feng Shui Design certification teaches essential skills to launch a rewarding career in restoring harmony to clients\' spaces.',
 };
 
 const testimonialIds = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
@@ -29,7 +30,7 @@ const courseCodes: CourseCode[] = [ 'fs' ];
 
 const FengShuiDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

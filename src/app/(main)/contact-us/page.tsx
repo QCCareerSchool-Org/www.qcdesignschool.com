@@ -12,6 +12,7 @@ import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
+  description: 'Contact QC at any time! You can give us a call at 1-833-600-3751, talk to us on live chat, or send an email to info@qcdesignschool.com.',
 };
 
 const iconHeight = 32;

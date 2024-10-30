@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Staging for Designers Course',
+  description: 'QC\'s Staging for Designers course is a condensed version of the Home Staging course, helping interior decorators upgrade their skills for staging services.',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -29,7 +30,7 @@ const courseCodes: CourseCode[] = [ 'ms' ];
 
 const StagingForDesignersPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

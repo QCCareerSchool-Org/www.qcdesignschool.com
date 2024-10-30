@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Color Consultant Course',
+  description: 'QC Design School\'s Color Consultant Course teaches the theoretical and practical skills you need in order to design custom interiors. Find out more!',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
@@ -29,7 +30,7 @@ const courseCodes: CourseCode[] = [ 'cc' ];
 
 const ColorConsultantPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating Course',
+  description: 'QC\'s Interior Decorating course covers design fundamentals, styles, lighting, floorplans, a final project, and business strategies to launch your career.',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
@@ -29,7 +30,7 @@ const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

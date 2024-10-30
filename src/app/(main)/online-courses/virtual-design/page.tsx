@@ -19,6 +19,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Virtual Design Course',
+  description: 'QC\'s Virtual Design training equips you with skills to expand your clientele globally, modernizing your business and impressing clients with a certificate.',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0011', 'TD-0012' ];
@@ -26,7 +27,7 @@ const courseCodes: CourseCode[] = [ 'vd' ];
 
 const VirtualDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <section>
+    <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">

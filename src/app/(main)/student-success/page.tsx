@@ -9,7 +9,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
 export const metadata: Metadata = {
   title: 'Student Success',
-  description: '',
+  description: 'Join 45,000+ students and graduates shaping the future of design and explore their inspiring success stories and impressive design work!',
 };
 
 const StudentSuccessPage: PageComponent = () => {

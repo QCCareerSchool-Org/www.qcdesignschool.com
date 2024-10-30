@@ -4,7 +4,7 @@ section {
   padding: var(--qc-section-padding) 0;
 }
 
-section:first-of-type {
+section.half-padding-top {
   padding: calc(var(--qc-section-padding) / 2) 0 var(--qc-section-padding); // reduce 
 }   
 
