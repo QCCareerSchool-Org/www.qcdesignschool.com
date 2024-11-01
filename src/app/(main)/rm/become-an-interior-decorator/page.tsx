@@ -18,7 +18,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating Course',
-  description: 'Become an internationally certified Interior Decorator with QC’s online course, featuring mentoring, business training, and a starter kit!',
+  description: 'Become an internationally certified Interior Decorator with QC\'s online course, featuring mentoring, business training, and a starter kit!',
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];

@@ -19,7 +19,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Color Consultant Course',
-  description: 'Become a Certified Color Consultant with QC’s online course, featuring an ICCP™ certificate, business training, and 50% off additional courses!',
+  description: 'Become a Certified Color Consultant with QC\'s online course, featuring an ICCP™ certificate, business training, and 50% off additional courses!',
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
@@ -31,7 +31,7 @@ const ColorConsultantPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12 col-lg-6">
-            <h2 className="mb-4">Start Your Design Career as a Color Consultant</h2>
+            <h1 className="h2 mb-4">Start Your Design Career as a Color Consultant</h1>
             <p className="lead mb-4">Learn online and become an Internationally Certified Color Consultant with QC's professional course. With QC's Color Consultant Course, you'll receive:</p>
             <ul className="mb-4">
               <li>Professional and industry-leading content</li>

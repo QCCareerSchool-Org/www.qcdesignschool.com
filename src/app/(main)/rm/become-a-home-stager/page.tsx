@@ -19,7 +19,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export const metadata: Metadata = {
   title: 'Become a Home Stager',
-  description: 'Become a Certified Home Stager with QC’s online course, featuring double certification, a professional starter kit, mentoring, and 50% off additional courses!',
+  description: 'Become a Certified Home Stager with QC\'s online course, featuring double certification, a professional starter kit, mentoring, and 50% off additional courses!',
 };
 
 const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
@@ -31,7 +31,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12 col-lg-6">
-            <h2 className="mb-4">Launch Your Career in Home Staging</h2>
+            <h1 className="h2 mb-4">Launch Your Career in Home Staging</h1>
             <p className="lead mb-4">Learn online and become an Internationally Certified Home Stager with QC's professional courses. With QC's Home Staging Course, you'll receive:</p>
             <ul className="mb-4">
               <li>Professional and industry-leading content</li>
