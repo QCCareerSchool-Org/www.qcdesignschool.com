@@ -31,7 +31,7 @@ const BecomeALandscapeDesignerPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12 col-lg-6">
-            <h2 className="mb-4">Launch Your Career in Landscape Design</h2>
+            <h1 className="h2 mb-4">Launch Your Career in Landscape Design</h1>
             <p className="lead mb-4">Learn online and become an Internationally Certified Landscape Designer with QC's professional courses. With QC's Landscape Design course, you'll receive:</p>
             <ul className="mb-4">
               <li>Professional and industry-leading content</li>
