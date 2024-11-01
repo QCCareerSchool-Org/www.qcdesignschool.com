@@ -14,6 +14,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import PaletteIcon from '@/components/icons/palette.svg';
 import ScreenshotIcon from '@/components/icons/screenshot.svg';
+import { Overlay } from '@/components/overlay';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ const HowItWorksPage: PageComponent = () => {
       </section>
       <section className="text-white text-shadow">
         <BackgroundImage src={TrainingRequirementImage} mobile={{ src: TrainingRequirementMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} />
+        <Overlay backgroundColor="rgba(0, 0, 0, 0.5)" />
         <div className="container">
           <div className="row g-0">
             <div className="col-lg-6" />
