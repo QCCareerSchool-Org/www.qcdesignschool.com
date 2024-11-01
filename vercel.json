@@ -6,7 +6,7 @@
   "redirects": [
     { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
     { "source": "/author/:path*", "destination": "/blog/author/:path" },
-    { "source": "/categories/:path*", "destination": "/blog/categories/:path" },
+    { "source": "/category/:path*", "destination": "/blog/category/:path" },
     { "source": "/tag/:path*", "destination": "/blog/tag/:path" },
     
     { "source": "/qcdesign/:path*", "destination": "/" },
