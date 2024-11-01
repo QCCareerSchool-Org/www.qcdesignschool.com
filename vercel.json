@@ -35,7 +35,6 @@
     { "source": "/thank-you-organizing-course-catalog", "destination": "/thank-you-professional-organizing-course-catalog" },
     { "source": "/thank-you-feng-shui-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
 
-    { "source": "/interior-decorating-vs-interior-design", "destination": "/faq" },
     { "source": "/educational-requirements-for-designers", "destination": "/faq" },
     { "source": "/educational-requirements-for-interior-decorators", "destination": "/faq" },
     { "source": "/educational-requirements-for-professional-organizers", "destination": "/faq" },
