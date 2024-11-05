@@ -4,11 +4,12 @@ import Link from 'next/link';
 
 import CanvaImage from './canva.jpg';
 import DesignFilesImage from './designfiles.jpg';
+import HeroImageMobile from './hero-mobile.jpg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import { perks } from './perks';
 import videoCallImage from './video-call.jpg';
 import { StatsSection } from '../statsSection';
-import { perks } from './perks';
 import type { PageComponent } from '@/app/serverComponent';
 import { AlertBar } from '@/components/alertBar';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -28,7 +29,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
   <>
     <AlertBar variant="red">Limited Availability! <b>Claim Your Spot Now!</b></AlertBar>
     <section className="bg-dark text-white text-shadow">
-      <BackgroundImage src={HeroImage} />
+      <BackgroundImage src={HeroImage} mobile={{ src: HeroImageMobile, breakpoint: 'lg' }} />
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-6">
