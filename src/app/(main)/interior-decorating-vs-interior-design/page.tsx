@@ -93,7 +93,7 @@ const HowItWorksPage: PageComponent = () => {
             </div>
             <div className="col-12 col-lg-10 col-xl-8">
               <p className="lead">Not all <Link href="/online-courses">interior decorating programs</Link> will teach the same topics, and the same is true for interior design programs.</p>
-              <p>Generally, the key differences between these two programs is the application of your knowledge. Interior decorators focus on the aesthetic changes that can be made to a space, whereas interior designers focus on how spaces can be built or modified from its original structure (ex. renovations, home expansions). Interior designers also have a strong focus on the environmental factors of design, as well as the human behavioural patterns that affect design concepts.</p>
+              <p>Generally, the key differences between these two programs is the application of your knowledge. Interior decorators focus on the aesthetic changes that can be made to a space, whereas interior designers focus on how spaces can be built or modified from its original structure (e.g., renovations, home expansions). Interior designers also have a strong focus on the environmental factors of design, as well as the human behavioural patterns that affect design concepts.</p>
             </div>
           </div>
         </div>
