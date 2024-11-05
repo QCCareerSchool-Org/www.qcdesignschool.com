@@ -5,6 +5,9 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: [
+        '/*?*playAgain=',
+      ],
     },
     sitemap: 'https://www.qcdesignschool.com/sitemap_index.xml',
   };
