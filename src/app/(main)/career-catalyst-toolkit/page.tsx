@@ -16,6 +16,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import XIcon from '@/components/icons/briefcase.svg';
+import SquareCheckIcon from '@/components/icons/check-square.svg';
 import { Subtitle } from '@/components/subtitle';
 
 export const metadata: Metadata = {
@@ -101,7 +102,13 @@ const CareerCatalystToolkitPage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 text-center">
             <h2 className="mb-4 h4">Take Your Career to the Next Level</h2>
-            <Link href="https://enroll.qcdesignschool.com" className={`btn btn-lg btn-primary ${styles.button}`}>Enroll Now</Link>
+            <Link href="https://enroll.qcdesignschool.com" className={`btn btn-lg btn-primary ${styles.button}`}>
+              <span className={styles.checkIcon}>
+                <SquareCheckIcon width={20} />
+                &nbsp;
+                Enroll Now
+              </span>
+            </Link>
           </div>
         </div>
       </div>
