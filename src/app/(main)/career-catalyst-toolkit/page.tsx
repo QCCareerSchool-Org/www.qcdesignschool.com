@@ -109,10 +109,10 @@ const CareerCatalystToolkitPage: PageComponent = () => (
     <GoogleReviewSection className="bg-light" />
     <section>
       <div className="container">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center mb-5">
           <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
-            <h2 className={`mb-4`}>Elevate Your Design Career with the Career Catalyst Toolkit</h2>
-            <p className="lead mb-5">Your dedication to design deserves a strategic and impactful approach. With the Career Catalyst Toolkit, you gain access to expert mentorship, premium resources, and comprehensive support designed to turn your aspirations into reality.</p>
+            <h2 className="mb-4">Elevate Your Design Career with the Career Catalyst Toolkit</h2>
+            <p className="lead mb-0">Your dedication to design deserves a strategic and impactful approach. With the Career Catalyst Toolkit, you gain access to expert mentorship, premium resources, and comprehensive support designed to turn your aspirations into reality.</p>
           </div>
         </div>
         <div className="row justify-content-center g-5">
@@ -120,7 +120,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
             <div className="col-12 col-sm-6 col-lg-4 text-center" key={index}>
               {perk.icon}
               <h4 className="my-4">{perk.title}</h4>
-              <p>{perk.text}</p>
+              <p className="mb-0">{perk.text}</p>
             </div>
           ))}
         </div>
