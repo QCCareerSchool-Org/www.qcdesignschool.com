@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import BarChartIcon from './icons/bar-chart-alt.svg';
 import BookIcon from './icons/book-bookmark.svg';
