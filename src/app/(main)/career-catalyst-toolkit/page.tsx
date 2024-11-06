@@ -62,7 +62,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
       <div className="container">
         <h2 className="mb-5 text-center text-lg-start">What's Included in the Career Essentials Kit?</h2>
 
-        <div className="row justify-content-center g-4 g-lg-5 align-items-center">
+        <div className="row justify-content-center g-4 g-lg-5 align-items-center" id="video-call">
           <div className="col-6">
             <Image src={videoCallImage} alt="" className={`img-fluid ${styles.roundedImage}`} />
           </div>
@@ -79,7 +79,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
 
         <hr className="my-5" />
 
-        <div className="row justify-content-center g-4 g-lg-5 align-items-center">
+        <div className="row justify-content-center g-4 g-lg-5 align-items-center" id="designfiles">
           <div className="col-6 order-lg-2">
             <Image src={DesignFilesImage} alt="" className={`img-fluid ${styles.roundedImage}`} />
           </div>
@@ -96,7 +96,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
 
         <hr className="my-5" />
 
-        <div className="row justify-content-center g-4 g-lg-5 align-items-center">
+        <div className="row justify-content-center g-4 g-lg-5 align-items-center" id="canva">
           <div className="col-6">
             <Image src={CanvaImage} alt="" className={`img-fluid ${styles.roundedImage}`} />
           </div>
