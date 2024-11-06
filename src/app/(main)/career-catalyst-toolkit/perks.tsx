@@ -1,11 +1,11 @@
 import type { ReactNode } from 'react';
 
-import BarChartIcon from './icons/bar-chart-alt.svg';
-import BookIcon from './icons/book-bookmark.svg';
-import CertificationIcon from './icons/certification.svg';
-import ChatIcon from './icons/chat.svg';
-import CoinIcon from './icons/coin-stack.svg';
-import LoopIcon from './icons/loop.svg';
+import BarChartIcon from './perkIcons/bar-chart-alt.svg';
+import BookIcon from './perkIcons/book-bookmark.svg';
+import CertificationIcon from './perkIcons/certification.svg';
+import ChatIcon from './perkIcons/chat.svg';
+import CoinIcon from './perkIcons/coin-stack.svg';
+import LoopIcon from './perkIcons/loop.svg';
 
 type Perk = {
   title: string;
