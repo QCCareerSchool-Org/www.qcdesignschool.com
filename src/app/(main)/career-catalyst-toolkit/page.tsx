@@ -34,10 +34,11 @@ export const metadata: Metadata = {
 };
 
 const iconHeight = 32;
+const enrollLink = 'https://enroll.qcdesignschool.com';
 
 const CareerCatalystToolkitPage: PageComponent = () => (
   <>
-    <AlertBar variant="red"><a href="https://enroll.qcdesignschool.com" className={styles.alertLink}>Limited Availability! <b>Claim Your Spot Now!</b></a></AlertBar>
+    <AlertBar variant="red"><a href={enrollLink} className={styles.alertLink}>Limited Availability! <b>Claim Your Spot Now!</b></a></AlertBar>
     <section className="bg-dark text-white text-shadow">
       <BackgroundImage src={HeroImage} mobile={{ src: HeroImageMobile, breakpoint: 'lg' }} />
       <div className="container">
@@ -46,12 +47,8 @@ const CareerCatalystToolkitPage: PageComponent = () => (
             <div className="mb-3"><Subtitle>Exclusive Opportunity</Subtitle></div>
             <h1 className="mb-3">Career Catalyst Toolkit</h1>
             <p className="mb-5">Take your design career to new heights with our exclusive Career Catalyst Toolkit package. This limited-time offer combines personalized expert guidance, premium <i>Canva</i> templates, and four months of complimentary access to top-tier design tools. Available now to a select number of students, the Career Catalyst Toolkit is your gateway to streamlined workflows, enhanced branding, and a competitive edge in the design industry.</p>
-            <a href="https://enroll.qcdesignschool.com" className="btn btn-primary me-3">
-              <span className={styles.checkIcon}>
-                <CircleCheckIcon width={20} />
-                &nbsp;
-                Enroll & Secure Your Spot
-              </span>
+            <a href={enrollLink} className="btn btn-primary me-3">
+              <span className={styles.checkIcon}><CircleCheckIcon width={20} />&nbsp;Enroll & Secure Your Spot</span>
             </a>
             {/* <Link href="#" className="btn btn-outline-light">Learn More</Link> */}
           </div>
@@ -117,7 +114,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 text-center">
             <h2 className="mb-4 h4">Take Your Career to the Next Level</h2>
-            <Link href="https://enroll.qcdesignschool.com" className={`btn btn-lg btn-primary ${styles.button}`}>
+            <Link href={enrollLink} className={`btn btn-lg btn-primary ${styles.button}`}>
               <span className={styles.checkIcon}>
                 <SquareCheckIcon width={20} />
                 &nbsp;
