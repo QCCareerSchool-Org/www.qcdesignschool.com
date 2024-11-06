@@ -50,12 +50,12 @@ const CareerCatalystToolkitPage: PageComponent = () => (
             <a href={enrollLink} className="btn btn-primary me-3">
               <span className={styles.checkIcon}><CircleCheckIcon width={20} />&nbsp;Enroll & Secure Your Spot</span>
             </a>
-            {/* <Link href="#" className="btn btn-outline-light">Learn More</Link> */}
+            <Link href="#whats-included" className="btn btn-outline-light">Learn More</Link>
           </div>
         </div>
       </div>
     </section>
-    <section>
+    <section id="whats-included">
       <div className="container">
         <h2 className="mb-5 text-center text-lg-start">What's Included in the Career Essentials Kit?</h2>
 
