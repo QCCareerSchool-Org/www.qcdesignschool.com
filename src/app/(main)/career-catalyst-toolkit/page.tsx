@@ -24,6 +24,7 @@ import { AlertBar } from '@/components/alertBar';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import CircleCheckIcon from '@/components/icons/check-circle.svg';
 import SquareCheckIcon from '@/components/icons/check-square.svg';
 import { Subtitle } from '@/components/subtitle';
 
@@ -45,7 +46,13 @@ const CareerCatalystToolkitPage: PageComponent = () => (
             <div className="mb-3"><Subtitle>Exclusive Opportunity</Subtitle></div>
             <h1 className="mb-3">Career Catalyst Toolkit</h1>
             <p className="mb-5">Take your design career to new heights with our exclusive Career Catalyst Toolkit package. This limited-time offer combines personalized expert guidance, premium <i>Canva</i> templates, and four months of complimentary access to top-tier design tools. Available now to a select number of students, the Career Catalyst Toolkit is your gateway to streamlined workflows, enhanced branding, and a competitive edge in the design industry.</p>
-            <a href="https://enroll.qcdesignschool.com" className="btn btn-primary me-3">Enroll & Secure Your Spot</a>
+            <a href="https://enroll.qcdesignschool.com" className="btn btn-primary me-3">
+              <span className={styles.checkIcon}>
+                <CircleCheckIcon width={20} />
+                &nbsp;
+                Enroll & Secure Your Spot
+              </span>
+            </a>
             {/* <Link href="#" className="btn btn-outline-light">Learn More</Link> */}
           </div>
         </div>
