@@ -11,7 +11,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Interior Decorating Course Catalog',
-  description: 'Your course catalog has been emailed. Download it to explore QC’s Interior Decorating Certification and online design courses!',
+  description: 'Your course catalog has been emailed. Download it to explore QC\'s Interior Decorating Certification and online design courses!',
+  alternates: { canonical: '/thank-you-interior-decorating-course-catalog' },
+  robots: { index: false },
 };
 
 const ThankYouInteriorDecoratingCourseCatalogPage: PageComponent = async ({ searchParams }) => {

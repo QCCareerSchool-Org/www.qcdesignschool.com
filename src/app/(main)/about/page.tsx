@@ -14,6 +14,7 @@ import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 export const metadata: Metadata = {
   title: 'About the School',
   description: 'QC Design School, part of QC Career School, has been educating creative professionals online for 40+ years, offering top-quality design training from home.',
+  alternates: { canonical: '/about' },
 };
 
 const iconSize = 48;

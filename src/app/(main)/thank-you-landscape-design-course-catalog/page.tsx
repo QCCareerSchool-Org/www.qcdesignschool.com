@@ -11,7 +11,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Landscape Design Course Catalog',
-  description: 'Your course catalog has been emailed. Download it to explore QC’s Landscape Design Certification and online design courses!',
+  description: 'Your course catalog has been emailed. Download it to explore QC\'s Landscape Design Certification and online design courses!',
+  alternates: { canonical: '/thank-you-landscape-design-course-catalog' },
+  robots: { index: false },
 };
 
 const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {

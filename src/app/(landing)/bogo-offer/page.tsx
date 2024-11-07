@@ -20,6 +20,7 @@ const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 export const metadata: Metadata = {
   title: 'BOGO Limited-Time Offer',
   description: 'Explore online Design & Decorating Courses, enhance your skills, and get a second course free. Enroll now, and become a certified interior decorator today!',
+  alternates: { canonical: '/bogo-offer' },
 };
 
 const CoursesPage: PageComponent = () => {

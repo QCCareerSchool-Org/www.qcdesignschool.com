@@ -22,6 +22,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export const metadata: Metadata = {
   title: 'Floral Design Course',
   description: 'QC\'s Floral Design certification course offers a comprehensive curriculum covering design principles, advanced techniques, and bouquet designs.',
+  alternates: { canonical: '/online-courses/floral-design' },
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];

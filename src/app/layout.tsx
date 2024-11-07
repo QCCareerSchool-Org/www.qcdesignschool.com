@@ -18,6 +18,7 @@ import './global.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Design School', template: '%s - QC Design School' },
+  metadataBase: new URL('https://www.qcdesignschool.com'),
 };
 
 const RootLayout: LayoutComponent = ({ children }) => {

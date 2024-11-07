@@ -23,6 +23,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export const metadata: Metadata = {
   title: 'Aging in Place Course',
   description: 'QC Design School\'s online Aging in Place Design course teaches you the aspects of design that matter most to aging clients, such as accessibility and mobility.',
+  alternates: { canonical: '/online-courses/aging-in-place' },
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0005', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011' ];

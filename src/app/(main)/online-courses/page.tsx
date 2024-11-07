@@ -8,7 +8,8 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 
 export const metadata: Metadata = {
   title: 'Online Courses',
-  description: 'Explore diverse Online Design & Decorating Courses , from interior decorating to virtual design, and enhance your skills for client-focused success.',
+  description: 'Explore diverse Online Design & Decorating Courses, from interior decorating to virtual design, and enhance your skills for client-focused success.',
+  alternates: { canonical: '/online-courses' },
 };
 
 const CoursesPage: PageComponent = () => (
