@@ -9,7 +9,7 @@ import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Offer Expired',
-  description: "Your offer has expired! Contact a Student Advisor to discover QC's current special offers and discounts available for you.",
+  description: 'Your offer has expired! Contact a Student Advisor to discover QC\'s current special offers and discounts available for you.',
   alternates: { canonical: '/offer-expired' },
 };
 
