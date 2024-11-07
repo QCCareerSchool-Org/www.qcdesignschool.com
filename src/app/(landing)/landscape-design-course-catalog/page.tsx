@@ -24,6 +24,7 @@ import { getParam } from '@/lib/getParam';
 export const metadata: Metadata = {
   title: 'Free Landscape Design Course Catalog',
   description: 'Download the QC Landscape Design certification catalog to learn plant selection, garden design, site planning, and launch your landscape design career!',
+  alternates: { canonical: '/landscape-design-course-catalog' },
 };
 
 const brevoListId = 21; // Landscape Design Leads

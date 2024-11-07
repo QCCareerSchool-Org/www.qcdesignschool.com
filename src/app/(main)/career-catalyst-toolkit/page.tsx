@@ -31,6 +31,7 @@ import { Subtitle } from '@/components/subtitle';
 export const metadata: Metadata = {
   title: 'Career Catalyst Toolkit',
   description: 'Take your design career to new heights with our exclusive Career Catalyst Toolkit package.',
+  alternates: { canonical: '/career-catalyst-toolkit' },
 };
 
 const iconHeight = 32;

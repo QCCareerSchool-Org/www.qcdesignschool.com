@@ -22,6 +22,7 @@ const brevoStudentListId = 15;
 export const metadata: Metadata = {
   title: 'Welcome to the School',
   description: 'Welcome to the School',
+  alternates: { canonical: '/welcome-to-the-school' },
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {

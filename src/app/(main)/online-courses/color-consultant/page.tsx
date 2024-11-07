@@ -23,6 +23,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export const metadata: Metadata = {
   title: 'Color Consultant Course',
   description: 'QC Design School\'s Color Consultant Course teaches the theoretical and practical skills you need in order to design custom interiors. Find out more!',
+  alternates: { canonical: '/online-courses/color-consultant' },
 };
 
 const testimonialIds = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];

@@ -23,6 +23,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
   description: 'QC\'s Professional Organizing certification course covers decluttering, personalized solutions, and client strategies to jumpstart your career.',
+  alternates: { canonical: '/online-courses/professional-organizing' },
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];

@@ -13,6 +13,7 @@ import CheckIcon from '@/components/icons/list-check.svg';
 export const metadata: Metadata = {
   title: 'How It Works',
   description: 'Start a career in home design. Become a certified decorating professional with flexible online training from industry experts. Find out more!',
+  alternates: { canonical: '/how-it-works' },
 };
 
 const iconSize = 24;

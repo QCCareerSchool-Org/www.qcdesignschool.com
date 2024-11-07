@@ -11,7 +11,9 @@ import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
   title: 'Your Feng Shui Design Course Catalog',
-  description: 'Your course catalog has been emailed. Download it to explore QC’s Feng Shui Certification and online design courses!',
+  description: 'Your course catalog has been emailed. Download it to explore QC\'s Feng Shui Certification and online design courses!',
+  alternates: { canonical: '/thank-you-feng-shui-design-course-catalog' },
+  robots: { index: false },
 };
 
 const ThankYouFengShuiDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {

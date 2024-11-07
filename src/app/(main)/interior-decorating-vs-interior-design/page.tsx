@@ -20,6 +20,7 @@ import { getData } from '@/lib/getData';
 export const metadata: Metadata = {
   title: 'Interior Decorating vs. Interior Design',
   description: 'Learn the differences between interior decorating and interior design, and find out which might be right for you.',
+  alternates: { canonical: '/interior-decorating-vs-interior-design' },
 };
 
 const iconSize = 40;

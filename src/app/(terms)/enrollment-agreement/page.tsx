@@ -6,6 +6,7 @@ import type { PageComponent } from '@/app/serverComponent';
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',
   description: 'You have two years from the date of enrollment to complete your courses. However, QC is happy to offer an extension to students who need more time.',
+  alternates: { canonical: '/enrollment-agreement' },
 };
 
 const EnrollmentAgreementPage: PageComponent = () => (
