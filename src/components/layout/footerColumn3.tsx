@@ -6,10 +6,9 @@ import PhoneIcon from './icons/phone.svg';
 import { EmailLink } from '@/components/emailLink';
 import { LivechatLink } from '@/components/livechatLink';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
 
 export const FooterColumn3: FC = () => {
-  const { countryCode } = getData();
+  const countryCode = 'CA';
 
   return (
     <>
