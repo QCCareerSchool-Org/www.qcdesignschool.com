@@ -1,0 +1,78 @@
+.footer {
+  // background-color: var(--qc-color-light);
+  padding: var(--qc-section-padding) 0;
+  
+  hr { margin: 2rem 0; }
+
+  a { color: var(--qc-color-dark-blue); text-decoration: none; }
+  font-size: 0.875rem;
+
+  @media only screen and (min-width: 1400px) {
+    font-size: 1rem;
+  }
+
+  .bottom { font-size: 0.875rem; }
+  
+  .columnHeader {
+    color: var(--qc-color-dark-blue);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .linkList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: 1rem;
+
+      &:last-of-type { margin-bottom: 0; }
+
+      a { color: inherit; text-decoration: none; }
+    }
+  }
+
+  .column0 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 3rem;
+    @media screen and (min-width: 576px) { }
+    @media screen and (min-width: 768px) { }
+    @media screen and (min-width: 992px) { width: 33%; margin-bottom: 0; }
+    @media screen and (min-width: 1200px) { width: 39%; }
+    @media screen and (min-width: 1400px) { width: 39%; }
+  }
+
+  .column1 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 576px) { width: 55%; }
+    @media screen and (min-width: 768px) { width: 35%; margin-bottom: 0; }
+    @media screen and (min-width: 992px) { width: 22.5%; }
+    @media screen and (min-width: 1200px) { width: 21.5%; }
+    @media screen and (min-width: 1400px) { width: 21.5%; }
+  }
+
+  .column2 {
+    flex: 0 0 auto;
+    width: 100%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 576px) { width: 45%; }
+    @media screen and (min-width: 768px) { width: 29%; margin-bottom: 0; }
+    @media screen and (min-width: 992px) { width: 18.5%; }
+    @media screen and (min-width: 1200px) { width: 18.5%; }
+    @media screen and (min-width: 1400px) { width: 18.5%; }
+  }
+
+  .column3 {
+    flex: 0 0 auto;
+    width: 100%;
+    @media screen and (min-width: 576px) { }
+    @media screen and (min-width: 768px) { width: 36%; }
+    @media screen and (min-width: 992px) { width: 26%; }
+    @media screen and (min-width: 1200px) { width: 21%; }
+    @media screen and (min-width: 1400px) { width: 21%; }
+  }
+}
