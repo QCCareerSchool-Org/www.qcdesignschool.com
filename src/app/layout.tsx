@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 import { FaviconMeta } from './favicon';
+import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
 import { Provider } from '@/providers';
@@ -13,6 +15,7 @@ import { PerfectAudience } from '@/scripts/perfectAudience';
 import { Tiktok } from '@/scripts/tiktok';
 import { TrustPulse } from '@/scripts/trustPulse';
 import { VWO } from '@/scripts/vwo';
+
 import '@/app/bootstrap.scss';
 import './global.scss';
 
@@ -40,6 +43,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
+        <Suspense><LayoutClient /></Suspense>
       </body>
     </html>
   );

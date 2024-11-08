@@ -1,5 +1,3 @@
-'use client';
-
 import type { CSSProperties, FC } from 'react';
 
 import { getTelephoneNumber } from '@/lib/telephone';
