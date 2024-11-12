@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import MainLayout from './(main)/layout';
 import HeroImage from './not-found-hero.jpg';
 import styles from './not-found.module.scss';
 import type { PageComponent } from './serverComponent';
@@ -9,6 +8,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import BookReaderIcon from '@/components/icons/book-reader.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import ShieldCheckIcon from '@/components/icons/shield-check.svg';
+import { Layout } from '@/components/layout';
 import { SupportSection } from '@/components/supportSection';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ const iconSize = 32;
 
 const NotFoundPage: PageComponent = () => {
   return (
-    <MainLayout>
+    <Layout>
       <section>
         <BackgroundImage src={HeroImage} priority />
         <div className="container text-white text-shadow">
@@ -74,7 +74,7 @@ const NotFoundPage: PageComponent = () => {
         </div>
       </section>
       <SupportSection showLink />
-    </MainLayout>
+    </Layout>
   );
 };
 

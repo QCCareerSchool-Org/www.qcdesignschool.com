@@ -62,7 +62,7 @@ export const reviewData: ReviewData[] = [
     initial: 'L',
     backgroundColor: 'red',
     imageSrc: LilyGardeaImage,
-    reviewText: 'Obsessed with QC Design School. Got the course for Interior Decorator and staging because I liked it and wanted to learn it and now I do it for work. Get so many good compliments for the work that I do but it’s all thanks to what QC Design School thought me. Definitely recommend to anyone who is thinking of taking one or more of their courses :)',
+    reviewText: 'Obsessed with QC Design School. Got the course for Interior Decorator and staging because I liked it and wanted to learn it and now I do it for work. Get so many good compliments for the work that I do but it’s all thanks to what QC Design School taught me. Definitely recommend to anyone who is thinking of taking one or more of their courses :)',
     priority: Priority.HIGH,
     rating: 5,
     courseCodes: [ 'i2', 'ms' ],
