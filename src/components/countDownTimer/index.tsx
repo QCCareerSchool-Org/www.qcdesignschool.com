@@ -25,7 +25,7 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
   }, []);
 
   if (currentDate >= startBannerDate && currentDate < endDate) {
-    const [ days, hours, minutes, seconds ] = getParts(10000000);
+    const [ days, hours, minutes, seconds ] = getParts(endDate - currentDate);
 
     const daysDisabled = days === 0;
     const hoursDisabled = hours === 0 && daysDisabled;
