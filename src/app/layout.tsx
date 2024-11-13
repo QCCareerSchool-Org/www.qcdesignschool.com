@@ -33,7 +33,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} />}
         <FaviconMeta />
       </head>
-      <body className="d-flex flex-column h-100">
+      <body className="d-flex flex-column">
         <Provider>
           {children}
         </Provider>
