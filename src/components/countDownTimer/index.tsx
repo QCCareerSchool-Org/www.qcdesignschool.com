@@ -63,7 +63,7 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
 
 const RegularMessage: FC<{ discount: string }> = ({ discount }) => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday Ending:</strong> BOGO Any Course + {discount} Off
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance:</strong> BOGO Any Course + {discount} Off
   </span>
 );
 
