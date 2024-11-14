@@ -1,26 +1,50 @@
 import type { Enrollment } from '@/domain/enrollment';
 
-const enrollmentUrls = {
-  i2: 'https://hooks.zapier.com/hooks/catch/1909320/35zgnyc',
-  st: 'https://hooks.zapier.com/hooks/catch/1909320/35zqydn',
-  po: 'https://hooks.zapier.com/hooks/catch/1909320/35zq3iv',
-  fs: 'https://hooks.zapier.com/hooks/catch/1909320/35zqug1',
-  ld: 'https://hooks.zapier.com/hooks/catch/1909320/35zqh1b',
-  default: 'https://hooks.zapier.com/hooks/catch/1909320/35zgw4g',
+if (typeof process.env.TRUST_PULSE_SALE_I2_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_I2_ENDPONT environment variable is undefined');
+}
+
+if (typeof process.env.TRUST_PULSE_SALE_ST_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_ST_ENDPONT environment variable is undefined');
+}
+
+if (typeof process.env.TRUST_PULSE_SALE_PO_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_PO_ENDPONT environment variable is undefined');
+}
+
+if (typeof process.env.TRUST_PULSE_SALE_FS_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_FS_ENDPONT environment variable is undefined');
+}
+
+if (typeof process.env.TRUST_PULSE_SALE_LD_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_LD_ENDPONT environment variable is undefined');
+}
+
+if (typeof process.env.TRUST_PULSE_SALE_ENDPONT === 'undefined') {
+  throw Error('TRUST_PULSE_SALE_ENDPONT environment variable is undefined');
+}
+
+const saleEndpoints: Record<string, string> = {
+  i2: process.env.TRUST_PULSE_SALE_I2_ENDPONT,
+  st: process.env.TRUST_PULSE_SALE_ST_ENDPONT,
+  po: process.env.TRUST_PULSE_SALE_PO_ENDPONT,
+  fs: process.env.TRUST_PULSE_SALE_FS_ENDPONT,
+  ld: process.env.TRUST_PULSE_SALE_LD_ENDPONT,
+  default: process.env.TRUST_PULSE_SALE_ENDPONT,
 };
 
 const getUrl = (enrollment: Enrollment): string => {
   return enrollment.courses.some(c => c.code.toUpperCase() === 'I2')
-    ? enrollmentUrls.i2
+    ? saleEndpoints.i2
     : enrollment.courses.some(c => c.code.toUpperCase() === 'ST')
-      ? enrollmentUrls.st
+      ? saleEndpoints.st
       : enrollment.courses.some(c => c.code.toUpperCase() === 'PO')
-        ? enrollmentUrls.po
+        ? saleEndpoints.po
         : enrollment.courses.some(c => c.code.toUpperCase() === 'FS')
-          ? enrollmentUrls.fs
+          ? saleEndpoints.fs
           : enrollment.courses.some(c => c.code.toUpperCase() === 'LD')
-            ? enrollmentUrls.ld
-            : enrollmentUrls.default;
+            ? saleEndpoints.ld
+            : saleEndpoints.default;
 };
 
 export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
