@@ -27,6 +27,7 @@ if (countDownStartDate < bannerStartDate) {
 export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   const [ currentDate, setCurrentDate ] = useState(date);
 
+  // keep track of the current time each second
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentDate(d => d + 1000);
@@ -41,16 +42,22 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
     const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
     const showTimer = currentDate >= countDownStartDate;
+
     const message = showTimer
       ? <RegularMessage discount={discount} />
       : <LastChanceMessage discount={discount} />;
 
     return (
-      <a href="https://enroll.qcdesignschool.com" style={{ color: 'inherit', textDecoration: 'none' }}>
-        <Banner message={message} showTimer={showTimer} days={days} hours={hours} minutes={minutes} seconds={seconds} />
-      </a>
+      <Banner
+        url="https://enroll.qcdesignschool.com"
+        message={message}
+        showTimer={showTimer}
+        days={days}
+        hours={hours}
+        minutes={minutes}
+        seconds={seconds}
+      />
     );
-
   }
 };
 

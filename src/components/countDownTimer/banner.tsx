@@ -4,6 +4,7 @@ import styles from './banner.module.scss';
 import { CountDownElement } from './countDownElement';
 
 type Props = {
+  url: string;
   message: ReactElement;
   showTimer: boolean;
   days: number;
@@ -19,16 +20,18 @@ export const Banner: FC<Props> = props => {
   const secondsDisabled = props.seconds === 0 && minutesDisabled;
 
   return (
-    <div className={styles.banner}>
-      <div className={styles.message}>{props.message}</div>
-      {props.showTimer && (
-        <div className="d-flex justify-content-center align-items-center gap-3 gap-sm-4">
-          <CountDownElement number={props.days} name="day" disabled={daysDisabled} />
-          <CountDownElement number={props.hours} name="hour" disabled={hoursDisabled} />
-          <CountDownElement number={props.minutes} name="minute" disabled={minutesDisabled} />
-          <CountDownElement number={props.seconds} name="second" disabled={secondsDisabled} />
-        </div>
-      )}
-    </div>
+    <a href={props.url} style={{ color: 'inherit', textDecoration: 'none' }}>
+      <div className={styles.banner}>
+        <div className={styles.message}>{props.message}</div>
+        {props.showTimer && (
+          <div className="d-flex justify-content-center align-items-center gap-3 gap-sm-4">
+            <CountDownElement number={props.days} name="day" disabled={daysDisabled} />
+            <CountDownElement number={props.hours} name="hour" disabled={hoursDisabled} />
+            <CountDownElement number={props.minutes} name="minute" disabled={minutesDisabled} />
+            <CountDownElement number={props.seconds} name="second" disabled={secondsDisabled} />
+          </div>
+        )}
+      </div>
+    </a>
   );
 };
