@@ -336,6 +336,12 @@ h6, .h6 { font-size: 1.125rem; line-height: 1.4; font-family: $font-family-sans-
 .gold { color: var(--qc-color-gold); }
 .lightGold { color: var(--qc-color-light-gold); }
 
+.btn-lg {
+  @media only screen and (max-width: 767.9px) {
+    --bs-btn-font-size: 1rem;
+  }
+}
+
 .btn-outline-grey {
   --bs-btn-color: var(--qc-color-text);
   --bs-btn-border-color: #B5C3D1;

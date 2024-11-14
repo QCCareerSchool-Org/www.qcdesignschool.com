@@ -7,5 +7,5 @@ export const Address: FC = () => {
   const { countryCode } = getData();
   const address = getAddress(countryCode);
 
-  return address.join(',');
+  return address.join(', ');
 };
