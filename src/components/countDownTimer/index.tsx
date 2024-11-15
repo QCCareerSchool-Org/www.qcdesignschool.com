@@ -39,7 +39,7 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   if (currentDate >= bannerStartDate && currentDate < endDate) {
     const [ days, hours, minutes, seconds ] = getParts(endDate - currentDate);
 
-    const discount = gbpCountry(countryCode) ? '£100' : '$100';
+    const discount = gbpCountry(countryCode) ? '£300' : '$500';
 
     const showTimer = currentDate >= countDownStartDate;
 
@@ -63,12 +63,12 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
 
 const RegularMessage: FC<{ discount: string }> = ({ discount }) => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance:</strong> BOGO Any Course + {discount} Off
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance Savings:</strong> Up to {discount} Off + Bonus Course
   </span>
 );
 
 const LastChanceMessage: FC<{ discount: string }> = ({ discount }) => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday:</strong> BOGO Any Course + {discount} Off
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Black Friday Savings:</strong> Up to {discount} Off + Bonus Course
   </span>
 );
