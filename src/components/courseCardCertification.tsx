@@ -23,36 +23,37 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   if (screenWidth === 0) {
     return;
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
   const Certification = getCertification(courseCode);
   if (Certification) {
     return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
   }
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const getCertification = (courseCode: CourseCode): any => {
+type ImageComponent = FC<{ height: number }>;
+
+const getCertification = (courseCode: CourseCode): ImageComponent | null => {
   // 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'eb', 'vd
   switch (courseCode) {
     case 'i2':
-      return IDDP;
+      return IDDP as ImageComponent;
     case 'st':
     case 'ms':
-      return ISRP;
+      return ISRP as ImageComponent;
     case 'fs':
-      return AFDP;
+      return AFDP as ImageComponent;
     case 'po':
-      return AIOP;
+      return AIOP as ImageComponent;
     case 'ld':
-      return ILDP;
+      return ILDP as ImageComponent;
     case 'ed':
-      return IEDP;
+      return IEDP as ImageComponent;
     case 'cc':
-      return ICCP;
+      return ICCP as ImageComponent;
     case 'fd':
-      return IFDP;
+      return IFDP as ImageComponent;
     case 'ap':
-      return APDP;
+      return APDP as ImageComponent;
     case 'eb':
       return null;
     case 'vd':
