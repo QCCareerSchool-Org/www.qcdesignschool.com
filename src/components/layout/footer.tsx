@@ -7,10 +7,10 @@ import { FooterColumn1 } from './footerColumn1';
 import { FooterColumn2 } from './footerColumn2';
 import { FooterColumn3 } from './footerColumn3';
 import BookReader from './icons/book-reader.svg';
-import Facebook from './icons/facebook.svg';
-import Instagram from './icons/instagram.svg';
-import Linkedin from './icons/linkedin.svg';
-import Pinterest from './icons/pinterest.svg';
+import FacebookIcon from './icons/facebook.svg';
+import InstagramIcon from './icons/instagram.svg';
+import LinkedinIcon from './icons/linkedin.svg';
+import PinterestIcon from './icons/pinterest.svg';
 import TiktokIcon from './icons/tiktok.svg';
 import BBBIcon from '@/components/bbb.svg';
 import FortyYearsIcon from '@/components/icons/40-years.svg';
@@ -74,10 +74,10 @@ export const Footer: FC = () => (
         </div>
         <div className="d-flex">
           <div className="me-3"><a href="https://www.tiktok.com/@qcdesignschool" target="_blank" rel="noreferrer" aria-label="Tiktok"><TiktokIcon alt="Tiktok" /></a></div>
-          <div className="me-3"><a href="https://www.instagram.com/qcdesignschool" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram alt="Instagram" /></a></div>
-          <div className="me-3"><a href="https://www.facebook.com/QCDesign" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook alt="Facebook" /></a></div>
-          <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin alt="LinkedIn" /></a></div>
-          <div><a href="https://www.pinterest.com/qccareerschool" target="_blank" rel="noreferrer" aria-label="Pinterest"><Pinterest alt="Pinterest" /></a></div>
+          <div className="me-3"><a href="https://www.instagram.com/qcdesignschool" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon alt="Instagram" /></a></div>
+          <div className="me-3"><a href="https://www.facebook.com/QCDesign" target="_blank" rel="noreferrer" aria-label="Facebook"><FacebookIcon alt="Facebook" /></a></div>
+          <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon alt="LinkedIn" /></a></div>
+          <div><a href="https://www.pinterest.com/qccareerschool" target="_blank" rel="noreferrer" aria-label="Pinterest"><PinterestIcon alt="Pinterest" /></a></div>
         </div>
       </div>
     </div>
