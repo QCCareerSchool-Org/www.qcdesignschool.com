@@ -58,7 +58,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
     </section>
     <section id="whats-included">
       <div className="container">
-        <h2 className="mb-5 text-center text-lg-start">What's Included in the Career Essentials Kit?</h2>
+        <h2 className="mb-5 text-center text-lg-start">What's Included in the Career Catalyst Toolkit?</h2>
 
         <div className="row justify-content-center g-4 g-lg-5 align-items-center" id="video-call">
           <div className="col-6">
