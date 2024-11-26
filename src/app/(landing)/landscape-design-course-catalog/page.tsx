@@ -18,7 +18,9 @@ import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/ildp.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
+import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -31,6 +33,8 @@ const brevoListId = 21; // Landscape Design Leads
 const brevoEmailTemplateId = 73; // Landscape Design
 
 const LandscapeDesignCourseCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode } = getData();
+  const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -73,6 +77,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
+      <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Landscape Designer" />
       <StatsSection />
       <JoinQCSection />

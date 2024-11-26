@@ -18,7 +18,9 @@ import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/isrp.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
+import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -31,6 +33,8 @@ const brevoListId = 20; // Home Staging Leads
 const brevoEmailTemplateId = 74; // Home Staging
 
 const HomeStagingCourseCatalogPage: PageComponent = ({ searchParams }) => {
+  const { countryCode } = getData();
+  const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -73,6 +77,7 @@ const HomeStagingCourseCatalogPage: PageComponent = ({ searchParams }) => {
           </div>
         </div>
       </section>
+      <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Home Stager" />
       <StatsSection />
       <JoinQCSection />
