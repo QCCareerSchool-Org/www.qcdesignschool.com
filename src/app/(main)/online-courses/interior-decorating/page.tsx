@@ -52,7 +52,7 @@ const jsonLd: WithContext<Product> = {
   })),
   'aggregateRating': {
     '@type': 'AggregateRating',
-    'ratingValue': applicableReviews.reduce((prev, cur) => prev + cur.rating, 0),
+    'ratingValue': (applicableReviews.reduce((prev, cur) => prev + cur.rating, 0) / applicableReviews.length).toFixed(1),
     'reviewCount': applicableReviews.length,
   },
 };
