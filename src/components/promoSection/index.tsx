@@ -26,7 +26,7 @@ export const PromoSection: FC<Props> = ({ date, countryCode }) => {
         <div className="row justify-content-center g-5">
           <div className="col-6 col-sm-5 col-md-4 col-lg-3"><Image src={BlackFridayBadge} alt="Exclusive Black Friday savings" className="img-fluid w-100" /></div>
           <div className="col-12 col-lg-9 text-center text-lg-start">
-            <h2 className="h3 mb-4">Design Your Future with Exclusive Black Friday Savings</h2>
+            <h2 className="h3 mb-4">Design Your Future with Exclusive<br />Black Friday Savings</h2>
             <p className={`lead ${styles.muted}`}>Unlock your potential with a FREE second course and tools to jumpstart your design career.</p>
             <p className="lead mb-4">Act now and save up to {savings}</p>
             <a href="https://enroll.qcdesignschool.com" className="btn btn-danger">Get Started Today</a>
