@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { Product, WithContext } from 'schema-dts';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -13,6 +14,7 @@ import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssent
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -29,8 +31,35 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
+const applicableReviews = reviewData.filter(r => r.courseCodes?.includes('i2'));
+const jsonLd: WithContext<Product> = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  'name': 'Interior Decorating Course',
+  'image': HeroImage.src,
+  'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project, and business strategies to launch your career',
+  'review': applicableReviews.map(r => ({
+    '@type': 'Review',
+    'reviewRating': {
+      '@type': 'Rating',
+      'ratingValue': r.rating,
+      'bestRating': 5,
+    },
+    'author': {
+      '@type': 'Person',
+      'name': r.name,
+    },
+  })),
+  'aggregateRating': {
+    '@type': 'AggregateRating',
+    'ratingValue': (applicableReviews.reduce((prev, cur) => prev + cur.rating, 0) / applicableReviews.length).toFixed(1),
+    'reviewCount': applicableReviews.length,
+  },
+};
+
 const InteriorDecoratingPage: PageComponent = () => (
   <div className={styles.page}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

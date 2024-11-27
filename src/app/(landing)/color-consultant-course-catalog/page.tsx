@@ -47,7 +47,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = ({ searchParams }) => {
 
   return (
     <>
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <section className="text-white">
         <BackgroundImage src={HeroImage} />
         <div className="container">
