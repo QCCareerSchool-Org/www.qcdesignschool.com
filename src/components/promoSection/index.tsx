@@ -3,6 +3,7 @@ import type { FC } from 'react';
 
 import BlackFridayBadge from './bf-label.png';
 import styles from './index.module.css';
+import TagIcon from '@/components/icons/tag.svg';
 import { gbpCountry } from '@/lib/currencies';
 
 type Props = {
@@ -28,8 +29,8 @@ export const PromoSection: FC<Props> = ({ date, countryCode }) => {
           <div className="col-12 col-lg-9 text-center text-lg-start">
             <h2 className="h3 mb-4">Design Your Future with Exclusive<br />Black Friday Savings</h2>
             <p className={`lead ${styles.muted}`}>Unlock your potential with a FREE second course and tools to jumpstart your design career.</p>
-            <p className="lead mb-4">Act now and save up to {savings}</p>
-            <a href="https://enroll.qcdesignschool.com" className="btn btn-danger">Get Started Today</a>
+            <p className="lead mb-4">Act now and save up to {savings}!</p>
+            <a href="https://enroll.qcdesignschool.com" className="btn btn-danger"><span className="text-black me-2" style={{ marginLeft: -3 }}><TagIcon height="16" /></span>Get Started Today</a>
           </div>
         </div>
       </div>
