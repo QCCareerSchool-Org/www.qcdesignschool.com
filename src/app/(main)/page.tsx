@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
 import type { PageComponent } from '../serverComponent';
+import { educationalOrganization } from './educationalOrganization';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
@@ -136,6 +137,7 @@ const HomePage: PageComponent = () => {
         title="Ready to Start an Exciting New Career in Home Design?"
         text="Become Professionally Certified with QC's Online Design Training"
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrganization) }} />
     </div>
   );
 };
