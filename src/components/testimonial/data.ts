@@ -105,8 +105,8 @@ export const testimonials: Record<string, Testimonial> = {
   },
   'TD-0012': {
     name: 'Bradley Ryan Schlagheck',
-    courses: [ 'i2', 'st' ],
-    short: [ 'QC\'s course taught me the fundamental skills and principles of organizing as a profession. It  gave me the first steps in starting my organizing business. The course was so well rounded and put together!' ],
+    courses: [ 'i2', 'po' ],
+    short: [ 'QC\'s course taught me the fundamental skills and principles of organizing as a profession. It gave me the first steps in starting my organizing business. The course was so well rounded and put together!' ],
     long: [ 'QC\'s course taught me the fundamental skills and principles of organizing as a profession. I know that each assignment will be relevant to something that I may encounter in the field when working on my own. Learning about all the different types of organizing clients was a plus, as this is a very important aspect of the business. The course gave me the first steps in starting my organizing business. The course was so well rounded and put together!' ],
     image: Images.BradleyRyanSchlagheck,
     stars: 5,
