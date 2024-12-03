@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/home-staging' },
 };
 
-const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
+const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0010' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const HomeStagingPage: PageComponent = () => (
