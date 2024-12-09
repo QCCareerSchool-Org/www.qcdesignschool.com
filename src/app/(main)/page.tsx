@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { FC, PropsWithChildren } from 'react';
+import { type FC, type PropsWithChildren } from 'react';
 
 import type { PageComponent } from '../serverComponent';
 import { educationalOrganization } from './educationalOrganization';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
+import { HomepageButtons } from './homepageButtons';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
@@ -50,7 +51,7 @@ const HomePage: PageComponent = () => {
           <div className="row">
             <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
               <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
-              <Link href="/online-courses" className="btn btn-navy btn-lg"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
+              <HomepageButtons />
             </div>
           </div>
         </div>
