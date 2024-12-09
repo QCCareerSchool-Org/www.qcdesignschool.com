@@ -19,7 +19,7 @@ export const MarketingVideo: FC<Props> = ({ children }) => {
 
   return (
     <>
-      <div onClick={handleOpen}>
+      <div onClick={handleOpen} style={{ cursor: 'pointer' }}>
         {children}
       </div>
       <MarketingVideoLightbox open={open} onClose={handleClose} />
