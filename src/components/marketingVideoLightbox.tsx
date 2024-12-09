@@ -1,14 +1,37 @@
-import type { FC } from 'react';
+'use client';
+
+import type { FC, ReactNode } from 'react';
+import { useState } from 'react';
 import { Lightbox } from 'yet-another-react-lightbox';
 import Video from 'yet-another-react-lightbox/plugins/video';
 import 'yet-another-react-lightbox/styles.css';
 
 type Props = {
+  children: ReactNode;
+};
+
+export const MarketingVideo: FC<Props> = ({ children }) => {
+  const [ open, setOpen ] = useState(false);
+
+  const handleOpen = (): void => setOpen(true);
+
+  const handleClose = (): void => setOpen(false);
+
+  return (
+    <>
+      <div onClick={handleOpen}>
+        {children}
+      </div>
+      <MarketingVideoLightbox open={open} onClose={handleClose} />
+    </>
+  );
+};
+
+type LightboxProps = {
   open: boolean;
   onClose: () => void;
 };
-
-export const MarketingVideoLightbox: FC<Props> = ({ open, onClose }) => (
+const MarketingVideoLightbox: FC<LightboxProps> = ({ open, onClose }) => (
   <Lightbox
     render={{
       buttonPrev: () => null,

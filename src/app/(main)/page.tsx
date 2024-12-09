@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { type FC, type PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
 import type { PageComponent } from '../serverComponent';
 import { educationalOrganization } from './educationalOrganization';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
-import { HomepageButtons } from './homepageButtons';
 import styles from './page.module.scss';
 import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
@@ -20,7 +19,9 @@ import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
+import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
+import { MarketingVideo } from '@/components/marketingVideoLightbox';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -51,7 +52,12 @@ const HomePage: PageComponent = () => {
           <div className="row">
             <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
               <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
-              <HomepageButtons />
+              <div className="d-flex gap-3">
+                <Link href="/online-courses" className="btn btn-navy btn-lg"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
+                <MarketingVideo>
+                  <button className="btn btn-outline-light btn-lg"><PlayIcon height="20" style={{ position: 'relative', top: -1 }} className={`${styles.playIcon} me-2`} />Watch Video</button>
+                </MarketingVideo>
+              </div>
             </div>
           </div>
         </div>
