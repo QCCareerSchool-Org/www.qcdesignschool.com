@@ -48,7 +48,7 @@ const MarketingVideoLightbox: FC<LightboxProps> = ({ open, onClose }) => (
       height: 720,
       sources: [
         {
-          src: '/design-marketing-video.mp4',
+          src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
           type: 'video/mp4',
         },
       ],
