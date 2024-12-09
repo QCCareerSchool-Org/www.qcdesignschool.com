@@ -79,7 +79,7 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Home Designer" />
+      <HowYoullLearnSection graduateTitle="Home Designer" withVideo />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection

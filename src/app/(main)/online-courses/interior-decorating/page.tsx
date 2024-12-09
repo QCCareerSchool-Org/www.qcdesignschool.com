@@ -17,6 +17,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
+import { MarketingVideo } from '@/components/marketingVideoLightbox';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -84,8 +85,10 @@ const InteriorDecoratingPage: PageComponent = () => (
               <li>Enjoy discounts and affiliations with top organizations including DesignFiles, Decorators & Designers Association of Canada, Placez and more</li>
             </ul>
           </div>
-          <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-            <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 d-flex align-items-center">
+            <MarketingVideo>
+              <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
+            </MarketingVideo>
           </div>
         </div>
       </div>
