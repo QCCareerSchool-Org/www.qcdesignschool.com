@@ -17,7 +17,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
-import { MarketingVideo } from '@/components/marketingVideoLightbox';
+import { MarketingVideo } from '@/components/marketingVideo';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';

@@ -1,6 +1,7 @@
 'use client';
 
-import { type FC, useRef } from 'react';
+import type { FC } from 'react';
+import { useRef } from 'react';
 import { useCountUp } from 'react-use-count-up';
 
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';

@@ -21,7 +21,7 @@ import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
-import { MarketingVideo } from '@/components/marketingVideoLightbox';
+import { MarketingVideo } from '@/components/marketingVideo';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';

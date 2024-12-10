@@ -54,7 +54,7 @@ type Base = {
   courses: Course[];
 };
 
-export type RawEnrollment = Base & {
+type RawEnrollment = Base & {
   /** string date */
   transactionTime: string | null;
   /** string date */

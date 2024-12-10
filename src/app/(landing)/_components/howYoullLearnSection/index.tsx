@@ -1,14 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import VideoPlayerImage from './video-player.jpg';
 import BookHeartIcon from '@/components/icons/book-heart.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
-import { MarketingVideo } from '@/components/marketingVideoLightbox';
+import { MarketingVideo } from '@/components/marketingVideo';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 const iconHeight = '1.5rem';
