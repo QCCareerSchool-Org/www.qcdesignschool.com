@@ -1,24 +1,35 @@
+'use client';
+
 import Image from 'next/image';
 import type { FC } from 'react';
 
 import styles from './index.module.scss';
+import VideoPlayerImage from './video-player.jpg';
 import BookHeartIcon from '@/components/icons/book-heart.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
+import { MarketingVideo } from '@/components/marketingVideo';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 const iconHeight = '1.5rem';
 
 type Props = {
   graduateTitle: string;
+  withVideo?: boolean;
 };
 
-export const HowYoullLearnSection: FC<Props> = ({ graduateTitle }) => (
+export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = false }) => (
   <section>
     <div className="container">
       <div className="row align-items-center justify-content-center g-s">
         <div className="col-12 col-sm-10 col-md-8 col-lg-5 col-xxl-6">
-          <Image src={HowYoullLearnImage} className={styles.howYoullLearn} alt="" />
+          {withVideo ? (
+            <MarketingVideo>
+              <Image src={VideoPlayerImage} className={styles.howYoullLearn} alt="" />
+            </MarketingVideo>
+          ) : (
+            <Image src={HowYoullLearnImage} className={styles.howYoullLearn} alt="" />
+          )}
         </div>
         <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
           <h2 className="h3 mb-4">How You'll Learn</h2>

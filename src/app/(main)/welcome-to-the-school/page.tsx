@@ -84,7 +84,7 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
     // Facebook
     if (enrollment.transactionTime === null || new Date().getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
-        const source = 'https://www.qceventplanning.com/welcome-to-the-school';
+        const source = 'https://www.qcdesignschool.com/welcome-to-the-school';
         await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);
       } catch (err) {
         console.error(err);
