@@ -17,7 +17,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
-import { MarketingVideo } from '@/components/marketingVideo';
+import { VideoPopup } from '@/components/marketingVideo';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -86,9 +86,19 @@ const InteriorDecoratingPage: PageComponent = () => (
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6 d-flex align-items-center">
-            <MarketingVideo>
+            <VideoPopup
+              video={{
+                name: 'QC Marketing Video - Interior Decorating Course Page',
+                width: 1280,
+                height: 720,
+                source: {
+                  src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
+                  type: 'video/mp4',
+                },
+              }}
+            >
               <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
-            </MarketingVideo>
+            </VideoPopup>
           </div>
         </div>
       </div>
