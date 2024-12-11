@@ -21,7 +21,7 @@ import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
-import { MarketingVideo } from '@/components/marketingVideo';
+import { VideoPopup } from '@/components/marketingVideo';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -54,9 +54,19 @@ const HomePage: PageComponent = () => {
               <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
               <div className="d-flex gap-3">
                 <Link href="/online-courses" className="btn btn-navy btn-lg"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
-                <MarketingVideo>
+                <VideoPopup
+                  video={{
+                    width: 1280,
+                    height: 720,
+                    name: 'QC Marketing Video - Home Page',
+                    source: {
+                      src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
+                      type: 'video/mp4',
+                    },
+                  }}
+                >
                   <button className="btn btn-outline-light btn-lg"><PlayIcon height="20" style={{ position: 'relative', top: -1 }} className={`${styles.playIcon} me-2`} />Watch Video</button>
-                </MarketingVideo>
+                </VideoPopup>
               </div>
             </div>
           </div>

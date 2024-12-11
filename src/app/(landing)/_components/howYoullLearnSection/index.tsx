@@ -8,7 +8,7 @@ import VideoPlayerImage from './video-player.jpg';
 import BookHeartIcon from '@/components/icons/book-heart.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
-import { MarketingVideo } from '@/components/marketingVideo';
+import { VideoPopup } from '@/components/marketingVideo';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 const iconHeight = '1.5rem';
@@ -24,9 +24,19 @@ export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = fal
       <div className="row align-items-center justify-content-center g-s">
         <div className="col-12 col-sm-10 col-md-8 col-lg-5 col-xxl-6">
           {withVideo ? (
-            <MarketingVideo>
+            <VideoPopup
+              video={{
+                width: 1280,
+                height: 720,
+                name: 'QC Marketing Video - "How you\'ll learn" section',
+                source: {
+                  src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
+                  type: 'video/mp4',
+                },
+              }}
+            >
               <Image src={VideoPlayerImage} className={styles.howYoullLearn} alt="" />
-            </MarketingVideo>
+            </VideoPopup>
           ) : (
             <Image src={HowYoullLearnImage} className={styles.howYoullLearn} alt="" />
           )}
