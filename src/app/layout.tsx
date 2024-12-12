@@ -16,7 +16,7 @@ import { Tiktok } from '@/scripts/tiktok';
 import { TrustPulse } from '@/scripts/trustPulse';
 import { VWO } from '@/scripts/vwo';
 
-import '@/app/bootstrap.scss';
+import './bootstrap.scss';
 import './global.scss';
 
 export const metadata: Metadata = {

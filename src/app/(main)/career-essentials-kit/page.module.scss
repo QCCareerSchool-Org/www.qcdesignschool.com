@@ -1,0 +1,28 @@
+.dl {
+  margin-left: 3rem;
+}
+
+.iconWrapper {
+  position: absolute;
+}
+
+.icon {
+  position: relative;
+  left: -3rem;
+  top: 0.5rem;
+}
+
+.roundedImage {
+  border-radius: 4rem;
+}
+
+.checkIcon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.alertLink {
+  color: inherit;
+  text-decoration: none;
+}
