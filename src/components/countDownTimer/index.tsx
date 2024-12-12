@@ -5,33 +5,26 @@ import { useEffect, useState } from 'react';
 
 import { Banner } from './banner';
 import { getParts } from './getParts';
-import { gbpCountry } from '@/lib/currencies';
 
 type Props = {
   date: number;
   countryCode: string;
 };
 
-// const bannerStartDate = Date.UTC(2024, 10, 15, 21, 40); // November 15, 2024 at 16:40 (21:40 UTC)
-// const countDownStartDate = Date.UTC(2024, 10, 29, 8); // November 29, 2024 at 3:00 (08:00 UTC)
-// const endDate = Date.UTC(2024, 10, 30, 8); // November 30, 2024 at 03:00 (08:00 UTC)
+const bannerStartDate = Date.UTC(2024, 11, 12, 19); // Dec 12, 2024 at 14:00 (19:00 UTC)
+const countDownStartDate = Date.UTC(2024, 11, 18, 8); // Dec 18, 2024 at 03:00 (08:00 UTC)
+const endDate = Date.UTC(2024, 11, 19, 8); // Dec 19, 2024 at 03:00 (08:00 UTC)
 
-// if (endDate < countDownStartDate) {
-//   throw Error('end is before count down start');
-// }
+if (endDate < countDownStartDate) {
+  throw Error('end is before count down start');
+}
 
-// if (countDownStartDate < bannerStartDate) {
-//   throw Error('count down starts before banner starts');
-// }
+if (countDownStartDate < bannerStartDate) {
+  throw Error('count down starts before banner starts');
+}
 
-const cyberMondayStartDate = Date.UTC(2024, 11, 1, 8);
-
-export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
+export const CountDownTimer: FC<Props> = ({ date }) => {
   const [ currentDate, setCurrentDate ] = useState(date);
-
-  const [ bannerStartDate, countDownStartDate, endDate ] = currentDate >= cyberMondayStartDate
-    ? [ cyberMondayStartDate, Date.UTC(2024, 11, 6, 8), Date.UTC(2024, 11, 7, 8) ]
-    : [ Date.UTC(2024, 10, 30, 8), Date.UTC(2024, 11, 1, 8), Date.UTC(2024, 11, 1, 8) ];
 
   // keep track of the current time each second
   useEffect(() => {
@@ -45,13 +38,11 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   if (currentDate >= bannerStartDate && currentDate < endDate) {
     const [ days, hours, minutes, seconds ] = getParts(endDate - currentDate);
 
-    const discount = gbpCountry(countryCode) ? '£300' : '$500';
-
     const showTimer = currentDate >= countDownStartDate;
 
     const message = showTimer
-      ? <RegularMessage cyberMonday={currentDate >= cyberMondayStartDate} discount={discount} />
-      : <LastChanceMessage cyberMonday={currentDate >= cyberMondayStartDate} discount={discount} />;
+      ? <LastChanceMessage />
+      : <RegularMessage />;
 
     return (
       <Banner
@@ -67,14 +58,14 @@ export const CountDownTimer: FC<Props> = ({ date, countryCode }) => {
   }
 };
 
-const RegularMessage: FC<{ cyberMonday: boolean; discount: string }> = ({ discount }) => (
+const RegularMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance Savings:</strong> Up to {discount} off all courses + BOGO FREE
+    Get a Second Course FREE!
   </span>
 );
 
-const LastChanceMessage: FC<{ cyberMonday: boolean; discount: string }> = ({ cyberMonday, discount }) => (
+const LastChanceMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>{cyberMonday ? 'Cyber Monday' : 'Black Friday Savings'}:</strong> Up to {discount} off all courses + BOGO FREE
+    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance:</strong> Get a Second Course FREE!
   </span>
 );
