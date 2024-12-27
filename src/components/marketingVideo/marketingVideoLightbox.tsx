@@ -31,9 +31,15 @@ export const VideoLightbox: FC<Props> = ({ open, onClose, video }) => (
     index={0}
     close={onClose}
     plugins={[ Video ]}
+    styles={{
+      container: {
+        zIndex: 2147483640, // this is one more than the livechat z-index
+      },
+    }}
     slides={[ {
       type: 'video',
       autoPlay: true,
+      controlsList: 'nodownload',
       ...{ video, sources: [ video.source ] },
     } ]}
     controller={{ closeOnBackdropClick: true }}
