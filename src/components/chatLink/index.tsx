@@ -9,7 +9,7 @@ interface Props {
 export const ChatLink: FC<Props> = ({ className }) => {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = e => {
     e.preventDefault();
-    window.LC_API?.open_chat_window?.();
+    window.BrevoConversations?.('openChat');
   };
 
   return <a onClick={handleClick} href="#" className={className}>Chat with Support</a>;
