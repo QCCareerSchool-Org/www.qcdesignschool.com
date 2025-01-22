@@ -29,7 +29,7 @@ const OfferExpiredPage: PageComponent = () => {
             <p className="lead mb-4">But there may be something else we can do for you. Talk to one of our Student Advisors to learn about all of QC's special offers and discounts.</p>
             <div className="d-flex justify-content-center">
               <TelephoneLink countryCode={countryCode} className="btn btn-outline-light me-3" linkText="Call Us Now" />
-              <ChatLink className="btn btn-primary" />
+              <ChatLink className="btn btn-primary">Chat with Support</ChatLink>
             </div>
           </div>
         </div>
