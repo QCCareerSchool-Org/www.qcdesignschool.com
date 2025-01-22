@@ -49,7 +49,7 @@ const ContactPage: PageComponent = () => {
               <MapIcon height={iconHeight} className={`mb-3 ${styles.contactIcon}`} />
               <h2 className="h4">Chat</h2>
               <p>Have an urgent question? Our Student Support Specialists are standing by for a quick chat!</p>
-              <ChatLink className={styles.blackLink} />
+              <ChatLink className={styles.blackLink}>Chat with Support</ChatLink>
             </div>
           </div>
         </div>
