@@ -32,6 +32,7 @@
     { "source": "/professional-organizing-rm", "destination": "/rm/become-a-professional-organizer" },
     { "source": "/color-consultant-rm", "destination": "/rm/become-a-color-consultant" },
     { "source": "/feng-shui-design-rm", "destination": "/rm/become-a-feng-shui-designer" },
+    { "source": "/landscape-course-preview", "destination": "/rm/become-a-landscape-designer" },
 
     { "source": "/thank-you-organizing-course-catalog", "destination": "/thank-you-professional-organizing-course-catalog" },
     { "source": "/thank-you-feng-shui-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
