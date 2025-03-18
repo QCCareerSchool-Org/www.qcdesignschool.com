@@ -1,36 +1,36 @@
 import type { Enrollment } from '@/domain/enrollment';
 
-if (typeof process.env.TRUST_PULSE_SALE_I2_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_I2_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_I2_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_I2_ENDPONT environment variable is undefined');
 }
 
-if (typeof process.env.TRUST_PULSE_SALE_ST_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_ST_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_ST_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_ST_ENDPONT environment variable is undefined');
 }
 
-if (typeof process.env.TRUST_PULSE_SALE_PO_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_PO_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_PO_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_PO_ENDPONT environment variable is undefined');
 }
 
-if (typeof process.env.TRUST_PULSE_SALE_FS_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_FS_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_FS_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_FS_ENDPONT environment variable is undefined');
 }
 
-if (typeof process.env.TRUST_PULSE_SALE_LD_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_LD_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_LD_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_LD_ENDPONT environment variable is undefined');
 }
 
-if (typeof process.env.TRUST_PULSE_SALE_ENDPONT === 'undefined') {
-  throw Error('TRUST_PULSE_SALE_ENDPONT environment variable is undefined');
+if (typeof process.env.PROVE_SRC_SALE_ENDPONT === 'undefined') {
+  throw Error('PROVE_SRC_SALE_ENDPONT environment variable is undefined');
 }
 
 const saleEndpoints: Record<string, string> = {
-  i2: process.env.TRUST_PULSE_SALE_I2_ENDPONT,
-  st: process.env.TRUST_PULSE_SALE_ST_ENDPONT,
-  po: process.env.TRUST_PULSE_SALE_PO_ENDPONT,
-  fs: process.env.TRUST_PULSE_SALE_FS_ENDPONT,
-  ld: process.env.TRUST_PULSE_SALE_LD_ENDPONT,
-  default: process.env.TRUST_PULSE_SALE_ENDPONT,
+  i2: process.env.PROVE_SRC_SALE_I2_ENDPONT,
+  st: process.env.PROVE_SRC_SALE_ST_ENDPONT,
+  po: process.env.PROVE_SRC_SALE_PO_ENDPONT,
+  fs: process.env.PROVE_SRC_SALE_FS_ENDPONT,
+  ld: process.env.PROVE_SRC_SALE_LD_ENDPONT,
+  default: process.env.PROVE_SRC_SALE_ENDPONT,
 };
 
 const getUrl = (enrollment: Enrollment): string => {
@@ -47,7 +47,7 @@ const getUrl = (enrollment: Enrollment): string => {
             : saleEndpoints.default;
 };
 
-export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
+export const proveSrcEnrollment = async (enrollment: Enrollment, ipAddress: string | null): Promise<void> => {
   const payload: Payload = {
     firstName: enrollment.firstName,
     emailAddress: enrollment.emailAddress,
@@ -57,7 +57,7 @@ export const trustPulseEnrollment = async (enrollment: Enrollment, ipAddress: st
 
   const url = getUrl(enrollment);
 
-  await trustPulse(payload, url);
+  await proveSrcRequest(payload, url);
 };
 
 type Payload = {
@@ -67,10 +67,9 @@ type Payload = {
   ipAddress: string | null;
 };
 
-const trustPulse = async (payload: Payload, url: string): Promise<void> => {
+const proveSrcRequest = async (payload: Payload, url: string): Promise<void> => {
   const response = await fetch(url, {
     method: 'post',
-    // headers: { 'Content-Type': 'application/json' }, // CORS doesn't allow Content-Type header
     body: JSON.stringify(payload),
   });
 

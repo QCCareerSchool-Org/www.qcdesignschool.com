@@ -14,7 +14,6 @@ import { OptInMonster } from '@/scripts/optInMonster';
 import { PerfectAudience } from '@/scripts/perfectAudience';
 import { Provesrc } from '@/scripts/provesrc';
 import { Tiktok } from '@/scripts/tiktok';
-import { TrustPulse } from '@/scripts/trustPulse';
 import { VWO } from '@/scripts/vwo';
 
 import './bootstrap.scss';
@@ -41,7 +40,6 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
-        {process.env.TRUSTPULSE_ID && <TrustPulse id={parseInt(process.env.TRUSTPULSE_ID, 10)} />}
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <Provesrc />
         <OptInMonster />
