@@ -48,7 +48,7 @@ const FAQPage: PageComponent = () => {
                 </QuestionAndAnswer>
                 {countryCode === 'CA' && (
                   <QuestionAndAnswer header="Can I claim my course tuition on my taxes?">
-                    <p>Yes, and you could qualify to have over 50% of your course fees covered! QC is a Certified Education Institution with Employment and Social Development Canada. <Link href="/canadian-tax-credits">Learn more about the Canadian tax credits here</Link></p>
+                    <p>Yes, and you could qualify to have over 50% of your course fees covered! QC is a Certified Education Institution with Employment and Social Development Canada. <Link href="/canadian-tax-credits">Learn more about the Canadian tax credits here.</Link></p>
                   </QuestionAndAnswer>
                 )}
               </div>
