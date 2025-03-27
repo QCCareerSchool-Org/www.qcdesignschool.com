@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { EmailSentToast } from '@/components/emailSentToast';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
-import { ThankYouSection } from '@/components/thankYouSection';
+import { TelephoneFormSection } from '@/components/telephoneFormSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -40,6 +41,7 @@ const ThankYouInteriorDecoratingCourseCatalogPage: PageComponent = async ({ sear
 
   return (
     <>
+      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -50,7 +52,7 @@ const ThankYouInteriorDecoratingCourseCatalogPage: PageComponent = async ({ sear
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      <ThankYouSection courseName="Interior Decorating" firstName={firstName} emailAddress={emailAddress} />
+      {leadId && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
       <ThreeReasonsSection />
       <SupportSection showLink />
     </>

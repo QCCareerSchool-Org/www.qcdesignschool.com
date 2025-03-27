@@ -22,6 +22,11 @@ section.noPadding > div.container {
   padding-right: 0;
 }
 
+/* override the section that react-toastify uses */
+section.Toastify {
+  padding: 0;
+}
+
 .grecaptcha-badge { visibility: hidden; }
 
 @import 'react-multi-carousel/lib/styles.css';
