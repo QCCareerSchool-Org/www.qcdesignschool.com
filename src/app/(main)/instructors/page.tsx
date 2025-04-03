@@ -24,6 +24,7 @@ const TutorsPage: PageComponent = () => (
           </div>
           <div className="row justify-content-center g-5 mt-s">
             <h2 className="text-center my-0">QC Experts</h2>
+            <p>Our industry experts have helped shape QC's course content using their extensive real-world experience to help us develop the most professional, practical, and up-to-date courses available.</p>
             {experts.map((t, i) => (
               <div key={i}>
                 <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
@@ -32,6 +33,7 @@ const TutorsPage: PageComponent = () => (
           </div>
           <div className="row justify-content-center g-5">
             <h2 className="text-center my-0">Tutors</h2>
+            <p>Your personal tutor will review your work and give you detailed feedback throughout your course. They're here to support your growth, offer guidance, and help you succeed every step of the way.</p>
             {tutors.map((t, i) => (
               <div key={i}>
                 <Blurb name={t.name} description={t.description} src={t.src} priority={i <= 1} />
