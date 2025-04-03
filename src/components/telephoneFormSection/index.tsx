@@ -62,13 +62,14 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <FormCard>
               <h1 className="h5 text-navy">Stay Connected with QC</h1>
-              <p className="mb-2">Sign up with your phone number to get exclusive special offers and updates right to your phone!</p>
+              <p className="mb-3">Sign up with your phone number to get exclusive special offers and updates right to your phone!</p>
               <FormWrapper>
                 {state === 'ready' && (
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                       <PhoneInput value={telephoneNumber} onChange={handleChange} defaultCountry={countryCode as Country} inputComponent={InputComponent} />
                     </div>
+                    <p><small>By providing your phone number, you agree to receive automated promotional messages from QC Makeup Academy. Consent is not a condition of purchase. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. Terms & Privacy.</small></p>
                     <button type="submit" className="btn btn-primary">Stay Connected</button>
                   </form>
                 )}
