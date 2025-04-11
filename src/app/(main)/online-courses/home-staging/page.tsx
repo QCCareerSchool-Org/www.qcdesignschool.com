@@ -50,7 +50,7 @@ const HomeStagingPage: PageComponent = () => {
             </div>
             <div className="col-12 col-lg-6">
               <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-              <p className="lead mb-4">QC's Home Staging certification course provides students with the most comprehensive training available to succeed in the staging industry.</p>
+              <p className="lead mb-4">With QC's Home Staging certification course, you'll master all the essential skills you need to succeed in this lucrative career path. QC's comprehensive online program covers everything from design fundamentals and color theory to curb appeal and market trends.</p>
               <ul>
                 <li>Get started now—our premium Home Staging course is designed to take you from beginner to expert with no previous training required</li>
                 <li>Receive personalized feedback and advice on your assignments from our top staging experts</li>
