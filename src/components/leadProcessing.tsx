@@ -31,7 +31,7 @@ export const LeadProcessing: FC<Props> = props => {
     }
     effectCalled.current = true;
     gaUserData({ email: props.emailAddress });
-    uetUserData({ em: props.emailAddress });
+    uetUserData(props.emailAddress);
     fbqLead(props.leadId);
     // eslint-disable-next-line camelcase
     gaEvent('conversion', { send_to: props.conversionId });

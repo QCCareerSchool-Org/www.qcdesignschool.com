@@ -17,15 +17,50 @@ export type UETUserData = {
   ph?: string;
 };
 
-export const uetUserData = (data: UETUserData): void => {
+export const uetUserData = (emailAddress?: string, telephoneNumber?: string): void => {
   window.uetq = window.uetq ?? [];
-  window.uetq.push('set', { pid: data });
+  const pid: UETUserData = {};
+  if (emailAddress) {
+    pid.em = uetStandardizeEmailAddress(emailAddress);
+  }
+  if (telephoneNumber) {
+    pid.ph = telephoneNumber;
+  }
+  window.uetq.push('set', { pid });
 };
 
 export const uetSale = (enrollment: Enrollment): void => {
-  uetUserData({ em: enrollment.emailAddress, ph: enrollment.telephoneNumber });
+  uetUserData(enrollment.emailAddress, enrollment.telephoneNumber);
   window.uetq?.push('event', '', {
     revenue_value: enrollment.cost, // eslint-disable-line camelcase
     currency: enrollment.currencyCode,
   });
+};
+
+const uetStandardizeEmailAddress = (emailAddress: string): string => {
+  emailAddress = stripFinalPeriod(stripWhitespace(stripAccents(emailAddress)));
+
+  const parts = emailAddress.split('@');
+  if (parts.length !== 2) {
+    return emailAddress;
+  }
+
+  const username = parts[0].split('+')[0].replace(/\./ug, '');
+
+  return (username + '@' + parts[1]).toLowerCase();
+};
+
+const stripFinalPeriod = (str: string): string => {
+  if (str.endsWith('.')) {
+    return str.slice(0, str.length - 1);
+  }
+  return str;
+};
+
+const stripAccents = (str: string): string => {
+  return str.normalize('NFD').replace(/\p{Diacritic}/gu, '');
+};
+
+const stripWhitespace = (str: string): string => {
+  return str.replace(/\s/gu, '');
 };
