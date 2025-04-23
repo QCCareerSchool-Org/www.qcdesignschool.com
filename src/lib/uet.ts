@@ -38,7 +38,7 @@ export const uetSale = (enrollment: Enrollment): void => {
 };
 
 const uetStandardizeEmailAddress = (emailAddress: string): string => {
-  emailAddress = stripFinalPeriod(stripWhitespace(stripAccents(emailAddress)));
+  emailAddress = stripFinalPeriod(stripWhitespace(stripAccents(emailAddress))).toLowerCase();
 
   const parts = emailAddress.split('@');
   if (parts.length !== 2) {
@@ -47,12 +47,12 @@ const uetStandardizeEmailAddress = (emailAddress: string): string => {
 
   const username = parts[0].split('+')[0].replace(/\./ug, '');
 
-  return (username + '@' + parts[1]).toLowerCase();
+  return username + '@' + parts[1];
 };
 
 const stripFinalPeriod = (str: string): string => {
   if (str.endsWith('.')) {
-    return str.slice(0, str.length - 1);
+    return str.slice(0, -1);
   }
   return str;
 };
