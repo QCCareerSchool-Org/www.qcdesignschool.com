@@ -52,7 +52,7 @@ const uetStandardizeEmailAddress = (emailAddress: string): string => {
 
 const stripFinalPeriod = (str: string): string => {
   if (str.endsWith('.')) {
-    return str.slice(0, str.length - 1);
+    return str.slice(0, -1);
   }
   return str;
 };
