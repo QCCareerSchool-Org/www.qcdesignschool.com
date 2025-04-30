@@ -1,6 +1,7 @@
 'use client';
 
 import 'react-phone-number-input/style.css';
+import Link from 'next/link';
 import type { ChangeEventHandler, FC, FormEventHandler } from 'react';
 import { forwardRef, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
@@ -69,7 +70,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
                     <div className="mb-3">
                       <PhoneInput value={telephoneNumber} onChange={handleChange} defaultCountry={countryCode as Country} inputComponent={InputComponent} />
                     </div>
-                    <p><small>By providing your phone number, you agree to receive automated promotional messages from QC Makeup Academy. Consent is not a condition of purchase. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. Terms & Privacy.</small></p>
+                    <p><small>By providing your phone number, you agree to receive automated promotional messages from QC Design School. Consent is not a condition of purchase. Message frequency varies. Message & data rates may apply. Reply STOP to opt out. <Link href="/terms" target="_blank">Terms & Privacy</Link>.</small></p>
                     <button type="submit" className="btn btn-primary">Stay Connected</button>
                   </form>
                 )}
