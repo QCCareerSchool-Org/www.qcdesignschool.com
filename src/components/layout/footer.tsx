@@ -12,6 +12,7 @@ import InstagramIcon from './icons/instagram.svg';
 import LinkedinIcon from './icons/linkedin.svg';
 import PinterestIcon from './icons/pinterest.svg';
 import TiktokIcon from './icons/tiktok.svg';
+import YoutubeIcon from './icons/youtube.svg';
 import BBBIcon from '@/components/bbb.svg';
 import FortyYearsIcon from '@/components/icons/40-years.svg';
 import { Logo } from '@/components/logo';
@@ -76,6 +77,7 @@ export const Footer: FC = () => (
           <div className="me-3"><a href="https://www.tiktok.com/@qcdesignschool" target="_blank" rel="noreferrer" aria-label="Tiktok"><TiktokIcon alt="Tiktok" /></a></div>
           <div className="me-3"><a href="https://www.instagram.com/qcdesignschool" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon alt="Instagram" /></a></div>
           <div className="me-3"><a href="https://www.facebook.com/QCDesign" target="_blank" rel="noreferrer" aria-label="Facebook"><FacebookIcon alt="Facebook" /></a></div>
+          <div className="me-3"><a href="https://www.youtube.com/channel/UCFaqUFtx_3E-lUdbDLZCPCA" target="_blank" rel="noreferrer" aria-label="Youtube"><YoutubeIcon alt="Youtube" /></a></div>
           <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon alt="LinkedIn" /></a></div>
           <div><a href="https://www.pinterest.com/qccareerschool" target="_blank" rel="noreferrer" aria-label="Pinterest"><PinterestIcon alt="Pinterest" /></a></div>
         </div>
