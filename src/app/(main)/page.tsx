@@ -50,10 +50,14 @@ const HomePage: PageComponent = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-8 col-md-7 col-lg-6 col-xxl-5">
+            <div className="col-12 col-sm-8 col-md-7 col-lg-6 col-xxl-5">
               <p className="lead mb-5">Become a certified design professional with flexible online training from industry experts</p>
-              <div className="d-flex gap-3">
-                <Link href="/online-courses" className="btn btn-navy btn-lg"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
+            </div>
+            <div className="col-12">
+              <div className="d-flex flex-column flex-sm-row gap-3">
+                <div>
+                  <Link href="/online-courses" className="btn btn-navy btn-lg text-start" style={{ minWidth: 200 }}><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className={`${styles.bookIcon} me-2`} />Browse Courses</Link>
+                </div>
                 <VideoPopup
                   video={{
                     width: 1280,
@@ -65,7 +69,7 @@ const HomePage: PageComponent = () => {
                     },
                   }}
                 >
-                  <button className="btn btn-outline-light btn-lg"><PlayIcon height="20" style={{ position: 'relative', top: -1 }} className={`${styles.playIcon} me-2`} />Watch Video</button>
+                  <button className="btn btn-outline-light btn-lg text-start" style={{ minWidth: 200 }}><PlayIcon height="20" style={{ position: 'relative', top: -1 }} className={`${styles.playIcon} me-2`} />Watch Video</button>
                 </VideoPopup>
               </div>
             </div>
