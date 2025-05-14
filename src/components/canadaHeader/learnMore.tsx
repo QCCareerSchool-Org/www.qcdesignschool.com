@@ -11,7 +11,7 @@ export const LearnMore: FC = () => {
   const handleClick: MouseEventHandler = e => {
     e.preventDefault();
     toggle();
-    gaEvent('click', { name: 'canadian tax popup' });
+    gaEvent('canadian tax popup');
   };
 
   return (
