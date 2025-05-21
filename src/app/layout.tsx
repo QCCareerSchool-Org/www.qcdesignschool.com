@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
+import { ToastContainer } from 'react-toastify';
 
 import { FaviconMeta } from './favicon';
+import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
@@ -42,6 +44,7 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <OptInMonster />
         <Suspense><LayoutClient /></Suspense>
+        <ToastContainer pauseOnFocusLoss pauseOnHover position="top-center" className={styles.toastContainer} />
       </body>
     </html>
   );

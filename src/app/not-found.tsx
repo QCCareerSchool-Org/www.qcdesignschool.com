@@ -12,7 +12,7 @@ import { Layout } from '@/components/layout';
 import { SupportSection } from '@/components/supportSection';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found - QC Design School',
+  title: 'Page Not Found',
 };
 
 const iconSize = 32;

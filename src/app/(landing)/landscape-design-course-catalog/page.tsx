@@ -58,7 +58,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = ({ searchParams }) => {
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-landscape-design-course-catalog`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
                     listId={brevoListId}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
