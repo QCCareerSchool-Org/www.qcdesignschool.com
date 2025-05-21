@@ -9,11 +9,9 @@ import { Logo } from '@/components/logo';
 
 type Props = {
   courseName: string;
-  emailAddress?: string;
-  firstName?: string;
 };
 
-export const ThankYouSection: FC<Props> = ({ courseName, emailAddress, firstName }) => (
+export const ThankYouSection: FC<Props> = ({ courseName }) => (
   <section>
     <div className="container">
       <div className="row g-s">
@@ -22,9 +20,8 @@ export const ThankYouSection: FC<Props> = ({ courseName, emailAddress, firstName
             <Logo height={24} />
           </div>
           <h1 className="h2 mb-4">Your Course Catalog</h1>
-          <p className="lead fw-bold mb-3">Thank You For Your Interest in QC Design School{firstName && <>, {firstName}</>}!</p>
+          <p className="lead fw-bold mb-3">Thank You For Your Interest in QC Design School!</p>
           <p>Learn more about QC's {courseName} Certification Program, tuition & payment information, and how you can get started!</p>
-          {emailAddress && <p className="lead text-primary">Your email was sent to <strong>{emailAddress}</strong>. If you don't see it in your inbox in a few minutes, please check your spam or junk mail folder.</p>}
           <div className="d-flex mt-5">
             <a href="/catalog.pdf" download className="btn btn-navy me-3"><DownloadIcon height={16} style={{ position: 'relative', top: -1 }} className="me-2" />Download Your Catalog Now</a>
             <Link href="/online-courses" className="btn btn-outline-navy">View Courses</Link>

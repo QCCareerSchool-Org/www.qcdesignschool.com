@@ -2,21 +2,22 @@ import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { EmailSentToast } from '@/components/emailSentToast';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
-import { ThankYouSection } from '@/components/thankYouSection';
+import { TelephoneFormSection } from '@/components/telephoneFormSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
-  title: 'Your Landscape Design Course Catalog',
-  description: 'Your course catalog has been emailed. Download it to explore QC\'s Landscape Design Certification and online design courses!',
-  alternates: { canonical: '/thank-you-landscape-design-course-catalog' },
+  title: 'Your Course Catalog Has Been Sent',
+  description: 'Your course catalog has been emailed. Download it to explore QC\'s certifications and online courses!',
+  alternates: { canonical: '/thank-you-course-catalog' },
   robots: { index: false },
 };
 
-const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchParams }) => {
+const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
@@ -40,6 +41,7 @@ const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchP
 
   return (
     <>
+      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -50,11 +52,11 @@ const ThankYouLandscapeDesignCourseCatalogPage: PageComponent = async ({ searchP
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      <ThankYouSection courseName="Landscape Design" firstName={firstName} emailAddress={emailAddress} />
+      {leadId && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
       <ThreeReasonsSection />
       <SupportSection showLink />
     </>
   );
 };
 
-export default ThankYouLandscapeDesignCourseCatalogPage;
+export default ThankYouCourseCatalogPage;
