@@ -33,8 +33,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
   const handleSubmit: FormEventHandler = e => {
     e.preventDefault();
     const body = { leadId, telephoneNumber };
-    // const url = 'https://leads.qccareerschool.com/telephoneNumber';
-    const url = 'http://localhost:15011/telephoneNumber';
+    const url = 'https://leads.qccareerschool.com/telephoneNumber';
     setState('submitting');
     fetch(url, { method: 'post', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } }).then(async response => {
       if (!response.ok) {
@@ -62,8 +61,8 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
         <div className="row">
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <FormCard>
-              <h1 className="h5 text-navy">Stay Connected with QC</h1>
-              <p className="mb-3">Sign up with your phone number to get exclusive special offers and updates right to your phone!</p>
+              <h1 className="h5 text-navy">Want Special Offers & Course Updates by Text?</h1>
+              <p className="mb-3">Enter Your Phone number below to stay in the loop</p>
               <FormWrapper>
                 {state === 'ready' && (
                   <form onSubmit={handleSubmit}>
