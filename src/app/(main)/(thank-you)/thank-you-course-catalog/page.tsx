@@ -52,11 +52,13 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      {leadId && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
+      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
       <ThreeReasonsSection />
       <SupportSection showLink />
     </>
   );
 };
+
+const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
 
 export default ThankYouCourseCatalogPage;

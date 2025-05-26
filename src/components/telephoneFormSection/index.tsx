@@ -32,10 +32,11 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
 
   const handleSubmit: FormEventHandler = e => {
     e.preventDefault();
-    const body = { leadId, telephoneNumber };
     const url = 'https://leads.qccareerschool.com/telephoneNumber';
+    const body = JSON.stringify({ leadId, telephoneNumber });
+    const headers = { 'content-type': 'application/json' };
     setState('submitting');
-    fetch(url, { method: 'post', body: JSON.stringify(body), headers: { 'content-type': 'application/json' } }).then(async response => {
+    fetch(url, { method: 'post', body, headers }).then(async response => {
       if (!response.ok) {
         throw Error(response.statusText);
       }
