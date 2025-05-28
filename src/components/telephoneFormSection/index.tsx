@@ -62,8 +62,8 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
         <div className="row">
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <FormCard>
-              <h1 className="h5 text-navy">Want Special Offers & Course Updates by Text?</h1>
-              <p className="mb-3">Enter Your Phone number below to stay in the loop</p>
+              <h1 className="h5 text-navy">Want Special Offers & Course Updates?</h1>
+              <p className="mb-3">Enter your phone number below and we'll text you the details.</p>
               <FormWrapper>
                 {state === 'ready' && (
                   <form onSubmit={handleSubmit}>
