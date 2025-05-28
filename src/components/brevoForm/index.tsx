@@ -47,7 +47,9 @@ export const BrevoForm: FC<Props> = props => {
   };
 
   const handleEmailAddressChange: ChangeEventHandler<HTMLInputElement> = e => {
-    setEmailAddress(e.target.value);
+    const input = e.target;
+    input.setCustomValidity('');
+    setEmailAddress(input.value);
   };
 
   const handleVerify = useCallback((t: string): void => {
@@ -138,7 +140,7 @@ export const BrevoForm: FC<Props> = props => {
       {props.button
         ? <>{props.button}</>
         : (
-          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
+          <button type="submit" className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><span className="text-navy"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span>{props.buttonText ?? 'Get Your Free Catalog'}</button>
         )
       }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
