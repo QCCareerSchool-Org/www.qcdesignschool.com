@@ -75,24 +75,30 @@ export const BrevoForm: FC<Props> = props => {
     };
   }, []);
 
-  const handleSubmit: FormEventHandler = e => {
+  const validForm = (): boolean => {
     if (submitting.current || disabled) {
-      e.preventDefault();
       return false;
     }
 
-    if (!/^[^@\s]+@([^@\s]+\.)+[^@\s]+$/ug.test(emailAddress)) {
+    if (!/^[^@\s]+@(?:[^@\s]+\.)+[^@\s]+$/ug.test(emailAddress)) {
       emailAddressRef.current?.setCustomValidity('Please ensure that your email address includes the TLD, such as .com or .org.');
       emailAddressRef.current?.focus();
-      e.preventDefault();
+      emailAddressRef.current?.reportValidity();
       return false;
+    }
+
+    return true;
+  };
+
+  const handleSubmit: FormEventHandler = e => {
+    if (!validForm()) {
+      e.preventDefault();
+      return;
     }
 
     submitting.current = true;
 
     setTimeout(() => { submitting.current = false; }, 10_000);
-
-    return true;
   };
 
   return (
