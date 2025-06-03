@@ -95,7 +95,7 @@ const HomePage: PageComponent = () => {
                 <div className="col-12 col-lg-6">
                   <CertificationIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                   <h3 className="h6 mb-3"><span className="d-lg-none d-xxl-inline">Earn </span>Industry-Recognized Certifications</h3>
-                  <p className="mb-0">Graduate with professional home design certifications that will open up a world of career &amp; business opportunities to jumpstart your career in the booming design industry.</p>
+                  <p className="mb-0">Graduate with professional design certifications that will open up a world of career &amp; business opportunities to jumpstart your career in the booming design industry.</p>
                 </div>
                 <div className="col-12 col-lg-6">
                   <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
