@@ -7,7 +7,7 @@ export const isCourseCode = (obj: unknown): obj is CourseCode => {
 export const getCourseName = (courseCode: CourseCode): string => {
   switch (courseCode) {
     case 'i2':
-      return 'Interior Decorating';
+      return 'Interior Design & Decorating';
     case 'st':
       return 'Home Staging';
     case 'ms':

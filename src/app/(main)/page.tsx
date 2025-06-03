@@ -26,6 +26,7 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
+import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
@@ -36,8 +37,10 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = () => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
   const date = new Date().getTime();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
     <div className={styles.page}>
@@ -46,7 +49,7 @@ const HomePage: PageComponent = () => {
         <div className="container text-white text-shadow">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6 col-xxl-5">
-              <h1 className="mb-4">Start a Career in<br />Home Design</h1>
+              <h1 className="mb-4">Start Your Design Career</h1>
             </div>
           </div>
           <div className="row">
@@ -101,7 +104,7 @@ const HomePage: PageComponent = () => {
                 <div className="col-12 col-lg-6">
                   <BriefcaseIcon height="32" className={`${styles.icon} d-lg-none d-xxl-block mb-3`} />
                   <h3 className="h6 mb-3">Prepare for a Successful Career</h3>
-                  <p className="mb-0">Each course includes built-in business training, expert-led instructional videos and live training webinars to help you launch your career and grow your clientele as a newly certified designer.</p>
+                  <p className="mb-0">Each course includes built-in business training, expert-led instructional videos and live training webinars to help you launch your design career and grow your clientele.</p>
                 </div>
               </div>
             </div>
@@ -116,7 +119,7 @@ const HomePage: PageComponent = () => {
       <section>
         <div className="container">
           <h2 className="mb-5 text-center">Popular Design Courses</h2>
-          <div className="row justify-content-center g-4 mb-s">
+          <div className="row justify-content-center g-4">
             <SmallColumn>
               <CourseTuitionCard
                 courseCode="i2"
@@ -141,12 +144,7 @@ const HomePage: PageComponent = () => {
                 href="/online-courses/landscape-design"
               />
             </SmallColumn>
-          </div>
-          <div className="row justify-content-center">
             <div className="col-12 col-lg-8 text-center">
-              <MagnifyingGlassIcon height="28" className="mb-3" />
-              <h3 className="h4 mb-3">Explore More Paths in Design</h3>
-              <p className="lead mb-4">Looking to expand your design skills? Our comprehensive catalog offers a range of courses  so that you can tailor your learning experience to suit your unique career goals. From foundational skills to specialized techniques, QC is here to help you expand your professional expertise. Let your creativity soar and unlock your full potential in the world of design!</p>
               <Link href="/online-courses" className="btn btn-primary"><OpenBookIcon height="16" style={{ position: 'relative', top: -1 }} className="me-2" />Discover More Courses</Link>
             </div>
           </div>
@@ -155,7 +153,7 @@ const HomePage: PageComponent = () => {
       <SupportSection showLink />
       <GuaranteeSection />
       <GetStartedSection
-        title="Ready to Start an Exciting New Career in Home Design?"
+        title="Ready to Start an Exciting New Design Career?"
         text="Become Professionally Certified with QC's Online Design Training"
       />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(educationalOrganization) }} />
