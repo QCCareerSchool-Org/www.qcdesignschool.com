@@ -17,7 +17,6 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import BookReaderIcon from '@/components/icons/book-reader.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
-import MagnifyingGlassIcon from '@/components/icons/magnifying-glass.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
@@ -26,7 +25,6 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
-import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
@@ -37,10 +35,8 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode } = getData();
   const date = new Date().getTime();
-
-  const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
     <div className={styles.page}>
