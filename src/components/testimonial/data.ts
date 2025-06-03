@@ -143,4 +143,12 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.DoxceenMalcolm,
     stars: 5,
   },
+  'TD-0017': {
+    name: 'Bradley Ryan Schlagheck',
+    courses: [ 'i2' ],
+    short: [ 'The course was so well-rounded and put together! I know that each assignment will be relevant to something that I may encounter in the field when working on my own.' ],
+    long: [ 'The course was so well-rounded and put together! I know that each assignment will be relevant to something that I may encounter in the field when working on my own.' ],
+    image: Images.BradleyRyanSchlagheck,
+    stars: 5,
+  },
 };
