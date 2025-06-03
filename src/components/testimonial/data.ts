@@ -119,4 +119,28 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.KatherineSnow,
     stars: 5,
   },
+  'TD-0014': {
+    name: 'Tandem Daniels',
+    courses: [],
+    short: [ 'Attending QC Design was the best decision that I have made. They gave me the tools needed to turn my passion into a career!' ],
+    long: [ 'The tutor really pushed my thinking throughout this course and I was able to grow personally and professionally from her feedback. Attending QC Design was the best decision that I have made. They gave me the tools needed to turn my passion into a career!' ],
+    image: Images.TandemDaniels,
+    stars: 5,
+  },
+  'TD-0015': {
+    name: 'Tylar Fertuck',
+    courses: [],
+    short: [ 'I had an amazing time! My favourite part about the course was the relaxed structure. As a stay-at-home mom of two kids, that made the whole process a lot easier for me.' ],
+    long: [ 'I had an amazing time! I was able to get help and clarification easily when needed, and I completed my course in less than a year. My favourite part about the course was the relaxed structure—no strict deadlines or anything! As a stay-at-home mom of two kids, that made the whole process a lot easier for me.' ],
+    image: Images.TylarFertuck,
+    stars: 5,
+  },
+  'TD-0016': {
+    name: 'Doxceen Malcolm',
+    courses: [],
+    short: [ 'There was never a moment I felt alone because I knew that help was always a phone call away. I have improved my skills immensely, and I have QC Design School to thank.' ],
+    long: [ 'There was never a moment I felt alone because I knew that help was always a phone call away. The staff are professional in their interactions, friendly, helpful, and proactive - always seeking ways to provide you with the support you need. Since graduating from the Interior Decorating course I have improved my skills immensely, and I have QC Design School to thank.' ],
+    image: Images.DoxceenMalcolm,
+    stars: 5,
+  },
 };

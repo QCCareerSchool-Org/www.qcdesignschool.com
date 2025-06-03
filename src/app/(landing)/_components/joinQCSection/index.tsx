@@ -10,8 +10,12 @@ import InfinityIcon from '@/components/icons/infinity.svg';
 
 const iconHeight = 40;
 
-export const JoinQCSection: FC = () => (
-  <section className="bg-light">
+type Props = {
+  className?: string;
+};
+
+export const JoinQCSection: FC<Props> = ({ className = 'bg-light' }) => (
+  <section className={className}>
     <div className="container text-center">
       <h2 className="h3 mb-4">Join QC Design School</h2>
       <p className="lead mb-4">QC's design courses provide you with:</p>
