@@ -23,9 +23,10 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
-  title: 'Free Catalog',
+  title: 'Free Course Catalog',
   description: 'Download the QC Design School course catalog to get certified in as little as 3 months with flexible online training and personalized feedback!',
   alternates: { canonical: '/free-course-catalog' },
 };
@@ -34,7 +35,10 @@ const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
 
 const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
   const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -55,7 +59,7 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
               <FormCard>
-                <h1 className="h3 mb-3 text-navy">Become a Home Designer</h1>
+                <h1 className="h3 mb-3 text-navy">Start a Career in Design</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
@@ -79,7 +83,7 @@ const FreeCourseCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Home Designer" withVideo />
+      <HowYoullLearnSection graduateTitle={`Interior ${designRestricted ? 'Decorator' : 'Designer'}`} withVideo />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection
