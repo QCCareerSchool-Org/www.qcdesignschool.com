@@ -2,7 +2,8 @@
   "rewrites": [
     { "source": "/blog", "destination": "https://blog.qcdesignschool.com/blog/index.php" },
     { "source": "/blog/:match*", "destination": "https://blog.qcdesignschool.com/blog/:match" },
-    { "source": "/online-courses/interior-design", "destination": "/online-courses/interior-decorating" }
+    { "source": "/online-courses/interior-design", "destination": "/online-courses/interior-decorating" },
+    { "source": "/interior-design-course-catalog", "destination": "/interior-decorating-course-catalog" }
   ],
   "redirects": [
     { "source": "/:year(\\d\\d\\d\\d)/:month(\\d\\d)/:path*", "destination": "/blog/:year/:month/:path" },
