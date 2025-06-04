@@ -59,7 +59,7 @@ export const testimonials: Record<string, Testimonial> = {
     name: 'Jamie Cromar',
     courses: [ 'i2', 'ms' ],
     short: [ 'Being able to learn the business and how to work with clients is so amazing! QC Design School has been a fun and very positive experience for me.' ],
-    long: [ 'I looked for the right online school for a long time, and always came back to QC Design School. I loved the course outline and how I could choose multiple courses to take. I was also drawn to the fact that the school has a full business unit included in their courses.' ],
+    long: [ 'I looked for the right online school for a long time, and always came back to QC Design School. I loved the course outline and how I could choose multiple courses to take. I was also drawn to the fact that the School has a full business unit included in their courses.' ],
     image: Images.JamieCromar,
     stars: 5,
   },
