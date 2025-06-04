@@ -11,13 +11,13 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const filename = designRestricted ? 'decorating.pdf' : 'design.pdf';
+  const localFilename = designRestricted ? 'decorating.pdf' : 'design.pdf';
 
-  const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', filename));
+  const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', localFilename));
 
   const headers = new Headers();
-
-  headers.set('Content-Type', 'application/pdf');
+  headers.set('content-type', 'application/pdf');
+  headers.set('content-disposition', `attachment; filename="QC Design School Course Catalog.pdf"`);
 
   return new NextResponse(file, { status: 200, statusText: 'OK', headers });
 };
