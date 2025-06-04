@@ -15,6 +15,7 @@ import { getData } from '@/lib/getData';
 
 type Props = {
   courseCode: CourseCode;
+  courseName?: string;
   subtitle?: string;
   description: string;
   href: string;
@@ -53,7 +54,7 @@ export const CourseTuitionCard: FC<Props> = async props => {
         <div>
           {!props.showPrice && (
             <>
-              <h3 className="h5">{getCourseName(props.courseCode)}</h3>
+              <h3 className="h5">{props.courseName ?? getCourseName(props.courseCode)}</h3>
             </>
           )}
           <p>{props.description}</p>
