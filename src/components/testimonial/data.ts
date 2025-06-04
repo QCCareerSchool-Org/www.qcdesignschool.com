@@ -82,8 +82,8 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0009': {
     name: 'Marianna Zimmerman',
     courses: [ 'i2' ],
-    short: [ 'QC Design School\'s Interior Decorating course definitely prepared me for working in this field and starting my own business!' ],
-    long: [ 'QC Design School\'s Interior Decorating course definitely prepared me for working in this field and starting my own business! Although I’ve always felt I had a natural eye or gift for decorating, I had no knowledge on the business side to it all.' ],
+    short: [ 'QC Design School\'s Interior Design & Decorating course definitely prepared me for working in this field and starting my own business!' ],
+    long: [ 'QC Design School\'s Interior Design & Decorating course definitely prepared me for working in this field and starting my own business! Although I’ve always felt I had a natural eye or gift for decorating, I had no knowledge on the business side to it all.' ],
     image: Images.MariannaZimmerman,
     stars: 5,
   },

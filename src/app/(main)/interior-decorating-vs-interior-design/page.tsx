@@ -25,7 +25,6 @@ export const metadata: Metadata = {
 };
 
 const iconSize = 40;
-const bigIconSize = 50;
 
 const HowItWorksPage: PageComponent = () => {
   const { countryCode, provinceCode } = getData();

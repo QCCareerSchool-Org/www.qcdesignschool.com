@@ -42,35 +42,36 @@ const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 
 const courseCodes: CourseCode[] = [ 'i2' ];
 
 const applicableReviews = reviewData.filter(r => r.courseCodes?.includes('i2'));
-const jsonLd: WithContext<Product> = {
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  'name': 'Interior Decorating Course',
-  'image': HeroImage.src,
-  'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career',
-  'review': applicableReviews.map(r => ({
-    '@type': 'Review',
-    'reviewRating': {
-      '@type': 'Rating',
-      'ratingValue': r.rating,
-      'bestRating': 5,
-    },
-    'author': {
-      '@type': 'Person',
-      'name': r.name,
-    },
-  })),
-  'aggregateRating': {
-    '@type': 'AggregateRating',
-    'ratingValue': (applicableReviews.reduce((prev, cur) => prev + cur.rating, 0) / applicableReviews.length).toFixed(1),
-    'reviewCount': applicableReviews.length,
-  },
-};
 
 const InteriorDecoratingPage: PageComponent = () => {
   const { countryCode, provinceCode } = getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  const jsonLd: WithContext<Product> = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
+    'image': HeroImage.src,
+    'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career',
+    'review': applicableReviews.map(r => ({
+      '@type': 'Review',
+      'reviewRating': {
+        '@type': 'Rating',
+        'ratingValue': r.rating,
+        'bestRating': 5,
+      },
+      'author': {
+        '@type': 'Person',
+        'name': r.name,
+      },
+    })),
+    'aggregateRating': {
+      '@type': 'AggregateRating',
+      'ratingValue': (applicableReviews.reduce((prev, cur) => prev + cur.rating, 0) / applicableReviews.length).toFixed(1),
+      'reviewCount': applicableReviews.length,
+    },
+  };
 
   return (
     <div className={styles.page}>
@@ -81,7 +82,7 @@ const InteriorDecoratingPage: PageComponent = () => {
             <div className="col-12">
               <Hero src={HeroImage} priority objectPosition="100% 0">
                 <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
-                <h1 className="mb-2 mb-xl-4">Interior Decorating Course</h1>
+                <h1 className="mb-2 mb-xl-4">Interior {designRestricted ? 'Decorating' : 'Design'} Course</h1>
                 <p className="h5 mb-3 mb-xl-5">Become a Certified Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
                 <div className="d-flex justify-content-center justify-content-md-start">
                   <HeroButtons courseCodes={courseCodes} />
