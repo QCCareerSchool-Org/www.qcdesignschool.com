@@ -30,7 +30,7 @@ const DownloadInteriorDecoratingCourseCatalogPage: PageComponent = () => {
 
   return (
     <>
-      <ThankYouSection courseName={`Inerior ${designRestricted ? 'Decorating' : 'Design'}`} />
+      <ThankYouSection courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}`} />
       <TestimonialVideoSection heading="Student Success Stories" subtitle={false} />
       <JoinQCSection className="bg-white" />
       <CertificationSection
