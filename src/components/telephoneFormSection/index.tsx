@@ -22,6 +22,8 @@ type Props = {
 
 type State = 'ready' | 'submitting' | 'success' | 'error';
 
+const brevoListId = 50;
+
 export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ state, setState ] = useState<State>('ready');
@@ -33,7 +35,7 @@ export const TelephoneFormSection: FC<Props> = ({ countryCode, leadId }) => {
   const handleSubmit: FormEventHandler = e => {
     e.preventDefault();
     const url = 'https://leads.qccareerschool.com/telephoneNumber';
-    const body = JSON.stringify({ leadId, telephoneNumber });
+    const body = JSON.stringify({ leadId, telephoneNumber, listId: brevoListId });
     const headers = { 'content-type': 'application/json' };
     setState('submitting');
     fetch(url, { method: 'post', body, headers }).then(async response => {
