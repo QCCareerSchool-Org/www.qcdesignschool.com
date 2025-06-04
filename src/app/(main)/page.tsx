@@ -25,6 +25,7 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
+import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
@@ -35,8 +36,10 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = () => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
   const date = new Date().getTime();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
     <div className={styles.page}>
@@ -119,9 +122,10 @@ const HomePage: PageComponent = () => {
             <SmallColumn>
               <CourseTuitionCard
                 courseCode="i2"
+                courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}`}
                 subtitle="IDDP™ Certification"
                 description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
-                href="/online-courses/interior-decorating"
+                href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`}
               />
             </SmallColumn>
             <SmallColumn>
