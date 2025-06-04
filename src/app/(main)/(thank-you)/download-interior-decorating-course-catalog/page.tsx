@@ -39,7 +39,7 @@ const DownloadInteriorDecoratingCourseCatalogPage: PageComponent = () => {
         overlayColor="rgb(0,0,0,0.2)"
       >
         <h2 className="h3">Your Design Certification</h2>
-        <p>Once you've completed the Interior Decorating Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Once you've completed the Interior {designRestricted ? 'Decorating' : 'Design'} Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
