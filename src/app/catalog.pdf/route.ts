@@ -19,5 +19,5 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
   headers.set('content-type', 'application/pdf');
   headers.set('content-disposition', `attachment; filename="QC Design School Course Catalog.pdf"`);
 
-  return new NextResponse(file, { status: 200, statusText: 'OK', headers });
+  return new NextResponse(file, { headers });
 };
