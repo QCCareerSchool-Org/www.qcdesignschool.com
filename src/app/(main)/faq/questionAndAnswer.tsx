@@ -1,12 +1,12 @@
 import type { FC, PropsWithChildren } from 'react';
 
 type Props = {
-  header: string;
+  heading: string;
 };
 
-export const QuestionAndAnswer: FC<PropsWithChildren<Props>> = ({ header, children }) => (
+export const QuestionAndAnswer: FC<PropsWithChildren<Props>> = ({ heading, children }) => (
   <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-    <h3 className="h5" itemProp="name">{header}</h3>
+    <h3 className="h5" itemProp="name">{heading}</h3>
     <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
       <div itemProp="text">
         {children}

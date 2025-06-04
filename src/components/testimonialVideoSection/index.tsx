@@ -11,7 +11,12 @@ import { VideoCard } from './videoCard';
 import { videos, videoSlides } from './videos';
 import { CountUp } from '../paymentPlanSection/countUp';
 
-export const TestimonialVideoSection: FC = () => {
+type Props = {
+  heading?: string | JSX.Element;
+  subtitle?: boolean;
+};
+
+export const TestimonialVideoSection: FC<Props> = ({ heading, subtitle = true }) => {
   const [ slideIndex, setSlideIndex ] = useState<number>(0);
   const [ open, setOpen ] = useState<boolean>(false);
 
@@ -21,8 +26,8 @@ export const TestimonialVideoSection: FC = () => {
         <div className="container">
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12 col-md-10 col-xl-9 col-xxl-8">
-              <div className={styles.subtitle}>40 Years of Excellence in Distance Education</div>
-              <h2 className="mb-4">Join <CountUp value={45} />,000+ Students &amp; Graduates Shaping the Future of Design</h2>
+              {subtitle && <div className={styles.subtitle}>40 Years of Excellence in Distance Education</div>}
+              <h2 className="mb-4">{heading ?? <>Join <CountUp value={45} />,000+ Students &amp; Graduates Shaping the Future of Design</>}</h2>
               <p className="lead mb-0">With over 45,000 students &amp; graduates and 40 years in distance education, QC Design School empowers your passion for design and transforms it into a successful career. Learn from the best and join a community that's redefining the industry.</p>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
@@ -12,7 +11,7 @@ import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
@@ -22,18 +21,28 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getDesignRestricted } from '@/lib/restrictions';
 
-export const metadata: Metadata = {
-  title: 'Free Interior Decorating Course Catalog',
-  description: 'Download the QC Interior Decorating course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!',
-  alternates: { canonical: '/interior-decorating-course-catalog' },
+export const generateMetadata: GenerateMetadata = () => {
+  const { countryCode, provinceCode } = getData();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  return {
+    title: `Free Interior ${designRestricted ? 'Decorating' : 'Design'} Course Catalog`,
+    description: 'Download the QC Interior Decorating course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!',
+    alternates: { canonical: '/interior-decorating-course-catalog' },
+  };
 };
 
 const brevoListId = 18; // Interior Decorating Leads
 const brevoEmailTemplateId = 58; // General
 
 const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
+  const { countryCode, provinceCode } = getData();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
   const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -54,7 +63,7 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5">
               <FormCard>
-                <h1 className="h2 mb-3 text-navy">Become an Interior Decorator</h1>
+                <h1 className="h2 mb-3 text-navy">Become an Interior {designRestricted ? 'Decorator' : 'Designer'}</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
@@ -78,7 +87,7 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Interior Decorator" />
+      <HowYoullLearnSection graduateTitle={`Interior ${designRestricted ? 'Decorator' : 'Designer'}`} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection
@@ -87,7 +96,7 @@ const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
         overlayColor="rgb(0,0,0,0.2)"
       >
         <h2 className="h3">Your Design Certification</h2>
-        <p>Once you've completed the Interior Decorating Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Once you've completed the Interior {designRestricted ? 'Decorating' : 'Design'} Course online, you'll graduate with the International Design and Decorating Professional™ (IDDP™ ) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">

@@ -3,9 +3,12 @@ import { cookies, headers } from 'next/headers';
 
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TelephoneFormSection } from '@/components/telephoneFormSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
@@ -16,6 +19,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/thank-you-course-catalog' },
   robots: { index: false },
 };
+
+const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
   const leadId = getParam(searchParams.leadId);
@@ -53,8 +58,14 @@ const ThankYouCourseCatalogPage: PageComponent = async ({ searchParams }) => {
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
       {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
+      <TestimonialWallSection testimonialIds={testimonialIds} />
       <ThreeReasonsSection />
       <SupportSection showLink />
+      <GuaranteeSection />
+      <GetStartedSection
+        title="Ready to start your design career?"
+        text="Become professionally certified with QC's online training today and start earning!"
+      />
     </>
   );
 };
