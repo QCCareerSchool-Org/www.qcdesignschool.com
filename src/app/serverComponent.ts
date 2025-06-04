@@ -17,4 +17,4 @@ export type PageComponent<RouteParams extends Record<string, string> = {}> = FC<
 export type LayoutComponent = FC<LayoutProps>;
 
 // eslint-disable-next-line @typescript-eslint/ban-types
-export type GenerateMetadata<RouteParams extends Record<string, string> = {}> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Promise<Metadata>;
+export type GenerateMetadata<RouteParams extends Record<string, string> = {}> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Metadata | Promise<Metadata>;

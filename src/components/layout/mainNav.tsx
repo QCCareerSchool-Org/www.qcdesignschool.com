@@ -12,7 +12,11 @@ import Toggle from './toggle.svg';
 import { Logo } from '@/components/logo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
-export const MainNav: FC = () => {
+type Props = {
+  designRestricted: boolean;
+};
+
+export const MainNav: FC<Props> = ({ designRestricted }) => {
   const scrollPosition = useScrollPosition();
   const [ key, setKey ] = useState(0);
 
@@ -45,7 +49,7 @@ export const MainNav: FC = () => {
             <Nav className="ms-auto">
               <NavDropdown title="Courses" id="courses-nav-dropdown">
                 {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Foundation Courses</li> */}
-                <Link href="/online-courses/interior-decorating" className="dropdown-item" onClick={handleClick}>Interior Decorating</Link>
+                <Link href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`} className="dropdown-item" onClick={handleClick}>Interior {designRestricted ? 'Decorating' : 'Design'}</Link>
                 <Link href="/online-courses/home-staging" className="dropdown-item" onClick={handleClick}>Home Staging</Link>
                 <Link href="/online-courses/landscape-design" className="dropdown-item" onClick={handleClick}>Landscape Design</Link>
                 {/* <li><hr className="dropdown-divider" /></li> */}
