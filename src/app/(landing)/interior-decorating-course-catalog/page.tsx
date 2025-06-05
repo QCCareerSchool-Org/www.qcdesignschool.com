@@ -35,13 +35,23 @@ export const generateMetadata: GenerateMetadata = () => {
   };
 };
 
-const brevoListId = 18; // Interior Decorating Leads
-const brevoEmailTemplateId = 58; // General
+const brevo = {
+  design: {
+    brevoListId: 52, // Interior Design Leads
+    brevoEmailTemplateId: 1464, // Design
+  },
+  decorating: {
+    brevoListId: 18, // Interior Decorating Leads
+    brevoEmailTemplateId: 58, // General
+  },
+};
 
 const InteriorDecoratingCatalogPage: PageComponent = ({ searchParams }) => {
   const { countryCode, provinceCode } = getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  const { brevoListId, brevoEmailTemplateId } = designRestricted ? brevo.decorating : brevo.design;
 
   const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
