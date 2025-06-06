@@ -9,9 +9,12 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
   const countryCode = request.headers.get('X-Vercel-IP-Country') ?? 'US';
   const provinceCode = request.headers.get('X-Vercel-IP-Country-Region');
 
+  const searchParams = request.nextUrl.searchParams;
+  const course = searchParams.get('course');
+
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const localFilename = designRestricted ? 'decorating.pdf' : 'design.pdf';
+  const localFilename = course === 'design' && !designRestricted ? 'design.pdf' : 'decorating.pdf';
 
   const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', localFilename));
 
