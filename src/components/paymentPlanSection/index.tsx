@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) => {
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
   if (!price) {

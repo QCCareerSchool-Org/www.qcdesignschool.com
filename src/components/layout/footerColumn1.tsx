@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const FooterColumn1: FC = () => {
-  const { countryCode, provinceCode } = getData();
+export const FooterColumn1: FC = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 
 const iconSize = 40;
 
-const HowItWorksPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const HowItWorksPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

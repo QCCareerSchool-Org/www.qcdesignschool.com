@@ -13,7 +13,6 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
-import { getParam } from '@/lib/getParam';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 15;
@@ -25,10 +24,9 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
-  const enrollmentIdParam = getParam(searchParams.enrollmentId);
-  const codeParam = getParam(searchParams.code);
+  const { enrollmentIdParam, codeParam } = await searchParams;
 
-  if (typeof enrollmentIdParam === 'undefined' || typeof codeParam === 'undefined') {
+  if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {
     redirect('/');
   }
 
@@ -44,11 +42,11 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
   }
 
   if (!enrollment.emailed) {
-    const headerList = headers();
+    const headerList = await headers();
     const ipAddress = headerList.get('x-real-ip');
     const userAgent = headerList.get('user-agent');
 
-    const cookieStore = cookies();
+    const cookieStore = await cookies();
     const fbc = cookieStore.get('_fbc')?.value;
     const fbp = cookieStore.get('_fbp')?.value;
 

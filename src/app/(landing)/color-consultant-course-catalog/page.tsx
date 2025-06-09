@@ -32,9 +32,10 @@ export const metadata: Metadata = {
 const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
 
-const ColorConsultantCourseCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode } = getData();
+const ColorConsultantCourseCatalogPage: PageComponent = async props => {
+  const { countryCode } = await getData();
   const date = new Date().getTime();
+  const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -42,7 +43,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
 
   return (
