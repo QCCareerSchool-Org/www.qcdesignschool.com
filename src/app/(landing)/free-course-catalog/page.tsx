@@ -54,7 +54,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
     <>
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <section className="text-white">
-        <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} />
+        <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
         <div className="container">
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first">
