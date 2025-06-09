@@ -13,7 +13,6 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
-import { getParam } from '@/lib/getParam';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 15;
