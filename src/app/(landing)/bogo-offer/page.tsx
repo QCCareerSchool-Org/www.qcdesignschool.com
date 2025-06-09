@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/bogo-offer' },
 };
 
-const CoursesPage: PageComponent = () => {
-  const { countryCode } = getData();
+const CoursesPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 

@@ -10,8 +10,8 @@ import { TestimonialVideoSection } from '@/components/testimonialVideoSection';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = () => {
-  const { countryCode, provinceCode } = getData();
+export const generateMetadata: GenerateMetadata = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -23,8 +23,8 @@ export const generateMetadata: GenerateMetadata = () => {
   };
 };
 
-const DownloadInteriorDesignCourseCatalogPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const DownloadInteriorDesignCourseCatalogPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

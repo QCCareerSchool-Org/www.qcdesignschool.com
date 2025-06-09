@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: 'Canadian students can use tax credits to save over 50% of their course fees',
 };
 
-const CanadianTaxCreditsPage: PageComponent = () => {
-  const { countryCode } = getData();
+const CanadianTaxCreditsPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   if (countryCode !== 'CA') {
     redirect('/');

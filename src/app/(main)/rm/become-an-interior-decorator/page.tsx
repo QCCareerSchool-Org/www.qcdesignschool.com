@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes = [ 'i2' ];
 
-const InteriorDecoratingPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const InteriorDecoratingPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

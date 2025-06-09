@@ -8,8 +8,8 @@ import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getData } from '@/lib/getData';
 
-export const FooterColumn3: FC = () => {
-  const { countryCode } = getData();
+export const FooterColumn3: FC = async () => {
+  const { countryCode } = await getData();
 
   return (
     <>

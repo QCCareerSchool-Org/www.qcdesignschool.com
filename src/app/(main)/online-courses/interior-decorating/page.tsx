@@ -26,8 +26,8 @@ import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = () => {
-  const { countryCode, provinceCode } = getData();
+export const generateMetadata: GenerateMetadata = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -43,8 +43,8 @@ const courseCodes: CourseCode[] = [ 'i2' ];
 
 const applicableReviews = reviewData.filter(r => r.courseCodes?.includes('i2'));
 
-const InteriorDecoratingPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const InteriorDecoratingPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

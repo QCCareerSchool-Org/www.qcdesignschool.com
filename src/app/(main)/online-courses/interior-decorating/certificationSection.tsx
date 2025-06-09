@@ -8,8 +8,8 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const CertificationSection: FC = () => {
-  const { countryCode, provinceCode } = getData();
+export const CertificationSection: FC = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

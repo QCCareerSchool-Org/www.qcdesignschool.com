@@ -4,7 +4,7 @@ import type { FC, ReactNode } from 'react';
 // eslint-disable-next-line @typescript-eslint/ban-types
 type PageProps<RouteParams extends Record<string, string> = {}> = {
   params: Promise<RouteParams>;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 type LayoutProps = {
