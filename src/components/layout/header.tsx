@@ -6,9 +6,9 @@ import { CanadaHeader } from '../canadaHeader';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const Header: FC = () => {
+export const Header: FC = async () => {
   // const date = new Date().getTime();
-  const { countryCode, provinceCode } = getData();
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

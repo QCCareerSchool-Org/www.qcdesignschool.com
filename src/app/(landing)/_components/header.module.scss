@@ -10,10 +10,10 @@
   
     .content {
       height: 62px;
-      @media only screen and (min-width: 768px) { height: 70px; }
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media only screen and (min-width: 768px) { height: 70px; }
     }
 
     .button {

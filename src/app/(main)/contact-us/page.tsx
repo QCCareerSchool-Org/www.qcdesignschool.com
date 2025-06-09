@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 
 const iconHeight = 32;
 
-const ContactPage: PageComponent = () => {
-  const { countryCode } = getData();
+const ContactPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   return(
     <div>

@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/faq' },
 };
 
-const FAQPage: PageComponent = () => {
-  const { countryCode } = getData();
+const FAQPage: PageComponent = async () => {
+  const { countryCode } = await getData();
 
   return (
     <div itemScope itemType="https://schema.org/FAQPage">

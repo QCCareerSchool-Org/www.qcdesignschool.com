@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses' },
 };
 
-const CoursesPage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const CoursesPage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

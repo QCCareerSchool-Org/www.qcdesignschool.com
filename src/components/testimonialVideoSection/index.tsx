@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 import { useState } from 'react';
 import { Lightbox } from 'yet-another-react-lightbox';
 import Video from 'yet-another-react-lightbox/plugins/video';

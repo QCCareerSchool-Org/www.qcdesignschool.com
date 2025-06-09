@@ -35,8 +35,8 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
-const HomePage: PageComponent = () => {
-  const { countryCode, provinceCode } = getData();
+const HomePage: PageComponent = async () => {
+  const { countryCode, provinceCode } = await getData();
   const date = new Date().getTime();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);

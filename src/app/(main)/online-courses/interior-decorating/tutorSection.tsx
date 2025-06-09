@@ -11,8 +11,8 @@ type Props = {
   className?: string;
 };
 
-export const TutorSection: FC<Props> = ({ className }) => {
-  const { countryCode, provinceCode } = getData();
+export const TutorSection: FC<Props> = async ({ className }) => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { FC } from 'react';
+import type { FC, JSX } from 'react';
 
 import { ButtonWrapper } from './buttonWrapper';
 import styles from './header.module.scss';
@@ -15,8 +15,8 @@ type Props = {
   showBanner?: boolean;
 };
 
-export const Header: FC<Props> = ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, showBanner }) => {
-  const { countryCode } = getData();
+export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, showBanner }) => {
+  const { countryCode } = await getData();
   const date = new Date().getTime();
 
   return (

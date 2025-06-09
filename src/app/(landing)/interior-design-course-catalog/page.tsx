@@ -23,8 +23,8 @@ import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = () => {
-  const { countryCode, provinceCode } = getData();
+export const generateMetadata: GenerateMetadata = async () => {
+  const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -46,13 +46,9 @@ const brevo = {
   },
 };
 
-const InteriorDesignCatalogPage: PageComponent = ({ searchParams }) => {
-  const { countryCode, provinceCode } = getData();
-
-  const designRestricted = getDesignRestricted(countryCode, provinceCode);
-
-  const { brevoListId, brevoEmailTemplateId } = designRestricted ? brevo.decorating : brevo.design;
-
+const InteriorDesignCatalogPage: PageComponent = async props => {
+  const { countryCode, provinceCode } = await getData();
+  const searchParams = await props.searchParams;
   const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -61,8 +57,12 @@ const InteriorDesignCatalogPage: PageComponent = ({ searchParams }) => {
   const utmCampaign = getParam(searchParams.utm_campaign);
   const utmContent = getParam(searchParams.utm_content);
   const utmTerm = getParam(searchParams.utm_term);
-  const headerList = headers();
+  const headerList = await headers();
   const referrer = headerList.get('referer');
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  const { brevoListId, brevoEmailTemplateId } = designRestricted ? brevo.decorating : brevo.design;
 
   return (
     <>

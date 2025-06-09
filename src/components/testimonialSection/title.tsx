@@ -20,7 +20,7 @@ export const Title: FC<Props> = ({ testimonial }) => {
     return <div className={styles.title}>{getCourseName(testimonial.courses[0])}</div>;
   }
 
-  const tooltip: FC = props => (
+  const CustomTooltip: FC = props => (
     <Tooltip id="button-tooltip" {...props}>
       Also a graduate of:
       <ul className="m-0 ps-3">
@@ -32,7 +32,7 @@ export const Title: FC<Props> = ({ testimonial }) => {
   return (
     <>
       {testimonial.courses.length > 0 && (
-        <OverlayTrigger placement="right" overlay={tooltip}>
+        <OverlayTrigger placement="right" overlay={<CustomTooltip />}>
           <div className={styles.title}>{getCourseName(testimonial.courses[0])}</div>
         </OverlayTrigger>
       )}
