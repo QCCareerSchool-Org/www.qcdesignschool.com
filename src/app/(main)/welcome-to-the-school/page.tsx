@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
-  const { enrollmentIdParam, codeParam } = await searchParams;
+  const { enrollmentId: enrollmentIdParam, code: codeParam } = await searchParams;
 
   if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {
     redirect('/');
