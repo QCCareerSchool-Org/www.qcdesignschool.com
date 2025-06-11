@@ -23,7 +23,7 @@ const AssociationsPage: PageComponent = async () => {
       <section className="pt-0" id="associations">
         <div className="container">
           <div className="row justify-content-center mb-5">
-            <div className="col-12 col-md-8 text-center">
+            <div className="col-xl-10 text-center">
               <h2 className="mb-3">Professional Associations</h2>
               <p className="lead mb-0">QC Design School partners with prestigious associations worldwide to help students and graduates stay up to date with design trends, access exclusive perks, and build meaningful connections that support long-term success.</p>
             </div>
@@ -38,7 +38,7 @@ const AssociationsPage: PageComponent = async () => {
             </div>
           ))}
           <div className="row justify-content-center">
-            <div className="col-12 col-md-8 text-center mb-5">
+            <div className="col-xl-10 text-center mb-5">
               <h2>Preferred Partners</h2>
               <p>QC Design School has partnered with the following companies to offer exclusive discounts to students and graduates. Use your discounts to further your career in the industry.</p>
             </div>
