@@ -18,6 +18,7 @@ import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
+import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { getData } from '@/lib/getData';
@@ -80,7 +81,8 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Interior Decorator" />
-      <StatsSection />
+      <StatsSection inverse />
+      <DesignPartnerSection countryCode={countryCode} />
       <JoinQCSection />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}

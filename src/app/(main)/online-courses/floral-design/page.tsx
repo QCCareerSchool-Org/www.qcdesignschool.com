@@ -14,6 +14,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
+import { SAFPartnerSection } from '@/components/partners/safPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -59,6 +60,7 @@ const FloralDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
+    <SAFPartnerSection />
     <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
