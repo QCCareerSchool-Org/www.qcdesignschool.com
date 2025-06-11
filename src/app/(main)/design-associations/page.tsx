@@ -20,7 +20,7 @@ const AssociationsPage: PageComponent = async () => {
   return (
     <>
       <HighlightedPartnersSection countryCode={countryCode} />
-      <section className="pt-0">
+      <section className="pt-0" id="associations">
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-md-8 text-center">
