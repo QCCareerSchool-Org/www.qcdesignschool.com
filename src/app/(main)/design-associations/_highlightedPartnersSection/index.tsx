@@ -15,7 +15,7 @@ export const HighlightedPartnersSection: FC<Props> = ({ countryCode }) => {
   return (
     <section>
       <div className="container text-center">
-        <div className="row justify-content-center mb-4">
+        <div className="row justify-content-center mb-5">
           <div className="col-xl-10 text-center">
             <h1 className="mb-3">Accelerate Your Career with Our Featured Associations</h1>
             <p className="lead mb-0"><PartnerText countryCode={countryCode} /> <Link href="#associations">Explore all associations below</Link>.</p>
