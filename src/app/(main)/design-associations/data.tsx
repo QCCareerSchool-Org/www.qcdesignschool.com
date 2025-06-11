@@ -2,6 +2,7 @@ import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
 
 import ThreeDream from './_logos/3dream.png';
+import ADPO from './_logos/adpo.jpg';
 import ASPO from './_logos/aspo.png';
 import CARAHS from './_logos/carahs.jpg';
 // import CDECA from './_logos/cdeca.jpg';
@@ -41,7 +42,7 @@ export const professionalAssociations: DesignAssociation[] = [
   {
     name: 'Designer Society of America (DSA)',
     description: (
-      <>The Designer Society of America (DSA) is a national organization dedicated to supporting residential interior designers and celebrating the diverse paths leading to success in the industry. DSA provides members with valuable resources including professional development, networking opportunities, industry advocacy, and recognition for design excellence. Our Interior Design and Decorating course has been reviewed and approved by the DSA and the RIDQC Board, meeting their rigorous standards. Graduates are eligible to take the RIDQC exam if they choose. For more information, visit <a href="https://www.dsasociety.org/membership-benefits/">DSA Membership</a>.</>
+      <>The Designer Society of America (DSA) is a national organization dedicated to supporting residential interior designers and celebrating the diverse paths leading to success in the industry. DSA provides members with valuable resources including professional development, networking opportunities, industry advocacy, and recognition for design excellence. Our Interior Design and Decorating course has been reviewed and approved by the DSA and the RIDQC Board, meeting their rigorous standards. Graduates are eligible to take the RIDQC exam if they choose. For more information, visit <a href="https://www.dsasociety.org/membership-benefits" target="_blank" rel="noreferrer">DSA Membership</a>.</>
     ),
     image: DSA,
     alt: 'DSA',
@@ -71,30 +72,11 @@ export const professionalAssociations: DesignAssociation[] = [
     image: IAHSP,
   },
   {
-    name: 'Society of American Florists (SAF)',
-    description: (
-      <>The Society of American Florists has been representing and supporting the floral industry since 1884. Their membership base, which exceeds 6,000, is comprised of participants from all corners of the industry. Members are retail florists, flower growers, floral wholesalers and suppliers, importers, event-only florists, floral educators, and students. SAF offers each of our membership segments unique tools and opportunities that empower them to grow their businesses. SAF is proud to partner with Floral Design students to offer 50% off your first year of membership.</>
-    ),
-    image: SAF,
-  },
-  {
     name: 'Canadian Association of Renovators and Home Stagers (CARAHS)',
     description: (
       <>Canadian-based students and graduates of QC can join the Canadian Association of Renovators and Home Stagers (CARAHS). This non-profit organization aims to unite people with complementary backgrounds and help them through education and networking. Members of CARAHS include home staging professionals and color consultants. Benefits of membership include discounts, business resources, website listings, free workshops, and discounted courses. For more information on the available membership types, visit <a href="https://carahs.org" target="_blank" rel="noreferrer">carahs.org</a>.</>
     ),
     image: CARAHS,
-  },
-  {
-    name: 'Professional Organizers in Canada (POC)',
-    description: (
-      <>For QC Design School students and graduates who want to expand their networking opportunities, joining Professional Organizers in Canada (POC) is an excellent choice. This association provides members with support by providing access to tools, training, and resources to grow their own businesses. Students enrolled in professional organizing courses, as well as graduates, will enjoy monthly newsletters, discounted conferences, free local meetings, and access to business insurance. For more information on the available membership types, visit <a href="https://organizersincanada.com" target="_blank" rel="noreferrer">organizersincanada.com</a>.</>
-    ),
-    image: POC,
-  },
-  {
-    name: 'American Society of Professional Organizers (ASPO)',
-    description: 'The American Society of Professional Organizers offers industry connections and resources to certified organizers. Created by organizers, the ASPO’s main goal is to increase awareness of what professional organizing is and how it improves clients’ lives. QC Design School’s students and graduates are eligible for a discounted membership through the Online Student Center.',
-    image: ASPO,
   },
   {
     name: 'Inter-Society Color Council (ISCC)',
@@ -105,6 +87,32 @@ export const professionalAssociations: DesignAssociation[] = [
     name: 'Colour Research Society of Canada (CRSC)',
     description: 'The Colour Research Society of Canada (CRSC) is a not-for-profit organization dedicated to advancing colour knowledge across disciplines. As the Canadian member of the International Colour Association (AIC), CRSC connects artists, designers, scholars, and practitioners to foster collaboration in colour research. Members gain access to professional development opportunities, monthly virtual events, a global network, and exclusive research resources, supporting innovation and growth within the arts, sciences, and industry.',
     image: CRSC,
+  },
+  {
+    name: 'American Society of Professional Organizers (ASPO)',
+    description: 'The American Society of Professional Organizers offers industry connections and resources to certified organizers. Created by organizers, the ASPO’s main goal is to increase awareness of what professional organizing is and how it improves clients’ lives. QC Design School’s students and graduates are eligible for a discounted membership through the Online Student Center.',
+    image: ASPO,
+  },
+  {
+    name: 'Professional Organizers in Canada (POC)',
+    description: (
+      <>For QC Design School students and graduates who want to expand their networking opportunities, joining Professional Organizers in Canada (POC) is an excellent choice. This association provides members with support by providing access to tools, training, and resources to grow their own businesses. Students enrolled in professional organizing courses, as well as graduates, will enjoy monthly newsletters, discounted conferences, free local meetings, and access to business insurance. For more information on the available membership types, visit <a href="https://organizersincanada.com" target="_blank" rel="noreferrer">organizersincanada.com</a>.</>
+    ),
+    image: POC,
+  },
+  {
+    name: 'Association of Professional Declutterers and Organisers (APDO)',
+    description: (
+      <>APDO is the UK's membership association for decluttering and organising professionals. It sets industry standards, supports professional development, and promotes growth in the field. APDO connects clients with local organisers through its online directory, offers training and mentoring for members, and shares resources like blogs, newsletters, and social media content to encourage a clutter-free lifestyle. Members also benefit from networking opportunities and an annual conference. For more information on membership, visit: <a href="https://www.apdo.co.uk/membership.html" target="_blank" rel="noreferrer">www.apdo.co.uk</a>.</>
+    ),
+    image: ADPO,
+  },
+  {
+    name: 'Society of American Florists (SAF)',
+    description: (
+      <>The Society of American Florists has been representing and supporting the floral industry since 1884. Their membership base, which exceeds 6,000, is comprised of participants from all corners of the industry. Members are retail florists, flower growers, floral wholesalers and suppliers, importers, event-only florists, floral educators, and students. SAF offers each of our membership segments unique tools and opportunities that empower them to grow their businesses. SAF is proud to partner with Floral Design students to offer 50% off your first year of membership.</>
+    ),
+    image: SAF,
   },
 ];
 
