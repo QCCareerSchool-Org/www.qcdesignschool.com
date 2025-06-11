@@ -21,6 +21,7 @@ import OpenBookIcon from '@/components/icons/open-book.svg';
 import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
 import { VideoPopup } from '@/components/marketingVideo';
+import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -115,6 +116,7 @@ const HomePage: PageComponent = async () => {
       </section>
       <StatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
+      <DesignPartnerSection countryCode={countryCode} />
       <section>
         <div className="container">
           <h2 className="mb-5 text-center">Popular Design Courses</h2>

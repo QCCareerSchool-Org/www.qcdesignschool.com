@@ -1,5 +1,13 @@
 .section {
   background-color: #2c3bdd;
+  color: white;
+  & * { color: white; }
+}
+
+.section.inverse {
+  background-color: var(--qc-color-light);
+  color: black;
+  & * { color: black; }
 }
 
 .count {
@@ -14,4 +22,7 @@
 
 .description {
   color: var(--qc-color-light-blue);
+}
+.section.inverse .description {
+  color: var(--qc-color-text) !important;
 }
