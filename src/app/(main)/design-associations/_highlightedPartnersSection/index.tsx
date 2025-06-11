@@ -15,13 +15,13 @@ export const HighlightedPartnersSection: FC<Props> = ({ countryCode }) => {
   return (
     <section>
       <div className="container text-center">
-        <div className="row justify-content-center mb-4">
+        <div className="row justify-content-center mb-5">
           <div className="col-xl-10 text-center">
             <h1 className="mb-3">Accelerate Your Career with Our Featured Associations</h1>
             <p className="lead mb-0"><PartnerText countryCode={countryCode} /> <Link href="#associations">Explore all associations below</Link>.</p>
           </div>
         </div>
-        <div className="row align-items-center text-center g-4 g-md-s">
+        <div className="row align-items-center text-center g-5 g-md-s">
           {partners.map((partner, i) => (
             <div key={i} className="col-md-4">
               <Image src={partner.src} alt={partner.alt} className="img-fluid" style={partner.maxHeight ? { maxHeight: partner.maxHeight, width: 'auto' } : undefined} />
