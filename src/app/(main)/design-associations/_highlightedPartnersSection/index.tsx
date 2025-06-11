@@ -20,7 +20,7 @@ export const HighlightedPartnersSection: FC<Props> = ({ countryCode }) => {
             <p className="lead mb-4"><PartnerText countryCode={countryCode} /></p>
           </div>
         </div>
-        <div className="row align-items-center text-center">
+        <div className="row align-items-center text-center g-s">
           {partners.map((partner, i) => (
             <div key={i} className="col-md-4">
               <Image src={partner.src} alt={partner.alt} className="img-fluid" style={partner.maxHeight ? { maxHeight: partner.maxHeight, width: 'auto' } : undefined} />

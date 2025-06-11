@@ -19,7 +19,7 @@ type Partner = {
 const partnersDictionary: Record<string | symbol, Partner[]> = {
   CA: [
     { src: DDALogo, alt: 'DDA' },
-    { src: CRSCLogo, alt: 'CRSC' },
+    { src: CRSCLogo, alt: 'CRSC', maxHeight: 54 },
     { src: RESALogo, alt: 'RESA' },
   ],
   US: [
