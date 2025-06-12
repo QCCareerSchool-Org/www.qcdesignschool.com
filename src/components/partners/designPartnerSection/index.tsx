@@ -4,6 +4,7 @@ import Background from './background.jpg';
 import { DDA } from './dda';
 import { DSA } from './dsa';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { Overlay } from '@/components/overlay';
 
 type Props = {
   countryCode: string;
@@ -12,6 +13,7 @@ type Props = {
 export const DesignPartnerSection: FC<Props> = ({ countryCode }) => (
   <section className="text-white text-center text-shadow">
     <BackgroundImage src={Background} />
+    <Overlay backgroundColor="rgba(0,0,0,0.4)" />
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-10 col-lg-8 col-xl-6">
