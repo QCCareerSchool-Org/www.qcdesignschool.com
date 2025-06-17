@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Product, WithContext } from 'schema-dts';
 
 import { OutlineSection } from './_outlineSection';
@@ -163,7 +162,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               </QuestionAndAnswer>
               <QuestionAndAnswer heading={`How much does an interior ${designRestricted ? 'decorator' : 'designer'} earn?`}>
                 <p>According to the Bureau of Labor Statistics, the average interior {designRestricted ? 'decorator' : 'designer'} salary is typically around $68,530 per year.* Your earnings will vary based on experience, location and services offered. Earning your professional certification from QC Design School demonstrates your expertise and credibility so that you can charge higher rates. The global design market was valued at $747.75 billion in 2024 and is expected to grow to over $1 trillion by 2032. You can be part of that industry and earn a salary as an interior {designRestricted ? 'decorator' : 'designer'} in less than a year!</p>
-                <p className="small">* Occupational Outlook Handbook. U.S. Bureau of Labor Statistics. April 2025. <Link href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">https://www.bls.gov/ooh/arts-and-design/interior-designers.htm</Link></p>
+                <p className="small">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading={`Do I need a license or degree to become an interior ${designRestricted ? 'decorator' : 'designer'}?`}>
                 <p>You don't need a license or an expensive university degree to be successful in the design industry. Instead, you can train online and start attracting clients and generating income in a matter of months!</p>
