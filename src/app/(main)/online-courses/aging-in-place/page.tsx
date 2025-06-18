@@ -137,7 +137,7 @@ const AgingInPlacePage: PageComponent = async () => {
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="Do I need prior experience or training before taking the Aging in Place course?">
                 <p>Yes, Aging in Place is considered a specialty course, so QC Design School recommends that you first complete the Interior {designRestricted ? 'Decorating' : 'Design'} course unless you already have experience and/or training in the design field.</p>
-                <p>The Interior {designRestricted ? 'Decorating' : 'Design'} course teaches you essential design skills, while the Aging in Place course builds on that foundation by teaching advanced techniques for designing accessible, senior-friendly environments. If you're new to design, starting with Interior Decorating will ensure you're fully prepared for success in AIP design.</p>
+                <p>The Interior {designRestricted ? 'Decorating' : 'Design'} course teaches you essential design skills, while the Aging in Place course builds on that foundation by teaching advanced techniques for designing accessible, senior-friendly environments. If you're new to design, starting with Interior {designRestricted ? 'Decorating' : 'Design'} will ensure you're fully prepared for success in AIP design.</p>
               </QuestionAndAnswer>
             </div>
           </div>
