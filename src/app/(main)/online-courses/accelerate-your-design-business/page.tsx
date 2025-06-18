@@ -102,7 +102,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
               <QuestionAndAnswer heading="What will QC's Accelerate Your Business course teach me?">
                 <p>QC Design School's <strong>Accelerate Your Business</strong> course is designed to help you launch and grow your own <strong>interior design business</strong> with confidence. Whether you're just getting started or want to refine your existing business strategy, this course gives you the tools you need to succeed.</p>
                 <p>You'll learn how to:</p>
-                <li><strong>Register your interior design business</strong></li>
+                <li><strong>Register your interior {designRestricted ? 'decorating' : 'design'} business</strong></li>
                 <li>Develop your <strong>brand identity</strong></li>
                 <li>Build <strong>marketing strategies</strong> and promotions</li>
                 <li>Use <strong>project management tools</strong> to stay organized</li>

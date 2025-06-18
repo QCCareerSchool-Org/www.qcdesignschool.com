@@ -99,7 +99,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
           <div className="col-12 col-lg-10">
             <h2 className="text-center mb-4">Frequently Asked Questions</h2>
             <QuestionAndAnswer heading="What will I learn in QC Design School's Professional Organizer course?">
-              <p>QC's <strong>online Professional Organizing course</strong> teaches you how to become a certified professional organizer and launch a successful career in the organizing industry. Through expert-led training, you'll learn to:</p>
+              <p>QC's <strong>online Professional Organizing course</strong> teaches you how to become a professional organizer and launch a successful career in the organizing industry. Through expert-led training, you'll learn to:</p>
               <ul>
                 <li>Conduct client consultations and interviews</li>
                 <li>Set personalized organizing goals</li>
@@ -128,7 +128,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
               <p>You can become a professional organizer in only a few short months! When you take QC Design School's professional organizer course, you work at your own pace and according to your own schedule. Plus, you can start booking clients right away! If you want to take your time, you have up to two full years to complete your lessons and assignments and earn your certification.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Will I be eligible to join a professional association when I graduate from QC Design School?">
-              <p>Yes! Graduating from QC Design School's Home Staging course qualifies you to apply for membership with various professional home staging organizations, including:</p>
+              <p>Yes! As a student and graduate of QC Design School,  you'll be eligible to join many professional organizations, including the American Society of Professional Organizers and the International Furnishings and Design Association. These organizations offer opportunities to network, collaborate, find employment and learn more about trends and developments in the industry.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How do I start a professional organizing business?">
               <p>QC's online Professional Organizing course includes an optional business unit that will teach you how to start a professional organizing business. You'll learn:</p>

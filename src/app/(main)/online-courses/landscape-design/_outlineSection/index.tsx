@@ -20,7 +20,7 @@ export const OutlineSection: FC<Props> = ({ className }) => (
       <div className="row justify-content-center g-s">
         <div className="col-12 col-xl-10 text-center">
           <h2 className="mb-3">Course Outline</h2>
-          <p className="lead mb-0">QC's Landscape Design course is divided into six comprehensive sections, each comprised of specialized training crafted to perfect your landscape design skills.</p>
+          <p className="lead mb-0">QC's Landscape Design course is divided into five comprehensive sections, each comprised of specialized training crafted to perfect your landscape design skills.</p>
         </div>
         <div className="col-12 col-xl-10">
           <CourseOutline title="Introduction to Landscape Design" src={Part1Image} open className="mb-3">

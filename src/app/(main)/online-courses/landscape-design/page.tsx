@@ -52,7 +52,7 @@ const LandscapeDesignPage: PageComponent = () => (
               <li>Get started now—our premium Landscape Design course is designed to take you from beginner to expert with no previous training required</li>
               <li>Receive personalized feedback and advice on your assignments from our top landscape industry experts</li>
               <li>Join a thriving virtual community to connect with other design industry professionals and gain exclusive access to bonus material</li>
-              <li>Access video tutorials and custom lessons covering drafting skills and digital design plans to master client communications</li>
+              <li>Access video tutorials and custom lessons covering drafting skills and digital design plans to mastering client communications</li>
               <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified landscape designer</li>
             </ul>
           </div>
@@ -98,7 +98,7 @@ const LandscapeDesignPage: PageComponent = () => (
           <div className="col-12 col-lg-10">
             <h2 className="text-center mb-4">Frequently Asked Questions</h2>
             <QuestionAndAnswer heading="How much does a landscape designer make?">
-              <p>The average <strong>landscape designer salary</strong> in the United States is approximately <strong>$83,990 per year*</strong>, though earnings vary based on your <strong>location, service offerings, client base, and experience level</strong>.</p>
+              <p>The average <strong>landscape designer salary</strong> is approximately <strong>$83,990 per year*</strong>, though earnings vary based on your <strong>location, service offerings, client base, and experience level</strong>.</p>
               <p>As you gain experience and build your portfolio, you can charge <strong>higher hourly or project-based rates</strong> for design consultations, landscape plans, and implementation guidance. Many successful designers also increase their income by offering specialized services.</p>
               <p className="small">* &ldquo;<a href="https://www.bls.gov/oes/2023/may/oes171012.htm" target="_blank" rel="noreferrer">Occupational Employment and Wages, May 2023: 17-1012 Landscape Architects</a>.&rdquo; <i>U.S. Bureau of Labour Satistics.</i> May 2023</p>
             </QuestionAndAnswer>
@@ -113,7 +113,7 @@ const LandscapeDesignPage: PageComponent = () => (
               </ul>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become a certified landscape designer?">
-              <p>You can become a landscape designer in as little as 2 to 6 months! QC Design School's <strong>flexible, self-paced online course</strong> allows you to study on your own schedule—ideal for students who are working or balancing other commitments. Most students complete the course in <strong>4 to 6 months</strong>, but you'll have up to <strong>2 full years</strong> to finish your training and receive your ILDP certification.</p>
+              <p>You can become a landscape designer in as little as 2 to 6 months! QC Design School's <strong>flexible, self-paced online course</strong> allows you to study on your own schedule—ideal for students who are working or balancing other commitments. If you need to take your time, you'll have up to <strong>2 full years</strong> to finish your training and receive your ILDP certification.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Can I start a landscape design business after completing the course?">
               <p>Yes! With QC's Landscape Design course, you'll learn how to become a landscape designer step by step, from designing beautiful gardens to starting your own business. The course includes optional business training so you can learn how to register your own business, write a business plan, market your services, work successfully with any client or vendor, and develop a professional portfolio to showcase your work. Whether you want to freelance, open your own design studio, or offer design-build services, you'll graduate with the skills and tools to launch a <strong>thriving landscape design business</strong>.</p>
