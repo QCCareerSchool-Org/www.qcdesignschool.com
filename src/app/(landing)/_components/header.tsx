@@ -4,6 +4,7 @@ import type { FC, JSX } from 'react';
 import { ButtonWrapper } from './buttonWrapper';
 import styles from './header.module.scss';
 import { CountDownTimer } from '@/components/countDownTimer';
+import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
 import { getData } from '@/lib/getData';
 
@@ -26,9 +27,10 @@ export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonCont
         <div className="container">
           <div className={styles.content}>
             {logoLink
-              ? <Link href="/"><Logo height={22} countryCode={countryCode} /></Link>
-              : <Logo height={22} countryCode={countryCode} />
+              ? <Link href="/"><Logo height={22} /></Link>
+              : <Logo height={22} />
             }
+            <Flag countryCode={countryCode} height={14} />
             {buttonContent && (
               <ButtonWrapper alwaysVisible={!!buttonAlwaysVisible}>
                 <Link href={buttonHref} className={`btn btn-navy ${styles.button}`}>{buttonContent}</Link>
