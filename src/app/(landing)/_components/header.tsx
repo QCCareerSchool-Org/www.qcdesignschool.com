@@ -31,7 +31,7 @@ export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonCont
                 ? <Link href="/"><Logo height={22} /></Link>
                 : <Logo height={22} />
               }
-              <span className="me-2"><Flag countryCode={countryCode} height={14} /></span>
+              <span className="ms-2"><Flag countryCode={countryCode} height={14} /></span>
             </div>
             {buttonContent && (
               <ButtonWrapper alwaysVisible={!!buttonAlwaysVisible}>
