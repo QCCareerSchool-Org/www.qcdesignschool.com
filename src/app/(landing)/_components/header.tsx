@@ -26,11 +26,13 @@ export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonCont
         {showBanner && <CountDownTimer date={date} countryCode={countryCode} />}
         <div className="container">
           <div className={styles.content}>
-            {logoLink
-              ? <Link href="/"><Logo height={22} /></Link>
-              : <Logo height={22} />
-            }
-            <span className="me-2"><Flag countryCode={countryCode} height={14} /></span>
+            <div>
+              {logoLink
+                ? <Link href="/"><Logo height={22} /></Link>
+                : <Logo height={22} />
+              }
+              <span className="me-2"><Flag countryCode={countryCode} height={14} /></span>
+            </div>
             {buttonContent && (
               <ButtonWrapper alwaysVisible={!!buttonAlwaysVisible}>
                 <Link href={buttonHref} className={`btn btn-navy ${styles.button}`}>{buttonContent}</Link>
