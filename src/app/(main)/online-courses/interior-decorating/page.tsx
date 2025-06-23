@@ -83,7 +83,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <Hero src={HeroImage} priority objectPosition="100% 0">
                 <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
                 <h1 className="mb-2 mb-xl-4">Interior {designRestricted ? 'Decorating' : 'Design'} Course</h1>
-                <p className="h5 mb-3 mb-xl-5">Become a Certified Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
+                <p className="h5 mb-3 mb-xl-5">Become a Professional Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
                 <div className="d-flex justify-content-center justify-content-md-start">
                   <HeroButtons courseCodes={courseCodes} />
                 </div>
@@ -96,7 +96,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <li>Get started now—our premium interior {designRestricted ? 'decorating' : 'design'} course is designed to take you from beginner to expert with no previous training required</li>
                 <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
                 <li>Join a thriving virtual community to connect with other {designRestricted ? 'decorators' : 'designers'}, gain exclusive access to bonus materials and join free, expert-led webinars</li>
-                <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a certified interior {designRestricted ? 'decorator' : 'designer'}</li>
+                <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a professional interior {designRestricted ? 'decorator' : 'designer'}</li>
                 <li>Enjoy discounts and affiliations with top organizations including {countryCode === 'CA' && <>Decorators & Designers Association of Canada, </>}{countryCode === 'US' && <>Design Society of America, </>}DesignFiles, Placez and more</li>
               </ul>
             </div>
