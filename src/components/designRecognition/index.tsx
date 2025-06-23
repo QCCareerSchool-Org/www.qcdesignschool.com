@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { DDA } from './dda';
-import { DSA } from './dsa';
+// import { DSA } from './dsa';
 
 type Props = {
   countryCode: string;
@@ -9,6 +9,6 @@ type Props = {
 
 export const DesignRecognition: FC<Props> = ({ countryCode }) => (
   <div className="text-white text-shadow">
-    {countryCode === 'CA' ? <DDA /> : <DSA />}
+    {countryCode === 'CA' && <DDA />}
   </div>
 );

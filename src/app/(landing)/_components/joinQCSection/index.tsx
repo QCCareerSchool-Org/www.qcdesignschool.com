@@ -22,8 +22,8 @@ export const JoinQCSection: FC<Props> = ({ className = 'bg-light' }) => (
       <div className="row justify-content-center g-4">
         <div className="col-12 col-md-6 col-lg-4">
           <ChatIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
-          <h3 className="h6 mb-4">One-on-One Feedback</h3>
-          <p className="mb-0">Personalized one-on-one feedback from a professional tutor invested in your success</p>
+          <h3 className="h6 mb-4">One-on-One Mentorship</h3>
+          <p className="mb-0">Personalized one-on-one feedback from a design professional invested in your success</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BookWithBookmarkIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />

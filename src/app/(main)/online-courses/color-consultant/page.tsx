@@ -8,6 +8,7 @@ import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
+import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
@@ -90,6 +91,37 @@ const ColorConsultantPage: PageComponent = () => (
     <OutlineSection />
     <CareerEssentialsKitCanvaSection />
     <PaymentPlanSection courseCodes={courseCodes} />
+    <section>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+            <QuestionAndAnswer heading="How can I find color consultant jobs?">
+              <p>There are several paths to finding color consultant jobs, including:</p>
+              <ul>
+                <li>Working with <strong>interior design firms</strong> or <strong>decorating companies</strong></li>
+                <li>Becoming a <strong>paint store consultant</strong></li>
+                <li>Launching your own <strong>freelance color consulting business</strong></li>
+              </ul>
+              <p>Many color consultants work with <strong>homeowners, real estate agents, and renovation teams</strong> who need expert advice on color selection. Upon graduation, you'll also be eligible to join professional associations. These organizations offer job boards, networking opportunities, and industry insights to help you grow your career.</p>
+            </QuestionAndAnswer>
+            <QuestionAndAnswer heading="How long does it take to become a color consultant?">
+              <p>You can become a certified color consultant in as little as <strong>2 to 6 months</strong>! QC Design School's <strong>self-paced online course</strong> allows you to work according to your own schedule.</p>
+              <p>You'll have up to <strong>2 full years</strong> to complete your coursework and assignments—so whether you're fast-tracking your certification or balancing your studies with work or family life, the course adapts to your pace.</p>
+            </QuestionAndAnswer>
+            <QuestionAndAnswer heading="What are color analysis consultants?">
+              <p>A <strong>color analysis consultant</strong> uses color theory to help clients choose colors that suit their personal style, including:</p>
+              <ul>
+                <li><strong>Clothing and wardrobe colors</strong></li>
+                <li><strong>Makeup tones</strong> based on skin undertones</li>
+                <li><strong>Accessories and personal branding</strong></li>
+              </ul>
+              <p>While a <strong>color consultant</strong> typically works in home and interior spaces, a <strong>color analysis consultant</strong> applies the same principles to <strong>fashion and beauty</strong>. To become a color analysis consultant, consider adding <strong>makeup artistry</strong> and <strong>personal styling</strong> courses to your training with QC Design School's sister school, <a href="https://www.qcmakeupacademy.com" target="_blank" rel="noreferrer">QC Makeup Academy</a>.</p>
+            </QuestionAndAnswer>
+          </div>
+        </div>
+      </div>
+    </section>
     <GetStartedSection
       title="Ready to Start Your Career as a Color Consultant?"
       text="Become professionally certified with QC's online Color Consultant training."

@@ -43,7 +43,7 @@ export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = fal
         </div>
         <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
           <h2 className="h3 mb-4">How You'll Learn</h2>
-          <p className="lead fw-bold mb-4">You don't need a university degree to become an internationally certified {graduateTitle}!</p>
+          <p className="lead fw-bold mb-4">You don't need a university degree to become a professional {graduateTitle}!</p>
           <p className="mb-4">With QC Design School, you'll receive high-quality, comprehensive training to start a successful career without the high tuition fees of associate degree programs.</p>
           <ul className={`${styles.list} list-unstyled mb-0`}>
             <li>
@@ -72,7 +72,7 @@ export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = fal
                   <CertificationIcon height={iconHeight} style={{ position: 'relative', top: -1 }} />
                 </div>
                 <div className={styles.listText}>
-                  <strong>Graduate as an internationally certified {graduateTitle}</strong>&mdash;Finish in as little as 3 months, earn your certification, and start booking clients.
+                  <strong>Graduate as a professional {graduateTitle}</strong>&mdash;Finish in as little as 3 months, earn your certification, and start booking clients.
                 </div>
               </div>
             </li>
