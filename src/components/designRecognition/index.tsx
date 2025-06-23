@@ -7,8 +7,12 @@ type Props = {
   countryCode: string;
 };
 
-export const DesignRecognition: FC<Props> = ({ countryCode }) => (
-  <div className="text-white text-shadow">
-    {countryCode === 'CA' ? <DDA /> : <DSA />}
-  </div>
-);
+export const DesignRecognition: FC<Props> = ({ countryCode }) => {
+  if (countryCode === 'CA') {
+    return (
+      <div className="text-white text-shadow">
+        {countryCode === 'CA' ? <DDA /> : <DSA />}
+      </div>
+    );
+  }
+};

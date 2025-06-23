@@ -17,7 +17,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
-// import { DesignRecognition } from '@/components/designRecognition';
+import { DesignRecognition } from '@/components/designRecognition';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
@@ -98,7 +98,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
           <li>Design corporate offices, conference rooms, and retail stores</li>
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
-        {/* <DesignRecognition countryCode={countryCode} /> */}
+        <DesignRecognition countryCode={countryCode} />
       </CertificationSection>
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" />
