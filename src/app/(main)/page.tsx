@@ -116,7 +116,7 @@ const HomePage: PageComponent = async () => {
       </section>
       <StatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
-      <DesignPartnerSection countryCode={countryCode} />
+      {/* <DesignPartnerSection countryCode={countryCode} /> */}
       <section>
         <div className="container">
           <h2 className="mb-5 text-center">Popular Design Courses</h2>
