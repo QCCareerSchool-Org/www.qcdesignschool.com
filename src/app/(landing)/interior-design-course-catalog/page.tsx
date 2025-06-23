@@ -121,7 +121,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
-      <StatsSection inverse />
+      <StatsSection inverse className="bg-white" />
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" />
       <SupportSection />
