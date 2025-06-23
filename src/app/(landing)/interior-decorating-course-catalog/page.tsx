@@ -82,7 +82,6 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Interior Decorator" />
-      <StatsSection inverse />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}
@@ -104,6 +103,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
+      <StatsSection inverse />
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" />
       <SupportSection />
