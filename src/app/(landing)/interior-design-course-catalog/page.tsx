@@ -16,6 +16,7 @@ import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import { DesignRecognition } from '@/components/designRecognition';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 // import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
@@ -119,7 +120,8 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
         <div className="d-none d-lg-block d-xxl-none" style={{ height: 100 }} />
-        <div className="d-lg-none" style={{ height: 180 }} />
+        <div className="d-lg-none" style={{ height: 180 }} />\
+        <DesignRecognition countryCode={countryCode} />
       </CertificationSection>
       <GoogleReviewSection courseCode="i2" />
       <SupportSection />

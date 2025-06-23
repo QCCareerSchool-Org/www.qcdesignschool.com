@@ -18,7 +18,7 @@ import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { VideoPopup } from '@/components/marketingVideo';
-// import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
+import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -118,7 +118,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      {/* <DesignPartnerSection countryCode={countryCode} /> */}
+      <DesignPartnerSection countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
       <section>
         <div className="container">

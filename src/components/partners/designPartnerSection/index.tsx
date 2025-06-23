@@ -10,16 +10,20 @@ type Props = {
   countryCode: string;
 };
 
-export const DesignPartnerSection: FC<Props> = ({ countryCode }) => (
-  <section className="text-white text-center text-shadow">
-    <BackgroundImage src={Background} />
-    <Overlay backgroundColor="rgba(0,0,0,0.4)" />
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-md-10 col-lg-8 col-xl-6">
-          {countryCode === 'CA' ? <DDA /> : <DSA />}
+export const DesignPartnerSection: FC<Props> = ({ countryCode }) => {
+  if (countryCode === 'CA') {
+    return (
+      <section className="text-white text-center text-shadow">
+        <BackgroundImage src={Background} />
+        <Overlay backgroundColor="rgba(0,0,0,0.4)" />
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-10 col-lg-8 col-xl-6">
+              {countryCode === 'CA' ? <DDA /> : <DSA />}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-);
+      </section>
+    );
+  }
+};
