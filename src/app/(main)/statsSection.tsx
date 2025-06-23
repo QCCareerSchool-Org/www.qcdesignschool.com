@@ -12,10 +12,11 @@ import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 const duration = 2_000; // 2 seconds
 
 type Props = {
+  className?: string;
   inverse?: boolean;
 };
 
-export const StatsSection: FC<Props> = ({ inverse }) => {
+export const StatsSection: FC<Props> = ({ className, inverse }) => {
   const studentsRef = useRef<HTMLDivElement>(null);
   const yearsRef = useRef<HTMLDivElement>(null);
   const expertsRef = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ export const StatsSection: FC<Props> = ({ inverse }) => {
   const experts = useCountUp({ start: 0, end: 20, duration, started: expertsStart, easingFunction: 'easeOutCubic' });
 
   return (
-    <section className={`${styles.section} ${inverse ? styles.inverse : ''}`}>
+    <section className={`${styles.section} ${inverse ? styles.inverse : ''} ${className ? className : ''}`}>
       {!inverse && <BackgroundImage src={UVPBackgroundImage} />}
       <div className="container">
         <div className="row text-center">
