@@ -120,7 +120,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
         <div className="d-none d-lg-block d-xxl-none" style={{ height: 100 }} />
-        <div className="d-lg-none" style={{ height: 180 }} />\
+        <div className="d-lg-none" style={{ height: 180 }} />
         <DesignRecognition countryCode={countryCode} />
       </CertificationSection>
       <GoogleReviewSection courseCode="i2" />
