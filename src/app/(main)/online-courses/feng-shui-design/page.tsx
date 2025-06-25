@@ -77,6 +77,7 @@ const FengShuiDesignPage: PageComponent = () => (
               <li>Use feng shui symbols and cleansing rituals to restore harmony in your clients' homes</li>
               <li>Build your brand and market your new feng shui design business</li>
               <li>Plan and develop a professional portfolio that helps you land new clients</li>
+              <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

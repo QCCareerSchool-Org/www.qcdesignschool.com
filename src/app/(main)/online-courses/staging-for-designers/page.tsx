@@ -71,6 +71,7 @@ const StagingForDesignersPage: PageComponent = () => (
               <li>Conduct market research to sell home staging services and boost profitability</li>
               <li>Build and market your home staging brand</li>
               <li>Develop a professional portfolio to attract new clients</li>
+              <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
