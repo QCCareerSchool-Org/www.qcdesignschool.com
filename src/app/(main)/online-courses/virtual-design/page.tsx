@@ -69,6 +69,7 @@ const VirtualDesignPage: PageComponent = () => (
               <li>Transform your design process for the digital world and adapt your strategies and methods to thrive online</li>
               <li>Cater to every client's needs and offer a spectrum of online services, from quick consultations to comprehensive redesigns</li>
               <li>Discover the best online platforms to connect with your clients, provide unparalleled support, and build lasting relationships</li>
+              <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

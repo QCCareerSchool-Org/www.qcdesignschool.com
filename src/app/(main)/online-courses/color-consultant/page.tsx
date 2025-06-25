@@ -76,6 +76,7 @@ const ColorConsultantPage: PageComponent = () => (
               <li>Understand designing with textiles, arranging accessories, and building a strong relationship between art and design</li>
               <li>Build your brand and market your new Color Consulting business</li>
               <li>Plan and develop a professional portfolio that helps you land new clients</li>
+              <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
             </ul>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">

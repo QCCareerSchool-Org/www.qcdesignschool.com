@@ -82,6 +82,7 @@ const HomeStagingPage: PageComponent = async () => {
                 <li>Incorporate the right lighting and window treatments to wow potential buyers</li>
                 <li>Build your brand and market your new home staging business</li>
                 <li>Plan and develop a professional portfolio that helps you land new clients</li>
+                <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
               </ul>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">

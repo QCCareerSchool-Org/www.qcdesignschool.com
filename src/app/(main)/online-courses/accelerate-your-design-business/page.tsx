@@ -81,6 +81,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
                 <li>Build your brand and market yourself effectively both online and offline</li>
                 <li>Master effective project and time management techniques</li>
                 <li>Plan and develop a professional design portfolio that helps you land new clients and stand out from the competition</li>
+                <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
               </ul>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">
