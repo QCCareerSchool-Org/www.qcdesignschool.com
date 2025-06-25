@@ -13,6 +13,7 @@ import DSA from './_logos/dsa.png';
 import IAHSP from './_logos/iahsp.png';
 import IFDA from './_logos/ifda.jpg';
 import ISCC from './_logos/iscc.png';
+import NeatMethod from './_logos/neat-method.png';
 import Placez from './_logos/placez.png';
 import PlanningWiz from './_logos/plannning-wiz.jpg';
 import POC from './_logos/poc.png';
@@ -20,6 +21,7 @@ import RESA from './_logos/resa.jpg';
 import SAF from './_logos/saf.jpg';
 import SampleBoard from './_logos/sample-board.jpg';
 import TheBoard from './_logos/the-board.png';
+import UnionLuminairesDecor from './_logos/union-luminaires-decor.png';
 import ViewItTech from './_logos/view-it-tech.png';
 
 export type DesignAssociation = {
@@ -122,6 +124,16 @@ export const preferredPartners: DesignAssociation[] = [
     description: 'DesignFiles is an all-in-one design software that allows you to create branded content that you can share with your clients, design beautiful 2D and 3D presentation boards, develop design service packages, invoice your clients, and more. QC students are eligible for an extended free trial and special rate for DesignFile’s Professional Plan.',
     image: DesignFiles,
     maxHeight: 65,
+  },
+  {
+    name: 'Union Lighting & Décor',
+    description: 'With over 110 years of expertise, Union Lighting & Decor is a powerhouse in the industry, offering top-tier lighting, furniture, hardware, and decor solutions to residential and commercial clients. Representing over 300 premium brands, Union provides a phenomenal selection of products. QC Design School students and graduates can join their exclusive Trade Program! This program provides unmatched benefits, including a 20% discount, insider access to new product launches and trends, and a dedicated team to assist with sourcing, product knowledge, client presentations, and order tracking.',
+    image: UnionLuminairesDecor,
+  },
+  {
+    name: 'NEAT Method',
+    description: 'NEAT Method, North America\'s largest and most established home organizing company, brings sophisticated ease to homes from coast to coast. Their white-glove services provide customized solutions for any space through thoughtful planning, curated product selection, and implementation that elevates clients\' lifestyles. NEAT\'s signature product line completes each organizing system with the perfect balance of aesthetics and functionality. They believe a well-arranged home creates positive effects throughout all aspects of life. QC Design School students and graduates can join their Trade Program for discounted rates!',
+    image: NeatMethod,
   },
   {
     name: 'Placez',
