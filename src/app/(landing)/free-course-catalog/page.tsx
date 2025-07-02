@@ -105,7 +105,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} />
       <StatsSection inverse className="bg-white" />
       <JoinQCSection />
       <GoogleReviewSection />
