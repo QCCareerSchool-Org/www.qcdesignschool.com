@@ -125,7 +125,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
         )}
       </CertificationSection>
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} />
-      <StatsSection inverse className="bg-white" />
+      <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" />
       <SupportSection />

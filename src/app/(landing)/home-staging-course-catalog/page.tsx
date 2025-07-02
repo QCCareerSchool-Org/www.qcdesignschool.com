@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 20; // Home Staging Leads
 const brevoEmailTemplateId = 74; // Home Staging
+const testimonialIds = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -79,12 +81,10 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Home Stager" countryCode={countryCode} />
-      <StatsSection />
-      <JoinQCSection />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Staging and Redesign Professional (ISRP™) certification" />}>
+      <HowYoullLearnSection graduateTitle="International Staging and Redesign Professional™ (ISRP™)" countryCode={countryCode} />
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Staging and Redesign Professional (ISRP) certification" />}>
         <h2 className="h3">Your Home Staging Certification</h2>
-        <p>Once you've completed the Home Staging course online, youll graduate with the International Staging and Redesign Professional™  (ISRP™) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Once you've completed the Home Staging course online, youll graduate with the International Staging and Redesign Professional  (ISRP) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed professional home staging training and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
@@ -94,6 +94,9 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
       </CertificationSection>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'st' ]} />
+      <StatsSection />
+      <JoinQCSection />
       <GoogleReviewSection courseCode="st" />
       <SupportSection />
       <BottomSection>

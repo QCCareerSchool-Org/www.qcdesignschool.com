@@ -14,3 +14,4 @@ export { default as KatherineSnow } from './TD-0013-katherine-snow.jpg';
 export { default as TademDaniels } from './TD-0014-tadem-daniels.png';
 export { default as TylarFertuck } from './TD-0015-tylar-fertuck.jpg';
 export { default as DoxceenMalcolm } from './TD-0016-doxceen-malcolm.jpg';
+export { default as ErinStAubin } from './TD-0018-erin-st-aubin.jpg';

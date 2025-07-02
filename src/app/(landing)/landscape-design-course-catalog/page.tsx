@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 21; // Landscape Design Leads
 const brevoEmailTemplateId = 73; // Landscape Design
+const testimonialIds = [ 'TD-0018', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0002' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -80,8 +82,6 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Landscape Designer" countryCode={countryCode} />
-      <StatsSection />
-      <JoinQCSection />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon alt="International Landscape Design Professional (ILDP™) certification" />}
@@ -99,6 +99,9 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
           <li>Plan aesthetically pleasing garden designs that will grow and thrive for years to come</li>
         </ul>
       </CertificationSection>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'ld' ]} />
+      <StatsSection />
+      <JoinQCSection />
       <GoogleReviewSection />
       <SupportSection />
       <BottomSection>
