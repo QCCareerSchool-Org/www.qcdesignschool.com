@@ -6,6 +6,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export type Testimonial = {
   name: string;
   courses: CourseCode[];
+  provinceCode?: string;
   short: string[];
   long: string[];
   image: StaticImageData;
@@ -26,6 +27,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0002': {
     name: 'Sara Jones',
     courses: [ 'po', 'ap' ],
+    provinceCode: 'BC',
     short: [ 'I learned a lot of great information, and was given tools I can use over and over again in my future career. I loved being able to work on the course in my own time and not feel pressured with deadlines.' ],
     long: [ 'Professional training makes you work through hypothetical scenarios before you encounter them with real clients, allowing you to be prepared. Plus, it shows potential clients that you’re serious about what you do because you have been investing in both your education and your business.' ],
     image: Images.SaraJones,
@@ -34,6 +36,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0003': {
     name: 'Paola Fasca',
     courses: [ 'st', 'cc', 'vd' ],
+    provinceCode: 'ON',
     short: [ 'QC Design School immediately caught my attention! The program was very straightforward and the staff were very kind and helpful!' ],
     long: [ 'My experience during the process of these courses was amazing! My favorite part was that I had time to finish the courses at my own pace. Support was always available and the Student Support Team was always very quick to reply to any questions that I may have had.' ],
     image: Images.PaolaFasca,
@@ -58,6 +61,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0006': {
     name: 'Jamie Cromar',
     courses: [ 'i2', 'ms' ],
+    provinceCode: 'QC',
     short: [ 'Being able to learn the business and how to work with clients is so amazing! QC Design School has been a fun and very positive experience for me.' ],
     long: [ 'I looked for the right online school for a long time, and always came back to QC Design School. I loved the course outline and how I could choose multiple courses to take. I was also drawn to the fact that the School has a full business unit included in their courses.' ],
     image: Images.JamieCromar,
@@ -98,6 +102,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0011': {
     name: 'Chantal Marion',
     courses: [ 'i2', 'st' ],
+    provinceCode: 'ON',
     short: [ 'The courses were very well organized, and I had amazing support from QC as well as my tutor throughout the process. I totally recommend it!' ],
     long: [ 'I completed both the ISRP (International Staging & Redesign Professional) and IDDP (International Design & Decorating Professional) programs online. The courses were very well organized, and I had amazing support from QC as well as my tutor throughout the process. I totally recommend it!' ],
     image: Images.ChantalMarion,
@@ -130,6 +135,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0015': {
     name: 'Tylar Fertuck',
     courses: [],
+    provinceCode: 'SK',
     short: [ 'I had an amazing time! My favourite part about the course was the relaxed structure. As a stay-at-home mom of two kids, that made the whole process a lot easier for me.' ],
     long: [ 'I had an amazing time! I was able to get help and clarification easily when needed, and I completed my course in less than a year. My favourite part about the course was the relaxed structure—no strict deadlines or anything! As a stay-at-home mom of two kids, that made the whole process a lot easier for me.' ],
     image: Images.TylarFertuck,
@@ -138,6 +144,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0016': {
     name: 'Doxceen Malcolm',
     courses: [],
+    provinceCode: 'QC',
     short: [ 'There was never a moment I felt alone because I knew that help was always a phone call away. I have improved my skills immensely, and I have QC Design School to thank.' ],
     long: [ 'There was never a moment I felt alone because I knew that help was always a phone call away. The staff are professional in their interactions, friendly, helpful, and proactive - always seeking ways to provide you with the support you need. Since graduating from the Interior Decorating course I have improved my skills immensely, and I have QC Design School to thank.' ],
     image: Images.DoxceenMalcolm,

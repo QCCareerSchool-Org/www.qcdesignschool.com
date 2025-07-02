@@ -5,20 +5,16 @@ import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import VideoPlayerImage from './video-player.jpg';
-import BookHeartIcon from '@/components/icons/book-heart.svg';
-import CertificationIcon from '@/components/icons/certification.svg';
-import CheckCircleIcon from '@/components/icons/check-circle.svg';
 import { VideoPopup } from '@/components/marketingVideo';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
-
-const iconHeight = '1.5rem';
 
 type Props = {
   graduateTitle: string;
   withVideo?: boolean;
+  countryCode: string;
 };
 
-export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = false }) => (
+export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = false, countryCode }) => (
   <section>
     <div className="container">
       <div className="row align-items-center justify-content-center g-s">
@@ -42,39 +38,22 @@ export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = fal
           )}
         </div>
         <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
-          <h2 className="h3 mb-4">How You'll Learn</h2>
-          <p className="lead fw-bold mb-4">You don't need a university degree to become a professional {graduateTitle}!</p>
-          <p className="mb-4">With QC Design School, you'll receive high-quality, comprehensive training to start a successful career without the high tuition fees of associate degree programs.</p>
+          <h2 className="h3 mb-4">Start Your Design Career</h2>
+          <p className="lead mb-4">{countryCode === 'CA' && 'Join Canada\'s trusted school for aspiring design professionals. '}You'll receive industry-recognized design training and career-ready skills without the high cost of a college or university degree.</p>
           <ul className={`${styles.list} list-unstyled mb-0`}>
+            {countryCode === 'CA' && (
+              <li>
+                <strong>Enjoy Extra Savings:</strong> You could qualify to have over 50% of your course fees covered by claiming the Canada Training Credit and the Tuition Tax Credit.
+              </li>
+            )}
             <li>
-              <div className={styles.listWrapper}>
-                <div className={styles.listIcon}>
-                  <CheckCircleIcon height={iconHeight} style={{ position: 'relative', top: -1 }} />
-                </div>
-                <div className={styles.listText}>
-                  <strong>Enroll Today & Start</strong>&mdash;No deadlines&mdash;Enroll anytime! Access your course online in two business days and join the exclusive Virtual Community.
-                </div>
-              </div>
+              <strong>Access Top Design Mentors:</strong> Learn from expert decorators and design pros who provide personalized feedback and support throughout your course.
             </li>
             <li>
-              <div className={styles.listWrapper}>
-                <div className={styles.listIcon}>
-                  <BookHeartIcon height={iconHeight} style={{ position: 'relative', top: -1 }} />
-                </div>
-                <div className={styles.listText}>
-                  <strong>Study & Submit Assignments</strong>&mdash;Complete your work in the Online Student Center and get personalized audio feedback.
-                </div>
-              </div>
+              <strong>Learn on Your Schedule:</strong> Enjoy flexible, self-paced online training that fits into your lifestyle—study anytime, anywhere.
             </li>
             <li>
-              <div className={styles.listWrapper}>
-                <div className={styles.listIcon}>
-                  <CertificationIcon height={iconHeight} style={{ position: 'relative', top: -1 }} />
-                </div>
-                <div className={styles.listText}>
-                  <strong>Graduate as a professional {graduateTitle}</strong>&mdash;Finish in as little as 3 months, earn your certification, and start booking clients.
-                </div>
-              </div>
+              <strong>Earn Your Certification:</strong> Become a{/^[aeiou]/iu.test(graduateTitle) && 'n'} {graduateTitle} in as little as four months.
             </li>
           </ul>
         </div>
