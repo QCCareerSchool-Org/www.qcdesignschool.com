@@ -79,12 +79,12 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Color Consultant" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="International Color Consulting Professional™ (AIOP™)" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP™) certification" />}>
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP) certification" />}>
         <h2 className="h3">Your Color Consultant Certification</h2>
-        <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional™ (AIOP™) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed color consultant training and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
