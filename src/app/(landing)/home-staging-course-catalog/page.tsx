@@ -5,8 +5,6 @@ import Link from 'next/link';
 import HeroImage from './hero.jpg';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
-import { FormCard } from '../_components/formCard';
-import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
@@ -16,6 +14,8 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/isrp.svg';
+import { FormCard } from '@/components/formCard';
+import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
@@ -79,7 +79,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Home Stager" />
+      <HowYoullLearnSection graduateTitle="Home Stager" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Staging and Redesign Professional (ISRP™) certification" />}>

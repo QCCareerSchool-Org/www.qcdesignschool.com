@@ -5,8 +5,6 @@ import Link from 'next/link';
 import HeroImage from './hero.jpg';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
-import { FormCard } from '../_components/formCard';
-import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
@@ -16,6 +14,8 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iccp.svg';
+import { FormCard } from '@/components/formCard';
+import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
@@ -79,12 +79,12 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Color Consultant" />
+      <HowYoullLearnSection graduateTitle="International Color Consulting Professional™ (AIOP™)" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP™) certification" />}>
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP) certification" />}>
         <h2 className="h3">Your Color Consultant Certification</h2>
-        <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional™ (AIOP™) certificate. This internationally recognized professional designation is yours to use for life.</p>
+        <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed color consultant training and you possess all the skills and knowledge required to be successful in the industry.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">

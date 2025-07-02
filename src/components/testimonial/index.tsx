@@ -11,6 +11,7 @@ import type { CourseCode } from '@/domain/courseCode';
 type Props = {
   id: string;
   courseCodes?: string[];
+  showProvinceCode?: boolean;
 };
 
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -26,7 +27,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -69,7 +70,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes }) => {
           <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution}>{testimonial.name}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution}>{testimonial.name}{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>
