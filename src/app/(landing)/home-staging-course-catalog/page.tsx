@@ -79,7 +79,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Home Stager" />
+      <HowYoullLearnSection graduateTitle="Home Stager" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Staging and Redesign Professional (ISRP™) certification" />}>

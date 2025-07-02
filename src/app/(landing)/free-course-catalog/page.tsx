@@ -84,7 +84,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle={`interior ${designRestricted ? 'decorator' : 'designer'}`} withVideo />
+      <HowYoullLearnSection graduateTitle={`interior ${designRestricted ? 'decorator' : 'designer'}`} countryCode={countryCode} withVideo />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}

@@ -79,7 +79,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Landscape Designer" />
+      <HowYoullLearnSection graduateTitle="Landscape Designer" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection

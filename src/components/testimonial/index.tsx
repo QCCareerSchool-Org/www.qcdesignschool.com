@@ -11,7 +11,7 @@ import type { CourseCode } from '@/domain/courseCode';
 type Props = {
   id: string;
   courseCodes?: string[];
-  showProvinceCode: boolean;
+  showProvinceCode?: boolean;
 };
 
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -27,7 +27,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {

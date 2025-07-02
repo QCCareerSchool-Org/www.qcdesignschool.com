@@ -79,7 +79,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Feng Shui Designer" />
+      <HowYoullLearnSection graduateTitle="Feng Shui Designer" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Feng Shui Design Professional (IFDP™) certification" />}>

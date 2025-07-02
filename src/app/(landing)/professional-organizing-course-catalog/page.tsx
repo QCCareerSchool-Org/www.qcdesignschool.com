@@ -79,7 +79,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Professional Organizer" />
+      <HowYoullLearnSection graduateTitle="Professional Organizer" countryCode={countryCode} />
       <StatsSection />
       <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="Advanced International Organizing Professional (AIOP™) certification" />}>
