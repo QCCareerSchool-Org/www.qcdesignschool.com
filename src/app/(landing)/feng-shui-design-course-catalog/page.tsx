@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
+const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -80,8 +82,6 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Advanced Feng Shui Design Professional™ (AFDP™)" countryCode={countryCode} />
-      <StatsSection />
-      <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Feng Shui Design Professional (IFDP) certification" />}>
         <h2 className="h3">Your Feng Shui Design Certification</h2>
         <p>Once you've completed the Feng Shui Design course online, you'll graduate with the Advanced Feng Shui Design Professional (AFDP) certificate. This internationally recognized professional designation is yours to use for life.</p>
@@ -93,6 +93,9 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
           <li>Design harmonized spaces for individual clients or corporate offices</li>
         </ul>
       </CertificationSection>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'fs' ]} />
+      <StatsSection />
+      <JoinQCSection />
       <GoogleReviewSection courseCode="fs" />
       <SupportSection />
       <BottomSection>
