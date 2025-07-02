@@ -53,7 +53,7 @@ export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = fal
               <strong>Learn on Your Schedule:</strong> Enjoy flexible, self-paced online training that fits into your lifestyle—study anytime, anywhere.
             </li>
             <li>
-              <strong>Earn Your Certification:</strong> Become a{/^[aeiou]/iu.test(graduateTitle) && 'n'} {graduateTitle} in as little as four months.
+              <strong>Earn Your Certification:</strong> Become a{/^[aeiou]/iu.test(graduateTitle) && 'n'} {graduateTitle} in only two to six months.
             </li>
           </ul>
         </div>
