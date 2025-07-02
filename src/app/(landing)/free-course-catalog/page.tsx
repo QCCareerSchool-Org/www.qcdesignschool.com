@@ -22,6 +22,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
+const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FreeCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -103,6 +105,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} />
       <StatsSection inverse className="bg-white" />
       <JoinQCSection />
       <GoogleReviewSection />
