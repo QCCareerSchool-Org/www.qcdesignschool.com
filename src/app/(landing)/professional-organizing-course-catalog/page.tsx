@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 19; // Professional Organizing Leads
 const brevoEmailTemplateId = 75; // Professional Organizing
+const testimonialIds = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
 
 const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -80,8 +82,6 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Advanced International Organizing Professional™ (AIOP™)" countryCode={countryCode} />
-      <StatsSection />
-      <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="Advanced International Organizing Professional (AIOP) certification" />}>
         <h2 className="h3">Your Professional Organizing Certification</h2>
         <p>Once you've completed the Professional Organizing course online, you'll graduate with the Advanced International Organizing Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
@@ -94,6 +94,9 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
           <li>Work for corporations or businesses to implement organizing systems</li>
         </ul>
       </CertificationSection>
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'po' ]} />
+      <StatsSection />
+      <JoinQCSection />
       <GoogleReviewSection courseCode="po" />
       <SupportSection />
       <BottomSection>
