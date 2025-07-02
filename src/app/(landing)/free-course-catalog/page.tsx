@@ -6,8 +6,6 @@ import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
 import { BottomSection } from '../_components/bottomSection';
 import { CertificationSection } from '../_components/certificationSection';
-import { FormCard } from '../_components/formCard';
-import { FormWrapper } from '../_components/formWrapper';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
@@ -18,6 +16,8 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
 import { DesignRecognition } from '@/components/designRecognition';
+import { FormCard } from '@/components/formCard';
+import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
@@ -105,7 +105,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} />
       <StatsSection inverse className="bg-white" />
       <JoinQCSection />
       <GoogleReviewSection />

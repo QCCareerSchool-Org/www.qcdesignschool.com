@@ -10,9 +10,9 @@ import PhoneInput from 'react-phone-number-input';
 
 import DesktopBackgroundImage from './desktop-bg.jpg';
 import MobileBackgroundImage from './mobile-bg.jpg';
-import { FormCard } from '@/app/(landing)/_components/formCard';
-import { FormWrapper } from '@/app/(landing)/_components/formWrapper';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { FormCard } from '@/components/formCard';
+import { FormWrapper } from '@/components/formWrapper';
 import { Overlay } from '@/components/overlay';
 
 type Props = {

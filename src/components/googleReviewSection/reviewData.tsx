@@ -87,14 +87,6 @@ export const reviewData: ReviewData[] = [
     courseCodes: [ 'st' ],
   },
   {
-    name: 'Vivienne Barrett',
-    initial: 'V',
-    backgroundColor: 'grey',
-    reviewText: "QC Career School was the perfect choice for me. My only regret is not enrolling sooner. The online format allowed me to learn at my own pace and balance my full-time job while launching my business. I completed the wedding Event Planning course and  I'm now pursuing Event Decor course. Initially, I felt overwhelmed, but the supportive team, especially Pamela, reassured and encourages me. Their availability for calls, not just emails, was invaluable. QC Career School's team provided the support I needed to succeed.",
-    rating: 5,
-    courseCodes: [ 'ed' ],
-  },
-  {
     name: 'Eliana Varnadore',
     imageSrc: ElianaVarnadoreImage,
     initial: 'E',

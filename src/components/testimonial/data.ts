@@ -19,6 +19,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0001': {
     name: 'Natalie Mireault',
     courses: [ 'st' ],
+    provinceCode: 'ON',
     short: [ 'I would absolutely recommend QC\'s Home Staging Course to anyone who\'s looking to become a home stager, or wants to expand their knowledge in the home decor field.' ],
     long: [ 'My experience overall was a very positive one! For starters, the tutors are amazing. My tutor provided great feedback and always corrected my assignments in a timely manner. I would absolutely recommend QC\'s Home Staging Course to anyone who\'s looking to become a home stager, or wants to expand their knowledge in the home decor field.' ],
     image: Images.NatalieMireault,
@@ -45,6 +46,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0004': {
     name: 'Rachael Stafford',
     courses: [ 'st' ],
+    provinceCode: 'ON',
     short: [ 'The course outline was clearly laid out on the website, the materials were efficient and easy to follow, I could complete the units at my own pace, and it was reasonably priced.' ],
     long: [ 'My experience was great. I very much enjoyed completing each unit. While I could do it at my own pace, I looked forward to the next assignment and so I completed the course very quickly. I would highly recommend it to others, as it gave me the confidence I needed to proceed in adding home staging and redesign to my service offerings.' ],
     image: Images.RachealStafford,
@@ -78,6 +80,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0008': {
     name: 'Sarah Kirkpatrick',
     courses: [ 'i2', 'ms' ],
+    provinceCode: 'AB',
     short: [ 'The value of the course was the feedback I received from my tutor. You can get professional feedback and advice on real situations which is invaluable!' ],
     long: [ 'The value of the course was the feedback I received from my tutor. You can get professional feedback and advice on real situations, as well as on your own style and process. This is invaluable! Students and grads from QC also have access to reputable design associations, such as the DDA, RESA, CARAHS, and POC.' ],
     image: Images.SarahKirkpatrick,
@@ -94,6 +97,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0010': {
     name: 'Dawn Marie Clunas',
     courses: [ 'i2' ],
+    provinceCode: 'ON',
     short: [ 'With QC I could live out my dream with an online course and expand my knowledge of the field while being able to continue professional working in it at the same time.' ],
     long: [ ],
     image: Images.DawnMarieClunas,
@@ -129,7 +133,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'st', 'po' ],
     short: [ 'Attending QC Design was the best decision that I have made. They gave me the tools needed to turn my passion into a career!' ],
     long: [ 'The tutor really pushed my thinking throughout this course and I was able to grow personally and professionally from her feedback. Attending QC Design was the best decision that I have made. They gave me the tools needed to turn my passion into a career!' ],
-    image: Images.TandemDaniels,
+    image: Images.TademDaniels,
     stars: 5,
   },
   'TD-0015': {

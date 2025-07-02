@@ -11,6 +11,6 @@ export { default as DawnMarieClunas } from './TD-0010-dawn-marie-clunas.jpg';
 export { default as ChantalMarion } from './TD-0011-chantal-marion.jpg';
 export { default as BradleyRyanSchlagheck } from './TD-0012-bradley-ryan-schlagheck.jpg';
 export { default as KatherineSnow } from './TD-0013-katherine-snow.jpg';
-export { default as TandemDaniels } from './TD-0014-tandem-daniels.png';
+export { default as TademDaniels } from './TD-0014-tadem-daniels.png';
 export { default as TylarFertuck } from './TD-0015-tylar-fertuck.jpg';
 export { default as DoxceenMalcolm } from './TD-0016-doxceen-malcolm.jpg';
