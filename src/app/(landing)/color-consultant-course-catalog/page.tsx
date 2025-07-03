@@ -20,6 +20,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 7; // General Leads
 const brevoEmailTemplateId = 58; // General
+const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const ColorConsultantCourseCatalogPage: PageComponent = async props => {
   const { countryCode } = await getData();
@@ -80,8 +82,6 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="International Color Consulting Professional™ (AIOP™)" countryCode={countryCode} />
-      <StatsSection />
-      <JoinQCSection />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Color Consulting Professional (ICCP) certification" />}>
         <h2 className="h3">Your Color Consultant Certification</h2>
         <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
@@ -93,6 +93,9 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
           <li>Offer expert consulting services to both residential and commercial clients</li>
         </ul>
       </CertificationSection>
+      <StatsSection />
+      <JoinQCSection />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'cc' ]} />
       <GoogleReviewSection courseCode="cc" />
       <SupportSection />
       <BottomSection>

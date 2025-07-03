@@ -45,7 +45,7 @@ const brevo = {
   },
   decorating: {
     brevoListId: 18, // Interior Decorating Leads
-    brevoEmailTemplateId: 58, // General
+    brevoEmailTemplateId: 1598, // General
   },
 };
 

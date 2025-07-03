@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 18; // Interior Decorating Leads
-const brevoEmailTemplateId = 58; // General
+const brevoEmailTemplateId = 1598; // General
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const InteriorDecoratingCatalogPage: PageComponent = async props => {
