@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
 
 import ThreeDream from './_logos/3dream.png';
-import ADPO from './_logos/adpo.jpg';
+import ADPO from './_logos/adpo.png';
 import ASPO from './_logos/aspo.png';
 import CARAHS from './_logos/carahs.jpg';
 // import CDECA from './_logos/cdeca.jpg';
