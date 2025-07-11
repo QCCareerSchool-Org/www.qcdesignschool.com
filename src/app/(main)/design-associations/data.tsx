@@ -2,7 +2,7 @@ import type { StaticImageData } from 'next/image';
 import type { ReactNode } from 'react';
 
 import ThreeDream from './_logos/3dream.png';
-import ADPO from './_logos/adpo-color.png';
+import APDO from './_logos/apdo-color.png';
 import ASPO from './_logos/aspo.png';
 import CARAHS from './_logos/carahs.jpg';
 // import CDECA from './_logos/cdeca.jpg';
@@ -107,7 +107,7 @@ export const professionalAssociations: DesignAssociation[] = [
     description: (
       <>APDO is the UK's membership association for decluttering and organising professionals. It sets industry standards, supports professional development, and promotes growth in the field. APDO connects clients with local organisers through its online directory, offers training and mentoring for members, and shares resources like blogs, newsletters, and social media content to encourage a clutter-free lifestyle. Members also benefit from networking opportunities and an annual conference. For more information on membership, visit: <a href="https://www.apdo.co.uk/membership.html" target="_blank" rel="noreferrer">www.apdo.co.uk</a>.</>
     ),
-    image: ADPO,
+    image: APDO,
   },
   {
     name: 'Society of American Florists (SAF)',
