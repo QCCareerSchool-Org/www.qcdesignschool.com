@@ -1,0 +1,35 @@
+.subNav {
+  display: none;
+  @media screen and (min-width: 576px) {
+    font-size: 0.625rem;
+    display: block;
+  }
+    @media screen and (min-width: 768px) {
+    font-size: 0.875rem;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: 1rem;
+  }
+  background-color: white;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1rem 0;
+  z-index: 100;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+
+    a { color: inherit; text-decoration: none; }
+  }
+
+}
