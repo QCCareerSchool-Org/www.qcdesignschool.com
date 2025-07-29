@@ -8,8 +8,8 @@ export const SubNav: FC = () => (
     <ul>
       <li><Link href="#why-qc">Why QC?</Link></li>
       <li><Link href="#platform">The Platform</Link></li>
-      <li>Curriculum</li>
-      <li>Career</li>
+      <li><Link href="#curriculum">Curriculum</Link></li>
+      <li><Link href="#career-outcomes">Career</Link></li>
       <li>Tuition</li>
       <li>Stories</li>
       <li>Courses</li>

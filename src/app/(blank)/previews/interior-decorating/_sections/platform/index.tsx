@@ -4,7 +4,7 @@ import { PlatformExperts } from './experts';
 import { PlatformFeatures } from './features';
 
 export const Platform: FC = () => (
-  <section>
+  <section id="platform" className="bg-light">
     <div className="container text-center">
       <div className="lead mb-3">See the Platform</div>
       <h2 className="mb-3">Peek Inside the Student Center</h2>

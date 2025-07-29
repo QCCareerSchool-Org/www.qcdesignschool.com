@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { CareerOutcomes } from './_sections/careerOutcomes';
+import { Curriculum } from './_sections/curriculum';
 import { FooterBar } from './_sections/footerBar';
 import { Hero } from './_sections/hero';
 import { Platform } from './_sections/platform';
@@ -18,6 +20,8 @@ const InteriorDecoratingPreviewPage: PageComponent = () => {
         <SubNav />
         <WhyQC />
         <Platform />
+        <Curriculum />
+        <CareerOutcomes />
       </div>
       <FooterBar>Ready to Start Your Interior Design Career? <span className="ms-3"><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-primary">Enroll Today</button></Link></span></FooterBar>
     </div>

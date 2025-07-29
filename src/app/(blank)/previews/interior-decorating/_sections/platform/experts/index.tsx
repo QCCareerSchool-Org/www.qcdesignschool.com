@@ -4,10 +4,11 @@ import type { FC, MouseEventHandler } from 'react';
 import { useState } from 'react';
 
 import AngieChapmanImage from './angie-chapman.webp';
+import DeborahSoulierImage from './deborah-soulier.jpg';
 import { ExpertCard } from './expertCard';
 import styles from './index.module.scss';
 import JaneLockhartImage from './jane-lockhart.jpg';
-import DeborahSoulierImage from './jane-lockhart.jpg';
+import { ImageCircle } from '@/components/imageCircle';
 
 export const PlatformExperts: FC = () => {
   const [ expert, setExpert ] = useState<1 | 2 | 3>(1);
@@ -34,9 +35,9 @@ export const PlatformExperts: FC = () => {
 
       <nav className={styles.expertsNav}>
         <ul>
-          <li onClick={handleJaneClick}>Jane<span className="d-none d-sm-inline"> Lockhart</span></li>
-          <li onClick={handleDeborahClick}>Deborah<span className="d-none d-sm-inline"> Soulier</span></li>
-          <li onClick={handleAngieClick}>Angie<span className="d-none d-sm-inline"> Chapman</span></li>
+          <li onClick={handleJaneClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={JaneLockhartImage} alt="" size={48} /></div>Jane<span className="d-none d-sm-inline">&nbsp;Lockhart</span></li>
+          <li onClick={handleDeborahClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={DeborahSoulierImage} alt="" size={48} /></div>Deborah<span className="d-none d-sm-inline">&nbsp;Soulier</span></li>
+          <li onClick={handleAngieClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={AngieChapmanImage} alt="" size={48} /></div>Angie<span className="d-none d-sm-inline">&nbsp;Chapman</span></li>
         </ul>
       </nav>
       <ExpertCard show={expert === 1} src={JaneLockhartImage} name="Jane Lockhart, BAAID" title="Featured Course Expert">
