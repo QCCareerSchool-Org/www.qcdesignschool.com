@@ -11,7 +11,7 @@ import { Result } from './result';
 export type Tier = 'standard' | 'premium';
 
 export const Calculator: FC = () => {
-  const [ projectCount, setProjectCount ] = useState(24);
+  const [ projectCount, setProjectCount ] = useState(30);
   const [ projectFee, setProjectFee ] = useState(2500);
   const [ tier, setTier ] = useState<Tier>('standard');
   const [ expanded, setExpanded ] = useState(false);
@@ -44,7 +44,7 @@ export const Calculator: FC = () => {
   return (
     <div className="card bg-white text-start">
       <div className="card-body">
-        <div className="row">
+        <div className="row g-4">
           <div className="col-12 col-lg-6">
             <h3 className="h6 mb-3">Plan Your Year</h3>
             <p>Projects per Year: <span className="text-primary">{projectCount}</span></p>

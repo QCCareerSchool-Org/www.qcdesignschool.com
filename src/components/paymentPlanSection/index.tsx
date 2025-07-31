@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { CanadianTax } from './canadianTax';
 import { Full } from './full';
@@ -12,9 +12,13 @@ import { getData } from '@/lib/getData';
 type Props = {
   courseCodes: CourseCode[];
   className?: string;
+  heading?: string;
+  lead?: string;
+  sub?: string | ReactNode;
+  blurb?: ReactNode;
 };
 
-export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) => {
+export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className, heading, lead, sub, blurb }) => {
   const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
@@ -29,7 +33,9 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
       <div className="container">
         <div className="row justify-content-center mb-5">
           <div className="col-12 text-center">
-            <h2 className="mb-4">Tuition &amp; Payment Plans</h2>
+            {lead && <p className="lead mb-3">{lead}</p>}
+            <h2 className="mb-4">{heading ?? 'Tuition &amp; Payment Plans'}</h2>
+            {sub && <p className="mb-4">{sub}</p>}
             <p className="lead mb-0">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
             {countryCode === 'CA' && <CanadianTax />}
           </div>
@@ -43,6 +49,7 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className }) 
           </div>
         </div>
         <PaymentSectionGuarantee />
+        {blurb}
       </div>
     </section>
   );

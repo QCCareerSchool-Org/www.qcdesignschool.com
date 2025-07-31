@@ -5,7 +5,9 @@ import { Curriculum } from './_sections/curriculum';
 import { FooterBar } from './_sections/footerBar';
 import { Hero } from './_sections/hero';
 import { Platform } from './_sections/platform';
+import { Stories } from './_sections/stories';
 import { SubNav } from './_sections/subnav';
+import { Tuition } from './_sections/tuition';
 import { WhyQC } from './_sections/whyQC';
 import type { PageComponent } from '@/app/serverComponent';
 import './page.scss';
@@ -22,8 +24,10 @@ const InteriorDecoratingPreviewPage: PageComponent = () => {
         <Platform />
         <Curriculum />
         <CareerOutcomes />
+        <Tuition />
+        <Stories />
       </div>
-      <FooterBar>Ready to Start Your Interior Design Career? <span className="ms-3"><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-primary">Enroll Today</button></Link></span></FooterBar>
+      <FooterBar><div className="d-flex align-items-center justify-content-center flex-column flex-md-row"><div>Ready to Start Your Interior Design Career?</div> <span className="mt-2 mt-md-0 ms-md-3"><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-primary">Enroll Today</button></Link></span></div></FooterBar>
     </div>
   );
 };

@@ -10,8 +10,8 @@ export const SubNav: FC = () => (
       <li><Link href="#platform">The Platform</Link></li>
       <li><Link href="#curriculum">Curriculum</Link></li>
       <li><Link href="#career-outcomes">Career</Link></li>
-      <li>Tuition</li>
-      <li>Stories</li>
+      <li><Link href="#paymentPlans">Tuition</Link></li>
+      <li><Link href="#stories">Stories</Link></li>
       <li>Courses</li>
       <li>FAQ</li>
     </ul>

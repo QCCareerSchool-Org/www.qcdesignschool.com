@@ -10,7 +10,7 @@ import Part2Image from './part-2.jpg';
 import Part5Image from './part-5.jpg';
 import Part7Image from './part-7.jpg';
 
-const part3Src = 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part-3-clip.mp4';
+const part3Src = 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part%203-clip.mp4';
 const part4Src = 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part-4-clip.mp4';
 
 export const Curriculum: FC = () => {

@@ -30,14 +30,18 @@ export const PlatformExperts: FC = () => {
 
   return (
     <div>
-      <h3 className="mb-3">Meet Your Experts</h3>
-      <p className="mb-4">Learn at your own pace on our intuitive, interactive platform with expert-led instructional videos, and get personalized audio feedback from seasoned design professionals on every assignment you submit.</p>
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-10 col-lg-8">
+          <h3 className="mb-3">Meet Your Experts</h3>
+          <p className="mb-4">Learn at your own pace on our intuitive, interactive platform with expert-led instructional videos, and get personalized audio feedback from seasoned design professionals on every assignment you submit.</p>
+        </div>
+      </div>
 
       <nav className={styles.expertsNav}>
         <ul>
-          <li onClick={handleJaneClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={JaneLockhartImage} alt="" size={48} /></div>Jane<span className="d-none d-sm-inline">&nbsp;Lockhart</span></li>
-          <li onClick={handleDeborahClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={DeborahSoulierImage} alt="" size={48} /></div>Deborah<span className="d-none d-sm-inline">&nbsp;Soulier</span></li>
-          <li onClick={handleAngieClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={AngieChapmanImage} alt="" size={48} /></div>Angie<span className="d-none d-sm-inline">&nbsp;Chapman</span></li>
+          <li role="button" onClick={handleJaneClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={JaneLockhartImage} alt="" size={48} /></div>Jane<span className="d-none d-sm-inline">&nbsp;Lockhart</span></li>
+          <li role="button" onClick={handleDeborahClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={DeborahSoulierImage} alt="" size={48} /></div>Deborah<span className="d-none d-sm-inline">&nbsp;Soulier</span></li>
+          <li role="button" onClick={handleAngieClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={AngieChapmanImage} alt="" size={48} /></div>Angie<span className="d-none d-sm-inline">&nbsp;Chapman</span></li>
         </ul>
       </nav>
       <ExpertCard show={expert === 1} src={JaneLockhartImage} name="Jane Lockhart, BAAID" title="Featured Course Expert">
