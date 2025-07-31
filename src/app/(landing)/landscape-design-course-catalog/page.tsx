@@ -25,6 +25,7 @@ import ChartIcon from '@/components/icons/chart.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
 import DownloadIcon from '@/components/icons/download.svg';
 import SpreadsheetIcon from '@/components/icons/spreadsheet.svg';
+import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
@@ -60,6 +61,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
+        <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
         <div className="container">
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5">
