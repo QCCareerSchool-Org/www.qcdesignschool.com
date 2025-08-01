@@ -171,4 +171,20 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.ErinStAubin,
     stars: 5,
   },
+  'TD-0019': {
+    name: 'Caitlyn Baldini',
+    courses: [ 'ld' ],
+    short: [ 'The courses were easy to follow while also being challenging. My tutor Ivy was very helpful and I enjoyed her feedback.' ],
+    long: [ 'The courses were easy to follow while also being challenging. My tutor Ivy was very helpful and I enjoyed her feedback.' ],
+    image: Images.CaitlynBaldini,
+    stars: 5,
+  },
+  'TD-0020': {
+    name: 'Terry Russell',
+    courses: [ 'ld' ],
+    short: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
+    long: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
+    image: Images.TerryRussell,
+    stars: 5,
+  },
 };

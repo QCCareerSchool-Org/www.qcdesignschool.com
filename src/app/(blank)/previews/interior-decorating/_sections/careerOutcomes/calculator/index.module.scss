@@ -1,0 +1,24 @@
+.expandHeader {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover { color: var(--qc-color-primary); }
+}
+
+.expandedSection {
+  margin-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  padding-top: 1rem;
+}
+
+.plusSign {
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: transform 200ms;
+  
+  &.expanded {
+    transform: rotate(45deg);
+  }
+}

@@ -14,7 +14,9 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const localFilename = course === 'design' && !designRestricted ? 'design.pdf' : 'decorating.pdf';
+  const localFilename = course === 'landscape'
+    ? 'landscape.pdf'
+    : designRestricted ? 'decorating.pdf' : 'design';
 
   const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', localFilename));
 

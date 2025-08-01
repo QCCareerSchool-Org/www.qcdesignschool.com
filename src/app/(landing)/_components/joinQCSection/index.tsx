@@ -12,13 +12,14 @@ const iconHeight = 40;
 
 type Props = {
   className?: string;
+  subheading?: string;
 };
 
-export const JoinQCSection: FC<Props> = ({ className = 'bg-light' }) => (
+export const JoinQCSection: FC<Props> = ({ className = 'bg-light', subheading }) => (
   <section className={className}>
     <div className="container text-center">
       <h2 className="h3 mb-4">Join QC Design School</h2>
-      <p className="lead mb-4">QC's design courses provide you with:</p>
+      <p className="lead mb-4">{subheading ?? <>QC's design courses provide you with:</>}</p>
       <div className="row justify-content-center g-4">
         <div className="col-12 col-md-6 col-lg-4">
           <ChatIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
