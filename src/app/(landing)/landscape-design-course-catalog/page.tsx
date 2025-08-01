@@ -99,14 +99,15 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
             <div className="col-12 col-lg-7">
               <h2 className="mb-3">Launch Your Landscape Design Career</h2>
               <p>Break into the booming landscape design industry and gain job-ready skills without the time or cost of traditional colleges.</p>
-              <p>The global landscaping services market is projected to reach $307.7 billion by 2030, driven by growing demand for sustainable outdoor spaces and home beautification. There's never been a better time to get started!</p>
-              <ul className="list-unstyled">
+              <p>The global landscaping services market is projected to reach $307.7 billion by 2030*. There's never been a better time to get started!</p>
+              <ul className="list-unstyled mb-4">
                 {countryCode === 'CA' && <li className="d-flex align-items-center mb-3"><BookHeartIcon height={iconHeight} className="me-3" /><div><strong>Save on Tuition:</strong> Claim over 50% of your course fees with the Canada Training Credit and Tuition Tax Credit.</div></li>}
                 <li className="d-flex align-items-center mb-3"><CheckCircleIcon height={iconHeight} className="me-3" /><div><strong>Learn from Industry Experts:</strong> Get expert feedback and guidance from working landscape designers.</div></li>
                 <li className="d-flex align-items-center mb-3"><ChartIcon height={iconHeight} className="me-3" /><div><strong>Study on Your Schedule:</strong> Train anytime, anywhere with fully online, self-paced course content that fits your lifestyle.</div></li>
                 <li className="d-flex align-items-center mb-3"><SpreadsheetIcon height={iconHeight} className="me-3" /><div><strong>Build Real-World Business Skills:</strong> Discover how to market your services, attract clients, and grow a thriving landscape design business.</div></li>
                 <li className="d-flex align-items-center"><CertificationIcon height={iconHeight} className="me-3" /><div><strong>Graduate Fast & Start Earning:</strong> Earn a professional certification you can use immediately to find clients or apply for jobs.</div></li>
               </ul>
+              <p><small>* https://www.alliedmarketresearch.com/landscaping-services-market-A14417</small></p>
             </div>
           </div>
         </div>
@@ -142,7 +143,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'ld' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} courseCodes={[ 'ld' ]} />
       <StatsSection />
       <JoinQCSection subheading="QC’s Landscape Design Course provides you with:" />
       <GoogleReviewSection />

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const DownloadLandscapeDesignCourseCatalogPage: PageComponent = () => (
   <>
-    <ThankYouSection courseName="Landscape Design" />
+    <ThankYouSection courseName="Landscape Design" course="landscape" />
     <ThreeReasonsSection />
     <SupportSection showLink />
   </>
