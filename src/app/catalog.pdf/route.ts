@@ -18,7 +18,9 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
     ? 'landscape.pdf'
     : designRestricted ? 'decorating.pdf' : 'design.pdf';
 
-  const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', localFilename));
+  const filename = path.join(process.cwd(), '/public/catalogs', localFilename);
+
+  const file = await fs.readFile(filename);
 
   const headers = new Headers();
   headers.set('content-type', 'application/pdf');
