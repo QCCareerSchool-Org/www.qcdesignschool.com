@@ -16,7 +16,7 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
 
   const localFilename = course === 'landscape'
     ? 'landscape.pdf'
-    : designRestricted ? 'decorating.pdf' : 'design';
+    : designRestricted ? 'decorating.pdf' : 'design.pdf';
 
   const file = await fs.readFile(path.join(process.cwd(), '/src/app/catalog.pdf', localFilename));
 
