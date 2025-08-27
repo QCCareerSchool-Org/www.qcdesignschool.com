@@ -22,9 +22,9 @@ export const CourseOverview: FC = async () => {
       <section>
         <div className="container text-center">
           <div className="row justify-content-center">
+            <h1 style={{ textTransform: 'uppercase' }}>Do What Inspires You</h1>
+            <p className="display-6 text-primary">Enroll with Our Lowest Tuition Ever</p>
             <div className="col-12 col-md-10 col-lg-9">
-              <h1 style={{ textTransform: 'uppercase' }}>Do What Inspires You</h1>
-              <p className="display-6 text-primary">Enroll with our Lowest Tuition Ever</p>
               <div className="mb-5"><Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" /></div>
               <p className="lead mb-5">This is your chance to gain a professional certification and launch the creative career you've always wanted. <strong>With over 45,000 students and graduates worldwide</strong>, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
               <p><Link href="https://enroll.qcdesignschool.com/all-courses-offer"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
