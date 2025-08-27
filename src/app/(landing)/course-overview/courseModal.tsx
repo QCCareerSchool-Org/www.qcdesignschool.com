@@ -44,7 +44,7 @@ export const CourseModal: FC<PropsWithChildren<Props>> = ({ show, onHide, header
               <div className="card-body p-3 p-lg-4 d-flex">
                 <div className="d-flex flex-column justify-content-between w-100">
                   <div>
-                    <h3 className="h6 fw-normal mb-1">Installments</h3>
+                    <h3 className="h6 fw-normal mb-1" style={{ fontSize: '1rem' }}>Installments</h3>
                     <p className="mb-1 small"><span style={{ fontSize: '1.625rem', color: 'black', fontWeight: 800 }}>{price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</span>/mo</p>
                     <p className="mb-3 small">Total <strong className="text-black">{price.currency.symbol}{formatPrice(price.plans.part.total)}</strong> {price.plans.part.discount > 0 && <><del>{price.currency.symbol}{formatPrice(price.cost)}</del> <span className="text-success fw-bold" style={{ whiteSpace: 'nowrap' }}>Save {price.currency.symbol}{formatPrice(price.plans.part.discount)}</span></>}</p>
                   </div>
