@@ -41,7 +41,7 @@ const getModalBody = (courseCode: CourseCode): [heading: string, body: ReactNode
         'International Design and Decorating Professional',
         (
           <>
-            <p>Your interior decorating certification will prepare you to</p>
+            <p>Your interior design & decorating certification will prepare you to</p>
             <ul>
               <li>Identify and apply all interior design trends</li>
               <li>Conduct detailed client consultations</li>
