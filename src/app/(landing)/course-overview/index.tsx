@@ -22,7 +22,7 @@ export const CourseOverview: FC = async () => {
   return (
     <>
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <section className="pb-2 pb-lg-s">
+      <section className="pb-5 pb-lg-s">
         <div className="d-none d-lg-block"><BackgroundImage src={HeroBackgroundImage} /></div>
         <div className="container text-center">
           <h1 style={{ textTransform: 'uppercase' }} className={styles.title}>Do What Inspires You</h1>
