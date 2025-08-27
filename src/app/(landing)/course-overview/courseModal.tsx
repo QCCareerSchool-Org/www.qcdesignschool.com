@@ -34,7 +34,7 @@ export const CourseModal: FC<PropsWithChildren<Props>> = ({ show, onHide, header
                     <p className="mb-1 small"><span style={{ fontSize: '1.625rem', color: 'black', fontWeight: 800 }}>{price.currency.symbol}{formatPrice(price.plans.full.total)}</span></p>
                     {price.plans.full.discount > 0 && <><p className="mb-3 small"><del>{price.currency.symbol}{formatPrice(price.cost)}</del> <span className="text-success fw-bold" style={{ whiteSpace: 'nowrap' }}>Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</span></p></>}
                   </div>
-                  <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll</button></Link>
+                  <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll<span className="d-none d-lg-inline"> (Pay in Full)</span></button></Link>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@ export const CourseModal: FC<PropsWithChildren<Props>> = ({ show, onHide, header
                     <p className="mb-1 small"><span style={{ fontSize: '1.625rem', color: 'black', fontWeight: 800 }}>{price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</span>/mo</p>
                     <p className="mb-3 small">Total <strong className="text-black">{price.currency.symbol}{formatPrice(price.plans.part.total)}</strong> {price.plans.part.discount > 0 && <><del>{price.currency.symbol}{formatPrice(price.cost)}</del> <span className="text-success fw-bold" style={{ whiteSpace: 'nowrap' }}>Save {price.currency.symbol}{formatPrice(price.plans.part.discount)}</span></>}</p>
                   </div>
-                  <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll</button></Link>
+                  <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll<span className="d-none d-lg-inline"> (Installments)</span></button></Link>
                 </div>
               </div>
             </div>
