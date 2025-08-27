@@ -1,6 +1,8 @@
+import Link from 'next/link';
 import type { FC } from 'react';
 
 import { Price } from './price';
+import { Header } from '../_components/header';
 import { getData } from '@/lib/getData';
 
 export const CourseOverview: FC = async () => {
@@ -8,12 +10,19 @@ export const CourseOverview: FC = async () => {
 
   return (
     <>
+      <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
       <section>
         <div className="container text-center">
-          <h1>Do What Inspires You</h1>
-          <p className="lead">Enroll with our Lowest Tuition Ever</p>
-          <p>All Courses Now $998 or Less</p>
-          <p>This is your chance to gain a professional certification and launch the creative career you've always wanted. With over 45,000 students and graduates worldwide, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10 col-lg-9">
+              <h1 style={{ textTransform: 'uppercase' }}>Do What Inspires You</h1>
+              <p className="display-6 text-primary">Enroll with our Lowest Tuition Ever</p>
+              <p className="mb-5"><button className="btn btn-lg btn-secondary">All Courses Now $998 or Less</button></p>
+              <p className="lead mb-5">This is your chance to gain a professional certification and launch the creative career you've always wanted. <strong>With over 45,000 students and graduates worldwide</strong>, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
+              <p><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
+              <p style={{ textTransform: 'uppercase' }} className="mb-0"><strong>21-day</strong> money-back guarantee</p>
+            </div>
+          </div>
         </div>
       </section>
       <section className="bg-light">
