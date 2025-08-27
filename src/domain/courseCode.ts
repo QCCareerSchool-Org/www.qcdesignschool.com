@@ -32,32 +32,3 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Virtual Design';
   }
 };
-
-export const getCourseURL = (courseCode: CourseCode): string => {
-  switch (courseCode) {
-    case 'i2':
-      return '/online-courses/interior-decorating';
-    case 'st':
-      return '/online-courses';
-    case 'ms':
-      return '/online-courses';
-    case 'fs':
-      return '/online-courses';
-    case 'po':
-      return '/online-courses';
-    case 'ed':
-      return '/online-courses';
-    case 'ld':
-      return '/online-courses';
-    case 'cc':
-      return '/online-courses';
-    case 'fd':
-      return '/online-courses';
-    case 'ap':
-      return '/online-courses';
-    case 'db':
-      return '/online-courses';
-    case 'vd':
-      return '/online-courses';
-  }
-};

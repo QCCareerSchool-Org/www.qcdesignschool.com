@@ -6,6 +6,7 @@ import { memo } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaInfoCircle } from 'react-icons/fa';
 
+import { LearnMore } from './learnMore';
 import styles from './price.module.scss';
 import BackgroundDB from '@/app/(main)/online-courses/accelerate-your-design-business/hero.jpg';
 import BackgroundAP from '@/app/(main)/online-courses/aging-in-place/hero.jpg';
@@ -19,7 +20,7 @@ import BackgroundLD from '@/app/(main)/online-courses/landscape-design/hero.jpg'
 import BackgroundPO from '@/app/(main)/online-courses/professional-organizing/hero.jpg';
 import BackgroundVD from '@/app/(main)/online-courses/virtual-design/hero.jpg';
 import type { CourseCode } from '@/domain/courseCode';
-import { getCourseName, getCourseURL } from '@/domain/courseCode';
+import { getCourseName } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
@@ -48,7 +49,7 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
 
   const CustomTooltip: FC = props => (
     <Tooltip id="button-tooltip" {...props}>
-      <strong>{price?.currency.symbol}{formatPrice(price?.plans.part.deposit)} now and {price?.plans.part.installments} monthly<br />installments of {price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</strong>
+      <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)} now and {price.plans.part.installments} monthly<br />installments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</strong>
     </Tooltip>
   );
 
@@ -63,27 +64,35 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
               <p className="badge bg-primary mb-2">Most Popular</p>
             )}
             <p>{getShortDescription(courseCode)}</p>
-            <Link href={getCourseURL(courseCode)}>Learn More</Link>
+            <LearnMore courseCode={courseCode} price={price} />
           </div>
         </div>
         <div className="bg-light p-4" style={{ color: '#888' }}>
           <div className="row g-4">
-            <div className="col-12 col-md-6">
-              <h4 className="h6">Pay in Full</h4>
-              <p className="mb-1"><span className={styles.price}>{price?.currency.symbol}{formatPrice(price?.plans.full.total)}</span> <del>{price?.currency.symbol}{formatPrice(price?.cost)}</del></p>
-              <p className="text-success">Save {price?.currency.symbol}{formatPrice(price?.plans.full.discount)}</p>
-              <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll</button></Link>
+            <div className="col-12 col-md-6 d-flex">
+              <div className="d-flex flex-column justify-content-between w-100">
+                <div>
+                  <h4 className="h6">Pay in Full</h4>
+                  <p className="mb-1"><span className={styles.price}>{price.currency.symbol}{formatPrice(price.plans.full.total)}</span> {price.plans.full.discount > 0 && <del>{price.currency.symbol}{formatPrice(price.cost)}</del>}</p>
+                  {price.plans.full.discount > 0 && <p className="text-success">Save {price.currency.symbol}{formatPrice(price.plans.full.discount)}</p>}
+                </div>
+                <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll</button></Link>
+              </div>
             </div>
-            <div className="col-12 col-md-6">
-              <h4 className="h6">
-                <span className="me-2">Installments</span>
-                <OverlayTrigger placement="top" overlay={<CustomTooltip />}>
-                  <span style={{ color: '#aaa' }}><FaInfoCircle /></span>
-                </OverlayTrigger>
-              </h4>
-              <p className="mb-1"><span className={styles.price}>{price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</span>/mo</p>
-              <p>Total {price?.currency.symbol}{formatPrice(price?.plans.part.total)} {price?.cost !== price?.plans.part.total && <del>{price?.currency.symbol}{formatPrice(price?.cost)}</del>}</p>
-              <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll</button></Link>
+            <div className="col-12 col-md-6 d-flex">
+              <div className="d-flex flex-column justify-content-between w-100">
+                <div>
+                  <h4 className="h6">
+                    <span className="me-2">Installments</span>
+                    <OverlayTrigger placement="top" overlay={<CustomTooltip />}>
+                      <span style={{ color: '#aaa' }}><FaInfoCircle /></span>
+                    </OverlayTrigger>
+                  </h4>
+                  <p className="mb-1"><span className={styles.price}>{price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</span>/mo</p>
+                  <p>Total {price.currency.symbol}{formatPrice(price.plans.part.total)} {price.cost !== price.plans.part.total && <del>{price.currency.symbol}{formatPrice(price.cost)}</del>}</p>
+                </div>
+                <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll</button></Link>
+              </div>
             </div>
           </div>
         </div>
