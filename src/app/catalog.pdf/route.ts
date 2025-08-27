@@ -12,11 +12,7 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
   const searchParams = request.nextUrl.searchParams;
   const course = searchParams.get('course');
 
-  const designRestricted = getDesignRestricted(countryCode, provinceCode);
-
-  const localFilename = course === 'landscape'
-    ? 'landscape.pdf'
-    : designRestricted ? 'decorating.pdf' : 'design.pdf';
+  const localFilename = getLocalFilename(course, countryCode, provinceCode);
 
   const filename = path.join(process.cwd(), '/public/catalogs', localFilename);
 
@@ -27,4 +23,13 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
   headers.set('content-disposition', `attachment; filename="QC Design School Course Catalog.pdf"`);
 
   return new NextResponse(file, { headers });
+};
+
+const getLocalFilename = (course: string | null, countryCode: string, provinceCode: string | null): string => {
+  switch (course) {
+    case 'landscape':
+      return 'landscape.pdf';
+    default:
+      return getDesignRestricted(countryCode, provinceCode) ? 'decorating.pdf' : 'design.pdf';
+  }
 };

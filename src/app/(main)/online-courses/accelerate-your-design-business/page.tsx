@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
-const courseCodes: CourseCode[] = [ 'eb' ];
+const courseCodes: CourseCode[] = [ 'db' ];
 
 const AccelerateYourBusinessPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getData();
@@ -92,7 +92,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
       </section>
       <OutlineSection className="bg-light" />
       <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="eb" />
+      <GoogleReviewSection courseCode="db" />
       <CareerEssentialsKitDesignFilesSection />
       <PaymentPlanSection courseCodes={courseCodes} />
       <section>

@@ -34,7 +34,7 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className, he
         <div className="row justify-content-center mb-5">
           <div className="col-12 text-center">
             {lead && <p className="lead mb-3">{lead}</p>}
-            <h2 className="mb-4">{heading ?? 'Tuition &amp; Payment Plans'}</h2>
+            <h2 className="mb-4">{heading ?? 'Tuition & Payment Plans'}</h2>
             {sub && <p className="mb-4">{sub}</p>}
             <p className="lead mb-0">Select the payment plan that best suits your budget. Prices are listed in {price.currency.name}.</p>
             {countryCode === 'CA' && <CanadianTax />}

@@ -1,7 +1,7 @@
-export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'eb' | 'vd';
+export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'db' | 'vd';
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'eb', 'vd' ].includes(obj);
+  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ].includes(obj);
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
@@ -26,9 +26,38 @@ export const getCourseName = (courseCode: CourseCode): string => {
       return 'Floral Design';
     case 'ap':
       return 'Aging in Place';
-    case 'eb':
+    case 'db':
       return 'Accelerate Your Design Business';
     case 'vd':
       return 'Virtual Design';
+  }
+};
+
+export const getCourseURL = (courseCode: CourseCode): string => {
+  switch (courseCode) {
+    case 'i2':
+      return '/online-courses/interior-decorating';
+    case 'st':
+      return '/online-courses';
+    case 'ms':
+      return '/online-courses';
+    case 'fs':
+      return '/online-courses';
+    case 'po':
+      return '/online-courses';
+    case 'ed':
+      return '/online-courses';
+    case 'ld':
+      return '/online-courses';
+    case 'cc':
+      return '/online-courses';
+    case 'fd':
+      return '/online-courses';
+    case 'ap':
+      return '/online-courses';
+    case 'db':
+      return '/online-courses';
+    case 'vd':
+      return '/online-courses';
   }
 };
