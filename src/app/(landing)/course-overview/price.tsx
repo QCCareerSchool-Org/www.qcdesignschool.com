@@ -42,21 +42,19 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
 
   const price = await fetchPrice(priceQuery);
 
-  const CustomTooltip: FC = props => (price
-    ? (
-      <Tooltip id="button-tooltip" {...props}>
-        <strong>{price?.currency.symbol}{formatPrice(price?.plans.part.deposit)} now and {price?.plans.part.installments} monthly<br />installments of {price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</strong>
-      </Tooltip>
-    )
-    : null);
-
   if (!price) {
     return null;
   }
 
+  const CustomTooltip: FC = props => (
+    <Tooltip id="button-tooltip" {...props}>
+      <strong>{price?.currency.symbol}{formatPrice(price?.plans.part.deposit)} now and {price?.plans.part.installments} monthly<br />installments of {price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</strong>
+    </Tooltip>
+  );
+
   return (
     <div className="col-12 col-lg-8">
-      <div className={`${styles.wrapper} bg-white d-flex flex-column border border-2 border-primary rounded-3 shadow-lg`}>
+      <div className={`${styles.wrapper} bg-white d-flex flex-column ${courseCode === 'i2' ? 'border border-2 border-primary' : ''} rounded-3 shadow-lg`}>
         <div className="d-flex flex-column flex-lg-row">
           <div className={`${styles.imageWrapper} flex-shrink-0`}><Image src={getImage(courseCode)} fill className={styles.image} style={{ objectFit: 'cover', objectPosition: '100% 50%' }} alt="" /></div>
           <div className="p-4">
@@ -74,7 +72,7 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
               <h4 className="h6">Pay in Full</h4>
               <p className="mb-1"><span className={styles.price}>{price?.currency.symbol}{formatPrice(price?.plans.full.total)}</span> <del>{price?.currency.symbol}{formatPrice(price?.cost)}</del></p>
               <p className="text-success">Save {price?.currency.symbol}{formatPrice(price?.plans.full.discount)}</p>
-              <Link href={`https://enroll.qcdesignschool.com/?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll</button></Link>
+              <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=full`}><button className="btn btn-primary w-100">Enroll</button></Link>
             </div>
             <div className="col-12 col-md-6">
               <h4 className="h6">
@@ -83,9 +81,9 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
                   <span style={{ color: '#aaa' }}><FaInfoCircle /></span>
                 </OverlayTrigger>
               </h4>
-              <p className="mb-1"><span className={styles.price}>{price?.currency.symbol}{price?.plans.part.installmentSize}</span>/mo</p>
+              <p className="mb-1"><span className={styles.price}>{price?.currency.symbol}{formatPrice(price?.plans.part.installmentSize)}</span>/mo</p>
               <p>Total {price?.currency.symbol}{formatPrice(price?.plans.part.total)} {price?.cost !== price?.plans.part.total && <del>{price?.currency.symbol}{formatPrice(price?.cost)}</del>}</p>
-              <Link href={`https://enroll.qcdesignschool.com/?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll</button></Link>
+              <Link href={`https://enroll.qcdesignschool.com/all-courses-offer?c=${courseCode}&paymentPlan=part`}><button className="btn btn-secondary w-100">Enroll</button></Link>
             </div>
           </div>
         </div>

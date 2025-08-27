@@ -3,7 +3,12 @@ import type { FC } from 'react';
 
 import { Price } from './price';
 import { Header } from '../_components/header';
+import { GetStartedSection } from '@/components/getStartedSection';
+import { SupportSection } from '@/components/supportSection';
+import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
+
+const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 
 export const CourseOverview: FC = async () => {
   const { countryCode, provinceCode } = await getData();
@@ -19,7 +24,7 @@ export const CourseOverview: FC = async () => {
               <p className="display-6 text-primary">Enroll with our Lowest Tuition Ever</p>
               <p className="mb-5"><button className="btn btn-lg btn-secondary">All Courses Now $998 or Less</button></p>
               <p className="lead mb-5">This is your chance to gain a professional certification and launch the creative career you've always wanted. <strong>With over 45,000 students and graduates worldwide</strong>, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
-              <p><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
+              <p><Link href="https://enroll.qcdesignschool.com/all-courses-offer"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><strong>21-day</strong> money-back guarantee</p>
             </div>
           </div>
@@ -46,6 +51,14 @@ export const CourseOverview: FC = async () => {
           </div>
         </div>
       </section>
+      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <SupportSection />
+      <GetStartedSection
+        title="Get Started Today"
+        text="Enroll Now and Start Your Journey to Becoming a Certified Design Professional."
+        buttonText="Enroll Now"
+        buttonHref="https://enroll.qcdesignschool.com/all-courses-offer"
+      />
     </>
   );
 };
