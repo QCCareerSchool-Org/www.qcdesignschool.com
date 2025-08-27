@@ -36,7 +36,7 @@ export const getHeroImage = (courseCode: CourseCode): StaticImageData => {
       return FDImage;
     case 'ap':
       return APImage;
-    case 'eb':
+    case 'db':
       return EBImage;
     case 'vd':
       return VDImage;

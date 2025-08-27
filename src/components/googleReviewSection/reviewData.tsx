@@ -45,7 +45,7 @@ export const reviewData: ReviewData[] = [
     reviewText: "My experience during completing my schooling was great. My tutors were very helpful and gave me lots of tips to help me in the future. I fully recommend this school to help start your next chapter towards your goals, I'm now done my schooling and working towards next steps in starting my own company or working with others in near future.",
     priority: Priority.HIGH,
     rating: 5,
-    courseCodes: [ 'eb' ],
+    courseCodes: [ 'db' ],
   },
   {
     name: 'empathy2 tempo',

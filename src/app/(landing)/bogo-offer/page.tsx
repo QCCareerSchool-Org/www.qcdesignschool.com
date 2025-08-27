@@ -165,7 +165,7 @@ const CoursesPage: PageComponent = async () => {
             </SmallColumn>
             <SmallColumn>
               <CourseTuitionCard
-                courseCode="eb"
+                courseCode="db"
                 subtitle="Specialty Training"
                 description="Achieve your business goals with QC's Accelerate Your Business training. You'll create customer personas, enhance your online presence and develop marketing strategies to take your design business to the next level."
                 href="/online-courses/accelerate-your-design-business"
