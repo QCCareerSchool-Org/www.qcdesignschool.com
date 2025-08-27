@@ -33,7 +33,7 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
 type ImageComponent = FC<{ height: number }>;
 
 const getCertification = (courseCode: CourseCode): ImageComponent | null => {
-  // 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'eb', 'vd
+  // 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd
   switch (courseCode) {
     case 'i2':
       return IDDP as ImageComponent;
@@ -54,7 +54,7 @@ const getCertification = (courseCode: CourseCode): ImageComponent | null => {
       return IFDP as ImageComponent;
     case 'ap':
       return APDP as ImageComponent;
-    case 'eb':
+    case 'db':
       return null;
     case 'vd':
       return null;
