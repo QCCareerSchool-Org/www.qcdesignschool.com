@@ -1,0 +1,13 @@
+.title {
+  color: var(--bs-heading-color);
+  @media screen and (min-width: 992px) {
+    color:white;
+  }
+}
+
+.subheading {
+  color: var(--qc-color-primary);
+  @media screen and (min-width: 992px) {
+    color:white;
+  }
+}

@@ -3,9 +3,12 @@ import Link from 'next/link';
 import type { FC } from 'react';
 
 import BadgeImage from './$998.png';
+import HeroBackgroundImage from './hero-bg.jpg';
+import styles from './index.module.scss';
 import { Price } from './price';
 import ShieldIcon from './shield.svg';
 import { Header } from '../_components/header';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -19,13 +22,18 @@ export const CourseOverview: FC = async () => {
   return (
     <>
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      <section>
+      <section className="pb-2 pb-lg-s">
+        <div className="d-none d-lg-block"><BackgroundImage src={HeroBackgroundImage} /></div>
+        <div className="container text-center">
+          <h1 style={{ textTransform: 'uppercase' }} className={styles.title}>Do What Inspires You</h1>
+          <p className={`display-6 ${styles.subheading}`}>Enroll with Our Lowest Tuition Ever</p>
+          <div className="mb-5"><Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" /></div>
+        </div>
+      </section>
+      <section className="pt-0 pt-lg-s">
         <div className="container text-center">
           <div className="row justify-content-center">
-            <h1 style={{ textTransform: 'uppercase' }}>Do What Inspires You</h1>
-            <p className="display-6 text-primary">Enroll with Our Lowest Tuition Ever</p>
             <div className="col-12 col-md-10 col-lg-9">
-              <div className="mb-5"><Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" /></div>
               <p className="lead mb-5">This is your chance to gain a professional certification and launch the creative career you've always wanted. <strong>With over 45,000 students and graduates worldwide</strong>, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
               <p><Link href="https://enroll.qcdesignschool.com/all-courses-offer"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
