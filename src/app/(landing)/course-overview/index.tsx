@@ -27,7 +27,7 @@ export const CourseOverview: FC = async () => {
         <div className="container text-center">
           <h1 style={{ textTransform: 'uppercase' }} className={styles.title}>Do What Inspires You</h1>
           <p className={`display-6 ${styles.subheading}`}>Enroll with Our Lowest Tuition Ever</p>
-          <div className="mb-5"><Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" /></div>
+          <Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" />
         </div>
       </section>
       <section className="pt-0 pt-lg-s">
