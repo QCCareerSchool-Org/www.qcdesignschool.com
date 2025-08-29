@@ -41,7 +41,7 @@ export const generateMetadata: GenerateMetadata = async () => {
 const brevo = {
   design: {
     brevoListId: 52, // Interior Design Leads
-    brevoEmailTemplateId: 1464, // Design
+    brevoEmailTemplateId: 1848, // Design
   },
   decorating: {
     brevoListId: 18, // Interior Decorating Leads
