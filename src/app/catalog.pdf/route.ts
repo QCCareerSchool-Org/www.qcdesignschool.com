@@ -9,6 +9,8 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
   const countryCode = request.headers.get('X-Vercel-IP-Country') ?? 'US';
   const provinceCode = request.headers.get('X-Vercel-IP-Country-Region');
 
+  console.log(countryCode, provinceCode);
+
   const searchParams = request.nextUrl.searchParams;
   const course = searchParams.get('course');
 
