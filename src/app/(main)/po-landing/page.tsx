@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
-import HeroImage from './hero.jpg';
+import HeroImage from './po-hero.jpg';
 import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/professional-organizing' },
 };
 
-const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];
-const courseCodes: CourseCode[] = [ 'po' ];
+const testimonialIds = ['TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0004', 'TD-0003'];
+const courseCodes: CourseCode[] = ['ld', 'po'];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
@@ -40,12 +40,32 @@ const ProfessionalOrganizingPage: PageComponent = () => (
             <Hero src={HeroImage} priority objectPosition="100% 0">
               <CourseType className="mb-2 mb-xl-4">AIOP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Professional Organizing Course</h1>
-              <p className="h5 mb-3 mb-xl-5">Become Certified in Professional Organizing</p>
+              <p className="h5 mb-2">Start Your Journey as a Professional Organizer</p>
+              <p className="">Enroll with Our Lowest Tuition Ever</p>
               <div className="d-flex justify-content-center justify-content-md-start">
                 <HeroButtons courseCodes={courseCodes} />
               </div>
             </Hero>
           </div>
+        </div>
+      </div>
+    </section>
+    <section className="bg-light">
+      <div className="container">
+        <div className="row justify-content-center g-s">
+          <div className="col-12 col-md-10 col-lg-8 text-center">
+            <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you’ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don’t wait—take the first step toward your future as a professional organizer today!</p>
+
+            <Link href="https://enroll.qcdesignschool.com/?c=po"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+
+            <p className="text-danger">21-DAY MONEY-BACK GUARANTEE</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div className="container">
+        <div className="row justify-content-center g-s mb-4">
           <div className="col-12 col-lg-6">
             <h2 className="mb-4">Why Choose<br />QC Design School</h2>
             <p className="lead mb-4">QC's Professional Organizing certification course will jumpstart your career with an in-depth online curriculum covering everything from decluttering techniques and personalized organizing solutions to strategies for working with clients. QC's comprehensive training program will prepare you to design beautiful and organized spaces that transform your clients' lives.</p>
@@ -60,6 +80,9 @@ const ProfessionalOrganizingPage: PageComponent = () => (
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
+        </div>
+        <div className="text-center">
+          <Link href="https://enroll.qcdesignschool.com/?c=po"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
     </section>

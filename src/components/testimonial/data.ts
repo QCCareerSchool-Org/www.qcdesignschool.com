@@ -187,4 +187,20 @@ export const testimonials: Record<string, Testimonial> = {
     image: Images.TerryRussell,
     stars: 5,
   },
+  'TD-0021': {
+    name: 'Jocelyn Lukac',
+    courses: [ 'ld' ],
+    short: [ 'I saw it online, liked the reviews and the presentation. The price is reasonable. The class is complete, I learned CODE and client types identification.' ],
+    long: [ 'I saw it online, liked the reviews and the presentation. The price is reasonable. The class is complete, I learned CODE and client types identification.' ],
+    image: Images.TerryRussell, //update image 
+    stars: 5,
+  },
+  'TD-0022': {
+    name: 'Katie Cole',
+    courses: [ 'ld' ],
+    short: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
+    long: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
+    image: Images.TerryRussell, //update image 
+    stars: 5,
+  },
 };
