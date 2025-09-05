@@ -192,7 +192,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'ld' ],
     short: [ 'I saw it online, liked the reviews and the presentation. The price is reasonable. The class is complete, I learned CODE and client types identification.' ],
     long: [ 'I saw it online, liked the reviews and the presentation. The price is reasonable. The class is complete, I learned CODE and client types identification.' ],
-    image: Images.TerryRussell, //update image 
+    image: Images.JocelynLukac, 
     stars: 5,
   },
   'TD-0022': {
@@ -200,7 +200,47 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'ld' ],
     short: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
     long: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
-    image: Images.TerryRussell, //update image 
+    image: Images.KatieCole, 
+    stars: 5,
+  },
+  'TD-0023': {
+    name: 'Kizzy Malini',
+    courses: [ 'st' ],
+    short: [ 'I recently completed the Home Staging course with QC Design School, and I couldn\'t be more pleased with the experience. From start to finish, the course was thoughtfully structured and packed with valuable information that has truly prepared me for a career in home staging. I especially appreciated the personalized feedback from my tutor, who provided constructive, encouraging insights that helped me grow with every module.' ],
+    long: [ 'I recently completed the Home Staging course with QC Design School, and I couldn\'t be more pleased with the experience. From start to finish, the course was thoughtfully structured, easy to follow, and packed with valuable information that has truly prepared me for a career in home staging. \nThe materials were comprehensive and practical, covering everything from design principles and color theory to client communication and staging for real estate. The assignments were hands-on and challenged me to apply what I learned in real-world scenarios. I especially appreciated the personalized feedback from my tutor, who provided constructive, encouraging insights that helped me grow with every module. \nWhat really stood out was the flexibility of the program. Being able to study at my own pace made it easy to balance my education with a busy schedule. Plus, the support from the QC community was fantastic—responsive, professional, and genuinely invested in my success. \nThanks to QC Design School, I feel confident to run my home staging business, helping Realtors sell homes faster. I would highly recommend this course to anyone looking to break into the design industry with a solid foundation and real-world skills.' ],
+    image: Images.KizzyMalini,  
+    stars: 5,
+  },
+  'TD-0024': {
+    name: 'Carli Lewis',
+    courses: [ 'fd' ],
+    short: [ 'I decided that this was the school for me and took the chance! Looking back, I can confirm that this was the BEST. DECISION. EVER!' ],
+    long: [ 'I decided that this was the school for me and took the chance! Looking back, I can confirm that this was the BEST. DECISION. EVER!' ],
+    image: Images.CarliLewis, 
+    stars: 5,
+  },
+  'TD-0025': {
+    name: 'Neena McConnell',
+    courses: [ 'fd' ],
+    short: [ 'Attending an online school allowed me to learn at my own pace in the comfort of my own home. I was able to work full-time, train a young puppy, plan my own wedding, and travel with my now-husband.' ],
+    long: [ 'Attending an online school allowed me to learn at my own pace in the comfort of my own home. I was able to work full-time, train a young puppy, plan my own wedding, and travel with my now-husband.' ],
+    image: Images.NeenaMcconnell,
+    stars: 5,
+  },
+  'TD-0026': {
+    name: 'Maureen Bilokur',
+    courses: [ 'fd' ],
+    short: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
+    long: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
+    image: Images.MaureenBilokur, //update image (currently placeholder)
+    stars: 5,
+  },
+  'TD-0027': {
+    name: 'Abigail Doto',
+    courses: [ 'fd' ],
+    short: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
+    long: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
+    image: Images.AbigailDoto, //update image (currently placeholder)
     stars: 5,
   },
 };

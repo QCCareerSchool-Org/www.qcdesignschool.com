@@ -17,3 +17,11 @@ export { default as DoxceenMalcolm } from './TD-0016-doxceen-malcolm.jpg';
 export { default as ErinStAubin } from './TD-0018-erin-st-aubin.jpg';
 export { default as CaitlynBaldini } from './TD-0019-caitlyn-baldini.jpg';
 export { default as TerryRussell } from './TD-0020-terry-russell.jpg';
+export { default as JocelynLukac } from './TD-0021-jocelyn-lukac.png';
+export { default as KatieCole } from './TD-0022-katie-cole.jpg';
+export { default as KizzyMalini } from './TD-0023-kizzy-malini.jpg';
+export { default as CarliLewis } from './TD-0024-carli-lewis.jpg'; 
+export { default as NeenaMcconnell } from './TD-0025-neena-mcconnell.jpg';
+export { default as MaureenBilokur } from './maureen-bilokur-PLACEHOLDER.jpg'; // Placeholder image for Maureen Bilokur
+export { default as AbigailDoto } from './abigail-doto-PLACEHOLDER.jpg'; // Placeholder image for Abigail Doto
+
