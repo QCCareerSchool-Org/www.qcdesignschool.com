@@ -206,7 +206,7 @@ export const testimonials: Record<string, Testimonial> = {
   'TD-0023': {
     name: 'Kizzy Malini',
     courses: [ 'st' ],
-    short: [ 'I recently completed the Home Staging course with QC Design School, and I couldn\'t be more pleased with the experience. From start to finish, the course was thoughtfully structured and packed with valuable information that has truly prepared me for a career in home staging. I especially appreciated the personalized feedback from my tutor, who provided constructive, encouraging insights that helped me grow with every module.' ],
+    short: [ 'From start to finish, the course was thoughtfully structured and packed with valuable information that has truly prepared me for a career in home staging. My tutor provided constructive, encouraging insights that helped me grow with every module.' ],
     long: [ 'I recently completed the Home Staging course with QC Design School, and I couldn\'t be more pleased with the experience. From start to finish, the course was thoughtfully structured, easy to follow, and packed with valuable information that has truly prepared me for a career in home staging. \nThe materials were comprehensive and practical, covering everything from design principles and color theory to client communication and staging for real estate. The assignments were hands-on and challenged me to apply what I learned in real-world scenarios. I especially appreciated the personalized feedback from my tutor, who provided constructive, encouraging insights that helped me grow with every module. \nWhat really stood out was the flexibility of the program. Being able to study at my own pace made it easy to balance my education with a busy schedule. Plus, the support from the QC community was fantastic—responsive, professional, and genuinely invested in my success. \nThanks to QC Design School, I feel confident to run my home staging business, helping Realtors sell homes faster. I would highly recommend this course to anyone looking to break into the design industry with a solid foundation and real-world skills.' ],
     image: Images.KizzyMalini,  
     stars: 5,
@@ -232,7 +232,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fd' ],
     short: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
     long: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
-    image: Images.MaureenBilokur, //update image (currently placeholder)
+    image: Images.Placeholder, //update image (currently placeholder)
     stars: 5,
   },
   'TD-0027': {
@@ -240,7 +240,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fd' ],
     short: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
     long: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
-    image: Images.AbigailDoto, //update image (currently placeholder)
+    image: Images.Placeholder, //update image (currently placeholder)
     stars: 5,
   },
 };
