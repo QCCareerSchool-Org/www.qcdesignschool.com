@@ -8,7 +8,7 @@ import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
-import WhyQCImage from './why-qc.jpg';
+import WhyQCImage from './why-qc.png';
 import { QuestionAndAnswer } from '../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
@@ -89,7 +89,7 @@ const HomeStagingPage: PageComponent = async () => {
               </ul>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-              <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
+              <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} style={{ filter: "drop-shadow(0 30px 16px rgba(0,0,0,0.10))"}} />
             </div>
           </div>
           <div className="text-center">
