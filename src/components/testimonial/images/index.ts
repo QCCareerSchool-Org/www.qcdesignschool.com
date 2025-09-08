@@ -20,7 +20,6 @@ export { default as TerryRussell } from './TD-0020-terry-russell.jpg';
 export { default as JocelynLukac } from './TD-0021-jocelyn-lukac.png';
 export { default as KatieCole } from './TD-0022-katie-cole.jpg';
 export { default as KizzyMalini } from './TD-0023-kizzy-malini.jpg';
-export { default as CarliLewis } from './TD-0024-carli-lewis.jpg'; 
+export { default as CarliLewis } from './TD-0024-carli-lewis.jpg';
 export { default as NeenaMcconnell } from './TD-0025-neena-mcconnell.jpg';
 export { default as Placeholder } from './placeholder.jpg'; // Placeholder image for Maureen Bilokur
-
