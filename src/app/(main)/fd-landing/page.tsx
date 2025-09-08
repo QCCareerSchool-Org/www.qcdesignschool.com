@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
+import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import RedBadge from './price-badge-$500.png';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -22,9 +24,6 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
-import RedBadge from './price-badge-$500.png';
-import { CourseCardsSection } from './courseCardsSection';
-
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -32,8 +31,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/floral-design' },
 };
 
-const testimonialIds = ['TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 'TD-0025'];
-const courseCodes: CourseCode[] = ['fd'];
+const testimonialIds = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 'TD-0025' ];
+const courseCodes: CourseCode[] = [ 'fd' ];
 
 const FloralDesignPage: PageComponent = async () => {
   const { countryCode } = await getData();
@@ -56,7 +55,7 @@ const FloralDesignPage: PageComponent = async () => {
                   <HeroButtons courseCodes={courseCodes} />
                 </div>
               </Hero>
-              <Image src={RedBadge} alt="" className='position-absolute d-none d-md-block' style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
             </div>
           </div>
         </div>
@@ -65,7 +64,7 @@ const FloralDesignPage: PageComponent = async () => {
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you’ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don’t wait—take the first step toward your future in floral design today!</p>
+              <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait&mdash;take the first step toward your future in floral design today!</p>
 
               <Link href="https://enroll.qcdesignschool.com/?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 

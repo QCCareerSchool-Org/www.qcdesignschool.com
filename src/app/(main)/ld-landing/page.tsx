@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
+import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import RedBadge from './price-badge-$550.png';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -21,10 +23,6 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import RedBadge from './price-badge-$550.png';
-import { CourseCardsSection } from './courseCardsSection';
-
-
 
 export const metadata: Metadata = {
   title: 'Landscape Design Course',
@@ -32,8 +30,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/landscape-design' },
 };
 
-const testimonialIds = ['TD-0020', 'TD-0018', 'TD-0021', 'TD-0006', 'TD-0019', 'TD-0011'];
-const courseCodes: CourseCode[] = ['ld'];
+const testimonialIds = [ 'TD-0020', 'TD-0018', 'TD-0021', 'TD-0006', 'TD-0019', 'TD-0011' ];
+const courseCodes: CourseCode[] = [ 'ld' ];
 
 const LandscapeDesignPage: PageComponent = () => (
   <div className={styles.page}>
@@ -53,7 +51,7 @@ const LandscapeDesignPage: PageComponent = () => (
                 <HeroButtons courseCodes={courseCodes} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className='position-absolute d-none d-md-block' style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
         </div>
       </div>
@@ -62,7 +60,7 @@ const LandscapeDesignPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12 col-md-10 col-lg-8 text-center">
-            <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you’ve been dreaming of. Join over 45,000 QC students and graduates worldwide who’ve transformed their passion for design into successful businesses. Don’t wait—take the first step toward your future in landscape design today!</p>
+            <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>
 
             <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
@@ -93,7 +91,7 @@ const LandscapeDesignPage: PageComponent = () => (
           <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
-    </section >
+    </section>
     <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
     <section>
       <div className="container">
@@ -160,7 +158,7 @@ const LandscapeDesignPage: PageComponent = () => (
       text="Become professionally certified with QC's online landscape design training."
       courseCodes={courseCodes}
     />
-  </div >
+  </div>
 );
 
 export default LandscapeDesignPage;

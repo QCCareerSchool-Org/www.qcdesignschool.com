@@ -4,8 +4,10 @@ import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
+import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
+import RedBadge from './price-badge-$500.png';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.png';
@@ -22,9 +24,6 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
-import RedBadge from './price-badge-$500.png';
-import { CourseCardsSection } from './courseCardsSection';
-
 
 export const metadata: Metadata = {
   title: 'Home Staging Course',
@@ -32,8 +31,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/home-staging' },
 };
 
-const testimonialIds = ['TD-0001', 'TD-0003', 'TD-0004', 'TD-0016', 'TD-0011', 'TD-0023'];
-const courseCodes: CourseCode[] = ['st'];
+const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0016', 'TD-0011', 'TD-0023' ];
+const courseCodes: CourseCode[] = [ 'st' ];
 
 const HomeStagingPage: PageComponent = async () => {
   const { countryCode } = await getData();
@@ -56,7 +55,7 @@ const HomeStagingPage: PageComponent = async () => {
                   <HeroButtons courseCodes={courseCodes} />
                 </div>
               </Hero>
-              <Image src={RedBadge} alt="" className='position-absolute d-none d-md-block' style={{ bottom: '1.4rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1.4rem', right: '3.5rem', width: '17%', height: 'auto' }} />
             </div>
           </div>
         </div>
@@ -65,7 +64,7 @@ const HomeStagingPage: PageComponent = async () => {
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12 col-md-10 col-lg-8 text-center">
-              <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you’ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don’t wait—take the first step toward your future in home staging today!</p>
+              <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
 
               <Link href="https://enroll.qcdesignschool.com/?c=st"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
@@ -89,7 +88,7 @@ const HomeStagingPage: PageComponent = async () => {
               </ul>
             </div>
             <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-              <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} style={{ filter: "drop-shadow(0 30px 16px rgba(0,0,0,0.10))"}} />
+              <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} style={{ filter: 'drop-shadow(0 30px 16px rgba(0,0,0,0.10))' }} />
             </div>
           </div>
           <div className="text-center">

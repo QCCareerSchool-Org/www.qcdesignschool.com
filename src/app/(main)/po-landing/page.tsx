@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import RedBadge from './998-price-badge.png';
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
-import HeroImage from './po-hero.jpg';
+import { CourseCardsSection } from './courseCardsSection';
 import styles from './page.module.scss';
+import HeroImage from './po-hero.jpg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -21,9 +23,6 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { CourseCardsSection } from './courseCardsSection';
-import RedBadge from './998-price-badge.png';
-
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
@@ -31,8 +30,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/professional-organizing' },
 };
 
-const testimonialIds = ['TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011'];
-const courseCodes: CourseCode[] = ['ld', 'po'];
+const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011' ];
+const courseCodes: CourseCode[] = [ 'ld', 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
@@ -40,7 +39,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12">
-            <Hero src={HeroImage} priority objectPosition="100% 0" >
+            <Hero src={HeroImage} priority objectPosition="100% 0">
               <CourseType className="mb-2 mb-xl-4">AIOP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Professional Organizing Course</h1>
               <p className="h5 mb-2">Start Your Journey as a Professional Organizer</p>
@@ -52,7 +51,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
                 <HeroButtons courseCodes={courseCodes} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className='position-absolute d-none d-md-block' style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
         </div>
       </div>
@@ -61,7 +60,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
       <div className="container">
         <div className="row justify-content-center g-s">
           <div className="col-12 col-md-10 col-lg-8 text-center">
-            <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you’ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don’t wait—take the first step toward your future as a professional organizer today!</p>
+            <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you&rsquo;ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future as a professional organizer today!</p>
 
             <Link href="https://enroll.qcdesignschool.com/?c=po"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 

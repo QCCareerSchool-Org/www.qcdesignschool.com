@@ -1,4 +1,5 @@
 import type { FC, PropsWithChildren } from 'react';
+
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 
 const LargeColumn: FC<PropsWithChildren> = ({ children }) => <div className="col-12 col-sm-10 col-lg-6 d-flex">{children}</div>;
