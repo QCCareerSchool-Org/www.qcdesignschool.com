@@ -8,6 +8,7 @@ import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import RedBadge from './price-badge-$550.png';
+import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
@@ -18,7 +19,6 @@ import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
-import { HeroButtons } from '@/components/hero/heroButtons';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -47,24 +47,15 @@ const LandscapeDesignPage: PageComponent = () => (
               <div className="d-block d-md-none text-center mb-4">
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
-              <div className="d-flex justify-content-center justify-content-md-start">
-                <HeroButtons courseCodes={courseCodes} />
-              </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '1rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
-        </div>
-      </div>
-    </section>
-    <section className="bg-light">
-      <div className="container">
-        <div className="row justify-content-center g-s">
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>
 
             <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
-            <p className="text-danger">21-DAY MONEY-BACK GUARANTEE</p>
+            <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
           </div>
         </div>
       </div>
@@ -87,7 +78,7 @@ const LandscapeDesignPage: PageComponent = () => (
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
-        <div className="text-center">
+        <div className="text-left">
           <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
@@ -108,6 +99,9 @@ const LandscapeDesignPage: PageComponent = () => (
               <li>Build your brand and market your new landscape design business</li>
               <li>Plan and develop a professional portfolio that helps you land new clients</li>
             </ul>
+            <div className="text-left">
+              <Link href="https://www.qcdesignschool.com/previews/landscape-design/content/index.html"><button className="btn btn-primary btn-lg mt-5">Get My Free Lesson Preview</button></Link>
+            </div>
           </div>
           <div className="col-12 col-sm-10 col-md-8 col-lg-6">
             <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />

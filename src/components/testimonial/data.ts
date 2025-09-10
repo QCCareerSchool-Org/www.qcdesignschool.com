@@ -232,7 +232,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fd' ],
     short: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
     long: [ 'With the Floral Design course my favorite part was learning how to make arrangements, how to choose the colors, textures, foliage and shape for an arrangement.' ],
-    image: Images.Placeholder, // update image (currently placeholder)
+    image: Images.FDPlaceholder, // update image
     stars: 5,
   },
   'TD-0027': {
@@ -240,7 +240,23 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fd' ],
     short: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
     long: [ 'I loved the hands-on assignments where I got to create real floral arrangements. I feel I learned so much by actually doing rather than just reading about it.' ],
-    image: Images.Placeholder, // update image (currently placeholder)
+    image: Images.FDPlaceholder, // update image
+    stars: 5,
+  },
+  'TD-0028': {
+    name: 'Marzena Leszczyk',
+    courses: [ 'fs' ],
+    short: [ 'I recommend QC Design School for anyone who likes to work at their own pace. This level of freedom provides the flexibility needed to balance work, home, and a social life while still pursuing your dream career.' ],
+    long: [ 'I recommend QC Design School for anyone who likes to work at their own pace. This level of freedom provides the flexibility needed to balance work, home, and a social life while still pursuing your dream career.' ],
+    image: Images.FDPlaceholder, // update image
+    stars: 5,
+  },
+  'TD-0029': {
+    name: 'Adriana DeFreitas',
+    courses: [ 'fs' ],
+    short: [ 'My course in Feng Shui was amazing. This educational journey not only enhances professional credentials but also contributes to personal development and satisfaction.' ],
+    long: [ 'My course in Feng Shui was amazing. This educational journey not only enhances professional credentials but also contributes to personal development and satisfaction.' ],
+    image: Images.FDPlaceholder, // update image
     stars: 5,
   },
 };
