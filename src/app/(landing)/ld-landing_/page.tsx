@@ -12,7 +12,8 @@ import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import { QuestionAndAnswer } from '../faq/questionAndAnswer';
+import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
+import { Header } from '../_components/sales-landing-header';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
@@ -35,6 +36,7 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 
 const LandscapeDesignPage: PageComponent = () => (
   <div className={styles.page}>
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=ld'} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -74,7 +76,7 @@ const LandscapeDesignPage: PageComponent = () => (
               <li>Leverage built-in business training and real-world templates to help you launch your career and grow your clientele as a certified landscape designer</li>
             </ul>
           </div>
-          <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6 mb-2">
             <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
           </div>
         </div>
@@ -117,7 +119,7 @@ const LandscapeDesignPage: PageComponent = () => (
     <CareerEssentialsKitCanvaSection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <CourseCardsSection designRestricted={true} />
-    <section>
+    <section className="bg-light">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
