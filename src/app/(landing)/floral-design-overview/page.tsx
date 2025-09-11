@@ -13,7 +13,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
-import { Header } from '../_components/sales-landing-header';
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -40,7 +40,7 @@ const FloralDesignPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=fd'} />
+      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=fd'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -54,7 +54,7 @@ const FloralDesignPage: PageComponent = async () => {
                   <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
                 </div>
               </Hero>
-              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '22.5rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '22.7rem', right: '3.5rem', width: '17%', height: 'auto' }} />
             </div>
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait&mdash;take the first step toward your future in floral design today!</p>

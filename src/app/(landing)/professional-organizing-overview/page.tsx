@@ -13,7 +13,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
-import { Header } from '../_components/sales-landing-header';
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
@@ -36,7 +36,7 @@ const courseCodes: CourseCode[] = [ 'ld', 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=po'} />
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -50,7 +50,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24.3rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you&rsquo;ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future as a professional organizer today!</p>

@@ -13,7 +13,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.png';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
-import { Header } from '../_components/sales-landing-header';
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
@@ -40,7 +40,7 @@ const HomeStagingPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=st'} />
+      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=st'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">

@@ -13,7 +13,7 @@ import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
-import { Header } from '../_components/sales-landing-header';
+import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
@@ -36,7 +36,7 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 
 const LandscapeDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=ld'} />
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -50,7 +50,7 @@ const LandscapeDesignPage: PageComponent = () => (
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24.4rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>
