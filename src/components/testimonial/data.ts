@@ -248,7 +248,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fs' ],
     short: [ 'I recommend QC Design School for anyone who likes to work at their own pace. This level of freedom provides the flexibility needed to balance work, home, and a social life while still pursuing your dream career.' ],
     long: [ 'I recommend QC Design School for anyone who likes to work at their own pace. This level of freedom provides the flexibility needed to balance work, home, and a social life while still pursuing your dream career.' ],
-    image: Images.FDPlaceholder, // update image
+    image: Images.MarzenaLeszczyk, // update image
     stars: 5,
   },
   'TD-0029': {
@@ -256,7 +256,7 @@ export const testimonials: Record<string, Testimonial> = {
     courses: [ 'fs' ],
     short: [ 'My course in Feng Shui was amazing. This educational journey not only enhances professional credentials but also contributes to personal development and satisfaction.' ],
     long: [ 'My course in Feng Shui was amazing. This educational journey not only enhances professional credentials but also contributes to personal development and satisfaction.' ],
-    image: Images.FDPlaceholder, // update image
+    image: Images.AdrianaDeFreitas, // update image
     stars: 5,
   },
 };
