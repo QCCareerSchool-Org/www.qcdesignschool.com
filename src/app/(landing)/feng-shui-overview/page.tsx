@@ -52,7 +52,7 @@ const FengShuiDesignPage: PageComponent = () => (
             <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '25rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
-            <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you&rsquo;ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don&rsquo;t wait—take the first step toward your future as a professional organizer today!</p>
+            <p className="mb-4">Unlock the power of Feng Shui design so you can bring balance and harmony to every space. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into professional-level skills. Don&rsquo;t wait—start your Feng Shui journey today!</p>
 
             <Link href="https://enroll.qcdesignschool.com/?c=fs"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
