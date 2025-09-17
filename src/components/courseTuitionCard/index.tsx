@@ -61,7 +61,7 @@ export const CourseTuitionCard: FC<Props> = async props => {
         </div>
         <div className="d-flex flex-column">
           {price && <CardPrice price={price} />}
-          <div className="d-flex flex-column flex-sm-row">
+          <div className="d-flex flex-column flex-sm-row justify-content-around">
             {props.showEnrollLink
               ? (
                 <>

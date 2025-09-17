@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import DestineeMelendelImage from './distinee-melendel.jpg';
+import { FeaturedGrad } from './featuredGrad';
 import { Testimonials } from './tesimonials';
 
 export const Stories: FC = () => (
@@ -14,7 +15,10 @@ export const Stories: FC = () => (
       <div className="mb-5">
         <p className="lead"><span className="fst-italic">&ldquo;I chose QC because it allows me to work virtually from home&mdash;it was able to fit within my schedule. I like the fact that QC provides the opportunity for us to do the work at our own pace.&rdquo;</span> (Watch time 150s)</p>
       </div>
-      <Testimonials />
+      <div className="mb-5">
+        <Testimonials />
+      </div>
+      <FeaturedGrad />
     </div>
   </section>
 );
