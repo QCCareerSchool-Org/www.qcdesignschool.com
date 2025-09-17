@@ -32,7 +32,7 @@ export const GoogleCarousel: FC<Props> = memo(({ mobile, courseCode }) => {
 
   return (
     <div ref={carouselRef}>
-      <Carousel ssr responsive={responsive} itemClass="d-flex" infinite arrows={!mobile} showDots={mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
+      <Carousel ssr responsive={responsive} itemClass="d-flex relative z-10" infinite arrows={!mobile} showDots={mobile} autoPlay={intersected} autoPlaySpeed={autoPlaySpeed}>
         {sortedReviewData.map((data, key) => <GoogleReview {...data} key={key} />)}
       </Carousel>
     </div>
