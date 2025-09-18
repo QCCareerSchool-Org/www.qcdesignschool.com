@@ -9,7 +9,7 @@ import type { CourseCode } from '@/domain/courseCode';
 export const getCertification = (courseCode: CourseCode, height: number): ReactElement | null => {
   switch (courseCode) {
     case 'i2':
-      return <IDDP height={height} alt="International Design and Decorating Professional™ (IDDP™) certification" />;
+      return <IDDP fill="#faf0b6" height={height} alt="International Design and Decorating Professional™ (IDDP™) certification" />;
     case 'st':
       return <ISRP height={height} alt="International Staging and Redesign Professional™ (ISRP™) certification" />;
     case 'ld':

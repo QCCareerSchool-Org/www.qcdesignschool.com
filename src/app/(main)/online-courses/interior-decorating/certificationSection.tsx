@@ -15,7 +15,7 @@ export const CertificationSection: FC = async () => {
 
   return (
     <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage} overlayColor="rgb(0,0,0,0.2)">
-      <CertificationLogo height="200" className="mb-3" alt="International Design and Decorating Professional (IDDP) certification logo" />
+      <CertificationLogo fill="#faf0b6" height="200" className="mb-3" alt="International Design and Decorating Professional (IDDP) certification logo" />
       <p className="mb-3 small lightGold">International Design and Decorating Professional&trade; (IDDP&trade;)</p>
       <h2 className="text-white mb-3">Your Interior {designRestricted ? 'Decorating' : 'Design'} Certification</h2>
       <p>Once you graduate from your online interior {designRestricted ? 'decorating' : 'design'} course, you'll receive a certification and be able to use the designation of International Design and Decorating Professional (IDDP).</p>

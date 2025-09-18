@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011' ];
-const courseCodes: CourseCode[] = [ 'ld', 'po' ];
+const courseCodes: CourseCode[] = [ 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
