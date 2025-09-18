@@ -3,9 +3,9 @@ import type { StaticImageData } from 'next/image';
 import CRSCLogo from './images/crsc.png';
 import DDALogo from './images/dda.png';
 import DSALogo from './images/dsa.png';
+import IAHSPLogo from './images/iahsp.png';
 import ISCCLogo from './images/iscc.png';
 import IFDALogo from './images/placeholder.png';
-import IAHSPLogo from './images/placeholder.png';
 import RESALogo from './images/resa.png';
 
 const otherCountry = Symbol('other country');

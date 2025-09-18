@@ -36,7 +36,7 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 
 const LandscapeDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -55,7 +55,7 @@ const LandscapeDesignPage: PageComponent = () => (
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>
 
-            <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+            <Link href="https://enroll.qcdesignschool.com/landscape-design-overview?c=ld"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
             <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
           </div>
@@ -81,7 +81,7 @@ const LandscapeDesignPage: PageComponent = () => (
           </div>
         </div>
         <div className="text-left">
-          <Link href="https://enroll.qcdesignschool.com/?c=ld"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+          <Link href="https://enroll.qcdesignschool.com/landscape-design-overview?c=ld"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
     </section>
@@ -153,6 +153,7 @@ const LandscapeDesignPage: PageComponent = () => (
       title="Ready to Start Your Career in Landscape Design?"
       text="Become professionally certified with QC's online landscape design training."
       courseCodes={courseCodes}
+      buttonHref="https://enroll.qcdesignschool.com/landscape-design-overview?c=ld"
     />
   </div>
 );
