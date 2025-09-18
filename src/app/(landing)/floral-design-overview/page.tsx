@@ -40,7 +40,7 @@ const FloralDesignPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=fd'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/floral-design-overview?c=fd'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -59,7 +59,7 @@ const FloralDesignPage: PageComponent = async () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait&mdash;take the first step toward your future in floral design today!</p>
 
-              <Link href="https://enroll.qcdesignschool.com/?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+              <Link href="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
@@ -84,7 +84,7 @@ const FloralDesignPage: PageComponent = async () => {
             </div>
           </div>
           <div className="text-left mt-4">
-            <Link href="https://enroll.qcdesignschool.com/?c=fd"><button className="btn btn-primary btn-lg mb-5 mt-3">Start My Course</button></Link>
+            <Link href="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-5 mt-3">Start My Course</button></Link>
           </div>
         </div>
       </section>
@@ -155,6 +155,7 @@ const FloralDesignPage: PageComponent = async () => {
         title="Ready to Start Your Floral Design Career?"
         text="Become professionally certified with QC's online floral design training."
         courseCodes={courseCodes}
+        buttonHref="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"
       />
     </div>
   );
