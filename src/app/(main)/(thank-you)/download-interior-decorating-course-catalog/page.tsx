@@ -24,7 +24,7 @@ const DownloadInteriorDecoratingCourseCatalogPage: PageComponent = () => (
     <JoinQCSection className="bg-white" />
     <CertificationSection
       backgroundImageSrc={CertificationBackgroundImage}
-      certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP™) certification" />}
+      certification={<CertificationIcon fill="#faf0b6" alt="International Design and Decorating Professional (IDDP™) certification" />}
       overlayColor="rgb(0,0,0,0.2)"
     >
       <h2 className="h3">Your Design Certification</h2>

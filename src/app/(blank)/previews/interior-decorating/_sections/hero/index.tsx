@@ -12,8 +12,8 @@ export const Hero: FC = () => (
       <div className="row justify-content-center">
         <div className="col-12 col-md-11 col-lg-10 col-xl-9">
           <h1 className="mb-4">Turn Your Eye for Style into Real-World Design Skills</h1>
-          <p className="lead mb-4">Step inside QC's immersive Interior Design program—designed to help you build essential skills from day one. Learn how to bring your clients' vision to life and create stunning, functional spaces through expert-guided online training.</p>
-          <Link href="#why-qc"><button className="btn btn-lg btn-primary">Start Your Preview</button></Link>
+          <p className="lead mb-4 mb-md-0">Step inside QC's immersive Interior Design program—designed to help you build essential skills from day one. Learn how to bring your clients' vision to life and create stunning, functional spaces through expert-guided online training.</p>
+          <Link className="d-md-none" href="#why-qc"><button className="btn btn-lg btn-primary">Start Your Preview</button></Link>
         </div>
       </div>
     </div>

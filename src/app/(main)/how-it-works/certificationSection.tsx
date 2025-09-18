@@ -12,7 +12,7 @@ export const CertificationSection: FC = () => (
     <div className="container">
       <div className="row justify-content-center align-items-center g-4">
         <div className="col-12 col-lg-4 text-center">
-          <CertificationLogo height="200" className="mb-3" alt="International Design and Decorating Professional (IDDP) certification logo" />
+          <CertificationLogo fill="#faf0b6" height="200" className="mb-3" alt="International Design and Decorating Professional (IDDP) certification logo" />
         </div>
         <div className="col-12 col-lg-8">
           <h2 className="text-white mb-3">Become a Certified Design Professional with QC Design School!</h2>

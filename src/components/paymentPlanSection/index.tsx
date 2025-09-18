@@ -10,6 +10,7 @@ import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 
 type Props = {
+  id?: string;
   courseCodes: CourseCode[];
   className?: string;
   heading?: string;
@@ -18,7 +19,7 @@ type Props = {
   blurb?: ReactNode;
 };
 
-export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className, heading, lead, sub, blurb }) => {
+export const PaymentPlanSection: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb }) => {
   const { countryCode, provinceCode } = await getData();
   const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
   const price = await fetchPrice(priceQuery);
@@ -29,7 +30,7 @@ export const PaymentPlanSection: FC<Props> = async ({ courseCodes, className, he
   const href = 'https://enroll.qcdesignschool.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
 
   return (
-    <section className={className ?? 'bg-light'} id="paymentPlans">
+    <section className={className ?? 'bg-light'} id={id}>
       <div className="container">
         <div className="row justify-content-center mb-5">
           <div className="col-12 text-center">

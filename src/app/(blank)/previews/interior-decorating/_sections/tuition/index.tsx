@@ -7,6 +7,7 @@ const courseCodes: CourseCode[] = [ 'i2' ];
 
 export const Tuition: FC = () => (
   <PaymentPlanSection
+    id="tuition"
     courseCodes={courseCodes}
     className="bg-white"
     heading="Invest in Yourself"
