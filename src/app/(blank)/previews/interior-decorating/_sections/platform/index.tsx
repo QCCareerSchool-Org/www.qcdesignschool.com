@@ -15,7 +15,7 @@ export const Platform: FC = () => (
       <div className="ratio ratio-16x9 mb-s">
         <video src="https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/qc-student-center.mp4" poster={PosterImage.src} controls preload="metadata" />
       </div>
-      <div className="row justify-content-center mb-5">
+      <div className="row justify-content-center mb-s">
         <div className="col-6 col-lg-8 mb-3">
           <Image src={ChantalImage} alt="Chantal Marion" className="img-fluid" style={{ width: 275 }} />
         </div>
