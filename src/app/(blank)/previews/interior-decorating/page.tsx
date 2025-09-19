@@ -41,7 +41,7 @@ const InteriorDecoratingPreviewPage: PageComponent = async () => {
           courseCodes={[ 'i2' ]}
         />
       </div>
-      <FooterBar><div className="d-flex align-items-center justify-content-center flex-column flex-md-row"><div className="mb-2 mb-md-0 me-md-4 d-none d-sm-block">Ready to Start Your Interior Design Career?</div><Link href="https://enroll.qcdesignschool.com"><button className={`btn btn-primary ${styles.button}`}><CheckShieldIcon height="21" style={{ position: 'relative', top: -1.5 }} /> Enroll Today</button></Link></div></FooterBar>
+      <FooterBar><div className="d-flex align-items-center justify-content-center flex-column flex-md-row"><div className="mb-2 mb-md-0 me-md-4 d-none d-sm-block">Ready to Start Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</div><Link href="https://enroll.qcdesignschool.com"><button className={`btn btn-primary ${styles.button}`}><CheckShieldIcon height="21" style={{ position: 'relative', top: -1.5 }} /> Enroll Today</button></Link></div></FooterBar>
     </div>
   );
 };
