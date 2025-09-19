@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 export const PlatformFeatures: FC = () => (
-  <div className="row">
+  <div className="row g-4">
     <div className="col-12 col-lg-4">
       <h3 className="h6 mb-3">Lessons Designed for Busy Lives</h3>
       <p>These interactive lessons automatically adapt to your device—watch crisp video tutorials on your phone or tablet with zero pinching or zooming.</p>
