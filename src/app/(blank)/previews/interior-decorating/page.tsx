@@ -11,6 +11,8 @@ import { Stories } from './_sections/stories';
 import { SubNav } from './_sections/subnav';
 import { Tuition } from './_sections/tuition';
 import { WhyQC } from './_sections/whyQC';
+import CheckShieldIcon from './check-shield.svg';
+import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import './page.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -24,22 +26,22 @@ const InteriorDecoratingPreviewPage: PageComponent = async () => {
   return (
     <div className="d-flex flex-column">
       <div>
-        <Hero />
+        <Hero designRestricted={designRestricted} />
         <SubNav />
         <WhyQC />
         <Platform />
-        <Curriculum />
-        <CareerOutcomes />
+        <Curriculum designRestricted={designRestricted} />
+        <CareerOutcomes designRestricted={designRestricted} />
         <Tuition />
         <Stories />
-        <RelatedCourses />
+        <RelatedCourses designRestricted={designRestricted} />
         <FAQ />
         <GetStartedSection
           title={`Ready to Start Your Interior ${designRestricted ? 'Decorating' : 'Design'} Career?`}
           courseCodes={[ 'i2' ]}
         />
       </div>
-      <FooterBar><div className="d-flex align-items-center justify-content-center flex-column flex-md-row"><div>Ready to Start Your Interior Design Career?</div> <span className="mt-2 mt-md-0 ms-md-3"><Link href="https://enroll.qcdesignschool.com"><button className="btn btn-primary">Enroll Today</button></Link></span></div></FooterBar>
+      <FooterBar><div className="d-flex align-items-center justify-content-center flex-column flex-md-row"><div className="mb-2 mb-md-0 me-md-4 d-none d-sm-block">Ready to Start Your Interior Design Career?</div><Link href="https://enroll.qcdesignschool.com"><button className={`btn btn-primary ${styles.button}`}><CheckShieldIcon height="21" style={{ position: 'relative', top: -1.5 }} /> Enroll Today</button></Link></div></FooterBar>
     </div>
   );
 };

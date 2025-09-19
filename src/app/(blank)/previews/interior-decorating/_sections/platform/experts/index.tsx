@@ -39,30 +39,30 @@ export const PlatformExperts: FC = () => {
 
       <nav className={styles.expertsNav}>
         <ul>
-          <li role="button" onClick={handleJaneClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={JaneLockhartImage} alt="" size={48} /></div>Jane<span className="d-none d-sm-inline">&nbsp;Lockhart</span></li>
-          <li role="button" onClick={handleDeborahClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={DeborahSoulierImage} alt="" size={48} /></div>Deborah<span className="d-none d-sm-inline">&nbsp;Soulier</span></li>
-          <li role="button" onClick={handleAngieClick} className="d-flex align-items-center"><div className="d-none d-lg-inline-block me-3"><ImageCircle src={AngieChapmanImage} alt="" size={48} /></div>Angie<span className="d-none d-sm-inline">&nbsp;Chapman</span></li>
+          <li role="button" onClick={handleJaneClick} className={`d-flex align-items-center ${expert === 1 ? styles.selected : ''}`}><div className="d-none d-lg-inline-block me-3"><ImageCircle src={JaneLockhartImage} alt="" size={48} /></div>Jane<span className="d-none d-sm-inline">&nbsp;Lockhart</span></li>
+          <li role="button" onClick={handleDeborahClick} className={`d-flex align-items-center ${expert === 2 ? styles.selected : ''}`}><div className="d-none d-lg-inline-block me-3"><ImageCircle src={DeborahSoulierImage} alt="" size={48} /></div>Deborah<span className="d-none d-sm-inline">&nbsp;Soulier</span></li>
+          <li role="button" onClick={handleAngieClick} className={`d-flex align-items-center ${expert === 3 ? styles.selected : ''}`}><div className="d-none d-lg-inline-block me-3"><ImageCircle src={AngieChapmanImage} alt="" size={48} /></div>Angie<span className="d-none d-sm-inline">&nbsp;Chapman</span></li>
         </ul>
       </nav>
       <ExpertCard show={expert === 1} src={JaneLockhartImage} name="Jane Lockhart, BAAID" title="Featured Course Expert">
         <ul>
-          <li className="mb-2">Principal Designer & Founder of Jane Lockhart Design, acclaimed for award-winning residential and commercial transformations.</li>
-          <li className="mb-2">Two-time NKBA Pinnacle Award winner and HGTV/CTV colour specialist.</li>
-          <li>Author of Room Recipes and Paint: A Great Impression.</li>
+          <li className="mb-2">Principal Designer & Founder of Jane Lockhart Design, acclaimed for award-winning residential and commercial transformations</li>
+          <li className="mb-2">Two-time NKBA Pinnacle Award winner and HGTV/CTV colour specialist</li>
+          <li>Author of Room Recipes and Paint: A Great Impression</li>
         </ul>
       </ExpertCard>
       <ExpertCard show={expert === 2} src={DeborahSoulierImage} name="Deborah Soulier" title="Course Expert & Mentor">
         <ul>
-          <li className="mb-2">Award-winning Principal Designer & Owner of Soulier Design Studio, renowned for blending interior design with wellness to deliver stunning, transformative spaces.</li>
-          <li className="mb-2">A four-time published designer featured in Home Trends magazine.</li>
-          <li>Proud to serve on the Board of Directors of the DDA and elevate the design industry as Chair of Regions.</li>
+          <li className="mb-2">Award-winning Principal Designer & Owner of Soulier Design Studio, renowned for blending interior design with wellness to deliver stunning, transformative spaces</li>
+          <li className="mb-2">A four-time published designer featured in Home Trends magazine</li>
+          <li>Proud to serve on the Board of Directors of the DDA and elevate the design industry as Chair of Regions</li>
         </ul>
       </ExpertCard>
       <ExpertCard show={expert === 3} src={AngieChapmanImage} name="Angie Chapman" title="Course Expert & Mentor">
         <ul>
-          <li className="mb-2">Award-winning design consultant and founder of Interiors Just for You.</li>
-          <li className="mb-2">Celebrated for creating spaces that perfectly reflect each client's unique needs, with over 20 years of success in the design industry.</li>
-          <li>Passionate about design education and advancing professional standards in interior design and decorating.</li>
+          <li className="mb-2">Award-winning design consultant and founder of Interiors Just for You</li>
+          <li className="mb-2">Celebrated for creating spaces that perfectly reflect each client's unique needs, with over 20 years of success in the design industry</li>
+          <li>Passionate about design education and advancing professional standards in interior design and decorating</li>
         </ul>
       </ExpertCard>
     </div>

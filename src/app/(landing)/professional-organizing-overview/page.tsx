@@ -33,10 +33,11 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'po' ];
+const enrollUrl = 'https://enroll.qcdesignschool.com/professional-organizig-overview?c=po';
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -55,7 +56,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you&rsquo;ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future as a professional organizer today!</p>
 
-            <Link href="https://enroll.qcdesignschool.com/?c=po"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
             <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
           </div>
@@ -81,7 +82,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
           </div>
         </div>
         <div className="text-left">
-          <Link href="https://enroll.qcdesignschool.com/?c=po"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+          <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
     </section>

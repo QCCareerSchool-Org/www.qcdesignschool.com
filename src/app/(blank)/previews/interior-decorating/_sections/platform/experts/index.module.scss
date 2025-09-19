@@ -1,5 +1,5 @@
 .expertsNav {
-  padding: 1rem 0;
+  padding: 1rem 0 0;
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   margin-bottom: 2rem;
@@ -21,6 +21,15 @@
     }
     li {
       display: inline-block;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-bottom: 0.75rem;
+      position: relative;
+      bottom: -2px;
+      border-bottom: 3px solid transparent;
+      &.selected {
+        border-color: var(--qc-color-primary);
+      }
     }
   }
 }
