@@ -2,12 +2,16 @@ import type { FC } from 'react';
 
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 
-export const RelatedCourses: FC = () => (
+type Props = {
+  designRestricted: boolean;
+};
+
+export const RelatedCourses: FC<Props> = ({ designRestricted }) => (
   <section id="related-courses">
     <div className="container text-center">
       <p className="lead mb-3">Related Courses</p>
-      <h2 className="mb-5">Grow Beyond Decorating</h2>
-      <p>Pick your next skill and stack revenue streams.<br />Plus, every additional course is 50% off!</p>
+      <h2 className="mb-5">Grow Beyond {designRestricted ? 'Decorating' : 'Design'}</h2>
+      <p>Expand your expertise and open the door to new income opportunities.<br />Plus, get 50% off each additional course.</p>
       <div className="row justify-content-center g-4">
         <div className="col-12 col-sm-10 col-lg-6 col-xl-4 d-flex">
           <CourseTuitionCard

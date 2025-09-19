@@ -16,17 +16,17 @@ export const FAQ: FC = () => {
           </div>
           <div className="col-12 col-md-10 col-lg-8">
             <QuestionAndAnswer heading="Do I need design software?">
-              Answer: No, you don't need to purchase any design software to complete the course. All assignments can be done by hand or with free software options. However, if you'd like to explore design software, the course includes bonus lessons to help you get started, along with exclusive discounts so you can learn and practice using professional tools at your own pace.
+              No, you don't need to purchase any design software to complete the course. All assignments can be done by hand or with free software options. However, if you'd like to explore design software, the course includes bonus lessons to help you get started, along with exclusive discounts so you can learn and practice using professional tools at your own pace.
             </QuestionAndAnswer>
           </div>
           <div className="col-12 col-md-10 col-lg-8">
             <QuestionAndAnswer heading="Is the IDDP™ certification recognized?">
-              Answer: Yes! The IDDP™ certification is respected by employers and clients worldwide. It's backed by leading industry organizations, including the Designer Society of America (DSA) and the Decorators & Designers Association of Canada (DDA), giving you credibility wherever your career takes you.
+              Yes! The IDDP™ certification is respected by employers and clients worldwide. It's backed by leading industry organizations, including the Designer Society of America (DSA) and the Decorators & Designers Association of Canada (DDA), giving you credibility wherever your career takes you.
             </QuestionAndAnswer>
           </div>
           <div className="col-12 col-md-10 col-lg-8">
             <QuestionAndAnswer heading="What if the course isn't for me?">
-              Answer: No problem! If the course isn't right for you, you're protected by our 21-day money-back guarantee.
+              No problem! If the course isn't right for you, you're protected by our 21-day money-back guarantee.
             </QuestionAndAnswer>
           </div>
         </div>

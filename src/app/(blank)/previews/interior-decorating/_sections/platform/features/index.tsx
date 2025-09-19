@@ -8,7 +8,7 @@ export const PlatformFeatures: FC = () => (
     </div>
     <div className="col-12 col-lg-4">
       <h3 className="h6 mb-3">Real-World Design Scenarios</h3>
-      <p>Step into realistic design briefs: choose layouts and palettes, then see instant visual feedback so you learn by doing.</p>
+      <p>Step into realistic design briefs: choose layouts and palettes, then get expert feedback so you learn by doing.</p>
     </div>
     <div className="col-12 col-lg-4">
       <h3 className="h6 mb-3">Interactive Learning</h3>
