@@ -34,13 +34,14 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0016', 'TD-0011', 'TD-0023' ];
 const courseCodes: CourseCode[] = [ 'st' ];
+const enrollUrl = 'https://enroll.qcdesignschool.com/home-staging-overview?c=st';
 
 const HomeStagingPage: PageComponent = async () => {
   const { countryCode } = await getData();
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=st'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -59,7 +60,7 @@ const HomeStagingPage: PageComponent = async () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
 
-              <Link href="https://enroll.qcdesignschool.com/?c=st"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+              <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
@@ -85,7 +86,7 @@ const HomeStagingPage: PageComponent = async () => {
             </div>
           </div>
           <div className="text-left">
-            <Link href="https://enroll.qcdesignschool.com/?c=st"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
           </div>
         </div>
       </section>
