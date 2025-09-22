@@ -37,7 +37,7 @@ const enrollUrl = 'https://enroll.qcdesignschool.com/landscape-design-overview?c
 
 const LandscapeDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent="Enroll Now" showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+    <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
