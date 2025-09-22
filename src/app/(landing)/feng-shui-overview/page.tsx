@@ -32,10 +32,11 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0005', 'TD-0028', 'TD-0029', 'TD-0006', 'TD-0019', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'fs' ];
+const enrollUrl = 'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs';
 
 const FengShuiDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+    <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
     <section className="half-padding-top bg-light">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -54,7 +55,7 @@ const FengShuiDesignPage: PageComponent = () => (
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">Unlock the power of Feng Shui design so you can bring balance and harmony to every space. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into professional-level skills. Don&rsquo;t wait—start your Feng Shui journey today!</p>
 
-            <Link href="https://enroll.qcdesignschool.com/?c=fs"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
             <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
           </div>
@@ -80,7 +81,7 @@ const FengShuiDesignPage: PageComponent = () => (
           </div>
         </div>
         <div className="text-left">
-          <Link href="https://enroll.qcdesignschool.com/?c=fs"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+          <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </div>
     </section>
