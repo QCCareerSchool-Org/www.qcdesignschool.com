@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/feng-shui-design-course-catalog' },
 };
 
-const brevoListId = 7; // General Leads
-const brevoEmailTemplateId = 58; // General
+const brevoListId = 64; // Feng Shui Leads
+const brevoEmailTemplateId = 2205; // Feng Shui
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
