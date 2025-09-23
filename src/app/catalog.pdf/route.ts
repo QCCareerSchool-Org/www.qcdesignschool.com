@@ -33,6 +33,8 @@ const getLocalFilename = (course: string | null, countryCode: string, provinceCo
       return 'staging.pdf';
     case 'landscape':
       return 'landscape.pdf';
+    case 'feng-shui':
+      return 'feng-shui.pdf';
     default:
       return getDesignRestricted(countryCode, provinceCode) ? 'decorating.pdf' : 'design.pdf';
   }
