@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 import { cookies, headers } from 'next/headers';
 
+import { ThankYouSection } from '../_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
-import { TelephoneFormSection } from '@/components/telephoneFormSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
@@ -58,7 +58,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      {leadId && validCountryForSMS(countryCode) && <TelephoneFormSection leadId={leadId} countryCode={countryCode} />}
+      <ThankYouSection emailAddress={emailAddress} className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <ThreeReasonsSection />
       <SupportSection showLink />
@@ -70,7 +70,5 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     </>
   );
 };
-
-const validCountryForSMS = (countrycode?: string): boolean => countrycode === 'CA' || countrycode === 'US';
 
 export default ThankYouCourseCatalogPage;

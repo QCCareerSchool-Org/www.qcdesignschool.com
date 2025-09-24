@@ -30,7 +30,7 @@ const DownloadInteriorDesignCourseCatalogPage: PageComponent = async () => {
 
   return (
     <>
-      <ThankYouSection courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}`} course="design" />
+      <ThankYouSection courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}`} course="design" download />
       <TestimonialVideoSection heading="Student Success Stories" subtitle={false} />
       <JoinQCSection className="bg-white" />
       <CertificationSection

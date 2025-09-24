@@ -94,6 +94,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

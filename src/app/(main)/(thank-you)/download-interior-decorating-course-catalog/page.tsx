@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const DownloadInteriorDecoratingCourseCatalogPage: PageComponent = () => (
   <>
-    <ThankYouSection courseName="Interior Decorating" />
+    <ThankYouSection courseName="Interior Decorating" download />
     <TestimonialVideoSection heading="Student Success Stories" subtitle={false} />
     <JoinQCSection className="bg-white" />
     <CertificationSection
