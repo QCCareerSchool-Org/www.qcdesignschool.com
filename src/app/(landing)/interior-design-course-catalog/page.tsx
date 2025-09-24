@@ -84,6 +84,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
                   <BrevoForm
                     successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
                     listId={brevoListId}
+                    telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
                     msclkid={msclkid}
@@ -94,6 +95,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

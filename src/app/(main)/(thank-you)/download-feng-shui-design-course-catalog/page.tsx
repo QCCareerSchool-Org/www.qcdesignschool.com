@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const DownloadFengShuiDesignCourseCatalogPage: PageComponent = () => (
   <>
-    <ThankYouSection courseName="Feng Shui Design" course="feng-shui" />
+    <ThankYouSection courseName="Feng Shui Design" course="feng-shui" download />
     <ThreeReasonsSection />
     <SupportSection showLink />
   </>

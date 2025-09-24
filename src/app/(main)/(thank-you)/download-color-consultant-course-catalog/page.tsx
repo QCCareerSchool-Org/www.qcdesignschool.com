@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const DownloadColorConsultantCourseCatalogPage: PageComponent = () => {
   return (
     <>
-      <ThankYouSection courseName="Color Consultant" />
+      <ThankYouSection courseName="Color Consultant" download />
       <ThreeReasonsSection />
       <SupportSection showLink />
     </>
