@@ -16,6 +16,7 @@ import DownloadIcon from '@/components/icons/download.svg';
 type Props = {
   successLocation: string;
   listId: number;
+  telephoneListId?: number;
   emailTemplateId?: number;
   buttonText?: string;
   buttonClassName?: string;
@@ -134,6 +135,7 @@ export const BrevoForm: FC<Props> = props => {
       <input type="hidden" name="listId" value={props.listId} />
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
       {typeof props.emailTemplateId !== 'undefined' && <input type="hidden" name="emailTemplateId" value={props.emailTemplateId} />}
+      {props.telephoneListId && <input type="hidden" name="telephoneListId" value={props.telephoneListId} />}
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
