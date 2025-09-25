@@ -39,7 +39,7 @@ const SuccessPage: PageComponent = () => (
             <ScrollButton targetSelector="section" />
           </div>
           <video controls muted loop style={{ width: '500px', height: '300px', borderRadius: '35px' }} poster="/videos/testimonial-thumb.png"> {/* non-rounded thumbnail preferred, can use borderRadius to round video after (avoid uneven border rounding) */}
-            <source src="/videos/NoCTAVideoMontage.mp4" type="video/mp4" />
+            <source src="https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/no-cta-testimonial-ad-montage.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
