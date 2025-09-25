@@ -44,10 +44,8 @@ const SuccessPage: PageComponent = () => (
         </div>
       </div>
     </section>
-
     <StudentShowcaseSection student={students['chantal-marion']} />
     <StudentShowcaseSection student={students['rachael-stafford']} />
-
     <section className={`${styles.section} text-white pb-0 pb-lg-5`} style={{ backgroundColor: '#EE9600' }}>
       <div className="d-none d-lg-block"><BackgroundImage src={SocialImageDesktop} objectPosition={'100% 50%'} /></div>
       <div className="container">
@@ -64,10 +62,8 @@ const SuccessPage: PageComponent = () => (
       <div className="d-none d-md-block d-lg-none text-center"><Image src={SocialImage} alt="" style={{ width: '70%', height: 'auto' }} /></div>
       <div className="d-md-none"><Image src={SocialImageMobile} alt="" style={{ width: '100%', height: 'auto' }} /></div>
     </section>
-
     <StudentShowcaseSection student={students['jamie-cromar']} />
     <StudentShowcaseSection student={students['curstyn-carter']} />
-
     <section>
       <div className="container">
         <div style={{ width: '100%', height: '1px', backgroundColor: '#506172', margin: '0 auto 1rem', marginBottom: '3rem' }} />
@@ -82,9 +78,7 @@ const SuccessPage: PageComponent = () => (
         </div>
       </div>
     </section>
-
     <SuccessTeamModalSection className={`${styles.section} text-white`} />
-
     <section>
       <h2 className="text-center">What Our Students and Grads Are Saying</h2>
       <TestimonialWallSection testimonialIds={testimonialIds} hideHeading={true} />
