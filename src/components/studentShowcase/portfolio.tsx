@@ -1,7 +1,7 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import NavArrowIcon from './nav-arrow.svg';
@@ -10,6 +10,7 @@ type Props = {
   name: string;
   show: boolean;
   onHide: () => void;
+  initialIndex?: number;
   images: Array<{
     src: StaticImageData;
     description?: string;
@@ -17,7 +18,7 @@ type Props = {
 };
 
 export const Portfolio: FC<Props> = props => {
-  const [ index, setIndex ] = useState(0);
+  const [ index, setIndex ] = useState(props.initialIndex ?? 0);
 
   const handleNextClick = (): void => {
     setIndex(i => (i === props.images.length - 1 ? 0 : i + 1));
@@ -27,11 +28,17 @@ export const Portfolio: FC<Props> = props => {
     setIndex(i => (i === 0 ? props.images.length - 1 : i - 1));
   };
 
+  useEffect(() => {
+    if(props.show) {
+      setIndex(props.initialIndex ?? 0);
+    }
+  }, [ props.show, props.initialIndex ]);
+
   return (
     <Modal show={props.show} onHide={props.onHide}>
       <Modal.Header closeButton>{props.name}'s Work</Modal.Header>
       <Modal.Body>
-        <Image src={props.images[index].src} placeholder="blur" alt={`Image ${index + 1} of ${props.images.length}`} className="img-fluid w-100" />
+        <Image src={props.images[index].src} alt={`Image ${index + 1} of ${props.images.length}`} width={70} height={70} className="img-fluid w-100" />
       </Modal.Body>
       {(props.images.length > 1 || typeof props.images[index].description !== 'undefined') && (
         <Modal.Footer>
