@@ -10,6 +10,7 @@ import { SuccessTeamModalSection } from './success-team-modal-section';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import IconHeart from '@/components/icons/icon-heart.svg';
 import { CountUp } from '@/components/paymentPlanSection/countUp';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
@@ -78,6 +79,7 @@ const SuccessPage: PageComponent = () => (
     <section>
       <h2 className="text-center">What Our Students and Grads Are Saying</h2>
       <TestimonialWallSection testimonialIds={testimonialIds} hideHeading={true} />
+      <GoogleReviewSection />
     </section>
     <GetStartedSection
       title="Ready To Start Your Interior Design and Decorating Career?"
