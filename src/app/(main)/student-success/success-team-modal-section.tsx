@@ -55,7 +55,7 @@ export const SuccessTeamModalSection: FC<Props> = ({ className }) => {
                   <button className="btn btn-primary btn-lg flex items-center mb-lg-5"><ChatIcon height="22" className="me-2" style={{ position: 'relative', top: -1 }} />Talk to Us Today</button>
                 </Link>
                 <Link href="https://calendly.com/qccareerschool/design">
-                  <button className="btn btn-outline-white btn-lg flex items-center mb-lg-5" style={{ borderWidth: '2px' }}><CalIcon height="23" className="me-2" style={{ position: 'relative', top: -1 }} />Book A Call</button>
+                  <button className="btn btn-outline-white btn-lg flex items-center mb-lg-5" style={{ borderWidth: '2px' }}><CalIcon height="22" className="me-2" style={{ position: 'relative', top: -1 }} />Book A Call</button>
                 </Link>
               </div>
             </div>

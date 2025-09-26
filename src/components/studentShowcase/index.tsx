@@ -42,7 +42,7 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
           <h5 className="mb-4">{student.business}</h5>
           <p className="lead mb-4">{student.description}</p>
           <div className="d-flex">
-            {thumbnails.map((image, index) => (<div key={index} className={styles['thumbnail-w-control']} style={{ cursor: 'pointer' }} onClick={() => handleShow(index)}><div className={styles['thumbnail-aspect-ratio']}><Image src={image.src} alt={`Gallery image ${index + 1} for ${student.name}`} className={`${styles['thumbnail-image']} img-fluid`} width={90} height={90} style={{ borderRadius: '5px', objectFit: 'cover' }} /></div>
+            {thumbnails.map((image, index) => (<div key={index} className={styles['thumbnail-w-control']} style={{ cursor: 'pointer' }} onClick={() => handleShow(index)}><div className={styles['thumbnail-aspect-ratio']}><Image src={image.src} quality={90} alt={`Gallery image ${index + 1} for ${student.name}`} className={`${styles['thumbnail-image']} img-fluid`} width={90} height={90} style={{ borderRadius: '5px', objectFit: 'cover' }} /></div>
             </div>
             ))}
           </div>
