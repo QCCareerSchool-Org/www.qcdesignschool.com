@@ -3,7 +3,7 @@ import type { StaticImageData } from 'next/image';
 import * as Images from './images';
 import type { CourseCode } from '@/domain/courseCode';
 
-export type Testimonial = {
+export type Student = {
   id?: string;
   name: string;
   title?: string;
@@ -16,7 +16,7 @@ export type Testimonial = {
   imagePositionY?: number;
 };
 
-export const students: Record<string, Testimonial> = {
+export const students: Record<string, Student> = {
   'chantal-marion': {
     name: 'Chantal Marion',
     business: 'ALOMA Home Staging & Design',
