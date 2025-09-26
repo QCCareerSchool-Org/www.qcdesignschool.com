@@ -35,7 +35,7 @@ const SuccessPage: PageComponent = () => (
             <h2 className="mb-4"><>Join <CountUp value={45} />,000+ Students &amp; Graduates Shaping the Future of Design</></h2>
             <p className="lead mb-3">With over 45,000 students &amp; graduates and 40 years in distance education, QC Design School empowers your passion for design and transforms it into a successful career. Learn from the best and join a community that's redefining the industry.</p>
           </div>
-          <video controls muted loop style={{ width: '500px', height: '300px', borderRadius: '35px' }} poster="/videos/testimonial-thumb.png"> {/* non-rounded thumbnail preferred, can use borderRadius to round video after (avoid uneven border rounding) */}
+          <video controls muted loop style={{ width: '500px', height: '300px', borderRadius: '35px' }} poster="/videos/testimonial-thumb.png">
             <source src="https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/no-cta-testimonial-ad-montage.mp4" type="video/mp4" />
           </video>
         </div>
