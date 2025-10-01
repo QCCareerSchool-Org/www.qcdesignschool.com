@@ -8,6 +8,7 @@ export const FooterColumn2: FC = () => (
     <li><Link href="/design-associations">Associations<span className="d-lg-none d-xl-inline"> & Partners</span></Link></li>
     <li><Link href="/your-career">Your Career</Link></li>
     <li><Link href="/how-it-works">How It Works</Link></li>
+    <li><Link href="/student-success">Student Success</Link></li>
     <li><a href="/blog">Blog</a></li>
     <li><a href="https://studentcenter.qccareerschool.com/students" target="_blank" rel="noreferrer">Student Login</a></li>
   </>

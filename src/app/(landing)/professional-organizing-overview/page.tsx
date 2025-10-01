@@ -173,6 +173,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
       title="Ready to Start Your Career in Professional Organizing?"
       text="Become professionally certified with QC's online professional organizing training."
       courseCodes={courseCodes}
+      buttonHref="https://enroll.qcdesignschool.com/professional-organizing-overview?c=po"
     />
   </div>
 );

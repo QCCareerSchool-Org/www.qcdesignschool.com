@@ -156,6 +156,7 @@ const FloralDesignPage: PageComponent = async () => {
         title="Ready to Start Your Floral Design Career?"
         text="Become professionally certified with QC's online floral design training."
         courseCodes={courseCodes}
+        buttonHref="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"
       />
     </div>
   );

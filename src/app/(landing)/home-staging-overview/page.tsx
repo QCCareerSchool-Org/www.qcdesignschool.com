@@ -158,6 +158,7 @@ const HomeStagingPage: PageComponent = async () => {
         title="Ready to Start Your Career as a Home Stager?"
         text="Become professionally certified with QC's online home staging training."
         courseCodes={courseCodes}
+        buttonHref="https://enroll.qcdesignschool.com/home-staging-overview?c=st"
       />
     </div>
   );

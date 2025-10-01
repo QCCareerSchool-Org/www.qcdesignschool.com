@@ -74,7 +74,7 @@ export const MainNav: FC<Props> = ({ designRestricted }) => {
                 <Link href="/about" className="dropdown-item" onClick={handleClick}>About the School</Link>
                 <Link href="/instructors" className="dropdown-item d-none d-lg-block d-xl-none" onClick={handleClick}>Instructors</Link>
                 <Link href="/about/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
-                <Link href="/student-success" className="dropdown-item" onClick={handleClick}>Student Features</Link>
+                <Link href="/student-success" className="dropdown-item" onClick={handleClick}>Student Success</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
                 <Link href="/faq" className="dropdown-item" onClick={handleClick}>FAQ</Link>
               </NavDropdown>

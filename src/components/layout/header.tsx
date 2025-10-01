@@ -13,7 +13,7 @@ export const Header: FC = async () => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
-    <header className={`${styles.header} flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 100, width: '100%' }}>
+    <header className={`${styles.header} flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1050, width: '100%' }}>
       {countryCode === 'CA' && <CanadaHeader />}
       {/* <CountDownTimer date={date} countryCode={countryCode} /> */}
       <MainNav designRestricted={designRestricted} />
