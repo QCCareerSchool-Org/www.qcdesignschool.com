@@ -156,6 +156,7 @@ const FengShuiDesignPage: PageComponent = () => (
       title="Ready to Start Your Career as a Feng Shui Designer?"
       text="Become professionally certified with QC's online feng shui design training."
       courseCodes={courseCodes}
+      buttonHref="https://enroll.qcdesignschool.com/feng-shui-overview?c=fs"
     />
   </div>
 );

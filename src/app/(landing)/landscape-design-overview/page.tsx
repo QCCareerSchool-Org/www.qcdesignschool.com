@@ -154,6 +154,7 @@ const LandscapeDesignPage: PageComponent = () => (
       title="Ready to Start Your Career in Landscape Design?"
       text="Become professionally certified with QC's online landscape design training."
       courseCodes={courseCodes}
+      buttonHref="https://enroll.qcdesignschool.com/landscape-design-overview?c=ld"
     />
   </div>
 );
