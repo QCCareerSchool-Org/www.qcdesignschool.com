@@ -68,13 +68,13 @@ export const MainNav: FC<Props> = ({ designRestricted }) => {
                 <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Design Online</Link>
               </NavDropdown>
               <Link href="/free-course-catalog" className="nav-link" onClick={handleClick}>Free Catalog</Link>
-              <Link href="/design-associations" className="nav-link" onClick={handleClick}>Associations &amp; Partners</Link>
+              <Link href="/student-success" className="nav-link" onClick={handleClick}>Student Success</Link>
               <Link href="/instructors" className="nav-link d-lg-none d-xl-block" onClick={handleClick}>Instructors</Link>
               <NavDropdown title="About" id="about-nav-dropdown">
                 <Link href="/about" className="dropdown-item" onClick={handleClick}>About the School</Link>
                 <Link href="/instructors" className="dropdown-item d-none d-lg-block d-xl-none" onClick={handleClick}>Instructors</Link>
                 <Link href="/about/meet-the-team" className="dropdown-item" onClick={handleClick}>Meet the Team</Link>
-                <Link href="/student-success" className="dropdown-item" onClick={handleClick}>Student Success</Link>
+                <Link href="/design-associations" className="dropdown-item" onClick={handleClick}>Associations &amp; Partners</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
                 <Link href="/faq" className="dropdown-item" onClick={handleClick}>FAQ</Link>
               </NavDropdown>
