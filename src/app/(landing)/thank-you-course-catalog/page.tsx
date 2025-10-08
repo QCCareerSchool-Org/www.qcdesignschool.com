@@ -52,7 +52,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <Header logoLink showBanner />
-      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
