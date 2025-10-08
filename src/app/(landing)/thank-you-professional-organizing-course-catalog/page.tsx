@@ -3,8 +3,7 @@ import { cookies, headers } from 'next/headers';
 
 import { Header } from '../_components/header';
 import { ThankYouSection } from '../_components/thankYouSection';
-import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
-import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
+import HeroDesktopImage from '../professional-organizing-course-catalog/background-po.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -63,7 +62,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
+      <ThankYouSection course="organizing" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <ThreeReasonsSection />
       <SupportSection showLink />

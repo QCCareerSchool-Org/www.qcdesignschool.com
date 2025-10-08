@@ -3,8 +3,7 @@ import { cookies, headers } from 'next/headers';
 
 import { Header } from '../_components/header';
 import { ThankYouSection } from '../_components/thankYouSection';
-import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
-import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
+import HeroDesktopImage from '../landscape-design-course-catalog/hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { EmailSentToast } from '@/components/emailSentToast';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -63,13 +62,13 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
-      <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
+      <ThankYouSection course="landscape" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <ThreeReasonsSection />
       <SupportSection showLink />
       <GuaranteeSection />
       <GetStartedSection
-        title="Ready to start your home staging career?"
+        title="Ready to start your landscape design career?"
         text="Become professionally certified with QC's online training today and start earning!"
       />
     </>
