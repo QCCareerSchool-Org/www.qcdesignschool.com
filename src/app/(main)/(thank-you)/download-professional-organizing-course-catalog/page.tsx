@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { ThankYouSection } from '@/app/(main)/(thank-you)/_components/thankYouSection';
+import { ThankYouSection } from '@/app/(landing)/_components/thankYouSection';
 import type { PageComponent } from '@/app/serverComponent';
 import { SupportSection } from '@/components/supportSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';

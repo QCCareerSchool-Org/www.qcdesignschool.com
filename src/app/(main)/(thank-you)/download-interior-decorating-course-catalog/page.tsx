@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { CertificationSection } from '@/app/(landing)/_components/certificationSection';
 import { JoinQCSection } from '@/app/(landing)/_components/joinQCSection';
-import { ThankYouSection } from '@/app/(main)/(thank-you)/_components/thankYouSection';
+import { ThankYouSection } from '@/app/(landing)/_components/thankYouSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
