@@ -50,8 +50,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <Header logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} showBanner />
-      {emailAddress && <EmailSentToast emailAddress={emailAddress} firstName={firstName} />}
+      <Header logoLink showBanner />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
