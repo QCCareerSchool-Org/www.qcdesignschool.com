@@ -38,6 +38,7 @@
     { "source": "/thank-you-organizing-course-catalog", "destination": "/thank-you-professional-organizing-course-catalog" },
     { "source": "/thank-you-feng-shui-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
     { "source": "/thank-you-landscape-design-course-preview", "destination": "/thank-you-landscape-design-course-catalog" },
+    { "source": "/thank-you-interior-decorating-course-catalog", "destination": "/thank-you-course-catalog" },
 
     { "source": "/download-color-consultant-course-catalog", "destination": "/thank-you-color-consultant-course-catalog" },
     { "source": "/download-feng-shui-design-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
