@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -88,7 +89,9 @@ const EventDecorPage: PageComponent = () => (
     <GoogleReviewSection courseCode="ed" />
     <TutorSection className="bg-light" />
     <OutlineSection />
-    <PaymentPlanSection courseCodes={courseCodes} />
+    <Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
+    </Suspense>
     <section>
       <div className="container">
         <div className="row justify-content-center">

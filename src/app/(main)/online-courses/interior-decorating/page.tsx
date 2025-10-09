@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Suspense } from 'react';
 import type { Product, WithContext } from 'schema-dts';
 
 import { OutlineSection } from './_outlineSection';
@@ -149,7 +150,9 @@ const InteriorDecoratingPage: PageComponent = async () => {
       <TutorSection className="bg-light" />
       <OutlineSection designRestricted={designRestricted} />
       <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection courseCodes={courseCodes} />
+      </Suspense>
       <section>
         <div className="container">
           <div className="row justify-content-center">

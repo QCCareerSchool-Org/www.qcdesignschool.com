@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -96,7 +97,9 @@ const AgingInPlacePage: PageComponent = async () => {
       <VirtualCommunitySection />
       <OutlineSection />
       <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection courseCodes={courseCodes} />
+      </Suspense>
       <section>
         <div className="container">
           <div className="row justify-content-center">

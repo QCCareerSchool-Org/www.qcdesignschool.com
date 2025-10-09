@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -97,7 +98,9 @@ const HomeStagingPage: PageComponent = async () => {
       <TutorSection className="bg-light" />
       <OutlineSection />
       <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection courseCodes={courseCodes} />
+      </Suspense>
       <section>
         <div className="container">
           <div className="row justify-content-center">

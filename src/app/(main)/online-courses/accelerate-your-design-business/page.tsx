@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import HeroImage from './hero.jpg';
@@ -94,7 +95,9 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
       <VirtualCommunitySection />
       <GoogleReviewSection courseCode="db" />
       <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection courseCodes={courseCodes} />
+      </Suspense>
       <section>
         <div className="container">
           <div className="row justify-content-center">
