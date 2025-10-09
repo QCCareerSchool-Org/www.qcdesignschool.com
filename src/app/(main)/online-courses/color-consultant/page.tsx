@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -91,7 +92,9 @@ const ColorConsultantPage: PageComponent = () => (
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitCanvaSection />
-    <PaymentPlanSection courseCodes={courseCodes} />
+    <Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
+    </Suspense>
     <section>
       <div className="container">
         <div className="row justify-content-center">
