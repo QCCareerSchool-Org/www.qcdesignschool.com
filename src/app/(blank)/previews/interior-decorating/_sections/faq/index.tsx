@@ -11,7 +11,7 @@ export const FAQ: FC = () => {
         <div className="row justify-content-center g-4">
           <div className="col-12 col-md-10 col-lg-8">
             <QuestionAndAnswer heading="How long will the course take?">
-              Our courses are completely self-paced! Most students graduate in as little as 2 to 6 months, but you can take up to 2 years to complete your studies.
+              Our courses are completely self-paced! Most students graduate in as little as 2 to 6 months, but you can take up to a year to complete your studies.
             </QuestionAndAnswer>
           </div>
           <div className="col-12 col-md-10 col-lg-8">

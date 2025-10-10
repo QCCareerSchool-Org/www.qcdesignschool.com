@@ -135,7 +135,7 @@ const AgingInPlacePage: PageComponent = async () => {
                 <p>This designation shows clients and employers that you're a <strong>qualified AIP designer</strong> with specialized knowledge.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="How long does it take to become an AIP designer?">
-                <p>You can become a <strong>certified aging in place designer in 2 to 6 months</strong> with QC Design School's flexible, self-paced course. You'll study on your own schedule and have <strong>up to 2 years</strong> to complete your assignments and earn your APDP certification.</p>
+                <p>You can become a <strong>certified aging in place designer in 2 to 6 months</strong> with QC Design School's flexible, self-paced course. You'll study on your own schedule and have <strong>up to a year</strong> to complete your assignments and earn your APDP certification.</p>
                 <p>As soon as you graduate, you can start taking on aging in place design clients.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="Do I need prior experience or training before taking the Aging in Place course?">

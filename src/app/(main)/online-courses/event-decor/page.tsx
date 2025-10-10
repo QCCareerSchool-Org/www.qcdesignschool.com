@@ -109,7 +109,7 @@ const EventDecorPage: PageComponent = () => (
               <p>A license, degree, or certification is NOT required to work as an event decorator. With QC's Event Decor course, you'll earn an industry-recognized certification as an International Event Decorating Professional (IEDP).  This designation gives you a competitive edge by proving your qualifications and building client trust, so that you can stand out in this lucrative industry. The IEDP certification shows clients that you have the skills and knowledge required to decorate beautiful and memorable events.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become an event decorator?">
-              <p>You can become a certified event decorator in just a <strong>few short months</strong>! QC's <strong>self-paced online course</strong> allows you to study on your schedule. Most students complete the course in <strong>3 to 6 months</strong>, but you'll have <strong>up to 2 full years</strong> to finish your assignments.</p>
+              <p>You can become a certified event decorator in just a <strong>few short months</strong>! QC's <strong>self-paced online course</strong> allows you to study on your schedule. Most students complete the course in <strong>3 to 6 months</strong>, but you'll have <strong>up to a full year</strong> to finish your assignments.</p>
               <p>You can start booking <strong>event decorator jobs</strong> as soon as you're certified.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Can I start my own event decor business after graduating?">

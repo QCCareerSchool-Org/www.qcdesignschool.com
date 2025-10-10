@@ -136,7 +136,7 @@ const FengShuiDesignPage: PageComponent = () => (
               <p>No, a license or degree is <i>not</i> required to work as a feng shui design consultant. However, professional training and certification give you the credibility clients are looking for. When you graduate from QC Design School's online Feng Shui Design course, you will receive a certification that designates you as an Advanced Feng Shui Design Professional (AFDP). Your certification will confirm that you have all the skills and knowledge required to create functional and comfortable homes.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become a feng shui consultant?">
-              <p>You can become a feng shui consultant in just two to six months! The program is entirely self paced, allowing you to work on your own schedule. You'll have <strong>up to 2 years</strong> to finish your assignments and earn your Advanced Feng Shui Design Professional (AFDP) title.</p>
+              <p>You can become a feng shui consultant in just two to six months! The program is entirely self paced, allowing you to work on your own schedule. You'll have <strong>up to a year</strong> to finish your assignments and earn your Advanced Feng Shui Design Professional (AFDP) title.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Can I start my own feng shui consulting business after graduating?">
               <p>Absolutely! QC Design School's Feng Shui Design course includes an optional business unit that teaches you everything you need to launch your own successful consulting practice. You'll learn how to:</p>
