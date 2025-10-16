@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import RedBadge from './998-price-badge.png';
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
 import { CourseCardsSection } from './courseCardsSection';
 import styles from './page.module.scss';
 import HeroImage from './po-hero.jpg';
+import RedBadge from './price-badge-$100.png';
 import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
@@ -45,12 +45,12 @@ const ProfessionalOrganizingPage: PageComponent = () => (
               <CourseType className="mb-2 mb-xl-4">AIOP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Professional Organizing Course</h1>
               <p className="h5 mb-2">Start Your Journey as a Professional Organizer</p>
-              <p className="">Enroll with Our Lowest Tuition Ever</p>
+              <p className="">Enroll Today and Start Booking Clients in Under 3 Months!</p>
               <div className="d-block d-md-none text-center mb-4">
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24.3rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '25rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your chance to earn a professional certification and launch the organizing career you&rsquo;ve always dreamed of. Join over 45,000 QC students and graduates worldwide who have turned their passion for organizing and design into thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future as a professional organizer today!</p>

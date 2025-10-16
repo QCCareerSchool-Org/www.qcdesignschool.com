@@ -7,7 +7,7 @@ import { CertificationSection } from './certificationSection';
 import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
-import RedBadge from './price-badge-$550.png';
+import RedBadge from './price-badge-$100.png';
 import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
@@ -45,12 +45,12 @@ const LandscapeDesignPage: PageComponent = () => (
               <CourseType className="mb-2 mb-xl-4">ILDP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Landscape Design Course</h1>
               <p className="h5 mb-2">Become a Certified Landscape Designer</p>
-              <p className="mb-3">Enroll with Our Lowest Tuition Ever</p>
+              <p className="">Enroll Today and Start Booking Clients in Under 4 Months!</p>
               <div className="d-block d-md-none text-center mb-4">
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24.4rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '25rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>

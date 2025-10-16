@@ -6,7 +6,7 @@ import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
-import RedBadge from './price-badge-$600.png';
+import RedBadge from './price-badge-$100.png';
 import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
@@ -44,12 +44,12 @@ const FengShuiDesignPage: PageComponent = () => (
               <CourseType className="mb-2 mb-xl-4">AFDP&trade; Certification</CourseType>
               <h1 className="mb-2 mb-xl-4">Feng Shui Design Course</h1>
               <p className="h5 mb-2">Master the Art of Feng Shui</p>
-              <p className="mb-3">Enroll with Our Lowest Tuition Ever</p>
+              <p className="mb-3">Enroll Today and Earn Your Certification in Under 3 Months!</p>
               <div className="d-block d-md-none text-center mb-4">
                 <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
               </div>
             </Hero>
-            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '25rem', right: '3.5rem', width: '17%', height: 'auto' }} />
+            <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24rem', right: '3.5rem', width: '17%', height: 'auto' }} />
           </div>
           <div className="col-12 col-md-10 col-lg-8 text-center">
             <p className="mb-4">Unlock the power of Feng Shui design so you can bring balance and harmony to every space. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into professional-level skills. Don&rsquo;t wait—start your Feng Shui journey today!</p>
