@@ -34,7 +34,7 @@ const testimonialIds = [ 'TD-0005', 'TD-0028', 'TD-0029', 'TD-0006', 'TD-0019', 
 const courseCodes: CourseCode[] = [ 'fs' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs';
 
-export const FengShuiDesignPage: PageComponent = async () => {
+const FengShuiDesignPage: PageComponent = async () => {
   const { countryCode } = await getData();
   const redBadgePath = gbpCountry(countryCode) ? '/images/price-badge-$100-uk.png' : '/images/price-badge-$100.png';
 
