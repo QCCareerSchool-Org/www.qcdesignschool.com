@@ -9,6 +9,7 @@ import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
+import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
 import { Header } from '../_components/header';
@@ -111,6 +112,9 @@ const LandscapeDesignPage: PageComponent = async () => {
               <div className="text-left">
                 <Link href="https://www.qcdesignschool.com/previews/landscape-design/content/index.html" target="blank" rel="noopener noreferrer"><button className="btn btn-primary btn-lg mt-5">Get My Free Lesson Preview</button></Link>
               </div>
+            </div>
+            <div className="col-12 col-sm-10 col-md-8 col-lg-6">
+              <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
             </div>
           </div>
         </div>
