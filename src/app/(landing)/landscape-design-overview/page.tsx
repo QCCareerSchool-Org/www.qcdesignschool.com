@@ -35,7 +35,7 @@ const testimonialIds = [ 'TD-0020', 'TD-0018', 'TD-0021', 'TD-0006', 'TD-0019', 
 const courseCodes: CourseCode[] = [ 'ld' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld';
 
-export const LandscapeDesignPage: PageComponent = async () => {
+const LandscapeDesignPage: PageComponent = async () => {
   const { countryCode } = await getData();
   const redBadgePath = gbpCountry(countryCode) ? '/images/price-badge-$100-uk.png' : '/images/price-badge-$100.png';
 
