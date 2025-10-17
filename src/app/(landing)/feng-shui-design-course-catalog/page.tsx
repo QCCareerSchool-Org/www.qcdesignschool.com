@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/feng-shui-design-course-catalog' },
 };
 
-const brevoListId = 7; // General Leads
-const brevoEmailTemplateId = 58; // General
+const brevoListId = 64; // Feng Shui Leads
+const brevoEmailTemplateId = 2205; // Feng Shui
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
@@ -61,8 +61,9 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-feng-shui-design-course-catalog`}
                     listId={brevoListId}
+                    telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
                     msclkid={msclkid}
@@ -73,6 +74,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

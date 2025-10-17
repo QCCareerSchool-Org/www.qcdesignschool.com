@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -97,7 +98,9 @@ const HomeStagingPage: PageComponent = async () => {
       <TutorSection className="bg-light" />
       <OutlineSection />
       <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <Suspense>
+        <PaymentPlanSection courseCodes={courseCodes} />
+      </Suspense>
       <section>
         <div className="container">
           <div className="row justify-content-center">
@@ -115,7 +118,7 @@ const HomeStagingPage: PageComponent = async () => {
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="How long does it take to become a home stager?">
                 <p>You can become a certified home stager in <strong>as little as 3 to 6 months</strong> with QC Design School's <strong>flexible, self-paced online training</strong> and begin booking clients right away.</p>
-                <p>Need more flexibility? You'll have up to <strong>2 full years</strong> to finish your home staging course, so you can learn at your own pace—even while working or managing a busy schedule.</p>
+                <p>Need more flexibility? You'll have up to <strong>a full year</strong> to finish your home staging course, so you can learn at your own pace—even while working or managing a busy schedule.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="Will I be eligible to join professional associations when I graduate from QC Design School?">
                 <p>Yes! Graduating from QC Design School's Home Staging course qualifies you to apply for membership with various professional home staging organizations, including:</p>

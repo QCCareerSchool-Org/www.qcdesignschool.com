@@ -27,7 +27,7 @@ export const Highlights: FC = () => {
   };
 
   return (
-    <div className="row">
+    <div className="row g-4">
       <div className="col-12 col-lg-4">
         <h3 className="h6 mb-3">Expert Mentorship</h3>
         <p>Get personalized feedback from industry-leading professionals and build real-world design skills through insights you won't find in textbooks.</p>

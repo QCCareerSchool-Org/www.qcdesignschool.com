@@ -27,8 +27,14 @@ export const GET = async (request: NextRequest): Promise<NextResponse> => {
 
 const getLocalFilename = (course: string | null, countryCode: string, provinceCode: string | null): string => {
   switch (course) {
+    case 'organizing':
+      return 'organizing.pdf';
+    case 'staging':
+      return 'staging.pdf';
     case 'landscape':
       return 'landscape.pdf';
+    case 'feng-shui':
+      return 'feng-shui.pdf';
     default:
       return getDesignRestricted(countryCode, provinceCode) ? 'decorating.pdf' : 'design.pdf';
   }

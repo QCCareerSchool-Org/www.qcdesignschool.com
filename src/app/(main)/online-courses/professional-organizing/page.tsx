@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -93,7 +94,9 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitDesignFilesSection />
-    <PaymentPlanSection courseCodes={courseCodes} />
+    <Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
+    </Suspense>
     <section>
       <div className="container">
         <div className="row justify-content-center">
@@ -126,7 +129,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
               <p>Upon completion, you'll earn the Advanced International Organizing Professional <strong>(AIOP) designation</strong>, proving you're professionally trained and ready to help clients transform their spaces and routines.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become a professional organizer?">
-              <p>You can become a professional organizer in only a few short months! When you take QC Design School's professional organizer course, you work at your own pace and according to your own schedule. Plus, you can start booking clients right away! If you want to take your time, you have up to two full years to complete your lessons and assignments and earn your certification.</p>
+              <p>You can become a professional organizer in only a few short months! When you take QC Design School's professional organizer course, you work at your own pace and according to your own schedule. Plus, you can start booking clients right away! If you want to take your time, you have up to a full year to complete your lessons and assignments and earn your certification.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Will I be eligible to join a professional association when I graduate from QC Design School?">
               <p>Yes! As a student and graduate of QC Design School,  you'll be eligible to join many professional organizations, including the American Society of Professional Organizers and the International Furnishings and Design Association. These organizations offer opportunities to network, collaborate, find employment and learn more about trends and developments in the industry.</p>

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 7; // General Leads
-const brevoEmailTemplateId = 1598; // General
+const brevoEmailTemplateId = 1910; // Decorating
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FreeCourseCatalogPage: PageComponent = async props => {
@@ -65,6 +65,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
                   <BrevoForm
                     successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
                     listId={brevoListId}
+                    telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
                     msclkid={msclkid}
@@ -75,6 +76,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

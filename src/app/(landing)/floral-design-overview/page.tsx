@@ -34,13 +34,14 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 'TD-0025' ];
 const courseCodes: CourseCode[] = [ 'fd' ];
+const enrollUrl = 'https://enroll.qcdesignschool.com/floral-design-overview?c=fd';
 
 const FloralDesignPage: PageComponent = async () => {
   const { countryCode } = await getData();
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/floral-design-overview?c=fd'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -59,7 +60,7 @@ const FloralDesignPage: PageComponent = async () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait&mdash;take the first step toward your future in floral design today!</p>
 
-              <Link href="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+              <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
@@ -84,7 +85,7 @@ const FloralDesignPage: PageComponent = async () => {
             </div>
           </div>
           <div className="text-left mt-4">
-            <Link href="https://enroll.qcdesignschool.com/floral-design-overview?c=fd"><button className="btn btn-primary btn-lg mb-5 mt-3">Start My Course</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5 mt-3">Start My Course</button></Link>
           </div>
         </div>
       </section>
@@ -134,7 +135,7 @@ const FloralDesignPage: PageComponent = async () => {
                 <p>You don't need a license or degree to work as a florist or floral designer. QC's Floral Design course will teach you how to become a floral designer by providing you with personalized feedback and advice from our top industry experts and providing you with business training to help you launch your career. When you graduate from QC Design School's Floral Design course, you will receive a certification and be able to use the designation of International Floral Design Professional&trade; (IFDP&trade;). This prestigious certification showcases your skills and credibility for your clients and colleagues in the floral design industry.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="How long does it take to become a floral designer">
-                <p>You can become a floral designer in as little as 2 to 6 months! When you take QC's Floral Design course, you can work at your own pace and according to your own schedule. You'll have up to <strong>2 full years</strong> to complete your training, giving you the flexibility to study around your personal schedule.</p>
+                <p>You can become a floral designer in as little as 2 to 6 months! When you take QC's Floral Design course, you can work at your own pace and according to your own schedule. You'll have up to <strong>a full year</strong> to complete your training, giving you the flexibility to study around your personal schedule.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="Can I start my own floral design or florist shop after graduating?">
                 <p>Yes, absolutely! QC Design School's <strong>Floral Design course</strong> includes an optional <strong>business training unit</strong> that walks you through the process of launching your own floral design business or florist shop. You'll learn how to:</p>

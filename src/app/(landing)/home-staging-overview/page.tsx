@@ -34,6 +34,7 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0016', 'TD-0011', 'TD-0023' ];
 const courseCodes: CourseCode[] = [ 'st' ];
+const enrollUrl = 'https://enroll.qcdesignschool.com/home-staging-overview?c=st';
 
 const HomeStagingPage: PageComponent = async () => {
   const { countryCode } = await getData();
@@ -41,7 +42,7 @@ const HomeStagingPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/home-staging-overview?c=st'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} showBanner buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -62,7 +63,7 @@ const HomeStagingPage: PageComponent = async () => {
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
 
-              <Link href="https://enroll.qcdesignschool.com/home-staging-overview?c=st"><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
+              <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
 
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
@@ -88,7 +89,7 @@ const HomeStagingPage: PageComponent = async () => {
             </div>
           </div>
           <div className="text-left">
-            <Link href="https://enroll.qcdesignschool.com/home-staging-overview?c=st"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
           </div>
         </div>
       </section>
@@ -141,7 +142,7 @@ const HomeStagingPage: PageComponent = async () => {
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="How long does it take to become a home stager?">
                 <p>You can become a certified home stager in <strong>as little as 3 to 6 months</strong> with QC Design School's <strong>flexible, self-paced online training</strong> and begin booking clients right away.</p>
-                <p>Need more flexibility? You'll have up to <strong>2 full years</strong> to finish your home staging course, so you can learn at your own pace—even while working or managing a busy schedule.</p>
+                <p>Need more flexibility? You'll have up to <strong>a full year</strong> to finish your home staging course, so you can learn at your own pace—even while working or managing a busy schedule.</p>
               </QuestionAndAnswer>
               <QuestionAndAnswer heading="Will I be eligible to join professional associations when I graduate from QC Design School?">
                 <p>Yes! Graduating from QC Design School's Home Staging course qualifies you to apply for membership with various professional home staging organizations, including:</p>

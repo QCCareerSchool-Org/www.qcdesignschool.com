@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -91,7 +92,9 @@ const ColorConsultantPage: PageComponent = () => (
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitCanvaSection />
-    <PaymentPlanSection courseCodes={courseCodes} />
+    <Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
+    </Suspense>
     <section>
       <div className="container">
         <div className="row justify-content-center">
@@ -108,7 +111,7 @@ const ColorConsultantPage: PageComponent = () => (
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become a color consultant?">
               <p>You can become a certified color consultant in as little as <strong>2 to 6 months</strong>! QC Design School's <strong>self-paced online course</strong> allows you to work according to your own schedule.</p>
-              <p>You'll have up to <strong>2 full years</strong> to complete your coursework and assignments—so whether you're fast-tracking your certification or balancing your studies with work or family life, the course adapts to your pace.</p>
+              <p>You'll have up to <strong>a full year</strong> to complete your coursework and assignments—so whether you're fast-tracking your certification or balancing your studies with work or family life, the course adapts to your pace.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="What are color analysis consultants?">
               <p>A <strong>color analysis consultant</strong> uses color theory to help clients choose colors that suit their personal style, including:</p>

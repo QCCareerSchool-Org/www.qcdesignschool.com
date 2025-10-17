@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 19; // Professional Organizing Leads
-const brevoEmailTemplateId = 75; // Professional Organizing
+const brevoEmailTemplateId = 1939; // Professional Organizing
 const testimonialIds = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
 
 const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
@@ -61,8 +61,9 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-professional-organizing-course-catalog`}
                     listId={brevoListId}
+                    telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
                     msclkid={msclkid}
@@ -73,6 +74,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

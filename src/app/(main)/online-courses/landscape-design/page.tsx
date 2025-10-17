@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -91,7 +92,9 @@ const LandscapeDesignPage: PageComponent = () => (
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitCanvaSection />
-    <PaymentPlanSection courseCodes={courseCodes} />
+    <Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
+    </Suspense>
     <section>
       <div className="container">
         <div className="row justify-content-center">
@@ -113,7 +116,7 @@ const LandscapeDesignPage: PageComponent = () => (
               </ul>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="How long does it take to become a certified landscape designer?">
-              <p>You can become a landscape designer in as little as 2 to 6 months! QC Design School's <strong>flexible, self-paced online course</strong> allows you to study on your own schedule—ideal for students who are working or balancing other commitments. If you need to take your time, you'll have up to <strong>2 full years</strong> to finish your training and receive your ILDP certification.</p>
+              <p>You can become a landscape designer in as little as 2 to 6 months! QC Design School's <strong>flexible, self-paced online course</strong> allows you to study on your own schedule—ideal for students who are working or balancing other commitments. If you need to take your time, you'll have up to <strong>a full year</strong> to finish your training and receive your ILDP certification.</p>
             </QuestionAndAnswer>
             <QuestionAndAnswer heading="Can I start a landscape design business after completing the course?">
               <p>Yes! With QC's Landscape Design course, you'll learn how to become a landscape designer step by step, from designing beautiful gardens to starting your own business. The course includes optional business training so you can learn how to register your own business, write a business plan, market your services, work successfully with any client or vendor, and develop a professional portfolio to showcase your work. Whether you want to freelance, open your own design studio, or offer design-build services, you'll graduate with the skills and tools to launch a <strong>thriving landscape design business</strong>.</p>

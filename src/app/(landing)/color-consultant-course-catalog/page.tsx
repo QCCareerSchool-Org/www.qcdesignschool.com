@@ -61,8 +61,9 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
+                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-color-consultant-course-catalog`}
                     listId={brevoListId}
+                    telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
                     gclid={gclid}
                     msclkid={msclkid}
@@ -73,6 +74,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
                     utmTerm={utmTerm}
                     referrer={referrer}
                     placeholders
+                    countryCode={countryCode}
                   />
                 </FormWrapper>
               </FormCard>

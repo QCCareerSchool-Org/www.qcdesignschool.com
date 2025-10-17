@@ -5,7 +5,7 @@ import type { PageComponent } from '@/app/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',
-  description: 'You have two years from the date of enrollment to complete your courses. However, QC is happy to offer an extension to students who need more time.',
+  description: 'You have one year from the date of enrollment to complete your courses. However, QC is happy to offer an extension to students who need more time.',
   alternates: { canonical: '/enrollment-agreement' },
 };
 
@@ -33,7 +33,7 @@ const EnrollmentAgreementPage: PageComponent = () => (
       <li>Should you miss a scheduled tuition payment, you are required to communicate with the School and arrange a replacement payment as quickly as possible. Your student center account will be placed &quot;on hold&quot; until your payments are up-to-date.</li>
     </ul>
     <h2>4. Course Deadlines</h2>
-    <p>You have two years from the date of enrollment to complete your courses. However, QC is happy to offer an extension to students who need more time. Simply contact the School to arrange an extension, before your two-year deadline. A nominal administration fee will be charged to your account.</p>
+    <p>You have one year from the date of enrollment to complete your courses. However, QC is happy to offer an extension to students who need more time. Simply contact the School to arrange an extension, before your two-year deadline. A nominal administration fee will be charged to your account.</p>
     <h2>5. Assignment Deadlines &amp; Grading</h2>
     <p>There are no deadlines for submitting any assignment or course unit to QC.</p>
     <p>Once a full unit has been submitted for grading, you will receive a grade and audio feedback from your tutor within 10 business days. Should your tutor take longer than 10 business days, contact the School for assistance.</p>
