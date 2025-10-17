@@ -36,7 +36,7 @@ const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 
 const courseCodes: CourseCode[] = [ 'po' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po';
 
-export const ProfessionalOrganizingPage: PageComponent = async () => {
+const ProfessionalOrganizingPage: PageComponent = async () => {
   const { countryCode } = await getData();
   const redBadgePath = gbpCountry(countryCode) ? '/images/price-badge-$100-uk.png' : '/images/price-badge-$100.png';
 
