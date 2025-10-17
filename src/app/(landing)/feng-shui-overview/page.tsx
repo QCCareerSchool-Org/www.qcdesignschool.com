@@ -87,11 +87,8 @@ const FengShuiDesignPage: PageComponent = async () => {
             </div>
           </div>
           <div className="text-left">
-            <Link href="https://enroll.qcdesignschool.com/feng-shui-overview?c=fs"><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
+            <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
           </div>
-        </div>
-        <div className="text-left">
-          <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Start My Course</button></Link>
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
