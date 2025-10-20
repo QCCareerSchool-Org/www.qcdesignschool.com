@@ -7,7 +7,6 @@ import { CertificationSection } from './certificationSection';
 import { CourseCardsSection } from './courseCardsSection';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
-import RedBadge from './price-badge-$500.png';
 import ShieldIcon from './shield.svg';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
@@ -50,18 +49,12 @@ const HomeStagingPage: PageComponent = async () => {
                 <CourseType className="mb-2 mb-xl-4">ISRP&trade; Certification</CourseType>
                 <h1 className="mb-2 mb-xl-4">Home Staging Course</h1>
                 <p className="h5 mb-2">Become a Certified Home Stager</p>
-                <p className="">Enroll with Our Lowest Tuition Ever</p>
-                <div className="d-block d-md-none text-center mb-4">
-                  <Image src={RedBadge} alt="" style={{ width: '35%', height: 'auto' }} />
-                </div>
+                <p className="">Enroll Today and Start Booking Clients in Under 3 Months!</p>
               </Hero>
-              <Image src={RedBadge} alt="" className="position-absolute d-none d-md-block" style={{ bottom: '24.7rem', right: '3.5rem', width: '17%', height: 'auto' }} />
             </div>
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
-
               <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
-
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
           </div>
