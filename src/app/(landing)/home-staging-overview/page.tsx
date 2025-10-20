@@ -23,7 +23,6 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
@@ -38,7 +37,6 @@ const enrollUrl = 'https://enroll.qcdesignschool.com/home-staging-overview?c=st'
 
 const HomeStagingPage: PageComponent = async () => {
   const { countryCode } = await getData();
-  const redBadgePath = gbpCountry(countryCode) ? '/images/price-badge-$100-uk.png' : '/images/price-badge-$100.png';
 
   return (
     <div className={styles.page}>
@@ -52,19 +50,11 @@ const HomeStagingPage: PageComponent = async () => {
                 <h1 className="mb-2 mb-xl-4">Home Staging Course</h1>
                 <p className="h5 mb-2">Become a Certified Home Stager</p>
                 <p className="">Enroll Today and Start Booking Clients in Under 3 Months!</p>
-                <div className="d-block d-md-none text-center">
-                  <Image src={redBadgePath} alt="" width={150} height={150} />
-                </div>
               </Hero>
-              <div className="position-absolute d-none d-md-block" style={{ bottom: '26rem', right: '3.5rem', position: 'relative', width: '17%', paddingBottom: '15%', height: 0 }}>
-                <Image src={redBadgePath} alt="" fill={true} style={{ objectFit: 'contain' }} />
-              </div>
             </div>
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
-
               <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
-
               <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
             </div>
           </div>

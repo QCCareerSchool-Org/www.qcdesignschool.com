@@ -23,8 +23,6 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { gbpCountry } from '@/lib/currencies';
-import { getData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Landscape Design Course',
@@ -37,9 +35,6 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld';
 
 const LandscapeDesignPage: PageComponent = async () => {
-  const { countryCode } = await getData();
-  const redBadgePath = gbpCountry(countryCode) ? '/images/price-badge-$100-uk.png' : '/images/price-badge-$100.png';
-
   return (
     <div className={styles.page}>
       <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} showBanner buttonHref={'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
@@ -52,13 +47,7 @@ const LandscapeDesignPage: PageComponent = async () => {
                 <h1 className="mb-2 mb-xl-4">Landscape Design Course</h1>
                 <p className="h5 mb-2">Become a Certified Landscape Designer</p>
                 <p className="">Enroll Today and Start Booking Clients in Under 4 Months!</p>
-                <div className="d-block d-md-none text-center">
-                  <Image src={redBadgePath} alt="" width={150} height={150} />
-                </div>
               </Hero>
-              <div className="position-absolute d-none d-md-block" style={{ bottom: '25rem', right: '3.5rem', position: 'relative', width: '17%', paddingBottom: '15%', height: 0 }}>
-                <Image src={redBadgePath} alt="" fill={true} style={{ objectFit: 'contain' }} />
-              </div>
             </div>
             <div className="col-12 col-md-10 col-lg-8 text-center">
               <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the landscape design career you&rsquo;ve been dreaming of. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into successful businesses. Don&rsquo;t wait—take the first step toward your future in landscape design today!</p>
