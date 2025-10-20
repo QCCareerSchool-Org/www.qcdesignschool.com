@@ -21,12 +21,12 @@ export const CourseOverview: FC = async () => {
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" showBanner />
       <section className="p-0" style={{ backgroundColor: '#333' }}>
         <div className="container">
-          <a href="https://enroll.qcdesignschool.com">
-            <div className="d-none d-lg-block"><Image src={HeroImage} alt="" /></div>
+          <a href="https://enroll.qcdesignschool.com/all-courses-offer">
+            <Image src={HeroImage} alt="" className="img-fluid" />
           </a>
         </div>
       </section>
-      <section className="pt-0 pt-lg-s">
+      <section>
         <div className="container text-center">
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-9">
