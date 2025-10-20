@@ -2,13 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import BadgeImage from './$998.png';
-import HeroBackgroundImage from './hero-bg.jpg';
-import styles from './index.module.scss';
+import HeroImage from './desktop.jpg';
 import { Price } from './price';
 import ShieldIcon from './shield.svg';
 import { Header } from '../_components/header';
-import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -22,12 +19,11 @@ export const CourseOverview: FC = async () => {
   return (
     <>
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" showBanner />
-      <section className="pb-5 pb-lg-s">
-        <div className="d-none d-lg-block"><BackgroundImage src={HeroBackgroundImage} /></div>
-        <div className="container text-center">
-          <h1 style={{ textTransform: 'uppercase' }} className={styles.title}>Do What Inspires You</h1>
-          <p className={`display-6 ${styles.subheading}`}>Enroll with Our Lowest Tuition Ever</p>
-          <Image src={BadgeImage} alt="All courses $998 or less" width="137" height="135" quality="100" />
+      <section className="p-0" style={{ backgroundColor: '#333' }}>
+        <div className="container">
+          <a href="https://enroll.qcdesignschool.com">
+            <div className="d-none d-lg-block"><Image src={HeroImage} alt="" /></div>
+          </a>
         </div>
       </section>
       <section className="pt-0 pt-lg-s">

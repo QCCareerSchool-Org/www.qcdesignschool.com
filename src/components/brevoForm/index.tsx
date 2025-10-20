@@ -31,7 +31,7 @@ type Props = {
   courseCodes?: string[];
   button?: ReactElement;
   referrer: string | null;
-  countryCode?: string | null;
+  countryCode: string;
 };
 
 export const BrevoForm: FC<Props> = props => {
