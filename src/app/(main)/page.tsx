@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
+import type { ItemList, WithContext } from 'schema-dts';
 
 import type { PageComponent } from '../serverComponent';
 import { educationalOrganization } from './educationalOrganization';
@@ -42,8 +43,76 @@ const HomePage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
+  const jsonLdCourses: WithContext<ItemList> = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'item': {
+          '@type': 'Course',
+          'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
+          'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
+          'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'QC Design School',
+            'sameAs': [
+              'https://www.linkedin.com/company/qc-career-school',
+              'https://www.facebook.com/QCDesign',
+              'https://www.instagram.com/qcdesignschool',
+              'https://www.youtube.com/@QCDesign',
+            ],
+          },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'item': {
+          '@type': 'Course',
+          'url': 'https://www.qcdesignschool.com/online-courses/home-staging',
+          'name': 'Home Staging Course',
+          'description': 'Learn home staging and transform client spaces into buyer-ready showcases.',
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'QC Design School',
+            'sameAs': [
+              'https://www.linkedin.com/company/qc-career-school',
+              'https://www.facebook.com/QCDesign',
+              'https://www.instagram.com/qcdesignschool',
+              'https://www.youtube.com/@QCDesign',
+            ],
+          },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'item': {
+          '@type': 'Course',
+          'url': 'https://www.qcdesignschool.com/online-courses/landscape-design',
+          'name': 'Landscape Design Course',
+          'description': 'Learn how to create stunning garden designs and outdoor design concepts.',
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'QC Design School',
+            'sameAs': [
+              'https://www.linkedin.com/company/qc-career-school',
+              'https://www.facebook.com/QCDesign',
+              'https://www.instagram.com/qcdesignschool',
+              'https://www.youtube.com/@QCDesign',
+            ],
+          },
+        },
+      },
+    ],
+  };
+
   return (
     <div className={styles.page}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdCourses) }} />
       <section className={styles.heroSection}>
         <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />
         <div className="container text-white text-shadow">
