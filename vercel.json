@@ -44,6 +44,7 @@
     { "source": "/download-feng-shui-design-course-catalog", "destination": "/thank-you-feng-shui-design-course-catalog" },
     { "source": "/download-home-staging-course-catalog", "destination": "/thank-you-home-staging-course-catalog" },
     { "source": "/download-interior-decorating-course-catalog", "destination": "/thank-you-course-catalog" },
+    { "source": "/download-interior-design-course-catalog", "destination": "/thank-you-course-catalog" },
     { "source": "/download-landscape-design-course-catalog", "destination": "/thank-you-landscape-design-course-catalog" },
     { "source": "/download-professional-organizing-course-catalog", "destination": "/thank-you-professional-organizing-course-catalog" },
     
