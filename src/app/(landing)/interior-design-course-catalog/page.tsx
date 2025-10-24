@@ -33,7 +33,7 @@ export const generateMetadata: GenerateMetadata = async () => {
 
   return {
     title: `Free Interior ${designRestricted ? 'Decorating' : 'Design'} Course Catalog`,
-    description: 'Download the QC Interior Decorating course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!',
+    description: `Download the QC Interior ${designRestricted ? 'Decorating' : 'Design'} course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!`,
     alternates: { canonical: '/interior-design-course-catalog' },
   };
 };
@@ -41,11 +41,11 @@ export const generateMetadata: GenerateMetadata = async () => {
 const brevo = {
   design: {
     brevoListId: 52, // Interior Design Leads
-    brevoEmailTemplateId: 1848, // Design
+    brevoEmailTemplateId: 1464, // Design
   },
   decorating: {
     brevoListId: 18, // Interior Decorating Leads
-    brevoEmailTemplateId: 1910, // Decorating
+    brevoEmailTemplateId: 1598, // Decorating
   },
 };
 
