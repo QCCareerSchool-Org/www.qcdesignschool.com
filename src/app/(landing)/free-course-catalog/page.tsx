@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
@@ -11,7 +10,7 @@ import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
@@ -25,19 +24,35 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getDesignRestricted } from '@/lib/restrictions';
 
-export const metadata: Metadata = {
-  title: 'Free Course Catalog',
-  description: 'Download the QC Design School course catalog to get certified in as little as 3 months with flexible online training and personalized feedback!',
-  alternates: { canonical: '/free-course-catalog' },
+export const generateMetadata: GenerateMetadata = async () => {
+  const { countryCode, provinceCode } = await getData();
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  return {
+    title: `Free Interior ${designRestricted ? 'Decorating' : 'Design'} Course Catalog`,
+    description: `Download the Interior ${designRestricted ? 'Decorating' : 'Design'} course catalog to learn design fundamentals, styles, lighting, and business strategies to launch your career!`,
+    alternates: { canonical: '/interior-design-course-catalog' },
+  };
 };
 
-const brevoListId = 7; // General Leads
-const brevoEmailTemplateId = 1910; // Decorating
+const brevo = {
+  design: {
+    brevoListId: 52, // Interior Design Leads
+    brevoEmailTemplateId: 1464, // Design
+  },
+  decorating: {
+    brevoListId: 18, // Interior Decorating Leads
+    brevoEmailTemplateId: 1598, // Decorating
+  },
+};
+
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FreeCourseCatalogPage: PageComponent = async props => {
-  const { countryCode } = await getData();
+  const { countryCode, provinceCode } = await getData();
   const date = new Date().getTime();
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
@@ -49,6 +64,10 @@ const FreeCourseCatalogPage: PageComponent = async props => {
   const utmTerm = getParam(searchParams.utm_term);
   const headerList = await headers();
   const referrer = headerList.get('referer');
+
+  const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  const { brevoListId, brevoEmailTemplateId } = designRestricted ? brevo.decorating : brevo.design;
 
   return (
     <>
