@@ -71,7 +71,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <SupportSection showLink />
       <GuaranteeSection />
       <GetStartedSection
-        title="Ready to start your home staging career?"
+        title="Ready to start your interior decorating career?"
         text="Become professionally certified with QC's online training today and start earning!"
       />
     </>
