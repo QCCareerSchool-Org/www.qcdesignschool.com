@@ -9,8 +9,8 @@ import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -101,47 +101,49 @@ const AgingInPlacePage: PageComponent = async () => {
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
       <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-              <QuestionAndAnswer heading="What is aging in place design?">
-                <p><strong>Aging in place design</strong>—sometimes called livable design or universal design for aging—is a specialized area of interior design that focuses on creating safe, functional, and accessible living environments for older adults. As an aging in place designer, you'll help seniors to continue <strong>living independently and comfortably in their own homes</strong> as they age, rather than moving to assisted living or care facilities.</p>
-                <p>Using principles of <strong>universal design</strong> and <strong>accessibility</strong>, aging in place designers create thoughtful, adaptable spaces that meet the changing physical needs of aging clients—supporting independence, safety, and quality of life.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Why is aging in place important?">
-                <p><strong>Aging in place is important</strong> because it helps older adults maintain their independence, dignity, and emotional well-being. Older adults who remain in their homes also keep their routines and community ties for a longer period of time, leading to a healthier social life and more flexibility in their caregiving. This approach not only improves quality of life for older adults but also empowers families to support their loved ones in more personalized ways.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="How much does an aging in place (AIP) designer earn?">
-                <p>The average <strong>aging in place designer salary</strong> is approximately <strong>$62,579 per year*</strong>, though earnings vary based on location, experience, services offered, and niche expertise. As demand for accessible design continues to grow with an aging population, <strong>AIP designers are in increasingly high demand</strong>.</p>
-                <p>Designers who specialize in aging in place often expand their services to include:</p>
-                <ul>
-                  <li>Home safety consultations</li>
-                  <li>Accessibility renovations</li>
-                  <li>Mobility-friendly space planning</li>
-                  <li>Collaborations with contractors or occupational therapists</li>
-                </ul>
-                <p className="small">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Certified-Aging-In-Place-Specialist-Salary#Yearly" target="_blank" rel="noreferrer">Certified Aging in Place Specialist Salary</a>.&rdquo; <i>Zip Recruiter.</i> May 2025</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Do I need a degree to become an AIP designer?">
-                <p>No college or university degree is required to become an aging in place designer. However, <strong>professional certification will give you a competitive edge</strong> in this growing field.</p>
-                <p>QC Design School's <strong>online Aging in Place course</strong> award graduates with the title of <strong>Aging in Place Design Professional (APDP)</strong>. This certification confirms your skills and training in:</p>
-                <ul>
-                  <li>Universal design and accessibility</li>
-                  <li>Space planning for mobility and safety</li>
-                  <li>Client communication and consultation</li>
-                  <li>Aging-related design modifications</li>
-                </ul>
-                <p>This designation shows clients and employers that you're a <strong>qualified AIP designer</strong> with specialized knowledge.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="How long does it take to become an AIP designer?">
-                <p>You can become a <strong>certified aging in place designer in 2 to 6 months</strong> with QC Design School's flexible, self-paced course. You'll study on your own schedule and have <strong>up to a year</strong> to complete your assignments and earn your APDP certification.</p>
-                <p>As soon as you graduate, you can start taking on aging in place design clients.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Do I need prior experience or training before taking the Aging in Place course?">
-                <p>Yes, Aging in Place is considered a specialty course, so QC Design School recommends that you first complete the Interior {designRestricted ? 'Decorating' : 'Design'} course unless you already have experience and/or training in the design field.</p>
-                <p>The Interior {designRestricted ? 'Decorating' : 'Design'} course teaches you essential design skills, while the Aging in Place course builds on that foundation by teaching advanced techniques for designing accessible, senior-friendly environments. If you're new to design, starting with Interior {designRestricted ? 'Decorating' : 'Design'} will ensure you're fully prepared for success in AIP design.</p>
-              </QuestionAndAnswer>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+                <AccordionFAQ heading="What is aging in place design?" className="mb-3">
+                  <p><strong>Aging in place design</strong>—sometimes called livable design or universal design for aging—is a specialized area of interior design that focuses on creating safe, functional, and accessible living environments for older adults. As an aging in place designer, you'll help seniors to continue <strong>living independently and comfortably in their own homes</strong> as they age, rather than moving to assisted living or care facilities.</p>
+                  <p>Using principles of <strong>universal design</strong> and <strong>accessibility</strong>, aging in place designers create thoughtful, adaptable spaces that meet the changing physical needs of aging clients—supporting independence, safety, and quality of life.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Why is aging in place important?" className="mb-3">
+                  <p><strong>Aging in place is important</strong> because it helps older adults maintain their independence, dignity, and emotional well-being. Older adults who remain in their homes also keep their routines and community ties for a longer period of time, leading to a healthier social life and more flexibility in their caregiving. This approach not only improves quality of life for older adults but also empowers families to support their loved ones in more personalized ways.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="How much does an aging in place (AIP) designer earn?" className="mb-3">
+                  <p>The average <strong>aging in place designer salary</strong> is approximately <strong>$62,579 per year*</strong>, though earnings vary based on location, experience, services offered, and niche expertise. As demand for accessible design continues to grow with an aging population, <strong>AIP designers are in increasingly high demand</strong>.</p>
+                  <p>Designers who specialize in aging in place often expand their services to include:</p>
+                  <ul>
+                    <li>Home safety consultations</li>
+                    <li>Accessibility renovations</li>
+                    <li>Mobility-friendly space planning</li>
+                    <li>Collaborations with contractors or occupational therapists</li>
+                  </ul>
+                  <p className="small">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Certified-Aging-In-Place-Specialist-Salary#Yearly" target="_blank" rel="noreferrer">Certified Aging in Place Specialist Salary</a>.&rdquo; <i>Zip Recruiter.</i> May 2025</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need a degree to become an AIP designer?" className="mb-3">
+                  <p>No college or university degree is required to become an aging in place designer. However, <strong>professional certification will give you a competitive edge</strong> in this growing field.</p>
+                  <p>QC Design School's <strong>online Aging in Place course</strong> award graduates with the title of <strong>Aging in Place Design Professional (APDP)</strong>. This certification confirms your skills and training in:</p>
+                  <ul>
+                    <li>Universal design and accessibility</li>
+                    <li>Space planning for mobility and safety</li>
+                    <li>Client communication and consultation</li>
+                    <li>Aging-related design modifications</li>
+                  </ul>
+                  <p>This designation shows clients and employers that you're a <strong>qualified AIP designer</strong> with specialized knowledge.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="How long does it take to become an AIP designer?" className="mb-3">
+                  <p>You can become a <strong>certified aging in place designer in 2 to 6 months</strong> with QC Design School's flexible, self-paced course. You'll study on your own schedule and have <strong>up to a year</strong> to complete your assignments and earn your APDP certification.</p>
+                  <p>As soon as you graduate, you can start taking on aging in place design clients.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need prior experience or training before taking the Aging in Place course?" className="mb-3">
+                  <p>Yes, Aging in Place is considered a specialty course, so QC Design School recommends that you first complete the Interior {designRestricted ? 'Decorating' : 'Design'} course unless you already have experience and/or training in the design field.</p>
+                  <p>The Interior {designRestricted ? 'Decorating' : 'Design'} course teaches you essential design skills, while the Aging in Place course builds on that foundation by teaching advanced techniques for designing accessible, senior-friendly environments. If you're new to design, starting with Interior {designRestricted ? 'Decorating' : 'Design'} will ensure you're fully prepared for success in AIP design.</p>
+                </AccordionFAQ>
+              </div>
             </div>
           </div>
         </div>
