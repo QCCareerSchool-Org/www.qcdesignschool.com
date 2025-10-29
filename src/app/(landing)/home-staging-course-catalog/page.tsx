@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const brevoListId = 20; // Home Staging Leads
-const brevoEmailTemplateId = 74; // Home Staging
+const brevoEmailTemplateId = 1985; // Home Staging
 const testimonialIds = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
