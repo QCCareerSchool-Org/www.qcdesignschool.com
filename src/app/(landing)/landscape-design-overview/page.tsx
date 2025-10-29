@@ -96,7 +96,7 @@ const LandscapeDesignPage: PageComponent = async () => {
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
-      <section>
+      <section id="whatYoullLearn">
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
             <div className="col-12 col-lg-6">

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 
 const iconHeight = 32;
 const brevoListId = 21; // Landscape Design Leads
-const brevoEmailTemplateId = 73; // Landscape Design
+const brevoEmailTemplateId = 1967; // Landscape Design
 const testimonialIds = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
