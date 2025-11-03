@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { Product, WithContext } from 'schema-dts';
+import type { Course, WithContext } from 'schema-dts';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -14,7 +14,6 @@ import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssent
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import { reviewData } from '@/components/googleReviewSection/reviewData';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { VideoPopup } from '@/components/marketingVideo';
@@ -25,6 +24,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import { getPriceSchema } from '@/lib/schemaFetchPrice';
 
 export const generateMetadata: GenerateMetadata = async () => {
   const { countryCode, provinceCode } = await getData();
@@ -41,35 +41,39 @@ export const generateMetadata: GenerateMetadata = async () => {
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0017' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
-const applicableReviews = reviewData.filter(r => r.courseCodes?.includes('i2'));
-
 const InteriorDecoratingPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const jsonLd: WithContext<Product> = {
+  const priceInfo = await getPriceSchema(courseCodes[0].toString());
+
+  const jsonLd: WithContext<Course> = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Course',
+    'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
     'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
-    'image': HeroImage.src,
-    'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career',
-    'review': applicableReviews.map(r => ({
-      '@type': 'Review',
-      'reviewRating': {
-        '@type': 'Rating',
-        'ratingValue': r.rating,
-        'bestRating': 5,
+    'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
+    'educationalCredentialAwarded': 'International Design and Decorating Professional™ Certification',
+    ...(priceInfo && {
+      offers: {
+        '@type': 'Offer',
+        'category': 'Course',
+        'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
+        'price': priceInfo.price,
+        'priceCurrency': priceInfo.priceCurrency,
+        'availability': 'https://schema.org/InStock',
       },
-      'author': {
-        '@type': 'Person',
-        'name': r.name,
-      },
-    })),
-    'aggregateRating': {
-      '@type': 'AggregateRating',
-      'ratingValue': (applicableReviews.reduce((prev, cur) => prev + cur.rating, 0) / applicableReviews.length).toFixed(1),
-      'reviewCount': applicableReviews.length,
+    }),
+    'provider': {
+      '@type': 'EducationalOrganization',
+      'name': 'QC Design School',
+      'sameAs': [
+        'https://www.linkedin.com/company/qc-career-school',
+        'https://www.facebook.com/QCDesign',
+        'https://www.instagram.com/qcdesignschool',
+        'https://www.youtube.com/@QCDesign',
+      ],
     },
   };
 
