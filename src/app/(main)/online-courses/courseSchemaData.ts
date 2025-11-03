@@ -7,7 +7,6 @@ export type Course = {
   description: string;
   certificate?: string;
   courseCode: CourseCode[];
-  price?: number;
 };
 
 export const courses: Record<string, Course> = {
