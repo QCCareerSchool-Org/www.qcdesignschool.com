@@ -10,6 +10,14 @@ export type Course = {
 };
 
 export const courses: Record<string, Course> = {
+  'interior-design': {
+    name: 'Interior Design',
+    position: 1,
+    url: 'https://www.qcdesignschool.com/online-courses/interior-decorating',
+    description: 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
+    certificate: 'International Design and Decorating Professional™',
+    courseCode: [ 'i2' ],
+  },
   'landscape-design': {
     name: 'Landscape Design Course',
     position: 2,
@@ -87,5 +95,12 @@ export const courses: Record<string, Course> = {
     url: 'https://www.qcdesignschool.com/online-courses/virtual-design',
     description: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
     courseCode: [ 'vd' ],
+  },
+  'staging-for-designers': {
+    name: 'Staging for Designers',
+    position: 12,
+    url: 'https://www.qcdesignschool.com/online-courses/staging-for-designers',
+    description: 'Expand your interior design skills by learning to stage homes for sale and offer professional home staging services.',
+    courseCode: [ 'ms' ],
   },
 };
