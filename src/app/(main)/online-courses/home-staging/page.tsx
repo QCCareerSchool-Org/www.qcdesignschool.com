@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -12,6 +13,7 @@ import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -37,6 +39,7 @@ const HomeStagingPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
+      <Suspense><CourseSchema courseID="home-staging" courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

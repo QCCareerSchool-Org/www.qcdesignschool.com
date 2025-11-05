@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -10,6 +11,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -31,6 +33,7 @@ const courseCodes: CourseCode[] = [ 'ms' ];
 
 const StagingForDesignersPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseID="staging-for-designers" courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import type { FC, PropsWithChildren } from 'react';
-import type { Course, ItemList, ListItem, WithContext } from 'schema-dts';
+import type { Course, ItemList, WithContext } from 'schema-dts';
 
-import { courses } from './courseSchemaData';
 import type { PageComponent } from '@/app/serverComponent';
+import { courses } from '@/components/courseSchema/courseSchemaData';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -21,71 +21,42 @@ const CoursesPage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const interiorDecoratingSchema: Course = {
-    '@type': 'Course',
-    'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
-    'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
-    'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
-    'educationalCredentialAwarded': 'International Design and Decorating Professional™ Certification',
-    'provider': {
-      '@type': 'EducationalOrganization',
-      'name': 'QC Design School',
-      'sameAs': [
-        'https://www.linkedin.com/company/qc-career-school',
-        'https://www.facebook.com/QCDesign',
-        'https://www.instagram.com/qcdesignschool',
-        'https://www.youtube.com/@QCDesign',
-      ],
-    },
-  };
-
-  const otherCourseSchema: ListItem[] = Object.values(courses).map(course => {
-    return {
-      '@type': 'ListItem',
-      'position': course.position,
-      'item': {
-        '@type': 'Course',
-        'url': course.url,
-        'name': course.name,
-        'description': course.description,
-        ...(course.certificate && {
-          educationalCredentialAwarded: {
-            '@type': 'EducationalCredential',
-            'name': course.certificate,
-          },
-        }),
-        'provider': {
-          '@type': 'EducationalOrganization',
-          'name': 'QC Design School',
-          'sameAs': [
-            'https://www.linkedin.com/company/qc-career-school',
-            'https://www.facebook.com/QCDesign',
-            'https://www.instagram.com/qcdesignschool',
-            'https://www.youtube.com/@QCDesign',
-          ],
-        },
-      } as Course,
-    };
-  });
-
-  const itemListElements: ListItem[] = [
-    {
-      '@type': 'ListItem',
-      'position': 1,
-      'item': interiorDecoratingSchema,
-    },
-    ...otherCourseSchema,
-  ];
-
-  const allCourseSchema: WithContext<ItemList> = {
+  const jsonLD: WithContext<ItemList> = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'itemListElement': itemListElements,
+    'itemListElement': Object.values(courses).map(course => {
+      return {
+        '@type': 'ListItem',
+        'position': course.position,
+        'item': {
+          '@type': 'Course',
+          'url': course.url,
+          'name': course.name,
+          'description': course.description,
+          ...(course.certificate && {
+            educationalCredentialAwarded: {
+              '@type': 'EducationalCredential',
+              'name': course.certificate,
+            },
+          }),
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'QC Design School',
+            'sameAs': [
+              'https://www.linkedin.com/company/qc-career-school',
+              'https://www.facebook.com/QCDesign',
+              'https://www.instagram.com/qcdesignschool',
+              'https://www.youtube.com/@QCDesign',
+            ],
+          },
+        } as Course,
+      };
+    }),
   };
 
   return (
     <div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(allCourseSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }} />
       <section>
         <div className="container">
           <div className="row justify-content-center g-4 mb-5">

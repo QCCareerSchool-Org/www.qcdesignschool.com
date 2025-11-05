@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { Course, WithContext } from 'schema-dts';
+import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -11,6 +11,7 @@ import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -24,7 +25,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { getPriceSchema } from '@/lib/schemaFetchPrice';
 
 export const generateMetadata: GenerateMetadata = async () => {
   const { countryCode, provinceCode } = await getData();
@@ -46,40 +46,9 @@ const InteriorDecoratingPage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const priceInfo = await getPriceSchema(courseCodes[0].toString());
-
-  const jsonLd: WithContext<Course> = {
-    '@context': 'https://schema.org',
-    '@type': 'Course',
-    'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
-    'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
-    'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
-    'educationalCredentialAwarded': 'International Design and Decorating Professional™ Certification',
-    ...(priceInfo && {
-      offers: {
-        '@type': 'Offer',
-        'category': 'Course',
-        'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
-        'price': priceInfo.price,
-        'priceCurrency': priceInfo.priceCurrency,
-        'availability': 'https://schema.org/InStock',
-      },
-    }),
-    'provider': {
-      '@type': 'EducationalOrganization',
-      'name': 'QC Design School',
-      'sameAs': [
-        'https://www.linkedin.com/company/qc-career-school',
-        'https://www.facebook.com/QCDesign',
-        'https://www.instagram.com/qcdesignschool',
-        'https://www.youtube.com/@QCDesign',
-      ],
-    },
-  };
-
   return (
     <div className={styles.page}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Suspense><CourseSchema courseID="interior-design" courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">
