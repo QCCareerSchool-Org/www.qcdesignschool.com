@@ -12,6 +12,7 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -39,6 +40,7 @@ const AgingInPlacePage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
+      <Suspense><CourseSchema courseID="aging-in-place" courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

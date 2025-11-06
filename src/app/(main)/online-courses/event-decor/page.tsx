@@ -12,6 +12,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -33,6 +34,7 @@ const courseCodes: CourseCode[] = [ 'ed' ];
 
 const EventDecorPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseID="event-decor" courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

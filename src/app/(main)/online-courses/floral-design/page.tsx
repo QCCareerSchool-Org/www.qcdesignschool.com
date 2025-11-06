@@ -11,6 +11,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -38,6 +39,7 @@ const FloralDesignPage: PageComponent = async () => {
   return (
     <div className={styles.page}>
       <section className="half-padding-top">
+        <Suspense><CourseSchema courseID="floral-design" courseCode={courseCodes[0]} /></Suspense>
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12">

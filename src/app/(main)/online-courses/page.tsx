@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
-import { type FC, type PropsWithChildren, Suspense } from 'react';
+import type { FC, PropsWithChildren } from 'react';
+import { Suspense } from 'react';
+import type { Course, ItemList, WithContext } from 'schema-dts';
 
 import type { PageComponent } from '@/app/serverComponent';
+import { courses } from '@/components/courseSchema/courseSchemaData';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -19,8 +22,42 @@ const CoursesPage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
+  const jsonLD: WithContext<ItemList> = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': Object.values(courses).map(course => {
+      return {
+        '@type': 'ListItem',
+        'position': course.position,
+        'item': {
+          '@type': 'Course',
+          'url': course.url,
+          'name': course.name,
+          'description': course.description,
+          ...(course.certificate && {
+            educationalCredentialAwarded: {
+              '@type': 'EducationalCredential',
+              'name': course.certificate,
+            },
+          }),
+          'provider': {
+            '@type': 'EducationalOrganization',
+            'name': 'QC Design School',
+            'sameAs': [
+              'https://www.linkedin.com/company/qc-career-school',
+              'https://www.facebook.com/QCDesign',
+              'https://www.instagram.com/qcdesignschool',
+              'https://www.youtube.com/@QCDesign',
+            ],
+          },
+        } as Course,
+      };
+    }),
+  };
+
   return (
     <div>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }} />
       <section>
         <div className="container">
           <div className="row justify-content-center g-4 mb-5">
