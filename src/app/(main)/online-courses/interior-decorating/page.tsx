@@ -9,8 +9,8 @@ import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -154,31 +154,33 @@ const InteriorDecoratingPage: PageComponent = async () => {
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
       <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-              <QuestionAndAnswer heading="Interior decorator vs. an interior designer: what's the difference?">
-                <p>If you're considering a career in design, it's essential to understand the key differences between an interior decorator and an interior designer.</p>
-                <p>An interior decorator focuses on the visual appearance and ambiance of a space. Decorators work with color palettes, textiles, lighting, furniture, and accessories to enhance the aesthetic of homes or commercial environments. They do not typically make structural changes.</p>
-                <p>In contrast, an interior designer will focus on the visual appeal of a space and may collaborate with architects and engineers to plan structural layouts. This means that interior designers often require knowledge of building codes and spatial planning. </p>
-                <p>Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading={`How much does an interior ${designRestricted ? 'decorator' : 'designer'} earn?`}>
-                <p>According to the Bureau of Labor Statistics, the average interior {designRestricted ? 'decorator' : 'designer'} salary is typically around $68,530 per year.* Your earnings will vary based on experience, location and services offered. Earning your professional certification from QC Design School demonstrates your expertise and credibility so that you can charge higher rates. The global design market was valued at $747.75 billion in 2024 and is expected to grow to over $1 trillion by 2032. You can be part of that industry and earn a salary as an interior {designRestricted ? 'decorator' : 'designer'} in less than a year!</p>
-                <p className="small">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading={`Do I need a license or degree to become an interior ${designRestricted ? 'decorator' : 'designer'}?`}>
-                <p>You don't need a license or an expensive university degree to be successful in the design industry. Instead, you can train online and start attracting clients and generating income in a matter of months!</p>
-                <p>QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading={`How long does it take to become an interior ${designRestricted ? 'decorator' : 'designer'}?`}>
-                <p>With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Will I be eligible to join a professional association when I graduate from QC Design School?">
-                <p>Absolutely. After graduating from QC Design School's online interior {designRestricted ? 'decorating' : 'design'} course, you will be eligible to apply for membership with top industry organizations, including {countryCode === 'CA' ? <>the Decorators and Designers Association of Canada,</> : <>Design Society of America (DSA)</>} and the Interior Design Society (IDS).</p>
-                <p>These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
-              </QuestionAndAnswer>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+                <AccordionFAQ heading="Interior decorator vs. an interior designer: what's the difference?" className="mb-3">
+                  <p>If you're considering a career in design, it's essential to understand the key differences between an interior decorator and an interior designer.</p>
+                  <p>An interior decorator focuses on the visual appearance and ambiance of a space. Decorators work with color palettes, textiles, lighting, furniture, and accessories to enhance the aesthetic of homes or commercial environments. They do not typically make structural changes.</p>
+                  <p>In contrast, an interior designer will focus on the visual appeal of a space and may collaborate with architects and engineers to plan structural layouts. This means that interior designers often require knowledge of building codes and spatial planning. </p>
+                  <p>Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading={`How much does an interior ${designRestricted ? 'decorator' : 'designer'} earn?`} className="mb-3">
+                  <p>According to the Bureau of Labor Statistics, the average interior {designRestricted ? 'decorator' : 'designer'} salary is typically around $68,530 per year.* Your earnings will vary based on experience, location and services offered. Earning your professional certification from QC Design School demonstrates your expertise and credibility so that you can charge higher rates. The global design market was valued at $747.75 billion in 2024 and is expected to grow to over $1 trillion by 2032. You can be part of that industry and earn a salary as an interior {designRestricted ? 'decorator' : 'designer'} in less than a year!</p>
+                  <p className="small">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading={`Do I need a license or degree to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
+                  <p>You don't need a license or an expensive university degree to be successful in the design industry. Instead, you can train online and start attracting clients and generating income in a matter of months!</p>
+                  <p>QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading={`How long does it take to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
+                  <p>With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Will I be eligible to join a professional association when I graduate from QC Design School?" className="mb-3">
+                  <p>Absolutely. After graduating from QC Design School's online interior {designRestricted ? 'decorating' : 'design'} course, you will be eligible to apply for membership with top industry organizations, including {countryCode === 'CA' ? <>the Decorators and Designers Association of Canada,</> : <>Design Society of America (DSA)</>} and the Interior Design Society (IDS).</p>
+                  <p>These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
+                </AccordionFAQ>
+              </div>
             </div>
           </div>
         </div>
