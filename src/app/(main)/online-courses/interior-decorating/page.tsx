@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Suspense } from 'react';
-import type { Product, WithContext } from 'schema-dts';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
