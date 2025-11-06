@@ -10,9 +10,10 @@ import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -34,6 +35,7 @@ const courseCodes: CourseCode[] = [ 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
+    <Suspense><CourseSchema courseID="professional-organizing" courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -98,52 +100,54 @@ const ProfessionalOrganizingPage: PageComponent = () => (
       <PaymentPlanSection courseCodes={courseCodes} />
     </Suspense>
     <section>
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10">
-            <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-            <QuestionAndAnswer heading="What will I learn in QC Design School's Professional Organizer course?">
-              <p>QC's <strong>online Professional Organizing course</strong> teaches you how to become a professional organizer and launch a successful career in the organizing industry. Through expert-led training, you'll learn to:</p>
-              <ul>
-                <li>Conduct client consultations and interviews</li>
-                <li>Set personalized organizing goals</li>
-                <li>Develop tailored decluttering and storage plans</li>
-                <li>Create functional, sustainable systems for homes and businesses</li>
-                <li>Restore order, efficiency, and peace of mind to your clients' lives</li>
-              </ul>
-              <p>You'll graduate with the <strong>Advanced International Organizing Professional&trade; (AIOP&trade;)</strong> certification, a respected credential that showcases your expertise and professionalism.</p>
-            </QuestionAndAnswer>
-            <QuestionAndAnswer heading="How much does a professional organizer make?">
-              <p>The <strong>average professional organizer salary</strong> is around <strong>$55,700 per year*</strong>, but your income can grow significantly with experience, specialization, and certifications. Key factors that affect your earnings include:</p>
-              <ul>
-                <li><strong>Location</strong> and cost of services in your area</li>
-                <li><strong>Scope of services</strong> (e.g., home organizing, digital decluttering, business organizing)</li>
-                <li><strong>Client demand</strong> and your ability to market your business effectively</li>
-              </ul>
-              <p>Earning your <strong>AIOP certification</strong> from QC Design School helps you justify higher rates and attract more clients. As you gain experience and confidence, you can increase your prices for consultations, hands-on organizing sessions, and package deals.</p>
-              <p>You can also boost your income by expanding into related areas like <Link href="/online-courses/aging-in-place">Aging in Place Design</Link>, <Link href="/online-courses/feng-shui-design">Feng Shui</Link> or <Link href="/online-courses/home-staging">Home Staging</Link>—additional certifications available through QC Design School. Our <Link href="/contact-us">student support team</Link> can tell you how to enhance your career with other QC Design School courses.</p>
-              <p className="small">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Professional-Organizer-Salary" target="_blank" rel="noreferrer">Professional Organizing Salary</a>.&rdquo; <i>ZipRecruiter.</i> April 20, 2025</p>
-            </QuestionAndAnswer>
-            <QuestionAndAnswer heading="Do I need a degree to become a professional organizer?">
-              <p>You can get all the training you need to become a professional organizer without an expensive university or college degree. With QC Design School's <strong>Professional Organizing online course</strong>, you'll gain all the skills and credentials you need to launch your career and start booking clients in only a few short months.</p>
-              <p>Upon completion, you'll earn the Advanced International Organizing Professional <strong>(AIOP) designation</strong>, proving you're professionally trained and ready to help clients transform their spaces and routines.</p>
-            </QuestionAndAnswer>
-            <QuestionAndAnswer heading="How long does it take to become a professional organizer?">
-              <p>You can become a professional organizer in only a few short months! When you take QC Design School's professional organizer course, you work at your own pace and according to your own schedule. Plus, you can start booking clients right away! If you want to take your time, you have up to a full year to complete your lessons and assignments and earn your certification.</p>
-            </QuestionAndAnswer>
-            <QuestionAndAnswer heading="Will I be eligible to join a professional association when I graduate from QC Design School?">
-              <p>Yes! As a student and graduate of QC Design School,  you'll be eligible to join many professional organizations, including the American Society of Professional Organizers and the International Furnishings and Design Association. These organizations offer opportunities to network, collaborate, find employment and learn more about trends and developments in the industry.</p>
-            </QuestionAndAnswer>
-            <QuestionAndAnswer heading="How do I start a professional organizing business?">
-              <p>QC's online Professional Organizing course includes an optional business unit that will teach you how to start a professional organizing business. You'll learn:</p>
-              <ul>
-                <li>How to legally <strong>register your business</strong></li>
-                <li>How to <strong>write a business plan</strong> tailored to professional organizing</li>
-                <li>How to <strong>market your services</strong> online and locally</li>
-                <li>How to provide exceptional <strong>customer service</strong> and build long-term client relationships</li>
-              </ul>
-              <p>This unit is perfect for anyone who wants to work independently, build a brand, and earn a steady income as a <strong>self-employed professional organizer</strong>.</p>
-            </QuestionAndAnswer>
+      <div itemScope itemType="https://schema.org/FAQPage">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-10">
+              <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+              <AccordionFAQ heading="What will I learn in QC Design School's Professional Organizer course?" className="mb-3">
+                <p>QC's <strong>online Professional Organizing course</strong> teaches you how to become a professional organizer and launch a successful career in the organizing industry. Through expert-led training, you'll learn to:</p>
+                <ul>
+                  <li>Conduct client consultations and interviews</li>
+                  <li>Set personalized organizing goals</li>
+                  <li>Develop tailored decluttering and storage plans</li>
+                  <li>Create functional, sustainable systems for homes and businesses</li>
+                  <li>Restore order, efficiency, and peace of mind to your clients' lives</li>
+                </ul>
+                <p>You'll graduate with the <strong>Advanced International Organizing Professional&trade; (AIOP&trade;)</strong> certification, a respected credential that showcases your expertise and professionalism.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How much does a professional organizer make?" className="mb-3">
+                <p>The <strong>average professional organizer salary</strong> is around <strong>$55,700 per year*</strong>, but your income can grow significantly with experience, specialization, and certifications. Key factors that affect your earnings include:</p>
+                <ul>
+                  <li><strong>Location</strong> and cost of services in your area</li>
+                  <li><strong>Scope of services</strong> (e.g., home organizing, digital decluttering, business organizing)</li>
+                  <li><strong>Client demand</strong> and your ability to market your business effectively</li>
+                </ul>
+                <p>Earning your <strong>AIOP certification</strong> from QC Design School helps you justify higher rates and attract more clients. As you gain experience and confidence, you can increase your prices for consultations, hands-on organizing sessions, and package deals.</p>
+                <p>You can also boost your income by expanding into related areas like <Link href="/online-courses/aging-in-place">Aging in Place Design</Link>, <Link href="/online-courses/feng-shui-design">Feng Shui</Link> or <Link href="/online-courses/home-staging">Home Staging</Link>—additional certifications available through QC Design School. Our <Link href="/contact-us">student support team</Link> can tell you how to enhance your career with other QC Design School courses.</p>
+                <p className="small">* &ldquo;<a href="https://www.ziprecruiter.com/Salaries/Professional-Organizer-Salary" target="_blank" rel="noreferrer">Professional Organizing Salary</a>.&rdquo; <i>ZipRecruiter.</i> April 20, 2025</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Do I need a degree to become a professional organizer?" className="mb-3">
+                <p>You can get all the training you need to become a professional organizer without an expensive university or college degree. With QC Design School's <strong>Professional Organizing online course</strong>, you'll gain all the skills and credentials you need to launch your career and start booking clients in only a few short months.</p>
+                <p>Upon completion, you'll earn the Advanced International Organizing Professional <strong>(AIOP) designation</strong>, proving you're professionally trained and ready to help clients transform their spaces and routines.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How long does it take to become a professional organizer?" className="mb-3">
+                <p>You can become a professional organizer in only a few short months! When you take QC Design School's professional organizer course, you work at your own pace and according to your own schedule. Plus, you can start booking clients right away! If you want to take your time, you have up to a full year to complete your lessons and assignments and earn your certification.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="Will I be eligible to join a professional association when I graduate from QC Design School?" className="mb-3">
+                <p>Yes! As a student and graduate of QC Design School,  you'll be eligible to join many professional organizations, including the American Society of Professional Organizers and the International Furnishings and Design Association. These organizations offer opportunities to network, collaborate, find employment and learn more about trends and developments in the industry.</p>
+              </AccordionFAQ>
+              <AccordionFAQ heading="How do I start a professional organizing business?" className="mb-3">
+                <p>QC's online Professional Organizing course includes an optional business unit that will teach you how to start a professional organizing business. You'll learn:</p>
+                <ul>
+                  <li>How to legally <strong>register your business</strong></li>
+                  <li>How to <strong>write a business plan</strong> tailored to professional organizing</li>
+                  <li>How to <strong>market your services</strong> online and locally</li>
+                  <li>How to provide exceptional <strong>customer service</strong> and build long-term client relationships</li>
+                </ul>
+                <p>This unit is perfect for anyone who wants to work independently, build a brand, and earn a steady income as a <strong>self-employed professional organizer</strong>.</p>
+              </AccordionFAQ>
+            </div>
           </div>
         </div>
       </div>

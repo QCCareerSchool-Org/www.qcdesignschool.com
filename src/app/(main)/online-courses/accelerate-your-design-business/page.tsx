@@ -8,9 +8,10 @@ import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import { QuestionAndAnswer } from '../../faq/questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
+import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -38,6 +39,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
+      <Suspense><CourseSchema courseID="accelerate-your-business" courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -99,49 +101,53 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
         <PaymentPlanSection courseCodes={courseCodes} />
       </Suspense>
       <section>
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-10">
-              <h2 className="text-center mb-4">Frequently Asked Questions</h2>
-              <QuestionAndAnswer heading="What will QC's Accelerate Your Business course teach me?">
-                <p>QC Design School's <strong>Accelerate Your Business</strong> course is designed to help you launch and grow your own <strong>interior {designRestricted ? 'decorating' : 'design'} business</strong> with confidence. Whether you're just getting started or want to refine your existing business strategy, this course gives you the tools you need to succeed.</p>
-                <p>You'll learn how to:</p>
-                <li><strong>Register your interior {designRestricted ? 'decorating' : 'design'} business</strong></li>
-                <li>Develop your <strong>brand identity</strong></li>
-                <li>Build <strong>marketing strategies</strong> and promotions</li>
-                <li>Use <strong>project management tools</strong> to stay organized</li>
-                <li>Communicate effectively with clients and vendors</li>
-                <li>Attract and retain long-term clients</li>
-                <p>This course is built with input from <strong>design industry experts and business professionals</strong>, so you're learning strategies that actually work in the real world.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Do I need a degree to start my own interior design business?">
-                <p><strong>No, you don't need a degree</strong> to start a successful interior design business. QC Design School provides a full pathway from <strong>beginner to business owner</strong> with its online interior design and business training courses.</p>
-                <p>You can:</p>
-                <ul>
-                  <li>Take the <strong><Link href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`}>Interior {designRestricted ? 'Decorating' : 'Design'} Course</Link></strong> to learn how to design beautiful, functional spaces.</li>
-                  <li>Enroll in the <strong>Accelerate Your Business Course</strong> to learn how to:
-                    <ul>
-                      <li>Launch and register your business</li>
-                      <li>Create a professional <strong>business plan</strong></li>
-                      <li>Market your services and work with real clients</li>
-                    </ul>
-                  </li>
-                </ul>
-                <p>This combination gives you both the <strong>creative skills and business knowledge</strong> needed to build your dream career in the interior design industry.</p>
-                <p>Our <Link href="/contact-us">Student Support Team</Link> can tell you how to combine other courses in QC Design School to create the business of your dreams.</p>
-              </QuestionAndAnswer>
-              <QuestionAndAnswer heading="Can this course help me grow an existing design business?">
-                <p>Yes! If you already run a design-related business—whether in <strong>interior {designRestricted ? 'decorating' : 'design'}, home staging, professional organizing, or color consulting</strong>—QC's <strong>Accelerate Your Business course</strong> can help you scale it more effectively.</p>
-                <p>You'll learn how to:</p>
-                <ul>
-                  <li>Identify new <strong>target markets</strong></li>
-                  <li>Improve <strong>client acquisition and retention</strong></li>
-                  <li>Set and adjust your <strong>pricing strategies</strong></li>
-                  <li>Streamline your <strong>workflow and client process</strong></li>
-                  <li>Optimize your <strong>marketing and branding efforts</strong></li>
-                </ul>
-                <p>This course is ideal for design professionals looking to <strong>grow their revenue, expand services</strong>, or build a team. Our <Link href="/contact-us">Student Support Team</Link> can also help you budle this course with additional design certifications for a more competitive edge.</p>
-              </QuestionAndAnswer>
+        <div itemScope itemType="https://schema.org/FAQPage">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-12 col-lg-10">
+                <h2 className="text-center mb-4">Frequently Asked Questions</h2>
+                <AccordionFAQ heading="What will QC's Accelerate Your Business course teach me?" className="mb-3">
+                  <p>QC Design School's <strong>Accelerate Your Business</strong> course is designed to help you launch and grow your own <strong>interior {designRestricted ? 'decorating' : 'design'} business</strong> with confidence. Whether you're just getting started or want to refine your existing business strategy, this course gives you the tools you need to succeed.</p>
+                  <p>You'll learn how to:</p>
+                  <ul>
+                    <li><strong>Register your interior {designRestricted ? 'decorating' : 'design'} business</strong></li>
+                    <li>Develop your <strong>brand identity</strong></li>
+                    <li>Build <strong>marketing strategies</strong> and promotions</li>
+                    <li>Use <strong>project management tools</strong> to stay organized</li>
+                    <li>Communicate effectively with clients and vendors</li>
+                    <li>Attract and retain long-term clients</li>
+                  </ul>
+                  <p>This course is built with input from <strong>design industry experts and business professionals</strong>, so you're learning strategies that actually work in the real world.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Do I need a degree to start my own interior design business?" className="mb-3">
+                  <p><strong>No, you don't need a degree</strong> to start a successful interior design business. QC Design School provides a full pathway from <strong>beginner to business owner</strong> with its online interior design and business training courses.</p>
+                  <p>You can:</p>
+                  <ul>
+                    <li>Take the <strong><Link href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`}>Interior {designRestricted ? 'Decorating' : 'Design'} Course</Link></strong> to learn how to design beautiful, functional spaces.</li>
+                    <li>Enroll in the <strong>Accelerate Your Business Course</strong> to learn how to:
+                      <ul>
+                        <li>Launch and register your business</li>
+                        <li>Create a professional <strong>business plan</strong></li>
+                        <li>Market your services and work with real clients</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <p>This combination gives you both the <strong>creative skills and business knowledge</strong> needed to build your dream career in the interior design industry.</p>
+                  <p>Our <Link href="/contact-us">Student Support Team</Link> can tell you how to combine other courses in QC Design School to create the business of your dreams.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Can this course help me grow an existing design business?" className="mb-3">
+                  <p>Yes! If you already run a design-related business—whether in <strong>interior {designRestricted ? 'decorating' : 'design'}, home staging, professional organizing, or color consulting</strong>—QC's <strong>Accelerate Your Business course</strong> can help you scale it more effectively.</p>
+                  <p>You'll learn how to:</p>
+                  <ul>
+                    <li>Identify new <strong>target markets</strong></li>
+                    <li>Improve <strong>client acquisition and retention</strong></li>
+                    <li>Set and adjust your <strong>pricing strategies</strong></li>
+                    <li>Streamline your <strong>workflow and client process</strong></li>
+                    <li>Optimize your <strong>marketing and branding efforts</strong></li>
+                  </ul>
+                  <p>This course is ideal for design professionals looking to <strong>grow their revenue, expand services</strong>, or build a team. Our <Link href="/contact-us">Student Support Team</Link> can also help you budle this course with additional design certifications for a more competitive edge.</p>
+                </AccordionFAQ>
+              </div>
             </div>
           </div>
         </div>
