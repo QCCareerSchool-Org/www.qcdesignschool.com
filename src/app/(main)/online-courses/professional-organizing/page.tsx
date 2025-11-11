@@ -35,7 +35,7 @@ const courseCodes: CourseCode[] = [ 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseID="professional-organizing" courseCode={courseCodes[0]} /></Suspense>
+    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

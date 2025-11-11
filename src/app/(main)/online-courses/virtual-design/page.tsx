@@ -30,7 +30,7 @@ const courseCodes: CourseCode[] = [ 'vd' ];
 
 const VirtualDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseID="virtual-design" courseCode={courseCodes[0]} /></Suspense>
+    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

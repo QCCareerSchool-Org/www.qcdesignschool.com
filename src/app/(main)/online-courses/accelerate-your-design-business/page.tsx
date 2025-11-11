@@ -39,7 +39,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Suspense><CourseSchema courseID="accelerate-your-business" courseCode={courseCodes[0]} /></Suspense>
+      <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

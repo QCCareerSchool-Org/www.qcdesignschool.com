@@ -34,7 +34,7 @@ const courseCodes: CourseCode[] = [ 'cc' ];
 
 const ColorConsultantPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseID="color-consultant" courseCode={courseCodes[0]} /></Suspense>
+    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
