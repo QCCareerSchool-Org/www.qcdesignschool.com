@@ -39,7 +39,7 @@ const FloralDesignPage: PageComponent = async () => {
   return (
     <div className={styles.page}>
       <section className="half-padding-top">
-        <Suspense><CourseSchema courseID="floral-design" courseCode={courseCodes[0]} /></Suspense>
+        <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12">
