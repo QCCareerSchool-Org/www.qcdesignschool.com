@@ -197,6 +197,9 @@ const getCourseSchema = (c: CourseCode): Course => {
       '@type': 'EducationalOccupationalCredential',
       'name': courseCertificate,
     } : undefined,
+    'provider': {
+      '@id': '#provider',
+    },
   };
 };
 
