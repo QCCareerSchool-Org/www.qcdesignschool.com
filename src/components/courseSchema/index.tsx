@@ -21,6 +21,7 @@ export const CourseSchema: FC<Props> = async ({ courseCode }) => {
   const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
+    '@id': '#course',
     'url': getCourseUrl(courseCode),
     'name': getCourseName(courseCode),
     'description': getCourseDescription(courseCode),
