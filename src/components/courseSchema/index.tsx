@@ -1,34 +1,33 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { courses } from './courseSchemaData';
-import type { CourseCode } from '@/domain/courseCode';
+import { type CourseCode, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
 interface Props {
-  courseID: string;
   courseCode: CourseCode;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
-  const course = courses[courseID];
+export const CourseSchema: FC<Props> = async ({ courseCode }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
     return null;
   }
 
-  const courseJsonLD = (coursePrice: number): WithContext<Course> => ({
+  const certificate = getCourseCertificate(courseCode);
+
+  const courseJsonLD: WithContext<Course> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    'url': course.url,
-    'name': course.name,
-    'description': course.description,
-    'educationalCredentialAwarded': {
+    'url': getCourseUrl(courseCode),
+    'name': getCourseName(courseCode),
+    'description': getCourseDescription(courseCode),
+    'educationalCredentialAwarded': certificate ? {
       '@type': 'EducationalOccupationalCredential',
-      'name': course.certificate,
-    },
+      'name': certificate,
+    } : undefined,
     'hasCourseInstance': {
       '@type': 'CourseInstance',
       'courseMode': 'Online',
@@ -36,7 +35,7 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
         '@type': 'Offer',
         'category': 'Course',
         'url': 'https://enroll.qcdesignschool.com/',
-        'price': coursePrice.toFixed(2),
+        'price': price.discountedCost.toFixed(2),
         'priceCurrency': 'USD',
         'availability': 'https://schema.org/InStock',
       },
@@ -51,9 +50,7 @@ export const CourseSchema: FC<Props> = async ({ courseID, courseCode }) => {
         'https://www.youtube.com/@QCDesign',
       ],
     },
-  });
+  };
 
-  return (
-    <script id={`course-schema-${courseID}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD(price.cost)) }} />
-  );
+  return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };

@@ -48,7 +48,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Suspense><CourseSchema courseID="interior-design" courseCode={courseCodes[0]} /></Suspense>
+      <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

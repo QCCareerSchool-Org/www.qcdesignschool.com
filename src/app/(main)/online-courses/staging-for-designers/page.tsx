@@ -33,7 +33,7 @@ const courseCodes: CourseCode[] = [ 'ms' ];
 
 const StagingForDesignersPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseID="staging-for-designers" courseCode={courseCodes[0]} /></Suspense>
+    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

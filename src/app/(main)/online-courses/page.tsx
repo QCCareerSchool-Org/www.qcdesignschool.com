@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import type { FC, PropsWithChildren } from 'react';
-import type { Course, ItemList, WithContext } from 'schema-dts';
+import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
 import type { PageComponent } from '@/app/serverComponent';
-import { courses } from '@/components/courseSchema/courseSchemaData';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import type { CourseCode } from '@/domain/courseCode';
+import { courseCodes, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
@@ -21,42 +22,10 @@ const CoursesPage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
-  const jsonLD: WithContext<ItemList> = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    'itemListElement': Object.values(courses).map(course => {
-      return {
-        '@type': 'ListItem',
-        'position': course.position,
-        'item': {
-          '@type': 'Course',
-          'url': course.url,
-          'name': course.name,
-          'description': course.description,
-          ...(course.certificate && {
-            educationalCredentialAwarded: {
-              '@type': 'EducationalOccupationalCredential',
-              'name': course.certificate,
-            },
-          }),
-          'provider': {
-            '@type': 'EducationalOrganization',
-            'name': 'QC Design School',
-            'sameAs': [
-              'https://www.linkedin.com/company/qc-career-school',
-              'https://www.facebook.com/QCDesign',
-              'https://www.instagram.com/qcdesignschool',
-              'https://www.youtube.com/@QCDesign',
-            ],
-          },
-        } as Course,
-      };
-    }),
-  };
-
   return (
     <div>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(providerJsonLD) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLD) }} />
       <section>
         <div className="container">
           <div className="row justify-content-center g-4 mb-5">
@@ -190,8 +159,47 @@ const CoursesPage: PageComponent = async () => {
   );
 };
 
-export default CoursesPage;
-
 const LargeColumn: FC<PropsWithChildren> = ({ children }) => <div className="col-12 col-sm-10 col-lg-6 d-flex">{children}</div>;
 
 const SmallColumn: FC<PropsWithChildren> = ({ children }) => <div className="col-12 col-sm-10 col-lg-6 col-xl-4 d-flex">{children}</div>;
+
+const getCourseSchema = (c: CourseCode): Course => {
+  const courseCertificate = getCourseCertificate(c);
+  return {
+    '@type': 'Course',
+    'url': getCourseUrl(c),
+    'name': getCourseName(c),
+    'description': getCourseDescription(c),
+    'educationalCredentialAwarded': courseCertificate ? {
+      '@type': 'EducationalOccupationalCredential',
+      'name': courseCertificate,
+    } : undefined,
+  };
+};
+
+const providerJsonLD: WithContext<EducationalOrganization> = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  '@id': '#provider',
+  'name': 'QC Design School',
+  'sameAs': [
+    'https://www.linkedin.com/company/qc-career-school',
+    'https://www.facebook.com/QCDesign',
+    'https://www.instagram.com/qcdesignschool',
+    'https://www.youtube.com/@QCDesign',
+  ],
+};
+
+const itemListJsonLD: WithContext<ItemList> = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  'itemListElement': courseCodes.map((c, i) => {
+    return {
+      '@type': 'ListItem',
+      'position': i + 1,
+      'item': getCourseSchema(c),
+    };
+  }),
+};
+
+export default CoursesPage;
