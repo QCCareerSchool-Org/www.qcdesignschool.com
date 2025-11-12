@@ -33,13 +33,113 @@ const certifications: Partial<Record<CourseCode, string>> = {
   ap: 'Aging in Place Professional™',
 };
 
+const subjects: Partial<Record<CourseCode, string[]>> = {
+  i2: [
+    'The Fundamentals of Design',
+    'Popular Design Styles and Materials',
+    'Lighting and Accessories',
+    'Floorplans and Layouts',
+    'Designing Room by Room',
+    'Your Final Project',
+    'The Business of Design',
+  ],
+  st: [
+    'The Fundamentals of Home Staging',
+    'The Arts of Depersonalizing and Decluttering',
+    'Features to Attract Buyers',
+    'Floorplans and Layouts',
+    'Your Final Project',
+    'The Business of Staging',
+  ],
+  ms: [
+    'The Fundamentals of Home Staging',
+    'The Arts of Depersonalizing and Decluttering',
+    'Curb Appeal',
+    'Your Final Project',
+    'The Business of Staging',
+  ],
+  fs: [
+    'The Fundamentals Concepts of Feng Shui',
+    'The Bagua Map and Floor Plans',
+    'Feng Shui Cures and Symbols',
+    'Applying Design Theory to Feng Shui',
+    'Feng Shui in Private and Public Spaces',
+    'The Business of Feng Shui',
+  ],
+  po: [
+    'Introduction to Professional Organizing',
+    'Floorplans and Layouts',
+    'Essential Storage Solutions and Decluttering',
+    'Working with Clients',
+    'The Business of Professional Organizing',
+  ],
+  ld: [
+    'Introduction to Landscape Design',
+    'Functional Landscape Design',
+    'Plants and Garden Design',
+    'The Principles and Elements of Design',
+    'The Business of Landscape Design',
+  ],
+  ed: [
+    'Introduction to Event Decor',
+    'Components of Event Decor',
+    'Build Your Career in Event Decor',
+  ],
+  cc: [
+    'Becoming a Color Consultant',
+    'Creating a Color Palette',
+    'Color Consulting Services',
+  ],
+  fd: [
+    'The Floral Design Industry',
+    'The Fundamentals of Floral Design',
+    'Decorative Arrangements',
+    'Flowers to Wear & Carry',
+    'Advanced Floral Designs',
+    'Running Your Floral Design Business',
+  ],
+  ap: [
+    'Introduction to Aging in Place Design',
+    'Applying Universal Design Principles',
+    'Final Project',
+  ],
+  db: [
+    'Establish Your Brand and Business Goals',
+    'Build an Online Presence',
+    'Showcase Your Business to Prospective Clients',
+    'Successful Project Management',
+  ],
+};
+
+const workloads: Record<CourseCode, string> = {
+  i2: 'PT30H',
+  st: 'PT30H',
+  ms: 'PT30H',
+  fs: 'PT30H',
+  po: 'PT30H',
+  ld: 'PT30H',
+  ed: 'PT30H',
+  cc: 'PT30H',
+  fd: 'PT30H',
+  ap: 'PT30H',
+  db: 'PT30H',
+  vd: 'PT30H',
+};
+
 export const getCourseDescription = (courseCode: CourseCode): string => {
   return descriptions[courseCode];
 };
 
+export const getCourseSubjects = (courseCode: CourseCode): string[] | null => {
+  return subjects[courseCode] ?? null;
+};
+
+export const getCourseWorkload = (courseCode: CourseCode): string => {
+  return workloads[courseCode];
+};
+
 export const getCourseCertificate = (courseCode: CourseCode): string | null => {
-  const certificate = certifications[courseCode];
-  return certificate ?? null;
+  return certifications[courseCode] ?? null;
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {

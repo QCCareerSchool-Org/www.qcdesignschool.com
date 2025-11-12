@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { type CourseCode, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { type CourseCode, getCourseCertificate, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
@@ -23,6 +23,7 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) =>
     '@context': 'https://schema.org',
     '@type': 'Course',
     '@id': id,
+    courseCode,
     'url': getCourseUrl(courseCode),
     'name': getCourseName(courseCode),
     'description': getCourseDescription(courseCode),
@@ -30,20 +31,23 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) =>
       '@type': 'EducationalOccupationalCredential',
       'name': certificate,
     } : undefined,
+    'availableLanguage': 'en',
+    'teaches': getCourseSubjects(courseCode) ?? undefined,
     'hasCourseInstance': {
       '@type': 'CourseInstance',
-      'courseMode': 'Online',
-      'offers': {
-        '@type': 'Offer',
-        'category': 'Course',
-        'url': 'https://enroll.qcdesignschool.com/',
-        'price': price.discountedCost.toFixed(2),
-        'priceCurrency': 'USD',
-        'availability': 'https://schema.org/InStock',
-      },
+      'courseMode': 'online',
+      'courseWorkload': getCourseWorkload(courseCode),
+    },
+    'offers': {
+      '@type': 'Offer',
+      'category': 'Course',
+      'price': price.discountedCost.toFixed(2),
+      'priceCurrency': 'USD',
+      'availability': 'https://schema.org/InStock',
     },
     'provider': {
       '@type': 'EducationalOrganization',
+      '@id': 'https://www.qcdesignschool.com/#school',
       'name': 'QC Design School',
       'sameAs': [
         'https://www.linkedin.com/company/qc-career-school',
