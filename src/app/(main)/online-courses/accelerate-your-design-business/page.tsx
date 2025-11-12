@@ -70,7 +70,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
@@ -95,7 +95,7 @@ const AccelerateYourBusinessPage: PageComponent = async () => {
       </section>
       <OutlineSection className="bg-light" />
       <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="db" />
+      <GoogleReviewSection courseCode="db" schemaCourseId="#course" />
       <CareerEssentialsKitDesignFilesSection />
       <Suspense>
         <PaymentPlanSection courseCodes={courseCodes} />

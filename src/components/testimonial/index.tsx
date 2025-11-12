@@ -1,19 +1,23 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
+import { CourseMicrodata } from '../microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
+import { getCourseName } from '@/domain/courseCode';
 
 type Props = {
   id: string;
-  courseCodes?: string[];
+  courseCodes?: CourseCode[];
   showProvinceCode?: boolean;
+  schemaCourseId?: string;
 };
 
+/** sort in alphabetical order, except i2 is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
   if (a === b) {
     return 0;
@@ -27,7 +31,7 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false }) => {
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
   const testimonial = useMemo(() => {
     const found = testimonials[id];
     if (!found) {
@@ -55,7 +59,26 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
   }
 
   return (
-    <blockquote className={styles.testimonial}>
+    <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
+      {schemaCourseId
+        ? (
+          <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
+            <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'i2')} />
+          </span>
+        )
+        : testimonial.courses.length > 0
+          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
+          : (
+            <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcdesignschool.com/#school">
+              <meta itemProp="url" content="https://www.qcdesignschool.com" />
+              <meta itemProp="name" content="QC Design School" />
+            </span>
+          )}
+      <span itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
+        <meta itemProp="ratingValue" content={testimonial.stars.toString()} />
+        <meta itemProp="worstRating" content="0" />
+        <meta itemProp="bestRating" content="5" />
+      </span>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {
@@ -65,12 +88,12 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
           return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
         })}
       </div>
-      <footer className={styles.footer}>
+      <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">
         <div className={styles.imageWrapper}>
-          <ImageCircle src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
+          <ImageCircle itemProp src={testimonial.image} alt={testimonial.name} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} />
         </div>
         <cite>
-          <span className={styles.attribution}>{testimonial.name}{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}</span>{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
+          <span className={styles.attribution} itemProp="name">{testimonial.name}</span>{showProvinceCode && typeof testimonial.provinceCode !== 'undefined' && <>, {testimonial.provinceCode}</>}{testimonial.courses.length > 0 && <><br /><Title testimonial={testimonial} /></>}
         </cite>
       </footer>
     </blockquote>

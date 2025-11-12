@@ -5,7 +5,6 @@ import type { FC, PropsWithChildren } from 'react';
 import type { ItemList, WithContext } from 'schema-dts';
 
 import type { PageComponent } from '../serverComponent';
-import { educationalOrganization } from './educationalOrganization';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
@@ -26,8 +25,10 @@ import { DesignPartnerSection } from '@/components/partners/designPartnerSection
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
@@ -43,71 +44,22 @@ const HomePage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
+  const jsonLDCourseCodes: CourseCode[] = [ 'i2', 'st', 'ld' ];
+
   const jsonLdCourses: WithContext<ItemList> = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    'itemListElement': [
-      {
-        '@type': 'ListItem',
-        'position': 1,
-        'item': {
-          '@type': 'Course',
-          'url': 'https://www.qcdesignschool.com/online-courses/interior-decorating',
-          'name': `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
-          'description': 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
-          'provider': {
-            '@type': 'EducationalOrganization',
-            'name': 'QC Design School',
-            'sameAs': [
-              'https://www.linkedin.com/company/qc-career-school',
-              'https://www.facebook.com/QCDesign',
-              'https://www.instagram.com/qcdesignschool',
-              'https://www.youtube.com/@QCDesign',
-            ],
-          },
-        },
+    'itemListElement': jsonLDCourseCodes.map((c, i) => ({
+      '@type': 'ListItem',
+      'position': i + 1,
+      'item': {
+        '@type': 'Course',
+        'url': getCourseUrl(c),
+        'name': getCourseName(c),
+        'description': getCourseDescription(c),
+        'provider': { '@id': 'https://www.qcdesignschool.com/#school' },
       },
-      {
-        '@type': 'ListItem',
-        'position': 2,
-        'item': {
-          '@type': 'Course',
-          'url': 'https://www.qcdesignschool.com/online-courses/home-staging',
-          'name': 'Home Staging Course',
-          'description': 'Learn home staging and transform client spaces into buyer-ready showcases.',
-          'provider': {
-            '@type': 'EducationalOrganization',
-            'name': 'QC Design School',
-            'sameAs': [
-              'https://www.linkedin.com/company/qc-career-school',
-              'https://www.facebook.com/QCDesign',
-              'https://www.instagram.com/qcdesignschool',
-              'https://www.youtube.com/@QCDesign',
-            ],
-          },
-        },
-      },
-      {
-        '@type': 'ListItem',
-        'position': 3,
-        'item': {
-          '@type': 'Course',
-          'url': 'https://www.qcdesignschool.com/online-courses/landscape-design',
-          'name': 'Landscape Design Course',
-          'description': 'Learn how to create stunning garden designs and outdoor design concepts.',
-          'provider': {
-            '@type': 'EducationalOrganization',
-            'name': 'QC Design School',
-            'sameAs': [
-              'https://www.linkedin.com/company/qc-career-school',
-              'https://www.facebook.com/QCDesign',
-              'https://www.instagram.com/qcdesignschool',
-              'https://www.youtube.com/@QCDesign',
-            ],
-          },
-        },
-      },
-    ],
+    })),
   };
 
   return (

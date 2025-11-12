@@ -66,7 +66,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -92,7 +92,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode="po" />
+    <GoogleReviewSection courseCode="po" schemaCourseId="#course" />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitDesignFilesSection />

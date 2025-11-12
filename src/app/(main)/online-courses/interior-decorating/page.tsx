@@ -92,7 +92,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
         </div>
       </section>
       <DesignPartnerSection countryCode={countryCode} />
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
@@ -118,7 +118,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       </section>
       <CertificationSection />
       <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="i2" />
+      <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
       <TutorSection className="bg-light" />
       <OutlineSection designRestricted={designRestricted} />
       <CareerEssentialsKitDesignFilesSection />

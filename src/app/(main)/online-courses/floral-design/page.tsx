@@ -69,7 +69,7 @@ const FloralDesignPage: PageComponent = async () => {
         </div>
       </section>
       {countryCode !== 'CA' && <SAFPartnerSection />}
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
@@ -93,7 +93,7 @@ const FloralDesignPage: PageComponent = async () => {
       </section>
       <CertificationSection />
       <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="fd" />
+      <GoogleReviewSection courseCode="fd" schemaCourseId="#course" />
       <TutorSection className="bg-light" />
       <OutlineSection />
       <Suspense>
