@@ -1,9 +1,9 @@
 export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'db' | 'vd';
 
-export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ] as const;
+export const courseCodes: readonly CourseCode[] = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ];
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ].includes(obj);
+  return typeof obj === 'string' && (courseCodes as string[]).includes(obj);
 };
 
 const descriptions: Record<CourseCode, string> = {
@@ -21,9 +21,10 @@ const descriptions: Record<CourseCode, string> = {
   vd: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
 };
 
-const certifications: Partial<Record<CourseCode, string>> = {
+const certifications: Readonly<Record<CourseCode, string | undefined>> = {
   i2: 'International Design and Decorating Professional™',
   st: 'International Staging and Redesign Professional™',
+  ms: 'International Staging and Redesign Professional™',
   fs: 'Advanced Feng Shui Design Professional™',
   po: 'Advanced International Organizing Professional™',
   ld: 'International Landscape Design Professional™',
@@ -31,15 +32,118 @@ const certifications: Partial<Record<CourseCode, string>> = {
   cc: 'International Color Consulting Professional™',
   fd: 'International Floral Design Professional™',
   ap: 'Aging in Place Professional™',
+  db: undefined,
+  vd: undefined,
 };
 
-export const getCourseDescription = (courseCode: CourseCode): string => {
+const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
+  i2: [
+    'The Fundamentals of Design',
+    'Popular Design Styles and Materials',
+    'Lighting and Accessories',
+    'Floorplans and Layouts',
+    'Designing Room by Room',
+    'Your Final Project',
+    'The Business of Design',
+  ],
+  st: [
+    'The Fundamentals of Home Staging',
+    'The Arts of Depersonalizing and Decluttering',
+    'Features to Attract Buyers',
+    'Floorplans and Layouts',
+    'Your Final Project',
+    'The Business of Staging',
+  ],
+  ms: [
+    'The Fundamentals of Home Staging',
+    'The Arts of Depersonalizing and Decluttering',
+    'Curb Appeal',
+    'Your Final Project',
+    'The Business of Staging',
+  ],
+  fs: [
+    'The Fundamentals Concepts of Feng Shui',
+    'The Bagua Map and Floor Plans',
+    'Feng Shui Cures and Symbols',
+    'Applying Design Theory to Feng Shui',
+    'Feng Shui in Private and Public Spaces',
+    'The Business of Feng Shui',
+  ],
+  po: [
+    'Introduction to Professional Organizing',
+    'Floorplans and Layouts',
+    'Essential Storage Solutions and Decluttering',
+    'Working with Clients',
+    'The Business of Professional Organizing',
+  ],
+  ld: [
+    'Introduction to Landscape Design',
+    'Functional Landscape Design',
+    'Plants and Garden Design',
+    'The Principles and Elements of Design',
+    'The Business of Landscape Design',
+  ],
+  ed: [
+    'Introduction to Event Decor',
+    'Components of Event Decor',
+    'Build Your Career in Event Decor',
+  ],
+  cc: [
+    'Becoming a Color Consultant',
+    'Creating a Color Palette',
+    'Color Consulting Services',
+  ],
+  fd: [
+    'The Floral Design Industry',
+    'The Fundamentals of Floral Design',
+    'Decorative Arrangements',
+    'Flowers to Wear & Carry',
+    'Advanced Floral Designs',
+    'Running Your Floral Design Business',
+  ],
+  ap: [
+    'Introduction to Aging in Place Design',
+    'Applying Universal Design Principles',
+    'Final Project',
+  ],
+  db: [
+    'Establish Your Brand and Business Goals',
+    'Build an Online Presence',
+    'Showcase Your Business to Prospective Clients',
+    'Successful Project Management',
+  ],
+  vd: undefined,
+};
+
+const workloads: Readonly<Record<CourseCode, string | undefined>> = {
+  i2: '28 hours of assignments and 78 minutes of video, ususally completed over 4 to 6 months',
+  st: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
+  ms: '9 hours of reading and assignments, ususally completed over 4 to 6 months',
+  fs: '11 hours of assignments, 4 hours of reading, and 4 hours of video, ususally completed over 4 to 6 months',
+  po: '10 hours of reading and assignments, ususally completed over 4 to 6 months',
+  ld: '5 hours of assignments, 6 hours of reading, 3 hours of video, and 72 minutes of quizzes, ususally completed over 4 to 6 months',
+  ed: 'usually completed over 4 to 6 months',
+  cc: 'usually completed over 4 to 6 months',
+  fd: 'usually completed over 4 to 6 months',
+  ap: 'usually completed over 4 to 6 months',
+  db: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
+  vd: 'usually completed over 4 to 6 months',
+};
+
+export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
   return descriptions[courseCode];
 };
 
-export const getCourseCertificate = (courseCode: CourseCode): string | null => {
-  const certificate = certifications[courseCode];
-  return certificate ?? null;
+export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
+  return subjects[courseCode];
+};
+
+export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
+  return workloads[courseCode];
+};
+
+export const getCourseCertificate = (courseCode: CourseCode): string | undefined => {
+  return certifications[courseCode];
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {
