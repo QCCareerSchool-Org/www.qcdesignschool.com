@@ -1,9 +1,9 @@
 export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'db' | 'vd';
 
-export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ] as const;
+export const courseCodes: readonly CourseCode[] = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ];
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ].includes(obj);
+  return typeof obj === 'string' && (courseCodes as string[]).includes(obj);
 };
 
 const descriptions: Record<CourseCode, string> = {
@@ -21,9 +21,10 @@ const descriptions: Record<CourseCode, string> = {
   vd: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
 };
 
-const certifications: Partial<Record<CourseCode, string>> = {
+const certifications: Readonly<Record<CourseCode, string | undefined>> = {
   i2: 'International Design and Decorating Professional™',
   st: 'International Staging and Redesign Professional™',
+  ms: 'International Staging and Redesign Professional™',
   fs: 'Advanced Feng Shui Design Professional™',
   po: 'Advanced International Organizing Professional™',
   ld: 'International Landscape Design Professional™',
@@ -31,9 +32,11 @@ const certifications: Partial<Record<CourseCode, string>> = {
   cc: 'International Color Consulting Professional™',
   fd: 'International Floral Design Professional™',
   ap: 'Aging in Place Professional™',
+  db: undefined,
+  vd: undefined,
 };
 
-const subjects: Partial<Record<CourseCode, string[]>> = {
+const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
   i2: [
     'The Fundamentals of Design',
     'Popular Design Styles and Materials',
@@ -109,37 +112,38 @@ const subjects: Partial<Record<CourseCode, string[]>> = {
     'Showcase Your Business to Prospective Clients',
     'Successful Project Management',
   ],
+  vd: undefined,
 };
 
-const workloads: Record<CourseCode, string> = {
-  i2: 'PT30H',
-  st: 'PT30H',
-  ms: 'PT30H',
-  fs: 'PT30H',
-  po: 'PT30H',
-  ld: 'PT30H',
-  ed: 'PT30H',
-  cc: 'PT30H',
-  fd: 'PT30H',
-  ap: 'PT30H',
-  db: 'PT30H',
-  vd: 'PT30H',
+const workloads: Readonly<Record<CourseCode, string | undefined>> = {
+  i2: undefined,
+  st: undefined,
+  ms: undefined,
+  fs: undefined,
+  po: undefined,
+  ld: undefined,
+  ed: undefined,
+  cc: undefined,
+  fd: undefined,
+  ap: undefined,
+  db: undefined,
+  vd: undefined,
 };
 
-export const getCourseDescription = (courseCode: CourseCode): string => {
+export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
   return descriptions[courseCode];
 };
 
-export const getCourseSubjects = (courseCode: CourseCode): string[] | null => {
-  return subjects[courseCode] ?? null;
+export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
+  return subjects[courseCode];
 };
 
-export const getCourseWorkload = (courseCode: CourseCode): string => {
+export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
   return workloads[courseCode];
 };
 
-export const getCourseCertificate = (courseCode: CourseCode): string | null => {
-  return certifications[courseCode] ?? null;
+export const getCourseCertificate = (courseCode: CourseCode): string | undefined => {
+  return certifications[courseCode];
 };
 
 export const getCourseName = (courseCode: CourseCode): string => {

@@ -1,16 +1,19 @@
 import type { FC } from 'react';
 import type { Course, WithContext } from 'schema-dts';
 
-import { type CourseCode, getCourseCertificate, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
+import { getCourseCertificate, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
+import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 
 interface Props {
   courseCode: CourseCode;
   id?: string;
+  providerId?: string;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) => {
+export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
   const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
   const price = await fetchPrice(priceQuery);
   if (!price) {
@@ -32,7 +35,7 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) =>
       'name': certificate,
     } : undefined,
     'availableLanguage': 'en',
-    'teaches': getCourseSubjects(courseCode) ?? undefined,
+    'teaches': getCourseSubjects(courseCode),
     'hasCourseInstance': {
       '@type': 'CourseInstance',
       'courseMode': 'online',
@@ -42,20 +45,18 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course' }) =>
       '@type': 'Offer',
       'category': 'Course',
       'price': price.discountedCost.toFixed(2),
-      'priceCurrency': 'USD',
+      'priceCurrency': price.currency.code,
       'availability': 'https://schema.org/InStock',
     },
-    'provider': {
-      '@type': 'EducationalOrganization',
-      '@id': 'https://www.qcdesignschool.com/#school',
-      'name': 'QC Design School',
-      'sameAs': [
-        'https://www.linkedin.com/company/qc-career-school',
-        'https://www.facebook.com/QCDesign',
-        'https://www.instagram.com/qcdesignschool',
-        'https://www.youtube.com/@QCDesign',
-      ],
-    },
+    'provider': providerId
+      ? { '@id': providerId }
+      : {
+        '@type': 'EducationalOrganization',
+        '@id': 'https://www.qcdesignschool.com/#school',
+        'url': 'https://www.qcdesignschool.com',
+        'name': 'QC Design School',
+        'sameAs': 'sameAs' in educationalOrganization ? educationalOrganization.sameAs : undefined,
+      },
   };
 
   return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;

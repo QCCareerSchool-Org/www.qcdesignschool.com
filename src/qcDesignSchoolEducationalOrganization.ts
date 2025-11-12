@@ -16,6 +16,7 @@ export const educationalOrganization: WithContext<EducationalOrganization> = {
     'https://www.facebook.com/QCDesign',
     'https://www.instagram.com/qcdesignschool',
     'https://www.tiktok.com/@qcdesignschool',
+    'https://www.youtube.com/@QCDesign',
     'https://www.pinterest.com/qccareerschool',
     'https://www.linkedin.com/company/qc-career-school',
   ],
