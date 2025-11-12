@@ -64,7 +64,7 @@ const EventDecorPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -88,7 +88,7 @@ const EventDecorPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode="ed" />
+    <GoogleReviewSection courseCode="ed" schemaCourseId="#course" />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <Suspense>

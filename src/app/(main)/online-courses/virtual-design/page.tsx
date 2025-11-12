@@ -60,7 +60,7 @@ const VirtualDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -82,7 +82,7 @@ const VirtualDesignPage: PageComponent = () => (
       </div>
     </section>
     <CareerEssentialsKitDesignFilesSection />
-    <GoogleReviewSection courseCode="vd" />
+    <GoogleReviewSection courseCode="vd" schemaCourseId="#course" />
     <VirtualCommunitySection />
     <PaymentPlanSection courseCodes={courseCodes} />
     <GetStartedSection

@@ -65,7 +65,7 @@ const ColorConsultantPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+    <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
     <section>
       <div className="container">
         <div className="row align-items-center justify-content-center g-s">
@@ -90,7 +90,7 @@ const ColorConsultantPage: PageComponent = () => (
     </section>
     <CertificationSection />
     <VirtualCommunitySection />
-    <GoogleReviewSection courseCode="cc" />
+    <GoogleReviewSection courseCode="cc" schemaCourseId="#course" />
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitCanvaSection />

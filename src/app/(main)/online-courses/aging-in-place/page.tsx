@@ -71,7 +71,7 @@ const AgingInPlacePage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
@@ -94,7 +94,7 @@ const AgingInPlacePage: PageComponent = async () => {
         </div>
       </section>
       <CertificationSection />
-      <GoogleReviewSection courseCode="ap" />
+      <GoogleReviewSection courseCode="ap" schemaCourseId="#course" />
       <TutorSection className="bg-light" />
       <VirtualCommunitySection />
       <OutlineSection />
