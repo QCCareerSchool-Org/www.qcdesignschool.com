@@ -8,7 +8,7 @@ import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import type { CourseCode } from '@/domain/courseCode';
-import { courseCodes, getCourseCertificate, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
@@ -187,7 +187,7 @@ const LargeColumn: FC<PropsWithChildren> = ({ children }) => <div className="col
 const SmallColumn: FC<PropsWithChildren> = ({ children }) => <div className="col-12 col-sm-10 col-lg-6 col-xl-4 d-flex">{children}</div>;
 
 const getCourseSchema = (c: CourseCode): Course => {
-  const courseCertificate = getCourseCertificate(c);
+  const courseCertificate = getCourseCertification(c);
   return {
     '@type': 'Course',
     'url': getCourseUrl(c),

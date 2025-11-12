@@ -1,12 +1,46 @@
-export type CourseCode = 'i2' | 'st' | 'ms' | 'fs' | 'po' | 'ld' | 'ed' | 'cc' | 'fd' | 'ap' | 'db' | 'vd';
+export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ] as const;
 
-export const courseCodes: readonly CourseCode[] = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ];
+export type CourseCode = typeof courseCodes[number];
+
+const courseCodeSet = new Set<CourseCode>(courseCodes);
 
 export const isCourseCode = (obj: unknown): obj is CourseCode => {
-  return typeof obj === 'string' && (courseCodes as string[]).includes(obj);
+  return typeof obj === 'string' && courseCodeSet.has(obj as CourseCode);
 };
 
-const descriptions: Record<CourseCode, string> = {
+const names = {
+  i2: 'Interior Design & Decorating',
+  st: 'Home Staging',
+  ms: 'Staging for Designers',
+  fs: 'Feng Shui Design',
+  po: 'Professional Organizing',
+  ed: 'Event Decor',
+  ld: 'Landscape Design',
+  cc: 'Color Consultant',
+  fd: 'Floral Design',
+  ap: 'Aging in Place',
+  db: 'Accelerate Your Design Business',
+  vd: 'Virtual Design',
+} as const satisfies { readonly [c in CourseCode]: string };
+
+const baseUrl = 'https://www.qcdesignschool.com';
+
+const urls = {
+  i2: `${baseUrl}/online-courses/interior-decorating`,
+  st: `${baseUrl}/online-courses/home-staging`,
+  ms: `${baseUrl}/online-courses/staging-for-designers`,
+  fs: `${baseUrl}/online-courses/feng-shui-design`,
+  po: `${baseUrl}/online-courses/professional-organizing`,
+  ed: `${baseUrl}/online-courses/event-decor`,
+  ld: `${baseUrl}/online-courses/landscape-design`,
+  cc: `${baseUrl}/online-courses/color-consultant`,
+  fd: `${baseUrl}/online-courses/floral-design`,
+  ap: `${baseUrl}/online-courses/aging-in-place`,
+  db: `${baseUrl}/online-courses/accelerate-your-design-business`,
+  vd: `${baseUrl}/online-courses/virtual-design`,
+} as const satisfies { readonly [c in CourseCode]: string };
+
+const descriptions = {
   i2: 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
   st: 'Learn home staging and transform client spaces into buyer-ready showcases.',
   ms: 'Expand your interior design skills by learning to stage homes for sale and offer professional home staging services.',
@@ -19,9 +53,9 @@ const descriptions: Record<CourseCode, string> = {
   ap: 'Learn to design safe, functional spaces for aging clients and address mobility and lifestyle needs.',
   db: 'Learn to build your brand, attract clients, manage design projects effectively, and create a professional portfolio to grow your business.',
   vd: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
-};
+} as const satisfies { readonly [c in CourseCode]: string };
 
-const certifications: Readonly<Record<CourseCode, string | undefined>> = {
+const certifications = {
   i2: 'International Design and Decorating Professional™',
   st: 'International Staging and Redesign Professional™',
   ms: 'International Staging and Redesign Professional™',
@@ -34,9 +68,9 @@ const certifications: Readonly<Record<CourseCode, string | undefined>> = {
   ap: 'Aging in Place Professional™',
   db: undefined,
   vd: undefined,
-};
+} as const satisfies { readonly [c in CourseCode]: string | undefined };
 
-const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
+const subjects = {
   i2: [
     'The Fundamentals of Design',
     'Popular Design Styles and Materials',
@@ -113,9 +147,9 @@ const subjects: Readonly<Record<CourseCode, readonly string[] | undefined>> = {
     'Successful Project Management',
   ],
   vd: undefined,
-};
+} as const satisfies { readonly [c in CourseCode]: readonly string[] | undefined };
 
-const workloads: Readonly<Record<CourseCode, string | undefined>> = {
+const workloads = {
   i2: '28 hours of assignments and 78 minutes of video, ususally completed over 4 to 6 months',
   st: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
   ms: '9 hours of reading and assignments, ususally completed over 4 to 6 months',
@@ -128,79 +162,28 @@ const workloads: Readonly<Record<CourseCode, string | undefined>> = {
   ap: 'usually completed over 4 to 6 months',
   db: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
   vd: 'usually completed over 4 to 6 months',
+} as const satisfies { readonly [c in CourseCode]: string | undefined };
+
+export const getCourseName = (c: CourseCode): string => {
+  return names[c];
 };
 
-export const getCourseDescription = (courseCode: CourseCode): string | undefined => {
-  return descriptions[courseCode];
+export const getCourseUrl = (c: CourseCode): string => {
+  return urls[c];
 };
 
-export const getCourseSubjects = (courseCode: CourseCode): readonly string[] | undefined => {
-  return subjects[courseCode];
+export const getCourseDescription = (c: CourseCode): string | undefined => {
+  return descriptions[c];
 };
 
-export const getCourseWorkload = (courseCode: CourseCode): string | undefined => {
-  return workloads[courseCode];
+export const getCourseCertification = (c: CourseCode): string | undefined => {
+  return certifications[c];
 };
 
-export const getCourseCertificate = (courseCode: CourseCode): string | undefined => {
-  return certifications[courseCode];
+export const getCourseSubjects = (c: CourseCode): readonly string[] | undefined => {
+  return subjects[c];
 };
 
-export const getCourseName = (courseCode: CourseCode): string => {
-  switch (courseCode) {
-    case 'i2':
-      return 'Interior Design & Decorating';
-    case 'st':
-      return 'Home Staging';
-    case 'ms':
-      return 'Staging for Designers';
-    case 'fs':
-      return 'Feng Shui Design';
-    case 'po':
-      return 'Professional Organizing';
-    case 'ed':
-      return 'Event Decor';
-    case 'ld':
-      return 'Landscape Design';
-    case 'cc':
-      return 'Color Consultant';
-    case 'fd':
-      return 'Floral Design';
-    case 'ap':
-      return 'Aging in Place';
-    case 'db':
-      return 'Accelerate Your Design Business';
-    case 'vd':
-      return 'Virtual Design';
-  }
-};
-
-export const getCourseUrl = (courseCode: CourseCode): string => {
-  const baseUrl = 'https://www.qcdesignschool.com';
-  switch (courseCode) {
-    case 'i2':
-      return `${baseUrl}/online-courses/interior-decorating`;
-    case 'st':
-      return `${baseUrl}/online-courses/home-staging`;
-    case 'ms':
-      return `${baseUrl}/online-courses/staging-for-designers`;
-    case 'fs':
-      return `${baseUrl}/online-courses/feng-shui-design`;
-    case 'po':
-      return `${baseUrl}/online-courses/professional-organizing`;
-    case 'ed':
-      return `${baseUrl}/online-courses/event-decor`;
-    case 'ld':
-      return `${baseUrl}/online-courses/landscape-design`;
-    case 'cc':
-      return `${baseUrl}/online-courses/color-consultant`;
-    case 'fd':
-      return `${baseUrl}/online-courses/floral-design`;
-    case 'ap':
-      return `${baseUrl}/online-courses/aging-in-place`;
-    case 'db':
-      return `${baseUrl}/online-courses/accelerate-your-design-business`;
-    case 'vd':
-      return `${baseUrl}/online-courses/virtual-design`;
-  }
+export const getCourseWorkload = (c: CourseCode): string | undefined => {
+  return workloads[c];
 };
