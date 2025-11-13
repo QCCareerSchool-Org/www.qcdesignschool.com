@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { Suspense } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import styles from './googleReview.module.scss';

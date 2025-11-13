@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, useMemo } from 'react';
+import { memo, Suspense, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { testimonials } from './data';
