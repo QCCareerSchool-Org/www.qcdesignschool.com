@@ -35,7 +35,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
     </span>
     <div>
       <div className="mb-3">{Array(5).fill(null).map((_, i) => <Star key={i} filled={rating > i} />)}</div>
-      <p itemProp="reviewBody" className="fw-bold mb-4" style={size ? { fontSize: `${size}rem` } : undefined}>&quot;{reviewText}&quot;</p>
+      <p className="fw-bold mb-4" style={size ? { fontSize: `${size}rem` } : undefined}>&quot;<span itemProp="reviewBody">{reviewText}</span>&quot;</p>
       <div itemProp="author" itemScope itemType="https://schema.org/Person">
         <div className="d-flex justify-content-center mb-2">
           {imageSrc

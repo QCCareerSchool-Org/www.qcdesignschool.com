@@ -2,19 +2,24 @@ import type { FC } from 'react';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseDescription, getCourseName, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 
 type Props = {
   courseCode: CourseCode;
   itemProp?: string;
+  showPrice?: boolean;
 };
 
-export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
-  const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
-    return null;
+export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPrice }) => {
+  let price: Price | undefined;
+  if (showPrice) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
+    price = await fetchPrice(priceQuery);
+    if (!price) {
+      return null;
+    }
   }
 
   const workload = getCourseWorkload(courseCode);
@@ -28,12 +33,14 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp }) => {
         <link itemProp="url" href="https://www.qceventplanning.com" />
         <meta itemProp="name" content="QC Event School" />
       </span>
-      <span itemProp="offers" itemScope itemType="https://schema.org/Offer">
-        <meta itemProp="priceCurrency" content={price.currency.code} />
-        <meta itemProp="price" content={price.discountedCost.toFixed(2)} />
-        <link itemProp="url" href="https://enroll.qcdesignschool.com" />
-        <meta itemProp="availability" content="https://schema.org/InStock" />
-      </span>
+      {price && (
+        <span itemProp="offers" itemScope itemType="https://schema.org/Offer">
+          <meta itemProp="priceCurrency" content={price.currency.code} />
+          <meta itemProp="price" content={price.discountedCost.toFixed(2)} />
+          <link itemProp="url" href="https://enroll.qcdesignschool.com" />
+          <meta itemProp="availability" content="https://schema.org/InStock" />
+        </span>
+      )}
       <span itemProp="hasCourseInstance" itemScope itemType="https://schema.org/CourseInstance">
         <meta itemProp="courseMode" content="online" />
         {workload && <meta itemProp="courseWorkload" content={workload} />}
