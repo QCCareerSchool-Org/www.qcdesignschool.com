@@ -6,7 +6,7 @@ import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { ReviewSchemaData } from '../testimonialJsonLD';
+import { TestimonialSchemaData } from '../testimonialJsonLD';
 import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {
@@ -61,7 +61,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
 
   return (
     <blockquote className={styles.testimonial}>
-      <Suspense><ReviewSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} schemaCourseId={schemaCourseId} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={testimonialCourseCode} name={testimonial.name} rating={testimonial.stars} reviewText={testimonial.short?.[0] ?? ''} schemaCourseId={schemaCourseId} /></Suspense>
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div>
         {testimonial.short.map((q, i, a) => {

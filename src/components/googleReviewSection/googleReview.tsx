@@ -5,7 +5,7 @@ import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 import { Star } from '../testimonial/star';
-import { ReviewSchemaData } from '../testimonialJsonLD';
+import { TestimonialSchemaData } from '../testimonialJsonLD';
 
 type Props = {
   schemaCourseId?: string;
@@ -16,7 +16,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
 
   return (
     <div className={styles.wrapper}>
-      <Suspense><ReviewSchemaData courseCode={reviewCourseCode} name={name} rating={rating} reviewText={reviewText} schemaCourseId={schemaCourseId} /></Suspense>
+      <Suspense><TestimonialSchemaData courseCode={reviewCourseCode} name={name} rating={rating} reviewText={reviewText} schemaCourseId={schemaCourseId} /></Suspense>
       <div>
         <div className="mb-3">{Array(5).fill(null).map((_, i) => <Star key={i} filled={rating > i} />)}</div>
         <p className="fw-bold mb-4" style={size ? { fontSize: `${size}rem` } : undefined}>&quot;{reviewText}&quot;</p>
