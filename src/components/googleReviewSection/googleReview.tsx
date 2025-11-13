@@ -4,8 +4,8 @@ import { ImageCircle } from '../imageCircle';
 import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
-import { ReviewSchemaData } from '../microdata/course';
 import { Star } from '../testimonial/star';
+import { ReviewSchemaData } from '../testimonialJsonLD/course';
 
 type Props = {
   schemaCourseId?: string;
