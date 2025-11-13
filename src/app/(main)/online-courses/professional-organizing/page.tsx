@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -35,7 +34,7 @@ const courseCodes: CourseCode[] = [ 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+    <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
@@ -96,9 +95,7 @@ const ProfessionalOrganizingPage: PageComponent = () => (
     <TutorSection className="bg-light" />
     <OutlineSection />
     <CareerEssentialsKitDesignFilesSection />
-    <Suspense>
-      <PaymentPlanSection courseCodes={courseCodes} />
-    </Suspense>
+    <PaymentPlanSection courseCodes={courseCodes} />
     <section>
       <div itemScope itemType="https://schema.org/FAQPage">
         <div className="container">

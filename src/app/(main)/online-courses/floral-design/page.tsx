@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -39,7 +38,7 @@ const FloralDesignPage: PageComponent = async () => {
   return (
     <div className={styles.page}>
       <section className="half-padding-top">
-        <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+        <CourseSchema courseCode={courseCodes[0]} showPrice />
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12">
@@ -96,9 +95,7 @@ const FloralDesignPage: PageComponent = async () => {
       <GoogleReviewSection courseCode="fd" schemaCourseId="#course" />
       <TutorSection className="bg-light" />
       <OutlineSection />
-      <Suspense>
-        <PaymentPlanSection courseCodes={courseCodes} />
-      </Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
       <section>
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">

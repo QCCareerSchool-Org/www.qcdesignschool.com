@@ -1,4 +1,4 @@
-import { type FC, Suspense } from 'react';
+import type { FC } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import styles from './googleReview.module.scss';
@@ -21,7 +21,7 @@ export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundCol
         </span>
       )
       : courseCodes && courseCodes.length > 0
-        ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} /></Suspense>
+        ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
         : (
           <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcdesignschool.com/#school">
             <link itemProp="url" href="https://www.qcdesignschool.com" />
