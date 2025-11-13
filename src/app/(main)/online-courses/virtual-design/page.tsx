@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
@@ -30,7 +29,7 @@ const courseCodes: CourseCode[] = [ 'vd' ];
 
 const VirtualDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+    <CourseSchema courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

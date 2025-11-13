@@ -5,14 +5,16 @@ import { getCourseDescription, getCourseName, getCourseUrl, getCourseWorkload } 
 import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
+import { withSuspense } from '@/withSuspense';
 
 type Props = {
   courseCode: CourseCode;
   itemProp?: string;
   showPrice?: boolean;
+  itemID?: string;
 };
 
-export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPrice }) => {
+const CourseMicrodataBase: FC<Props> = async ({ courseCode, itemProp, showPrice, itemID = '#course' }) => {
   let price: Price | undefined;
   if (showPrice) {
     const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
@@ -25,7 +27,7 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPri
   const workload = getCourseWorkload(courseCode);
 
   return (
-    <span itemProp={itemProp} itemScope itemType="https://schema.org/Course" itemID="#course">
+    <span itemProp={itemProp} itemScope itemType="https://schema.org/Course" itemID={itemID}>
       <link itemProp="url" href={getCourseUrl(courseCode)} />
       <meta itemProp="name" content={getCourseName(courseCode)} />
       <meta itemProp="description" content={getCourseDescription(courseCode)} />
@@ -48,3 +50,5 @@ export const CourseMicrodata: FC<Props> = async ({ courseCode, itemProp, showPri
     </span>
   );
 };
+
+export const CourseMicrodata = withSuspense(CourseMicrodataBase);

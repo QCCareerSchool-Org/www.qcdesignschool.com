@@ -3,21 +3,27 @@ import type { Course, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
+import type { Price } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
+import { withSuspense } from '@/withSuspense';
 
 interface Props {
   courseCode: CourseCode;
   id?: string;
   providerId?: string;
+  showPrice?: boolean;
 }
 
-export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', providerId }) => {
-  const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
-    return null;
+const CourseSchemaBase: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
+  let price: Price | undefined;
+  if (showPrice) {
+    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
+    price = await fetchPrice(priceQuery);
+    if (!price) {
+      return null;
+    }
   }
 
   const certification = getCourseCertification(courseCode);
@@ -41,13 +47,6 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
       'courseMode': 'online',
       'courseWorkload': getCourseWorkload(courseCode),
     },
-    'offers': {
-      '@type': 'Offer',
-      'price': price.discountedCost.toFixed(2),
-      'priceCurrency': price.currency.code,
-      'url': 'https://enroll.qcdesignschool.com',
-      'availability': 'https://schema.org/InStock',
-    },
     'provider': providerId
       ? { '@id': providerId }
       : {
@@ -59,5 +58,17 @@ export const CourseSchema: FC<Props> = async ({ courseCode, id = '#course', prov
       },
   };
 
+  if (price) {
+    courseJsonLD.offers = {
+      '@type': 'Offer',
+      'price': price.discountedCost.toFixed(2),
+      'priceCurrency': price.currency.code,
+      'url': 'https://enroll.qcdesignschool.com',
+      'availability': 'https://schema.org/InStock',
+    };
+  }
+
   return <script id={`course-schema-${courseCode}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(courseJsonLD) }} />;
 };
+
+export const CourseSchema = withSuspense(CourseSchemaBase);

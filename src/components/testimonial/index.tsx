@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { memo, Suspense, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { testimonials } from './data';
@@ -67,7 +67,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
           </span>
         )
         : testimonial.courses.length > 0
-          ? <Suspense><CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} /></Suspense>
+          ? <CourseMicrodata itemProp="itemReviewed" courseCode={testimonial.courses[0]} />
           : (
             <span itemProp="itemReviewed" itemScope itemType="https://schema.org/EducationalOrganization" itemID="https://www.qcdesignschool.com/#school">
               <link itemProp="url" href="https://www.qcdesignschool.com" />
