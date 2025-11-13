@@ -6,7 +6,7 @@ import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { ReviewSchemaData } from '../testimonialJsonLD/course';
+import { ReviewSchemaData } from '../testimonialJsonLD';
 import type { CourseCode } from '@/domain/courseCode';
 
 type Props = {

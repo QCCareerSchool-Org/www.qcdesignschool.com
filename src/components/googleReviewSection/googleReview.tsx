@@ -5,7 +5,7 @@ import styles from './googleReview.module.scss';
 import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 import { Star } from '../testimonial/star';
-import { ReviewSchemaData } from '../testimonialJsonLD/course';
+import { ReviewSchemaData } from '../testimonialJsonLD';
 
 type Props = {
   schemaCourseId?: string;
