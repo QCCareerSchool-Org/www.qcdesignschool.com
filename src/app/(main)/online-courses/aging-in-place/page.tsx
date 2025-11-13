@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { Suspense } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -40,7 +39,7 @@ const AgingInPlacePage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Suspense><CourseSchema courseCode={courseCodes[0]} /></Suspense>
+      <CourseSchema courseCode={courseCodes[0]} showPrice />
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">
@@ -99,9 +98,7 @@ const AgingInPlacePage: PageComponent = async () => {
       <VirtualCommunitySection />
       <OutlineSection />
       <CareerEssentialsKitDesignFilesSection />
-      <Suspense>
-        <PaymentPlanSection courseCodes={courseCodes} />
-      </Suspense>
+      <PaymentPlanSection courseCodes={courseCodes} />
       <section>
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">

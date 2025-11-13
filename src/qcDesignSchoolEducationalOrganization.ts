@@ -4,7 +4,7 @@ import { getTelephoneNumber } from '@/lib/telephone';
 
 export const educationalOrganization: WithContext<EducationalOrganization> = {
   '@context': 'https://schema.org',
-  '@id': 'https://www.qccareerschool.com/#school',
+  '@id': '#school',
   '@type': 'EducationalOrganization',
   'name': 'QC Design School',
   'url': 'https://www.qcdesignschool.com/',
@@ -16,6 +16,7 @@ export const educationalOrganization: WithContext<EducationalOrganization> = {
     'https://www.facebook.com/QCDesign',
     'https://www.instagram.com/qcdesignschool',
     'https://www.tiktok.com/@qcdesignschool',
+    'https://www.youtube.com/@QCDesign',
     'https://www.pinterest.com/qccareerschool',
     'https://www.linkedin.com/company/qc-career-school',
   ],

@@ -57,7 +57,11 @@ const HomePage: PageComponent = async () => {
         'url': getCourseUrl(c),
         'name': getCourseName(c),
         'description': getCourseDescription(c),
-        'provider': { '@id': 'https://www.qcdesignschool.com/#school' },
+        'provider': {
+          '@type': 'EducationalOrganization',
+          '@id': '#school',
+          'name': 'QC Design School',
+        },
       },
     })),
   };
