@@ -11,9 +11,9 @@ type Props = {
   countryCode: string;
 };
 
-const bannerStartDate = Date.UTC(2024, 11, 12, 19); // Dec 12, 2024 at 14:00 (19:00 UTC)
-const countDownStartDate = Date.UTC(2024, 11, 18, 8); // Dec 18, 2024 at 03:00 (08:00 UTC)
-const endDate = Date.UTC(2024, 11, 19, 8); // Dec 19, 2024 at 03:00 (08:00 UTC)
+const bannerStartDate = Date.UTC(2025, 10, 17, 15); // 2025-11-17T10:00 (15:00 UTC)
+const countDownStartDate = Date.UTC(2025, 10, 28, 8); // 2025-11-28T03:00 (08:00 UTC)
+const endDate = Date.UTC(2025, 10, 29, 8); // 2025-11-29T03:00 (08:00 UTC)
 
 if (endDate < countDownStartDate) {
   throw Error('end is before count down start');
@@ -60,12 +60,12 @@ export const CountDownTimer: FC<Props> = ({ date }) => {
 
 const RegularMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    Get a Second Course FREE!
+    <span className="d-none d-lg-inline">Don't Miss Out—</span>Black Friday Savings Have Arrived! Get a Second Course <strong>free</strong> Plus $100 Off!<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
   </span>
 );
 
 const LastChanceMessage: FC = () => (
   <span style={{ textTransform: 'uppercase' }}>
-    <strong style={{ color: '#f00', paddingRight: '0.125rem' }}>Last Chance:</strong> Get a Second Course FREE!
+    <span className="d-none d-lg-inline">Don't Miss Out—</span>Black Friday Savings Have Arrived! Get a Second Course <strong>free</strong> Plus $100 Off!<br /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
   </span>
 );
