@@ -6,7 +6,6 @@ import { InitialCircle } from './initialCircle';
 import type { ReviewData } from './reviewData';
 import { CourseMicrodata } from '../microdata/course';
 import { Star } from '../testimonial/star';
-import { getCourseName } from '@/domain/courseCode';
 
 type Props = {
   schemaCourseId?: string;
@@ -15,11 +14,7 @@ type Props = {
 export const GoogleReview: FC<Props> = ({ name, initial, imageSrc, backgroundColor, reviewText, size, rating, courseCodes, schemaCourseId }) => (
   <div itemScope itemType="https://schema.org/Review" className={styles.wrapper}>
     {schemaCourseId
-      ? (
-        <span itemProp="itemReviewed" itemScope itemType="https://schema.org/Course" itemID={schemaCourseId}>
-          <meta itemProp="name" content={getCourseName(courseCodes?.[0] ?? 'i2')} />
-        </span>
-      )
+      ? <meta itemProp="itemReviewed" itemScope itemID={schemaCourseId} />
       : courseCodes && courseCodes.length > 0
         ? <CourseMicrodata itemProp="itemReviewed" courseCode={courseCodes[0]} />
         : (
