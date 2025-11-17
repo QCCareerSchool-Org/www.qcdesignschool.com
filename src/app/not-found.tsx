@@ -37,7 +37,7 @@ const NotFoundPage: PageComponent = () => {
         <div className="container">
           <div className="row justify-content-center g-4 text-center">
             <div className="col-12 col-lg-4 d-flex">
-              <div className="d-flex flex-column justify-content-between">
+              <div className="d-flex flex-column justify-content-between w-100">
                 <div>
                   <div className="text-primary mb-3"><CertificationIcon height={iconSize} /></div>
                   <h2 className="h6 mb-3">Learn more about QC's professional certification courses.</h2>
@@ -48,7 +48,7 @@ const NotFoundPage: PageComponent = () => {
               </div>
             </div>
             <div className="col-12 col-lg-4 d-flex">
-              <div className="d-flex flex-column justify-content-between">
+              <div className="d-flex flex-column justify-content-between w-100">
                 <div>
                   <div className="text-primary mb-3"><BookReaderIcon height={iconSize} /></div>
                   <h2 className="h6 mb-3">Hear from QC Design School's students and graduates.</h2>
@@ -59,7 +59,7 @@ const NotFoundPage: PageComponent = () => {
               </div>
             </div>
             <div className="col-12 col-lg-4 d-flex">
-              <div className="d-flex flex-column justify-content-between">
+              <div className="d-flex flex-column justify-content-between w-100">
                 <div>
                   <div className="text-primary mb-3"><ShieldCheckIcon height={iconSize} /></div>
                   <h2 className="h6 mb-3">Enroll today to jumpstart your new design career!</h2>
