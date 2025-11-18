@@ -11,7 +11,7 @@ export type Video = {
   /** Direct URL to the video file */
   content_loc: string;
   /** URL to the player page (leave undefined for default) */
-  player_loc?: string;
+  player_loc: string;
   /** Duration in seconds */
   duration: number;
   expiration_date?: string | Date;
@@ -73,7 +73,7 @@ export const siteVideos: Video[] = ([
       `${baseUrl}/previews/interior-decorating`,
     ],
     title: 'Bring Your Designs to Life',
-    thumbnail_loc: `${baseUrl}/videos/'bring-your-designs-to-life.png`,
+    thumbnail_loc: `${baseUrl}/videos/bring-your-designs-to-life.png`,
     description: 'Learn one of the most essential skills in interior decorating: bringing your ideas to life through professional drawings. In this unit, you\'ll discover how to create accurate, scaled floor plans and other key visuals using the tools and techniques decorators use every day.',
     content_loc: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part-4-clip.mp4',
     duration: 133,
