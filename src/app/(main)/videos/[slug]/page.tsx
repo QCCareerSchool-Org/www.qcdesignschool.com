@@ -33,7 +33,7 @@ const VideoPlayerPage: PageComponent<Props> = async ({ params }) => {
 
   const videoSchema: WithContext<VideoObject> = {
     '@context': 'https://schema.org',
-    '@id': video.slug,
+    '@id': `#${video.slug}`,
     '@type': 'VideoObject',
     'name': video.title,
     'description': video.description,
