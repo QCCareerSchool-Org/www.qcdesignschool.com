@@ -32,11 +32,13 @@ type Video = {
 
 import InteriorDecoratingPreviewPoster from '@/app/(blank)/previews/interior-decorating/_sections/platform/poster.jpg';
 
+const baseUrl = 'https://www.qcdesignschool.com';
+
 export const siteVideos: Video[] = [
   {
-    pages: [ 'https://www.qcdesignschool.com/previews/interior-decorating' ],
+    pages: [ `${baseUrl}/previews/interior-decorating` ],
     title: 'Your Journey Starts Here',
-    thumbnail_loc: InteriorDecoratingPreviewPoster.src,
+    thumbnail_loc: `${baseUrl}${InteriorDecoratingPreviewPoster.src}`,
     description: 'Unleash your creativity and shape the future of design with QC Design School. Together we can tranform your passion into a dynamic, thriving career.',
     content_loc: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
     duration: 111,
