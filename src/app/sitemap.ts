@@ -18,19 +18,12 @@ const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<Metad
     }
     if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
       const url = getUrl(filePath);
-      const videos = siteVideos.filter(v => v.pages.includes(url));
-      if (url === 'https://www.qcdesignschool.com/previews/interior-decorating') {
-        console.log('\n\n\n\n\n\n');
-        console.log(url, videos);
-        console.log('\n\n\n\n\n\n');
-      }
-      const page = {
+      result.push({
         url,
         lastModified: stat.mtime,
         priority: getPriority(url),
-        videos,
-      };
-      result.push(page);
+        videos: siteVideos.filter(v => v.pages.includes(url)),
+      });
     }
   }
   return result;
