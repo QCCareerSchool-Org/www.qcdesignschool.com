@@ -7,9 +7,13 @@ import { CountDownTimer } from '../countDownTimer';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const Header: FC = async () => {
-  const date = new Date().getTime();
-  const { countryCode, provinceCode } = await getData();
+type Props = {
+  date: number;
+  countryCode: string;
+  provinceCode: string | null;
+}
+
+export const Header: FC<Props> = async ({ date, countryCode, provinceCode }) => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
