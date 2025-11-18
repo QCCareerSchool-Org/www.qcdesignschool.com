@@ -4,14 +4,13 @@ import styles from './header.module.css';
 import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { CountDownTimer } from '../countDownTimer';
-import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 type Props = {
   date: number;
   countryCode: string;
   provinceCode: string | null;
-}
+};
 
 export const Header: FC<Props> = async ({ date, countryCode, provinceCode }) => {
 
