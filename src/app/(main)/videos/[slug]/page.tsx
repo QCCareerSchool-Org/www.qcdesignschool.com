@@ -37,6 +37,7 @@ const VideoPlayerPage: PageComponent<Props> = async ({ params }) => {
     '@type': 'VideoObject',
     'name': video.title,
     'description': video.description,
+    'thumbnailUrl': video.thumbnail_loc,
     'uploadDate': typeof video.publication_date === 'string' ? video.publication_date : video.publication_date.toISOString(),
     'duration': ISODuration(video.duration),
     'contentUrl': video.content_loc,
