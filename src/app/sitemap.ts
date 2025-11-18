@@ -1,6 +1,9 @@
 import { promises as fs } from 'fs';
 import type { MetadataRoute } from 'next';
+import { Videos } from 'next/dist/lib/metadata/types/metadata-types';
 import path from 'path';
+
+import { siteVideos } from './videos';
 
 const prefix = 'https://www.qcdesignschool.com';
 
@@ -15,7 +18,12 @@ const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<Metad
     }
     if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
       const url = getUrl(filePath);
-      result.push({ url, lastModified: stat.mtime, priority: getPriority(url) });
+      result.push({
+        url,
+        lastModified: stat.mtime,
+        priority: getPriority(url),
+        videos: siteVideos.filter(v => v.pages.includes(url)),
+      });
     }
   }
   return result;

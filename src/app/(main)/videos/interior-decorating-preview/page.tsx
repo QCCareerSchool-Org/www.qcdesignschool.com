@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
+
 import PosterImage from '@/app/(blank)/previews/interior-decorating/_sections/platform/poster.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+
+export const metadata: Metadata = {
+  title: 'Your Journey Starts Here',
+  description: 'Unleash your creativity and shape the future of design with QC Design School. Together we can tranform your passion into a dynamic, thriving career.',
+};
 
 const InteriorDecoratingPreviewVideoPage: PageComponent = () => (
   <section className="bg-light py-4">
