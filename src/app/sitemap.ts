@@ -21,7 +21,6 @@ const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<Metad
       result.push(...await getAppDirectoryPages(fullname));
     }
     if (stat.isFile() && (f.endsWith('page.tsx') || f.endsWith('page.jsx'))) {
-      console.log(fullname);
       result.push({
         url,
         lastModified: stat.mtime,
