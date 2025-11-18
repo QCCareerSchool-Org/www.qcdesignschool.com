@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs';
 import type { MetadataRoute } from 'next';
-import { Videos } from 'next/dist/lib/metadata/types/metadata-types';
 import path from 'path';
 
 import { siteVideos } from './videos';
