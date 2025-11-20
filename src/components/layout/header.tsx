@@ -12,7 +12,7 @@ type Props = {
   provinceCode: string | null;
 };
 
-export const Header: FC<Props> = async ({ date, countryCode, provinceCode }) => {
+export const Header: FC<Props> = ({ date, countryCode, provinceCode }) => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
