@@ -13,6 +13,6 @@ export const fetchAward = async (submissionId: string): Promise<Award> => {
   }
   return {
     ...body,
-    created: new Date(body.created),
+    created: body.created ? new Date(body.created) : null,
   };
 };
