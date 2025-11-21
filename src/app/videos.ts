@@ -97,7 +97,7 @@ export const siteVideos: Video[] = ([
   },
 ] as Video[]).map(v => ({
   ...v,
-  player_loc: v.player_loc ?? `${baseUrl}/videos/${v.slug}`,
+  player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${baseUrl}/videos/${v.slug}`,
 }));
 
 // check for duplicate slugs
