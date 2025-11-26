@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import type { FC, JSX } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { ButtonWrapper } from './buttonWrapper';
 import styles from './header.module.scss';
-import { CountDownTimer } from '@/components/countDownTimer';
 import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
 import { getData } from '@/lib/getData';
@@ -11,20 +10,17 @@ import { getData } from '@/lib/getData';
 type Props = {
   logoLink?: boolean;
   buttonHref?: string;
-  buttonContent?: JSX.Element | string;
+  buttonContent?: string | ReactNode;
   buttonAlwaysVisible?: boolean;
-  showBanner?: boolean;
   buttonClass?: string;
 };
 
-export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, showBanner, buttonClass = `btn btn-navy ${styles.button}` }) => {
+export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, buttonClass = `btn btn-navy ${styles.button}` }) => {
   const { countryCode } = await getData();
-  const date = new Date().getTime();
 
   return (
     <div className={styles.headerComponent}>
       <header className={styles.header}>
-        {showBanner && <CountDownTimer date={date} countryCode={countryCode} />}
         <div className="container">
           <div className={styles.content}>
             <div>
