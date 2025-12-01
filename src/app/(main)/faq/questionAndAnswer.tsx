@@ -1,8 +1,8 @@
 import type { FC, PropsWithChildren } from 'react';
 
-type Props = {
+interface Props {
   heading: string;
-};
+}
 
 export const QuestionAndAnswer: FC<PropsWithChildren<Props>> = ({ heading, children }) => (
   <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">

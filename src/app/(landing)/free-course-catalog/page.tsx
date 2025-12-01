@@ -107,7 +107,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
       <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} withVideo />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
-        certification={<CertificationIcon alt="International Design and Decorating Professional (IDDP) certification" />}
+        certification={<CertificationIcon title="International Design and Decorating Professional (IDDP) certification" />}
         overlayColor="rgb(0,0,0,0.6)"
       >
         <h2 className="h3">Your Design Certification</h2>

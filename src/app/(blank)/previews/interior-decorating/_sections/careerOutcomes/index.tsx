@@ -3,9 +3,9 @@ import type { FC } from 'react';
 
 import { Calculator } from './calculator';
 
-type Props = {
+interface Props {
   designRestricted: boolean;
-};
+}
 
 export const CareerOutcomes: FC<Props> = ({ designRestricted }) => (
   <section id="career-outcomes" className="bg-light">

@@ -24,13 +24,13 @@ import TheBoard from './_logos/the-board.png';
 import UnionLuminairesDecor from './_logos/union-luminaires-decor.png';
 import ViewItTech from './_logos/view-it-tech.png';
 
-export type DesignAssociation = {
+export interface DesignAssociation {
   name: string;
   description: ReactNode;
   image: StaticImageData;
   alt?: string;
   maxHeight?: number;
-};
+}
 
 export const professionalAssociations: DesignAssociation[] = [
   {

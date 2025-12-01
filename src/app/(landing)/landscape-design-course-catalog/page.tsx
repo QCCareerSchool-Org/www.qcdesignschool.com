@@ -116,7 +116,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
       </section>
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
-        certification={<CertificationLogoIcon alt="International Landscape Design Professional (ILDP™) certification" />}
+        certification={<CertificationLogoIcon title="International Landscape Design Professional (ILDP™) certification" />}
         overlayColor="rgb(0,0,0,0.2)"
       >
         <h2 className="h3">Your Landscape Design Certification</h2>

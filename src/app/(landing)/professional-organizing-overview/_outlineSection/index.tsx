@@ -10,9 +10,9 @@ import Part5Image from './The Business of Professional Organizing.jpg';
 import Part4Image from './Working with Clients.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ className }) => (
   <section id="outline" className={className}>

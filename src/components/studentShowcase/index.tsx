@@ -27,7 +27,7 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
     setShowPortfolio(true);
   }, []);
 
-  const handleHide = useCallback(() => setShowPortfolio(false), []);
+  const handleHide = useCallback(() => { setShowPortfolio(false); }, []);
 
   const thumbnails = student.galleryImages?.slice(0, 4) ?? [];
 
@@ -50,7 +50,8 @@ export const StudentShowcaseSection: FC<{ student: ShowcaseProps }> = ({ student
             ))}
           </div>
         </div>
-        <Portfolio name={student.name} show={showPortfolio} onHide={handleHide} images={(student.galleryImages ?? []).map(image => ({ src: image }))} initialIndex={initialImageIndex} />
+        {/* key causes component to unmount and remount on change */}
+        <Portfolio key={initialImageIndex} name={student.name} show={showPortfolio} onHide={handleHide} images={(student.galleryImages ?? []).map(image => ({ src: image }))} initialIndex={initialImageIndex} />
       </div>
     </div>
   );

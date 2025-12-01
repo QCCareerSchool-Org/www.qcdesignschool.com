@@ -13,9 +13,9 @@ import Part7Image from './part-7.jpg';
 const part3Src = 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part%203-clip.mp4';
 const part4Src = 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/part-4-clip.mp4';
 
-type Props = {
+interface Props {
   designRestricted: boolean;
-};
+}
 
 export const Curriculum: FC<Props> = ({ designRestricted }) => {
   const [ popup, setPopup ] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | undefined>();
@@ -60,8 +60,8 @@ export const Curriculum: FC<Props> = ({ designRestricted }) => {
 
   const handleClose = (): void => {
     setPopup(undefined);
-    void part3Ref.current?.pause();
-    void part4Ref.current?.pause();
+    part3Ref.current?.pause();
+    part4Ref.current?.pause();
   };
 
   return (

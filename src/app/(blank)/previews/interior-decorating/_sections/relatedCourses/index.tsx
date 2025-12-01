@@ -2,9 +2,9 @@ import type { FC } from 'react';
 
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 
-type Props = {
+interface Props {
   designRestricted: boolean;
-};
+}
 
 export const RelatedCourses: FC<Props> = ({ designRestricted }) => (
   <section id="related-courses">

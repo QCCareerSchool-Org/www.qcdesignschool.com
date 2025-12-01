@@ -6,7 +6,7 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 
 export const CertificationSection: FC = () => (
   <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage}>
-    <CertificationLogo height="200" className="mb-3" alt="Aging in Place Professional (APDP) certification logo" />
+    <CertificationLogo height="200" className="mb-3" title="Aging in Place Professional (APDP) certification logo" />
     <p className="mb-3 small lightGold">Aging in Place Professional&trade; (APDP&trade;)</p>
     <h2 className="text-white mb-3">Your Aging in Place Certification</h2>
     <p>Once you graduate from your online design course, you'll receive a certification and be able to use the designation of Aging in Place Professional (APDP).</p>

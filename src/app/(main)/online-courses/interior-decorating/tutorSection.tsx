@@ -7,9 +7,9 @@ import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
 import { getData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const TutorSection: FC<Props> = async ({ className }) => {
   const { countryCode, provinceCode } = await getData();

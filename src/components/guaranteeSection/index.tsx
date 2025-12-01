@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import ShieldIcon from '@/components/icons/shield.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const GuaranteeSection: FC<Props> = ({ className }) => (
   <section className={className}>

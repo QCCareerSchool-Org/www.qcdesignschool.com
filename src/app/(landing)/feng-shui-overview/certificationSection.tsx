@@ -6,7 +6,7 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 
 export const CertificationSection: FC = () => (
   <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage}>
-    <CertificationLogo height="200" className="mb-3" alt="Advanced Feng Shui Design Professional (AFDP) certification logo" />
+    <CertificationLogo height="200" className="mb-3" title="Advanced Feng Shui Design Professional (AFDP) certification logo" />
     <p className="mb-3 small lightGold">Advanced Feng Shui Design Professional&trade; (AFDP&trade;)</p>
     <h2 className="text-white mb-3">Your Feng Shui Design Certification</h2>
     <p>Once you graduate from your Feng Shui Design course, you'll receive a certification and be able to use the designation of Advanced Feng Shui Design Professional (AFDP).</p>

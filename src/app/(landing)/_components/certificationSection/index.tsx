@@ -6,11 +6,11 @@ import styles from './index.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { Overlay } from '@/components/overlay';
 
-type Props = {
+interface Props {
   backgroundImageSrc: StaticImageData;
   certification: ReactNode;
   overlayColor?: CSSProperties['backgroundColor'];
-};
+}
 
 export const CertificationSection: FC<PropsWithChildren<Props>> = ({ backgroundImageSrc, certification, overlayColor, children }) => (
   <section className={`bg-dark text-white ${styles.certificationSection}`}>

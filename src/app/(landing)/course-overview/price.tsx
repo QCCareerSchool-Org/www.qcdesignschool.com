@@ -24,12 +24,13 @@ import { getCourseName } from '@/domain/courseCode';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
+import type { Price as PriceType } from '@/domain/price';
 
-type Props = {
+interface Props {
   countryCode: string;
   provinceCode: string | null;
   courseCode: CourseCode;
-};
+}
 
 export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, provinceCode, courseCode }) => {
   const priceQuery: PriceQuery = {
@@ -46,12 +47,6 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
   if (!price) {
     return null;
   }
-
-  const CustomTooltip: FC = props => (
-    <Tooltip id="button-tooltip" {...props}>
-      <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)} now and {price.plans.part.installments} monthly<br />installments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</strong>
-    </Tooltip>
-  );
 
   return (
     <div className="col-12 col-lg-8">
@@ -84,7 +79,7 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
                 <div>
                   <h4 className="h6">
                     <span className="me-2">Installments</span>
-                    <OverlayTrigger placement="top" overlay={<CustomTooltip />}>
+                    <OverlayTrigger placement="top" overlay={<CustomTooltip price={price} />}>
                       <span style={{ color: '#aaa' }}><FaInfoCircle /></span>
                     </OverlayTrigger>
                   </h4>
@@ -102,6 +97,12 @@ export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, pr
 });
 
 Price.displayName = 'Price';
+
+const CustomTooltip: FC<{ price: PriceType }> = ({ price }) => (
+  <Tooltip id="button-tooltip">
+    <strong>{price.currency.symbol}{formatPrice(price.plans.part.deposit)} now and {price.plans.part.installments} monthly<br />installments of {price.currency.symbol}{formatPrice(price.plans.part.installmentSize)}</strong>
+  </Tooltip>
+);
 
 const getImage = (courseCode: CourseCode): StaticImageData => {
   switch (courseCode) {

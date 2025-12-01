@@ -12,11 +12,12 @@ import IFDP from '@/components/certificationLogos/ifdp.svg';
 import ILDP from '@/components/certificationLogos/ildp.svg';
 import ISRP from '@/components/certificationLogos/isrp.svg';
 import type { CourseCode } from '@/domain/courseCode';
+import { getCourseCertification } from '@/domain/courseCode';
 import { useScreenWidth } from '@/hooks/useScreenWidth';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
-};
+}
 
 export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   const screenWidth = useScreenWidth();
@@ -24,36 +25,31 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
     return;
   }
 
-  const Certification = getCertification(courseCode);
-  if (Certification) {
-    return <Certification height={screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90} />;
-  }
-};
+  const imageProps = {
+    height: screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90,
+    title: getCourseCertification(courseCode),
+  };
 
-type ImageComponent = FC<{ height: number }>;
-
-const getCertification = (courseCode: CourseCode): ImageComponent | null => {
-  // 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd
   switch (courseCode) {
     case 'i2':
-      return IDDP as ImageComponent;
+      return <IDDP {...imageProps} />;
     case 'st':
     case 'ms':
-      return ISRP as ImageComponent;
+      return <ISRP {...imageProps} />;
     case 'fs':
-      return AFDP as ImageComponent;
+      return <AFDP {...imageProps} />;
     case 'po':
-      return AIOP as ImageComponent;
+      return <AIOP {...imageProps} />;
     case 'ld':
-      return ILDP as ImageComponent;
+      return <ILDP {...imageProps} />;
     case 'ed':
-      return IEDP as ImageComponent;
+      return <IEDP {...imageProps} />;
     case 'cc':
-      return ICCP as ImageComponent;
+      return <ICCP {...imageProps} />;
     case 'fd':
-      return IFDP as ImageComponent;
+      return <IFDP {...imageProps} />;
     case 'ap':
-      return APDP as ImageComponent;
+      return <APDP {...imageProps} />;
     case 'db':
       return null;
     case 'vd':

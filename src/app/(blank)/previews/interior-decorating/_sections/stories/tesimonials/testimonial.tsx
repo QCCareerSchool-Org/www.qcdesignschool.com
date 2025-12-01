@@ -8,11 +8,11 @@ import { Modal } from 'react-bootstrap';
 import styles from './testimonial.module.scss';
 import { useToggle } from '@/hooks/useToggle';
 
-type Props = {
+interface Props {
   name: string;
   imageSrc: StaticImageData;
   quote: string;
-};
+}
 
 export const Testimonial: FC<PropsWithChildren<Props>> = props => {
   const [ show, toggle ] = useToggle();

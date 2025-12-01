@@ -7,16 +7,16 @@ import styles from './index.module.scss';
 
 type Variant = 'red';
 
-type Props = {
+interface Props {
   variant: Variant;
-};
+}
 
 export const AlertBar: FC<PropsWithChildren<Props>> = ({ variant, children }) => {
   const [ show, setShow ] = useState(false);
 
   useEffect(() => {
-    const id = setTimeout(() => setShow(true), 300);
-    return () => clearTimeout(id);
+    const id = setTimeout(() => { setShow(true); }, 300);
+    return () => { clearTimeout(id); };
   }, []);
 
   return (

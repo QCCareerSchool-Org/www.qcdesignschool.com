@@ -1,20 +1,20 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
-import { useReducer } from 'react';
 
 import { ImageCircle } from '../imageCircle';
 import { Portfolio } from './portfolio';
 import SeeMyWorkIcon from './see-my-work.svg';
 import type { StudentShowcase } from './studentShowcases';
+import { useToggle } from '@/hooks/useToggle';
 
-export type PortfolioImage = {
+export interface PortfolioImage {
   src: StaticImageData;
   description?: string;
-};
+}
 
 export const Showcase: FC<StudentShowcase> = props => {
-  const [ show, toggle ] = useReducer(x => !x, false);
+  const [ show, toggle ] = useToggle();
 
   const handleHide = (): void => {
     toggle();
@@ -33,7 +33,7 @@ export const Showcase: FC<StudentShowcase> = props => {
           </div>
           <div className="mb-3">
             <div className="d-flex">
-              {props.iconImage && <div className="me-3"><ImageCircle src={props.iconImage} alt={props.name} /></div>}
+              <div className="me-3"><ImageCircle src={props.iconImage} alt={props.name} /></div>
               <div className="d-flex justify-content-center flex-column">
                 <h3 className="h6 mb-0">{props.name}</h3>
                 {props.credentials && <small className="mt-1">{props.credentials}</small>}
@@ -41,13 +41,12 @@ export const Showcase: FC<StudentShowcase> = props => {
             </div>
           </div>
           <p className="mb-0">{props.description}</p>
-          {props.portfolioImages && (
-            <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}>
-              <small style={{ color: 'black', fontWeight: 500 }}><span className="me-2"><SeeMyWorkIcon height="20" /></span>See My Work</small>
-            </div>)}
+          <div onClick={handleHide} className="d-flex align-items-center mt-3" style={{ cursor: 'pointer' }}>
+            <small style={{ color: 'black', fontWeight: 500 }}><span className="me-2"><SeeMyWorkIcon height="20" /></span>See My Work</small>
+          </div>
         </div>
       </div>
-      {props.portfolioImages && <Portfolio name={props.name} show={show} onHide={handleHide} images={props.portfolioImages} />}
+      <Portfolio name={props.name} show={show} onHide={handleHide} images={props.portfolioImages} />
     </>
   );
 };

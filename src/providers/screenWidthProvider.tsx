@@ -9,10 +9,10 @@ export const ScreenWidthProvider: FC<PropsWithChildren> = ({ children }) => {
   const [ state, dispatch ] = useState(0);
 
   useEffect(() => {
-    const listener = (): void => dispatch(window.innerWidth);
+    const listener = (): void => { dispatch(window.innerWidth); };
     window.addEventListener('resize', listener);
     listener();
-    return () => window.removeEventListener('resize', listener);
+    return () => { window.removeEventListener('resize', listener); };
   }, []);
 
   return (

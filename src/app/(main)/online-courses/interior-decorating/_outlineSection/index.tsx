@@ -15,10 +15,10 @@ import Part1Image from './The Fundamentals of Design.jpg';
 import Part6Image from './Your Final Project.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
-type Props = {
+interface Props {
   className?: string;
   designRestricted: boolean;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ className, designRestricted }) => (
   <section id="outline" className={className}>

@@ -2,10 +2,10 @@ import 'server-only';
 
 import { headers } from 'next/headers';
 
-type Data = {
+interface Data {
   countryCode: string;
   provinceCode: string | null;
-};
+}
 
 export const getData = async (): Promise<Data> => {
   const headerList = await headers();

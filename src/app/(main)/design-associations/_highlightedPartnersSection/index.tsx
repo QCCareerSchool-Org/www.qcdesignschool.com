@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import { getPartners } from './data';
 import { PartnerText } from './partnerText';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const HighlightedPartnersSection: FC<Props> = ({ countryCode }) => {
   const partners = getPartners(countryCode);

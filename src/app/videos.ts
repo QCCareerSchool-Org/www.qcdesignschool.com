@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 
-export type Video = {
+export interface Video {
   /** unique identifier */
   slug: string;
   /** the pages this video appears on */
@@ -30,7 +30,7 @@ export type Video = {
   };
   live?: 'yes' | 'no';
   tag?: string;
-};
+}
 
 import InteriorDecoratingPreviewPoster from '@/app/(blank)/previews/interior-decorating/_sections/platform/poster.jpg';
 
@@ -40,7 +40,7 @@ export const siteVideos: Video[] = ([
   {
     slug: 'your-journey-starts-here',
     pages: [
-      `${baseUrl}`,
+      baseUrl,
       `${baseUrl}/previews/interior-decorating`,
       `${baseUrl}/online-courses/interior-decorating`,
     ],

@@ -5,7 +5,7 @@ import { Lightbox } from 'yet-another-react-lightbox';
 import Video from 'yet-another-react-lightbox/plugins/video';
 import 'yet-another-react-lightbox/styles.css';
 
-export type VideoInput = {
+export interface VideoInput {
   width: number;
   height: number;
   name: string;
@@ -13,13 +13,13 @@ export type VideoInput = {
     src: string;
     type: 'video/mp4'; // | 'video/webm'; // add more types here as needed
   };
-};
+}
 
-type Props = {
+interface Props {
   open: boolean;
   onClose: () => void;
   video: VideoInput;
-};
+}
 
 export const VideoLightbox: FC<Props> = ({ open, onClose, video }) => (
   <Lightbox

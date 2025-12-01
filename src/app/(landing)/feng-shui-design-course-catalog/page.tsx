@@ -84,7 +84,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Advanced Feng Shui Design Professional™ (AFDP™)" countryCode={countryCode} />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="International Feng Shui Design Professional (IFDP) certification" />}>
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="International Feng Shui Design Professional (IFDP) certification" />}>
         <h2 className="h3">Your Feng Shui Design Certification</h2>
         <p>Once you've completed the Feng Shui Design course online, you'll graduate with the Advanced Feng Shui Design Professional (AFDP) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed feng shui design training and you possess all the skills and knowledge required to be successful in the industry.</p>

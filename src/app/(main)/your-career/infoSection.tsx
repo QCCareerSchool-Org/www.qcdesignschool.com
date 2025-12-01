@@ -5,9 +5,9 @@ import BarChartIcon from '@/components/icons/bar-chart.svg';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import RulerIcon from '@/components/icons/ruler.svg';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 const iconHeight = 32;
 
