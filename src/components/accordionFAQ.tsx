@@ -4,10 +4,10 @@ import type { FC, PropsWithChildren } from 'react';
 
 import { Accordion } from './accordion';
 
-type Props = {
+interface Props {
   heading: string;
   className?: string;
-};
+}
 
 export const AccordionFAQ: FC<PropsWithChildren<Props>> = ({ heading, children, className }) => {
   const schemaHeading = <span itemProp="name" className="lead fw-bold">{heading}</span>;

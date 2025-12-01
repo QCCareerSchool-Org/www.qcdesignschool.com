@@ -4,10 +4,10 @@ import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
 import { Overlay } from './overlay';
 
-type Props = {
+interface Props {
   backgroundImageSrc: StaticImageData;
   overlayColor?: CSSProperties['backgroundColor'];
-};
+}
 
 export const CertificationSectionTemplate: FC<PropsWithChildren<Props>> = ({ backgroundImageSrc, overlayColor, children }) => (
   <section className="text-white text-shadow">

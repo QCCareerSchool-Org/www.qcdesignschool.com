@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import { SingleTutorSection } from '@/components/singleTutorSection';
 import TutorImage from '@/components/tutors/ivyEllerbyCollage-transparent.png';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const TutorSection: FC<Props> = ({ className }) => (
   <SingleTutorSection

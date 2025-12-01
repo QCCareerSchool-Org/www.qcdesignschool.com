@@ -1,19 +1,19 @@
 import Image from 'next/image';
-import type { FC } from 'react';
+import type { FC, MouseEventHandler } from 'react';
 
 import styles from './videoCard.module.scss';
 import type { TestimonialVideo } from './videos';
 import PlayIcon from '@/components/icons/play-button.svg';
 
 type Props = TestimonialVideo & {
-  open: () => void;
+  onOpen: MouseEventHandler<HTMLElement>;
 };
 
-export const VideoCard: FC<Props> = ({ thumbnailSrc, name, professionalTitle, quote, open: handleClick }) => (
+export const VideoCard: FC<Props> = ({ thumbnailSrc, name, professionalTitle, quote, onOpen: handleClick }) => (
   <div className={`col-12 col-md-6 col-lg-4`}>
     <div className={styles.videoCard}>
       <div className={styles.thumbnailWrapper}>
-        <Image src={thumbnailSrc} alt="" onClick={handleClick} className={`img-fluid`} />
+        <Image src={thumbnailSrc} alt="" onClick={e => handleClick(e)} className={`img-fluid`} />
         <PlayIcon className={styles.playIcon} onClick={handleClick} />
       </div>
       <div className={styles.videoCardDescription}>

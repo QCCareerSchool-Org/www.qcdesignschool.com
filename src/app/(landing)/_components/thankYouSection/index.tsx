@@ -7,12 +7,12 @@ import { FormWrapper } from '@/components/formWrapper';
 import DownloadIcon from '@/components/icons/download.svg';
 import LockIcon from '@/components/icons/q-lock.svg';
 
-type Props = {
+interface Props {
   course?: string;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   emailAddress?: string;
-};
+}
 
 export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
   const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';

@@ -5,9 +5,9 @@ import DesktopImage from './hero-desktop.jpg';
 import MobileImage from './hero-mobile.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 
-type Props = {
+interface Props {
   designRestricted: boolean;
-};
+}
 
 export const Hero: FC<Props> = ({ designRestricted }) => (
   <section>

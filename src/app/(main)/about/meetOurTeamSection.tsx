@@ -8,9 +8,9 @@ import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 import QIcon from '@/components/icons/q-logo.svg';
 import { ImageCircle } from '@/components/imageCircle';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 const imageSize = 200;
 

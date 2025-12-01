@@ -14,9 +14,9 @@ import Part1Image from './The Floral Design Industry.jpg';
 import Part2Image from './The Fundamentals of Floral Design.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ className }) => (
   <section id="outline" className={className}>

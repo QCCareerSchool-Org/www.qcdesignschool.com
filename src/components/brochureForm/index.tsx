@@ -7,7 +7,7 @@ import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
 
-type Props = {
+interface Props {
   action: string;
   testGroup: number;
   countryCode: string;
@@ -15,7 +15,7 @@ type Props = {
   buttonText?: string;
   buttonClassName?: string;
   placeholders?: boolean;
-};
+}
 
 export const BrochureForm: FC<Props> = props => {
   const id = useId();

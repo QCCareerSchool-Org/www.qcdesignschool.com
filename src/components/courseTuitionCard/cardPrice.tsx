@@ -5,9 +5,9 @@ import styles from './cardPrice.module.scss';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
-type Props = {
+interface Props {
   price: Price;
-};
+}
 
 export const CardPrice: FC<Props> = ({ price }) => (
   <div className={styles.price}>

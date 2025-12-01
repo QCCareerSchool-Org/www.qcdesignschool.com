@@ -1,6 +1,6 @@
 'use client';
 
-import type { FC, JSX } from 'react';
+import type { FC, JSX, MouseEventHandler } from 'react';
 import { useState } from 'react';
 import { Lightbox } from 'yet-another-react-lightbox';
 import Video from 'yet-another-react-lightbox/plugins/video';
@@ -11,14 +11,24 @@ import { VideoCard } from './videoCard';
 import { videos, videoSlides } from './videos';
 import { CountUp } from '../paymentPlanSection/countUp';
 
-type Props = {
+interface Props {
   heading?: string | JSX.Element;
   subtitle?: boolean;
-};
+}
 
 export const TestimonialVideoSection: FC<Props> = ({ heading, subtitle = true }) => {
   const [ slideIndex, setSlideIndex ] = useState<number>(0);
   const [ open, setOpen ] = useState<boolean>(false);
+
+  const handleOpen: MouseEventHandler<HTMLElement> = e => {
+    const value = e.currentTarget.dataset.index;
+    if (value) {
+      const index = parseInt(value, 10);
+      setSlideIndex(index);
+    }
+
+    setOpen(true);
+  };
 
   return (
     <>
@@ -33,7 +43,7 @@ export const TestimonialVideoSection: FC<Props> = ({ heading, subtitle = true })
           </div>
           <div className="row justify-content-center g-5">
             {videos.map((video, index) => (
-              <VideoCard {...video} key={video.src} open={() => { setSlideIndex(index); setOpen(true); }} />
+              <VideoCard {...video} key={video.src} data-index={index} onOpen={handleOpen} />
             ))}
           </div>
         </div>

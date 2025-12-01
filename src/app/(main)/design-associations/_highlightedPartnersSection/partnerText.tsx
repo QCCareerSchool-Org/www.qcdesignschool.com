@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 
-type Props = {
+interface Props {
   countryCode: string;
-};
+}
 
 export const PartnerText: FC<Props> = ({ countryCode }) => {
   if (countryCode === 'CA') {

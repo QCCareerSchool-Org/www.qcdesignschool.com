@@ -13,7 +13,7 @@ import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
   courseName?: string;
   subtitle?: string;
@@ -23,7 +23,7 @@ type Props = {
   showPrice?: boolean;
   showEnrollLink?: boolean;
   enrollLink?: string;
-};
+}
 
 export const CourseTuitionCard: FC<Props> = async props => {
   const { countryCode, provinceCode } = await getData();

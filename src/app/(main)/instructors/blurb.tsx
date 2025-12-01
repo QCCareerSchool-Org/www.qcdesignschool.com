@@ -4,13 +4,13 @@ import type { FC } from 'react';
 
 import styles from './blurb.module.scss';
 
-type Props = {
+interface Props {
   name: string;
   subHeading?: string;
   description: string;
   src: StaticImageData;
   priority?: boolean;
-};
+}
 
 export const Blurb: FC<Props> = ({ name, subHeading, description: text, src, priority }) => (
   <div className={styles.blurb}>

@@ -9,12 +9,12 @@ import { Title } from './title';
 import { CourseMicrodata } from '../microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
-type Props = {
+interface Props {
   id: string;
   courseCodes?: CourseCode[];
   showProvinceCode?: boolean;
   schemaCourseId?: string;
-};
+}
 
 /** sort in alphabetical order, except i2 is always first */
 export const courseSort = (a: CourseCode, b: CourseCode): number => {
@@ -39,7 +39,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
     return {
       ...found,
       courses: found.courses.sort((a, b) => {
-        if (courseCodes?.includes(a) && courseCodes?.includes(b)) {
+        if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
         if (courseCodes?.includes(a)) {

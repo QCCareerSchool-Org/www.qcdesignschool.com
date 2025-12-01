@@ -12,9 +12,9 @@ import Toggle from './toggle.svg';
 import { Logo } from '@/components/logo';
 import { useScrollPosition } from '@/hooks/useScrollPosition';
 
-type Props = {
+interface Props {
   designRestricted: boolean;
-};
+}
 
 export const MainNav: FC<Props> = ({ designRestricted }) => {
   const scrollPosition = useScrollPosition();

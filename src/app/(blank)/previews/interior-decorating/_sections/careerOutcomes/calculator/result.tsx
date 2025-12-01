@@ -2,11 +2,11 @@ import type { FC } from 'react';
 
 import type { Tier } from '.';
 
-type Props = {
+interface Props {
   projectCount: number;
   projectFee: number;
   tier: Tier;
-};
+}
 
 const formatter = new Intl.NumberFormat('en-US');
 

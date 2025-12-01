@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import CAIcon from './images/ca.svg';
 // import USIcon from './images/us.svg';
 
-type Props = {
+interface Props {
   countryCode: string;
   height: number;
-};
+}
 
 export const Flag: FC<Props> = ({ countryCode, height }) => {
   switch (countryCode) {

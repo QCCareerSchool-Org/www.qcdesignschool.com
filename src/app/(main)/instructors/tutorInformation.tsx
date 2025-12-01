@@ -13,11 +13,11 @@ import PatriziaBolandImage from '@/components/tutors/patrizia.jpg';
 import ReneeTucciImage from '@/components/tutors/reneeTucci.jpg';
 import TammyHartImage from '@/components/tutors/tammyHart.jpg';
 
-type InstructorInformation = {
+interface InstructorInformation {
   name: string;
   description: string;
   src: StaticImageData;
-};
+}
 
 export const experts: InstructorInformation[] = [
   {

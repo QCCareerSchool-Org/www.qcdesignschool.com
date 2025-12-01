@@ -13,9 +13,9 @@ import Part1Image from './The Fundamentals of Home Staging.jpg';
 import Part4Image from './Your Final Project.jpg';
 import { CourseOutline } from '@/components/courseOutline';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const OutlineSection: FC<Props> = ({ className }) => (
   <section id="outline" className={className}>

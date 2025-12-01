@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   title: 'Server Error',
 };
 
-type Props = {
+interface Props {
   error: Error & { digest?: string };
   reset: () => void;
-};
+}
 
 const ErrorPage: FC<Props> = () => <NextJSError statusCode={500} />;
 

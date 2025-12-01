@@ -22,7 +22,7 @@ export const VideoPopup: FC<Props> = ({ children, video }) => {
     });
   };
 
-  const handleClose = (): void => setOpen(false);
+  const handleClose = (): void => { setOpen(false); };
 
   return (
     <>

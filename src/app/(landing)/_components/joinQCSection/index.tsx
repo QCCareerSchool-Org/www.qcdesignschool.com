@@ -10,10 +10,10 @@ import InfinityIcon from '@/components/icons/infinity.svg';
 
 const iconHeight = 40;
 
-type Props = {
+interface Props {
   className?: string;
   subheading?: string;
-};
+}
 
 export const JoinQCSection: FC<Props> = ({ className = 'bg-light', subheading }) => (
   <section className={className}>
