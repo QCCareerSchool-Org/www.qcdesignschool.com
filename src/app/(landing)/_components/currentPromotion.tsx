@@ -8,7 +8,7 @@ type Props = {
 };
 
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
-  if (date >= Date.UTC(2025, 10, 17, 15) && date < Date.UTC(2025, 10, 29, 8)) { // 2025-11-17T10:00 (15:00 UTC) to 2025-11-29T03:00 (08:00 UTC)
+  if (date >= Date.UTC(2025, 11, 1, 5) && date < Date.UTC(2025, 11, 6, 8)) { // 2025-12-01T00:00 (05:00 UTC) to 2025-12-06T03:00 (08:00 UTC)
     return <CyberMonday2025 countryCode={countryCode} />;
   }
 };
