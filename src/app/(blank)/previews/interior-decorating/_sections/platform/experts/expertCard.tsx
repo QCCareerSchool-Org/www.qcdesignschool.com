@@ -2,12 +2,12 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC, PropsWithChildren } from 'react';
 
-type Props = {
+interface Props {
   show: boolean;
   name: string;
   title: string;
   src: StaticImageData;
-};
+}
 
 export const ExpertCard: FC<PropsWithChildren<Props>> = props => {
   if (props.show) {

@@ -6,9 +6,9 @@ import NetworkBackgroundImageDesktop from './network-associations-bg-desktop.jpg
 import NetworkBackgroundImageMobile from './network-associations-bg-mobile.jpg';
 import QIcon from './q.svg';
 
-type Props = {
+interface Props {
   showLink?: boolean;
-};
+}
 
 export const DesignNetworksSection: FC<Props> = ({ showLink }) => (
   <section style={{ backgroundColor: '#4c99fd' }} className="pb-0 pb-lg-s">

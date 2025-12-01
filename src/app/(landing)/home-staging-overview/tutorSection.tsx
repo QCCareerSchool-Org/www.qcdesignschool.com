@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import { AngieChapmanCircle } from '@/components/tutors/angieChapman';
 import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const TutorSection: FC<Props> = ({ className }) => (
   <section className={className}>

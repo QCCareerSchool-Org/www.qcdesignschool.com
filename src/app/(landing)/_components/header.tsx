@@ -7,13 +7,13 @@ import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
 import { getData } from '@/lib/getData';
 
-type Props = {
+interface Props {
   logoLink?: boolean;
   buttonHref?: string;
   buttonContent?: string | ReactNode;
   buttonAlwaysVisible?: boolean;
   buttonClass?: string;
-};
+}
 
 export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, buttonClass = `btn btn-navy ${styles.button}` }) => {
   const { countryCode } = await getData();

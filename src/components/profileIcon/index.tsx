@@ -4,11 +4,11 @@ import type { FC } from 'react';
 
 import styles from './profileIcon.module.scss';
 
-type Props = {
+interface Props {
   image: StaticImageData;
   name: string;
   subtitle: string;
-};
+}
 
 export const ProfileIcon: FC<Props> = ({ image, name, subtitle }) => {
   return(

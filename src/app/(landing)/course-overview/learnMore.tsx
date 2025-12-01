@@ -7,10 +7,10 @@ import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import { useToggle } from '@/hooks/useToggle';
 
-type Props = {
+interface Props {
   courseCode: CourseCode;
   price: Price;
-};
+}
 
 export const LearnMore: FC<Props> = ({ courseCode, price }) => {
   const [ popup, toggle ] = useToggle();

@@ -10,11 +10,11 @@ import RESALogo from './images/resa.png';
 
 const otherCountry = Symbol('other country');
 
-type Partner = {
+interface Partner {
   src: StaticImageData;
   alt: string;
   maxHeight?: number;
-};
+}
 
 const partnersDictionary: Record<string | symbol, Partner[]> = {
   CA: [

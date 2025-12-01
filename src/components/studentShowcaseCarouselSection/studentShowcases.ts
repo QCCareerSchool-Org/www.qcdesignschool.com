@@ -5,7 +5,7 @@ import { jacquelineShowcase } from './jacqueline';
 import { jamieShowcase } from './jamie';
 import type { PortfolioImage } from './showcase';
 
-export type StudentShowcase = {
+export interface StudentShowcase {
   name: string;
   credentials?: string;
   showcaseImage: StaticImageData;
@@ -13,6 +13,6 @@ export type StudentShowcase = {
   description: string;
   portfolioImages: PortfolioImage[];
   link?: string;
-};
+}
 
 export const studentShowcases: StudentShowcase[] = [ carylShowcase, jacquelineShowcase, jamieShowcase ];

@@ -15,8 +15,9 @@ export const LayoutClient: FC = () => {
     if (countRef.current > 0) { // don't run the first time because it's already tracked
       if (pathname) {
         let url = `https://www.qcdesignschool.com${pathname}`;
-        if (searchParams?.toString().length) {
-          url += `?${searchParams?.toString()}`;
+        const stringSearchParams = searchParams.toString();
+        if (stringSearchParams) {
+          url += `?${stringSearchParams}`;
         }
         const title = document.title;
         brevoPageview(title, url, pathname);

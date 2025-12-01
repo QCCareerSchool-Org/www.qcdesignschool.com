@@ -4,9 +4,9 @@ import styles from './cardDiscount.module.scss';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
-type Props = {
+interface Props {
   price: Price;
-};
+}
 
 export const CardDiscount: FC<Props> = ({ price }) => {
   if (price.plans.full.discount > 0) {

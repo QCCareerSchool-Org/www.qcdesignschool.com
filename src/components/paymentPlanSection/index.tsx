@@ -10,7 +10,7 @@ import { fetchPrice } from '@/lib/fetch';
 import { getData } from '@/lib/getData';
 import { withSuspense } from '@/withSuspense';
 
-type Props = {
+interface Props {
   id?: string;
   courseCodes: CourseCode[];
   className?: string;
@@ -18,7 +18,7 @@ type Props = {
   lead?: string;
   sub?: string | ReactNode;
   blurb?: ReactNode;
-};
+}
 
 const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb }) => {
   const { countryCode, provinceCode } = await getData();

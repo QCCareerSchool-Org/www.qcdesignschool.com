@@ -6,11 +6,11 @@ import { MainNav } from './mainNav';
 import { CountDownTimer } from '../countDownTimer';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-type Props = {
+interface Props {
   date: number;
   countryCode: string;
   provinceCode: string | null;
-};
+}
 
 const bannerStartDate = Date.UTC(2025, 11, 1, 5); // 2025-12-01T00:00 (05:00 UTC)
 const bannerCountdownStartDate = Date.UTC(2025, 11, 5, 8); // 2025-12-05T03:00 (08:00 UTC)

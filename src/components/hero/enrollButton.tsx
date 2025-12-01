@@ -3,9 +3,9 @@ import type { FC } from 'react';
 import styles from './enrollButton.module.scss';
 import ForwardArrowIcon from './forward-arrow.svg';
 
-type Props = {
+interface Props {
   courseCodes: string[];
-};
+}
 
 export const EnrollButton: FC<Props> = ({ courseCodes }) => {
   let href = 'https://enroll.qcdesignschool.com?';

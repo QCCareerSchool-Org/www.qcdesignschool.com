@@ -4,12 +4,12 @@ import EmilySpragueImage from '@/components/employees/emily-sprague.jpg';
 import LucieDemersImage from '@/components/employees/lucie-demers.jpg';
 import ShannonCooperImage from '@/components/employees/shannon-cooper.jpg';
 
-export type studentTeamMember = {
+export interface studentTeamMember {
   name: string;
   title?: string;
   description: string;
   image: StaticImageData;
-};
+}
 
 export const StudentSuccessTeam: Record<string, studentTeamMember> = {
   'lucie-demers': {

@@ -2,13 +2,13 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-type Props = {
+interface Props {
   courseName: string;
   description: string;
   src: StaticImageData;
   tutorName: string;
   className?: string;
-};
+}
 
 export const SingleTutorSection: FC<Props> = ({ description, src, tutorName, className }) => (
   <section id="instructors" className={className}>

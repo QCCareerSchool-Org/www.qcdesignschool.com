@@ -6,7 +6,7 @@ import { siteVideos } from './videos';
 
 const prefix = 'https://www.qcdesignschool.com';
 
-const getAppDirectoryPages = async (filePath: string = 'src/app'): Promise<MetadataRoute.Sitemap> => {
+const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
   const files = await fs.readdir(filePath);
   for (const f of files) {

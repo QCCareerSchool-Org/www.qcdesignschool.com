@@ -60,12 +60,12 @@ export const proveSrcEnrollment = async (enrollment: Enrollment, ipAddress: stri
   await proveSrcRequest(payload, url);
 };
 
-type Payload = {
+interface Payload {
   firstName: string | null;
   emailAddress: string | null;
   postalCode: string | null;
   ipAddress: string | null;
-};
+}
 
 const proveSrcRequest = async (payload: Payload, url: string): Promise<void> => {
   const response = await fetch(url, {

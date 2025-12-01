@@ -5,13 +5,13 @@ import AlexaImage from './images/alexa.jpg';
 import DaniellaImage from './images/daniella.jpg';
 import TrishaImage from './images/trisha.jpg';
 
-export type TestimonialVideo = {
+export interface TestimonialVideo {
   src: string;
   thumbnailSrc: StaticImageData;
   quote: string;
   name: string;
   professionalTitle: string;
-};
+}
 
 const makeSlide = (video: TestimonialVideo): Slide => (
   {

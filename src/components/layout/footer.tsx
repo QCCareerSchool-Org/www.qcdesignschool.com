@@ -74,12 +74,12 @@ export const Footer: FC = () => (
           </div>
         </div>
         <div className="d-flex">
-          <div className="me-3"><a href="https://www.tiktok.com/@qcdesignschool" target="_blank" rel="noreferrer" aria-label="Tiktok"><TiktokIcon alt="Tiktok" /></a></div>
-          <div className="me-3"><a href="https://www.instagram.com/qcdesignschool" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon alt="Instagram" /></a></div>
-          <div className="me-3"><a href="https://www.facebook.com/QCDesign" target="_blank" rel="noreferrer" aria-label="Facebook"><FacebookIcon alt="Facebook" /></a></div>
-          <div className="me-3"><a href="https://www.youtube.com/@QCDesign" target="_blank" rel="noreferrer" aria-label="Youtube"><YoutubeIcon alt="Youtube" /></a></div>
-          <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon alt="LinkedIn" /></a></div>
-          <div><a href="https://www.pinterest.com/qccareerschool" target="_blank" rel="noreferrer" aria-label="Pinterest"><PinterestIcon alt="Pinterest" /></a></div>
+          <div className="me-3"><a href="https://www.tiktok.com/@qcdesignschool" target="_blank" rel="noreferrer" aria-label="Tiktok"><TiktokIcon title="Tiktok" /></a></div>
+          <div className="me-3"><a href="https://www.instagram.com/qcdesignschool" target="_blank" rel="noreferrer" aria-label="Instagram"><InstagramIcon title="Instagram" /></a></div>
+          <div className="me-3"><a href="https://www.facebook.com/QCDesign" target="_blank" rel="noreferrer" aria-label="Facebook"><FacebookIcon title="Facebook" /></a></div>
+          <div className="me-3"><a href="https://www.youtube.com/@QCDesign" target="_blank" rel="noreferrer" aria-label="Youtube"><YoutubeIcon title="Youtube" /></a></div>
+          <div className="me-3"><a href="https://www.linkedin.com/company/qc-career-school" target="_blank" rel="noreferrer" aria-label="LinkedIn"><LinkedinIcon title="LinkedIn" /></a></div>
+          <div><a href="https://www.pinterest.com/qccareerschool" target="_blank" rel="noreferrer" aria-label="Pinterest"><PinterestIcon title="Pinterest" /></a></div>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ export enum Priority {
   LOW = 1,
 }
 
-export type ReviewData = {
+export interface ReviewData {
   name: string;
   reviewText: string;
   initial: string;
@@ -27,7 +27,7 @@ export type ReviewData = {
   rating: 1 | 2 | 3 | 4 | 5;
   courseCodes?: CourseCode[];
   priority?: Priority;
-};
+}
 
 export const reviewData: ReviewData[] = [
   {

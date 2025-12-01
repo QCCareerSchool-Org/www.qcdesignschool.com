@@ -12,9 +12,9 @@ import CalIcon from '@/components/icons/calendar-check.svg';
 import ChatIcon from '@/components/icons/chat-white.svg';
 import { ImageCircle } from '@/components/imageCircle';
 
-type Props = {
+interface Props {
   className: string;
-};
+}
 
 export const SuccessTeamModalSection: FC<Props> = ({ className }) => {
   const [ showPopup, togglePopup ] = useState(false);

@@ -21,7 +21,7 @@ const names = {
   ap: 'Aging in Place',
   db: 'Accelerate Your Design Business',
   vd: 'Virtual Design',
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const baseUrl = 'https://www.qcdesignschool.com';
 
@@ -38,7 +38,7 @@ const urls = {
   ap: `${baseUrl}/online-courses/aging-in-place`,
   db: `${baseUrl}/online-courses/accelerate-your-design-business`,
   vd: `${baseUrl}/online-courses/virtual-design`,
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const descriptions = {
   i2: 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
@@ -53,7 +53,7 @@ const descriptions = {
   ap: 'Learn to design safe, functional spaces for aging clients and address mobility and lifestyle needs.',
   db: 'Learn to build your brand, attract clients, manage design projects effectively, and create a professional portfolio to grow your business.',
   vd: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
-} as const satisfies { readonly [c in CourseCode]: string };
+} as const satisfies Readonly<Record<CourseCode, string>>;
 
 const certifications = {
   i2: 'International Design and Decorating Professional™',
@@ -68,7 +68,7 @@ const certifications = {
   ap: 'Aging in Place Professional™',
   db: undefined,
   vd: undefined,
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 const subjects = {
   i2: [
@@ -147,7 +147,7 @@ const subjects = {
     'Successful Project Management',
   ],
   vd: undefined,
-} as const satisfies { readonly [c in CourseCode]: readonly string[] | undefined };
+} as const satisfies Readonly<Record<CourseCode, readonly string[] | undefined>>;
 
 const workloads = {
   i2: '28 hours of assignments and 78 minutes of video, ususally completed over 4 to 6 months',
@@ -162,7 +162,7 @@ const workloads = {
   ap: 'usually completed over 4 to 6 months',
   db: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
   vd: 'usually completed over 4 to 6 months',
-} as const satisfies { readonly [c in CourseCode]: string | undefined };
+} as const satisfies Readonly<Record<CourseCode, string | undefined>>;
 
 export const getCourseName = (c: CourseCode): string => {
   return names[c];

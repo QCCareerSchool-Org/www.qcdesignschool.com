@@ -3,13 +3,13 @@
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
-type Props = {
+interface Props {
   show: boolean;
   handleHide: () => void;
   name?: string;
   title?: string;
   description?: string;
-};
+}
 
 export const SuccessTeamModal: FC<Props> = ({ show, handleHide, name, title, description }) => {
   return (

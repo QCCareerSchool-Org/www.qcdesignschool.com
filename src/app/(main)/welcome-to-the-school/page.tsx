@@ -95,11 +95,9 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
               <p>We're committed to developing a personal relationship with you and being readily available whenever you need us.</p>
               <p><strong>Best of luck with your studies!</strong></p>
               <p><strong>Sincerely,</strong></p>
-              <Image
-                src={AlexSignatureImage}
-                alt="Alex Myers"
-                style={{ maxWidth: '100%', height: 'auto', marginBottom: '0.5rem' }}
-              /><br /><div className="text-dark"><strong>Director, QC Career School</strong></div>
+              <Image src={AlexSignatureImage} alt="Alex Myers" style={{ maxWidth: '100%', height: 'auto', marginBottom: '0.5rem' }} />
+              <br />
+              <div className="text-dark"><strong>Director, QC Career School</strong></div>
             </div>
             <div className="col-12 col-lg-6">
               <Image src={AboutImage} alt="" className="img-fluid" />

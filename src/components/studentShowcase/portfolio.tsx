@@ -1,21 +1,21 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 
 import NavArrowIcon from './nav-arrow.svg';
 
-type Props = {
+interface Props {
   name: string;
   show: boolean;
   onHide: () => void;
   initialIndex?: number;
-  images: Array<{
+  images: {
     src: StaticImageData;
     description?: string;
-  }>;
-};
+  }[];
+}
 
 export const Portfolio: FC<Props> = props => {
   const [ index, setIndex ] = useState(props.initialIndex ?? 0);
@@ -28,12 +28,6 @@ export const Portfolio: FC<Props> = props => {
     setIndex(i => (i === 0 ? props.images.length - 1 : i - 1));
   };
 
-  useEffect(() => {
-    if(props.show) {
-      setIndex(props.initialIndex ?? 0);
-    }
-  }, [ props.show, props.initialIndex ]);
-
   return (
     <Modal show={props.show} onHide={props.onHide}>
       <Modal.Header closeButton>{props.name}'s Work</Modal.Header>
@@ -45,7 +39,7 @@ export const Portfolio: FC<Props> = props => {
           <div className="d-flex align-items-center w-100">
             {props.images.length > 1 && (
               <div className="flex-shrink-1">
-                <NavArrowIcon onClick={handlePrevClick} alt="Prev" className="me-3" />
+                <NavArrowIcon onClick={handlePrevClick} title="Prev" className="me-3" />
               </div>
             )}
             <div className="flex-grow-1">
@@ -53,7 +47,7 @@ export const Portfolio: FC<Props> = props => {
             </div>
             {props.images.length > 1 && (
               <div className="flex-shrink-1">
-                <NavArrowIcon onClick={handleNextClick} alt="Next" className="ms-3" style={{ transform: 'scaleX(-1)' }} />
+                <NavArrowIcon onClick={handleNextClick} title="Next" className="ms-3" style={{ transform: 'scaleX(-1)' }} />
               </div>
             )}
           </div>

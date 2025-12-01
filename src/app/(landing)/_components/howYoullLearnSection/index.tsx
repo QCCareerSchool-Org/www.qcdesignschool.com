@@ -8,11 +8,11 @@ import VideoPlayerImage from './video-player.jpg';
 import { VideoPopup } from '@/components/marketingVideo';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
-type Props = {
+interface Props {
   graduateTitle: string;
   withVideo?: boolean;
   countryCode: string;
-};
+}
 
 export const HowYoullLearnSection: FC<Props> = ({ graduateTitle, withVideo = false, countryCode }) => (
   <section>

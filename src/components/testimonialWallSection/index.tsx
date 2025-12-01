@@ -5,7 +5,7 @@ import type { CourseCode } from '@/domain/courseCode';
 
 type HeaderSize = 1 | 2 | 3 | 4 | 5 | 6;
 
-type Props = {
+interface Props {
   h?: HeaderSize;
   courseCodes?: CourseCode[];
   testimonialIds: string[];
@@ -13,7 +13,7 @@ type Props = {
   hideHeading?: boolean;
   showProvinceCodes?: boolean;
   schemaCourseId?: string;
-};
+}
 
 export const TestimonialWallSection: FC<Props> = ({ h, courseCodes, testimonialIds, className, hideHeading, showProvinceCodes = false, schemaCourseId }) => (
   <section className={className}>

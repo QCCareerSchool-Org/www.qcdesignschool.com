@@ -13,7 +13,7 @@ import { v1 } from 'uuid';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
 
-type Props = {
+interface Props {
   successLocation: string;
   listId: number;
   telephoneListId?: number;
@@ -32,7 +32,7 @@ type Props = {
   button?: ReactElement;
   referrer: string | null;
   countryCode: string;
-};
+}
 
 export const BrevoForm: FC<Props> = props => {
   const id = useId();
@@ -46,7 +46,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
-  const [ telephoneNumberE164, setTelephoneNumberE164 ] = useState('');
+  // const [ telephoneNumberE164, setTelephoneNumberE164 ] = useState('');
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
@@ -127,9 +127,10 @@ export const BrevoForm: FC<Props> = props => {
   // if we try to use telephoneNumber directly there is an issue:
   // removing the telephone number from the visible field doesn't remove the value from the hidden field
   // if we try to use the <PhoneInput /> component directly, we don't get the correct format in the back end
-  useEffect(() => {
-    setTelephoneNumberE164(telephoneNumber ?? '');
-  }, [ telephoneNumber ]);
+  // useEffect(() => {
+  //   setTelephoneNumberE164(telephoneNumber ?? '');
+  // }, [ telephoneNumber ]);
+  const telephoneNumberE164 = telephoneNumber ?? '';
 
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
@@ -185,11 +186,11 @@ export const BrevoForm: FC<Props> = props => {
   );
 };
 
-type InputProps = {
+interface InputProps {
   value: Value;
   onChange: ChangeEventHandler;
   name: string;
-};
+}
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
   const { value, onChange, name } = props as InputProps;

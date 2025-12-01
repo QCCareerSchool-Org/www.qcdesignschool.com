@@ -8,9 +8,9 @@ import QualityIcon from '@/components/icons/q-logo.svg';
 
 const iconHeight = 40;
 
-type Props = {
+interface Props {
   className?: string;
-};
+}
 
 export const CoreValuesSection: FC<Props> = ({ className }) => (
   <section className={className}>

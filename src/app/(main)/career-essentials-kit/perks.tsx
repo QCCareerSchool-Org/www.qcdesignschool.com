@@ -7,11 +7,11 @@ import ChatIcon from './perkIcons/chat.svg';
 import CoinIcon from './perkIcons/coin-stack.svg';
 import LoopIcon from './perkIcons/loop.svg';
 
-type Perk = {
+interface Perk {
   title: string;
   text: string;
   icon: ReactNode;
-};
+}
 
 const iconSize = 48;
 

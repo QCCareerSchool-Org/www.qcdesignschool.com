@@ -6,13 +6,13 @@ import type { CourseCode } from '@/domain/courseCode';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 
-type Props = {
+interface Props {
   show: boolean;
   onHide: () => void;
   courseCode: CourseCode;
   header: string;
   price: Price;
-};
+}
 
 export const CourseModal: FC<PropsWithChildren<Props>> = ({ show, onHide, header, courseCode, price, children }) => {
   const handleHide = onHide;

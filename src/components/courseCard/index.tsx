@@ -6,7 +6,7 @@ import type { FC, JSX } from 'react';
 import ChevronIcon from './chevron-right.svg';
 import styles from './index.module.scss';
 
-type Props = {
+interface Props {
   type: string;
   name: string | JSX.Element;
   description: string;
@@ -15,7 +15,7 @@ type Props = {
   certification: JSX.Element;
   message?: string;
   buttons?: 'course' | 'courseSmall' | 'courseAndTuition' | 'enroll' | 'none';
-};
+}
 
 export const CourseCard: FC<Props> = ({ type, name, description, href, backgroundSrc, certification, message, buttons = 'courseAndTuition' }) => (
   <div className={`${styles.courseCard} card`}>

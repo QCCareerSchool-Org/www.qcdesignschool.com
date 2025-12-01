@@ -5,6 +5,7 @@ import { EmployeeColumn } from './employeeColumn';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { mapToPairs } from './mapToPairs';
 
 export const metadata: Metadata = {
   title: 'Meet the Team',
@@ -40,28 +41,6 @@ const MeetTheTeamPage: PageComponent = () => {
       <GetStartedSection title="Get Started Today" text="Unlock your potential and the step towards a rewarding career. Enroll now and join thousands of students who've turned their passion into success." />
     </>
   );
-};
-
-/**
- * A flatMap callback function that turns an array [ a, b, c, d, e ] into an array of pairs of elements [ [ a, b ], [ c, d ], [ e ] ]
- * @param value the current element
- * @param index the index
- * @param array the entire array
- * @returns the next pair
- */
-// eslint-disable-next-line @typescript-eslint/comma-dangle
-const mapToPairs = <T,>(value: T, index: number, array: T[]): T[][] => {
-  // skip odd elements
-  if (index % 2 !== 0) {
-    return [];
-  }
-  // include this element in the pair
-  const nextElement = [ value ];
-  // include the next element if it exists
-  if (typeof array[index + 1] !== 'undefined') {
-    nextElement.push(array[index + 1]);
-  }
-  return [ nextElement ];
 };
 
 export default MeetTheTeamPage;

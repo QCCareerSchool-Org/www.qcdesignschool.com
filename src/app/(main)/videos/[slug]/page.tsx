@@ -3,12 +3,14 @@ import type { VideoObject, WithContext } from 'schema-dts';
 
 import { getVideo } from '..';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import type { Metadata } from 'next';
 
+// eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type Props = {
   slug: string;
 };
 
-export const generateMetadata: GenerateMetadata<Props> = async ({ params }) => {
+export const generateMetadata: GenerateMetadata<Props> = async ({ params }): Promise<Metadata> => {
   const p = await params;
   const video = getVideo(p.slug);
 
