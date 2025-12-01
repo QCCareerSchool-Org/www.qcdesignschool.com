@@ -19,7 +19,7 @@ export const createBrevoContact = async (emailAddress: string, firstName?: strin
     updateEnabled: true,
     attributes: {
       ...attributes,
-    },
+    } as brevo.CreateContact['attributes'],
   };
 
   if (typeof firstName !== 'undefined') {
