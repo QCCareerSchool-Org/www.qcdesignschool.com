@@ -18,7 +18,7 @@ export const CourseOverview: FC = async () => {
 
   return (
     <>
-      <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" showBanner />
+      <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" />
       <section className="p-0" style={{ backgroundColor: '#333' }}>
         <div className="container">
           <a href="https://enroll.qcdesignschool.com/all-courses-offer">

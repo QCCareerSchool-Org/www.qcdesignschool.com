@@ -53,7 +53,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <Header logoLink showBanner />
+      <Header logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
