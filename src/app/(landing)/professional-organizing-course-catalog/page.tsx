@@ -84,7 +84,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
       </section>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="Advanced International Organizing Professional™ (AIOP™)" countryCode={countryCode} />
-      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon alt="Advanced International Organizing Professional (AIOP) certification" />}>
+      <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="Advanced International Organizing Professional (AIOP) certification" />}>
         <h2 className="h3">Your Professional Organizing Certification</h2>
         <p>Once you've completed the Professional Organizing course online, you'll graduate with the Advanced International Organizing Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
         <p>This certificate demonstrates that you have successfully completed professional organizing design training and you possess all the skills and knowledge required to be successful in the industry.</p>

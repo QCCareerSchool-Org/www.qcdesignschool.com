@@ -7,7 +7,7 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 
 export const CertificationSection: FC = () => (
   <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage}>
-    <CertificationLogo height="200" className="mb-3" alt="Advanced International Organizing Professional (AIOP) certification logo" />
+    <CertificationLogo height="200" className="mb-3" title="Advanced International Organizing Professional (AIOP) certification logo" />
     <p className="mb-3 small lightGold">Advanced International Organizing Professional&trade; (AIOP&trade;)</p>
     <h2 className="text-white mb-3">Your Professional Organizing Certification</h2>
     <p>Once you graduate from your professional organizing course, you'll receive a certification and be able to use the designation of Advanced International Organizing Professional (AIOP).</p>
@@ -21,7 +21,7 @@ export const SplitCertificationSection: FC = () => (
     <div className="container">
       <div className="row justify-content-center align-items-center g-5">
         <div className="col-12 col-lg-5 text-center">
-          <CertificationLogo height="200" alt="International Staging and Redesign Professional (ISRP) certification logo" />
+          <CertificationLogo height="200" title="International Staging and Redesign Professional (ISRP) certification logo" />
         </div>
         <div className="col-12 col-lg-7 text-start">
           <h3 className="text-white mb-3">Your Professional Organizing Certification</h3>

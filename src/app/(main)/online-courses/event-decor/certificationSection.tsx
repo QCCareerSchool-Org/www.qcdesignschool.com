@@ -6,7 +6,7 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 
 export const CertificationSection: FC = () => (
   <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage}>
-    <CertificationLogo height="200" className="mb-3" alt="International Event Decorating Professional (IEDP) certification logo" />
+    <CertificationLogo height="200" className="mb-3" title="International Event Decorating Professional (IEDP) certification logo" />
     <p className="mb-3 small lightGold">International Event Decorating Professional&trade; (IEDP&trade;)</p>
     <h2 className="text-white mb-3">Your Event Decor Certification</h2>
     <p>Once you graduate from your online event planning course, you'll receive a certification and be able to use the designation of International Event Decorating Professional (IEDP).</p>

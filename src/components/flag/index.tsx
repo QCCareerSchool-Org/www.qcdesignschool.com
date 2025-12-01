@@ -12,10 +12,10 @@ interface Props {
 export const Flag: FC<Props> = ({ countryCode, height }) => {
   switch (countryCode) {
     case 'CA':
-      return <CAIcon height={height} alt="Canada" />;
+      return <CAIcon height={height} title="Canada" />;
     // case 'US':
-      // return <USIcon height={height} alt="United States" />;
+      // return <USIcon height={height} title="United States" />;
     // case 'AU':
-      // return <AUIcon height={height} alt="Australia" />;
+      // return <AUIcon height={height} title="Australia" />;
   }
 };

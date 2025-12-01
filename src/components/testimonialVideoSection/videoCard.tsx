@@ -14,7 +14,7 @@ export const VideoCard: FC<Props> = ({ thumbnailSrc, name, professionalTitle, qu
     <div className={styles.videoCard}>
       <div className={styles.thumbnailWrapper}>
         <Image src={thumbnailSrc} alt="" onClick={e => handleClick(e)} className={`img-fluid`} />
-        <PlayIcon className={styles.playIcon} onClick={handleClick} />
+        <PlayIcon title="play" className={styles.playIcon} onClick={handleClick} />
       </div>
       <div className={styles.videoCardDescription}>
         <h6>&quot;{quote}&quot;</h6>

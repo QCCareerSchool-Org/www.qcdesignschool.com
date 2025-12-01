@@ -6,7 +6,7 @@ import { CertificationSectionTemplate } from '@/components/certificationSectionT
 
 export const CertificationSection: FC = () => (
   <CertificationSectionTemplate backgroundImageSrc={CertificationBackgroundImage}>
-    <CertificationLogo height="200" className="mb-3" alt="International Floral Design Professional (IFDP) certification logo" />
+    <CertificationLogo height="200" className="mb-3" title="International Floral Design Professional (IFDP) certification logo" />
     <p className="mb-3 small lightGold">International Floral Design Professional&trade; (IFDP&trade;)</p>
     <h2 className="text-white mb-3">Your Floral Design Certification</h2>
     <p>Once you graduate from your online floral design course, you'll receive a certification and be able to use the designation of International Floral Design Professional (IFDP).</p>
