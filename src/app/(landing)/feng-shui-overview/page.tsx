@@ -43,7 +43,7 @@ const FengShuiDesignPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+      <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
       <section className="half-padding-top bg-light">
         <div className="container">
           <div className="row justify-content-center g-s">
