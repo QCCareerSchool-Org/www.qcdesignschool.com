@@ -1,17 +1,11 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from './index.module.scss';
-import SocialImageDesktop from './social-image-desktop.png';
-import SocialImageMobile from './social-image-mobile.jpg';
-import SocialImage from './social-image.png';
 import { SuccessTeamModalSection } from './success-team-modal-section';
 import type { PageComponent } from '@/app/serverComponent';
-import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import IconHeart from '@/components/icons/icon-heart.svg';
 import { CountUp } from '@/components/paymentPlanSection/countUp';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
 import { students } from '@/components/studentShowcase/data';
@@ -43,22 +37,6 @@ const SuccessPage: PageComponent = () => (
     </section>
     <StudentShowcaseSection student={students['chantal-marion']} />
     <StudentShowcaseSection student={students['rachael-stafford']} />
-    <section className={`${styles.section} text-white pb-0 pb-lg-5`} style={{ backgroundColor: '#EE9600' }}>
-      <div className="d-none d-lg-block"><BackgroundImage src={SocialImageDesktop} objectPosition={'100% 50%'} /></div>
-      <div className="container">
-        <div className="row justify-content-center align-items-center g-lg-s">
-          <div className="col-12 col-lg-7 col-xxl-6 ms-auto">
-            <h3 className="mb-4">Design Around Life</h3>
-            <p className="lead mb-4" style={{ marginRight: '60px' }}><strong>For Tylar Fertuck,</strong> QC&apos;s self-paced courses fit seamlessly between day-care runs and content uploads—proving that career growth, family life, and social influence don&apos;t have to compete. With a flexible program that adapts to your schedule, they can fuel one another.</p>
-            <Link href="https://enroll.qcdesignschool.com">
-              <button className="btn btn-primary btn-lg flex items-center mb-lg-5"><IconHeart height="22" className="me-2" style={{ position: 'relative', top: -1 }} />Start Today</button>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <div className="d-none d-md-block d-lg-none text-center"><Image src={SocialImage} alt="" style={{ width: '70%', height: 'auto' }} /></div>
-      <div className="d-md-none"><Image src={SocialImageMobile} alt="" style={{ width: '100%', height: 'auto' }} /></div>
-    </section>
     <StudentShowcaseSection student={students['jamie-cromar']} />
     <StudentShowcaseSection student={students['curstyn-carter']} />
     <section>
