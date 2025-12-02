@@ -165,8 +165,7 @@ interface InputProps {
 }
 
 const InputComponent = forwardRef<HTMLInputElement, DefaultInputComponentProps>((props, ref) => {
-  const { value, onChange, name } = props as InputProps;
-  const handleChange = onChange;
+  const { value, onChange: handleChange, name } = props as InputProps;
   return <input ref={ref} name={name} type="tel" value={value} onChange={handleChange} className="form-control" placeholder="Phone (Optional)" />;
 });
 
