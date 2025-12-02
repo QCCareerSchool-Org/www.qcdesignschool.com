@@ -37,7 +37,7 @@ interface Props {
 export const BrevoForm: FC<Props> = props => {
   const id = useId();
   const [ nonce, setNonce ] = useState(() => v1());
-  const randomName = useRef('');
+  const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
   const [ token, setToken ] = useState<string>('');
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
@@ -45,10 +45,6 @@ export const BrevoForm: FC<Props> = props => {
   const [ disabled, setDisabled ] = useState(true);
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
-
-  useEffect(() => {
-    randomName.current = Math.random().toString(36).slice(2);
-  }, []);
 
   const handleTelephoneNumberChange = (value?: Value): void => {
     setTelephoneNumber(value);
@@ -126,7 +122,7 @@ export const BrevoForm: FC<Props> = props => {
         <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
       <input type="hidden" name="lastName" id={`${id}lastName`} />
-      <input type="text" name="hp_city" style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="off" />
+      <input type="text" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="off" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
