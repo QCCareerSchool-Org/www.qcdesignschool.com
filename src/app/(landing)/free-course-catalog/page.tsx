@@ -25,8 +25,10 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 import { getDesignRestricted } from '@/lib/restrictions';
+import { CourseSchema } from '@/components/courseSchema';
+import type { Metadata } from 'next';
 
-export const generateMetadata: GenerateMetadata = async () => {
+export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
@@ -71,6 +73,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="i2" />
       <Header logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
@@ -126,10 +129,10 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} schemaCourseId="#course" />
       <StatsSection />
       <JoinQCSection />
-      <GoogleReviewSection />
+      <GoogleReviewSection schemaCourseId="#course" />
       <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">

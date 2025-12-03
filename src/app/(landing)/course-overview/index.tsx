@@ -10,6 +10,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
+import { CourseSchema } from '@/components/courseSchema';
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 
@@ -18,6 +19,7 @@ export const CourseOverview: FC = async () => {
 
   return (
     <>
+      <CourseSchema courseCode="i2" />
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" />
       <section className="p-0" style={{ backgroundColor: '#333' }}>
         <div className="container">
@@ -58,7 +60,7 @@ export const CourseOverview: FC = async () => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <SupportSection />
       <GetStartedSection
         title="Get Started Today"

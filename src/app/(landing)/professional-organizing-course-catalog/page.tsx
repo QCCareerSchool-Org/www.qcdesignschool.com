@@ -23,6 +23,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Free Professional Organizing Course Catalog',
@@ -50,6 +51,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="po" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
@@ -96,10 +98,10 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
           <li>Work for corporations or businesses to implement organizing systems</li>
         </ul>
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'po' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'po' ]} schemaCourseId="#course" />
       <StatsSection />
       <JoinQCSection />
-      <GoogleReviewSection courseCode="po" />
+      <GoogleReviewSection courseCode="po" schemaCourseId="#course" />
       <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">

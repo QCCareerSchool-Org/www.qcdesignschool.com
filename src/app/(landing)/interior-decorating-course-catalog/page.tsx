@@ -25,6 +25,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Free Interior Decorating Course Catalog',
@@ -52,6 +53,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="i2" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
@@ -107,10 +109,10 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
           </div>
         )}
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} schemaCourseId="#course" />
       <StatsSection />
       <JoinQCSection />
-      <GoogleReviewSection courseCode="i2" />
+      <GoogleReviewSection courseCode="i2" schemaCourseId="#courseId" />
       <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">

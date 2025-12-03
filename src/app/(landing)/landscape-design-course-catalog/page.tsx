@@ -30,6 +30,7 @@ import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Free Landscape Design Course Catalog',
@@ -58,6 +59,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="ld" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
@@ -145,10 +147,10 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} courseCodes={[ 'ld' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} courseCodes={[ 'ld' ]} schemaCourseId="#course" />
       <StatsSection />
-      <JoinQCSection subheading="QC’s Landscape Design Course provides you with:" />
-      <GoogleReviewSection />
+      <JoinQCSection subheading="QC's Landscape Design Course provides you with:" />
+      <GoogleReviewSection schemaCourseId="#course" />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

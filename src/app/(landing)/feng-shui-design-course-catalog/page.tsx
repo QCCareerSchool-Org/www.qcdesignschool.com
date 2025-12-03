@@ -23,6 +23,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Free Feng Shui Design Course Catalog',
@@ -50,6 +51,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="fs" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
@@ -95,10 +97,10 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
           <li>Design harmonized spaces for individual clients or corporate offices</li>
         </ul>
       </CertificationSection>
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'fs' ]} />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'fs' ]} schemaCourseId="#course" />
       <StatsSection />
       <JoinQCSection />
-      <GoogleReviewSection courseCode="fs" />
+      <GoogleReviewSection courseCode="fs" schemaCourseId="#course" />
       <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">

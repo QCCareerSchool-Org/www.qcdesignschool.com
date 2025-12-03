@@ -27,6 +27,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
@@ -44,6 +45,7 @@ const ProfessionalOrganizingPage: PageComponent = async () => {
 
   return (
     <>
+      <CourseSchema courseCode="po" />
       <div className={styles.page}>
         <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
@@ -94,7 +96,7 @@ const ProfessionalOrganizingPage: PageComponent = async () => {
             </div>
           </div>
         </section>
-        <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" />
+        <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
         <section>
           <div className="container">
             <div className="row align-items-center justify-content-center g-s">
@@ -120,7 +122,7 @@ const ProfessionalOrganizingPage: PageComponent = async () => {
         </section>
         <CertificationSection />
         <VirtualCommunitySection />
-        <GoogleReviewSection courseCode="po" />
+        <GoogleReviewSection courseCode="po" schemaCourseId="#course" />
         <TutorSection className="bg-light" />
         <OutlineSection />
         <CareerEssentialsKitDesignFilesSection />
