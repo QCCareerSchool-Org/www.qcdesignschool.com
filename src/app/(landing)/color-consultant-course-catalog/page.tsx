@@ -23,6 +23,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Free Color Consultant Course Catalog',
@@ -50,6 +51,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="cc" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
@@ -97,8 +99,8 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
       </CertificationSection>
       <StatsSection />
       <JoinQCSection />
-      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'cc' ]} />
-      <GoogleReviewSection courseCode="cc" />
+      <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'cc' ]} schemaCourseId="#course" />
+      <GoogleReviewSection courseCode="cc" schemaCourseId="#course" />
       <SupportSection />
       <BottomSection>
         <div className="row justify-content-center">

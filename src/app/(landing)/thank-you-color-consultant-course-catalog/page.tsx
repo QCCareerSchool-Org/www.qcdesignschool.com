@@ -15,6 +15,7 @@ import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
@@ -52,6 +53,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
+      <CourseSchema courseCode="cc" />
       <Header logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
@@ -65,7 +67,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       />
       <ThankYouSection heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} />
-      <TestimonialWallSection testimonialIds={testimonialIds} />
+      <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <ThreeReasonsSection />
       <SupportSection showLink />
       <GuaranteeSection />
