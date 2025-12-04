@@ -8,9 +8,11 @@ import DeborahSoulierImage from '@/components/tutors/deborahSoulier.jpg';
 import IvyEllerbyImage from '@/components/tutors/ivyEllerby.jpg';
 import JaneLockhartImage from '@/components/tutors/janeLockhart.jpg';
 import LianneCouvisImage from '@/components/tutors/lianne.jpg';
+import MargaretLouderbackImage from '@/components/tutors/Margaret.jpg';
 import MwaiYeboahImage from '@/components/tutors/mwai.jpg';
 import PatriziaBolandImage from '@/components/tutors/patrizia.jpg';
 import ReneeTucciImage from '@/components/tutors/reneeTucci.jpg';
+import SaraJonesImage from '@/components/tutors/Sara.jpg';
 import TammyHartImage from '@/components/tutors/tammyHart.jpg';
 
 interface InstructorInformation {
@@ -82,5 +84,15 @@ export const tutors: InstructorInformation[] = [
     name: 'Christina Kittelstad',
     description: 'Christina, owner of Spiral Design Color Consulting in Lakewood, Colorado, excels in creating beautiful, functional spaces on any budget. Known for her creativity and professionalism, Christina collaborates with residential and commercial clients. Her work has been featured on HGTV\'s House Hunters, Houzz, The Denver Post, and more.',
     src: ChristineKittelstadImage,
+  },
+  {
+    name: 'Margaret Louderback',
+    description: 'With a degree in Landscape Architecture from Texas A&M University, Margaret has over 20 years of experience in residential landscape design, teaching, and working with diverse clients internationally and across the southwestern U.S. Her global experiences—from Moroccan riads to Egyptian temples—have shaped a multi-dimensional approach, and she is eager to share her expertise and enthusiasm with others because landscape design can take you in many exciting, insightful and unexpected directions.',
+    src: MargaretLouderbackImage,
+  },
+  {
+    name: 'Sara Jones',
+    description: 'Sara Jones is a professional organizer, Aging in Place designer, and the owner of Create Organization. She focuses on designing practical systems that simplify daily life, helping busy families and clients managing chronic clutter or health-related challenges live safely and comfortably in their homes. As a three-time QC graduate, Sara now shares her expertise to mentor and inspire the next generation of designers.',
+    src: SaraJonesImage,
   },
 ];
