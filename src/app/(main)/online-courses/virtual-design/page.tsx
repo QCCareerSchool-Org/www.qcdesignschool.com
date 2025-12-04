@@ -7,7 +7,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -29,7 +29,7 @@ const courseCodes: CourseCode[] = [ 'vd' ];
 
 const VirtualDesignPage: PageComponent = () => (
   <div className={styles.page}>
-    <CourseSchema courseCode={courseCodes[0]} showPrice />
+    <CourseJsonLd courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

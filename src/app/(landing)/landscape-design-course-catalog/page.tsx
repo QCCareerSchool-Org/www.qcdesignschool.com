@@ -16,7 +16,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationLogoIcon from '@/components/certificationLogos/ildp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -59,7 +59,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <CourseSchema courseCode="ld" />
+      <CourseJsonLd courseCode="ld" />
       <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />

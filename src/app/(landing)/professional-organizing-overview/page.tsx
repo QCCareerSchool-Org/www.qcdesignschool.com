@@ -17,7 +17,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import Badge from '@/components/badges/save-$100-or-more.png';
 import BadgeUK from '@/components/badges/save-£100-or-more.png';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -45,7 +45,7 @@ const ProfessionalOrganizingPage: PageComponent = async () => {
 
   return (
     <>
-      <CourseSchema courseCode="po" />
+      <CourseJsonLd courseCode="po" />
       <div className={styles.page}>
         <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
