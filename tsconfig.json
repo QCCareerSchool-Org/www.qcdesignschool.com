@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "es2024",
+    "lib": [ "dom", "dom.iterable", "es2024" ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -34,11 +30,13 @@
     "**/*.js",
     "**/*.jsx",
     "**/*.mjs",
+    "eslint.config.mjs",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "publid"
+    "public",
+    ".next"
   ]
 }
