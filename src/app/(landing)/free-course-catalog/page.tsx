@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 
@@ -14,6 +15,7 @@ import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
+import { CourseSchema } from '@/components/courseSchema';
 import { DesignRecognition } from '@/components/designRecognition';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -25,8 +27,6 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { CourseSchema } from '@/components/courseSchema';
-import type { Metadata } from 'next';
 
 export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getData();

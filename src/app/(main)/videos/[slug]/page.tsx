@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { VideoObject, WithContext } from 'schema-dts';
 
 import { getVideo } from '..';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
-import type { Metadata } from 'next';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type Props = {

@@ -7,6 +7,7 @@ import { ThankYouSection } from '../_components/thankYouSection';
 import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
 import type { PageComponent } from '@/app/serverComponent';
+import { CourseSchema } from '@/components/courseSchema';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -16,7 +17,6 @@ import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
-import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
