@@ -6,7 +6,7 @@ import type { TestimonialVideo } from './videos';
 import PlayIcon from '@/components/icons/play-button.svg';
 
 type Props = TestimonialVideo & {
-  onOpen: MouseEventHandler<HTMLElement>;
+  onOpen: MouseEventHandler;
 };
 
 export const VideoCard: FC<Props> = ({ thumbnailSrc, name, professionalTitle, quote, onOpen: handleClick }) => (
