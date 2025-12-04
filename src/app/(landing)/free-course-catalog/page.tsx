@@ -15,7 +15,7 @@ import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { DesignRecognition } from '@/components/designRecognition';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -73,7 +73,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <CourseSchema courseCode="i2" />
+      <CourseJsonLd courseCode="i2" />
       <Header logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />

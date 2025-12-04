@@ -7,7 +7,7 @@ import { ThankYouSection } from '../_components/thankYouSection';
 import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { LeadProcessing } from '@/components/leadProcessing';
@@ -54,7 +54,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <CourseSchema courseCode="i2" />
+      <CourseJsonLd courseCode="i2" />
       <Header logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
