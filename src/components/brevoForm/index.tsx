@@ -12,6 +12,7 @@ import { v1 } from 'uuid';
 
 import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
+import { JavasciptInput } from './javascriptInput';
 import DownloadIcon from '@/components/icons/download.svg';
 
 interface Props {
@@ -104,6 +105,7 @@ export const BrevoForm: FC<Props> = props => {
   return (
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
+      <JavasciptInput />
       <input type="hidden" name="nonce" value={nonce} />
       <input type="hidden" name="g-recaptcha-response" value={token} />
       <input type="hidden" name="school" value="QC Design School" />
