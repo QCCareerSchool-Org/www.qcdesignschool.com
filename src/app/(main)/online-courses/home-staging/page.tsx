@@ -12,12 +12,12 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
@@ -38,7 +38,7 @@ const HomeStagingPage: PageComponent = async () => {
 
   return (
     <div className={styles.page}>
-      <CourseSchema courseCode={courseCodes[0]} showPrice />
+      <CourseJsonLd courseCode={courseCodes[0]} showPrice />
       <section className="half-padding-top">
         <div className="container">
           <div className="row justify-content-center g-s">

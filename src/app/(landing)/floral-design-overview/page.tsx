@@ -15,7 +15,7 @@ import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
 import { Header } from '../_components/header';
 import type { PageComponent } from '@/app/serverComponent';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -42,7 +42,7 @@ const FloralDesignPage: PageComponent = async () => {
 
   return (
     <>
-      <CourseSchema courseCode="fd" />
+      <CourseJsonLd courseCode="fd" />
       <div className={styles.page}>
         <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">

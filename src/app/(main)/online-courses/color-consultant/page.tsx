@@ -11,7 +11,7 @@ import WhyQCImage from './why-qc.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -33,7 +33,7 @@ const courseCodes: CourseCode[] = [ 'cc' ];
 
 const ColorConsultantPage: PageComponent = () => (
   <div className={styles.page}>
-    <CourseSchema courseCode={courseCodes[0]} showPrice />
+    <CourseJsonLd courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

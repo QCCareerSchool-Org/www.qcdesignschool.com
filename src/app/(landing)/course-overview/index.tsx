@@ -6,7 +6,7 @@ import HeroImage from './desktop.jpg';
 import { Price } from './price';
 import ShieldIcon from './shield.svg';
 import { Header } from '../_components/header';
-import { CourseSchema } from '@/components/courseSchema';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -19,7 +19,7 @@ export const CourseOverview: FC = async () => {
 
   return (
     <>
-      <CourseSchema courseCode="i2" />
+      <CourseJsonLd courseCode="i2" />
       <Header logoLink buttonContent={<><span className="d-none d-sm-inline">Enroll Online</span></>} buttonHref="https://enroll.qcdesignschool.com/all-courses-offer" />
       <section className="p-0" style={{ backgroundColor: '#333' }}>
         <div className="container">
