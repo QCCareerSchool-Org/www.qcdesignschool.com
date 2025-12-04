@@ -7,9 +7,9 @@
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
     "test": "jest --verbose",
-    "test:watch": "jest --verbose --watch",
-    "lint:fix": "eslint --fix src"
+    "test:watch": "jest --verbose --watch"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
