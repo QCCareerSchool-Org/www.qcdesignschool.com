@@ -10,9 +10,9 @@ import type { Country, Value } from 'react-phone-number-input/input';
 import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
+import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import DownloadIcon from '@/components/icons/download.svg';
-import { CurrentPageInput } from './currentPageInput';
 
 interface Props {
   successLocation: string;

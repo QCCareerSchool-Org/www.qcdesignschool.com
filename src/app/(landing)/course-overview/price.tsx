@@ -21,10 +21,10 @@ import BackgroundPO from '@/app/(main)/online-courses/professional-organizing/he
 import BackgroundVD from '@/app/(main)/online-courses/virtual-design/hero.jpg';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
+import type { Price as PriceType } from '@/domain/price';
 import type { PriceQuery } from '@/lib/fetch';
 import { fetchPrice } from '@/lib/fetch';
 import { formatPrice } from '@/lib/formatPrice';
-import type { Price as PriceType } from '@/domain/price';
 
 interface Props {
   countryCode: string;

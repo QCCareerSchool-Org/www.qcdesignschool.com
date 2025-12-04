@@ -6,11 +6,11 @@ import HeroImage from './desktop.jpg';
 import { Price } from './price';
 import ShieldIcon from './shield.svg';
 import { Header } from '../_components/header';
+import { CourseSchema } from '@/components/courseSchema';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
-import { CourseSchema } from '@/components/courseSchema';
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 

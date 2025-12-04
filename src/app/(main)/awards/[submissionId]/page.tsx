@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import AwardImage from './award-of-excellence.png';
@@ -13,7 +14,6 @@ import { LinkedInShare } from '@/components/share/linkedIn';
 import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
-import type { Metadata } from 'next';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type RouteParams = {

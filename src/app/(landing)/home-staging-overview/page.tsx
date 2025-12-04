@@ -17,6 +17,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import Badge from '@/components/badges/save-$100-or-more.png';
 import BadgeUK from '@/components/badges/save-£100-or-more.png';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
+import { CourseSchema } from '@/components/courseSchema';
 import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -27,7 +28,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
-import { CourseSchema } from '@/components/courseSchema';
 
 export const metadata: Metadata = {
   title: 'Home Staging Course',
