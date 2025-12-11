@@ -13,7 +13,7 @@ interface Props {
   courseId?: string;
 }
 
-export const ReviewJsonLDBase: FC<Props> = async ({ name, rating, reviewText, courseCode, courseId }) => {
+const ReviewJsonLDBase: FC<Props> = async ({ name, rating, reviewText, courseCode, courseId }) => {
   const jsonLd = await getReview(name, rating, reviewText, courseCode, courseId);
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
