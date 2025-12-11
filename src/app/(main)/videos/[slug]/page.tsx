@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import type { VideoObject, WithContext } from 'schema-dts';
 
 import { getVideo } from '..';
 import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import { VideoJsonLD } from '@/components/jsonLd/videoObject';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
 type Props = {
@@ -33,22 +33,9 @@ const VideoPlayerPage: PageComponent<Props> = async ({ params }) => {
     return notFound();
   }
 
-  const videoSchema: WithContext<VideoObject> = {
-    '@context': 'https://schema.org',
-    '@id': `#${video.slug}`,
-    '@type': 'VideoObject',
-    'name': video.title,
-    'description': video.description,
-    'thumbnailUrl': video.thumbnail_loc,
-    'uploadDate': typeof video.publication_date === 'string' ? video.publication_date : video.publication_date.toISOString(),
-    'duration': ISODuration(video.duration),
-    'contentUrl': video.content_loc,
-    'embedUrl': video.player_loc,
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      <VideoJsonLD {...video} />
       <section className="bg-light pt-4">
         <div className="container">
           <h1 className="mb-3">{video.title}</h1>
@@ -63,11 +50,3 @@ const VideoPlayerPage: PageComponent<Props> = async ({ params }) => {
 };
 
 export default VideoPlayerPage;
-
-const ISODuration = (totalSeconds: number): string => {
-  const seconds = Math.floor(totalSeconds % 60);
-  const minutes = Math.floor((totalSeconds / 60) % 60);
-  const hours = Math.floor(totalSeconds / 3600);
-
-  return `PT${hours}H${minutes}M${seconds}S`;
-};
