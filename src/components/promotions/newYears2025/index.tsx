@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import HeroImage from './why-wait.jpg';
+import HeroImage from './landing-thank-you.jpg';
 
 export const NewYears2025: FC = () => {
   return (
