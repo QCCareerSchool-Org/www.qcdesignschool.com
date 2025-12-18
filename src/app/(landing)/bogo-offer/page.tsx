@@ -16,7 +16,7 @@ import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
-const boxingDaySupportWindow = {
+const newYearsSupportWindow = {
   start: Date.UTC(2025, 11, 26, 8),
   end: Date.UTC(2026, 1, 1, 8),
 };
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
 const CoursesPage: PageComponent = async () => {
   const { countryCode } = await getData();
   const now = Date.now();
-  const isBoxingDaySupportWindow = now >= boxingDaySupportWindow.start && now < boxingDaySupportWindow.end;
-  const getStartedText = isBoxingDaySupportWindow
+  const isNewYearsSupportWindow = now >= newYearsSupportWindow.start && now < newYearsSupportWindow.end;
+  const getStartedText = isNewYearsSupportWindow
     ? "Take charge of your future and become professionally certified with QC's online training today and start earning before spring!"
     : 'Enroll Online and Start on Your Path to Becoming a Certified Designer';
 
@@ -197,7 +197,7 @@ const CoursesPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <SupportSection showLink promoWindowOverride={boxingDaySupportWindow} />
+      <SupportSection showLink promoWindowOverride={newYearsSupportWindow} />
       <GetStartedSection
         title="Get Started Today"
         text={getStartedText}

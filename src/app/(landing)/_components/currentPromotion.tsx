@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
-import { BoxingDay2025 } from '@/components/promotions/boxingDay2025';
+import { NewYears2025 } from '@/components/promotions/newYears2025';
+
 interface Props {
   date: number;
   countryCode: string;
@@ -8,6 +9,6 @@ interface Props {
 
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
   if (date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8)) { // 2025-12-26T03:00 (8:00 UTC) to 2026-01-03T03:00 (8:00 UTC)
-    return <BoxingDay2025 />;
+    return <NewYears2025 />;
   }
 };

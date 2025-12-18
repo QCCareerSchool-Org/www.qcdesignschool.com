@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import HeroImage from './why-wait.jpg';
 
-export const BoxingDay2025: FC = () => {
+export const NewYears2025: FC = () => {
   return (
     <section className='bg-light'>
       <div className="container text-center">
