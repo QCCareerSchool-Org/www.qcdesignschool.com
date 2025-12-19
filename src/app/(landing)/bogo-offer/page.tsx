@@ -17,7 +17,7 @@ import { getData } from '@/lib/getData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 const newYearsSupportWindow = {
-  start: Date.UTC(2025, 11, 26, 8),
+  start: Date.UTC(2025, 11, 16, 8),
   end: Date.UTC(2026, 1, 1, 8),
 };
 
