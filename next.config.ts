@@ -1,8 +1,7 @@
 import type { NextConfig } from 'next';
-import type { Configuration } from 'webpack';
 
 const nextConfig: NextConfig = {
-  webpack(config: Configuration) {
+  webpack(config) {
     config.module ??= { rules: [] };
     config.module.rules ??= [];
     config.module.rules.push({
