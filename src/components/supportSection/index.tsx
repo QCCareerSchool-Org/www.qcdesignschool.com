@@ -7,7 +7,7 @@ import StudentSupportImage from './student-support.jpg';
 import ChatIcon from '@/components/icons/chat.svg';
 
 const NEW_YEARS_2025_START = Date.UTC(2025, 11, 26, 8);
-const NEW_YEARS_2025_END = Date.UTC(2026, 0, 3, 8);
+const NEW_YEARS_2025_END = Date.UTC(2026, 0, 17, 8);
 
 const defaultCopy = (
   <>QC&apos;s dedicated team is here to help you select the right course, navigate your materials, and stay on track to reach your career goals. Available seven days a week by phone, email, or live chat, we are here to ensure you get the support you need&mdash;whether it&apos;s advice, troubleshooting, or planning your next step.</>

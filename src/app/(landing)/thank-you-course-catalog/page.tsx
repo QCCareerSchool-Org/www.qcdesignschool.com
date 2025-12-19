@@ -51,7 +51,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   }
 
   const date = new Date().getTime();
-  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
+  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 17, 8);
   const getStartedText = isNewYearsPromo ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!' : 'Become professionally certified with QC\'s online training today and start earning!';
 
   return (
