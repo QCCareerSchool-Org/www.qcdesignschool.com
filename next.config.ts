@@ -1,8 +1,8 @@
+import path from 'node:path';
 import type { NextConfig } from 'next';
-import type { Configuration } from 'webpack';
 
 const nextConfig: NextConfig = {
-  webpack(config: Configuration) {
+  webpack(config) {
     config.module ??= { rules: [] };
     config.module.rules ??= [];
     config.module.rules.push({
@@ -16,6 +16,14 @@ const nextConfig: NextConfig = {
     quietDeps: true, // hide deprecation warnings from node_modules
     // If your sass-loader / Sass version supports it, you can also do:
     silenceDeprecations: [ 'import', 'global-builtin' ],
+    includePaths: [
+      __dirname,
+      path.join(__dirname, 'node_modules' ),
+      path.join(__dirname, 'node_modules/bootstrap/scss' ),
+    ],
+  },
+  turbopack: {
+    root: __dirname,
   },
 };
 

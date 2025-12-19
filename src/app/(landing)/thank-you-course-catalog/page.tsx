@@ -51,6 +51,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   }
 
   const date = new Date().getTime();
+  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 17, 8);
+  const getStartedText = isNewYearsPromo ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!' : 'Become professionally certified with QC\'s online training today and start earning!';
 
   return (
     <>
@@ -74,7 +76,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your interior decorating career?"
-        text="Become professionally certified with QC's online training today and start earning!"
+        text={getStartedText}
       />
     </>
   );

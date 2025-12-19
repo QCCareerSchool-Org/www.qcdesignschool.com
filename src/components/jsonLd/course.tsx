@@ -38,7 +38,6 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
       '@type': 'EducationalOccupationalCredential',
       'name': certification,
     } : undefined,
-    'availableLanguage': 'en',
     'teaches': getCourseSubjects(courseCode),
     'hasCourseInstance': {
       '@type': 'CourseInstance',
