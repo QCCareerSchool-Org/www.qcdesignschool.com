@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 import StudentSupportImage from './student-support.jpg';
 import ChatIcon from '@/components/icons/chat.svg';
 
-const NEW_YEARS_2025_START = Date.UTC(2025, 11, 16, 8);
+const NEW_YEARS_2025_START = Date.UTC(2025, 11, 26, 8);
 const NEW_YEARS_2025_END = Date.UTC(2026, 0, 3, 8);
 
 const defaultCopy = (
