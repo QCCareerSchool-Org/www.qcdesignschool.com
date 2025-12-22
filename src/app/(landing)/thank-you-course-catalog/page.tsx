@@ -7,9 +7,9 @@ import { ThankYouSection } from '../_components/thankYouSection';
 import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
 import type { PageComponent } from '@/app/serverComponent';
-import { CourseJsonLd } from '@/components/jsonLd/course';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -52,7 +52,9 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   const date = new Date().getTime();
   const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
-  const getStartedText = isNewYearsPromo ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!' : 'Become professionally certified with QC\'s online training today and start earning!';
+  const getStartedText = isNewYearsPromo
+    ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
+    : 'Become professionally certified with QC\'s online training today and start earning!';
 
   return (
     <>
