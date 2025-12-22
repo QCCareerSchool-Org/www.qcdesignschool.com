@@ -10,12 +10,16 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
 
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 
-export const CourseOverview: FC = async () => {
-  const { countryCode, provinceCode, date } = await getData();
+interface Props {
+  countryCode: string;
+  provinceCode: string | null;
+  date: number;
+}
+
+export const CourseOverview: FC<Props> = async ({ countryCode, provinceCode, date }) => {
 
   return (
     <>

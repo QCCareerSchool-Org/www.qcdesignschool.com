@@ -14,9 +14,9 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import { isNewYearsWindow } from '@/domain/dateRange';
+import { isEndOfYearPromotionWindow } from '@/domain/dateRange';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const data = await getData();
+  const data = await getSeverData(props.searchParams);
   const date = data.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
@@ -68,14 +68,14 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
       <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
-      <CurrentPromotion countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your interior decorating career?"
-        text={isNewYearsWindow(date)
+        text={isEndOfYearPromotionWindow(date)
           ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
           : 'Become professionally certified with QC\'s online training today and start earning!'}
       />

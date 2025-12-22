@@ -5,7 +5,7 @@ import { ButtonWrapper } from './buttonWrapper';
 import styles from './header.module.scss';
 import { Flag } from '@/components/flag';
 import { Logo } from '@/components/logo';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 interface Props {
   logoLink?: boolean;
@@ -16,7 +16,7 @@ interface Props {
 }
 
 export const Header: FC<Props> = async ({ logoLink, buttonHref = '#', buttonContent, buttonAlwaysVisible, buttonClass = `btn btn-navy ${styles.button}` }) => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getSeverData();
 
   return (
     <div className={styles.headerComponent}>

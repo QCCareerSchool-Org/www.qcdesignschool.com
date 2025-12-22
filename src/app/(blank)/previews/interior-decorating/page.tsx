@@ -16,11 +16,11 @@ import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import './page.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 const InteriorDecoratingPreviewPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getSeverData();
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (

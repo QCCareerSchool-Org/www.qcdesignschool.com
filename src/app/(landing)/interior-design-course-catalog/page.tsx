@@ -24,12 +24,12 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
-  const { countryCode, provinceCode } = await getData();
+export const generateMetadata: GenerateMetadata = async (props): Promise<Metadata> => {
+  const { countryCode, provinceCode } = await getSeverData(props.searchParams);
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -54,7 +54,7 @@ const brevo = {
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const InteriorDesignCatalogPage: PageComponent = async props => {
-  const { countryCode, provinceCode, date } = await getData();
+  const { countryCode, provinceCode, date } = await getSeverData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);

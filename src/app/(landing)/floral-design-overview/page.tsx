@@ -25,7 +25,7 @@ import { SAFPartnerSection } from '@/components/safPartnerSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -37,8 +37,8 @@ const testimonialIds = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 
 const courseCodes: CourseCode[] = [ 'fd' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/floral-design-overview?c=fd';
 
-const FloralDesignPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const FloralDesignPage: PageComponent = async props => {
+  const { countryCode } = await getSeverData(props.searchParams);
 
   return (
     <>

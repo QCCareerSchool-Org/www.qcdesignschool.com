@@ -11,7 +11,7 @@ import { PerksSection } from '@/components/perksSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer',
@@ -22,7 +22,7 @@ const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const BecomeAHomeDesignerPage: PageComponent = async () => {
-  const { date } = await getData();
+  const { date } = await getSeverData();
 
   return (
     <div>

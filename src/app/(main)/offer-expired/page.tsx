@@ -5,7 +5,7 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Offer Expired',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const OfferExpiredPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getSeverData();
   return (
     <section>
       <BackgroundImage priority src={Background} />

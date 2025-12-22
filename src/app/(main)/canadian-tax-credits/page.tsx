@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import type { PageComponent } from '@/app/serverComponent';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const CanadianTaxCreditsPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getSeverData();
 
   if (countryCode !== 'CA') {
     redirect('/');

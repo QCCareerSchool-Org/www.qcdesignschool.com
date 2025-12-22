@@ -21,7 +21,7 @@ import { SAFPartnerSection } from '@/components/safPartnerSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -33,7 +33,7 @@ const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 
 const courseCodes: CourseCode[] = [ 'fd' ];
 
 const FloralDesignPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getSeverData();
 
   return (
     <div className={styles.page}>

@@ -9,7 +9,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const CoursesPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getSeverData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

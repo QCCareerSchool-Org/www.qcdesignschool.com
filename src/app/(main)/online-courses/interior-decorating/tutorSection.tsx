@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { AngieChapmanCircle } from '@/components/tutors/angieChapman';
 import { JaneLockhartCircle } from '@/components/tutors/janeLockhart';
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const TutorSection: FC<Props> = async ({ className }) => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getSeverData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

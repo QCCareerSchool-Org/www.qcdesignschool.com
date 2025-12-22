@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import type { FC } from 'react';
 
-import { getData } from '@/lib/getData';
+import { getSeverData } from '@/lib/getData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const FooterColumn1: FC = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getSeverData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
