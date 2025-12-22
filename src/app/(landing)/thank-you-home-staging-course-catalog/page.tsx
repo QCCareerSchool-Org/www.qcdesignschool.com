@@ -15,8 +15,8 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { isEndOfYearPromotionWindow } from '@/domain/dateRange';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getSeverData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const data = await getSeverData(props.searchParams);
+  const data = await getServerData(props.searchParams);
   const date = data.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
@@ -55,7 +55,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="st" />
-      <Header logoLink />
+      <Header countryCode={countryCode} logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}

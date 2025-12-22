@@ -12,7 +12,7 @@ const newYearPromotionWindow: DateRange = {
 
 const inWindow = (d: number, r: DateRange): boolean => d >= r.start && d < r.end;
 
-export const isDec26PromotionWindow = (d: number): boolean => inWindow(d, newYearPromotionWindow);
+export const isDec26PromotionWindow = (d: number): boolean => inWindow(d, endOfYearPromotionWindow);
 
 export const isJan7PromotionWindow = (d: number): boolean => inWindow(d, newYearPromotionWindow);
 

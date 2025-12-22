@@ -11,7 +11,7 @@ import { Subtitle } from '../subtitle';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetch';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 interface Props {
   courseCode: CourseCode;
@@ -26,7 +26,7 @@ interface Props {
 }
 
 export const CourseTuitionCard: FC<Props> = async props => {
-  const { countryCode, provinceCode } = await getSeverData();
+  const { countryCode, provinceCode } = await getServerData();
   const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode, provinceCode: provinceCode ?? undefined }) : null;
   const enrollLink = `${props.enrollLink ?? 'https://enroll.qcdesignschool.com'}?c=${encodeURIComponent(props.courseCode)}`;
   return (

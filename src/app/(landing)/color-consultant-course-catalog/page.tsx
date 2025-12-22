@@ -22,8 +22,8 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getSeverData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Color Consultant Course Catalog',
@@ -36,7 +36,7 @@ const brevoEmailTemplateId = 58; // General
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const ColorConsultantCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, date } = await getSeverData(props.searchParams);
+  const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -51,7 +51,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="cc" />
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">

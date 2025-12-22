@@ -1,10 +1,10 @@
 import { CourseOverview } from '../course-overview';
 import type { PageComponent } from '@/app/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const CourseOverviewPage: PageComponent = async props => {
-  const { countryCode, provinceCode, date } = await getSeverData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   return (
     <>
       <DeadlineFunnelScript />

@@ -10,7 +10,7 @@ interface Data {
   date: number;
 }
 
-export const getSeverData = async (searchParams?: Promise<Record<string, string | string[] | undefined>>): Promise<Data> => {
+export const getServerData = async (searchParams?: Promise<Record<string, string | string[] | undefined>>): Promise<Data> => {
   const headerList = await headers();
   const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headerList.get('x-vercel-ip-country-region');

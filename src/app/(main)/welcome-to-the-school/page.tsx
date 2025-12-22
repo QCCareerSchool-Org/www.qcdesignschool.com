@@ -13,7 +13,7 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
-import { getSeverData as getServerData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 15;
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
-  const { date } = await getServerData();
+  const { date } = await getServerData(searchParams);
   const { enrollmentId: enrollmentIdParam, code: codeParam } = await searchParams;
 
   if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {

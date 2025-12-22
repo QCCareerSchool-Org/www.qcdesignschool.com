@@ -25,7 +25,7 @@ import { SAFPartnerSection } from '@/components/safPartnerSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -38,13 +38,13 @@ const courseCodes: CourseCode[] = [ 'fd' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/floral-design-overview?c=fd';
 
 const FloralDesignPage: PageComponent = async props => {
-  const { countryCode } = await getSeverData(props.searchParams);
+  const { countryCode } = await getServerData(props.searchParams);
 
   return (
     <>
       <CourseJsonLd courseCode="fd" />
       <div className={styles.page}>
-        <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+        <Header countryCode={countryCode} logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
           <div className="container">
             <div className="row justify-content-center g-s">

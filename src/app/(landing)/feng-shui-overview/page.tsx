@@ -26,7 +26,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',
@@ -39,14 +39,14 @@ const courseCodes: CourseCode[] = [ 'fs' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs';
 
 const FengShuiDesignPage: PageComponent = async props => {
-  const { countryCode } = await getSeverData(props.searchParams);
+  const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 
   return (
     <>
       <CourseJsonLd courseCode="fs" />
       <div className={styles.page}>
-        <Header logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+        <Header countryCode={countryCode} logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
           <div className="container">
             <div className="row justify-content-center g-s">

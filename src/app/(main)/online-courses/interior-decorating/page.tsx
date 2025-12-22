@@ -22,11 +22,11 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const generateMetadata: GenerateMetadata = async () => {
-  const { countryCode, provinceCode } = await getSeverData();
+  const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -41,7 +41,7 @@ const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 
 const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getSeverData();
+  const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

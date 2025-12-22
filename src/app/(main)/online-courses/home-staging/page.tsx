@@ -22,7 +22,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Home Staging Course',
@@ -34,7 +34,7 @@ const testimonialIds = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const HomeStagingPage: PageComponent = async () => {
-  const { countryCode } = await getSeverData();
+  const { countryCode } = await getServerData();
 
   return (
     <div className={styles.page}>

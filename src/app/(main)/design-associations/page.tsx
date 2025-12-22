@@ -6,7 +6,7 @@ import { preferredPartners, professionalAssociations } from './data';
 import styles from './page.module.scss';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Design Associations',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 const AssociationsPage: PageComponent = async () => {
-  const { countryCode } = await getSeverData();
+  const { countryCode } = await getServerData();
 
   return (
     <>

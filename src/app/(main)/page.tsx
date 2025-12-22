@@ -26,7 +26,7 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
-const HomePage: PageComponent = async () => {
-  const { countryCode, provinceCode, date } = await getSeverData();
+const HomePage: PageComponent = async props => {
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

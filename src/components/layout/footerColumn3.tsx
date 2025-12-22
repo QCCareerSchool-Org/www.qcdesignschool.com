@@ -6,10 +6,10 @@ import PhoneIcon from './icons/phone.svg';
 import { ChatLink } from '@/components/chatLink';
 import { EmailLink } from '@/components/emailLink';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const FooterColumn3: FC = async () => {
-  const { countryCode } = await getSeverData();
+  const { countryCode } = await getServerData();
 
   return (
     <>

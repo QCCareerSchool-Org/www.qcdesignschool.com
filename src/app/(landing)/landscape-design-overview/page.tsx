@@ -27,7 +27,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Landscape Design Course',
@@ -40,14 +40,14 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld';
 
 const LandscapeDesignPage: PageComponent = async props => {
-  const { countryCode } = await getSeverData(props.searchParams);
+  const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 
   return (
     <>
       <CourseJsonLd courseCode="ld" />
       <div className={styles.page}>
-        <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+        <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
           <div className="container">
             <div className="row justify-content-center g-s">

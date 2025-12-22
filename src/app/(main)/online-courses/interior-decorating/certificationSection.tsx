@@ -5,11 +5,11 @@ import type { FC } from 'react';
 import CertificationBackgroundImage from './cert-bg.jpg';
 import CertificationLogo from '@/components/certificationLogos/iddp.svg';
 import { CertificationSectionTemplate } from '@/components/certificationSectionTemplate';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const CertificationSection: FC = async () => {
-  const { countryCode, provinceCode } = await getSeverData();
+  const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

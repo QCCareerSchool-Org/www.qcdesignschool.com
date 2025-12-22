@@ -4,10 +4,10 @@ import type { FC } from 'react';
 import HeroImageUK from './desktop-uk.jpg';
 import HeroImageDefault from './desktop.jpg';
 import { gbpCountry } from '@/lib/currencies';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const BlackFriday2025: FC = async () => {
-  const { countryCode } = await getSeverData();
+  const { countryCode } = await getServerData();
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   return (

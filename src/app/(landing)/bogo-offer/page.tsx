@@ -13,7 +13,7 @@ import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/lib/currencies';
-import { getSeverData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 };
 
 const CoursesPage: PageComponent = async props => {
-  const { countryCode, date } = await getSeverData(props.searchParams);
+  const { countryCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
