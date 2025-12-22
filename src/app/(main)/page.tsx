@@ -39,8 +39,7 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, provinceCode, date } = await getData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -177,7 +176,7 @@ const HomePage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to Start an Exciting New Design Career?"

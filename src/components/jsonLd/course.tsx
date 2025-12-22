@@ -16,7 +16,7 @@ interface Props {
 }
 
 const CourseJsonLdBase: FC<Props> = async ({ courseCode, id = '#course', providerId, showPrice }) => {
-  const jsonLd = getCourse(courseCode, id, providerId, showPrice);
+  const jsonLd = await getCourse(courseCode, id, providerId, showPrice);
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
 };

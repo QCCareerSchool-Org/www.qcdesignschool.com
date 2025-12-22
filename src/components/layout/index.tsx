@@ -7,8 +7,7 @@ import { getData } from '@/lib/getData';
 import { BrevoConversations } from '@/scripts/brevoCoversations';
 
 export const Layout: FC<PropsWithChildren> = async ({ children }) => {
-  const date = new Date().getTime();
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode, date } = await getData();
 
   return (
     <>

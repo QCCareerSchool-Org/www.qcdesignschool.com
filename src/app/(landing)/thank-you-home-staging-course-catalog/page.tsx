@@ -13,6 +13,7 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import { isNewYearsWindow } from '@/domain/dateRange';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
@@ -27,12 +28,14 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
+  const data = await getData();
+  const date = data.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? (await getData()).countryCode;
+  const countryCode = getParam(searchParams.countryCode) ?? data.countryCode;
   const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
@@ -49,12 +52,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     }
   }
 
-  const date = new Date().getTime();
-  const isNewYearsPromo = date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8);
-  const getStartedText = isNewYearsPromo
-    ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
-    : 'Become professionally certified with QC\'s online training today and start earning!';
-
   return (
     <>
       <CourseJsonLd courseCode="st" />
@@ -70,14 +67,17 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
       <ThankYouSection course="staging" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <ThreeReasonsSection />
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your design career?"
-        text={getStartedText}
+        text={isNewYearsWindow(date)
+          ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
+          : 'Become professionally certified with QC\'s online training today and start earning!'
+        }
       />
     </>
   );

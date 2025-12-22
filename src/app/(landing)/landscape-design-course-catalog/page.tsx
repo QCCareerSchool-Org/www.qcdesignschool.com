@@ -16,7 +16,6 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationLogoIcon from '@/components/certificationLogos/ildp.svg';
-import { CourseJsonLd } from '@/components/jsonLd/course';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -26,6 +25,7 @@ import ChartIcon from '@/components/icons/chart.svg';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
 import DownloadIcon from '@/components/icons/download.svg';
 import SpreadsheetIcon from '@/components/icons/spreadsheet.svg';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -44,8 +44,7 @@ const brevoEmailTemplateId = 1967; // Landscape Design
 const testimonialIds = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getData();
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);

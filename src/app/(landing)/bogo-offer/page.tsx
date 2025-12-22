@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
+import { GetStarted } from './getStarted';
 import HeroImage from './hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
-import { GetStartedSection } from '@/components/getStartedSection';
 import QIcon from '@/components/icons/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
@@ -16,10 +16,6 @@ import { gbpCountry } from '@/lib/currencies';
 import { getData } from '@/lib/getData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
-const newYearsSupportWindow = {
-  start: Date.UTC(2025, 11, 26, 8),
-  end: Date.UTC(2026, 1, 1, 8),
-};
 
 export const metadata: Metadata = {
   title: 'BOGO Limited-Time Offer',
@@ -28,13 +24,7 @@ export const metadata: Metadata = {
 };
 
 const CoursesPage: PageComponent = async () => {
-  const { countryCode } = await getData();
-  const now = Date.now();
-  const isNewYearsSupportWindow = now >= newYearsSupportWindow.start && now < newYearsSupportWindow.end;
-  const getStartedText = isNewYearsSupportWindow
-    ? "Take charge of your future and become professionally certified with QC's online training today and start earning before spring!"
-    : 'Enroll Online and Start on Your Path to Becoming a Certified Designer';
-
+  const { countryCode, date } = await getData();
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
@@ -197,12 +187,8 @@ const CoursesPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <SupportSection showLink promoWindowOverride={newYearsSupportWindow} />
-      <GetStartedSection
-        title="Get Started Today"
-        text={getStartedText}
-        buttonHref={bogoEnrollLink}
-      />
+      <SupportSection date={date} showLink />
+      <GetStarted bogoEnrollLink={bogoEnrollLink} />
     </>
   );
 };

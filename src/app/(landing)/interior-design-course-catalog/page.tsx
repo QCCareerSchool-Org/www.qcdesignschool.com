@@ -15,12 +15,12 @@ import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
-import { CourseJsonLd } from '@/components/jsonLd/course';
 import { DesignRecognition } from '@/components/designRecognition';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -54,9 +54,8 @@ const brevo = {
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const InteriorDesignCatalogPage: PageComponent = async props => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode, date } = await getData();
   const searchParams = await props.searchParams;
-  const date = new Date().getTime();
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
   const utmSource = getParam(searchParams.utm_source);
@@ -133,7 +132,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
       <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
-      <SupportSection />
+      <SupportSection date={date} />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

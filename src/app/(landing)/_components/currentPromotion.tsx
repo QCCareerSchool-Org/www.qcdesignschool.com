@@ -1,14 +1,18 @@
+'sever-only';
+
 import type { FC } from 'react';
 
 import { NewYears2025 } from '@/components/promotions/newYears2025';
+import { isNewYearsWindow } from '@/domain/dateRange';
+import { getData } from '@/lib/getData';
 
 interface Props {
-  date: number;
   countryCode: string;
 }
 
-export const CurrentPromotion: FC<Props> = ({ date }) => {
-  if (date >= Date.UTC(2025, 11, 26, 8) && date < Date.UTC(2026, 0, 3, 8)) { // 2025-12-26T03:00 (8:00 UTC) to 2026-01-03T03:00 (8:00 UTC)
+export const CurrentPromotion: FC<Props> = async () => {
+  const { date } = await getData();
+  if (isNewYearsWindow(date)) {
     return <NewYears2025 />;
   }
 };

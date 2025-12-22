@@ -1,8 +1,6 @@
 import type { FC } from 'react';
 import type { VideoObject, WithContext } from 'schema-dts';
 
-import { withSuspense } from '@/withSuspense';
-
 interface Props {
   /** unique identifier */
   slug: string;

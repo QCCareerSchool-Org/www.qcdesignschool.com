@@ -6,8 +6,8 @@ import HeroImage from './desktop.jpg';
 import { Price } from './price';
 import ShieldIcon from './shield.svg';
 import { Header } from '../_components/header';
-import { CourseJsonLd } from '@/components/jsonLd/course';
 import { GetStartedSection } from '@/components/getStartedSection';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getData } from '@/lib/getData';
@@ -15,7 +15,7 @@ import { getData } from '@/lib/getData';
 const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 
 export const CourseOverview: FC = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode, date } = await getData();
 
   return (
     <>
@@ -61,7 +61,7 @@ export const CourseOverview: FC = async () => {
         </div>
       </section>
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
-      <SupportSection />
+      <SupportSection date={date} />
       <GetStartedSection
         title="Get Started Today"
         text="Enroll Now and Start Your Journey to Becoming a Certified Design Professional."

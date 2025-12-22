@@ -7,8 +7,8 @@ import TagIcon from '@/components/icons/tag.svg';
 import { gbpCountry } from '@/lib/currencies';
 
 interface Props {
-  countryCode: string;
   date: number;
+  countryCode: string;
 }
 
 const startDate = Date.UTC(2024, 10, 26);

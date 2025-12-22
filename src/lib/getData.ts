@@ -5,6 +5,7 @@ import { headers } from 'next/headers';
 interface Data {
   countryCode: string;
   provinceCode: string | null;
+  date: number;
 }
 
 export const getData = async (): Promise<Data> => {
@@ -12,5 +13,5 @@ export const getData = async (): Promise<Data> => {
   const countryCode = headerList.get('x-vercel-ip-country') ?? 'US';
   const provinceCode = headerList.get('x-vercel-ip-country-region');
 
-  return { countryCode, provinceCode };
+  return { countryCode, provinceCode, date: Date.now() };
 };

@@ -14,11 +14,11 @@ import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/aiop.svg';
-import { CourseJsonLd } from '@/components/jsonLd/course';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
+import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
@@ -36,8 +36,7 @@ const brevoEmailTemplateId = 1939; // Professional Organizing
 const testimonialIds = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
 
 const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getData();
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -102,7 +101,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
       <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="po" schemaCourseId="#course" />
-      <SupportSection />
+      <SupportSection date={date} />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

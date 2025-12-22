@@ -9,10 +9,13 @@ import CertificationIcon from '@/components/icons/certification.svg';
 import ShieldCheckIcon from '@/components/icons/shield-check.svg';
 import { Layout } from '@/components/layout';
 import { SupportSection } from '@/components/supportSection';
+import { getData } from '@/lib/getData';
 
 const iconSize = 32;
 
-export const ErrorTemplate: FC<PropsWithChildren> = ({ children }) => {
+export const ErrorTemplate: FC<PropsWithChildren> = async ({ children }) => {
+  const { date } = await getData();
+
   return (
     <Layout>
       <section>
@@ -67,7 +70,7 @@ export const ErrorTemplate: FC<PropsWithChildren> = ({ children }) => {
 
         </div>
       </section>
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
     </Layout>
   );
 };
