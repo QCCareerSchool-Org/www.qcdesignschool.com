@@ -9,12 +9,11 @@ import CertificationIcon from '@/components/icons/certification.svg';
 import ShieldCheckIcon from '@/components/icons/shield-check.svg';
 import { Layout } from '@/components/layout';
 import { SupportSection } from '@/components/supportSection';
-import { getServerData } from '@/lib/getServerData';
 
 const iconSize = 32;
 
-export const ErrorTemplate: FC<PropsWithChildren> = async ({ children }) => {
-  const { date } = await getServerData();
+export const ErrorTemplate: FC<PropsWithChildren> = ({ children }) => {
+  const date = Date.now();
 
   return (
     <Layout>
