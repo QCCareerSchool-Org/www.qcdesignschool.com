@@ -6,13 +6,13 @@ import { TelephoneLink } from '@/components/telephoneLink';
 import { getServerData } from '@/lib/getServerData';
 
 export const Footer: FC = async () => {
-  const { countryCode, date } = await getServerData();
+  const { countryCode } = await getServerData();
 
   return (
     <footer className={styles.footer}>
       <div className="container text-center">
         <div className="small d-flex flex-column flex-md-row justify-content-around">
-          <div className="mb-2 mb-md-0">&copy; {new Date(date).getFullYear()} QC Design School</div>
+          <div className="mb-2 mb-md-0">&copy; {new Date().getFullYear()} QC Design School</div>
           <div className="mb-2 mb-md-0"><Link href="/terms">Privacy Policy</Link></div>
           <div className="mb-2 mb-md-0">Have a Questions? Give Us a Call</div>
           <div><TelephoneLink countryCode={countryCode} /></div>
