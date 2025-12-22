@@ -5,7 +5,7 @@ import styles from './page.module.scss';
 import { QuestionAndAnswer } from './questionAndAnswer';
 import type { PageComponent } from '@/app/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const FAQPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
 
   return (
     <div itemScope itemType="https://schema.org/FAQPage">

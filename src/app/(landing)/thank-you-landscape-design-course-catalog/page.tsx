@@ -13,9 +13,10 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import { isEndOfYearPromotionWindow } from '@/domain/dateRange';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
@@ -27,12 +28,14 @@ export const metadata: Metadata = {
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
+  const data = await getServerData(props.searchParams);
+  const date = data.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
   const firstName = getParam(searchParams.firstName);
   const lastName = getParam(searchParams.lastName);
   const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? (await getData()).countryCode;
+  const countryCode = getParam(searchParams.countryCode) ?? data.countryCode;
   const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
@@ -49,12 +52,10 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     }
   }
 
-  const date = new Date().getTime();
-
   return (
     <>
       <CourseJsonLd courseCode="ld" />
-      <Header logoLink />
+      <Header countryCode={countryCode} logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -69,11 +70,14 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <ThreeReasonsSection />
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
-        title="Ready to start your landscape design career?"
-        text="Become professionally certified with QC's online training today and start earning!"
+        title="Ready to start your design career?"
+        text={isEndOfYearPromotionWindow(date)
+          ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
+          : 'Become professionally certified with QC\'s online training today and start earning!'
+        }
       />
     </>
   );

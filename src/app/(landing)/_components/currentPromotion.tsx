@@ -1,6 +1,10 @@
+'sever-only';
+
 import type { FC } from 'react';
 
-import { CyberMonday2025 } from '@/components/promotions/cyberMonday2025';
+import { HundredOff } from '@/components/promotions/HundredOff';
+import { NewYear2025 } from '@/components/promotions/newYear2025';
+import { isDec26PromotionWindow, isJan7PromotionWindow } from '@/domain/dateRange';
 
 interface Props {
   date: number;
@@ -8,7 +12,9 @@ interface Props {
 }
 
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
-  if (date >= Date.UTC(2025, 11, 1, 5) && date < Date.UTC(2025, 11, 6, 8)) { // 2025-12-01T00:00 (05:00 UTC) to 2025-12-06T03:00 (08:00 UTC)
-    return <CyberMonday2025 countryCode={countryCode} />;
+  if (isDec26PromotionWindow(date)) {
+    return <NewYear2025 />;
+  } else if (isJan7PromotionWindow(date)) {
+    return <HundredOff countryCode={countryCode} />;
   }
 };

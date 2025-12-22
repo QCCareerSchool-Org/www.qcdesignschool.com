@@ -15,7 +15,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import PaletteIcon from '@/components/icons/palette.svg';
 import ScreenshotIcon from '@/components/icons/screenshot.svg';
 import { Overlay } from '@/components/overlay';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const iconSize = 40;
 
 const HowItWorksPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

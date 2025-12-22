@@ -26,7 +26,7 @@ import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 
@@ -38,9 +38,8 @@ export const metadata: Metadata = {
 
 const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
-const HomePage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
-  const date = new Date().getTime();
+const HomePage: PageComponent = async props => {
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -177,7 +176,7 @@ const HomePage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <SupportSection showLink />
+      <SupportSection date={date} showLink />
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to Start an Exciting New Design Career?"
