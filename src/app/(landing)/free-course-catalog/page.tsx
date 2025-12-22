@@ -24,12 +24,12 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
-  const { countryCode, provinceCode } = await getData();
+export const generateMetadata: GenerateMetadata = async (props): Promise<Metadata> => {
+  const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
@@ -54,8 +54,7 @@ const brevo = {
 const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FreeCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, provinceCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -74,7 +73,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="i2" />
-      <Header logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
         <div className="container">
@@ -133,7 +132,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
       <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection schemaCourseId="#course" />
-      <SupportSection />
+      <SupportSection date={date} />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

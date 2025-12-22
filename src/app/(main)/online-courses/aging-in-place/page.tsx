@@ -21,7 +21,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ const testimonialIds = [ 'TD-0002', 'TD-0005', 'TD-0003', 'TD-0004', 'TD-0006', 
 const courseCodes: CourseCode[] = [ 'ap' ];
 
 const AgingInPlacePage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData();
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (

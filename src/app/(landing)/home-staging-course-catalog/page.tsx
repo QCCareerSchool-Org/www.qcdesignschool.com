@@ -22,8 +22,8 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Home Staging Course Catalog',
@@ -36,8 +36,7 @@ const brevoEmailTemplateId = 1985; // Home Staging
 const testimonialIds = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -52,7 +51,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="st" />
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
@@ -102,7 +101,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
       <StatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="st" schemaCourseId="#course" />
-      <SupportSection />
+      <SupportSection date={date} />
       <BottomSection>
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">

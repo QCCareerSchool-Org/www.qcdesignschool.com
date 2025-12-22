@@ -261,6 +261,8 @@ const eslintConfig = defineConfig([
       'react/react-in-jsx-scope': 'off',
       'react/self-closing-comp': 'error',
 
+      'react-hooks/purity': 'off',
+
       'import/order': [ 'error', {
         'alphabetize': {
           order: 'asc',

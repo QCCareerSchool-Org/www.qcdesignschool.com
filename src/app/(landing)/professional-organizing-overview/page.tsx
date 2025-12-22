@@ -27,7 +27,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/lib/currencies';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
@@ -39,15 +39,15 @@ const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 
 const courseCodes: CourseCode[] = [ 'po' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po';
 
-const ProfessionalOrganizingPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+const ProfessionalOrganizingPage: PageComponent = async props => {
+  const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 
   return (
     <>
       <CourseJsonLd courseCode="po" />
       <div className={styles.page}>
-        <Header logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+        <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light" /><span className="d-none d-sm-inline">Enroll Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
           <div className="container">
             <div className="row justify-content-center g-s">

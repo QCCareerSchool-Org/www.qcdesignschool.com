@@ -13,6 +13,7 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
+import { getServerData } from '@/lib/getServerData';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 15;
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
+  const { date } = await getServerData(searchParams);
   const { enrollmentId: enrollmentIdParam, code: codeParam } = await searchParams;
 
   if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {
@@ -72,7 +74,7 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
     }
 
     // Facebook
-    if (enrollment.transactionTime === null || new Date().getTime() - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
+    if (enrollment.transactionTime === null || date - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
         const source = 'https://www.qcdesignschool.com/welcome-to-the-school';
         await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);

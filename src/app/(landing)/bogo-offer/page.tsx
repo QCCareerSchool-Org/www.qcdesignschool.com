@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
+import { GetStarted } from './getStarted';
 import HeroImage from './hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
-import { GetStartedSection } from '@/components/getStartedSection';
 import QIcon from '@/components/icons/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/lib/currencies';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 
@@ -23,9 +23,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/bogo-offer' },
 };
 
-const CoursesPage: PageComponent = async () => {
-  const { countryCode } = await getData();
-
+const CoursesPage: PageComponent = async props => {
+  const { countryCode, date } = await getServerData(props.searchParams);
   const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
@@ -188,12 +187,8 @@ const CoursesPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <SupportSection showLink />
-      <GetStartedSection
-        title="Get Started Today"
-        text="Enroll Online and Start on Your Path to Becoming a Certified Designer"
-        buttonHref={bogoEnrollLink}
-      />
+      <SupportSection date={date} showLink />
+      <GetStarted bogoEnrollLink={bogoEnrollLink} />
     </>
   );
 };

@@ -20,7 +20,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 
 const courseCodes: CourseCode[] = [ 'db' ];
 
 const AccelerateYourBusinessPage: PageComponent = async () => {
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode } = await getServerData();
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (

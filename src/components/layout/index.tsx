@@ -3,12 +3,11 @@ import type { FC, PropsWithChildren } from 'react';
 import { Footer } from './footer';
 import { Header } from './header';
 import { TaxCreditsModal } from '@/components/taxCreditsModal';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 import { BrevoConversations } from '@/scripts/brevoCoversations';
 
 export const Layout: FC<PropsWithChildren> = async ({ children }) => {
-  const date = new Date().getTime();
-  const { countryCode, provinceCode } = await getData();
+  const { countryCode, provinceCode, date } = await getServerData();
 
   return (
     <>

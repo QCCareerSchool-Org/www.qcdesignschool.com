@@ -29,8 +29,8 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { getData } from '@/lib/getData';
 import { getParam } from '@/lib/getParam';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Free Landscape Design Course Catalog',
@@ -44,8 +44,7 @@ const brevoEmailTemplateId = 1967; // Landscape Design
 const testimonialIds = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
-  const { countryCode } = await getData();
-  const date = new Date().getTime();
+  const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -60,7 +59,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="ld" />
-      <Header logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />

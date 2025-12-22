@@ -8,7 +8,7 @@ import EnvelopeIcon from '@/components/icons/envelope.svg';
 import MapIcon from '@/components/icons/map.svg';
 import PhoneIcon from '@/components/icons/phone.svg';
 import { TelephoneLink } from '@/components/telephoneLink';
-import { getData } from '@/lib/getData';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 const iconHeight = 32;
 
 const ContactPage: PageComponent = async () => {
-  const { countryCode } = await getData();
+  const { countryCode } = await getServerData();
 
   return(
     <div>
