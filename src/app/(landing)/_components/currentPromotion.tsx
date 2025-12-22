@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { HundredOff } from '@/components/promotions/HundredOff';
 import { NewYear2025 } from '@/components/promotions/newYear2025';
-import { isEndOfYearPromotionWindow, isJan7PromotionWindow } from '@/domain/dateRange';
+import { isDec26PromotionWindow, isJan7PromotionWindow } from '@/domain/dateRange';
 
 interface Props {
   date: number;
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const CurrentPromotion: FC<Props> = ({ date, countryCode }) => {
-  if (isEndOfYearPromotionWindow(date)) {
+  if (isDec26PromotionWindow(date)) {
     return <NewYear2025 />;
   } else if (isJan7PromotionWindow(date)) {
     return <HundredOff countryCode={countryCode} />;
