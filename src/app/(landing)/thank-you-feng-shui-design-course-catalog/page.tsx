@@ -13,10 +13,11 @@ import { LeadProcessing } from '@/components/leadProcessing';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import { isEndOfYearPromotionWindow } from '@/domain/dateRange';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import { PromotionPeriod } from '@/lib/promotionPeriod';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
@@ -26,6 +27,8 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
+
+const span = PromotionPeriod.span(endOfYear2025, newYear2026);
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const data = await getServerData(props.searchParams);
@@ -46,7 +49,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   if (leadId && emailAddress) {
     try {
-      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
     } catch (err) {
       console.error(err);
     }
@@ -74,7 +77,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your feng shui design career?"
-        text={isEndOfYearPromotionWindow(date)
+        text={span.contains(date)
           ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
           : 'Become professionally certified with QC\'s online training today and start earning!'
         }
