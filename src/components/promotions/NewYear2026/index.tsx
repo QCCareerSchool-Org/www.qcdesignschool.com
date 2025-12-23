@@ -9,7 +9,7 @@ interface Props {
   countryCode: string;
 }
 
-export const HundredOff: FC<Props> = ({ countryCode }) => {
+export const NewYear2026: FC<Props> = ({ countryCode }) => {
   const heroImageSrc = gbpCountry(countryCode) ? HeroImageUK : HeroImageDefault;
 
   return (

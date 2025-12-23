@@ -2,20 +2,23 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
-import { GetStarted } from './getStarted';
 import HeroImage from './hero.jpg';
 import type { PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
+import { GetStartedSection } from '@/components/getStartedSection';
 import QIcon from '@/components/icons/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/lib/currencies';
 import { getServerData } from '@/lib/getServerData';
+import { PromotionPeriod } from '@/lib/promotionPeriod';
+import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
+const span = PromotionPeriod.span(endOfYear2025, newYear2026);
 
 export const metadata: Metadata = {
   title: 'BOGO Limited-Time Offer',
@@ -188,7 +191,14 @@ const CoursesPage: PageComponent = async props => {
         </div>
       </section>
       <SupportSection date={date} showLink />
-      <GetStarted bogoEnrollLink={bogoEnrollLink} />
+      <GetStartedSection
+        title="Get Started Today"
+        text={span.contains(date)
+          ? "Take charge of your future and become professionally certified with QC's online training today and start earning before spring!"
+          : 'Enroll Online and Start on Your Path to Becoming a Certified Designer'
+        }
+        buttonHref={bogoEnrollLink}
+      />
     </>
   );
 };

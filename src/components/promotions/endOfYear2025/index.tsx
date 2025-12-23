@@ -3,7 +3,7 @@ import type { FC } from 'react';
 
 import HeroImage from './landing-thank-you.jpg';
 
-export const NewYear2025: FC = () => {
+export const EndOfYear2025: FC = () => {
   return (
     <section className="bg-light">
       <div className="container text-center">
