@@ -150,14 +150,8 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
       <StatsSection />
       <JoinQCSection subheading="QC's Landscape Design Course provides you with:" />
       <GoogleReviewSection schemaCourseId="#course" />
-      <BottomSection>
-        <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">
-            <h2 className="mb-3">Start Your Landscape Design Career Today!</h2>
-            <p className="mb-5">Request a free course preview today to learn more about how you can become a professional landscape designer with QC's online training! The preview includes a course curriculum, tuition information and your career outlook.</p>
-            <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
-          </div>
-        </div>
+      <BottomSection heading="Start Your Landscape Design Career Today!">
+        <p className="mb-5">Request a free course preview today to learn more about how you can become a professional landscape designer with QC's online training! The preview includes a course curriculum, tuition information and your career outlook.</p>
       </BottomSection>
     </>
   );
