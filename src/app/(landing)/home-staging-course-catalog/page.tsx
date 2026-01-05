@@ -102,14 +102,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
       <JoinQCSection />
       <GoogleReviewSection courseCode="st" schemaCourseId="#course" />
       <SupportSection date={date} />
-      <BottomSection>
-        <div className="row justify-content-center">
-          <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">
-            <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
-            <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
-          </div>
-        </div>
-      </BottomSection>
+      <BottomSection />
     </>
   );
 };
