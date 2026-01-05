@@ -35,7 +35,7 @@ export const Header: FC<Props> = ({ countryCode, logoLink, buttonHref, buttonCon
               <ButtonWrapper alwaysVisible={!!buttonAlwaysVisible}>
                 {buttonHref
                   ? <Link href={buttonHref} className={buttonClass}>{buttonContent}</Link>
-                  : <ScrollLink to="top" smooth className={buttonClass}>{buttonContent}</ScrollLink>
+                  : <ScrollLink to="top" smooth duration={300} className={buttonClass}>{buttonContent}</ScrollLink>
                 }
               </ButtonWrapper>
             )}
