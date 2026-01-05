@@ -46,7 +46,7 @@ const FengShuiDesignPage: PageComponent = async props => {
     <>
       <CourseJsonLd courseCode="fs" />
       <div className={styles.page}>
-        <Header countryCode={countryCode} logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs'} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
+        <Header countryCode={countryCode} logoLink buttonContent={<>Enroll<span className="d-none d-sm-inline"> Now</span></>} buttonHref={enrollUrl} buttonClass={`btn btn-primary btn-md`} buttonAlwaysVisible={true} />
         <section className="half-padding-top bg-light">
           <div className="container">
             <div className="row justify-content-center g-s">
@@ -166,7 +166,7 @@ const FengShuiDesignPage: PageComponent = async props => {
           title="Ready to Start Your Career as a Feng Shui Designer?"
           text="Become professionally certified with QC's online feng shui design training."
           courseCodes={courseCodes}
-          buttonHref="https://enroll.qcdesignschool.com/feng-shui-overview?c=fs"
+          buttonHref={enrollUrl}
         />
       </div>
     </>

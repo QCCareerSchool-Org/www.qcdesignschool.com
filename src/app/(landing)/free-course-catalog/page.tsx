@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Link from 'next/link';
 
 import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
@@ -73,7 +72,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="i2" />
-      <Header countryCode={countryCode} logoLink buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} buttonContent={<><span><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroDesktopImage} mobile={{ src: HeroMobileImage, breakpoint: 'lg', objectPosition: '50% 100%' }} priority />
         <div className="container">
@@ -137,7 +136,6 @@ const FreeCourseCatalogPage: PageComponent = async props => {
         <div className="row justify-content-center">
           <div className="col-12 col-sm-10 col-md-8 col-lg-9 col-xxl-8">
             <h2 className="mb-5">Get Started with a Free Course Catalog</h2>
-            <Link href="#" className="btn btn-primary btn-lg">Get Your Free Catalog</Link>
           </div>
         </div>
       </BottomSection>
