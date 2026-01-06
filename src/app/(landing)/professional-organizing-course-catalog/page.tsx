@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import Link from 'next/link';
 
 import HeroImage from './background-po.jpg';
 import { BottomSection } from '../_components/bottomSection';
@@ -51,7 +50,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="po" />
-      <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">

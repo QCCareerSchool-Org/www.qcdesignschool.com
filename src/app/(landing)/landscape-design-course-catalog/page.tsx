@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 
 import ChrisTuccioImage from './chris-tuccio.jpg';
 import HeroImage from './hero.jpg';
@@ -59,7 +58,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="ld" />
-      <Header countryCode={countryCode} logoLink buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
+      <Header countryCode={countryCode} buttonContent={<><span className="text-light"><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} /></span><span className="d-none d-sm-inline">Get Your Free </span>Catalog</>} />
       <section className="text-white">
         <BackgroundImage src={HeroImage} priority />
         <Overlay backgroundColor="rgba(0,0,0,0.4)" className="d-md-none" />
