@@ -1,7 +1,7 @@
 import type { Enrollment } from '@/domain/enrollment';
 
 interface FBQ {
-  (action: 'track', type: 'PageView' | 'Lead', extra?: { eventID: string }): void;
+  (action: 'track', type: 'PageView' | 'Lead', extra?: { eventID?: string; page_url?: string }): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }, extra: { eventID: string }): void;
   (action: 'trackCustom', type: 'VirtualPageView', params: { url: string }): void;
 }
@@ -21,7 +21,8 @@ export const fbqPageview = (url?: string): void => {
       const urlObj = new URL(url);
       paramsToRemove.forEach(param => urlObj.searchParams.delete(param));
       const cleanUrl = urlObj.toString();
-      window.fbq?.('trackCustom', 'VirtualPageView', { url: cleanUrl });
+      // window.fbq?.('trackCustom', 'VirtualPageView', { url: cleanUrl });
+      window.fbq?.('track', 'PageView', { page_url: cleanUrl }); // eslint-disable-line camelcase
       return;
     } catch {
       console.error('Invalid url', url);
