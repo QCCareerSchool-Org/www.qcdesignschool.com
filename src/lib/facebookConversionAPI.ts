@@ -88,9 +88,6 @@ export const fbPostLead = async (
         action_source: 'website', // eslint-disable-line camelcase
         user_data: { // eslint-disable-line camelcase
           em: hash(normalizeEmailAddress(emailAddress)),
-          fn: typeof firstName === 'undefined' ? undefined : hash(normalizeName(firstName)),
-          ln: typeof lastName === 'undefined' ? undefined : hash(normalizeName(lastName)),
-          country: typeof countryCode === 'undefined' ? undefined : hash(countryCode.toLowerCase()),
           client_ip_address: clientIPAddress, // eslint-disable-line camelcase
           client_user_agent: clientUserAgent, // eslint-disable-line camelcase
           fbc,
@@ -101,6 +98,18 @@ export const fbPostLead = async (
       },
     ],
   };
+
+  if (typeof firstName !== 'undefined') {
+    body.data[0].user_data.fn = hash(normalizeName(firstName));
+  }
+
+  if (typeof lastName !== 'undefined') {
+    body.data[0].user_data.ln = hash(normalizeName(lastName));
+  }
+
+  if (typeof countryCode !== 'undefined') {
+    body.data[0].user_data.country = hash(countryCode.toLowerCase());
+  }
 
   const response = await fetch(url, {
     method: 'post',
