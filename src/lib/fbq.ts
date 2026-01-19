@@ -12,13 +12,22 @@ declare global {
   }
 }
 
+const paramsToRemove = [ 'firstName', 'lastName', 'telephoneNumber' ];
+
 // log the page view with a specific URL
 export const fbqPageview = (url?: string): void => {
   if (typeof url !== 'undefined') {
-    window.fbq?.('trackCustom', 'VirtualPageView', { url });
-  } else {
-    window.fbq?.('track', 'PageView');
+    try {
+      const urlObj = new URL(url);
+      paramsToRemove.forEach(param => urlObj.searchParams.delete(param));
+      const cleanUrl = urlObj.toString();
+      window.fbq?.('trackCustom', 'VirtualPageView', { url: cleanUrl });
+      return;
+    } catch {
+      console.error('Invalid url', url);
+    }
   }
+  window.fbq?.('track', 'PageView');
 };
 
 // log the conversion
