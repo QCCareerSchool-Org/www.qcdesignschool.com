@@ -12,21 +12,11 @@ declare global {
   }
 }
 
-const paramsToRemove = [ 'firstName', 'lastName', 'telephoneNumber' ];
-
 // log the page view with a specific URL
 export const fbqPageview = (url?: string): void => {
   if (typeof url !== 'undefined') {
-    try {
-      const urlObj = new URL(url);
-      paramsToRemove.forEach(param => urlObj.searchParams.delete(param));
-      const cleanUrl = urlObj.toString();
-      // window.fbq?.('trackCustom', 'VirtualPageView', { url: cleanUrl });
-      window.fbq?.('track', 'PageView', { page_url: cleanUrl }); // eslint-disable-line camelcase
-      return;
-    } catch {
-      console.error('Invalid url', url);
-    }
+    window.fbq?.('track', 'PageView', { page_url: url }); // eslint-disable-line camelcase
+    return;
   }
   window.fbq?.('track', 'PageView');
 };
