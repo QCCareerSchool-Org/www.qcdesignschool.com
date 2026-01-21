@@ -22,5 +22,5 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', \`${id.replace(/`/ug, '\\`')}\`);
-// fbq('track', 'PageView'); // let the useEffect call it
+fbq('track', 'PageView');
 `;

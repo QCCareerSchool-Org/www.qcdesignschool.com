@@ -5,7 +5,7 @@ import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { CountDownTimer } from '../countDownTimer';
 import { gbpCountry } from '@/lib/currencies';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
+import { jan21Period } from '@/lib/promotionPeriods';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 interface Props {
@@ -17,17 +17,11 @@ interface Props {
 export const Header: FC<Props> = ({ date, countryCode, provinceCode }) => {
 
   const dates: [start: number, countDown: number, end: number] | undefined = useMemo(() => {
-    if (endOfYear2025.contains(date)) {
+    if (jan21Period.contains(date)) {
       return [
-        endOfYear2025.start,
-        endOfYear2025.end - 86_400, // one day
-        endOfYear2025.end,
-      ];
-    } else if (newYear2026.contains(date)) {
-      return [
-        newYear2026.start,
-        newYear2026.end - 86_400, // one day,
-        newYear2026.end,
+        jan21Period.start,
+        jan21Period.end - 86_400, // one day
+        jan21Period.end,
       ];
     }
   }, [ date ]);
@@ -46,10 +40,7 @@ export const Header: FC<Props> = ({ date, countryCode, provinceCode }) => {
         endDate={dates[2]}
         message={(
           <span style={{ textTransform: 'uppercase' }}>
-            {endOfYear2025.contains(date)
-              ? <><span className="d-none d-lg-inline">Don't Miss Out—</span> Get a <strong>free course</strong><br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button></>
-              : <><span className="d-none d-lg-inline">Don't Miss Out—</span> Get a <strong>a free course</strong> and {discount} Off<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button></>
-            }
+            <span className="d-none d-lg-inline">Don't Miss Out—</span> Get a <strong>a free course</strong> and {discount} Off<br className="d-lg-none" /><button className="btn btn-danger my-2 btn-sm ms-3 text-uppercase">Claim Offer</button>
           </span>
         )}
       />}

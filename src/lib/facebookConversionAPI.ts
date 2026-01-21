@@ -4,9 +4,9 @@ import { createHash } from 'crypto';
 
 import type { Enrollment } from '@/domain/enrollment';
 
-const apiVersion = 'v20.0';
+const apiVersion = 'v24.0';
 const datasetId = '5372705592757225';
-const accessToken = 'EAAMUT7XQ1g0BO5wBaKj6vPYKLZBz0GZBsyGoFaGe6DMK9noiEvjUWfxNy0PKwloAqn7Lpuvi2ZCPwZAENgb2Ie5bwW7Y9ctPhP0MyY7S6ZBlvSuJ6bWHor6DPG7gbZB0FHPeWE7uHLu3WgxYPATgv9aT2H54sPmYMISUyynQxhxRBWvAHmekQyy7tVvOb7QPhvrwZDZD';
+const accessToken = 'EAFnBV4vbNNYBQkeZCrJXTnZC12CtYZAVuh0FaeyC3NtLbUC6IJO0Fk1hZAZBTuMuh8aFrxtOMZAnktLVShDHDTIubAyfh8c1m6TuTeS2xEZBR7tGiUTw5mtZCZCYy2dZBEonfzpBRgbwVfKGWMkLG3vwcPGIDw5cDxSmN2CncEiTbtIMq2ZAP1j5v3E6DVZCJi1kgHcEAgZDZD';
 
 export const fbPostPurchase = async (
   enrollment: Enrollment,

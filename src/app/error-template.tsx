@@ -7,7 +7,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import BookReaderIcon from '@/components/icons/book-reader.svg';
 import CertificationIcon from '@/components/icons/certification.svg';
 import ShieldCheckIcon from '@/components/icons/shield-check.svg';
-import { Layout } from '@/components/layout';
+import { SiteLayout } from '@/components/siteLayout';
 import { SupportSection } from '@/components/supportSection';
 
 const iconSize = 32;
@@ -16,7 +16,7 @@ export const ErrorTemplate: FC<PropsWithChildren> = ({ children }) => {
   const date = Date.now();
 
   return (
-    <Layout>
+    <SiteLayout>
       <section>
         <BackgroundImage src={HeroImage} priority />
         <div className="container text-white text-shadow">
@@ -70,6 +70,6 @@ export const ErrorTemplate: FC<PropsWithChildren> = ({ children }) => {
         </div>
       </section>
       <SupportSection date={date} showLink />
-    </Layout>
+    </SiteLayout>
   );
 };
