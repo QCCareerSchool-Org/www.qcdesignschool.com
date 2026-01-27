@@ -14,6 +14,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
+import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { PromotionPeriod } from '@/lib/promotionPeriod';
@@ -35,17 +36,18 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   const date = data.date;
   const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
-  const firstName = getParam(searchParams.firstName);
-  const lastName = getParam(searchParams.lastName);
-  const emailAddress = getParam(searchParams.emailAddress);
-  const countryCode = getParam(searchParams.countryCode) ?? data.countryCode;
-  const provinceCode = getParam(searchParams.provinceCode);
   const headerList = await headers();
   const ipAddress = headerList.get('x-real-ip') ?? undefined;
   const userAgent = headerList.get('user-agent') ?? undefined;
   const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
+
+  const lead = leadId ? await getLead(leadId) : undefined;
+
+  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+    : [];
 
   if (leadId && emailAddress) {
     try {
@@ -58,7 +60,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   return (
     <>
       <CourseJsonLd courseCode="st" />
-      <Header countryCode={countryCode} logoLink />
+      <Header countryCode={countryCode ?? 'US'} logoLink />
       <LeadProcessing
         emailAddress={emailAddress}
         countryCode={countryCode}
@@ -70,7 +72,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />
       <ThankYouSection course="staging" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <CurrentPromotion date={date} countryCode={countryCode ?? 'US'} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
