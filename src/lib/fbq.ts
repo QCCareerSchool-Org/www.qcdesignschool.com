@@ -4,7 +4,7 @@ interface Options {
   eventID?: string;
 }
 
-interface InitParams {
+export interface InitParams {
   em?: string;
   fn?: string;
   ln?: string;
