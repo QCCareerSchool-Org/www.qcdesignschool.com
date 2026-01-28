@@ -35,7 +35,6 @@ const RootLayout: LayoutComponent = ({ children }) => {
         {process.env.FACEBOOK_ID && <Facebook id={process.env.FACEBOOK_ID} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} />}
-        {process.env.PERFECT_AUDIENCE_ID && <PerfectAudience id={process.env.PERFECT_AUDIENCE_ID} />}
         <FaviconMeta />
       </head>
       <body className="d-flex flex-column">
