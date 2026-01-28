@@ -11,13 +11,16 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import { createJwt } from '@/lib/jwt';
 import { PromotionPeriod } from '@/lib/promotionPeriod';
 import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
@@ -58,8 +61,12 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     }
   }
 
+  const userValues: UserValues = { emailAddress, firstName, lastName };
+  const jwt = await createJwt(userValues);
+
   return (
     <>
+      <SetCookie name="user" value={jwt} />
       <CourseJsonLd courseCode="i2" />
       <Header countryCode={countryCode ?? 'US'} logoLink />
       <LeadProcessing

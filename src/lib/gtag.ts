@@ -20,18 +20,18 @@ export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag?.('event', action, params);
 };
 
-interface GAUserData {
+export interface GAUserData {
   email: string;
   // phone_number: string; // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
   address?: {
-    first_name: string;
-    last_name: string;
+    first_name?: string;
+    last_name?: string;
     street?: string;
     city?: string;
     region?: string;
     /** Google says "5-digit format" (seems to only consider the United States) */
-    postal_code: string;
-    country: string;
+    postal_code?: string;
+    country?: string;
   };
 }
 
