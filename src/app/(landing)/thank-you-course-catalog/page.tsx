@@ -49,8 +49,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US' ]
     : [];
 
   if (leadId && emailAddress) {
@@ -61,7 +61,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     }
   }
 
-  const userValues: UserValues = { emailAddress, firstName, lastName };
+  const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
   const jwt = await createJwt(userValues);
 
   return (

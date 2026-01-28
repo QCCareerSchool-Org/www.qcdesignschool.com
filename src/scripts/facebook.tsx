@@ -19,13 +19,25 @@ export const Facebook: FC<Props> = ({ id, userValues }) => (
 const getScript = (id: string, userValues?: UserValues): string => {
   const params: InitParams = {};
   if (userValues?.emailAddress) {
-    params.em = userValues.emailAddress;
+    params.em = userValues.emailAddress.toLowerCase();
   }
   if (userValues?.firstName) {
-    params.fn = userValues.firstName;
+    params.fn = userValues.firstName.toLowerCase();
   }
   if (userValues?.lastName) {
-    params.ln = userValues.lastName;
+    params.ln = userValues.lastName.toLowerCase();
+  }
+  if (userValues?.city) {
+    params.ct = userValues.city.toLowerCase();
+  }
+  if (userValues?.provinceCode) {
+    params.st = userValues.provinceCode.toLowerCase();
+  }
+  if (userValues?.countryCode) {
+    params.country = userValues.countryCode.toLowerCase();
+  }
+  if (userValues?.telephoneNumber) {
+    params.ph = userValues.telephoneNumber.replace(/\D/gu, '');
   }
 
   return `

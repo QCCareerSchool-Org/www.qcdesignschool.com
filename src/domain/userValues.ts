@@ -1,4 +1,4 @@
-export const userValues = [ 'emailAddress', 'firstName', 'lastName' ] as const;
+export const userValues = [ 'emailAddress', 'firstName', 'lastName', 'city', 'countryCode', 'provinceCode', 'telephoneNumber' ] as const;
 
 export type UserValue = typeof userValues[number];
 
