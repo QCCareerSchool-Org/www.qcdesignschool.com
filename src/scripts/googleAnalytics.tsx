@@ -33,15 +33,28 @@ const getSetScript = (userValues: UserValues): string => {
     email: userValues.emailAddress,
   };
 
-  if (userValues.firstName || userValues.lastName) {
+  if (userValues.telephoneNumber) {
+    params.phone_number = userValues.telephoneNumber.replace(/\D/gu, '');
+  }
+
+  if (userValues.firstName || userValues.lastName || userValues.city || userValues.provinceCode || userValues.countryCode) {
     params.address = {};
     if (userValues.firstName) {
       // eslint-disable-next-line camelcase
-      params.address.first_name = userValues.firstName;
+      params.address.first_name = userValues.firstName.toLowerCase();
     }
-    if (userValues.firstName) {
+    if (userValues.lastName) {
       // eslint-disable-next-line camelcase
-      params.address.last_name = userValues.lastName;
+      params.address.last_name = userValues.lastName.toLowerCase();
+    }
+    if (userValues.city) {
+      params.address.city = userValues.city.toLowerCase();
+    }
+    if (userValues.provinceCode) {
+      params.address.region = userValues.provinceCode.toLowerCase();
+    }
+    if (userValues.countryCode) {
+      params.address.country = userValues.countryCode.toLowerCase();
     }
   }
 
