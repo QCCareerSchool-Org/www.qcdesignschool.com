@@ -10,13 +10,16 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { LeadProcessing } from '@/components/leadProcessing';
+import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { getLead } from '@/lib/getLead';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import { createJwt } from '@/lib/jwt';
 import { PromotionPeriod } from '@/lib/promotionPeriod';
 import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
@@ -45,8 +48,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, firstName, lastName, countryCode, provinceCode ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.countryCode ?? 'US', lead.value.provinceCode ?? undefined ]
+  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US' ]
     : [];
 
   if (leadId && emailAddress) {
@@ -57,8 +60,12 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
     }
   }
 
+  const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
+  const jwt = await createJwt(userValues);
+
   return (
     <>
+      <SetCookie name="user" value={jwt} />
       <CourseJsonLd courseCode="fs" />
       <Header countryCode={countryCode ?? 'US'} logoLink />
       <LeadProcessing
