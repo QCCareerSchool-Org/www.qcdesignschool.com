@@ -27,6 +27,7 @@ export const fbqPageview = (url?: string): void => {
 };
 
 export const fbqLead = (eventId?: string): void => {
+  console.log('fbq', window.fbq);
   if (typeof eventId !== 'undefined') {
     // log the conversion with a specfic eventID
     window.fbq?.('track', 'Lead', undefined, { eventID: eventId });
