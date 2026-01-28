@@ -2,7 +2,7 @@
 
 import 'react-phone-number-input/style.css';
 import Link from 'next/link';
-import type { ChangeEventHandler, FC, FormEventHandler, ReactElement } from 'react';
+import type { ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
 import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
 import type { DefaultInputComponentProps } from 'react-phone-number-input';
@@ -83,7 +83,7 @@ export const BrevoForm: FC<Props> = props => {
     };
   }, []);
 
-  const handleSubmit: FormEventHandler = e => {
+  const handleSubmit: SubmitEventHandler = e => {
     if (submitting.current || disabled) {
       e.preventDefault();
       return;

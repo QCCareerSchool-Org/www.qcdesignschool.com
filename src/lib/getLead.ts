@@ -1,5 +1,5 @@
 import type { Result } from 'generic-result-type';
-import { failure, success } from'generic-result-type';
+import { failure, success } from 'generic-result-type';
 
 import type { Lead } from '@/domain/lead';
 import { isLead } from '@/domain/lead';
