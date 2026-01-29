@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { cookies, headers } from 'next/headers';
+import { cookies } from 'next/headers';
 
 import { CurrentPromotion } from '../_components/currentPromotion';
 import { Header } from '../_components/header';
@@ -35,26 +35,25 @@ const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 const span = PromotionPeriod.span(endOfYear2025, newYear2026);
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const data = await getServerData(props.searchParams);
+  const [ data, searchParams, cookieStore ] = await Promise.all([
+    getServerData(props.searchParams),
+    props.searchParams,
+    cookies(),
+  ]);
   const date = data.date;
-  const searchParams = await props.searchParams;
   const leadId = getParam(searchParams.leadId);
-  const headerList = await headers();
-  const ipAddress = headerList.get('x-real-ip') ?? undefined;
-  const userAgent = headerList.get('user-agent') ?? undefined;
-  const cookieStore = await cookies();
   const fbc = cookieStore.get('_fbc')?.value;
   const fbp = cookieStore.get('_fbp')?.value;
 
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US' ]
+  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip ] = lead?.success
+    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip ]
     : [];
 
   if (leadId && emailAddress) {
     try {
-      await fbPostLead(leadId, new Date(date), emailAddress, firstName, lastName, countryCode, provinceCode, ipAddress, userAgent, fbc, fbp);
+      await fbPostLead(leadId, new Date(), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
     } catch (err) {
       console.error(err);
     }
@@ -74,7 +73,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
         provinceCode={provinceCode}
         firstName={firstName}
         lastName={lastName}
-        ipAddress={ipAddress}
         leadId={leadId}
         conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
       />

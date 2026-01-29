@@ -14,6 +14,7 @@ import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
 import DownloadIcon from '@/components/icons/download.svg';
+import { useIp } from '@/hooks/useIp';
 
 interface Props {
   successLocation: string;
@@ -45,6 +46,7 @@ export const BrevoForm: FC<Props> = props => {
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
+  const ip = useIp();
 
   const showTelephone = props.countryCode === 'CA' || props.countryCode === 'US';
 
@@ -106,6 +108,7 @@ export const BrevoForm: FC<Props> = props => {
     <form action="https://leads.qccareerschool.com" method="post" className={styles.brochureForm} onSubmit={handleSubmit}>
       <CurrentPageInput />
       <JavasciptInput />
+      {ip && <input type="hidden" name="ip" value={ip} />}
       <input type="hidden" name="forward" value="0" />
       <input type="hidden" name="nonce" value={nonce} />
       <input type="hidden" name="g-recaptcha-response" value={token} />

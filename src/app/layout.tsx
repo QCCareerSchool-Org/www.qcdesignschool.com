@@ -9,6 +9,7 @@ import { LayoutClient } from './layoutClient';
 import type { LayoutComponent } from './serverComponent';
 import { isUserValues } from '@/domain/userValues';
 import { neueHaasDisplay, neueHaasText } from '@/fonts';
+import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: LayoutComponent = async ({ children }) => {
+  const { serverIp } = await getServerData();
   const jwt = (await cookies()).get('user')?.value;
   const result = jwt ? await decodeJwt(jwt) : undefined;
   const raw = result?.success ? result.value : undefined;
@@ -45,7 +47,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         <FaviconMeta />
       </head>
       <body className="d-flex flex-column">
-        <Provider userValues={userValues}>
+        <Provider userValues={userValues} serverIp={serverIp}>
           {children}
         </Provider>
         <OptInMonster />

@@ -7,6 +7,7 @@ export interface Lead {
   city: string | null;
   countryCode: string | null;
   provinceCode: string | null;
+  ip: string | null;
 }
 
 export const isLead = (obj: unknown): obj is Lead => {
@@ -18,5 +19,6 @@ export const isLead = (obj: unknown): obj is Lead => {
     'lastName' in obj && (typeof obj.lastName === 'string' || obj.lastName === null) &&
     'city' in obj && (typeof obj.city === 'string' || obj.city === null) &&
     'countryCode' in obj && (typeof obj.countryCode === 'string' || obj.countryCode === null) &&
-    'provinceCode' in obj && (typeof obj.provinceCode === 'string' || obj.provinceCode === null);
+    'provinceCode' in obj && (typeof obj.provinceCode === 'string' || obj.provinceCode === null) &&
+    'ip' in obj && (typeof obj.ip === 'string' || obj.ip === null);
 };

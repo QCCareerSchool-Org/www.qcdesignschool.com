@@ -17,7 +17,6 @@ interface Props {
   countryCode?: string;
   firstName?: string;
   lastName?: string;
-  ipAddress?: string;
   leadId?: string;
   conversionId: string;
 }
@@ -38,7 +37,7 @@ export const LeadProcessing: FC<Props> = props => {
     fbqLead(props.leadId, { emailAddress: props.emailAddress, telephoneNumber: props.telephoneNumber, city: props.city, province: props.provinceCode, country: props.countryCode, firstName: props.firstName, lastName: props.lastName });
     gaEvent('conversion', { send_to: props.conversionId });
     brevoIdentifyLead(props.emailAddress, props.countryCode, props.provinceCode, props.firstName, props.lastName);
-  }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.ipAddress, props.leadId, props.conversionId ]);
+  }, [ props.emailAddress, props.telephoneNumber, props.city, props.countryCode, props.provinceCode, props.firstName, props.lastName, props.leadId, props.conversionId ]);
 
   return null;
 };
