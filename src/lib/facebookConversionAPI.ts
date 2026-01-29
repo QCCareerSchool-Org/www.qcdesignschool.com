@@ -6,7 +6,11 @@ import type { Enrollment } from '@/domain/enrollment';
 
 const apiVersion = 'v24.0';
 const datasetId = '5372705592757225';
-const accessToken = 'EAFnBV4vbNNYBQkeZCrJXTnZC12CtYZAVuh0FaeyC3NtLbUC6IJO0Fk1hZAZBTuMuh8aFrxtOMZAnktLVShDHDTIubAyfh8c1m6TuTeS2xEZBR7tGiUTw5mtZCZCYy2dZBEonfzpBRgbwVfKGWMkLG3vwcPGIDw5cDxSmN2CncEiTbtIMq2ZAP1j5v3E6DVZCJi1kgHcEAgZDZD';
+const accessToken = process.env.FACEBOOK_ACCESS_TOKEN;
+
+if (!accessToken) {
+  throw Error('Access token not found');
+}
 
 export const fbPostPurchase = async (
   enrollment: Enrollment,

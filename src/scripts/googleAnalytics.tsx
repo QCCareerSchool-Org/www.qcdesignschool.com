@@ -34,6 +34,7 @@ const getSetScript = (userValues: UserValues): string => {
   };
 
   if (userValues.telephoneNumber) {
+    // eslint-disable-next-line camelcase
     params.phone_number = userValues.telephoneNumber.replace(/\D/gu, '');
   }
 
