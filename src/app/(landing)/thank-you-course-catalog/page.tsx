@@ -65,7 +65,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
 
   return (
     <>
-      <SetCookie name="user" value={jwt} />
+      <SetCookie name="user" value={jwt} domain="qcdesignschool.com" />
       <CourseJsonLd courseCode="i2" />
       <Header countryCode={countryCode ?? 'US'} logoLink />
       <LeadProcessing
