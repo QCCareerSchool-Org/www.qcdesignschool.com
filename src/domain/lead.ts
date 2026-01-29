@@ -8,6 +8,8 @@ export interface Lead {
   countryCode: string | null;
   provinceCode: string | null;
   ip: string | null;
+  /** milliseconds since midnight, January 1, 1970 UTC */
+  created: number;
 }
 
 export const isLead = (obj: unknown): obj is Lead => {
