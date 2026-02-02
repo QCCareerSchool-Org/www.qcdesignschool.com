@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { cookies, headers } from 'next/headers';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
@@ -8,12 +8,15 @@ import AlexSignatureImage from './alex-myers.png';
 import { Processing } from './processing';
 import type { PageComponent } from '@/app/serverComponent';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
+import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';
+import type { UserValues } from '@/domain/userValues';
 import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
 import { getServerData } from '@/lib/getServerData';
+import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 
 const brevoStudentListId = 15;
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
-  const { date } = await getServerData(searchParams);
+  const { date, fbc, fbp, userValues } = await getServerData(searchParams);
   const { enrollmentId: enrollmentIdParam, code: codeParam } = await searchParams;
 
   if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {
@@ -43,14 +46,12 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
     redirect('/');
   }
 
+  let jwt: string | null = null;
+
   if (!enrollment.emailed) {
     const headerList = await headers();
     const ipAddress = headerList.get('x-real-ip');
     const userAgent = headerList.get('user-agent');
-
-    const cookieStore = await cookies();
-    const fbc = cookieStore.get('_fbc')?.value;
-    const fbp = cookieStore.get('_fbp')?.value;
 
     // send email
     try {
@@ -82,10 +83,25 @@ const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
         console.error(err);
       }
     }
+
+    const newUserValues: UserValues = {
+      ...userValues,
+      emailAddress: enrollment.emailAddress,
+      firstName: enrollment.firstName,
+      lastName: enrollment.lastName,
+      telephoneNumber: enrollment.telephoneNumber,
+      city: enrollment.city,
+      countryCode: enrollment.countryCode,
+    };
+    if (enrollment.provinceCode) {
+      newUserValues.provinceCode = enrollment.provinceCode;
+    }
+    jwt = await createJwt(newUserValues);
   }
 
   return (
     <>
+      {jwt && <SetCookie name="user" value={jwt} domain="qcdesignschool.com" />}
       <section>
         <div className="container">
           <div className="row justify-content-center align-items-center g-5">
