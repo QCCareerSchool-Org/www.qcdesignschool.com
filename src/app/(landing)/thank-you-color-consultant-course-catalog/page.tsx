@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { cookies } from 'next/headers';
 
 import { CurrentPromotion } from '../_components/currentPromotion';
 import { Header } from '../_components/header';
@@ -35,49 +34,74 @@ const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 const span = PromotionPeriod.span(endOfYear2025, newYear2026);
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
-  const [ data, searchParams, cookieStore ] = await Promise.all([
+  const [ data, searchParams ] = await Promise.all([
     getServerData(props.searchParams),
     props.searchParams,
-    cookies(),
   ]);
   const date = data.date;
   const leadId = getParam(searchParams.leadId);
-  const fbc = cookieStore.get('_fbc')?.value;
-  const fbp = cookieStore.get('_fbp')?.value;
-
   const lead = leadId ? await getLead(leadId) : undefined;
 
-  const [ emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode, ip, created ] = lead?.success
-    ? [ lead.value.emailAddress, lead.value.telephoneNumber ?? undefined, lead.value.firstName ?? undefined, lead.value.lastName ?? undefined, lead.value.city ?? undefined, lead.value.provinceCode ?? undefined, lead.value.countryCode ?? 'US', lead.value.ip, lead.value.created ]
-    : [];
+  let jwt: string | null = null;
 
-  if (leadId && emailAddress) {
-    try {
-      await fbPostLead(leadId, new Date(created ?? date), emailAddress, firstName, lastName, countryCode, provinceCode, ip ?? data.serverIp, data.userAgent, fbc, fbp);
-    } catch (err) {
-      console.error(err);
+  let recent = false;
+
+  if (lead?.success) {
+    recent = lead.value.created < date + 604_800_000; // 7 days
+    if (!recent) {
+      try {
+        await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.serverIp, data.userAgent, data.fbc, data.fbp);
+      } catch (err) {
+        console.error(err);
+      }
     }
+    const userValues: UserValues = {
+      ...data.userValues,
+      emailAddress: lead.value.emailAddress,
+    };
+    if (lead.value.telephoneNumber) {
+      userValues.telephoneNumber = lead.value.telephoneNumber;
+    }
+    if (lead.value.firstName) {
+      userValues.firstName = lead.value.firstName;
+    }
+    if (lead.value.lastName) {
+      userValues.lastName = lead.value.lastName;
+    }
+    if (lead.value.city) {
+      userValues.city = lead.value.city;
+    }
+    if (lead.value.provinceCode) {
+      userValues.provinceCode = lead.value.provinceCode;
+    }
+    if (lead.value.countryCode) {
+      userValues.countryCode = lead.value.countryCode;
+    }
+    jwt = await createJwt(userValues);
   }
 
-  const userValues: UserValues = { emailAddress, telephoneNumber, firstName, lastName, city, provinceCode, countryCode };
-  const jwt = await createJwt(userValues);
+  const countryCode = lead?.success ? lead.value.countryCode ?? 'US' : 'US';
 
   return (
     <>
-      <SetCookie name="user" value={jwt} domain="qcdesignschool.com" />
+      {jwt && <SetCookie name="user" value={jwt} domain="qcdesignschool.com" />}
       <CourseJsonLd courseCode="cc" />
-      <Header countryCode={countryCode ?? 'US'} logoLink />
-      <LeadProcessing
-        emailAddress={emailAddress}
-        countryCode={countryCode}
-        provinceCode={provinceCode}
-        firstName={firstName}
-        lastName={lastName}
-        leadId={leadId}
-        conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
-      />
-      <ThankYouSection heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
-      <CurrentPromotion date={date} countryCode={countryCode ?? 'US'} />
+      <Header countryCode={countryCode} logoLink />
+      {lead?.success && recent && (
+        <LeadProcessing
+          emailAddress={lead.value.emailAddress}
+          telephoneNumber={lead.value.telephoneNumber}
+          city={lead.value.city}
+          countryCode={lead.value.countryCode}
+          provinceCode={lead.value.provinceCode}
+          firstName={lead.value.firstName}
+          lastName={lead.value.lastName}
+          leadId={lead.value.leadId}
+          conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
+        />
+      )}
+      <ThankYouSection heroSrc={HeroDesktopImage} emailAddress={lead?.success ? lead.value.emailAddress : undefined} />
+      <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
