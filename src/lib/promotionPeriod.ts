@@ -7,6 +7,11 @@ export class PromotionPeriod {
     }
   }
 
+  /**
+   * Creates a new range spanning from the earliest start date to the latest end date
+   * @param ranges the ranges to conside
+   * @returns the new range
+   */
   public static span(...ranges: readonly PromotionPeriod[]): PromotionPeriod {
     if (ranges.length === 0) {
       throw new Error('Need at least one range');
@@ -31,3 +36,17 @@ export class PromotionPeriod {
 
   public toString = (): string => `[${PromotionPeriod.formatter.format(this.start)}, ${PromotionPeriod.formatter.format(this.end)})`;
 }
+
+export class PromotionPeriodWithLastChance extends PromotionPeriod {
+
+  constructor(readonly start: number, public readonly lastChance: number, readonly end: number) {
+    super(start, end);
+    if (lastChance > end) {
+      throw new Error('Last chance date must be <= end date');
+    }
+  }
+
+  public PreLastChanceContains = (d: number) => d >= this.start && d < this.lastChance;
+
+  public PostLastChanceContains = (d: number) => d >= this.lastChance && d < this.end;
+};
