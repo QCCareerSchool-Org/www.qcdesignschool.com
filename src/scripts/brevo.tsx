@@ -18,7 +18,7 @@ const getScript = (clientKey: string, emailAddress?: string): string => `
     equeue: [],
     client_key: \`${clientKey.replace(/`/ug, '\\`')}\`
   };
-  ${emailAddress ? `window.sib.email_id = ${JSON.stringify(emailAddress)};\n` : ``};
+  ${emailAddress ? `window.sib.email_id = ${JSON.stringify(emailAddress)};\n` : ``}
   window.sendinblue = {};
   for (var j = ['track', 'identify', 'trackLink', 'page'], i = 0; i < j.length; i++) {
     (function(k) {
