@@ -15,6 +15,7 @@ import { addToIDevAffiliate } from '@/lib/addToIDevAffiliate';
 import { createBrevoContact } from '@/lib/brevoAPI';
 import { fbPostPurchase } from '@/lib/facebookConversionAPI';
 import { getEnrollment } from '@/lib/fetch';
+import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
@@ -27,11 +28,13 @@ export const metadata: Metadata = {
   alternates: { canonical: '/welcome-to-the-school' },
 };
 
-const WelcomeToTheSchoolPage: PageComponent = async ({ searchParams }) => {
-  const { date, fbc, fbp, userValues } = await getServerData(searchParams);
-  const { enrollmentId: enrollmentIdParam, code: codeParam } = await searchParams;
+const WelcomeToTheSchoolPage: PageComponent = async props => {
+  const { date, fbc, fbp, userValues } = await getServerData(props.searchParams);
+  const searchParams = await props.searchParams;
+  const enrollmentIdParam = getParam(searchParams.enrollmentId);
+  const codeParam = getParam(searchParams.code);
 
-  if (typeof enrollmentIdParam !== 'string' || typeof codeParam !== 'string') {
+  if (typeof enrollmentIdParam === 'undefined' || typeof codeParam === 'undefined') {
     redirect('/');
   }
 

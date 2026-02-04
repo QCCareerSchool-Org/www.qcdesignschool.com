@@ -83,7 +83,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
-                    successLocation={`${process.env.HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
+                    successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
                     listId={brevoListId}
                     telephoneListId={50}
                     emailTemplateId={brevoEmailTemplateId}
