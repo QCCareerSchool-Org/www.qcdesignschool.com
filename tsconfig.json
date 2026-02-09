@@ -30,6 +30,7 @@
   },
   "include": [
     "svg-override.d.ts",
+    "lottie.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

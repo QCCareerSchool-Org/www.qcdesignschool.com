@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
     config.module.rules.push({
       test: /\.svg$/u,
       use: [ '@svgr/webpack' ],
+    }, {
+      test: /\.lottie$/u,
+      type: 'asset/resource',
     });
 
     return config;

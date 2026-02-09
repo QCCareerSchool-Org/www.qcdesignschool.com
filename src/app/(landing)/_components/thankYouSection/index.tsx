@@ -1,11 +1,16 @@
+'use client';
+
+import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
 import type { FC } from 'react';
 
+import emailNotification from './Email Notification.json';
+import styles from './index.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import DownloadIcon from '@/components/icons/download.svg';
-import LockIcon from '@/components/icons/q-lock.svg';
+import { Squiggle } from '@/components/squiggle';
 
 interface Props {
   course?: string;
@@ -16,6 +21,7 @@ interface Props {
 
 export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
   const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';
+  const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.75)}em` : 220;
 
   return (
     <section className="text-white">
@@ -27,14 +33,14 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
         <div className="row g-0">
           <div className="col-12 col-md-7 col-lg-6 col-xl-5 order-lg-first text-center">
             <FormCard>
-              <div style={{ margin: '3rem 0' }}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: 100, height: 100, borderRadius: 50, border: '1px solid #E5E7EB', background: 'white', margin: '0 auto 2rem', color: '#2840e0' }}>
-                  <LockIcon height="50" />
-                </div>
-                <h1 className="h4 mb-4 text-navy">Catalog Unlocked!</h1>
+              <div style={{ margin: '0 0 1rem' }}>
+                <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
+                <h1 className="h4 mb-4 text-navy">Thank You! Your Catalog Is Below</h1>
                 <FormWrapper>
-                  <p className="lead mb-4">Your catalog is ready! We'll also email a copy{emailAddress ? <> to <strong>{emailAddress}</strong></> : <></>} with insider tips and insights about our school&mdash;check your inbox (and Promotions or Spam folder) so you don't miss it.</p>
-                  <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> Download Catalog Now</button></a>
+                  <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
+                  <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
+                  <p className="mb-4">Be sure to check your <strong>spam</strong> or <strong>promotions</strong> folder if you don't see it right away&mdash;you don't want to miss this!</p>
+                  <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> View Catalog</button></a>
                 </FormWrapper>
               </div>
             </FormCard>
