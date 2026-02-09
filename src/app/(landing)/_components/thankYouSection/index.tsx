@@ -21,7 +21,7 @@ interface Props {
 
 export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
   const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';
-  const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.75)}em` : 220;
+  const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
 
   return (
     <section className="text-white">
