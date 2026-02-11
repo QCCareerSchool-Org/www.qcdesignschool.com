@@ -1,6 +1,6 @@
 {
   "name": "www.qcdesignschool.com",
-  "version": "1.2.71",
+  "version": "1.2.72",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
-    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@getbrevo/brevo": "^3.0.1",
     "@next/third-parties": "16.1.6",
     "big.js": "^7.0.1",
@@ -22,8 +21,6 @@
     "jose": "^6.1.3",
     "lottie-react": "^2.4.1",
     "next": "16.1.6",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-import": "^16.1.1",
     "qs": "^6.14.1",
     "rc-slider": "^11.1.9",
     "react": "19.2.4",
@@ -45,6 +42,7 @@
     "@eslint/compat": "^2.0.2",
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.1",
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "@stylistic/eslint-plugin": "^5.8.0",
     "@svgr/webpack": "^8.1.0",
     "@swc/jest": "^0.2.39",
@@ -66,6 +64,8 @@
     "jest": "^30.2.0",
     "jest-environment-jsdom": "^30.2.0",
     "jiti": "^2.6.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^16.1.1",
     "postcss-load-config": "^6.0.1",
     "postcss-preset-env": "^11.1.3",
     "sass": "^1.97.3",
