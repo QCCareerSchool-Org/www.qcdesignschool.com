@@ -14,8 +14,6 @@ import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import { PromotionPeriod } from '@/lib/promotionPeriod';
-import { endOfYear2025, newYear2026 } from '@/lib/promotionPeriods';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',
@@ -25,8 +23,6 @@ export const metadata: Metadata = {
 };
 
 const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
-
-const span = PromotionPeriod.span(endOfYear2025, newYear2026);
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
@@ -57,10 +53,8 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <GuaranteeSection />
       <GetStartedSection
         title="Ready to start your feng shui design career?"
-        text={span.contains(date)
-          ? 'Take charge of your future and become professionally certified with QC\'s online training today and start earning before spring!'
-          : 'Become professionally certified with QC\'s online training today and start earning!'
-        }
+        text="Become professionally certified with QC's online training today and start earning!"
+
       />
     </>
   );
