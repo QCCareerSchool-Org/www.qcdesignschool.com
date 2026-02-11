@@ -3,7 +3,7 @@
 import type { FC } from 'react';
 
 import { NewYear2026 } from '@/components/promotions/NewYear2026';
-import { jan21Period } from '@/lib/promotionPeriods';
+import { jan21Period } from '@/lib/periods';
 
 interface Props {
   date: number;

@@ -5,7 +5,7 @@ import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { PromoBanner } from './promoBanner';
 import { gbpCountry } from '@/lib/currencies';
-import { feb04, feb13 } from '@/lib/promotionPeriods';
+import { feb04, feb13 } from '@/lib/periods';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 interface Props {
