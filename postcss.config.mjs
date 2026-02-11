@@ -11,7 +11,7 @@ const purgeCssOptions = {
   safelist: {
     standard: [ 'html', 'body' ],
     deep: [ /modal-/u, /show/u, /fade/u, /nav/u ],
-    greedy: [ /^Toastify/u ],
+    greedy: [ /^Toastify/u, /^react-multi-carousel/u ],
   },
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
 };
