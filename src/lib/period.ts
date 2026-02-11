@@ -1,10 +1,10 @@
-// what gets passed to client components
+/** what can be passed from server to client components */
 export interface BasePeriod {
   start: number;
   end: number;
 };
 
-// what gets passed to client components
+/** what can be passed from server to client components */
 export interface BaseLastChancePeriod extends BasePeriod {
   lastChance: number;
 };
@@ -15,7 +15,7 @@ export interface IPeriod extends BasePeriod {
   toObject: () => BasePeriod;
 }
 
-export interface ILastChancePeriod extends BasePeriod, IPeriod {
+export interface ILastChancePeriod extends IPeriod, BaseLastChancePeriod {
   preLastChanceContains: (date: number) => boolean;
   postLastChanceContains: (date: number) => boolean;
 };
@@ -34,7 +34,7 @@ export class Period implements IPeriod {
    * @param ranges the ranges to conside
    * @returns the new range
    */
-  public static span(...ranges: readonly Period[]): Period {
+  public static span(...ranges: readonly BasePeriod[]): Period {
     if (ranges.length === 0) {
       throw new Error('Need at least one range');
     }
@@ -63,10 +63,13 @@ export class Period implements IPeriod {
 
 export class LastChancePeriod extends Period implements ILastChancePeriod {
 
-  constructor(readonly start: number, public readonly lastChance: number, readonly end: number) {
+  constructor(public readonly start: number, public readonly lastChance: number, public readonly end: number) {
     super(start, end);
     if (lastChance > end) {
       throw new Error('Last chance date must be <= end date');
+    }
+    if (start > lastChance) {
+      throw new Error('Start date must be <= last chance date');
     }
   }
 
