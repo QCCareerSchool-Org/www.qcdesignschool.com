@@ -1,6 +1,6 @@
 {
   "name": "www.qcdesignschool.com",
-  "version": "1.2.69",
+  "version": "1.2.70",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
