@@ -1,18 +1,21 @@
 import Script from 'next/script';
 import type { FC } from 'react';
 
+import { safeJSON } from '@/lib/safeJSON';
+
 interface Props {
   conversationsId: string;
+  groupId: string;
 }
 
-export const BrevoConversations: FC<Props> = ({ conversationsId }) => (
-  <Script id="brevoConversations" dangerouslySetInnerHTML={{ __html: getScript(conversationsId) }} />
+export const BrevoConversations: FC<Props> = ({ conversationsId, groupId }) => (
+  <Script id="brevoConversations" dangerouslySetInnerHTML={{ __html: getScript(conversationsId, groupId) }} />
 );
 
-const getScript = (conversationsId: string): string => `
-window.BrevoConversationsGroupID = 'AuwmFhraav7jYRZPf';
+const getScript = (conversationsId: string, groupId: string): string => `
+window.BrevoConversationsGroupID = ${safeJSON(groupId)};
 (function(d, w, c) {
-  w.BrevoConversationsID = \`${conversationsId.replace(/`/ug, '\\`')}\`;
+  w.BrevoConversationsID = ${safeJSON(conversationsId)};
   w[c] = w[c] || function() {
     (w[c].q = w[c].q || []).push(arguments);
   };
@@ -27,7 +30,5 @@ BrevoConversations('setColors', {
     visitorBubbleBg: '#0013de', /* visitor's message bubble color */
     agentBubbleBg: '#ddd', /* agent's message bubble color */
 });
-BrevoConversations('updateIntegrationData', {
-  school: 'QC Design School',
-});
+BrevoConversations('updateIntegrationData', { school: 'QC Design School' });
 `;
