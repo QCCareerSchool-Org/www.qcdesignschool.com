@@ -7,6 +7,4 @@ interface Props {
   countryCode: string;
 }
 
-export const CurrentPromotion: FC<Props> = () => {
-  return null;
-};
+export const CurrentPromotion: FC<Props> = () => null;
