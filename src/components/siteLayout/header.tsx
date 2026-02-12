@@ -5,8 +5,8 @@ import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { PromoBanner } from './promoBanner';
 import { gbpCountry } from '@/lib/currencies';
-import { feb04, feb13 } from '@/lib/periods';
 import { getDesignRestricted } from '@/lib/restrictions';
+import { feb04, feb13 } from '@/periods';
 
 interface Props {
   date: number;
@@ -23,13 +23,13 @@ export const Header: FC<Props> = ({ date, countryCode, provinceCode }) => {
       {/* {countryCode === 'CA' && <CanadaHeader />} */}
       {feb04.contains(date)
         ? (
-          <PromoBanner date={date} promotionPeriod={feb04.toObject()}>
+          <PromoBanner date={date} promotionPeriod={feb04.toDTO()}>
             <span className="d-none d-lg-inline">Don't Miss Out—</span>Enroll Today and Get a Second Course <strong>Free!</strong>
           </PromoBanner>
         )
         : feb13.contains(date)
           ? (
-            <PromoBanner date={date} promotionPeriod={feb13.toObject()}>
+            <PromoBanner date={date} promotionPeriod={feb13.toDTO()}>
               <span className="d-none d-lg-inline">Limited-Time Offer—</span>Get a Second Course <strong>Free</strong> + {discount} off
             </PromoBanner>
           )
