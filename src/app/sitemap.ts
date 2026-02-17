@@ -67,6 +67,8 @@ const getVideoPages = (): MetadataRoute.Sitemap => {
     url: v.player_loc,
     lastModified: v.publication_date,
     priority: 0.5,
+    images: [ v.thumbnail_loc ],
+    videos: [ escapeXmlObject(v) ],
   }));
 };
 
