@@ -53,7 +53,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <div className="row justify-content-center g-s">
             <div className="col-12">
               <Hero src={HeroImage} priority objectPosition="100% 0">
-                <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
+                <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification!!!!!</CourseType>
                 <h1 className="mb-2 mb-xl-4">Interior {designRestricted ? 'Decorating' : 'Design'} Course</h1>
                 <p className="h5 mb-3 mb-xl-5">Become a Professional Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
                 <div className="d-flex justify-content-center justify-content-md-start">
