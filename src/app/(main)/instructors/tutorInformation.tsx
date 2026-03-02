@@ -9,7 +9,6 @@ import IvyEllerbyImage from '@/components/tutors/ivyEllerby.jpg';
 import JaneLockhartImage from '@/components/tutors/janeLockhart.jpg';
 import LianneCouvisImage from '@/components/tutors/lianne.jpg';
 import MargaretLouderbackImage from '@/components/tutors/Margaret.jpg';
-import MwaiYeboahImage from '@/components/tutors/mwai.jpg';
 import PatriziaBolandImage from '@/components/tutors/patrizia.jpg';
 import ReneeTucciImage from '@/components/tutors/reneeTucci.jpg';
 import SaraJonesImage from '@/components/tutors/Sara.jpg';
@@ -36,11 +35,6 @@ export const experts: InstructorInformation[] = [
     name: 'Renee Tucci',
     description: 'With over 20 years of floral design experience, Renee Tucci, recognized by the American Institute of Floral Designers and Professional Floral Communicators International, is a dedicated instructor in the QC course, guiding students to master the art of floral design.',
     src: ReneeTucciImage,
-  },
-  {
-    name: 'Mwai Yeboah',
-    description: 'Mwai Yeboah, founder of Love From Mwai and multi-award winning planner, specializes in destination wedding planning. As the lead planner and designer, she transforms weddings and events into immersive experiences for luxury clients worldwide.',
-    src: MwaiYeboahImage,
   },
   {
     name: 'Angie Chapman',
