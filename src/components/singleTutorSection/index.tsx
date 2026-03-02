@@ -2,15 +2,18 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
+import { ImageCircle } from '../imageCircle';
+
 interface Props {
   courseName: string;
   description: string;
   src: StaticImageData;
   tutorName: string;
   className?: string;
+  mask?: boolean;
 }
 
-export const SingleTutorSection: FC<Props> = ({ description, src, tutorName, className }) => (
+export const SingleTutorSection: FC<Props> = ({ description, src, tutorName, className, mask }) => (
   <section id="instructors" className={className}>
     <div className="container">
       <div className="row justify-content-center align-items-center g-lg-s">
@@ -19,7 +22,10 @@ export const SingleTutorSection: FC<Props> = ({ description, src, tutorName, cla
           <p className="mb-0">{description}</p>
         </div>
         <div className="col-8 col-sm-6 col-lg-5 col-xl-4">
-          <Image src={src} alt={tutorName} className="img-fluid" />
+          {mask
+            ? <ImageCircle src={src} size={300} alt={tutorName} />
+            : <Image src={src} alt={tutorName} className="img-fluid" />
+          }
         </div>
       </div>
     </div>
