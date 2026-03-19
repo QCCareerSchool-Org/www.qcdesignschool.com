@@ -42,7 +42,6 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           firstName={lead.firstName}
           lastName={lead.lastName}
           leadId={lead.leadId}
-          conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
         />
       )}
       <ThankYouSection course="organizing" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />

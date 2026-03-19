@@ -41,7 +41,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           provinceCode={lead.provinceCode}
           firstName={lead.firstName}
           lastName={lead.lastName}
-          leadId={lead.leadId} conversionId="AW-1071836607/5nunCL-7PhC_24v_Aw"
+          leadId={lead.leadId}
         />
       )}
       <ThankYouSection course="landscape" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
