@@ -93,7 +93,7 @@ export const fbqSale = (enrollment: Enrollment): void => {
       ln: normalizeName(enrollment.lastName),
       ph: normalizeTelephoneNumber(enrollment.telephoneNumber),
       ct: normalizeCity(enrollment.city),
-      country: enrollment.countryCode,
+      country: enrollment.countryCode.toLowerCase(),
     };
 
     if (enrollment.provinceCode) {

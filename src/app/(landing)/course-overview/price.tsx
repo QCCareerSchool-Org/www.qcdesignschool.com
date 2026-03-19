@@ -22,8 +22,7 @@ import BackgroundVD from '@/app/(main)/online-courses/virtual-design/hero.jpg';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
 import type { Price as PriceType } from '@/domain/price';
-import type { PriceQuery } from '@/lib/fetch';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { formatPrice } from '@/lib/formatPrice';
 
 interface Props {
@@ -33,20 +32,12 @@ interface Props {
 }
 
 export const Price: FC<PropsWithChildren<Props>> = memo(async ({ countryCode, provinceCode, courseCode }) => {
-  const priceQuery: PriceQuery = {
-    countryCode,
-    provinceCode: provinceCode ?? undefined,
-    courses: [ courseCode ],
-    options: {
-      promoCode: '100OFF',
-    },
-  };
-
-  const price = await fetchPrice(priceQuery);
-
-  if (!price) {
+  const priceResult = await fetchPrice([ courseCode ], countryCode, provinceCode, { promoCode: '100OFF' });
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   return (
     <div className="col-12 col-lg-8">

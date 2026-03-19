@@ -12,7 +12,7 @@ import QIcon from '@/components/icons/q-logo.svg';
 import { Subtitle } from '@/components/subtitle';
 import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';

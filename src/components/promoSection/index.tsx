@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import BlackFridayBadge from './bf-label.png';
 import styles from './index.module.css';
 import TagIcon from '@/components/icons/tag.svg';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 
 interface Props {
   date: number;

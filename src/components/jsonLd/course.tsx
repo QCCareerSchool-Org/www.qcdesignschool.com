@@ -3,8 +3,7 @@ import type { Course, Offer, WithContext } from 'schema-dts';
 
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 import { withSuspense } from '@/withSuspense';
 
@@ -56,14 +55,13 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
   };
 
   if (showPrice) {
-    const priceQuery: PriceQuery = { countryCode: 'US', provinceCode: 'MD', courses: [ courseCode ] };
-    const price = await fetchPrice(priceQuery);
+    const priceResult = await fetchPrice([ courseCode ], 'US', 'MD');
 
-    if (price) {
+    if (priceResult.success) {
       course.offers = {
         '@type': 'Offer',
-        'price': price.discountedCost.toFixed(2),
-        'priceCurrency': price.currency.code,
+        'price': priceResult.value.discountedCost.toFixed(2),
+        'priceCurrency': priceResult.value.currency.code,
         'url': 'https://enroll.qcdesignschool.com',
         'availability': 'https://schema.org/InStock',
       } satisfies Offer;

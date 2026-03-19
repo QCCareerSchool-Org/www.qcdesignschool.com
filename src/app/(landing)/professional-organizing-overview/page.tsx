@@ -26,7 +26,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
