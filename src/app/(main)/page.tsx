@@ -25,7 +25,8 @@ import { DesignPartnerSection } from '@/components/partners/designPartnerSection
 import { PromoSection } from '@/components/promoSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { type CourseCode, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
+import type { CourseCode } from '@/domain/courseCode';
+import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';

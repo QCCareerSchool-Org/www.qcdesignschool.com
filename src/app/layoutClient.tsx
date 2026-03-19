@@ -5,6 +5,7 @@ import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
 import { brevoPageview } from '@/lib/brevo';
+import { resetOptInMonster } from '@/lib/optInMonster';
 
 export const LayoutClient: FC = () => {
   const countRef = useRef(0);
@@ -25,6 +26,8 @@ export const LayoutClient: FC = () => {
       if (pathname) {
         const title = document.title;
         brevoPageview(title, url, pathname);
+
+        resetOptInMonster();
       }
     }
     countRef.current++;

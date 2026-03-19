@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { type FC, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
 
 import type { studentTeamMember } from './data';
 import { StudentSuccessTeam } from './data';

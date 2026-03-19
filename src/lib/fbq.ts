@@ -20,7 +20,6 @@ interface FBQ {
   (action: 'track', type: 'Lead', params?: Record<never, string>, options?: Options): void;
   (action: 'track', type: 'PageView', params?: { page_url?: string }, options?: Options): void;
   (action: 'track', type: 'Purchase', params: { value: number; currency: string }, options: Options): void;
-  (action: 'trackCustom', type: 'VirtualPageView', params: { url: string }): void;
 }
 
 declare global {
@@ -93,7 +92,7 @@ export const fbqSale = (enrollment: Enrollment): void => {
       ln: normalizeName(enrollment.lastName),
       ph: normalizeTelephoneNumber(enrollment.telephoneNumber),
       ct: normalizeCity(enrollment.city),
-      country: enrollment.countryCode,
+      country: enrollment.countryCode.toLowerCase(),
     };
 
     if (enrollment.provinceCode) {

@@ -10,7 +10,8 @@ import { getHeroImage } from '../hero/getHeroImage';
 import { Subtitle } from '../subtitle';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseName } from '@/domain/courseCode';
-import { fetchPrice } from '@/lib/fetch';
+import type { Price } from '@/domain/price';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 
 interface Props {
@@ -27,13 +28,22 @@ interface Props {
 
 export const CourseTuitionCard: FC<Props> = async props => {
   const { countryCode, provinceCode } = await getServerData();
-  const price = props.showPrice ? await fetchPrice({ courses: [ props.courseCode ], countryCode, provinceCode: provinceCode ?? undefined }) : null;
+
+  let price: Price | null = null;
+  if (props.showPrice) {
+    const priceResult = await fetchPrice([ props.courseCode ], countryCode, provinceCode);
+    if (priceResult.success) {
+      price = priceResult.value;
+    }
+  }
+
   const enrollLink = `${props.enrollLink ?? 'https://enroll.qcdesignschool.com'}?c=${encodeURIComponent(props.courseCode)}`;
+
   return (
     <div className={`${styles.courseCard} card`}>
       <div className={styles.imageWrapper}>
         <Image src={getHeroImage(props.courseCode)} className="card-img-top" fill style={{ objectFit: 'cover' }} alt="" />
-        {props.showPrice
+        {price
           ? (
             <>
               <div className={styles.imageOverlay} />

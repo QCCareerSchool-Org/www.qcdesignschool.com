@@ -5,8 +5,7 @@ import { Full } from './full';
 import { PaymentSectionGuarantee } from './guarantee';
 import { Part } from './part';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PriceQuery } from '@/lib/fetch';
-import { fetchPrice } from '@/lib/fetch';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import { withSuspense } from '@/withSuspense';
 
@@ -22,11 +21,12 @@ interface Props {
 
 const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb }) => {
   const { countryCode, provinceCode } = await getServerData();
-  const priceQuery: PriceQuery = { countryCode, provinceCode: provinceCode ?? undefined, courses: courseCodes };
-  const price = await fetchPrice(priceQuery);
-  if (!price) {
+  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  if (!priceResult.success) {
     return null;
   }
+
+  const price = priceResult.value;
 
   const href = 'https://enroll.qcdesignschool.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
 

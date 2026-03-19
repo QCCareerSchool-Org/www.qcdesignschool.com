@@ -169,7 +169,7 @@ const eslintConfig = defineConfig([
       'yield-star-spacing': 'error',
 
       // @typescript-eslint rules
-      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/consistent-type-imports': [ 'error', { prefer: 'type-imports', fixStyle: 'separate-type-imports' } ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-member-accessibility': 'off',
       '@typescript-eslint/member-ordering': 'error',
@@ -263,6 +263,7 @@ const eslintConfig = defineConfig([
 
       'react-hooks/purity': 'off',
 
+      'import/consistent-type-specifier-style': [ 'error', 'prefer-top-level' ],
       'import/order': [ 'error', {
         'alphabetize': {
           order: 'asc',

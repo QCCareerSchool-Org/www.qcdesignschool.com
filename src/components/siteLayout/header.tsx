@@ -4,7 +4,7 @@ import styles from './header.module.css';
 import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { PromoBanner } from './promoBanner';
-import { gbpCountry } from '@/lib/currencies';
+import { gbpCountry } from '@/domain/currency';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { mar18 } from '@/periods';
 
