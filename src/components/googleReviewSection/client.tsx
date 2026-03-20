@@ -3,10 +3,10 @@
 import type { FC, PropsWithChildren } from 'react';
 
 import { GoogleCarousel } from './googleCarousel';
-import { useScreenWidth } from '@/hooks/useScreenWidth';
+import { useScreenWidthContex } from '@/hooks/useScreenWidthContext';
 
 export const GoogleReviewSectionClient: FC<PropsWithChildren> = ({ children }) => {
-  const screenWidth = useScreenWidth();
+  const screenWidth = useScreenWidthContex();
 
   return (
     <GoogleCarousel mobile={screenWidth < 992}>
