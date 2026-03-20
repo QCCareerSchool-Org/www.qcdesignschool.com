@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { headers } from 'next/headers';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async props => {
-  const { date, fbc, fbp, userValues } = await getServerData(props.searchParams);
+  const { date, clientIp, fbc, fbp, userAgent, userValues } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
@@ -56,15 +55,10 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
   let jwt: string | null = null;
 
   if (!enrollment.emailed) {
-    const headerList = await headers();
-    const ipAddress = headerList.get('x-real-ip');
-    const userAgent = headerList.get('user-agent');
-
     // send email
-    try {
-      await sendEnrollmentEmail(enrollmentId, codeParam);
-    } catch (err) {
-      console.error(err);
+    const sendEmailResult = await sendEnrollmentEmail(enrollmentId, codeParam);
+    if (!sendEmailResult.success) {
+      console.error(sendEmailResult.error);
     }
 
     // create Brevo contact
@@ -76,7 +70,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
 
     // iDevAffiliate
     try {
-      await addToIDevAffiliate(enrollment, ipAddress);
+      await addToIDevAffiliate(enrollment, clientIp);
     } catch (err) {
       console.error(err);
     }
@@ -85,7 +79,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     if (enrollment.transactionTime === null || date - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
         const source = 'https://www.qcdesignschool.com/welcome-to-the-school';
-        await fbPostPurchase(enrollment, source, ipAddress, userAgent, fbc, fbp);
+        await fbPostPurchase(enrollment, source, clientIp, userAgent, fbc, fbp);
       } catch (err) {
         console.error(err);
       }
