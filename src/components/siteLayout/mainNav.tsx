@@ -17,7 +17,7 @@ interface Props {
 }
 
 export const MainNav: FC<Props> = ({ designRestricted }) => {
-  const scrollPosition = useScrollPositionContext();
+  const scrollPosition = useScrollPositionContext() ?? 0;
   const [ key, setKey ] = useState(0);
 
   const handleClick = (): void => {
