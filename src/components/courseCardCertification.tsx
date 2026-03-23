@@ -26,7 +26,7 @@ export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
   }
 
   const imageProps = {
-    height: screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90,
+    height: screenWidth ? screenWidth > 1200 ? 120 : screenWidth > 992 ? 110 : screenWidth > 768 ? 100 : 90 : 0,
     title: getCourseCertification(courseCode),
   };
 
