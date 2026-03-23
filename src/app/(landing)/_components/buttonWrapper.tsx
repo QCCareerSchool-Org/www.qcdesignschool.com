@@ -2,16 +2,16 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import { useScreenWidth } from '@/hooks/useScreenWidth';
-import { useScrollPosition } from '@/hooks/useScrollPosition';
+import { useScreenWidthContex } from '@/hooks/useScreenWidthContext';
+import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
 interface Props {
   alwaysVisible: boolean;
 }
 
 export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, children }) => {
-  const scrollPosition = useScrollPosition();
-  const screenWidth = useScreenWidth();
+  const scrollPosition = useScrollPositionContext();
+  const screenWidth = useScreenWidthContex();
 
   if (alwaysVisible || show(screenWidth, scrollPosition)) {
     return <>{children}</>;

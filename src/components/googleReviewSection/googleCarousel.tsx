@@ -1,11 +1,10 @@
 'use client';
 
+import { useIntersectionObserver } from '@davewelsh79/use-intersection-observer';
 import type { FC, PropsWithChildren } from 'react';
-import { memo, useRef } from 'react';
+import { memo } from 'react';
 import type { ResponsiveType } from 'react-multi-carousel';
 import Carousel from 'react-multi-carousel';
-
-import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 
 interface Props {
   mobile: boolean;
@@ -21,8 +20,7 @@ const responsive: ResponsiveType = {
 const autoPlaySpeed = 8000; // 8 seconds
 
 export const GoogleCarousel: FC<PropsWithChildren<Props>> = memo(({ mobile, children }) => {
-  const carouselRef = useRef(null);
-  const intersected = useIntersectionObserver(carouselRef);
+  const [ intersected, carouselRef ] = useIntersectionObserver();
 
   return (
     <div ref={carouselRef}>
