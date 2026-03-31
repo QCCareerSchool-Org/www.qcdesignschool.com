@@ -13,14 +13,14 @@ import ILDP from '@/components/certificationLogos/ildp.svg';
 import ISRP from '@/components/certificationLogos/isrp.svg';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification } from '@/domain/courseCode';
-import { useScreenWidthContex } from '@/hooks/useScreenWidthContext';
+import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
 
 interface Props {
   courseCode: CourseCode;
 }
 
 export const CourseCardCertifcation: FC<Props> = ({ courseCode }) => {
-  const screenWidth = useScreenWidthContex();
+  const screenWidth = useScreenWidthContext();
   if (screenWidth === 0) {
     return;
   }
