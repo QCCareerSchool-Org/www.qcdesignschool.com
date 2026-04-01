@@ -13,9 +13,9 @@ const purgeCssOptions = {
     './node_modules/react-bootstrap/**/*.js',
   ],
   safelist: {
-    standard: [ 'html', 'body', /^PhoneInput/u ],
-    deep: [ /modal-/u, /show/u, /fade/u, /nav/u, /^yarl__/u ],
-    greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u, /^yarl__/u ],
+    standard: [ 'html', 'body', /^PhoneInput/u, /^yarl__/u ],
+    deep: [ /modal-/u, /show/u, /fade/u, /nav/u ],
+    greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u ],
   },
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
 };
