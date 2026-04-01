@@ -14,8 +14,8 @@ const purgeCssOptions = {
   ],
   safelist: {
     standard: [ 'html', 'body', /^PhoneInput/u ],
-    deep: [ /modal-/u, /show/u, /fade/u, /nav/u ],
-    greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u ],
+    deep: [ /modal-/u, /show/u, /fade/u, /nav/u, /^yarl__/u ],
+    greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u, /^yarl__/u ],
   },
   defaultExtractor: content => content.match(/[\w\-/:]+(?<!:)/gu) ?? [],
 };

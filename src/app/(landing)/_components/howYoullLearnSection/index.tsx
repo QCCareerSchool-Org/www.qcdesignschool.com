@@ -5,7 +5,7 @@ import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import VideoPlayerImage from './video-player.jpg';
-import { VideoPopup } from '@/components/marketingVideo';
+import { VideoPopup } from '@/components/videoPopup';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 
 interface Props {

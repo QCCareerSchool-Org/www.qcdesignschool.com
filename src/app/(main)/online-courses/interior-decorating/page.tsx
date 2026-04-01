@@ -16,7 +16,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
-import { VideoPopup } from '@/components/marketingVideo';
+import { VideoPopup } from '@/components/videoPopup';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';

@@ -23,10 +23,7 @@ interface Props {
 
 export const VideoLightbox: FC<Props> = ({ open, onClose, video }) => (
   <Lightbox
-    render={{
-      buttonPrev: () => null,
-      buttonNext: () => null,
-    }}
+    render={{ buttonPrev: () => null, buttonNext: () => null }}
     open={open}
     index={0}
     close={onClose}
