@@ -4,9 +4,8 @@ import styles from './header.module.css';
 import { MainNav } from './mainNav';
 // import { CanadaHeader } from '../canadaHeader';
 import { PromoBanner } from './promoBanner';
-import { gbpCountry } from '@/domain/currency';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { april1 } from '@/periods';
+import { april9 } from '@/periods';
 
 interface Props {
   date: number;
@@ -16,15 +15,14 @@ interface Props {
 
 export const Header: FC<Props> = ({ date, countryCode, provinceCode }) => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
-  const discount = gbpCountry(countryCode) ? '£100' : '$100';
 
   return (
     <header className={`${styles.header} flex-shrink-0`} style={{ position: 'sticky', top: 0, zIndex: 1050, width: '100%' }}>
       {/* {countryCode === 'CA' && <CanadaHeader />} */}
-      {april1.contains(date)
+      {april9.contains(date)
         ? (
-          <PromoBanner date={date} promotionPeriod={april1.toDTO()}>
-            <span className="d-none d-lg-inline">Limited Time Offer&mdash;</span>BOGO <strong>+ {discount} Off</strong>
+          <PromoBanner date={date} promotionPeriod={april9.toDTO()}>
+            <span className="d-none d-lg-inline">Limited Time Offer: </span> <strong>Get a Second Course Free</strong>
           </PromoBanner>
         )
         : null
