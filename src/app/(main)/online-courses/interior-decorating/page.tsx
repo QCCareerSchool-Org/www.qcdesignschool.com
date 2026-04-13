@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 
 import { OutlineSection } from './_outlineSection';
@@ -16,16 +17,16 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
-import { VideoPopup } from '@/components/videoPopup';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import { VideoPopup } from '@/components/videoPopup';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 
-export const generateMetadata: GenerateMetadata = async () => {
+export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
@@ -79,7 +80,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                   width: 1280,
                   height: 720,
                   source: {
-                    src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
+                    src: 'https://cdn.qccareerschool.com/design/design-marketing-video.mp4',
                     type: 'video/mp4',
                   },
                 }}

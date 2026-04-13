@@ -13,7 +13,7 @@ export const Platform: FC = () => (
       <h2 className="mb-3">Peek Inside the Student Center</h2>
       <p className="mb-4">Our intuitive, mobile-friendly platform is designed for your convenience. You can access anytime, anywhere from your phone, tablet or laptop. Enjoy interactive lessons, engaging activities, and a seamless experience that keeps you motivated and on track.</p>
       <div className="ratio ratio-16x9 mb-s">
-        <video src="https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/qc-student-center.mp4" poster={PosterImage.src} controls preload="metadata" />
+        <video src="https://cdn.qccareerschool.com/design/qc-student-center.mp4" poster={PosterImage.src} controls preload="metadata" />
       </div>
       <div className="row justify-content-center mb-s">
         <div className="col-6 col-lg-8 mb-3">
