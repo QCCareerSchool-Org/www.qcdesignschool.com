@@ -12,7 +12,6 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { QuestionAndAnswer } from '../../(main)/faq/questionAndAnswer';
 import { Header } from '../_components/header';
-import type { PageComponent } from '@/serverComponent';
 import Badge from '@/components/badges/save-$100-or-more.png';
 import BadgeUK from '@/components/badges/save-£100-or-more.png';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
@@ -27,6 +26,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',

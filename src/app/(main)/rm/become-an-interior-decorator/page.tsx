@@ -8,7 +8,6 @@ import { TutorSection } from '../../online-courses/interior-decorating/tutorSect
 import WhyQCImage from '../../online-courses/interior-decorating/what-youll-learn.jpg';
 import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -17,6 +16,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating Course',

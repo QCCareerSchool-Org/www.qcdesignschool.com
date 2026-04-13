@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import styles from './page.module.scss';
 import { QuestionAndAnswer } from './questionAndAnswer';
-import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',

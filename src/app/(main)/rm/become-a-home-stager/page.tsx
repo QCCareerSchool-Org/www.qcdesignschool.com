@@ -8,7 +8,6 @@ import { TutorSection } from '../../online-courses/home-staging/tutorSection';
 import WhyQCImage from '../../online-courses/home-staging/what-youll-learn.jpg';
 import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -16,6 +15,7 @@ import { GuaranteeSection } from '@/components/guaranteeSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Become a Home Stager',

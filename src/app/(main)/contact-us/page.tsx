@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 
 import styles from './page.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { ChatLink } from '@/components/chatLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import EnvelopeIcon from '@/components/icons/envelope.svg';
@@ -9,6 +8,7 @@ import MapIcon from '@/components/icons/map.svg';
 import PhoneIcon from '@/components/icons/phone.svg';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Contact Us',

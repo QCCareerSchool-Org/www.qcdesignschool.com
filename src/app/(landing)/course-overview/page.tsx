@@ -1,6 +1,6 @@
 import { CourseOverview } from '.';
-import type { PageComponent } from '@/serverComponent';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const CourseOverviewPage: PageComponent = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);

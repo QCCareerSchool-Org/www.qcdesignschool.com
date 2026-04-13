@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 import { Blurb } from './blurb';
 import { experts, tutors } from './tutorInformation';
-import type { PageComponent } from '@/serverComponent';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Instructors',

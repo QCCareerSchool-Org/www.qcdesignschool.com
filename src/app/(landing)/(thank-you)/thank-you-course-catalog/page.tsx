@@ -6,7 +6,6 @@ import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../../free-course-catalog/hero-small.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -15,6 +14,7 @@ import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Course Catalog Has Been Sent',

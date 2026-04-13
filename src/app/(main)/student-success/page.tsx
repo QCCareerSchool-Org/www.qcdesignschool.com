@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 import { SuccessTeamModalSection } from './success-team-modal-section';
-import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { CountUp } from '@/components/paymentPlanSection/countUp';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
 import { students } from '@/components/studentShowcase/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Student Success',

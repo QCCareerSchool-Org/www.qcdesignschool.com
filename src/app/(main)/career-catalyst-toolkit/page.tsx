@@ -19,7 +19,6 @@ import MoneyIcon from './sectionIcons/money.svg';
 import PenIcon from './sectionIcons/pen.svg';
 import TriangleIcon from './sectionIcons/shape-triangle.svg';
 import videoCallImage from './video-call.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { AlertBar } from '@/components/alertBar';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -27,6 +26,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import CircleCheckIcon from '@/components/icons/check-circle.svg';
 import SquareCheckIcon from '@/components/icons/check-square.svg';
 import { Subtitle } from '@/components/subtitle';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Career Catalyst Toolkit',
