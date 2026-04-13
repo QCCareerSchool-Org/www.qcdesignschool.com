@@ -19,7 +19,7 @@ import MoneyIcon from './sectionIcons/money.svg';
 import PenIcon from './sectionIcons/pen.svg';
 import TriangleIcon from './sectionIcons/shape-triangle.svg';
 import videoCallImage from './video-call.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { AlertBar } from '@/components/alertBar';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';

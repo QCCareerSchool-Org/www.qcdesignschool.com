@@ -11,7 +11,7 @@ import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/landscape-design/cert-bg.jpg';
 import WhatYoullLearnImage from '@/app/(main)/online-courses/landscape-design/what-youll-learn.jpg';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationLogoIcon from '@/components/certificationLogos/ildp.svg';

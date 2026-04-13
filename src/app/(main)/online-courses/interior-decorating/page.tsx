@@ -8,7 +8,6 @@ import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
-import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
@@ -25,6 +24,7 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 
 export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getServerData();

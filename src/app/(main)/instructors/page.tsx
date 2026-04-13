@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { Blurb } from './blurb';
 import { experts, tutors } from './tutorInformation';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 

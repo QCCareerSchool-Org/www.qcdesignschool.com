@@ -8,7 +8,7 @@ import { TutorSection } from '../../online-courses/landscape-design/tutorSection
 import WhyQCImage from '../../online-courses/landscape-design/what-youll-learn.jpg';
 import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';

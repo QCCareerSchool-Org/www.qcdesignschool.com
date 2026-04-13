@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { ChatLink } from '@/components/chatLink';
 import { GetStartedSection } from '@/components/getStartedSection';
 import EnvelopeIcon from '@/components/icons/envelope.svg';

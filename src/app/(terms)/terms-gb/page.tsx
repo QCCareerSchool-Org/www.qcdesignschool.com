@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy and Terms of Service',

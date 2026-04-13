@@ -1,5 +1,5 @@
 import { CourseOverview } from '.';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { getServerData } from '@/lib/getServerData';
 
 const CourseOverviewPage: PageComponent = async props => {

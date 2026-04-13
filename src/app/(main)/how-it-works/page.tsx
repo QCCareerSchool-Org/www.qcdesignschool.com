@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { CertificationSection } from './certificationSection';
 import HowItWorksImage from './how-it-works.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import BookReaderIcon from '@/components/icons/book-reader.svg';

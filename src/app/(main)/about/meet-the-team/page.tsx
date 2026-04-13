@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { employees } from './data';
 import { EmployeeColumn } from './employeeColumn';
 import { mapToPairs } from './mapToPairs';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 

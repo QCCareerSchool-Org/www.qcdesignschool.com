@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { ErrorTemplate } from './error-template';
-import type { PageComponent } from './serverComponent';
+import type { PageComponent } from '../serverComponent';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',

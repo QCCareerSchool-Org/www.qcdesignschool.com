@@ -9,7 +9,7 @@ import InteriorDecoratingImage from './id.jpg';
 import BoxIcon from './package.svg';
 import ProfessionalOrganizingImage from './po.jpg';
 import HomeStagingImage from './staging.png';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import RightArrowIcon from '@/components/icons/right-arrow.svg';

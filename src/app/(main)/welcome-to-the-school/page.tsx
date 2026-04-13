@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import AboutImage from './about-qc.png';
 import AlexSignatureImage from './alex-myers.png';
 import { Processing } from './processing';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { EnrollmentDetails } from '@/components/enrollmentDetails';
 import { SetCookie } from '@/components/setCookie';
 import { TelephoneLink } from '@/components/telephoneLink';

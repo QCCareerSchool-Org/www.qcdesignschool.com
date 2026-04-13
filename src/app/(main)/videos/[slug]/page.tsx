@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { getVideo } from '..';
-import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
+import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 import { VideoJsonLD } from '@/components/jsonLd/videoObject';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions

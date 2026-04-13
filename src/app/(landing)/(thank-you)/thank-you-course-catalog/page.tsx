@@ -6,7 +6,7 @@ import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../../free-course-catalog/hero-small.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';

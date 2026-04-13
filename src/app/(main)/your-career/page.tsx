@@ -5,7 +5,7 @@ import HeroImageDesktop from '../hero-desktop.jpg';
 import HeroImageMobile from '../hero-mobile.jpg';
 import { InfoSection } from './infoSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';

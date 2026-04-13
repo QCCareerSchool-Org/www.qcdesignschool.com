@@ -3,7 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { Suspense } from 'react';
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';

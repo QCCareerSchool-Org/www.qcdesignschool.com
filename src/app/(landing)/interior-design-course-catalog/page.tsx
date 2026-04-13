@@ -10,7 +10,6 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { GenerateMetadata, PageComponent } from '@/app/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
@@ -26,6 +25,7 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 
 export const generateMetadata: GenerateMetadata = async (props): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);

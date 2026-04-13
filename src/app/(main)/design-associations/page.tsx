@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { HighlightedPartnersSection } from './_highlightedPartnersSection';
 import { preferredPartners, professionalAssociations } from './data';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
 
