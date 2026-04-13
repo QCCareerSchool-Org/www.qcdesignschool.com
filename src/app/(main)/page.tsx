@@ -92,7 +92,7 @@ const HomePage: PageComponent = async props => {
                     height: 720,
                     name: 'Your Journey Starts Here',
                     source: {
-                      src: 'https://51d9ccad7be11d8ada71-aeafba698c87c1173d616904e85b2e3e.ssl.cf1.rackcdn.com/design-marketing-video.mp4',
+                      src: 'https://cdn.qccareerschool.com/design/design-marketing-video.mp4',
                       type: 'video/mp4',
                     },
                   }}
