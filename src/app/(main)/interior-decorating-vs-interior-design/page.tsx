@@ -9,7 +9,6 @@ import styles from './page.module.scss';
 import SalaryComparisonImage from './salary-comparison-bg.jpg';
 import TrainingRequirementMobileImage from './training-requirement-bg-mobile.jpg';
 import TrainingRequirementImage from './training-requirement-bg.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import PaletteIcon from '@/components/icons/palette.svg';
@@ -17,6 +16,7 @@ import ScreenshotIcon from '@/components/icons/screenshot.svg';
 import { Overlay } from '@/components/overlay';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating vs. Interior Design',

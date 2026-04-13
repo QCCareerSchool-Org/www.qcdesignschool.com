@@ -8,13 +8,13 @@ import { TutorSection } from '../../online-courses/professional-organizing/tutor
 import WhyQCImage from '../../online-courses/professional-organizing/what-youll-learn.jpg';
 import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',

@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { CoreValuesSection } from './coreValuesSection';
 import { MeetOurTeamSection } from './meetOurTeamSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import { DesignNetworksSection } from '@/components/designNetworksSection';
 import BBBIcon from '@/components/icons/bbb.svg';
 import ShieldIcon from '@/components/icons/shield.svg';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'About the School',

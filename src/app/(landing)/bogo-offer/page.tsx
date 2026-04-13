@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
 import HeroImage from './hero.jpg';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
@@ -14,6 +13,7 @@ import { SupportSection } from '@/components/supportSection';
 import { Testimonial } from '@/components/testimonial';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 const bogoEnrollLink = 'https://enroll.qcdesignschool.com/bogo-1';
 

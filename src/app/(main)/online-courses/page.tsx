@@ -3,7 +3,6 @@ import type { FC, PropsWithChildren } from 'react';
 import { Suspense } from 'react';
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
-import type { PageComponent } from '@/serverComponent';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -11,6 +10,7 @@ import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Online Courses',

@@ -13,11 +13,11 @@ import { Tuition } from './_sections/tuition';
 import { WhyQC } from './_sections/whyQC';
 import CheckShieldIcon from './check-shield.svg';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/serverComponent';
 import './page.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
+import type { PageComponent } from '@/serverComponent';
 
 const InteriorDecoratingPreviewPage: PageComponent = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);

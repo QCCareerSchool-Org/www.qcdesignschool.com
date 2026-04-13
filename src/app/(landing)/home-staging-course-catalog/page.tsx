@@ -9,7 +9,6 @@ import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/home-staging/cert-bg.jpg';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/isrp.svg';
@@ -23,6 +22,7 @@ import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Home Staging Course Catalog',

@@ -11,7 +11,6 @@ import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/landscape-design/cert-bg.jpg';
 import WhatYoullLearnImage from '@/app/(main)/online-courses/landscape-design/what-youll-learn.jpg';
 import { StatsSection } from '@/app/(main)/statsSection';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationLogoIcon from '@/components/certificationLogos/ildp.svg';
@@ -30,6 +29,7 @@ import { PromoSection } from '@/components/promoSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Landscape Design Course Catalog',

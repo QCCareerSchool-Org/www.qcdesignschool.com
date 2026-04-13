@@ -17,11 +17,11 @@ import PenIcon from './sectionIcons/pen.svg';
 import TriangleIcon from './sectionIcons/shape-triangle.svg';
 import TrophyIcon from './sectionIcons/trophy.svg';
 import WhyQCImage from './why-qc.png';
-import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Subtitle } from '@/components/subtitle';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Career Essentials Kit',
