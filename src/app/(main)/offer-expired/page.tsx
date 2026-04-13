@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import Background from './background.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { TelephoneLink } from '@/components/telephoneLink';

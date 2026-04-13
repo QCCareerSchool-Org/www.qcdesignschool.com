@@ -1,4 +1,4 @@
-import type { LayoutComponent } from '../serverComponent';
+import type { LayoutComponent } from '../../serverComponent';
 
 const BlankLayout: LayoutComponent = ({ children }) => (
   <>{children}</>

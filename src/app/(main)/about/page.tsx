@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { CoreValuesSection } from './coreValuesSection';
 import { MeetOurTeamSection } from './meetOurTeamSection';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { DesignNetworksSection } from '@/components/designNetworksSection';
 import BBBIcon from '@/components/icons/bbb.svg';
 import ShieldIcon from '@/components/icons/shield.svg';

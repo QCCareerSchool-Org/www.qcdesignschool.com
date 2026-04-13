@@ -5,7 +5,7 @@ import { CurrentPromotion } from '../../_components/currentPromotion';
 import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import HeroDesktopImage from '../../color-consultant-course-catalog/hero.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';

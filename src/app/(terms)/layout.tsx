@@ -1,4 +1,4 @@
-import type { LayoutComponent } from '@/app/serverComponent';
+import type { LayoutComponent } from '@/serverComponent';
 
 const TermsLayout: LayoutComponent = ({ children }) => <main>{children}</main>;
 

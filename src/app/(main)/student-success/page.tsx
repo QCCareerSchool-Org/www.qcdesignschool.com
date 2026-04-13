@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 import { SuccessTeamModalSection } from './success-team-modal-section';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { CountUp } from '@/components/paymentPlanSection/countUp';

@@ -1,5 +1,5 @@
 import { CourseOverview } from '../course-overview';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';
 import { getServerData } from '@/lib/getServerData';
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { FC, PropsWithChildren } from 'react';
 
 import HeroImage from './hero.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { DeadlineFunnelScript } from '@/components/deadlineFunnelScript';

@@ -9,7 +9,7 @@ import styles from './page.module.scss';
 import SalaryComparisonImage from './salary-comparison-bg.jpg';
 import TrainingRequirementMobileImage from './training-requirement-bg-mobile.jpg';
 import TrainingRequirementImage from './training-requirement-bg.jpg';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import PaletteIcon from '@/components/icons/palette.svg';

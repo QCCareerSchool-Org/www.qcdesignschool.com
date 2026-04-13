@@ -13,7 +13,7 @@ import { Tuition } from './_sections/tuition';
 import { WhyQC } from './_sections/whyQC';
 import CheckShieldIcon from './check-shield.svg';
 import styles from './page.module.scss';
-import type { PageComponent } from '@/app/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 import './page.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';

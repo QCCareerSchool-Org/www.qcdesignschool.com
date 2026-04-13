@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { InfoSection } from './infoSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
-import type { PageComponent } from '../../../serverComponent';
+import type { PageComponent } from '../../../../serverComponent';
 import { StatsSection } from '../../statsSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
