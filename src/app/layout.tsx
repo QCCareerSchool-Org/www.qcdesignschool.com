@@ -3,7 +3,6 @@ import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
-import type { LayoutComponent } from '../serverComponent';
 import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
@@ -18,6 +17,7 @@ import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Tiktok } from '@/scripts/tiktok';
+import type { LayoutComponent } from '@/serverComponent';
 
 import './bootstrap.scss';
 import './global.scss';

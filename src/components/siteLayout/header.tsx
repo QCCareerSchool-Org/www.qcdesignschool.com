@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import styles from './header.module.css';
 import { MainNav } from './mainNav';
-// import { CanadaHeader } from '../canadaHeader';
+// import { CanadaHeader } from '@/components/canadaHeader';
 import { PromoBanner } from './promoBanner';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { april9 } from '@/periods';

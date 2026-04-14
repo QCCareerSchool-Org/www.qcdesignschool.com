@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import { CountDownTimer } from '../countDownTimer';
+import { CountDownTimer } from '@/components/countDownTimer';
 import type { LastChancePeriodDTO } from '@/lib/period';
 
 interface Props {

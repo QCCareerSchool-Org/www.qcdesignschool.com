@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import { useMemo } from 'react';
 
-import { ImageCircle } from '../imageCircle';
-import { courseSort } from '../testimonial';
 import styles from './index.module.css';
 import { Title } from './title';
-import { testimonials } from '../testimonial/data';
+import { ImageCircle } from '@/components/imageCircle';
+import { courseSort } from '@/components/testimonial';
+import { testimonials } from '@/components/testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {

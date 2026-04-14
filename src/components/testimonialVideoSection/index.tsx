@@ -4,12 +4,12 @@ import type { FC, JSX, MouseEventHandler } from 'react';
 import { useState } from 'react';
 import { Lightbox } from 'yet-another-react-lightbox';
 import Video from 'yet-another-react-lightbox/plugins/video';
-
 import 'yet-another-react-lightbox/styles.css';
+
 import styles from './index.module.scss';
 import { VideoCard } from './videoCard';
 import { videos, videoSlides } from './videos';
-import { CountUp } from '../paymentPlanSection/countUp';
+import { CountUp } from '@/components/paymentPlanSection/countUp';
 
 interface Props {
   heading?: string | JSX.Element;

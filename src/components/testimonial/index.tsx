@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
-import { ImageCircle } from '../imageCircle';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { CourseMicrodata } from '../microdata/course';
+import { ImageCircle } from '@/components/imageCircle';
+import { CourseMicrodata } from '@/components/microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
