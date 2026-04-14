@@ -1,25 +1,20 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
-import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
-import WhyQCImage from './why-qc.jpg';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { CourseType } from '@/components/courseType';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import { Hero } from '@/components/hero';
-import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { VideoPopup } from '@/components/videoPopup';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
@@ -47,46 +42,19 @@ const InteriorDecoratingPage: PageComponent = async () => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
-    <div className={styles.page}>
+    <div>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
-      <section className="half-padding-top">
-        <div className="container">
-          <div className="row justify-content-center g-s">
-            <div className="col-12">
-              <Hero src={HeroImage} priority objectPosition="100% 0">
-                <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
-                <h1 className="mb-2 mb-xl-4">Interior {designRestricted ? 'Decorating' : 'Design'} Course</h1>
-                <p className="h5 mb-3 mb-xl-5">Become a Professional Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
-                <div className="d-flex justify-content-center justify-content-md-start">
-                  <HeroButtons courseCodes={courseCodes} />
-                </div>
-              </Hero>
-            </div>
-            <div className="col-12 col-lg-6">
-              <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-              <p className="lead mb-4">QC's online Interior {designRestricted ? 'Decorating' : 'Design'} certification course provides the most comprehensive training available to ensure your success in the home design industry. You'll master everything from color theory and space planning to client communication and design execution so that you're fully equipped to thrive in this dynamic field. </p>
-              <ul>
-                <li>Get started now—our premium interior {designRestricted ? 'decorating' : 'design'} course is designed to take you from beginner to expert with no previous training required</li>
-                <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
-                <li>Join a thriving virtual community to connect with other {designRestricted ? 'decorators' : 'designers'}, gain exclusive access to bonus materials and join free, expert-led webinars</li>
-                <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a professional interior {designRestricted ? 'decorator' : 'designer'}</li>
-                <li>Enjoy discounts and affiliations with top organizations including {countryCode === 'CA' && <>Decorators & Designers Association of Canada, </>}{countryCode === 'US' && <>Design Society of America, </>}DesignFiles, Placez and more</li>
-              </ul>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 d-flex align-items-center">
-              <VideoPopup
-                video={{
-                  name: 'QC Marketing Video - Interior Decorating Course Page',
-                  width: 1280,
-                  height: 720,
-                  source: {
-                    src: 'https://cdn.qccareerschool.com/design/design-marketing-video.mp4',
-                    type: 'video/mp4',
-                  },
-                }}
-              >
-                <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
-              </VideoPopup>
+      <section className={styles.careerHero}>
+        <div className="container text-white">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-9 col-xl-7 text-center">
+              <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
+              <h1>Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
+              <p className="lead text-white-50">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now</a>
+                <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
+              </div>
             </div>
           </div>
         </div>
