@@ -7,7 +7,7 @@ import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
 import { isUserValues } from '@/domain/userValues';
-import { neueHaasDisplay, neueHaasText } from '@/fonts';
+import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
@@ -35,7 +35,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
   const userValues = raw && isUserValues(raw) ? raw : undefined;
 
   return (
-    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`} data-scroll-behavior="smooth">
+    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} ${inter.variable} h-100`} data-scroll-behavior="smooth">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}

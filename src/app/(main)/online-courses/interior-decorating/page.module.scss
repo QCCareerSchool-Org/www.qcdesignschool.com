@@ -1,3 +1,12 @@
+.page {
+  font-family: var(--qc-inter);
+  --qc-color-primary: oklch(0.623 0.214 259.815);
+  :global(.text-primary) {
+    color: var(--qc-color-primary) !important;
+  }
+}
+
+
 .careerHero {
   background:
     radial-gradient(circle at 50% 0%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025;

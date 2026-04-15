@@ -47,7 +47,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
-    <div>
+    <div className={styles.page}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
       <section className={styles.careerHero}>
         <div className="container text-white">

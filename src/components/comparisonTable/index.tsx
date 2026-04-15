@@ -1,22 +1,25 @@
-import type { FC, ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
-export interface ComparisonTableColumn {
-  key: string;
+import styles from './index.module.scss';
+
+export interface ComparisonTableColumn<T extends string = string> {
+  key: T;
   heading: ReactNode;
 }
 
-export type ComparisonTableRow = {
+export type ComparisonTableRow<T extends string = string> = {
   feature: string;
-} & Record<string, string>;
+} & Record<T, ReactNode>;
 
-interface Props {
-  columns: ComparisonTableColumn[];
-  rows: ComparisonTableRow[];
+interface Props<T extends string = string> {
+  columns: ComparisonTableColumn<T>[];
+  rows: ComparisonTableRow<T>[];
 }
 
-export const ComparisonTable: FC<Props> = ({ columns, rows }) => (
-  <div className="table-responsive">
-    <table className="table table-bordered align-middle mb-0">
+// eslint-disable-next-line @stylistic/comma-dangle
+export const ComparisonTable = <T extends string = string,>({ columns, rows }: Props<T>): ReactElement => (
+  <div className={`${styles.tableWrapper} table-responsive`}>
+    <table className={`${styles.table} table table-bordered align-middle mb-0`}>
       <thead>
         <tr>
           <th scope="col">Feature</th>
