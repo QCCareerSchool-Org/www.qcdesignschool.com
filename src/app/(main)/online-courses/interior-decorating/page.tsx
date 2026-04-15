@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { OutlineSection } from './_outlineSection';
+import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
 import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
@@ -11,9 +12,13 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import BriefcaseIcon from '@/components/icons/briefcase.svg';
+import GlobeIcon from '@/components/icons/globe.svg';
+import GroupIcon from '@/components/icons/group.svg';
+import OpenBookIcon from '@/components/icons/open-book.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
-import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -59,7 +64,36 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <DesignPartnerSection countryCode={countryCode} />
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-12 col-lg-9 col-xl-7">
+              <h2>Why Build Your Career With QC?</h2>
+              <p className="lead mb-0">You bring the talent. We provide the professional roadmap.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-lg-10">
+              <p className="mb-0 text-center">Most programs teach design theory. <strong>QC helps you turn your skills into a client-ready, income-generating business.</strong> From interactive lessons to mentorship and business tools, every component is designed to get you working professionally as fast as possible.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4">
+            {whyQCItems.map(item => (
+              <div className="col-12 col-md-6" key={item.title}>
+                <div className="h-100 bg-white rounded-4 shadow-sm p-4">
+                  <div className={`${styles.whyQCIcon} bg-light text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3`}>
+                    <item.icon width={22} height={22} aria-hidden="true" />
+                  </div>
+                  <h3 className="h6">{item.title}</h3>
+                  <p className="mb-0">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <CareerPathSection />
+      <StatsSection backgroundImage={null} backgroundColor="#020025" />
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
@@ -133,3 +167,26 @@ const InteriorDecoratingPage: PageComponent = async () => {
 };
 
 export default InteriorDecoratingPage;
+
+const whyQCItems = [
+  {
+    icon: OpenBookIcon,
+    title: 'A Proven Alternative to Traditional Programs',
+    text: 'QC offers a streamlined, flexible path focused on what actually matters: building your career with real skills, real projects, and real-world application.',
+  },
+  {
+    icon: GroupIcon,
+    title: 'Real-World Insights from Professional Mentors',
+    text: 'Get personalized feedback from a professional designer who reviews your projects, refines your skills, and helps you reach a client-ready standard faster than learning on your own.',
+  },
+  {
+    icon: BriefcaseIcon,
+    title: 'Tools to Start Working Immediately',
+    text: 'Go beyond theory with ready-to-use contracts, client workflows, and design tools that prepare you to take on real projects.',
+  },
+  {
+    icon: GlobeIcon,
+    title: 'A Professional Network for Your Long-Term Success',
+    text: 'Join a community of design professionals and stay connected after you graduate, with opportunities for networking, collaboration, and industry access.',
+  },
+];

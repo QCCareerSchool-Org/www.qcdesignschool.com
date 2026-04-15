@@ -23,7 +23,7 @@ const expectedVariables = [
 ] as const;
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const register = async () => {
+export const register = async (): Promise<void> => {
   for (const variable of expectedVariables) {
     const message = `Environment variable ${variable} not found`;
     if (!process.env[variable]) {

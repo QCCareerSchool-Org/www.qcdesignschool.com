@@ -6,12 +6,12 @@ import { OutlineSection } from '../../online-courses/landscape-design/_outlineSe
 import { CertificationSection } from '../../online-courses/landscape-design/certificationSection';
 import { TutorSection } from '../../online-courses/landscape-design/tutorSection';
 import WhyQCImage from '../../online-courses/landscape-design/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';

@@ -6,12 +6,12 @@ import { OutlineSection } from '../../online-courses/interior-decorating/_outlin
 import { CertificationSection } from '../../online-courses/interior-decorating/certificationSection';
 import { TutorSection } from '../../online-courses/interior-decorating/tutorSection';
 import WhyQCImage from '../../online-courses/interior-decorating/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { getServerData } from '@/lib/getServerData';

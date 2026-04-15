@@ -1,7 +1,7 @@
 import type { Ref } from 'react';
 
 export const mergeRefs = <T>(...refs: (Ref<T> | undefined)[]) => {
-  return (node: T | null) => {
+  return (node: T | null): void => {
     refs.forEach(ref => {
       if (!ref) { return; }
       if (typeof ref === 'function') {

@@ -6,12 +6,12 @@ import { OutlineSection } from '../../online-courses/professional-organizing/_ou
 import { CertificationSection } from '../../online-courses/professional-organizing/certificationSection';
 import { TutorSection } from '../../online-courses/professional-organizing/tutorSection';
 import WhyQCImage from '../../online-courses/professional-organizing/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PageComponent } from '@/serverComponent';

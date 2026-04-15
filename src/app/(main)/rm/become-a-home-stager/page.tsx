@@ -6,12 +6,12 @@ import { OutlineSection } from '../../online-courses/home-staging/_outlineSectio
 import { CertificationSection } from '../../online-courses/home-staging/certificationSection';
 import { TutorSection } from '../../online-courses/home-staging/tutorSection';
 import WhyQCImage from '../../online-courses/home-staging/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';

@@ -35,7 +35,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
   const userValues = raw && isUserValues(raw) ? raw : undefined;
 
   return (
-    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
+    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`} data-scroll-behavior="smooth">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}

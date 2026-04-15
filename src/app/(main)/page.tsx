@@ -7,9 +7,7 @@ import type { ItemList, WithContext } from 'schema-dts';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
-import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '../../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -22,6 +20,7 @@ import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PromoSection } from '@/components/promoSection';
+import { StatsSection } from '@/components/statsSection';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VideoPopup } from '@/components/videoPopup';
@@ -30,6 +29,7 @@ import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/cour
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
