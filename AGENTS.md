@@ -32,6 +32,7 @@ d-flex flex-column flex-sm-row justify-content-center gap-3
 
 - If a semantic CSS module class exists, keep its related styling together. For example, if `.eyebrow` exists, include its uppercase, font weight, letter spacing, color, and margin in that class rather than splitting the treatment across utility classes and the module.
 - Match provided mockups closely before embellishing. Do not add images or treatments that are not present in the design.
+- Preserve provided marketing/source-document copy exactly unless the task explicitly asks for rewriting. This applies especially to campaign sections, comparison tables, headings, CTAs, and legal or pricing language.
 - When SVG icons are used as a set, normalize their `viewBox` values so they visually fill the same rendered space.
 - For page-specific sections, local components beside the route are appropriate.
 - For reusable components, keep the generic rendering primitive in `index.tsx` and export its public types there when needed.

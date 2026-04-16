@@ -12,8 +12,8 @@ export type ComparisonTableRow<T extends string = string> = {
 } & Record<T, ReactNode>;
 
 interface Props<T extends string = string> {
-  columns: ComparisonTableColumn<T>[];
-  rows: ComparisonTableRow<T>[];
+  columns: readonly ComparisonTableColumn<T>[];
+  rows: readonly ComparisonTableRow<T>[];
 }
 
 // eslint-disable-next-line @stylistic/comma-dangle

@@ -22,6 +22,7 @@ import { StatsSection } from '@/components/statsSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import type { GenerateMetadata, PageComponent } from '@/serverComponent';
@@ -45,6 +46,9 @@ const InteriorDecoratingPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
+
+  const priceResult = await fetchPrice([ 'i2' ], countryCode, provinceCode);
+  const price = priceResult.success ? priceResult.value : undefined;
 
   return (
     <div className={styles.page}>
@@ -92,7 +96,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <CareerPathSection />
+      {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} backgroundColor="#020025" />
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>

@@ -1,8 +1,13 @@
 import type { FC } from 'react';
 
 import { CareerPathComparisonTable } from '@/components/comparisonTable/careerPaths';
+import type { Price } from '@/domain/price';
 
-export const CareerPathSection: FC = () => (
+interface Props {
+  price: Price;
+}
+
+export const CareerPathSection: FC<Props> = ({ price }) => (
   <section>
     <div className="container">
       <div className="row justify-content-center text-center mb-5">
@@ -13,7 +18,7 @@ export const CareerPathSection: FC = () => (
       </div>
       <div className="row justify-content-center">
         <div className="col-12">
-          <CareerPathComparisonTable />
+          <CareerPathComparisonTable price={price} />
         </div>
       </div>
     </div>
