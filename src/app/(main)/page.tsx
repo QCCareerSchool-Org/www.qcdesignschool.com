@@ -20,7 +20,7 @@ import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PromoSection } from '@/components/promoSection';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VideoPopup } from '@/components/videoPopup';
@@ -139,7 +139,7 @@ const HomePage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <StatsSection />
+      <DefaultStatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <DesignPartnerSection countryCode={countryCode} />
       <section>

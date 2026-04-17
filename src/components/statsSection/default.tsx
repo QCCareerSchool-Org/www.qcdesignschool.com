@@ -1,0 +1,34 @@
+import type { FC } from 'react';
+
+import { StatsSection } from '.';
+import DefaultBackgroundImage from './default-background.jpg';
+import type { Props as StatProps } from './stat';
+
+interface Props {
+  inverse?: boolean;
+}
+
+export const DefaultStatsSection: FC<Props> = ({ inverse }) => {
+  return (
+    <StatsSection inverse={inverse} backgroundImage={DefaultBackgroundImage} stats={stats} />
+  );
+};
+
+const stats: [StatProps, StatProps, StatProps ] = [
+  {
+    value: 45,
+    suffix: 'K',
+    heading: 'Students & Graduates',
+    description: 'Inspiring the Next Generation of Professionals',
+  },
+  {
+    value: 40,
+    heading: 'Years in Business',
+    description: 'Pioneering Education Since 1984',
+  },
+  {
+    value: 20,
+    heading: 'Industry Experts',
+    description: 'Providing Insights for Real-World Success',
+  },
+];

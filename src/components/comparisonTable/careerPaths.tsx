@@ -13,9 +13,9 @@ interface Props {
 export const CareerPathComparisonTable: FC<Props> = ({ price }) => {
 
   const columns = [
-    { key: 'qc', heading: <><div className="small text-primary" style={{ height: 24, textTransform: 'uppercase' }}>QC Design School</div><h3>IDDP&trade; Program</h3></> },
-    { key: 'degree', heading: <><div style={{ height: 24 }} /><h3>University or College Degree</h3>E.g., RMCAD, Yorkville University</> },
-    { key: 'online', heading: <><div style={{ height: 24 }} /><h3>Standard Online Certifications</h3>E.g., NYIAD, Interior Design Institute</> },
+    { key: 'qc', mobileLabel: 'QC Design School IDDP Program', heading: <><div className="small text-primary" style={{ height: 24, textTransform: 'uppercase' }}>QC Design School</div><h3>IDDP&trade; Program</h3></> },
+    { key: 'degree', mobileLabel: 'University or College Degree', heading: <><div style={{ height: 24 }} /><h3>University or College Degree</h3>E.g., RMCAD, Yorkville University</> },
+    { key: 'online', mobileLabel: 'Standard Online Certifications', heading: <><div style={{ height: 24 }} /><h3>Standard Online Certifications</h3>E.g., NYIAD, Interior Design Institute</> },
   ] as const satisfies readonly ComparisonTableColumn[];
 
   type ColumnKey = typeof columns[number]['key'];

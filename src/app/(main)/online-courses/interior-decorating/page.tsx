@@ -19,6 +19,7 @@ import OpenBookIcon from '@/components/icons/open-book.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { StatsSection } from '@/components/statsSection';
+import type { Props as StatProps } from '@/components/statsSection/stat';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -97,7 +98,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
         </div>
       </section>
       {price && <CareerPathSection price={price} />}
-      <StatsSection backgroundImage={null} backgroundColor="#020025" />
+      <StatsSection backgroundImage={null} backgroundColor="#020025" stats={stats} />
       <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
       <section>
         <div className="container">
@@ -192,5 +193,24 @@ const whyQCItems = [
     icon: GlobeIcon,
     title: 'A Professional Network for Your Long-Term Success',
     text: 'Join a community of design professionals and stay connected after you graduate, with opportunities for networking, collaboration, and industry access.',
+  },
+];
+
+const stats: [StatProps, StatProps, StatProps] = [
+  {
+    value: 45,
+    suffix: 'K',
+    heading: 'Students & Graduates',
+    description: 'Join a global network of successful design entrepreneurs.',
+  },
+  {
+    value: 40,
+    heading: 'Years of Excellence',
+    description: 'Secure your future with a legacy-backed professional designation.',
+  },
+  {
+    value: 20,
+    heading: 'Experts & Mentors',
+    description: 'Master your craft with direct mentorship from industry leaders.',
   },
 ];

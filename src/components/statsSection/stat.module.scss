@@ -1,0 +1,16 @@
+.count {
+  font-size: 3rem;
+  font-weight: bold;
+
+  &::after {
+    content: ' +';
+    color: var(--qc-color-dark-gold);
+  }
+}
+
+.description {
+  color: var(--qc-color-light-blue);
+}
+.inverse {
+  color: var(--qc-color-text) !important;
+}
