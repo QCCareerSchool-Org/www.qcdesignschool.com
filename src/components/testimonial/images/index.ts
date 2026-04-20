@@ -25,3 +25,5 @@ export { default as NeenaMcconnell } from './TD-0025-neena-mcconnell.jpg';
 export { default as FDPlaceholder } from './fd-placeholder.jpg'; // Placeholder
 export { default as MarzenaLeszczyk } from './TD-0028-marzena-leszczyk.jpg';
 export { default as AdrianaDeFreitas } from './TD-0029-adriana-defreitas.jpg';
+export { default as BelindaThomason } from './fd-placeholder.jpg';
+export { default as LaiceeCharette } from './fd-placeholder.jpg';

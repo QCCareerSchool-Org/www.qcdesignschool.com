@@ -12,6 +12,7 @@ import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
+import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import GlobeIcon from '@/components/icons/globe.svg';
 import GroupIcon from '@/components/icons/group.svg';
@@ -100,6 +101,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
+      <GraduateSuccessSection testimonialIds={[ 'TD-0030', 'TD-0031', 'TD-0032', 'TD-0033' ]} />
       <VirtualCommunitySection />
       <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
       <TutorSection className="bg-light" />
