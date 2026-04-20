@@ -102,28 +102,12 @@
 }
 
 @media (max-width: 767.98px) {
-  .enrollmentCard {
-    overflow: visible !important;
-    border: 0 !important;
-    box-shadow: none !important;
-  }
-
-  .enrollmentList {
-    display: grid;
-    gap: 1rem;
-    background-color: transparent !important;
+  .paymentPanel {
+    width: 100%;
   }
 
   .enrollmentItem {
     grid-template-columns: auto minmax(0, 1fr);
-    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
-    border-radius: 1rem;
-    background-color: #fff;
-    box-shadow: var(--bs-box-shadow-sm);
-  }
-
-  .enrollmentItem + .enrollmentItem {
-    border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   }
 
   .enrollmentValue {

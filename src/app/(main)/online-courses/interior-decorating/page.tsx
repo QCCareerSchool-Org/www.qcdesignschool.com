@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { EnrollmentValueSection } from './_enrollmentValueSection';
 import { OutlineSection } from './_outlineSection';
+import { RoadmapSection } from './_roadmapSection';
 import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
 import styles from './page.module.scss';
 import { TutorSection } from './tutorSection';
-import WhatYoullLearnImage from './what-youll-learn.jpg';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -99,29 +98,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} backgroundColor="#020025" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
-      <section>
-        <div className="container">
-          <div className="row align-items-center justify-content-center g-s">
-            <div className="col-12 col-lg-6">
-              <h2>Here's What You'll Learn</h2>
-              <p>QC's comprehensive Interior {designRestricted ? 'Decorating' : 'Design'} course will show you how to:</p>
-              <ul className="mb-0">
-                <li>Develop a unique vision and create custom interiors from the ground up</li>
-                <li>Prepare designs involving floor plans, wall treatments, furniture placement and more</li>
-                <li>Work with a variety of budget types, design requirements and different client personalities</li>
-                <li>Master the nuances of color theory to create stunning designs for clients</li>
-                <li>Feel confident using various design styles including Southwestern and Art Deco</li>
-                <li>Build your brand and market your new home design & decorating business</li>
-                <li>Plan and develop a professional portfolio that helps you land new clients</li>
-                <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
-              </ul>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-              <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
       <VirtualCommunitySection />
       <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
