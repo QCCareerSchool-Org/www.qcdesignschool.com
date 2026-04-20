@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
+import { useState } from 'react';
 import { FaRegCheckCircle } from 'react-icons/fa';
 
 import styles from './index.module.scss';
@@ -14,7 +17,12 @@ export const EnrollmentValueSection: FC<Props> = ({ price }) => {
   const fullTotal = `${price.currency.symbol}${formatPrice(price.plans.full.total, 2, true)}`;
   const deposit = `${price.currency.symbol}${formatPrice(price.plans.part.deposit, 2, true)}`;
   const installment = `${price.currency.symbol}${formatPrice(price.plans.part.installmentSize, 2, true)}`;
-  const href = 'https://enroll.qcdesignschool.com?c=i2';
+  const [ paymentPlan, setPaymentPlan ] = useState<PaymentPlan>('full');
+  const isFullPayment = paymentPlan === 'full';
+  const investment = isFullPayment ? fullTotal : `${deposit} down`;
+  const href = `https://enroll.qcdesignschool.com?c=i2&paymentPlan=${paymentPlan}`;
+  const handlePayInFullClick = (): void => setPaymentPlan('full');
+  const handleMonthlyClick = (): void => setPaymentPlan('part');
 
   return (
     <section id="whatsIncluded">
@@ -22,7 +30,11 @@ export const EnrollmentValueSection: FC<Props> = ({ price }) => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-12 col-lg-9 col-xl-8">
             <h2>What's Included in Your Enrollment</h2>
-            <p className="lead mb-3">Total Value: $5071+ | Your Investment: {fullTotal}</p>
+            <div className={styles.valueSummary}>
+              <span>Total Value: <del>$5071+</del></span>
+              <span className={styles.valueSummaryDivider} aria-hidden="true" />
+              <strong>Your Investment: {investment}</strong>
+            </div>
             <p className="mb-0">When you enroll in the Interior Design/Decorating: Career Accelerator, you aren't just purchasing a course&mdash;you're getting everything you need to become a career-ready design professional and build a profitable business.</p>
           </div>
         </div>
@@ -44,28 +56,45 @@ export const EnrollmentValueSection: FC<Props> = ({ price }) => {
               <div className={styles.pricingCta}>
                 <div className="text-white">
                   <p className="lead fw-bold mb-2">Ready To Launch Your Career?</p>
-                  <p className="mb-0 small">Start today with flexible payment options.</p>
+                  <p className="mb-0 small">Get everything listed above and choose the payment plan that works best for you.</p>
                 </div>
-                <div className={styles.pricingOptions}>
-                  <div className={styles.pricingOption}>
-                    <div className="small text-white-50">Pay in full</div>
-                    <div className={styles.pricingAmount}>{fullTotal}</div>
+                <div className={styles.paymentPanel}>
+                  <div className={styles.paymentControls}>
+                    <div className={styles.paymentToggle} aria-label="Choose a payment option">
+                      <button type="button" className={`${styles.paymentToggleButton} ${isFullPayment ? styles.active : ''}`} aria-pressed={isFullPayment} onClick={handlePayInFullClick}>Pay in Full</button>
+                      <button type="button" className={`${styles.paymentToggleButton} ${!isFullPayment ? styles.active : ''}`} aria-pressed={!isFullPayment} onClick={handleMonthlyClick}>Monthly</button>
+                    </div>
+                    <div className={styles.paymentDetails}>
+                      {isFullPayment ? (
+                        <>
+                          <div className={styles.paymentLabel}>One-time payment</div>
+                          <div className={styles.pricingAmount}>{fullTotal} <span>all-inclusive</span></div>
+                        </>
+                      ) : (
+                        <>
+                          <div className={styles.paymentLabel}>Start today for</div>
+                          <div className={styles.pricingAmount}>{deposit}</div>
+                          <div className={styles.paymentSubtext}>{price.plans.part.installments} monthly payments of {installment}</div>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div className={styles.pricingOption}>
-                    <div className="small text-white-50">Installments</div>
-                    <div className={styles.pricingAmount}>{deposit} down</div>
-                    <div className="small text-white-50">{price.plans.part.installments} payments of {installment}</div>
+                  <div className={styles.paymentDivider} aria-hidden="true" />
+                  <div className={styles.paymentAction}>
+                    <Link href={href} className="btn btn-primary">Enroll Now</Link>
                   </div>
-                  <Link href={href} className="btn btn-light">Enroll Now</Link>
                 </div>
               </div>
             </div>
+            <div className={styles.guarantee}>21-Day No-Risk Money-Back Guarantee</div>
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+type PaymentPlan = 'full' | 'part';
 
 const enrollmentItems: { id: string; title: ReactNode; value: string; text: string }[] = [
   {
