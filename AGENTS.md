@@ -30,6 +30,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 export const ComponentName: FC<Props> = props => (
 ```
 
+- Keep simple JSX/HTML elements compact instead of spreading every attribute over many lines. For straightforward buttons, links, badges, and short wrappers, prefer keeping the opening tag, content, and closing tag on one line when it remains readable.
 - For responsive button rows, prefer simple Bootstrap patterns such as:
 
 ```tsx

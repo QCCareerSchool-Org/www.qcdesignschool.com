@@ -8,19 +8,22 @@ import { FaRegCheckCircle } from 'react-icons/fa';
 import styles from './index.module.scss';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
+import { getDesignRestricted } from '@/lib/restrictions';
 
 interface Props {
   price: Price;
+  countryCode: string;
+  provinceCode: string | null;
 }
 
-export const EnrollmentValueSection: FC<Props> = ({ price }) => {
-  const fullTotal = `${price.currency.symbol}${formatPrice(price.plans.full.total, 2, true)}`;
-  const deposit = `${price.currency.symbol}${formatPrice(price.plans.part.deposit, 2, true)}`;
-  const installment = `${price.currency.symbol}${formatPrice(price.plans.part.installmentSize, 2, true)}`;
+export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, provinceCode }) => {
+  const fullTotal = `${price.currency.symbol}${formatPrice(price.plans.full.total, 2)}`;
+  const installment = `${price.currency.symbol}${formatPrice(price.plans.part.installmentSize, 2)}`;
   const [ paymentPlan, setPaymentPlan ] = useState<PaymentPlan>('full');
-  const isFullPayment = paymentPlan === 'full';
-  const investment = isFullPayment ? fullTotal : `${deposit} down`;
+  const courseType = getDesignRestricted(countryCode, provinceCode) ? 'Decorating' : 'Design';
+
   const href = `https://enroll.qcdesignschool.com?c=i2&paymentPlan=${paymentPlan}`;
+
   const handlePayInFullClick = (): void => setPaymentPlan('full');
   const handleMonthlyClick = (): void => setPaymentPlan('part');
 
@@ -30,18 +33,18 @@ export const EnrollmentValueSection: FC<Props> = ({ price }) => {
         <div className="row justify-content-center text-center mb-5">
           <div className="col-12 col-lg-9 col-xl-8">
             <h2>What's Included in Your Enrollment</h2>
-            <div className={styles.valueSummary}>
+            <div className="d-inline-flex flex-column flex-sm-row align-items-center justify-content-center gap-2 gap-sm-3 px-4 py-2 mb-4 rounded-3 bg-light border">
               <span>Total Value: <del>$5071+</del></span>
-              <span className={styles.valueSummaryDivider} aria-hidden="true" />
-              <strong>Your Investment: {investment}</strong>
+              <span className="vr d-none d-sm-inline-block" aria-hidden="true" />
+              <strong className="text-primary">Your Investment: {paymentPlan === 'part' ? `${installment}/month` : fullTotal}</strong>
             </div>
-            <p className="mb-0">When you enroll in the Interior Design/Decorating: Career Accelerator, you aren't just purchasing a course&mdash;you're getting everything you need to become a career-ready design professional and build a profitable business.</p>
+            <p className="mb-0">When you enroll in the Interior {courseType}: Career Accelerator, you aren't just purchasing a course&mdash;you're getting everything you need to become a career-ready design professional and build a profitable business.</p>
           </div>
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-9">
-            <div className={styles.enrollmentCard}>
-              <div className={styles.enrollmentList}>
+            <div className={`${styles.enrollmentCard} overflow-hidden border rounded-4 shadow-sm`}>
+              <div className={`${styles.enrollmentList} bg-white`}>
                 {enrollmentItems.map(item => (
                   <div className={styles.enrollmentItem} key={item.id}>
                     <div className={styles.enrollmentCheck} aria-hidden="true"><FaRegCheckCircle size={18} /></div>
@@ -49,39 +52,36 @@ export const EnrollmentValueSection: FC<Props> = ({ price }) => {
                       <h3 className="h6 mb-1">{item.title}</h3>
                       <p className="mb-0">{item.text}</p>
                     </div>
-                    <div className={styles.enrollmentValue}><span className="badge bg-secondary rounded-pill px-3 py-2 bg-light text-black">Value: {item.value}</span></div>
+                    <div className={styles.enrollmentValue}><span className="badge rounded-pill px-3 py-2 text-bg-light text-dark">Value: {item.value}</span></div>
                   </div>
                 ))}
               </div>
-              <div className={styles.pricingCta}>
-                <div className="text-white">
+              <div className={`${styles.pricingCta} d-flex flex-column flex-xl-row align-items-center justify-content-between gap-4 gap-lg-5 p-4 p-md-5`}>
+                <div className="text-white text-center text-lg-start flex-grow-1">
                   <p className="lead fw-bold mb-2">Ready To Launch Your Career?</p>
                   <p className="mb-0 small">Get everything listed above and choose the payment plan that works best for you.</p>
                 </div>
-                <div className={styles.paymentPanel}>
-                  <div className={styles.paymentControls}>
-                    <div className={styles.paymentToggle} aria-label="Choose a payment option">
-                      <button type="button" className={`${styles.paymentToggleButton} ${isFullPayment ? styles.active : ''}`} aria-pressed={isFullPayment} onClick={handlePayInFullClick}>Pay in Full</button>
-                      <button type="button" className={`${styles.paymentToggleButton} ${!isFullPayment ? styles.active : ''}`} aria-pressed={!isFullPayment} onClick={handleMonthlyClick}>Monthly</button>
+                <div className={`${styles.paymentPanel} d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 p-4 rounded-4 border flex-grow-0`}>
+                  <div className={`${styles.paymentControls} d-flex flex-column align-items-center align-items-md-start gap-3`}>
+                    <div className={`${styles.paymentToggle} btn-group rounded-pill p-1`} role="group" aria-label="Choose a payment option">
+                      <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.paymentToggleButton}`} aria-pressed={paymentPlan === 'full'} onClick={handlePayInFullClick}>Pay in Full</button>
+                      <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.paymentToggleButton}`} aria-pressed={paymentPlan === 'part'} onClick={handleMonthlyClick}>Monthly</button>
                     </div>
-                    <div className={styles.paymentDetails}>
-                      {isFullPayment ? (
+                    <div className="text-center text-md-start">
+                      {paymentPlan === 'part' ? (
                         <>
-                          <div className={styles.paymentLabel}>One-time payment</div>
-                          <div className={styles.pricingAmount}>{fullTotal} <span>all-inclusive</span></div>
+                          <div className={`${styles.priceLine} display-6 fw-bold text-white lh-1`}>{installment} <span className="fs-6 fw-semibold text-white-50">/ month</span></div>
                         </>
                       ) : (
                         <>
-                          <div className={styles.paymentLabel}>Start today for</div>
-                          <div className={styles.pricingAmount}>{deposit}</div>
-                          <div className={styles.paymentSubtext}>{price.plans.part.installments} monthly payments of {installment}</div>
+                          <div className={`${styles.priceLine} display-6 fw-bold text-white lh-1`}>{fullTotal} <span className="fs-6 fw-semibold text-white-50">all-inclusive</span></div>
                         </>
                       )}
                     </div>
                   </div>
-                  <div className={styles.paymentDivider} aria-hidden="true" />
-                  <div className={styles.paymentAction}>
-                    <Link href={href} className="btn btn-primary">Enroll Now</Link>
+                  <div className={`vr d-none d-md-block flex-shrink-0 ${styles.paymentDivider}`} aria-hidden="true" />
+                  <div className="d-flex justify-content-center align-self-center flex-shrink-0">
+                    <Link href={href} className="btn btn-primary btn-lg rounded-pill px-4 text-nowrap">Enroll Now</Link>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const enrollmentItems: { id: string; title: ReactNode; value: string; text: stri
     id: 'personal-mentorship',
     title: 'Personal Mentorship',
     value: '$525+',
-    text: 'Seven 1-on-1 professional audio feedback sessions from a practicing design expert and business owner - a level of personal mentorship only available only at QC.',
+    text: 'Seven 1-on-1 professional audio feedback sessions from a practicing design expert and business owner—a level of personal mentorship only available only at QC.',
   },
   {
     id: 'career-launch-toolkit',
@@ -137,7 +137,7 @@ const enrollmentItems: { id: string; title: ReactNode; value: string; text: stri
     id: 'accelerate-your-business-workshop',
     title: 'BONUS: Accelerate Your Business Workshop',
     value: '$1,248',
-    text: 'Maximize your earning potential with advanced marketing and business strategies - includes a mentor-led business review.',
+    text: 'Maximize your earning potential with advanced marketing and business strategies—includes a mentor-led business review.',
   },
   {
     id: 'virtual-design-training',

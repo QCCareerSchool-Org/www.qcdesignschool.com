@@ -29,7 +29,7 @@
 
   tbody tr {
     overflow: hidden;
-    border: 0;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
     border-radius: 1rem;
     background-color: #fff;
     box-shadow: var(--bs-box-shadow-sm);

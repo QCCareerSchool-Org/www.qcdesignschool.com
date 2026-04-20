@@ -1,36 +1,5 @@
-.valueSummary {
-  display: inline-flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  padding: 0.75rem 1.25rem;
-  border: 1px solid rgba(2, 0, 37, 0.08);
-  border-radius: 8px;
-  background: #f8f9fa;
-  color: #5b6472;
-  font-weight: 600;
-
-  strong {
-    color: var(--qc-color-primary);
-  }
-}
-
-.valueSummaryDivider {
-  width: 1px;
-  height: 1rem;
-  background: rgba(2, 0, 37, 0.18);
-}
-
 .enrollmentCard {
-  overflow: hidden;
-  border: 1px solid rgba(2, 0, 37, 0.08);
-  border-radius: 8px;
-  box-shadow: 0 0.5rem 1.5rem rgba(2, 0, 37, 0.06);
-}
-
-.enrollmentList {
-  background: #fff;
+  --bs-border-color: oklab(0.928 -0.000571842 -0.00597269 / 0.6);
 }
 
 .enrollmentItem {
@@ -66,96 +35,56 @@
 }
 
 .pricingCta {
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2.5rem;
   background: #020025;
-  color: #fff;
 }
 
 .paymentPanel {
-  display: grid;
-  grid-template-columns: minmax(15rem, 1fr) auto auto;
-  min-width: 32rem;
-  gap: 1.5rem;
-  align-items: center;
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.12);
+  flex-basis: auto;
+  border-color: rgba(173, 181, 189, 0.22) !important;
+  background: rgba(108, 117, 125, 0.22);
 }
 
 .paymentControls {
-  display: grid;
-  gap: 1rem;
+  flex: 0 0 auto;
 }
 
 .paymentToggle {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.25rem;
-  padding: 0.25rem;
-  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: #020025;
+  min-width: 14rem;
 }
 
 .paymentToggleButton {
-  min-height: 2.25rem;
-  border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.76);
-  font-weight: 700;
+  flex: 1 1 0;
+  min-width: 0;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  border-color: transparent;
+  color: rgba(255, 255, 255, 0.62);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.paymentToggleButton[aria-pressed='true'] {
+  background-color: #6c757d;
+  box-shadow: var(--bs-box-shadow-sm);
+  color: #fff;
 }
 
 .paymentToggleButton:hover,
-.paymentToggleButton:focus-visible,
-.active {
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-}
-
-.paymentDetails {
-  min-height: 4.25rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.25rem;
-}
-
-.pricingAmount {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 800;
-  line-height: 1.2;
-
-  span {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 1rem;
-    font-weight: 600;
-  }
-}
-
-.paymentLabel,
-.paymentSubtext {
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 0.875rem;
+.paymentToggleButton:focus-visible {
+  background-color: rgba(108, 117, 125, 0.55);
+  border-color: transparent;
+  color: #fff !important;
 }
 
 .paymentDivider {
-  width: 1px;
-  height: 6.75rem;
-  background: rgba(255, 255, 255, 0.24);
+  min-height: 6rem;
+  opacity: 0.25;
 }
 
-.paymentAction {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0.25rem;
+.priceLine {
+  min-width: 16rem;
+  white-space: nowrap;
 }
 
 .guarantee {
@@ -167,47 +96,41 @@
 }
 
 @media (max-width: 991.98px) {
-  .pricingCta {
-    align-items: stretch;
-    flex-direction: column;
-  }
-
   .paymentPanel {
-    width: 100%;
     min-width: 0;
   }
 }
 
 @media (max-width: 767.98px) {
-  .valueSummary {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  .enrollmentCard {
+    overflow: visible !important;
+    border: 0 !important;
+    box-shadow: none !important;
   }
 
-  .valueSummaryDivider {
-    width: 100%;
-    height: 1px;
+  .enrollmentList {
+    display: grid;
+    gap: 1rem;
+    background-color: transparent !important;
   }
 
   .enrollmentItem {
     grid-template-columns: auto minmax(0, 1fr);
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: var(--bs-box-shadow-sm);
+  }
+
+  .enrollmentItem + .enrollmentItem {
+    border-top: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   }
 
   .enrollmentValue {
     grid-column: 2;
   }
 
-  .paymentPanel {
-    grid-template-columns: 1fr;
-  }
-
-  .paymentDivider {
-    width: 100%;
-    height: 1px;
-  }
-
-  .paymentAction {
-    padding-left: 0;
+  .priceLine {
+    min-width: 0;
   }
 }

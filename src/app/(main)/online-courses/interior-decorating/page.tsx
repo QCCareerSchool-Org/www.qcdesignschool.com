@@ -98,7 +98,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       </section>
       {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} backgroundColor="#020025" stats={stats} />
-      {price && <EnrollmentValueSection price={price} />}
+      {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
