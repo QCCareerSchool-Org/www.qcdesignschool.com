@@ -17,7 +17,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
@@ -96,7 +96,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
         </ul>
       </CertificationSection>
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'fs' ]} schemaCourseId="#course" />
-      <StatsSection />
+      <DefaultStatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="fs" schemaCourseId="#course" />
       <SupportSection date={date} />

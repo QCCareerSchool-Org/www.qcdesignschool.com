@@ -24,7 +24,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import CircleCheckIcon from '@/components/icons/check-circle.svg';
 import SquareCheckIcon from '@/components/icons/check-square.svg';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { Subtitle } from '@/components/subtitle';
 import type { PageComponent } from '@/serverComponent';
 
@@ -126,7 +126,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <GoogleReviewSection className="bg-light" />
     <section>
       <div className="container">

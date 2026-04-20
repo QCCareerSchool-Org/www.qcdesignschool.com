@@ -7,7 +7,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import type { PageComponent } from '../../../../serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -51,7 +51,7 @@ const BecomeAHomeDesignerPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <StatsSection />
+      <DefaultStatsSection />
       <InfoSection className="bg-light" />
       <TestimonialWallSection testimonialIds={testimonialIds} />
       <SupportSection date={date} showLink />

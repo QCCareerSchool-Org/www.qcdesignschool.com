@@ -11,7 +11,7 @@ import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssent
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import { getServerData } from '@/lib/getServerData';
@@ -57,7 +57,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <StatsSection />
+      <DefaultStatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <CertificationSection />
       <VirtualCommunitySection />

@@ -25,7 +25,7 @@ import SpreadsheetIcon from '@/components/icons/spreadsheet.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
-import { StatsSection } from '@/components/statsSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -146,7 +146,7 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} courseCodes={[ 'ld' ]} schemaCourseId="#course" />
-      <StatsSection />
+      <DefaultStatsSection />
       <JoinQCSection subheading="QC's Landscape Design Course provides you with:" />
       <GoogleReviewSection schemaCourseId="#course" />
       <BottomSection heading="Start Your Landscape Design Career Today!">
