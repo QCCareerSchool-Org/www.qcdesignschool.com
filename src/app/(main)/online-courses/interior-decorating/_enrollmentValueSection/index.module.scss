@@ -1,0 +1,90 @@
+.enrollmentCard {
+  overflow: hidden;
+  border: 1px solid rgba(2, 0, 37, 0.08);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1.5rem rgba(2, 0, 37, 0.06);
+}
+
+.enrollmentList {
+  background: #fff;
+}
+
+.enrollmentItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.125rem 1.25rem;
+
+  + .enrollmentItem {
+    border-top: 1px solid rgba(2, 0, 37, 0.08);
+  }
+}
+
+.enrollmentCheck {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(19, 142, 106, 0.1);
+  color: #138e6a;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.enrollmentValue {
+  color: #020025;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.pricingCta {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: #020025;
+  color: #fff;
+}
+
+.pricingOptions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pricingOption {
+  min-width: 8.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+}
+
+.pricingAmount {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@media (max-width: 767.98px) {
+  .enrollmentItem {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .enrollmentValue {
+    grid-column: 2;
+  }
+
+  .pricingCta,
+  .pricingOptions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .pricingOptions {
+    width: 100%;
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { EnrollmentValueSection } from './_enrollmentValueSection';
 import { OutlineSection } from './_outlineSection';
 import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
@@ -20,7 +21,6 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { StatsSection } from '@/components/statsSection';
 import type { Props as StatProps } from '@/components/statsSection/stat';
-import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
@@ -40,7 +40,6 @@ export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> =>
   };
 };
 
-const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0017' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = async () => {
@@ -99,7 +98,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       </section>
       {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} backgroundColor="#020025" stats={stats} />
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
+      {price && <EnrollmentValueSection price={price} />}
       <section>
         <div className="container">
           <div className="row align-items-center justify-content-center g-s">
