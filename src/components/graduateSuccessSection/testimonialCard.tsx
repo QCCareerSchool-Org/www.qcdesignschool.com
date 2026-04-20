@@ -3,7 +3,6 @@
 import type { FC } from 'react';
 import { Card } from 'react-bootstrap';
 
-import { ImageCircle } from '../imageCircle';
 import type { Testimonial } from '../testimonial/data';
 
 interface Props {
@@ -11,15 +10,15 @@ interface Props {
 }
 
 export const TestimonialCard: FC<Props> = ({ testimonial }) => (
-  <Card>
+  <Card className="bg-light rounded-4 border-0 shadow-sm">
+    <Card.Img src={testimonial.image.src} className="rounded-top-4 rounded-bottom-0" alt="" />
     <Card.Body>
-      <div className="d-flex gap-3">
-        <ImageCircle src={testimonial.image} imagePositionX={testimonial.imagePositionX} imagePositionY={testimonial.imagePositionY} alt={testimonial.name} />
-        <div>{testimonial.name}</div>
-      </div>
+      <div className="fw-bold mb-4">{testimonial.name}<br />{testimonial.nickname}</div>
       <p className="mb-4">{testimonial.intro}</p>
       <blockquote className="mb-0">
-        <p className="mb-4">&ldquo;{testimonial.long}&rdquo;</p>
+        {testimonial.short.map((t, i, a) => (
+          <p key={i} className={`lead ${i === a.length - 1 ? 'mb-0' : ''}`}>&ldquo;{t}{i === a.length - 1 ? <>&rdquo;</> : ''}</p>
+        ))}
       </blockquote>
     </Card.Body>
   </Card>

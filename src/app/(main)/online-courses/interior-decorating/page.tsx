@@ -72,7 +72,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
         <div className="container">
           <div className="row justify-content-center text-center mb-5">
             <div className="col-12 col-lg-9 col-xl-7">
-              <h2>Why Build Your Career With QC?</h2>
+              <h2>Why Build Your Career with QC?</h2>
               <p className="lead mb-0">You bring the talent. We provide the professional roadmap.</p>
             </div>
           </div>

@@ -5,8 +5,9 @@ import type { CourseCode } from '@/domain/courseCode';
 
 export interface Testimonial {
   name: string;
+  title?: string;
   intro?: string;
-  role?: string;
+  nickname?: string;
   courses: CourseCode[];
   provinceCode?: string;
   short: string[];
@@ -263,40 +264,44 @@ export const testimonials: Record<string, Testimonial | undefined> = {
   },
   'TD-0030': {
     name: 'Valerie Williams',
-    role: 'The Strategic Career Switcher',
+    title: 'Adorn Homes by Valerie',
+    nickname: 'The Strategic Career Switcher',
     intro: 'Valerie used the IDDP credential to move from enthusiast to expert, mastering the skills needed to work alongside contractors and architects.',
     courses: [ 'i2' ],
-    short: [ 'Valerie used the IDDP credential to move from enthusiast to expert, mastering the skills needed to work alongside contractors and architects.' ],
+    short: [ 'QC offered more knowledge than any other school. Learning to draw an actual floor plan and understanding how to fit a life-size room on paper for an architect or contractor was amazing!' ],
     long: [ 'QC offered more knowledge than any other school. Learning to draw an actual floor plan and understanding how to fit a life-size room on paper for an architect or contractor was amazing!' ],
-    image: Images.FDPlaceholder,
+    image: Images.ValerieWilliams,
     stars: 5,
   },
   'TD-0031': {
     name: 'Maria Oppedisano',
-    role: 'The Modern Mompreneur',
+    nickname: 'The Modern Mompreneur',
+    title: 'Maria Oppedisano Interiors',
     intro: 'Maria built a thriving business while nurturing her family with QC\'s flexible, "at-your-own-pace" professional program.',
     courses: [ 'i2' ],
-    short: [ 'Maria built a thriving business while nurturing her family with QC\'s flexible, "at-your-own-pace" professional program.' ],
+    short: [ 'As a wife and mom, learning at my own pace was great. I was able to graduate and now have my own interior design business, doing what I love!' ],
     long: [ 'As a wife and mom, learning at my own pace was great. I was able to graduate and now have my own interior design business, doing what I love!' ],
-    image: Images.FDPlaceholder,
+    image: Images.MariaOppedisano,
     stars: 5,
   },
   'TD-0032': {
     name: 'Belinda Thomason',
-    role: 'The Ambitious Scaler',
+    nickname: 'The Ambitious Scaler',
+    title: 'Founder of Wow the Stage Interiors',
     intro: 'Belinda used the IDDP credential to get hired on the spot by a global brand and scale to boutique hotel renovations in record time.',
     courses: [ 'i2' ],
-    short: [ 'Belinda used the IDDP credential to get hired on the spot by a global brand and scale to boutique hotel renovations in record time.' ],
-    long: [ 'The depth of this curriculum surprised even my colleagues with 4-year university degrees. The day I received my certification, I was hired on the spot to help customers with renovations, swatches and furnishing entire homes. This gave me the courage to launch my own business - I\'m now the proud owner of Wow the Stage Interiors, LLC!' ],
+    short: [ 'The depth of this curriculum surprised even my colleagues with 4-year university degrees. The day I received my certification, I was hired on the spot to help customers with renovations, swatches and furnishing entire homes. This gave me the courage to launch my own business—I\'m now the proud owner of Wow the Stage Interiors, LLC!' ],
+    long: [ 'The depth of this curriculum surprised even my colleagues with 4-year university degrees. The day I received my certification, I was hired on the spot to help customers with renovations, swatches and furnishing entire homes. This gave me the courage to launch my own business—I\'m now the proud owner of Wow the Stage Interiors, LLC!' ],
     image: Images.BelindaThomason,
     stars: 5,
   },
   'TD-0033': {
     name: 'Laicee Charette',
-    role: 'The Creative Upskiller',
+    nickname: 'The Creative Upskiller',
+    title: 'Laicee\'s Interiors',
     intro: 'Laicee transformed her painting business into a full-service design firm after earning her IDDP credential.',
     courses: [ 'i2' ],
-    short: [ 'Laicee transformed her painting business into a full-service design firm after earning her IDDP credential.' ],
+    short: [ 'Design and decorating is in high demand and even on my painting jobs clients ask for my input on decorating their homes which is what drove me to get my certification. QC has made me feel confident in owning my own business at 22!' ],
     long: [ 'Design and decorating is in high demand and even on my painting jobs clients ask for my input on decorating their homes which is what drove me to get my certification. QC has made me feel confident in owning my own business at 22!' ],
     image: Images.LaiceeCharette,
     stars: 5,
