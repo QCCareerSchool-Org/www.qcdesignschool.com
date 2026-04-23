@@ -1,26 +1,28 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { FaArrowRight, FaGlobe, FaHeadset } from 'react-icons/fa6';
 
 import { EnrollmentValueSection } from './_enrollmentValueSection';
-import { OutlineSection } from './_outlineSection';
 import { RoadmapSection } from './_roadmapSection';
 import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
 import styles from './page.module.scss';
-import { TutorSection } from './tutorSection';
 import { AccordionFAQ } from '@/components/accordionFAQ';
-import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { GetStartedSection } from '@/components/getStartedSection';
+import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import GlobeIcon from '@/components/icons/globe.svg';
 import GroupIcon from '@/components/icons/group.svg';
 import OpenBookIcon from '@/components/icons/open-book.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
-import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import { Badge } from '@/components/qc/badge';
+import { Card } from '@/components/qc/card';
+import { ImageCircle } from '@/components/qc/imageCircle';
 import { StatsSection } from '@/components/statsSection';
 import type { Props as StatProps } from '@/components/statsSection/stat';
 import { TestimonialCarousel } from '@/components/testimonialCarousel';
+import DeborahSoulierImage from '@/components/tutors/deborahSoulier.jpg';
+import JaneLockhartImage from '@/components/tutors/janeLockhart.jpg';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
@@ -82,14 +84,14 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
           <div className="row justify-content-center g-4">
             {whyQCItems.map(item => (
-              <div className="col-12 col-md-6" key={item.title}>
-                <div className="h-100 bg-white rounded-4 shadow-sm p-4">
+              <div className="col-12 col-md-6 d-flex" key={item.title}>
+                <Card>
                   <div className={`${styles.whyQCIcon} bg-light text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3`}>
                     <item.icon width={22} height={22} aria-hidden="true" />
                   </div>
                   <h3 className="h6">{item.title}</h3>
                   <p className="mb-0">{item.text}</p>
-                </div>
+                </Card>
               </div>
             ))}
           </div>
@@ -104,10 +106,98 @@ const InteriorDecoratingPage: PageComponent = async () => {
       <section className="pt-0">
         <TestimonialCarousel priority="i2" />
       </section>
-      <TutorSection className="bg-light" />
-      <OutlineSection designRestricted={designRestricted} />
-      <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-md-10 col-lg-8 text-center">
+              <h2 className="mb-3">Expert Mentorship to Launch Your Career</h2>
+              <h3 className="h6">Your Professional Support System</h3>
+              <p className="mb-0">A successful design career today requires more than course materials—it requires guidance, feedback, and real-world perspective.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4">
+            <div className="col-6 d-flex">
+              <Card>
+                <div className="d-flex align-items-center gap-3 mb-4">
+                  <ImageCircle src={JaneLockhartImage} alt="Jane Lockhart" />
+                  <div>
+                    <Badge className="mb-2">Industry Leader</Badge>
+                    <div className="ps-1">
+                      <div className="lead fw-bold text-black">Jane Lockhart</div>
+                      <div className="fw-bold small">HGTV Host & Design Expert</div>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="h6">Real-World Insights from Industry Leaders</h3>
+                <p>Gain the competitive edge with expert-reviewed lessons developed in partnership with world-class design leaders and exclusive masterclasses from world-class practitioners like HGTV's Jane Lockhart.</p>
+              </Card>
+            </div>
+            <div className="col-6 d-flex">
+              <Card>
+                <div className="d-flex align-items-center gap-3 mb-4">
+                  <ImageCircle src={DeborahSoulierImage} alt="Deborah Soulier" />
+                  <div>
+                    <Badge className="mb-2">Dedicated Mentor</Badge>
+                    <div className="ps-1">
+                      <div className="lead fw-bold text-black">Deborah Soulier</div>
+                      <div className="fw-bold small">Founder of Soulier Designs</div>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="h6">Your Dedicated Design Mentor</h3>
+                <p>From day one, you'll have an industry leader like Deborah Soulier in your corner. You'll receive seven personal audio reviews—supportive, expert feedback designed to elevate your skills to a professional level, all while giving you the confidence to charge what you're worth.</p>
+              </Card>
+            </div>
+            <div className="col-6 d-flex">
+              <Card>
+                <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
+                  <FaHeadset size={24} />
+                </div>
+                <h3 className="h6">On-Demand Student Success Team</h3>
+                <p>Beyond your mentor, you have immediate access to our dedicated student success team, here to ensure you never feel &ldquo;stuck,&rdquo; providing the prompt, professional support needed to keep your momentum.</p>
+              </Card>
+            </div>
+            <div className="col-6 d-flex">
+              <Card>
+                <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
+                  <FaGlobe size={24} />
+                </div>
+                <h3 className="h6">A Global Network of Design Peers</h3>
+                <p>Instant entry into a private community of design entrepreneurs. Share project insights, build industry connections, and leverage real-world advice from peers worldwide.</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-md-10 col-lg-8 text-center">
+              <h2>Your Bonuses</h2>
+              <p className="lead mb-3">Skip the Setup. Start Signing Clients.</p>
+              <p className="mb-0">Don't spend months building systems—start booking clients from day one with QC's tools and templates.</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12 col-lg-6 d-flex">
+              <Card className="bg-navy text-white">
+                <h3 className="h6">DesignFiles Pro + Training ($350+ Value)</h3>
+                4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.
+              </Card>
+            </div>
+            <div className="col-12 col-lg-6 d-flex">
+              <Card>
+                <h3 className="h6">Business-in-a-Box Canva Suite ($300+ Value)</h3>
+                Launch your brand instantly with ready-to-use templates:
+                Contracts & Finance: Professional contracts, invoices, and business plans.
+                Client Onboarding Pack: A polished welcome kit to impress clients.
+                Social Media Kits: High-authority Instagram and Pinterest templates.
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+      <GoogleReviewSection className="bg-light" />
       <section>
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">
@@ -140,11 +230,14 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <GetStartedSection
-        title={`Ready to Start Your Interior ${designRestricted ? 'Decorating' : 'Design'} Career?`}
-        text={`Become professionally certified with QC's online interior ${designRestricted ? 'decorating' : 'design'} training.`}
-        courseCodes={courseCodes}
-      />
+      <section className="bg-navy text-white" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
+        <div className="container text-center">
+          <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
+          <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>
+          <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today <FaArrowRight /></button></Link></div>
+          21-Day No-Risk Money-Back Guarantee
+        </div>
+      </section>
     </div>
   );
 };

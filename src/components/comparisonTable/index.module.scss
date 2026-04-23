@@ -1,12 +1,11 @@
 .tableWrapper {
-  --bs-border-color: oklab(0.928 -0.000571842 -0.00597269 / 0.6);
   --highlight-border-color: #ebecee;
   --highlight-background-color: #fbfbfb;
   --highlight-header-background-color: #f9f8fd;
   --text-color: #4a5565;
   --heading-color: black;
-  border: 0;
-  border-radius: 1rem;
+  border: var(--qc-border);
+  border-radius: var(--qc-border-radius);
 }
 
 .table {

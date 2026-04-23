@@ -1,0 +1,6 @@
+.card {
+  border-radius: var(--qc-border-radius);
+  background: white;
+  border: var(--qc-border);
+  box-shadow: var(--qc-box-shadow);
+}

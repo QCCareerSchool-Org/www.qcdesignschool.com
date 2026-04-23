@@ -9,6 +9,7 @@ import Part2Image from './roadmap-step-2.jpg';
 import Part3Image from './roadmap-step-3.jpg';
 import Part4Image from './roadmap-step-4.jpg';
 import Part5Image from './roadmap-step-5.jpg';
+import { Card } from '@/components/qc/card';
 
 interface Props {
   designRestricted: boolean;
@@ -73,11 +74,11 @@ export const RoadmapSection: FC<Props> = ({ designRestricted }) => {
         </div>
         <div className="row justify-content-center mt-5">
           <div className="col-12 col-lg-8">
-            <div className="border rounded-3 bg-white p-4 p-md-5 text-center shadow-sm">
+            <Card className="text-center">
               <h3 className="h4 mb-3">Have Questions? Speak with a Career Advisor.</h3>
               <p className="mb-4">Our dedicated team is here to provide the guidance you need to launch your firm. Your professional success is our priority&mdash;reach out today.</p>
               <Link href="/contact-us" className="btn btn-primary btn-lg rounded-pill px-4">Contact Us</Link>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export const GraduateSuccessSection: FC<PropsWithChildren<Props>> = ({ gradKeys,
         </div>
         <div className="row justify-content-center g-4 g-xl-5">
           {gradKeys.map(t => (
-            <div key={t} className="col-12 col-md-6 d-flex">
+            <div key={t} className="col-12 col-lg-6 d-flex">
               <GraduateCard grad={grads[t]} />
             </div>
           ))}

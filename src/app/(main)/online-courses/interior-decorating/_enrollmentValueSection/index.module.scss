@@ -1,5 +1,7 @@
 .enrollmentCard {
-  --bs-border-color: oklab(0.928 -0.000571842 -0.00597269 / 0.6);
+  border-radius: var(--qc-border-radius);
+  border: var(--qc-border);
+  box-shadow: var(--qc-box-shadow);
 }
 
 .enrollmentItem {

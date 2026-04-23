@@ -43,7 +43,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
         </div>
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-9">
-            <div className={`${styles.enrollmentCard} overflow-hidden border rounded-4 shadow-sm`}>
+            <div className={`${styles.enrollmentCard} overflow-hidden`}>
               <div className={`${styles.enrollmentList} bg-white`}>
                 {enrollmentItems.map(item => (
                   <div className={styles.enrollmentItem} key={item.id}>
@@ -61,7 +61,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
                   <p className="lead fw-bold mb-2">Ready To Launch Your Career?</p>
                   <p className="mb-0 small">Get everything listed above and choose the payment plan that works best for you.</p>
                 </div>
-                <div className={`${styles.paymentPanel} d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 p-4 rounded-4 border flex-grow-0`}>
+                <div className={`${styles.paymentPanel} d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 p-4 rounded-3 border flex-grow-0`}>
                   <div className={`${styles.paymentControls} d-flex flex-column align-items-center align-items-md-start gap-3`}>
                     <div className={`${styles.paymentToggle} btn-group rounded-pill p-1`} role="group" aria-label="Choose a payment option">
                       <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.paymentToggleButton}`} aria-pressed={paymentPlan === 'full'} onClick={handlePayInFullClick}>Pay in Full</button>

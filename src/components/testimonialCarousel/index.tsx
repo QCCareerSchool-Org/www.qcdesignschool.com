@@ -33,7 +33,7 @@ export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialI
       <TestimonialCarouselClient>
         {usedTestimonials.sort(sort).map(t => (
           <div key={t} className="mx-3 mb-md-5">
-            <Testimonial id={t} />
+            <Testimonial id={t} small />
           </div>
         ))}
         {children}

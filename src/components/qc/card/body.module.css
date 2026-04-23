@@ -1,0 +1,5 @@
+.cardBody {
+  padding: var(--qc-padding);
+}
+
+.cardBody > *:last-child { margin-bottom: 0; }
