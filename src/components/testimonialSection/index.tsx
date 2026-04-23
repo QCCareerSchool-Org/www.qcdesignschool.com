@@ -5,24 +5,21 @@ import styles from './index.module.css';
 import { Title } from './title';
 import { ImageCircle } from '@/components/imageCircle';
 import { courseSort } from '@/components/testimonial';
+import type { Testimonial, TestimonialId } from '@/components/testimonial/data';
 import { testimonials } from '@/components/testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  id: string;
+  id: TestimonialId;
   courseCodes?: CourseCode[];
   className?: string;
 }
 
 export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) => {
   const testimonial = useMemo(() => {
-    const found = testimonials[id];
-    if (!found) {
-      return;
-    }
     return {
-      ...found,
-      courses: found.courses.sort((a, b) => {
+      ...testimonials[id],
+      courses: testimonials[id].courses.sort((a, b) => {
         if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
@@ -34,12 +31,8 @@ export const TestimonialSection: FC<Props> = ({ id, courseCodes, className }) =>
         }
         return courseSort(a, b);
       }),
-    };
+    } as Testimonial;
   }, [ id, courseCodes ]);
-
-  if (!testimonial) {
-    return;
-  }
 
   return (
     <section className={className}>

@@ -11,7 +11,6 @@ import { TutorSection } from './tutorSection';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
-import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import BriefcaseIcon from '@/components/icons/briefcase.svg';
 import GlobeIcon from '@/components/icons/globe.svg';
@@ -21,7 +20,7 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { StatsSection } from '@/components/statsSection';
 import type { Props as StatProps } from '@/components/statsSection/stat';
-import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
@@ -101,9 +100,10 @@ const InteriorDecoratingPage: PageComponent = async () => {
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
-      <GraduateSuccessSection testimonialIds={[ 'TD-0030', 'TD-0031', 'TD-0032', 'TD-0033' ]} />
-      <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
+      <GraduateSuccessSection gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]} />
+      <section className="pt-0">
+        <TestimonialCarousel />
+      </section>
       <TutorSection className="bg-light" />
       <OutlineSection designRestricted={designRestricted} />
       <CareerEssentialsKitDesignFilesSection />

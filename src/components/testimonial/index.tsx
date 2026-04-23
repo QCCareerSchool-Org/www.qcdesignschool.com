@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
+import type { TestimonialId, Testimonial as TestimonialType } from './data';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
@@ -10,7 +11,7 @@ import { CourseMicrodata } from '@/components/microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  id: string;
+  id: TestimonialId;
   courseCodes?: CourseCode[];
   showProvinceCode?: boolean;
   schemaCourseId?: string;
@@ -31,14 +32,10 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
 };
 
 export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
-  const testimonial = useMemo(() => {
-    const found = testimonials[id];
-    if (!found) {
-      return;
-    }
+  const testimonial: TestimonialType = useMemo(() => {
     return {
-      ...found,
-      courses: found.courses.sort((a, b) => {
+      ...testimonials[id],
+      courses: testimonials[id].courses.sort((a, b) => {
         if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
@@ -52,10 +49,6 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
       }),
     };
   }, [ id, courseCodes ]);
-
-  if (!testimonial) {
-    return;
-  }
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">

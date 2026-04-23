@@ -18,7 +18,7 @@ export interface Testimonial {
   stars: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
-export const testimonials: Record<string, Testimonial | undefined> = {
+export const testimonials = {
   'TD-0001': {
     name: 'Natalie Mireault',
     courses: [ 'st' ],
@@ -126,7 +126,7 @@ export const testimonials: Record<string, Testimonial | undefined> = {
   'TD-0013': {
     name: 'Katherine Snow',
     courses: [ 'ed' ],
-    short: [ 'I chose QC for its stellar reviews and professional website. The reputable tutors allowed me to enhance my skills. The option for easy payments made continuing my education hassle-free, enabling me to keep moving forward. The tutors were not only great but also helpful and knowledgeable, making my time truly enjoyable.' ],
+    short: [ 'I chose QC for its stellar reviews and professional website. The reputable tutors allowed me to enhance my skills. The tutors were not only great but also helpful and knowledgeable, making my time truly enjoyable.' ],
     long: [ 'I chose QC for its stellar reviews and professional website. The reputable tutors allowed me to enhance my skills. The option for easy payments made continuing my education hassle-free, enabling me to keep moving forward. The tutors were not only great but also helpful and knowledgeable, making my time truly enjoyable.' ],
     image: Images.KatherineSnow,
     stars: 5,
@@ -185,8 +185,8 @@ export const testimonials: Record<string, Testimonial | undefined> = {
   'TD-0020': {
     name: 'Terry Russell',
     courses: [ 'ld' ],
-    short: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
-    long: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it’s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
+    short: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. QC does an amazing job teaching that.' ],
+    long: [ 'Some schools focus purely on books and theory. QC combines theory with hands-on learning. At the end of the day, it\'s all about learning design, improving, and finding creative ways to solve real-world challenges—and QC does an amazing job teaching that.' ],
     image: Images.TerryRussell,
     stars: 5,
   },
@@ -201,15 +201,15 @@ export const testimonials: Record<string, Testimonial | undefined> = {
   'TD-0022': {
     name: 'Katie Cole',
     courses: [ 'ld' ],
-    short: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
-    long: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
+    short: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful. Getting the feedback from my tutor was my favorite part.' ],
+    long: [ 'I loved that I could work at my own pace. I also found the feedback from my tutor very helpful, and she made a point to explain in detail on things that I may have misunderstood and how to improve or correct it. Getting the feedback from my tutor was my favorite part.' ],
     image: Images.KatieCole,
     stars: 5,
   },
   'TD-0023': {
     name: 'Kizzy Malini',
     courses: [ 'st' ],
-    short: [ 'From start to finish, the course was thoughtfully structured and packed with valuable information that has truly prepared me for a career in home staging. My tutor provided constructive, encouraging insights that helped me grow with every module.' ],
+    short: [ 'The course was thoughtfully structured and packed with valuable information that has truly prepared me for a career in home staging. My tutor provided encouraging insights that helped me grow with every module.' ],
     long: [ 'I recently completed the Home Staging course with QC Design School, and I couldn\'t be more pleased with the experience. From start to finish, the course was thoughtfully structured, easy to follow, and packed with valuable information that has truly prepared me for a career in home staging. \nThe materials were comprehensive and practical, covering everything from design principles and color theory to client communication and staging for real estate. The assignments were hands-on and challenged me to apply what I learned in real-world scenarios. I especially appreciated the personalized feedback from my tutor, who provided constructive, encouraging insights that helped me grow with every module. \nWhat really stood out was the flexibility of the program. Being able to study at my own pace made it easy to balance my education with a busy schedule. Plus, the support from the QC community was fantastic—responsive, professional, and genuinely invested in my success. \nThanks to QC Design School, I feel confident to run my home staging business, helping Realtors sell homes faster. I would highly recommend this course to anyone looking to break into the design industry with a solid foundation and real-world skills.' ],
     image: Images.KizzyMalini,
     stars: 5,
@@ -262,48 +262,6 @@ export const testimonials: Record<string, Testimonial | undefined> = {
     image: Images.AdrianaDeFreitas, // update image
     stars: 5,
   },
-  'TD-0030': {
-    name: 'Valerie Williams',
-    title: 'Adorn Homes by Valerie',
-    nickname: 'The Strategic Career Switcher',
-    intro: 'Valerie used the IDDP credential to move from enthusiast to expert, mastering the skills needed to work alongside contractors and architects.',
-    courses: [ 'i2' ],
-    short: [ 'QC offered more knowledge than any other school. Learning to draw an actual floor plan and understanding how to fit a life-size room on paper for an architect or contractor was amazing!' ],
-    long: [ 'QC offered more knowledge than any other school. Learning to draw an actual floor plan and understanding how to fit a life-size room on paper for an architect or contractor was amazing!' ],
-    image: Images.ValerieWilliams,
-    stars: 5,
-  },
-  'TD-0031': {
-    name: 'Maria Oppedisano',
-    nickname: 'The Modern Mompreneur',
-    title: 'Maria Oppedisano Interiors',
-    intro: 'Maria built a thriving business while nurturing her family with QC\'s flexible, "at-your-own-pace" professional program.',
-    courses: [ 'i2' ],
-    short: [ 'As a wife and mom, learning at my own pace was great. I was able to graduate and now have my own interior design business, doing what I love!' ],
-    long: [ 'As a wife and mom, learning at my own pace was great. I was able to graduate and now have my own interior design business, doing what I love!' ],
-    image: Images.MariaOppedisano,
-    stars: 5,
-  },
-  'TD-0032': {
-    name: 'Belinda Thomason',
-    nickname: 'The Ambitious Scaler',
-    title: 'Founder of Wow the Stage Interiors',
-    intro: 'Belinda used the IDDP credential to get hired on the spot by a global brand and scale to boutique hotel renovations in record time.',
-    courses: [ 'i2' ],
-    short: [ 'The depth of this curriculum surprised even my colleagues with 4-year university degrees. The day I received my certification, I was hired on the spot to help customers with renovations, swatches and furnishing entire homes. This gave me the courage to launch my own business—I\'m now the proud owner of Wow the Stage Interiors, LLC!' ],
-    long: [ 'The depth of this curriculum surprised even my colleagues with 4-year university degrees. The day I received my certification, I was hired on the spot to help customers with renovations, swatches and furnishing entire homes. This gave me the courage to launch my own business—I\'m now the proud owner of Wow the Stage Interiors, LLC!' ],
-    image: Images.BelindaThomason,
-    stars: 5,
-  },
-  'TD-0033': {
-    name: 'Laicee Charette',
-    nickname: 'The Creative Upskiller',
-    title: 'Laicee\'s Interiors',
-    intro: 'Laicee transformed her painting business into a full-service design firm after earning her IDDP credential.',
-    courses: [ 'i2' ],
-    short: [ 'Design and decorating is in high demand and even on my painting jobs clients ask for my input on decorating their homes which is what drove me to get my certification. QC has made me feel confident in owning my own business at 22!' ],
-    long: [ 'Design and decorating is in high demand and even on my painting jobs clients ask for my input on decorating their homes which is what drove me to get my certification. QC has made me feel confident in owning my own business at 22!' ],
-    image: Images.LaiceeCharette,
-    stars: 5,
-  },
-};
+} as const satisfies Record<string, Testimonial | undefined>;
+
+export type TestimonialId = keyof typeof testimonials;

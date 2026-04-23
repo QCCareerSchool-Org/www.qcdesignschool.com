@@ -1,14 +1,15 @@
-import type { FC } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 
-import { TestimonialCard } from './testimonialCard';
-import { testimonials } from '@/components/testimonial/data';
+import type { GradKey } from './data';
+import { grads } from './data';
+import { GraduateCard } from './graduateCard';
 
 interface Props {
-  testimonialIds: string[];
+  gradKeys: GradKey[];
   className?: string;
 }
 
-export const GraduateSuccessSection: FC<Props> = ({ testimonialIds, className }) => {
+export const GraduateSuccessSection: FC<PropsWithChildren<Props>> = ({ gradKeys, className, children }) => {
   return (
     <section className={className}>
       <div className="container">
@@ -18,13 +19,14 @@ export const GraduateSuccessSection: FC<Props> = ({ testimonialIds, className })
             <p className="text-muted mb-0">Whether you're pivoting careers, expanding services, or launching a business, our graduates prove that QC's IDDP™ credential and business tools are the fastest path to a thriving interior design career.</p>          </div>
         </div>
         <div className="row justify-content-center g-4 g-xl-5">
-          {testimonialIds.map(t => testimonials[t] && (
+          {gradKeys.map(t => (
             <div key={t} className="col-12 col-md-6 d-flex">
-              <TestimonialCard testimonial={testimonials[t]} />
+              <GraduateCard grad={grads[t]} />
             </div>
           ))}
         </div>
       </div>
+      {children}
     </section>
   );
 };
