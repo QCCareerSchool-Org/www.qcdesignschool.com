@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FaArrowRight, FaGlobe, FaHeadset } from 'react-icons/fa6';
+import { FaShareAlt } from 'react-icons/fa';
+import { FaArrowRight, FaArrowTrendUp, FaFile, FaGlobe, FaHeadset, FaPenNib, FaUserGroup } from 'react-icons/fa6';
 
 import { EnrollmentValueSection } from './_enrollmentValueSection';
 import { RoadmapSection } from './_roadmapSection';
@@ -181,17 +182,61 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <div className="row">
             <div className="col-12 col-lg-6 d-flex">
               <Card className="bg-navy text-white">
-                <h3 className="h6">DesignFiles Pro + Training ($350+ Value)</h3>
-                4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.
+                <div>
+                  <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                    <FaPenNib size={24} />
+                  </div>
+                </div>
+                <Badge className="mb-2">$350+ Value</Badge>
+                <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
+                <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
               </Card>
             </div>
             <div className="col-12 col-lg-6 d-flex">
-              <Card>
-                <h3 className="h6">Business-in-a-Box Canva Suite ($300+ Value)</h3>
-                Launch your brand instantly with ready-to-use templates:
-                Contracts & Finance: Professional contracts, invoices, and business plans.
-                Client Onboarding Pack: A polished welcome kit to impress clients.
-                Social Media Kits: High-authority Instagram and Pinterest templates.
+              <Card className="bg-light">
+                <div>
+                  <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--qc-box-shadow)' }}>
+                    <FaArrowTrendUp size={24} />
+                  </div>
+                </div>
+                <Badge className="mb-2">$300+ Value</Badge>
+                <h3 className="h6 mb-3">Business-in-a-Box Canva Suite</h3>
+                <p className="mb-4">Launch your brand instantly with ready-to-use templates:</p>
+                <div className="d-flex flex-column gap-4">
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} ${styles.green}`}>
+                        <FaFile size={16} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Contracts & Finance</div>
+                        Professional contracts, invoices, and business plans.
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} ${styles.purple}`}>
+                        <FaUserGroup size={16} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Client Onboarding Pack</div>
+                        A polished welcome kit to impress clients.
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} ${styles.red}`}>
+                        <FaShareAlt size={16} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Social Media Kits</div>
+                        High-authority Instagram and Pinterest templates.
+                      </div>
+                    </div>
+                  </Card>
+                </div>
               </Card>
             </div>
           </div>

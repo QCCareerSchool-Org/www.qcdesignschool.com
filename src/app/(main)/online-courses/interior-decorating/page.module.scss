@@ -25,3 +25,26 @@
   width: 3rem;
   height: 3rem;
 }
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ECFDF5;
+  color: #029A67;
+}
+.green {
+  background-color: #ECFDF5;
+  color: #029A67;
+}
+.red {
+  background-color: #FDF2F8;
+  color: #EC4B9D;
+}
+.purple {
+  background-color: #FAF5FD;
+  color: #A629FB;
+}
