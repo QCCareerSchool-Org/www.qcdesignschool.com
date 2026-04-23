@@ -8,6 +8,7 @@ import styles from './page.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -17,14 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/your-career' },
 };
 
-const testimonialIds = [
-  'TD-0001',
-  'TD-0002',
-  'TD-0003',
-  'TD-0004',
-  'TD-0005',
-  'TD-0006',
-];
+const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 
 const YourCareerPage: PageComponent = () => (
   <>

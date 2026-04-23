@@ -22,6 +22,7 @@ import { DesignPartnerSection } from '@/components/partners/designPartnerSection
 import { PromoSection } from '@/components/promoSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VideoPopup } from '@/components/videoPopup';
 import type { CourseCode } from '@/domain/courseCode';
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);

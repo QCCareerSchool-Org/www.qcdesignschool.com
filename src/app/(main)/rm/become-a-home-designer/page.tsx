@@ -9,6 +9,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   description: 'Start your career as a Certified Design Professional with QC\'s online courses, featuring mentorship, certifications, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const BecomeAHomeDesignerPage: PageComponent = async props => {

@@ -12,8 +12,10 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
+import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import type { PageComponent } from '@/serverComponent';
@@ -23,8 +25,8 @@ export const metadata: Metadata = {
   description: 'Become an internationally certified Interior Decorator with QC\'s online course, featuring mentoring, business training, and a starter kit!',
 };
 
-const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
-const courseCodes = [ 'i2' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
+const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getServerData();

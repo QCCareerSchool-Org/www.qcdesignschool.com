@@ -8,6 +8,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { CountUp } from '@/components/paymentPlanSection/countUp';
 import { StudentShowcaseSection } from '@/components/studentShowcase';
 import { students } from '@/components/studentShowcase/data';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { PageComponent } from '@/serverComponent';
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/student-success' },
 };
 
-const testimonialIds = [ 'TD-0008', 'TD-0003', 'TD-0012', 'TD-0009', 'TD-0005', 'TD-0001' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0008', 'TD-0003', 'TD-0012', 'TD-0009', 'TD-0005', 'TD-0001' ];
 
 const SuccessPage: PageComponent = () => (
   <div className={styles.page}>

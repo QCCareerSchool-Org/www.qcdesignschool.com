@@ -12,6 +12,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Become a Certified Home Stager with QC\'s online course, featuring double certification, a professional starter kit, mentoring, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const BecomeAHomeDesignerPage: PageComponent = () => (

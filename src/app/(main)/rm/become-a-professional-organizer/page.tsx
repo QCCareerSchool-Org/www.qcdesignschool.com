@@ -12,6 +12,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
 import type { PageComponent } from '@/serverComponent';
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description: 'Become a Certified Professional Organizer with QC\'s online course, featuring an AIOP™ certificate, business training, mentoring, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];
 const courseCodes: CourseCode[] = [ 'po' ];
 
 const ProfessionalOrganizingPage: PageComponent = () => (

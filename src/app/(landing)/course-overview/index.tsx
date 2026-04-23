@@ -9,9 +9,10 @@ import { Header } from '../_components/header';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 
-const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0008', 'TD-0009' ];
 
 interface Props {
   countryCode: string;

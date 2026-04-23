@@ -19,6 +19,7 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 20; // Home Staging Leads
 const brevoEmailTemplateId = 1985; // Home Staging
-const testimonialIds = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);

@@ -26,6 +26,7 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { Overlay } from '@/components/overlay';
 import { PromoSection } from '@/components/promoSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
 const iconHeight = 32;
 const brevoListId = 21; // Landscape Design Leads
 const brevoEmailTemplateId = 1967; // Landscape Design
-const testimonialIds = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
