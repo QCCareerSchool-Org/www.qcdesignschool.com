@@ -102,7 +102,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       <CertificationSection />
       <GraduateSuccessSection gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]} />
       <section className="pt-0">
-        <TestimonialCarousel />
+        <TestimonialCarousel priority="i2" />
       </section>
       <TutorSection className="bg-light" />
       <OutlineSection designRestricted={designRestricted} />

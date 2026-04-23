@@ -1,61 +1,43 @@
-'use client';
-
 import type { FC, PropsWithChildren } from 'react';
-import type { ResponsiveType } from 'react-multi-carousel';
-import Carousel from 'react-multi-carousel';
 
 import { Testimonial } from '../testimonial';
+import { TestimonialCarouselClient } from './client';
 import type { TestimonialId } from '../testimonial/data';
 import { testimonials } from '../testimonial/data';
-import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
+import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
   testimonialIds?: TestimonialId[];
+  priority?: CourseCode;
 }
 
-const responsive: ResponsiveType = {
-  xl: {
-    breakpoint: { min: 1200, max: 9999 },
-    items: 4,
-    partialVisibilityGutter: 30,
-    slidesToSlide: 4,
-  },
-  lg: {
-    breakpoint: { min: 992, max: 1200 },
-    items: 3,
-    partialVisibilityGutter: 30,
-    slidesToSlide: 3,
-  },
-  md: {
-    breakpoint: { min: 768, max: 992 },
-    items: 3,
-    partialVisibilityGutter: 30,
-    slidesToSlide: 3,
-  },
-  sm: {
-    breakpoint: { min: 576, max: 768 },
-    items: 2,
-  },
-  xs: {
-    breakpoint: { min: 0, max: 576 },
-    items: 1,
-  },
-};
-
-export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialIds, children }) => {
+export const TestimonialCarousel: FC<PropsWithChildren<Props>> = ({ testimonialIds, priority, children }) => {
   const usedTestimonials = testimonialIds ?? Object.keys(testimonials) as TestimonialId[];
-  const screenSize = useScreenWidthContext() ?? 0;
+
+  const sort = priority
+    ? (a: TestimonialId, b: TestimonialId) => {
+      const priorityA = (testimonials[a].courses as CourseCode[]).includes(priority);
+      const priorityB = (testimonials[b].courses as CourseCode[]).includes(priority);
+      if (priorityA === priorityB) {
+        return 0;
+      }
+      if (priorityA) {
+        return -1;
+      }
+      return 1;
+    }
+    : undefined;
 
   return (
     <div style={{ minHeight: 360 }}>
-      <Carousel ssr responsive={responsive} partialVisible infinite showDots={screenSize >= 768}>
-        {usedTestimonials.map(t => (
+      <TestimonialCarouselClient>
+        {usedTestimonials.sort(sort).map(t => (
           <div key={t} className="mx-3 mb-md-5">
             <Testimonial id={t} />
           </div>
         ))}
         {children}
-      </Carousel>
+      </TestimonialCarouselClient>
     </div>
   );
 };
