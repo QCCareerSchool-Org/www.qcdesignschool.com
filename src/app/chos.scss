@@ -89,8 +89,8 @@ $sizes: (
     color: var(--chos-color-headings);
   }
 
-@each $name, $color in map.merge($colors, $foreground-colors) {
-  .text-#{$name} {
+  @each $name, $color in map.merge($colors, $foreground-colors) {
+    .text-#{$name} {
       color: $color !important;
       h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
         color: $color !important;
@@ -107,6 +107,9 @@ $sizes: (
   .rounded { border-radius: var(--chos-border-radius) !important; }
   .rounded-top { border-top-left-radius: var(--chos-border-radius) !important; border-top-right-radius: var(--chos-border-radius) !important; }
   .rounded-bottom { border-bottom-left-radius: var(--chos-border-radius) !important; border-bottom-right-radius: var(--chos-border-radius) !important; }
+
+  .shadow { box-shadow: var(--chos-box-shadow); }
+  .text-shadow { text-shadow: var(--chos-text-shadow); }
 
   @each $name, $size in $sizes {
     .p-#{$name} { padding: #{$size} !important; }

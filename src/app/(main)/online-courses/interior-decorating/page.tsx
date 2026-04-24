@@ -115,7 +115,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <p className="mb-0">A successful design career today requires more than course materials—it requires guidance, feedback, and real-world perspective.</p>
             </div>
           </div>
-          <div className="row justify-content-center g-4">
+          <div className="row justify-content-center g-4 mb-4">
             <div className="col-12 col-lg-6 d-flex">
               <Card>
                 <div className="d-flex align-items-center gap-3 mb-4">
@@ -167,6 +167,17 @@ const InteriorDecoratingPage: PageComponent = async () => {
               </Card>
             </div>
           </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-xl-10">
+              <div className="bg-dark text-light rounded shadow p-4">
+                <div className="d-flex flex-column flex-md-row m-2">
+                  <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
+                  <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
+                  <div className="align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section>
@@ -178,26 +189,26 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <p className="mb-0">Don't spend months building systems—start booking clients from day one with QC's tools and templates.</p>
             </div>
           </div>
-          <div className="row g-3">
-            <div className="col-12 col-xl-6 d-flex">
-              <Card className="bg-navy text-light">
-                <div>
-                  <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
-                    <BiPen size={24} />
+          <div className="row justify-content-center g-4">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
+              <Card className="bg-dark text-light">
+                <div className="d-flex flex-column justify-content-between flex-grow-1">
+                  <div>
+                    <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                      <BiPen size={24} />
+                    </div>
+                    <Badge className="mb-2">$350+ Value</Badge>
+                    <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
+                    <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
                   </div>
+                  <DesignFilesCarousel />
                 </div>
-                <Badge className="mb-2">$350+ Value</Badge>
-                <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
-                <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
-                <DesignFilesCarousel />
               </Card>
             </div>
-            <div className="col-12 col-xl-6 d-flex">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
               <Card className="bg-light">
-                <div>
-                  <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--chos-box-shadow)' }}>
-                    <BiTrendingUp size={24} />
-                  </div>
+                <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--chos-box-shadow)' }}>
+                  <BiTrendingUp size={24} />
                 </div>
                 <Badge className="mb-2">$300+ Value</Badge>
                 <h3 className="h6 mb-3">Business-in-a-Box Canva Suite</h3>
@@ -275,7 +286,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <section className="bg-navy text-light" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
+      <section className="bg-dark text-light" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
         <div className="container text-center">
           <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>
