@@ -192,7 +192,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <div className="row justify-content-center g-4">
             <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
               <Card className="bg-dark text-light">
-                <div className="d-flex flex-column justify-content-between flex-grow-1">
+                <div className="h-100 d-flex flex-column justify-content-between">
                   <div>
                     <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
                       <BiPen size={24} />

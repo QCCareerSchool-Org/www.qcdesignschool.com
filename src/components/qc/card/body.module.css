@@ -1,8 +1,8 @@
 .cardBody {
   padding: var(--qc-padding);
-  display: flex;
+  /* display: flex;
   flex: 1 1 auto;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .cardBody > *:last-child { margin-bottom: 0; }
