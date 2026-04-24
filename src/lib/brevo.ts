@@ -27,29 +27,21 @@ export const brevoPageview = (title: string, url: string, path: string): void =>
 };
 
 export const brevoIdentifyLead = (emailAddress: string, countryCode: string | null, provinceCode: string | null, firstName: string | null, lastName: string | null): void => {
-  const properties: Properties = { STATUS_DESIGN_LEAD: true };
-  if (countryCode) {
-    properties.COUNTRY_CODE = countryCode;
-  }
-  if (provinceCode) {
-    properties.PROVINCE_CODE = provinceCode;
-  }
-  if (firstName) {
-    properties.FIRSTNAME = firstName;
-  }
-  if (lastName) {
-    properties.LASTNAME = lastName;
-  }
-
-  window.sendinblue?.identify(emailAddress, properties);
+  window.sendinblue?.identify(emailAddress, {
+    STATUS_DESIGN_LEAD: true,
+    ...(firstName && { FIRSTNAME: firstName }),
+    ...(lastName && { COUNTRLASTNAMEY_CODE: lastName }),
+    ...(countryCode && { COUNTRY_CODE: countryCode }),
+    ...(provinceCode && { PROVINCE_CODE: provinceCode }),
+  });
 };
 
 export const brevoIdentifyStudent = (emailAddress: string, countryCode?: string, provinceCode?: string, firstName?: string, lastName?: string): void => {
   window.sendinblue?.identify(emailAddress, {
+    STATUS_DESIGN_STUDENT: true,
     FIRSTNAME: firstName,
     LASTNAME: lastName,
-    COUNTRY_CODE: countryCode,
-    PROVINCE_CODE: provinceCode,
-    STATUS_DESIGN_STUDENT: true,
+    ...(countryCode && { COUNTRY_CODE: countryCode }),
+    ...(provinceCode && { PROVINCE_CODE: provinceCode }),
   });
 };
