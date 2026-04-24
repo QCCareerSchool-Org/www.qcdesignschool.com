@@ -5,7 +5,7 @@ import type { ResponsiveType } from 'react-multi-carousel';
 import Carousel from 'react-multi-carousel';
 
 export const Client: FC<PropsWithChildren> = ({ children }) => (
-  <Carousel ssr responsive={responsive} showDots autoPlay>
+  <Carousel ssr responsive={responsive} showDots autoPlay infinite>
     {children}
   </Carousel>
 );
