@@ -4,7 +4,7 @@
   --highlight-header-background-color: #f9f8fd;
   --text-color: #4a5565;
   --heading-color: black;
-  border: var(--qc-border);
+  // border: var(--qc-border);
   border-radius: var(--qc-border-radius);
 }
 
@@ -71,6 +71,7 @@
 @media (min-width: 992px) {
   .tableWrapper {
     box-shadow: var(--bs-box-shadow-sm);
+    border: var(--qc-border);
   }
 
   .table {

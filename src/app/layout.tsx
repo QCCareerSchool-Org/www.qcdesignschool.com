@@ -21,6 +21,7 @@ import type { LayoutComponent } from '@/serverComponent';
 
 import './bootstrap.scss';
 import './global.scss';
+import './chos.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Design School', template: '%s - QC Design School' },

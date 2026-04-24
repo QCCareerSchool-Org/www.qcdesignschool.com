@@ -11,7 +11,6 @@ interface Props {
 }
 
 export const CareerPathComparisonTable: FC<Props> = ({ price }) => {
-
   const columns = [
     { key: 'qc', mobileLabel: 'QC Design School IDDP Program', heading: <><div className="small text-primary" style={{ height: 24, textTransform: 'uppercase' }}>QC Design School</div><h3>IDDP&trade; Program</h3></> },
     { key: 'degree', mobileLabel: 'University or College Degree', heading: <><div style={{ height: 24 }} /><h3>University or College Degree</h3>E.g., RMCAD, Yorkville University</> },
@@ -65,7 +64,7 @@ export const CareerPathComparisonTable: FC<Props> = ({ price }) => {
     },
     {
       feature: 'Total Investment',
-      qc: <div style={{ fontSize: '1.5rem' }} className="text-primary"><div className="d-flex gap-2"><BiCheckCircle style={{ position: 'relative', top: 4 }} /><div><div style={{ lineHeight: 1, color: 'oklch(0.379 0.146 265.522)', fontWeight: 700, fontSize: '2.25rem', margin: '0 0 0.25rem' }}>{price.currency.symbol}{formatPrice(price.plans.full.total, 2, true)}</div>(All-Inclusive)</div></div></div>,
+      qc: <div style={{ fontSize: '1.5rem' }} className="text-primary"><div className="d-flex gap-2"><BiCheckCircle style={{ position: 'relative', top: 4 }} /><div><div className="text-blue" style={{ lineHeight: 1, fontWeight: 700, fontSize: '2.25rem', margin: '0 0 0.25rem' }}>{price.currency.symbol}{formatPrice(price.plans.full.total, 2, true)}</div>(All-Inclusive)</div></div></div>,
       degree: <div style={{ fontSize: '1.5rem' }}>$10,000 to $50,000</div>,
       online: <div style={{ fontSize: '1.5rem' }}>$1,200 to $1,800</div>,
     },

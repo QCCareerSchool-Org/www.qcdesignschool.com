@@ -1,4 +1,5 @@
 .card {
+  width: 100%;
   border-radius: var(--qc-border-radius);
   background: white;
   border: var(--qc-border);

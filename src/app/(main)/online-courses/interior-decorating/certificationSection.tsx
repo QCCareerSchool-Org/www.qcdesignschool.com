@@ -17,8 +17,8 @@ export const CertificationSection: FC = async () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8">
-            <div className={`${styles.logoWrap} mb-4`} aria-hidden="true">
-              <CertificationLogo className={styles.logo} title="International Design and Decorating Professional (IDDP) certification logo" />
+            <div className="mb-4">
+              <CertificationLogo title="International Design and Decorating Professional (IDDP) certification logo" style={{ width: '100%', maxWidth: 150, color: 'var(--qc-color-gold)' }} />
             </div>
             <h2 className="text-white mb-3">Your Professional IDDP&trade; Designation</h2>
             <p className="lead text-white-50 fw-semibold mb-3">Turn Your Skills Into a Client-Ready Career</p>

@@ -1,12 +1,3 @@
-.page {
-  font-family: var(--qc-inter);
-  --qc-color-primary: oklch(0.623 0.214 259.815);
-  :global(.text-primary) {
-    color: var(--qc-color-primary) !important;
-  }
-}
-
-
 .careerHero {
   background:
     radial-gradient(circle at 50% 0%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025;
@@ -14,7 +5,7 @@
 
 .eyebrow {
   margin-bottom: 1rem;
-  color: #f6d779;
+  color: var(--chos-color-gold);
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -33,18 +24,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ECFDF5;
-  color: #029A67;
-}
-.green {
-  background-color: #ECFDF5;
-  color: #029A67;
-}
-.red {
-  background-color: #FDF2F8;
-  color: #EC4B9D;
-}
-.purple {
-  background-color: #FAF5FD;
-  color: #A629FB;
 }

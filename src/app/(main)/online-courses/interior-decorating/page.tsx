@@ -1,20 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { FaShareAlt } from 'react-icons/fa';
-import { FaArrowRight, FaArrowTrendUp, FaFile, FaGlobe, FaHeadset, FaPenNib, FaUserGroup } from 'react-icons/fa6';
+import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightArrowAlt, BiShareAlt, BiSupport, BiTrendingUp } from 'react-icons/bi';
 
+import { DesignFilesCarousel } from './_designFilesCarousel';
 import { EnrollmentValueSection } from './_enrollmentValueSection';
 import { RoadmapSection } from './_roadmapSection';
 import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
+import HeroImage from './hero-3.jpg';
 import styles from './page.module.scss';
 import { AccordionFAQ } from '@/components/accordionFAQ';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
-import BriefcaseIcon from '@/components/icons/briefcase.svg';
-import GlobeIcon from '@/components/icons/globe.svg';
-import GroupIcon from '@/components/icons/group.svg';
-import OpenBookIcon from '@/components/icons/open-book.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { Badge } from '@/components/qc/badge';
 import { Card } from '@/components/qc/card';
@@ -53,17 +51,18 @@ const InteriorDecoratingPage: PageComponent = async () => {
   const price = priceResult.success ? priceResult.value : undefined;
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} chos`}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
       <section className={styles.careerHero}>
-        <div className="container text-white">
+        <BackgroundImage src={HeroImage} priority />
+        <div className="container text-light">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9 col-xl-7 text-center">
               <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
               <h1>Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
-              <p className="lead text-white-50">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <p className="lead text-muted">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now</a>
+                <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></a>
                 <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
               </div>
             </div>
@@ -88,7 +87,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <div className="col-12 col-md-6 d-flex" key={item.title}>
                 <Card>
                   <div className={`${styles.whyQCIcon} bg-light text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3`}>
-                    <item.icon width={22} height={22} aria-hidden="true" />
+                    <item.icon size={24} aria-hidden="true" />
                   </div>
                   <h3 className="h6">{item.title}</h3>
                   <p className="mb-0">{item.text}</p>
@@ -105,7 +104,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
       <CertificationSection />
       <GraduateSuccessSection gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]} />
       <section className="pt-0">
-        <TestimonialCarousel priority="i2" />
+        <TestimonialCarousel coursePriority="i2" exclusions={[ 'TD-0007' ]} />
       </section>
       <section className="bg-light">
         <div className="container">
@@ -117,7 +116,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
             </div>
           </div>
           <div className="row justify-content-center g-4">
-            <div className="col-6 d-flex">
+            <div className="col-12 col-lg-6 d-flex">
               <Card>
                 <div className="d-flex align-items-center gap-3 mb-4">
                   <ImageCircle src={JaneLockhartImage} alt="Jane Lockhart" size={192} />
@@ -133,7 +132,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <p>Gain the competitive edge with expert-reviewed lessons developed in partnership with world-class design leaders and exclusive masterclasses from world-class practitioners like HGTV's Jane Lockhart.</p>
               </Card>
             </div>
-            <div className="col-6 d-flex">
+            <div className="col-12 col-lg-6 d-flex">
               <Card>
                 <div className="d-flex align-items-center gap-3 mb-4">
                   <ImageCircle src={DeborahSoulierImage} alt="Deborah Soulier" size={192} />
@@ -149,19 +148,19 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <p>From day one, you'll have an industry leader like Deborah Soulier in your corner. You'll receive seven personal audio reviews—supportive, expert feedback designed to elevate your skills to a professional level, all while giving you the confidence to charge what you're worth.</p>
               </Card>
             </div>
-            <div className="col-6 d-flex">
+            <div className="col-12 col-md-6 d-flex">
               <Card>
                 <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
-                  <FaHeadset size={24} />
+                  <BiSupport size={24} />
                 </div>
                 <h3 className="h6">On-Demand Student Success Team</h3>
                 <p>Beyond your mentor, you have immediate access to our dedicated student success team, here to ensure you never feel &ldquo;stuck,&rdquo; providing the prompt, professional support needed to keep your momentum.</p>
               </Card>
             </div>
-            <div className="col-6 d-flex">
+            <div className="col-12 col-md-6 d-flex">
               <Card>
                 <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
-                  <FaGlobe size={24} />
+                  <BiGlobe size={24} />
                 </div>
                 <h3 className="h6">A Global Network of Design Peers</h3>
                 <p>Instant entry into a private community of design entrepreneurs. Share project insights, build industry connections, and leverage real-world advice from peers worldwide.</p>
@@ -179,24 +178,25 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <p className="mb-0">Don't spend months building systems—start booking clients from day one with QC's tools and templates.</p>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-lg-6 d-flex">
-              <Card className="bg-navy text-white">
+          <div className="row g-3">
+            <div className="col-12 col-xl-6 d-flex">
+              <Card className="bg-navy text-light">
                 <div>
                   <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
-                    <FaPenNib size={24} />
+                    <BiPen size={24} />
                   </div>
                 </div>
                 <Badge className="mb-2">$350+ Value</Badge>
                 <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
                 <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
+                <DesignFilesCarousel />
               </Card>
             </div>
-            <div className="col-12 col-lg-6 d-flex">
+            <div className="col-12 col-xl-6 d-flex">
               <Card className="bg-light">
                 <div>
-                  <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--qc-box-shadow)' }}>
-                    <FaArrowTrendUp size={24} />
+                  <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--chos-box-shadow)' }}>
+                    <BiTrendingUp size={24} />
                   </div>
                 </div>
                 <Badge className="mb-2">$300+ Value</Badge>
@@ -205,8 +205,8 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <div className="d-flex flex-column gap-4">
                   <Card>
                     <div className="d-flex align-items-center gap-4">
-                      <div className={`${styles.iconCircle} ${styles.green}`}>
-                        <FaFile size={16} />
+                      <div className={`${styles.iconCircle} bg-green text-green flex-shrink-0`}>
+                        <BiFile size={24} />
                       </div>
                       <div>
                         <div className="lead fw-bold">Contracts & Finance</div>
@@ -216,8 +216,8 @@ const InteriorDecoratingPage: PageComponent = async () => {
                   </Card>
                   <Card>
                     <div className="d-flex align-items-center gap-4">
-                      <div className={`${styles.iconCircle} ${styles.purple}`}>
-                        <FaUserGroup size={16} />
+                      <div className={`${styles.iconCircle} bg-purple text-purple flex-shrink-0`}>
+                        <BiGroup size={24} />
                       </div>
                       <div>
                         <div className="lead fw-bold">Client Onboarding Pack</div>
@@ -227,8 +227,8 @@ const InteriorDecoratingPage: PageComponent = async () => {
                   </Card>
                   <Card>
                     <div className="d-flex align-items-center gap-4">
-                      <div className={`${styles.iconCircle} ${styles.red}`}>
-                        <FaShareAlt size={16} />
+                      <div className={`${styles.iconCircle} bg-red text-red flex-shrink-0`}>
+                        <BiShareAlt size={24} />
                       </div>
                       <div>
                         <div className="lead fw-bold">Social Media Kits</div>
@@ -275,11 +275,11 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <section className="bg-navy text-white" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
+      <section className="bg-navy text-light" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
         <div className="container text-center">
           <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>
-          <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today <FaArrowRight /></button></Link></div>
+          <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today<BiRightArrowAlt style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></button></Link></div>
           21-Day No-Risk Money-Back Guarantee
         </div>
       </section>
@@ -291,22 +291,22 @@ export default InteriorDecoratingPage;
 
 const whyQCItems = [
   {
-    icon: OpenBookIcon,
+    icon: BiBookOpen,
     title: 'A Proven Alternative to Traditional Programs',
     text: 'QC offers a streamlined, flexible path focused on what actually matters: building your career with real skills, real projects, and real-world application.',
   },
   {
-    icon: GroupIcon,
+    icon: BiGroup,
     title: 'Real-World Insights from Professional Mentors',
     text: 'Get personalized feedback from a professional designer who reviews your projects, refines your skills, and helps you reach a client-ready standard faster than learning on your own.',
   },
   {
-    icon: BriefcaseIcon,
+    icon: BiBriefcaseAlt2,
     title: 'Tools to Start Working Immediately',
     text: 'Go beyond theory with ready-to-use contracts, client workflows, and design tools that prepare you to take on real projects.',
   },
   {
-    icon: GlobeIcon,
+    icon: BiGlobe,
     title: 'A Professional Network for Your Long-Term Success',
     text: 'Join a community of design professionals and stay connected after you graduate, with opportunities for networking, collaboration, and industry access.',
   },
