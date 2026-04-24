@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightArrowAlt, BiShareAlt, BiSupport, BiTrendingUp } from 'react-icons/bi';
+import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightArrowAlt, BiShareAlt, BiShieldAlt2, BiSupport, BiTrendingUp } from 'react-icons/bi';
 
 import { DesignFilesCarousel } from './_designFilesCarousel';
 import { EnrollmentValueSection } from './_enrollmentValueSection';
@@ -102,7 +102,11 @@ const InteriorDecoratingPage: PageComponent = async () => {
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
-      <GraduateSuccessSection gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]} />
+      <GraduateSuccessSection
+        gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]}
+        countryCode={countryCode}
+        provinceCode={provinceCode}
+      />
       <section className="pt-0">
         <TestimonialCarousel coursePriority="i2" exclusions={[ 'TD-0007' ]} />
       </section>
@@ -291,7 +295,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>
           <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today<BiRightArrowAlt style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></button></Link></div>
-          21-Day No-Risk Money-Back Guarantee
+          <BiShieldAlt2 size={20} className="text-green me-2" />21-Day No-Risk Money-Back Guarantee
         </div>
       </section>
     </div>
