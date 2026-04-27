@@ -35,7 +35,7 @@ export const ComparisonTable: FC<Props> = <T extends string = string,>({ columns
     <>
       {hasMobileSwitcher && (
         <div className={`${styles.mobileSwitcherSticky} mb-3 d-lg-none`}>
-          <div className={`${styles.mobileSwitcher} btn-group rounded-pill p-1`} role="group" aria-label="Choose a comparison column">
+          <div className={`${styles.mobileSwitcher} btn-group rounded-pill gap-1 p-1`} role="group" aria-label="Choose a comparison column">
             {comparisonColumns.map(column => (
               <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.mobileSwitcherButton}`} aria-pressed={selectedColumnKey === column.key} data-column-key={column.key} key={column.key} onClick={handleMobileSwitcherClick}>{column.navLabel ?? column.mobileLabel}</button>
             ))}
