@@ -53,14 +53,14 @@ const InteriorDecoratingPage: PageComponent = async () => {
   return (
     <div className={`${styles.page} chos`}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
-      <section className={styles.careerHero}>
+      <section className="inverted">
         <BackgroundImage src={HeroImage} priority />
-        <div className="container text-light">
+        <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9 col-xl-7 text-center">
               <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
               <h1 className="text-shadow">Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
-              <p className="lead text-muted text-shadow">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <p className="lead text-shadow mb-5">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
                 <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></a>
                 <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
@@ -97,7 +97,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
           <div className="row justify-content-center">
             <div className="col-12 col-xl-10">
-              <div className="bg-dark text-light rounded shadow p-4">
+              <div className="bg-dark inverted rounded shadow p-4">
                 <div className="d-flex flex-column flex-md-row m-2">
                   <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
                   <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
@@ -109,7 +109,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
         </div>
       </section>
       {price && <CareerPathSection price={price} />}
-      <StatsSection backgroundImage={null} className="text-light" backgroundColor="#020025" stats={stats} />
+      <StatsSection backgroundImage={null} className="inverted" backgroundColor="#020025" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
@@ -195,7 +195,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
           <div className="row justify-content-center g-4">
             <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
-              <Card className="bg-dark text-light">
+              <Card className="bg-dark inverted">
                 <div className="h-100 d-flex flex-column justify-content-between gap-3">
                   <div>
                     <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
@@ -290,7 +290,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <section className="bg-dark text-light" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
+      <section className="bg-dark inverted" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
         <div className="container text-center">
           <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>

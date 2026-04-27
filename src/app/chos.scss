@@ -1,14 +1,11 @@
 @use "sass:map";
 
-$colors: (
-  "light": #f8f8fb,
-  "dark": #010025,
-);
-
 $foreground-colors: (
-  "body": #506172,
+  "body": #242c33,
+  "muted": #55687a,
   "headings": #02013f,
-  "muted": rgba(255, 255, 255, 0.875),
+  "inverted": #d0d0d0,
+  "inverted-headings": #f8f8fb,
   "primary": #155dfc,
   "blue": #1c398e,
   "gold": #f6d779,
@@ -18,9 +15,11 @@ $foreground-colors: (
 );
 
 $background-colors: (
-  "green": #ecddf5,
+  "green": #ecfdf5,
   "red": #fdf2f8,
   "purple": #faf5fd,
+  "light": #f8f8fb,
+  "dark": #010025,
 );
 
 $spacer: 1rem;
@@ -45,7 +44,7 @@ $sizes: (
 /////////////////////////////////////////////
 
 :root {
-  @each $name, $color in map.merge($colors, $foreground-colors) {
+  @each $name, $color in $foreground-colors {
     --chos-color-#{$name}: #{$color};
   }
   @each $name, $color in $background-colors {
@@ -89,16 +88,23 @@ $sizes: (
     color: var(--chos-color-headings);
   }
 
-  @each $name, $color in map.merge($colors, $foreground-colors) {
-    .text-#{$name} {
-      color: $color !important;
-      h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-        color: $color !important;
-      }
+  .inverted {
+    color: var(--chos-color-inverted);
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: var(--chos-color-inverted-headings);
     }
   }
 
-  @each $name, $color in map.merge($colors, $background-colors) {
+  th, td { color: inherit; }
+
+  @each $name, $color in $foreground-colors {
+    .text-#{$name} {
+      color: $color !important;
+    }
+  }
+
+  @each $name, $color in $background-colors {
     .bg-#{$name} {
       background-color: $color !important;
     }

@@ -7,6 +7,7 @@ import styles from './index.module.scss';
 
 export interface ComparisonTableColumn<T extends string = string> {
   key: T;
+  eyebrow?: ReactNode;
   heading: ReactNode;
   mobileLabel: string;
   navLabel?: string;
@@ -49,7 +50,10 @@ export const ComparisonTable: FC<Props> = <T extends string = string,>({ columns
             <tr>
               <th scope="col">Feature</th>
               {columns.map(column => (
-                <th scope="col" key={column.key}>{column.heading}</th>
+                <th scope="col" key={column.key}>
+                  <div className={styles.headerEyebrow}>{column.eyebrow}</div>
+                  {column.heading}
+                </th>
               ))}
             </tr>
           </thead>

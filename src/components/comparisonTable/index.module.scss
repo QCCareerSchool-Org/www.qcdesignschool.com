@@ -54,6 +54,14 @@
   color: #fff !important;
 }
 
+.headerEyebrow {
+  min-height: 1.5rem;
+  color: var(--qc-color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .table {
   border-collapse: separate;
   border-spacing: 0 1rem;
@@ -85,14 +93,16 @@
     padding: 1.25rem 1.5rem;
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--highlight-border-color);
     color: var(--text-color);
-    font-size: 0.875rem;
     vertical-align: top;
   }
+
+  tbody tr td { font-size: 0.875rem; }
 
   tbody tr th {
     background-color: var(--highlight-background-color);
     color: var(--heading-color);
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
   }
 
   tbody tr td {
@@ -124,6 +134,8 @@
 
   .table {
     border-spacing: 0;
+    table-layout: fixed;
+    width: 100%;
 
     thead { display: table-header-group; }
 
@@ -168,14 +180,24 @@
 
     thead tr th {
       border-bottom: var(--bs-border-width) var(--bs-border-style) var(--highlight-border-color);
+      vertical-align: top;
 
-      h3 { font-size: 1.5rem; }
+      h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+      }
     }
 
     tbody tr th {
       background-color: #fff;
       color: var(--heading-color);
+      font-size: 0.875rem;
       font-weight: 600;
+    }
+
+    thead tr th:first-child,
+    tbody tr th {
+      width: 22%;
     }
   }
 }

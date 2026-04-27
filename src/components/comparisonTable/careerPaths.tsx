@@ -13,20 +13,21 @@ interface Props {
 const columns = [
   {
     key: 'qc',
+    eyebrow: 'QC Design School',
     mobileLabel: 'QC Design School IDDP Program',
-    heading: <><div className="small text-primary" style={{ height: 24, textTransform: 'uppercase' }}>QC Design School</div><h3>IDDP&trade; Program</h3></>,
+    heading: <h3>IDDP&trade; Program</h3>,
   },
   {
     key: 'degree',
     mobileLabel: 'University or College Degree',
     navLabel: 'vs. University',
-    heading: <><div style={{ height: 24 }} /><h3>University or College Degree</h3>E.g., RMCAD, Yorkville University</>,
+    heading: <><h3>University or College Degree</h3>E.g., RMCAD, Yorkville University</>,
   },
   {
     key: 'online',
     mobileLabel: 'Standard Online Certifications',
     navLabel: 'vs. Standard Certs',
-    heading: <><div style={{ height: 24 }} /><h3>Standard Online Certifications</h3>E.g., NYIAD, Interior Design Institute</>,
+    heading: <><h3>Standard Online Certifications</h3>E.g., NYIAD, Interior Design Institute</>,
   },
 ] as const satisfies readonly ComparisonTableColumn[];
 

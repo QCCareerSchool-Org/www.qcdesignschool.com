@@ -32,7 +32,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
       <div className="container">
         <div className="row justify-content-center text-center mb-5">
           <div className="col-12 col-lg-9 col-xl-8">
-            <h2>What's Included in Your Enrollment</h2>
+            <h2 className="mb-3">What's Included in Your Enrollment</h2>
             <div className="d-inline-flex flex-column flex-sm-row align-items-center justify-content-center gap-2 gap-sm-3 px-4 py-2 mb-4 rounded-3 bg-light border">
               <span>Total Value: <del>$5071+</del></span>
               <span className="vr d-none d-sm-inline-block" aria-hidden="true" />
@@ -52,7 +52,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
                       <h3 className="h6 mb-1">{item.title}</h3>
                       <p className="mb-0">{item.text}</p>
                     </div>
-                    <div className={styles.enrollmentValue}><span className="badge rounded-pill px-3 py-2 text-bg-light text-dark">Value: {item.value}</span></div>
+                    <div className={styles.enrollmentValue}><span className="badge rounded-pill px-3 py-2 text-bg-light">Value: {item.value}</span></div>
                   </div>
                 ))}
               </div>
