@@ -3,8 +3,8 @@ import type { FC } from 'react';
 
 import commonStyles from './commonStyles.module.scss';
 import styles from './full.module.scss';
-import { Zoom } from '../zoom';
 import TagIcon from '@/components/icons/tag.svg';
+import { Zoom } from '@/components/zoom';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 import { tightNumber } from '@/lib/tightNumber';

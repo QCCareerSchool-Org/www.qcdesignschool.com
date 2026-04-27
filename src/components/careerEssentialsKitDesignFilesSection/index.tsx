@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import { BackgroundImage } from '../backgroundImage';
 import DesktopBackgroundImage from './desktop-bg.jpg';
 import styles from './index.module.scss';
 import MobileImage from './mobile.jpg';
+import { BackgroundImage } from '@/components/backgroundImage';
 
 export const CareerEssentialsKitDesignFilesSection: FC = () => (
   <>

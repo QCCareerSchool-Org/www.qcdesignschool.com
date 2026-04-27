@@ -2,10 +2,10 @@ import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 import type { FC } from 'react';
 
-import { ImageCircle } from '../imageCircle';
 import { Portfolio } from './portfolio';
 import SeeMyWorkIcon from './see-my-work.svg';
 import type { StudentShowcase } from './studentShowcases';
+import { ImageCircle } from '@/components/imageCircle';
 import { useToggle } from '@/hooks/useToggle';
 
 export interface PortfolioImage {

@@ -9,7 +9,6 @@ import { CertificationSection } from '../_components/certificationSection';
 import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
-import { StatsSection } from '@/app/(main)/statsSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
@@ -20,7 +19,9 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 18; // Interior Decorating Leads
 const brevoEmailTemplateId = 1598; // Decorating
-const testimonialIds = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const InteriorDecoratingCatalogPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
@@ -108,7 +109,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
         )}
       </CertificationSection>
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'i2' ]} schemaCourseId="#course" />
-      <StatsSection />
+      <DefaultStatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="i2" schemaCourseId="#courseId" />
       <SupportSection date={date} />

@@ -176,6 +176,7 @@ const eslintConfig = defineConfig([
       '@typescript-eslint/consistent-type-imports': [ 'error', { prefer: 'type-imports', fixStyle: 'separate-type-imports' } ],
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/explicit-member-accessibility': 'off',
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/method-signature-style': 'error',
       '@typescript-eslint/no-confusing-void-expression': [ 'error', { ignoreArrowShorthand: true } ],

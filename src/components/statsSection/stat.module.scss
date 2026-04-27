@@ -1,0 +1,9 @@
+.count {
+  font-size: 3rem;
+  font-weight: bold;
+
+  &::after {
+    content: ' +';
+    color: var(--qc-color-dark-gold);
+  }
+}

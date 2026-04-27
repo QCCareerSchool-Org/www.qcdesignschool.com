@@ -7,9 +7,7 @@ import type { ItemList, WithContext } from 'schema-dts';
 import HeroImageDesktop from './hero-desktop.jpg';
 import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
-import { StatsSection } from './statsSection';
 import WhyQCImage from './why-qc.jpg';
-import type { PageComponent } from '../../serverComponent';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
@@ -22,7 +20,9 @@ import PlayIcon from '@/components/icons/play-button.svg';
 import TimerIcon from '@/components/icons/timer.svg';
 import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
 import { PromoSection } from '@/components/promoSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VideoPopup } from '@/components/videoPopup';
 import type { CourseCode } from '@/domain/courseCode';
@@ -30,6 +30,7 @@ import { getCourseDescription, getCourseName, getCourseUrl } from '@/domain/cour
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
+import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: { absolute: 'QC Design School' },
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 };
 
-const testimonialIds = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0008', 'TD-0004', 'TD-0003', 'TD-0012', 'TD-0011', 'TD-0009' ];
 
 const HomePage: PageComponent = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
@@ -139,7 +140,7 @@ const HomePage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <StatsSection />
+      <DefaultStatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <DesignPartnerSection countryCode={countryCode} />
       <section>

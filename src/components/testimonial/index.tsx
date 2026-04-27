@@ -1,19 +1,21 @@
 import type { FC } from 'react';
 import { memo, useMemo } from 'react';
 
-import { ImageCircle } from '../imageCircle';
+import type { TestimonialId, Testimonial as TestimonialType } from './data';
 import { testimonials } from './data';
 import styles from './index.module.css';
 import { Star } from './star';
 import { Title } from './title';
-import { CourseMicrodata } from '../microdata/course';
+import { ImageCircle } from '@/components/imageCircle';
+import { CourseMicrodata } from '@/components/microdata/course';
 import type { CourseCode } from '@/domain/courseCode';
 
 interface Props {
-  id: string;
+  id: TestimonialId;
   courseCodes?: CourseCode[];
   showProvinceCode?: boolean;
   schemaCourseId?: string;
+  small?: boolean;
 }
 
 /** sort in alphabetical order, except i2 is always first */
@@ -30,15 +32,11 @@ export const courseSort = (a: CourseCode, b: CourseCode): number => {
   return a.localeCompare(b);
 };
 
-export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId }) => {
-  const testimonial = useMemo(() => {
-    const found = testimonials[id];
-    if (!found) {
-      return;
-    }
+export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode = false, schemaCourseId, small = false }) => {
+  const testimonial: TestimonialType = useMemo(() => {
     return {
-      ...found,
-      courses: found.courses.sort((a, b) => {
+      ...testimonials[id],
+      courses: testimonials[id].courses.sort((a, b) => {
         if (courseCodes?.includes(a) && courseCodes.includes(b)) {
           return courseSort(a, b);
         }
@@ -52,10 +50,6 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
       }),
     };
   }, [ id, courseCodes ]);
-
-  if (!testimonial) {
-    return;
-  }
 
   return (
     <blockquote className={styles.testimonial} itemScope itemType="https://schema.org/Review">
@@ -79,10 +73,7 @@ export const Testimonial: FC<Props> = memo(({ id, courseCodes, showProvinceCode 
       <div className={styles.stars}>{Array(5).fill(null).map((_, i) => <Star key={i} filled={i < testimonial.stars} />)}</div>
       <div itemProp="reviewBody">
         {testimonial.short.map((q, i, a) => {
-          if (i < a.length - 1) {
-            return <p key={i} className={styles.quotation}>&ldquo;{q}</p>;
-          }
-          return <p key={i} className={styles.quotation}>&ldquo;{q}&rdquo;</p>;
+          return <p key={i} className={`${styles.quotation} ${small ? styles.small : ''}`}>&ldquo;{q}{i === a.length - 1 && <>&rdquo;</>}</p>;
         })}
       </div>
       <footer className={styles.footer} itemProp="author" itemScope itemType="https://schema.org/Person">

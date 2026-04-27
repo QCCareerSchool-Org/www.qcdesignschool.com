@@ -17,6 +17,7 @@ import { HeroButtons } from '@/components/hero/heroButtons';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/floral-design' },
 };
 
-const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'fd' ];
 
 const FloralDesignPage: PageComponent = async () => {

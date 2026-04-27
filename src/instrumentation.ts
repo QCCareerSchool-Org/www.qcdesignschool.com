@@ -20,10 +20,13 @@ const expectedVariables = [
   'BREVO_GROUP_ID',
   // cookies
   'JWT_SECRET_BASE64',
+  // network
+  'FIREWALL_BYPASS_SECRET',
+  'PROXY_SECRET',
 ] as const;
 
 // eslint-disable-next-line @typescript-eslint/require-await
-export const register = async () => {
+export const register = async (): Promise<void> => {
   for (const variable of expectedVariables) {
     const message = `Environment variable ${variable} not found`;
     if (!process.env[variable]) {

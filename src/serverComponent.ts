@@ -1,4 +1,5 @@
 import type { Metadata, ResolvingMetadata } from 'next';
+import type { NextRequest, NextResponse } from 'next/server';
 import type { FC, ReactNode } from 'react';
 
 type EmptyRecord = Record<never, string>;
@@ -17,3 +18,5 @@ export type PageComponent<RouteParams extends Record<string, string> = EmptyReco
 export type LayoutComponent = FC<LayoutProps>;
 
 export type GenerateMetadata<RouteParams extends Record<string, string> = EmptyRecord> = (props: PageProps<RouteParams>, parent: ResolvingMetadata) => Promise<Metadata>;
+
+export type RouteHandler<T = Record<string, string>> = (request: NextRequest, context: { params: T }) => Promise<Response | NextResponse> | Response | NextResponse;

@@ -1,0 +1,134 @@
+.enrollmentCard {
+  border-radius: var(--chos-border-radius);
+  border: var(--chos-border);
+  box-shadow: var(--chos-box-shadow);
+}
+
+.enrollmentItem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.5rem 1.5rem;
+
+  + .enrollmentItem {
+    border-top: 1px solid rgba(2, 0, 37, 0.08);
+  }
+}
+
+.enrollmentCheck {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(19, 142, 106, 0.1);
+  color: #138e6a;
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.enrollmentValue {
+  color: #020025;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.pricingCta {
+  background: #020025;
+}
+
+.paymentPanel {
+  flex-basis: auto;
+  border-color: rgba(173, 181, 189, 0.22) !important;
+  background: rgba(108, 117, 125, 0.22);
+}
+
+.paymentControls {
+  flex: 0 0 auto;
+}
+
+.paymentToggle {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #020025;
+  min-width: 14rem;
+}
+
+.paymentToggleButton {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-right: 1.25rem;
+  padding-left: 1.25rem;
+  border-color: transparent;
+  color: rgba(255, 255, 255, 0.62);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.paymentToggleButton[aria-pressed='true'] {
+  background-color: #6c757d;
+  box-shadow: var(--bs-box-shadow-sm);
+  color: #fff;
+}
+
+.paymentToggleButton:hover,
+.paymentToggleButton:focus-visible {
+  background-color: rgba(108, 117, 125, 0.55);
+  border-color: transparent;
+  color: #fff !important;
+}
+
+.paymentDivider {
+  display: none;
+  @media only screen and (min-width: 768px) {
+    display: inline-block;
+  }
+  align-self: stretch;
+  width: var(--chos-border-width);
+  min-height: 1em;
+  background-color: rgba(255, 255, 255, 0.65);
+  min-height: 6rem;
+}
+
+.priceLine {
+  min-width: 16rem;
+  white-space: nowrap;
+}
+
+.guarantee {
+  margin-top: 1.5rem;
+  color: #5b6472;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .paymentPanel {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .paymentPanel {
+    width: 100%;
+  }
+
+  .enrollmentItem {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .enrollmentValue {
+    grid-column: 2;
+  }
+
+  .priceLine {
+    min-width: 0;
+  }
+}
+
+.strikeout {
+  text-decoration: 2px rgba(255, 34, 74, .7) line-through;
+  font-weight: bold;
+}

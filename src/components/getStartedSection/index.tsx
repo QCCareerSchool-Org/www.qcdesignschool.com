@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { FC, JSX } from 'react';
+import type { CSSProperties, FC, JSX } from 'react';
 
 import styles from './index.module.scss';
 
@@ -9,9 +9,10 @@ interface Props {
   courseCodes?: string[];
   buttonText?: string | JSX.Element;
   buttonHref?: string;
+  background?: CSSProperties['background'];
 }
 
-export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref }) => {
+export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonText = 'Enroll Today', buttonHref, background }) => {
   let href: string;
   if (buttonHref) {
     href = buttonHref;
@@ -22,7 +23,7 @@ export const GetStartedSection: FC<Props> = ({ title, text, courseCodes, buttonT
     }
   }
   return (
-    <section className={styles.section}>
+    <section className={styles.section} style={{ background }}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-8 col-xl-7 text-center">

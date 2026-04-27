@@ -21,6 +21,7 @@ import { Hero } from '@/components/hero';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { SAFPartnerSection } from '@/components/safPartnerSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/floral-design' },
 };
 
-const testimonialIds = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 'TD-0025' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0024', 'TD-0019', 'TD-0025' ];
 const courseCodes: CourseCode[] = [ 'fd' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/floral-design-overview?c=fd';
 

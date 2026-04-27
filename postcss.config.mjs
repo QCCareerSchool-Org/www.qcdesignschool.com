@@ -3,13 +3,7 @@ const isProd = process.env.NODE_ENV === 'production';
 /** @type {import('@fullhuman/postcss-purgecss').UserDefinedOptions} */
 const purgeCssOptions = {
   content: [
-    './src/app/**/*.{js,ts,jsx,tsx}',
-    './src/app/\\(landing\\)/**/*.{js,ts,jsx,tsx}',
-    './src/app/\\(landing\\)/\\(thank-you\\)**/*.{js,ts,jsx,tsx}',
-    './src/app/\\(main\\)/**/*.{js,ts,jsx,tsx}',
-    './src/app/\\(terms\\)/**/*.{js,ts,jsx,tsx}',
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/react-bootstrap/**/*.js',
     './node_modules/yet-another-react-lightbox/**/*.{js,ts,jsx,tsx}',
   ],

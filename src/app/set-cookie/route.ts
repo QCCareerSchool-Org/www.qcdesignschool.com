@@ -1,12 +1,12 @@
 import { cookies } from 'next/headers';
-import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 import { isCookieData } from '@/domain/cookie';
+import type { RouteHandler } from '@/serverComponent';
 
 const MAX_AGE = 60 * 86_400; // 60 days
 
-export const POST = async (req: NextRequest) => {
+export const POST: RouteHandler = async req => {
   const cookieData: unknown = await req.json();
 
   if (!isCookieData(cookieData)) {

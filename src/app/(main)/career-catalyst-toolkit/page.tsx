@@ -8,7 +8,6 @@ import HeroImageMobile from './hero-mobile.jpg';
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
 import { perks } from './perks';
-import { StatsSection } from '../statsSection';
 import ApertureIcon from './sectionIcons/aperture.svg';
 import ChatIcon from './sectionIcons/chat.svg';
 import CirclesIcon from './sectionIcons/circles.svg';
@@ -25,6 +24,7 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import CircleCheckIcon from '@/components/icons/check-circle.svg';
 import SquareCheckIcon from '@/components/icons/check-square.svg';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { Subtitle } from '@/components/subtitle';
 import type { PageComponent } from '@/serverComponent';
 
@@ -126,7 +126,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <GoogleReviewSection className="bg-light" />
     <section>
       <div className="container">
@@ -149,7 +149,7 @@ const CareerCatalystToolkitPage: PageComponent = () => (
     </section>
     <GetStartedSection
       title="Take the Next Step in Your Design Career"
-      text="Don’t miss out on this exclusive Career Catalyst Toolkit offer. Elevate your design career with the tools, expertise, and support you need to thrive in the competitive design industry. Secure your spot now and embark on a journey of unparalleled professional growth."
+      text="Don't miss out on this exclusive Career Catalyst Toolkit offer. Elevate your design career with the tools, expertise, and support you need to thrive in the competitive design industry. Secure your spot now and embark on a journey of unparalleled professional growth."
       buttonText="Enroll Now"
     />
   </>

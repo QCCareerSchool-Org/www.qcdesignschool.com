@@ -11,6 +11,7 @@ import { CourseJsonLd } from '@/components/jsonLd/course';
 import { LeadProcessing } from '@/components/leadProcessing';
 import { SetCookie } from '@/components/setCookie';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import type { PageComponent } from '@/serverComponent';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-const testimonialIds = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const ThankYouCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
