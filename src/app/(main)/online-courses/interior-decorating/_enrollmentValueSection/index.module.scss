@@ -9,7 +9,7 @@
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 1rem;
   align-items: start;
-  padding: 1.125rem 1.25rem;
+  padding: 1.5rem 1.5rem;
 
   + .enrollmentItem {
     border-top: 1px solid rgba(2, 0, 37, 0.08);
@@ -80,8 +80,16 @@
 }
 
 .paymentDivider {
-  min-height: 6rem;
+  display: none;
+  @media only screen and (min-width: 768px) {
+    display: inline-block;
+  }
+  align-self: stretch;
+  width: var(--chos-border-width);
+  min-height: 1em;
+  background-color: var(--chos-border-color);
   opacity: 0.25;
+  min-height: 6rem;
 }
 
 .priceLine {
@@ -119,4 +127,9 @@
   .priceLine {
     min-width: 0;
   }
+}
+
+.strikeout {
+  text-decoration: 2px rgba(255, 34, 74, .7) line-through;
+  font-weight: bold;
 }

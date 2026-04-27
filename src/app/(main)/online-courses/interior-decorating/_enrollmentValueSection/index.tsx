@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
+import { BiShieldAlt2 } from 'react-icons/bi';
 import { FaRegCheckCircle } from 'react-icons/fa';
 
 import styles from './index.module.scss';
@@ -33,11 +34,6 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
         <div className="row justify-content-center text-center mb-5">
           <div className="col-12 col-lg-9 col-xl-8">
             <h2 className="mb-3">What's Included in Your Enrollment</h2>
-            <div className="d-inline-flex flex-column flex-sm-row align-items-center justify-content-center gap-2 gap-sm-3 px-4 py-2 mb-4 rounded-3 bg-light border">
-              <span>Total Value: <del>$5071+</del></span>
-              <span className="vr d-none d-sm-inline-block" aria-hidden="true" />
-              <strong className="text-primary">Your Investment: {paymentPlan === 'part' ? `${installment}/month` : fullTotal}</strong>
-            </div>
             <p className="mb-0">When you enroll in the Interior {courseType}: Career Accelerator, you aren't just purchasing a course&mdash;you're getting everything you need to become a career-ready design professional and build a profitable business.</p>
           </div>
         </div>
@@ -63,11 +59,12 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
                 </div>
                 <div className={`${styles.paymentPanel} d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 p-4 rounded-3 border flex-grow-0`}>
                   <div className={`${styles.paymentControls} d-flex flex-column align-items-center align-items-md-start gap-3`}>
-                    <div className={`${styles.paymentToggle} btn-group rounded-pill p-1`} role="group" aria-label="Choose a payment option">
+                    <div className={`${styles.paymentToggle} btn-group rounded-pill gap-1 p-1`} role="group" aria-label="Choose a payment option">
                       <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.paymentToggleButton}`} aria-pressed={paymentPlan === 'full'} onClick={handlePayInFullClick}>Pay in Full</button>
                       <button type="button" className={`btn btn-sm rounded-pill fw-semibold ${styles.paymentToggleButton}`} aria-pressed={paymentPlan === 'part'} onClick={handleMonthlyClick}>Monthly</button>
                     </div>
                     <div className="text-center text-md-start">
+                      <div className="text-light">Total Value: <span className={styles.strikeout}>$5071</span></div>
                       {paymentPlan === 'part' ? (
                         <>
                           <div className={`${styles.priceLine} display-6 fw-bold text-white lh-1`}>{installment} <span className="fs-6 fw-semibold text-white-50">/ month</span></div>
@@ -79,14 +76,14 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
                       )}
                     </div>
                   </div>
-                  <div className={`vr d-none d-md-block flex-shrink-0 ${styles.paymentDivider}`} aria-hidden="true" />
+                  <div className={`vr d-none d-md-inline-block flex-shrink-0 ${styles.paymentDivider}`} aria-hidden="true" />
                   <div className="d-flex justify-content-center align-self-center flex-shrink-0">
                     <Link href={href} className="btn btn-primary btn-lg rounded-pill px-4 text-nowrap">Enroll Now</Link>
                   </div>
                 </div>
               </div>
             </div>
-            <div className={styles.guarantee}>21-Day No-Risk Money-Back Guarantee</div>
+            <div className={styles.guarantee}><BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -1 }} />21-Day No-Risk Money-Back Guarantee</div>
           </div>
         </div>
       </div>

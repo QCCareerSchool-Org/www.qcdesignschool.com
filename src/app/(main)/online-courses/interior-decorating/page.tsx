@@ -53,7 +53,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
   return (
     <div className={`${styles.page} chos`}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
-      <section className="inverted">
+      <section className="bg-dark inverted">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">
           <div className="row justify-content-center">
@@ -101,7 +101,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <div className="d-flex flex-column flex-md-row m-2">
                   <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
                   <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
-                  <div className="align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
+                  <div className="text-inverted-headings align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
                 </div>
               </div>
             </div>
@@ -109,7 +109,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
         </div>
       </section>
       {price && <CareerPathSection price={price} />}
-      <StatsSection backgroundImage={null} className="inverted" backgroundColor="#020025" stats={stats} />
+      <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
@@ -155,7 +155,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                     <Badge className="mb-2">Dedicated Mentor</Badge>
                     <div className="ps-1">
                       <div className="lead fw-bold text-black">Deborah Soulier</div>
-                      <div className="fw-bold small">Founder of Soulier Designs</div>
+                      <div className="fw-bold small">Founder of Soulier Designs<br />Regional Director&mdash;DDA</div>
                     </div>
                   </div>
                 </div>
@@ -268,22 +268,26 @@ const InteriorDecoratingPage: PageComponent = async () => {
                   <p>If you're considering a career in design, it's essential to understand the key differences between an interior decorator and an interior designer.</p>
                   <p>An interior decorator focuses on the visual appearance and ambiance of a space. Decorators work with color palettes, textiles, lighting, furniture, and accessories to enhance the aesthetic of homes or commercial environments. They do not typically make structural changes.</p>
                   <p>In contrast, an interior designer will focus on the visual appeal of a space and may collaborate with architects and engineers to plan structural layouts. This means that interior designers often require knowledge of building codes and spatial planning. </p>
-                  <p>Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
+                  <p className="mb-0">Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Is now a good time to enter the industry with the rise of AI?" className="mb-3">
+                  <p>Absolutely. AI is a powerful new partner for the modern designer.</p>
+                  <p className="mb-0">As a designer, your role is to understand your client's needs and use your creativity and judgment to bring their vision to life. AI tools now support that process, helping designers to do that more efficiently than ever before. By leveraging these tools, you'll increase your productivity and profit margins from day one—leaving you free to focus on what matters: the human connection and high-impact design.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`How much does an interior ${designRestricted ? 'decorator' : 'designer'} earn?`} className="mb-3">
                   <p>According to the Bureau of Labor Statistics, the average interior {designRestricted ? 'decorator' : 'designer'} salary is typically around $68,530 per year.* Your earnings will vary based on experience, location and services offered. Earning your professional certification from QC Design School demonstrates your expertise and credibility so that you can charge higher rates. The global design market was valued at $747.75 billion in 2024 and is expected to grow to over $1 trillion by 2032. You can be part of that industry and earn a salary as an interior {designRestricted ? 'decorator' : 'designer'} in less than a year!</p>
-                  <p className="small">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
+                  <p className="small mb-0">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`Do I need a license or degree to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
                   <p>You don't need a license or an expensive university degree to be successful in the design industry. Instead, you can train online and start attracting clients and generating income in a matter of months!</p>
-                  <p>QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
+                  <p className="mb-0">QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`How long does it take to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
-                  <p>With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
+                  <p className="mb-0">With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading="Will I be eligible to join a professional association when I graduate from QC Design School?" className="mb-3">
                   <p>Absolutely. After graduating from QC Design School's online interior {designRestricted ? 'decorating' : 'design'} course, you will be eligible to apply for membership with top industry organizations, including {countryCode === 'CA' ? <>the Decorators and Designers Association of Canada,</> : <>Design Society of America (DSA)</>} and the Interior Design Society (IDS).</p>
-                  <p>These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
+                  <p className="mb-0">These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
                 </AccordionFAQ>
               </div>
             </div>
@@ -292,10 +296,10 @@ const InteriorDecoratingPage: PageComponent = async () => {
       </section>
       <section className="bg-dark inverted" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
         <div className="container text-center">
-          <h2 className="mb-3">Ready to Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
+          <h2 className="mb-3">Ready to Launch Your {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the IDDP™ credential.</p>
           <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today<BiRightArrowAlt style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></button></Link></div>
-          <BiShieldAlt2 size={20} className="text-green me-2" />21-Day No-Risk Money-Back Guarantee
+          <BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -1 }} />21-Day No-Risk Money-Back Guarantee
         </div>
       </section>
     </div>

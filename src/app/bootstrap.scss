@@ -32,6 +32,12 @@
   @media only screen and (min-width: 1200px) {
     --qc-section-padding: 7rem;
   }
+
+  .inverse {
+    --bs-body-color: #d0d0d0;
+    --bs-heading-color: #f8f8fb;
+    color: var(--bs-body-color);
+  }
 }
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
@@ -47,6 +53,8 @@ $lead-font-weight: 400; /* no 300 available */
 
 $body-color: #506172;
 $headings-color: var(--qc-color-headings);
+
+
 
 $form-label-margin-bottom: 0.25rem;
 

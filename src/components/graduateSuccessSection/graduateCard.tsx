@@ -11,7 +11,7 @@ interface Props {
 
 export const GraduateCard: FC<Props> = ({ grad }) => (
   <Card className="bg-light" src={grad.image}>
-    <div className="fw-bold mb-4">{grad.name}<br />{grad.title}</div>
+    <div className="mb-4"><span className="fw-bold">{grad.name}</span><br />{grad.title}</div>
     <p className="mb-4">{grad.intro}</p>
     <blockquote className="mb-0">
       {grad.text.map((t, i, a) => (

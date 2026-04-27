@@ -1,10 +1,11 @@
 @use "sass:map";
 
 $foreground-colors: (
-  "body": #242c33,
-  "muted": #55687a,
-  "headings": #02013f,
-  "inverted": #d0d0d0,
+  "text": #454565,
+  "muted": #889,
+  "headings": #09093f,
+  "inverted-text": #dadada,
+  "inverted-muted": #aaa,
   "inverted-headings": #f8f8fb,
   "primary": #155dfc,
   "blue": #1c398e,
@@ -33,6 +34,8 @@ $sizes: (
   "5": $spacer * 3,
 );
 
+$headings: "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";
+
 /////////////////////////////////////////////
 
 @mixin sm { @media (min-width: 576px) { @content; } }
@@ -43,7 +46,7 @@ $sizes: (
 
 /////////////////////////////////////////////
 
-:root {
+.chos {
   @each $name, $color in $foreground-colors {
     --chos-color-#{$name}: #{$color};
   }
@@ -54,11 +57,25 @@ $sizes: (
   --chos-font-text: var(--qc-inter);
   --chos-font-headings: var(--qc-inter);
 
+  --chos-current-body-color: var(--chos-color-text);
+  --chos-current-headings-color: var(--chos-color-headings);
+  --chos-current-muted-color: var(--chos-color-muted);
+
+  .inverted {
+    --chos-current-body-color: var(--chos-color-inverted-text);
+    --chos-current-headings-color: var(--chos-color-inverted-headings);
+    --chos-current-muted-color: var(--chos-color-inverted-muted);
+  }
+
+  .muted {
+    --chos-current-body-color: var(--chos-current-muted-color);
+  }
+
   --chos-border-radius: 1rem;
-  --chos-border-size: 1px;
+  --chos-border-width: 1px;
   --chos-border-style: solid;
-  --chos-bodrer-color: rgba(0, 0, 0, 0.125);
-  --chos-border: var(--chos-border-size) var(--chos-border-style) var(--chos-border-color);
+  --chos-border-color: rgba(0, 0, 0, 0.125);
+  --chos-border: var(--chos-border-width) var(--chos-border-style) var(--chos-border-color);
 
   --chos-text-shadow: 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.25);
   --chos-box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.125);
@@ -75,28 +92,25 @@ $sizes: (
   @include xl {
     --chos-section-padding: 7rem;
   }
-}
 
-.chos {
   font-family: var(--chos-font-text);
   font-weight: normal;
-  color: var(--chos-color-text);
 
-  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  #{$headings} {
     font-family: var(--chos-font-headings);
     font-weight: bold;
-    color: var(--chos-color-headings);
+    color: var(--chos-current-headings-color);
   }
 
-  .inverted {
-    color: var(--chos-color-inverted);
-
-    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-      color: var(--chos-color-inverted-headings);
-    }
+  &, .inverted, .muted {
+    color: var(--chos-current-body-color);
   }
 
-  th, td { color: inherit; }
+  :is(#{$headings}).inverted {
+    color: var(--chos-current-headings-color);
+  }
+
+  th, td { color: inherit !important; }
 
   @each $name, $color in $foreground-colors {
     .text-#{$name} {

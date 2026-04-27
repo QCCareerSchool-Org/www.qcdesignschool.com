@@ -4,13 +4,9 @@ import { StatsSection } from '.';
 import DefaultBackgroundImage from './default-background.jpg';
 import type { Props as StatProps } from './stat';
 
-interface Props {
-  inverse?: boolean;
-}
-
-export const DefaultStatsSection: FC<Props> = ({ inverse }) => {
+export const DefaultStatsSection: FC = () => {
   return (
-    <StatsSection inverse={inverse} backgroundImage={DefaultBackgroundImage} stats={stats} />
+    <StatsSection backgroundImage={DefaultBackgroundImage} className="inverse" stats={stats} />
   );
 };
 

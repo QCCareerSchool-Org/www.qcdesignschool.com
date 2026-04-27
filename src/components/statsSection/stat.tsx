@@ -12,18 +12,17 @@ export interface Props {
   description: string;
   suffix?: string;
   duration?: number;
-  inverse?: boolean;
 }
 
-export const Stat: FC<Props> = ({ value, heading, description, suffix, duration = 2000, inverse }) => {
+export const Stat: FC<Props> = ({ value, heading, description, suffix, duration = 2000 }) => {
   const [ start, ref ] = useIntersectionObserver(true);
 
   const count = useCountUp({ start: 0, end: value, duration, started: start, easingFunction: 'easeOutCubic' });
   return (
     <div ref={ref}>
-      <div className={styles.count}>{count}{suffix}</div>
+      <div className={`h6 mb-0 ${styles.count}`}>{count}{suffix}</div>
       <h3 className="h6">{heading}</h3>
-      <small className={`${styles.description} ${inverse ? styles.inverse : ''}`}>{description}</small>
+      <small>{description}</small>
     </div>
   );
 };

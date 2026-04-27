@@ -1,5 +1,5 @@
 import type { StaticImageData } from 'next/image';
-import type { CSSProperties, FC } from 'react';
+import type { FC } from 'react';
 
 import DefaultBackgroundImage from './default-background.jpg';
 import styles from './index.module.scss';
@@ -8,22 +8,20 @@ import { Stat } from './stat';
 import { BackgroundImage } from '@/components/backgroundImage';
 
 interface Props {
-  inverse?: boolean;
   backgroundImage?: StaticImageData | null;
-  backgroundColor?: CSSProperties['backgroundColor'];
   className?: string;
   stats: [StatProps, StatProps, StatProps];
 }
 
-export const StatsSection: FC<Props> = ({ inverse, backgroundImage, backgroundColor, className, stats }) => {
+export const StatsSection: FC<Props> = ({ backgroundImage, className, stats }) => {
   return (
-    <section className={`${styles.section} ${inverse ? styles.inverse : ''} ${className ?? ''}`} style={{ backgroundColor }}>
+    <section className={`${styles.section} ${className ?? ''}`}>
       {backgroundImage !== null && <BackgroundImage src={backgroundImage ?? DefaultBackgroundImage} />}
       <div className="container">
         <div className="row text-center">
           {stats.map((stat, i) => (
             <div key={i} className="col-12 col-lg-4 mb-s mb-lg-0">
-              <Stat inverse={inverse} value={stat.value} suffix={stat.suffix} heading={stat.heading} description={stat.description} />
+              <Stat value={stat.value} suffix={stat.suffix} heading={stat.heading} description={stat.description} />
             </div>
           ))}
         </div>
