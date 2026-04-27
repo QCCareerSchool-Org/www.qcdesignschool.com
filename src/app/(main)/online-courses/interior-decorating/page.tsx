@@ -201,7 +201,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                     <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
                       <BiPen size={24} />
                     </div>
-                    <Badge className="mb-2">$350+ Value</Badge>
+                    <Badge className="mb-2 ms-2">$350+ Value</Badge>
                     <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
                     <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
                   </div>
@@ -214,7 +214,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--chos-box-shadow)' }}>
                   <BiTrendingUp size={24} />
                 </div>
-                <Badge className="mb-2">$300+ Value</Badge>
+                <Badge className="mb-2 ms-2">$300+ Value</Badge>
                 <h3 className="h6 mb-3">Business-in-a-Box Canva Suite</h3>
                 <p className="mb-4">Launch your brand instantly with ready-to-use templates:</p>
                 <div className="d-flex flex-column gap-4">
