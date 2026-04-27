@@ -40,9 +40,9 @@ const CoursesPage: PageComponent = async () => {
               <Suspense>
                 <CourseTuitionCard
                   courseCode="i2"
-                  courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}`}
+                  courseName={`Interior ${designRestricted ? 'Decorating' : 'Design'}: Career Accelerator`}
                   subtitle="IDDP™ Certification"
-                  description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
+                  description="Go from aspiring creative to certified pro with QC’s flagship career accelerator course. Master elite design skills under the 1-on-1 guidance of industry mentors, while gaining the essential business systems to launch a successful business."
                   href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`}
                   message="Most Popular"
                   showPrice
