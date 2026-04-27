@@ -3,12 +3,11 @@ import { cookies } from 'next/headers';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
-import type { LayoutComponent } from '../serverComponent';
 import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
 import { isUserValues } from '@/domain/userValues';
-import { neueHaasDisplay, neueHaasText } from '@/fonts';
+import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
@@ -18,9 +17,11 @@ import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Tiktok } from '@/scripts/tiktok';
+import type { LayoutComponent } from '@/serverComponent';
 
 import './bootstrap.scss';
 import './global.scss';
+import './chos.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Design School', template: '%s - QC Design School' },
@@ -35,7 +36,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
   const userValues = raw && isUserValues(raw) ? raw : undefined;
 
   return (
-    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} h-100`}>
+    <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} ${inter.variable} h-100`} data-scroll-behavior="smooth">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
         {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}

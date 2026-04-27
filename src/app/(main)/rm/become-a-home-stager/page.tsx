@@ -6,12 +6,13 @@ import { OutlineSection } from '../../online-courses/home-staging/_outlineSectio
 import { CertificationSection } from '../../online-courses/home-staging/certificationSection';
 import { TutorSection } from '../../online-courses/home-staging/tutorSection';
 import WhyQCImage from '../../online-courses/home-staging/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Become a Certified Home Stager with QC\'s online course, featuring double certification, a professional starter kit, mentoring, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
 const BecomeAHomeDesignerPage: PageComponent = () => (
@@ -49,7 +50,7 @@ const BecomeAHomeDesignerPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />

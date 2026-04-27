@@ -4,7 +4,7 @@ import type { FC } from 'react';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap';
 
 import styles from './index.module.css';
-import type { Testimonial } from '../testimonial/data';
+import type { Testimonial } from '@/components/testimonial/data';
 import { getCourseName } from '@/domain/courseCode';
 
 interface Props {

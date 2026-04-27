@@ -8,7 +8,6 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/professional-organizing/cert-bg.jpg';
-import { StatsSection } from '@/app/(main)/statsSection';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/aiop.svg';
@@ -18,7 +17,9 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import DownloadIcon from '@/components/icons/download.svg';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PromoSection } from '@/components/promoSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
 import { SupportSection } from '@/components/supportSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
 
 const brevoListId = 19; // Professional Organizing Leads
 const brevoEmailTemplateId = 1939; // Professional Organizing
-const testimonialIds = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
 
 const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
@@ -97,7 +98,7 @@ const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
         </ul>
       </CertificationSection>
       <TestimonialWallSection className="bg-light" testimonialIds={testimonialIds} showProvinceCodes={countryCode === 'CA'} courseCodes={[ 'po' ]} schemaCourseId="#course" />
-      <StatsSection />
+      <DefaultStatsSection />
       <JoinQCSection />
       <GoogleReviewSection courseCode="po" schemaCourseId="#course" />
       <SupportSection date={date} />

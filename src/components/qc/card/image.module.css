@@ -1,0 +1,11 @@
+.cardImage {
+  border-top-left-radius: var(--qc-border-radius);
+  border-top-right-radius: var(--qc-border-radius);
+  width: 100%;
+  width: calc(100% + 2px);
+  position: relative;
+  top: -1px;
+  left: -1px;
+  height: auto;
+
+}

@@ -6,12 +6,13 @@ import { OutlineSection } from '../../online-courses/landscape-design/_outlineSe
 import { CertificationSection } from '../../online-courses/landscape-design/certificationSection';
 import { TutorSection } from '../../online-courses/landscape-design/tutorSection';
 import WhyQCImage from '../../online-courses/landscape-design/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Become a Landscape Designer where you create beautiful outdoor spaces. Learn essential skills and start your own business with certification!',
 };
 
-const testimonialIds = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'ld' ];
 
 const BecomeALandscapeDesignerPage: PageComponent = () => (
@@ -49,7 +50,7 @@ const BecomeALandscapeDesignerPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />

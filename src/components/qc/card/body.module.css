@@ -1,0 +1,6 @@
+.cardBody {
+  padding: var(--qc-padding);
+  flex: 1 1 auto;
+}
+
+.cardBody > *:last-child { margin-bottom: 0; }

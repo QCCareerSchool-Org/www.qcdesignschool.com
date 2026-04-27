@@ -17,6 +17,9 @@
   --qc-color-red-cta: #c60000;
   --qc-color-light-blue: #ced6ff;
 
+  --qc-font-text: var(--qc-neue-haas-text);
+  --qc-font-headings: var(--qc-neue-haas-display);
+
   --qc-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
   
   --qc-section-padding: 4rem;
@@ -29,6 +32,12 @@
   @media only screen and (min-width: 1200px) {
     --qc-section-padding: 7rem;
   }
+
+  .inverse {
+    --bs-body-color: #d0d0d0;
+    --bs-heading-color: #f8f8fb;
+    color: var(--bs-body-color);
+  }
 }
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
@@ -36,14 +45,16 @@
 
 // 2. Include any default variable overrides here
 
-$font-family-sans-serif: var(--qc-neue-haas-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$headings-font-family: var(--qc-neue-haas-display), serif;
+$font-family-sans-serif: var(--qc-font-text), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$headings-font-family: var(--qc-font-headings), serif;
 $headings-font-weight: 600;
 $lead-font-size: 1.125rem;
 $lead-font-weight: 400; /* no 300 available */
 
 $body-color: #506172;
 $headings-color: var(--qc-color-headings);
+
+
 
 $form-label-margin-bottom: 0.25rem;
 

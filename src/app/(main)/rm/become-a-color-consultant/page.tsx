@@ -6,12 +6,13 @@ import { OutlineSection } from '../../online-courses/color-consultant/_outlineSe
 import { CertificationSection } from '../../online-courses/color-consultant/certificationSection';
 import { TutorSection } from '../../online-courses/color-consultant/tutorSection';
 import WhyQCImage from '../../online-courses/color-consultant/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Become a Certified Color Consultant with QC\'s online course, featuring an ICCP™ certificate, business training, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'cc' ];
 
 const ColorConsultantPage: PageComponent = () => (
@@ -50,7 +51,7 @@ const ColorConsultantPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />

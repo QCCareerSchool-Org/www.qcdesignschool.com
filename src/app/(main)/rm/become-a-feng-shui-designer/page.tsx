@@ -6,12 +6,13 @@ import { OutlineSection } from '../../online-courses/feng-shui-design/_outlineSe
 import { CertificationSection } from '../../online-courses/feng-shui-design/certificationSection';
 import { TutorSection } from '../../online-courses/feng-shui-design/tutorSection';
 import WhyQCImage from '../../online-courses/feng-shui-design/what-youll-learn.jpg';
-import { StatsSection } from '../../statsSection';
 import styles from '../index.module.scss';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
+import { DefaultStatsSection } from '@/components/statsSection/default';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   description: 'Become a Feng Shui Professional with QC\'s online course, featuring an AFDP™ certification, business training, mentoring, and 50% off additional courses!',
 };
 
-const testimonialIds = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'fs' ];
 
 const FengShuiDesignPage: PageComponent = () => (
@@ -50,7 +51,7 @@ const FengShuiDesignPage: PageComponent = () => (
         </div>
       </div>
     </section>
-    <StatsSection />
+    <DefaultStatsSection />
     <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
     <CertificationSection />
     <VirtualCommunitySection />

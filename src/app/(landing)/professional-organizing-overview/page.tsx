@@ -22,6 +22,7 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
 import { CourseJsonLd } from '@/components/jsonLd/course';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
+import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/professional-organizing' },
 };
 
-const testimonialIds = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011' ];
+const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0012', 'TD-0021', 'TD-0022', 'TD-0003', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'po' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/professional-organizing-overview?c=po';
 

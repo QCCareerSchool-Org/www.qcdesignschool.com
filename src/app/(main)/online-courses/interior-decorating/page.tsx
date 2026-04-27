@@ -1,27 +1,29 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
+import Link from 'next/link';
+import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightArrowAlt, BiShareAlt, BiShieldAlt2, BiSupport, BiTrendingUp } from 'react-icons/bi';
 
-import { OutlineSection } from './_outlineSection';
+import { DesignFilesCarousel } from './_designFilesCarousel';
+import { EnrollmentValueSection } from './_enrollmentValueSection';
+import { RoadmapSection } from './_roadmapSection';
+import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
-import HeroImage from './hero.jpg';
+import HeroImage from './hero-3.jpg';
 import styles from './page.module.scss';
-import { TutorSection } from './tutorSection';
-import WhatYoullLearnImage from './what-youll-learn.jpg';
-import WhyQCImage from './why-qc.jpg';
 import { AccordionFAQ } from '@/components/accordionFAQ';
-import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
-import { CourseType } from '@/components/courseType';
-import { GetStartedSection } from '@/components/getStartedSection';
+import { BackgroundImage } from '@/components/backgroundImage';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import { Hero } from '@/components/hero';
-import { HeroButtons } from '@/components/hero/heroButtons';
+import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
-import { DesignPartnerSection } from '@/components/partners/designPartnerSection';
-import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import { VideoPopup } from '@/components/videoPopup';
-import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
+import { Badge } from '@/components/qc/badge';
+import { Card } from '@/components/qc/card';
+import { ImageCircle } from '@/components/qc/imageCircle';
+import { StatsSection } from '@/components/statsSection';
+import type { Props as StatProps } from '@/components/statsSection/stat';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
+import DeborahSoulierImage from '@/components/tutors/deborahSoulier.jpg';
+import JaneLockhartImage from '@/components/tutors/janeLockhart.jpg';
 import type { CourseCode } from '@/domain/courseCode';
+import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
 import type { GenerateMetadata, PageComponent } from '@/serverComponent';
@@ -38,7 +40,6 @@ export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> =>
   };
 };
 
-const testimonialIds = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0017' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
 const InteriorDecoratingPage: PageComponent = async () => {
@@ -46,83 +47,217 @@ const InteriorDecoratingPage: PageComponent = async () => {
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
+  const priceResult = await fetchPrice([ 'i2' ], countryCode, provinceCode);
+  const price = priceResult.success ? priceResult.value : undefined;
+
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} chos`}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
-      <section className="half-padding-top">
+      <section className="bg-dark inverted">
+        <BackgroundImage src={HeroImage} priority />
         <div className="container">
-          <div className="row justify-content-center g-s">
-            <div className="col-12">
-              <Hero src={HeroImage} priority objectPosition="100% 0">
-                <CourseType className="mb-2 mb-xl-4">IDDP&trade; Certification</CourseType>
-                <h1 className="mb-2 mb-xl-4">Interior {designRestricted ? 'Decorating' : 'Design'} Course</h1>
-                <p className="h5 mb-3 mb-xl-5">Become a Professional Interior {designRestricted ? 'Decorator' : 'Designer'}</p>
-                <div className="d-flex justify-content-center justify-content-md-start">
-                  <HeroButtons courseCodes={courseCodes} />
-                </div>
-              </Hero>
-            </div>
-            <div className="col-12 col-lg-6">
-              <h2 className="mb-4">Why Choose<br />QC Design School</h2>
-              <p className="lead mb-4">QC's online Interior {designRestricted ? 'Decorating' : 'Design'} certification course provides the most comprehensive training available to ensure your success in the home design industry. You'll master everything from color theory and space planning to client communication and design execution so that you're fully equipped to thrive in this dynamic field. </p>
-              <ul>
-                <li>Get started now—our premium interior {designRestricted ? 'decorating' : 'design'} course is designed to take you from beginner to expert with no previous training required</li>
-                <li>Receive personalized feedback and advice on your assignments from our top design-industry experts</li>
-                <li>Join a thriving virtual community to connect with other {designRestricted ? 'decorators' : 'designers'}, gain exclusive access to bonus materials and join free, expert-led webinars</li>
-                <li>Leverage built-in business training and real-world templates to help you launch your design career and grow your clientele as a professional interior {designRestricted ? 'decorator' : 'designer'}</li>
-                <li>Enjoy discounts and affiliations with top organizations including {countryCode === 'CA' && <>Decorators & Designers Association of Canada, </>}{countryCode === 'US' && <>Design Society of America, </>}DesignFiles, Placez and more</li>
-              </ul>
-            </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6 d-flex align-items-center">
-              <VideoPopup
-                video={{
-                  name: 'QC Marketing Video - Interior Decorating Course Page',
-                  width: 1280,
-                  height: 720,
-                  source: {
-                    src: 'https://cdn.qccareerschool.com/design/design-marketing-video.mp4',
-                    type: 'video/mp4',
-                  },
-                }}
-              >
-                <Image src={WhyQCImage} alt="" className={`img-fluid ${styles.whyQCImage}`} />
-              </VideoPopup>
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-9 col-xl-7 text-center">
+              <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
+              <h1 className="text-shadow">Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
+              <p className="lead text-shadow mb-5">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></a>
+                <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <DesignPartnerSection countryCode={countryCode} />
-      <TestimonialWallSection testimonialIds={testimonialIds} courseCodes={courseCodes} className="bg-light" schemaCourseId="#course" />
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center text-center mb-5">
+            <div className="col-12 col-lg-9 col-xl-7">
+              <h2>Why Build Your Career with QC?</h2>
+              <p className="lead mb-0">You bring the talent. We provide the professional roadmap.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-lg-10">
+              <p className="mb-0 text-center">Most programs teach design theory. <strong>QC helps you turn your skills into a client-ready, income-generating business.</strong> From interactive lessons to mentorship and business tools, every component is designed to get you working professionally as fast as possible.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4 mb-5">
+            {whyQCItems.map(item => (
+              <div className="col-12 col-md-6 d-flex" key={item.title}>
+                <Card>
+                  <div className={`${styles.whyQCIcon} bg-light text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-3`}>
+                    <item.icon size={24} aria-hidden="true" />
+                  </div>
+                  <h3 className="h6">{item.title}</h3>
+                  <p className="mb-0">{item.text}</p>
+                </Card>
+              </div>
+            ))}
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-xl-10">
+              <div className="bg-dark inverted rounded shadow p-4">
+                <div className="d-flex flex-column flex-md-row m-2">
+                  <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
+                  <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
+                  <div className="text-inverted-headings align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {price && <CareerPathSection price={price} />}
+      <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
+      {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
+      <RoadmapSection designRestricted={designRestricted} />
+      <CertificationSection />
+      <GraduateSuccessSection
+        gradKeys={[ 'ValerieWilliams', 'MariaOppedisano', 'BelindaThomason', 'LaiceeCharette' ]}
+        countryCode={countryCode}
+        provinceCode={provinceCode}
+      />
+      <section className="pt-0">
+        <TestimonialCarousel coursePriority="i2" exclusions={[ 'TD-0007' ]} />
+      </section>
+      <section className="bg-light">
+        <div className="container">
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-md-10 col-lg-8 text-center">
+              <h2 className="mb-3">Expert Mentorship to Launch Your Career</h2>
+              <h3 className="h6">Your Professional Support System</h3>
+              <p className="mb-0">A successful design career today requires more than course materials—it requires guidance, feedback, and real-world perspective.</p>
+            </div>
+          </div>
+          <div className="row justify-content-center g-4">
+            <div className="col-12 col-lg-6 d-flex">
+              <Card>
+                <div className="d-flex align-items-center gap-3 mb-4">
+                  <ImageCircle src={JaneLockhartImage} alt="Jane Lockhart" size={192} />
+                  <div>
+                    <Badge className="mb-2">Industry Leader</Badge>
+                    <div className="ps-1">
+                      <div className="lead fw-bold text-black">Jane Lockhart</div>
+                      <div className="fw-bold small">HGTV Host & Design Expert</div>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="h6">Real-World Insights from Industry Leaders</h3>
+                <p>Gain the competitive edge with expert-reviewed lessons developed in partnership with world-class design leaders and exclusive masterclasses from world-class practitioners like HGTV's Jane Lockhart.</p>
+              </Card>
+            </div>
+            <div className="col-12 col-lg-6 d-flex">
+              <Card>
+                <div className="d-flex align-items-center gap-3 mb-4">
+                  <ImageCircle src={DeborahSoulierImage} alt="Deborah Soulier" size={192} />
+                  <div>
+                    <Badge className="mb-2">Dedicated Mentor</Badge>
+                    <div className="ps-1">
+                      <div className="lead fw-bold text-black">Deborah Soulier</div>
+                      <div className="fw-bold small">Founder of Soulier Designs<br />Regional Director&mdash;DDA</div>
+                    </div>
+                  </div>
+                </div>
+                <h3 className="h6">Your Dedicated Design Mentor</h3>
+                <p>From day one, you'll have an industry leader like Deborah Soulier in your corner. You'll receive seven personal audio reviews—supportive, expert feedback designed to elevate your skills to a professional level, all while giving you the confidence to charge what you're worth.</p>
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 d-flex">
+              <Card>
+                <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
+                  <BiSupport size={24} />
+                </div>
+                <h3 className="h6">On-Demand Student Success Team</h3>
+                <p>Beyond your mentor, you have immediate access to our dedicated student success team, here to ensure you never feel &ldquo;stuck,&rdquo; providing the prompt, professional support needed to keep your momentum.</p>
+              </Card>
+            </div>
+            <div className="col-12 col-md-6 d-flex">
+              <Card>
+                <div className="bg-light p-3 d-inline-block rounded-3 text-primary border mb-4">
+                  <BiGlobe size={24} />
+                </div>
+                <h3 className="h6">A Global Network of Design Peers</h3>
+                <p>Instant entry into a private community of design entrepreneurs. Share project insights, build industry connections, and leverage real-world advice from peers worldwide.</p>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
       <section>
         <div className="container">
-          <div className="row align-items-center justify-content-center g-s">
-            <div className="col-12 col-lg-6">
-              <h2>Here's What You'll Learn</h2>
-              <p>QC's comprehensive Interior {designRestricted ? 'Decorating' : 'Design'} course will show you how to:</p>
-              <ul className="mb-0">
-                <li>Develop a unique vision and create custom interiors from the ground up</li>
-                <li>Prepare designs involving floor plans, wall treatments, furniture placement and more</li>
-                <li>Work with a variety of budget types, design requirements and different client personalities</li>
-                <li>Master the nuances of color theory to create stunning designs for clients</li>
-                <li>Feel confident using various design styles including Southwestern and Art Deco</li>
-                <li>Build your brand and market your new home design & decorating business</li>
-                <li>Plan and develop a professional portfolio that helps you land new clients</li>
-                <li>Bonus! Learn how to use professional design software with step-by-step video tutorials featuring <i>DesignFiles</i></li>
-              </ul>
+          <div className="row justify-content-center mb-5">
+            <div className="col-12 col-md-10 col-lg-8 text-center">
+              <h2>Your Bonuses</h2>
+              <p className="lead mb-3">Skip the Setup. Start Signing Clients.</p>
+              <p className="mb-0">Don't spend months building systems—start booking clients from day one with QC's tools and templates.</p>
             </div>
-            <div className="col-12 col-sm-10 col-md-8 col-lg-6">
-              <Image src={WhatYoullLearnImage} alt="" className="img-fluid" />
+          </div>
+          <div className="row justify-content-center g-4">
+            <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
+              <Card className="bg-dark inverted">
+                <div className="h-100 d-flex flex-column justify-content-between gap-3">
+                  <div>
+                    <div className="p-3 d-inline-block rounded-3 text-primary mb-4" style={{ border: '1px solid rgba(255,255,255,0.15)', backgroundColor: 'rgba(255,255,255,0.1)' }}>
+                      <BiPen size={24} />
+                    </div>
+                    <Badge className="mb-2">$350+ Value</Badge>
+                    <h3 className="h6 mb-3">DesignFiles Pro + Training</h3>
+                    <p>4 months of access to create 3D mood boards, digital floor plans, and professional invoices with guided tutorials.</p>
+                  </div>
+                  <DesignFilesCarousel />
+                </div>
+              </Card>
+            </div>
+            <div className="col-12 col-md-10 col-lg-8 col-xl-6 d-flex">
+              <Card className="bg-light">
+                <div className="bg-white p-3 d-inline-block rounded-3 text-primary mb-4" style={{ boxShadow: 'var(--chos-box-shadow)' }}>
+                  <BiTrendingUp size={24} />
+                </div>
+                <Badge className="mb-2">$300+ Value</Badge>
+                <h3 className="h6 mb-3">Business-in-a-Box Canva Suite</h3>
+                <p className="mb-4">Launch your brand instantly with ready-to-use templates:</p>
+                <div className="d-flex flex-column gap-4">
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} bg-green text-green flex-shrink-0`}>
+                        <BiFile size={24} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Contracts & Finance</div>
+                        Professional contracts, invoices, and business plans.
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} bg-purple text-purple flex-shrink-0`}>
+                        <BiGroup size={24} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Client Onboarding Pack</div>
+                        A polished welcome kit to impress clients.
+                      </div>
+                    </div>
+                  </Card>
+                  <Card>
+                    <div className="d-flex align-items-center gap-4">
+                      <div className={`${styles.iconCircle} bg-red text-red flex-shrink-0`}>
+                        <BiShareAlt size={24} />
+                      </div>
+                      <div>
+                        <div className="lead fw-bold">Social Media Kits</div>
+                        High-authority Instagram and Pinterest templates.
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
       </section>
-      <CertificationSection />
-      <VirtualCommunitySection />
-      <GoogleReviewSection courseCode="i2" schemaCourseId="#course" />
-      <TutorSection className="bg-light" />
-      <OutlineSection designRestricted={designRestricted} />
-      <CareerEssentialsKitDesignFilesSection />
-      <PaymentPlanSection courseCodes={courseCodes} />
+      <GoogleReviewSection className="bg-light" />
       <section>
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">
@@ -133,35 +268,84 @@ const InteriorDecoratingPage: PageComponent = async () => {
                   <p>If you're considering a career in design, it's essential to understand the key differences between an interior decorator and an interior designer.</p>
                   <p>An interior decorator focuses on the visual appearance and ambiance of a space. Decorators work with color palettes, textiles, lighting, furniture, and accessories to enhance the aesthetic of homes or commercial environments. They do not typically make structural changes.</p>
                   <p>In contrast, an interior designer will focus on the visual appeal of a space and may collaborate with architects and engineers to plan structural layouts. This means that interior designers often require knowledge of building codes and spatial planning. </p>
-                  <p>Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
+                  <p className="mb-0">Whether you aspire to become an interior decorator or designer, QC Design School's online Interior {designRestricted ? 'Decorating' : 'Design'} course equips you with the skills and knowledge to build a successful, rewarding career. You'll master the elements and principles of design, color theory, textiles, furniture selection, and space planning to create stunning, functional interiors your clients will love.</p>
+                </AccordionFAQ>
+                <AccordionFAQ heading="Is now a good time to enter the industry with the rise of AI?" className="mb-3">
+                  <p>Absolutely. AI is a powerful new partner for the modern designer.</p>
+                  <p className="mb-0">As a designer, your role is to understand your client's needs and use your creativity and judgment to bring their vision to life. AI tools now support that process, helping designers to do that more efficiently than ever before. By leveraging these tools, you'll increase your productivity and profit margins from day one—leaving you free to focus on what matters: the human connection and high-impact design.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`How much does an interior ${designRestricted ? 'decorator' : 'designer'} earn?`} className="mb-3">
                   <p>According to the Bureau of Labor Statistics, the average interior {designRestricted ? 'decorator' : 'designer'} salary is typically around $68,530 per year.* Your earnings will vary based on experience, location and services offered. Earning your professional certification from QC Design School demonstrates your expertise and credibility so that you can charge higher rates. The global design market was valued at $747.75 billion in 2024 and is expected to grow to over $1 trillion by 2032. You can be part of that industry and earn a salary as an interior {designRestricted ? 'decorator' : 'designer'} in less than a year!</p>
-                  <p className="small">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
+                  <p className="small mb-0">* <a href="https://www.bls.gov/ooh/arts-and-design/interior-designers.htm" target="_blank" rel="noreferrer">Occupational Outlook Handbook</a>. <i>U.S. Bureau of Labor Statistics.</i> April 2025</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`Do I need a license or degree to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
                   <p>You don't need a license or an expensive university degree to be successful in the design industry. Instead, you can train online and start attracting clients and generating income in a matter of months!</p>
-                  <p>QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
+                  <p className="mb-0">QC Design School's interior {designRestricted ? 'decorating' : 'design'} course teaches you how to become an interior {designRestricted ? 'decorator' : 'designer'} without a degree. When you graduate, you'll receive the International Design and Decorating Professional (IDDP) certificate—a respected credential that demonstrates your expertise to clients and employers alike.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading={`How long does it take to become an interior ${designRestricted ? 'decorator' : 'designer'}?`} className="mb-3">
-                  <p>With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
+                  <p className="mb-0">With QC's flexible online interior {designRestricted ? 'decorating' : 'design'} course, you can learn at your own pace. Many students complete the program in just 2 to 6 months, though you'll have up to a year to finish. Whether you're balancing a busy schedule or studying full-time, our course allows you to start your new career entirely on your terms.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading="Will I be eligible to join a professional association when I graduate from QC Design School?" className="mb-3">
                   <p>Absolutely. After graduating from QC Design School's online interior {designRestricted ? 'decorating' : 'design'} course, you will be eligible to apply for membership with top industry organizations, including {countryCode === 'CA' ? <>the Decorators and Designers Association of Canada,</> : <>Design Society of America (DSA)</>} and the Interior Design Society (IDS).</p>
-                  <p>These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
+                  <p className="mb-0">These memberships can enhance your credibility, expand your professional network, and give you access to exclusive resources, job boards, and continuing education opportunities. Plus, as a QC Design School student, you'll have access to exclusive discounts with our preferred partners, including design software options like DesignFiles and SampleBoard.</p>
                 </AccordionFAQ>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <GetStartedSection
-        title={`Ready to Start Your Interior ${designRestricted ? 'Decorating' : 'Design'} Career?`}
-        text={`Become professionally certified with QC's online interior ${designRestricted ? 'decorating' : 'design'} training.`}
-        courseCodes={courseCodes}
-      />
+      <section className="bg-dark inverted" style={{ background: 'radial-gradient(circle at 50% 50%, #051249 0%, rgba(5, 18, 73, 0) 42%), #020025' }}>
+        <div className="container text-center">
+          <h2 className="mb-3">Ready to Launch Your {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
+          <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the <strong>IDDP™ credential</strong>.</p>
+          <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today<BiRightArrowAlt style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></button></Link></div>
+          <BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />21-Day No-Risk Money-Back Guarantee
+        </div>
+      </section>
     </div>
   );
 };
 
 export default InteriorDecoratingPage;
+
+const whyQCItems = [
+  {
+    icon: BiBookOpen,
+    title: 'A Proven Alternative to Traditional Programs',
+    text: 'QC offers a streamlined, flexible path focused on what actually matters: building your career with real skills, real projects, and real-world application.',
+  },
+  {
+    icon: BiGroup,
+    title: 'Real-World Insights from Professional Mentors',
+    text: 'Get personalized feedback from a professional designer who reviews your projects, refines your skills, and helps you reach a client-ready standard faster than learning on your own.',
+  },
+  {
+    icon: BiBriefcaseAlt2,
+    title: 'Tools to Start Working Immediately',
+    text: 'Go beyond theory with ready-to-use contracts, client workflows, and design tools that prepare you to take on real projects.',
+  },
+  {
+    icon: BiGlobe,
+    title: 'A Professional Network for Your Long-Term Success',
+    text: 'Join a community of design professionals and stay connected after you graduate, with opportunities for networking, collaboration, and industry access.',
+  },
+];
+
+const stats: [StatProps, StatProps, StatProps] = [
+  {
+    value: 45,
+    suffix: 'K',
+    heading: 'Students & Graduates',
+    description: 'Join a global network of successful design entrepreneurs.',
+  },
+  {
+    value: 40,
+    heading: 'Years of Excellence',
+    description: 'Secure your future with a legacy-backed professional designation.',
+  },
+  {
+    value: 20,
+    heading: 'Experts & Mentors',
+    description: 'Master your craft with direct mentorship from industry leaders.',
+  },
+];

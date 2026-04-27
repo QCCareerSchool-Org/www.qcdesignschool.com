@@ -36,7 +36,7 @@ export interface GAUserData {
   };
 }
 
-export const gaUserData = (emailAddress: string, telephoneNumber: string | null, firstName: string | null, lastName: string | null, city: string | null, provinceCode: string | null, countryCode: string | null) => {
+export const gaUserData = (emailAddress: string, telephoneNumber: string | null, firstName: string | null, lastName: string | null, city: string | null, provinceCode: string | null, countryCode: string | null): void => {
   const userData: GAUserData = {
     email: emailAddress,
   };
