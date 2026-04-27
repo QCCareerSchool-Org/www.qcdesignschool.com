@@ -19,13 +19,14 @@ export type ComparisonTableRow<T extends string = string> = {
 interface Props<T extends string = string> {
   columns: readonly ComparisonTableColumn<T>[];
   rows: readonly ComparisonTableRow<T>[];
+  mobileNav?: boolean;
 }
 
 // eslint-disable-next-line @stylistic/comma-dangle
-export const ComparisonTable: FC<Props> = <T extends string = string,>({ columns, rows }: Props<T>) => {
+export const ComparisonTable: FC<Props> = <T extends string = string,>({ columns, rows, mobileNav = true }: Props<T>) => {
   const comparisonColumns = columns.slice(1);
   const [ selectedColumnKey, setSelectedColumnKey ] = useState<T>(comparisonColumns[0]?.key ?? columns[0].key);
-  const hasMobileSwitcher = comparisonColumns.length > 1;
+  const hasMobileSwitcher = mobileNav && comparisonColumns.length > 1;
 
   const handleMobileSwitcherClick: MouseEventHandler<HTMLButtonElement> = e => {
     setSelectedColumnKey(e.currentTarget.dataset.columnKey as T);
