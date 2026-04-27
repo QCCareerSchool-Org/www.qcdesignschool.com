@@ -12,17 +12,20 @@
   position: sticky;
   top: calc(4.25rem + 0.75rem);
   z-index: 100;
+  display: flex;
+  justify-content: center;
 }
 
 .mobileSwitcher {
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
   background: #fff;
   box-shadow: var(--bs-box-shadow-sm);
 }
 
 .mobileSwitcherButton {
-  flex: 1 1 0;
+  flex: 0 1 auto;
   min-width: 0;
   padding-right: 1rem;
   padding-left: 1rem;
