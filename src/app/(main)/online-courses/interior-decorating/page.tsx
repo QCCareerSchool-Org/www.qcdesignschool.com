@@ -59,8 +59,8 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9 col-xl-7 text-center">
               <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
-              <h1>Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
-              <p className="lead text-muted">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <h1 className="text-shadow">Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
+              <p className="lead text-muted text-shadow">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
                 <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></a>
                 <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
@@ -82,7 +82,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <p className="mb-0 text-center">Most programs teach design theory. <strong>QC helps you turn your skills into a client-ready, income-generating business.</strong> From interactive lessons to mentorship and business tools, every component is designed to get you working professionally as fast as possible.</p>
             </div>
           </div>
-          <div className="row justify-content-center g-4">
+          <div className="row justify-content-center g-4 mb-5">
             {whyQCItems.map(item => (
               <div className="col-12 col-md-6 d-flex" key={item.title}>
                 <Card>
@@ -95,10 +95,21 @@ const InteriorDecoratingPage: PageComponent = async () => {
               </div>
             ))}
           </div>
+          <div className="row justify-content-center">
+            <div className="col-12 col-xl-10">
+              <div className="bg-dark text-light rounded shadow p-4">
+                <div className="d-flex flex-column flex-md-row m-2">
+                  <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
+                  <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
+                  <div className="align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       {price && <CareerPathSection price={price} />}
-      <StatsSection backgroundImage={null} backgroundColor="#020025" stats={stats} />
+      <StatsSection backgroundImage={null} className="text-light" backgroundColor="#020025" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
       <CertificationSection />
@@ -119,7 +130,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <p className="mb-0">A successful design career today requires more than course materials—it requires guidance, feedback, and real-world perspective.</p>
             </div>
           </div>
-          <div className="row justify-content-center g-4 mb-4">
+          <div className="row justify-content-center g-4">
             <div className="col-12 col-lg-6 d-flex">
               <Card>
                 <div className="d-flex align-items-center gap-3 mb-4">
@@ -169,17 +180,6 @@ const InteriorDecoratingPage: PageComponent = async () => {
                 <h3 className="h6">A Global Network of Design Peers</h3>
                 <p>Instant entry into a private community of design entrepreneurs. Share project insights, build industry connections, and leverage real-world advice from peers worldwide.</p>
               </Card>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-12 col-xl-10">
-              <div className="bg-dark text-light rounded shadow p-4">
-                <div className="d-flex flex-column flex-md-row m-2">
-                  <h3 className="h6 mb-3 mb-md-0 me-2">Why Now Is the Best Time to Start a Design Career</h3>
-                  <div className="d-none d-md-block flex-grow-0 mx-md-4 mx-lg-5 my-2" style={{ borderLeft: '1px solid var(--qc-color-primary)' }} />
-                  <div className="align-self-center">The design industry isn't just growing—it's evolving. While technology is changing how designers work, it can't replace the human creativity, judgment, and accountability that clients value most.</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

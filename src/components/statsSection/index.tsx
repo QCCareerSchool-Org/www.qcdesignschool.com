@@ -11,12 +11,13 @@ interface Props {
   inverse?: boolean;
   backgroundImage?: StaticImageData | null;
   backgroundColor?: CSSProperties['backgroundColor'];
+  className?: string;
   stats: [StatProps, StatProps, StatProps];
 }
 
-export const StatsSection: FC<Props> = ({ inverse, backgroundImage, backgroundColor, stats }) => {
+export const StatsSection: FC<Props> = ({ inverse, backgroundImage, backgroundColor, className, stats }) => {
   return (
-    <section className={`${styles.section} ${inverse ? styles.inverse : ''}`} style={{ backgroundColor }}>
+    <section className={`${styles.section} ${inverse ? styles.inverse : ''} ${className ?? ''}`} style={{ backgroundColor }}>
       {backgroundImage !== null && <BackgroundImage src={backgroundImage ?? DefaultBackgroundImage} />}
       <div className="container">
         <div className="row text-center">

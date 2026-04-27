@@ -8,7 +8,7 @@ $colors: (
 $foreground-colors: (
   "body": #506172,
   "headings": #02013f,
-  "muted": rgba(255, 255, 255, 0.75),
+  "muted": rgba(255, 255, 255, 0.875),
   "primary": #155dfc,
   "blue": #1c398e,
   "gold": #f6d779,
@@ -18,9 +18,9 @@ $foreground-colors: (
 );
 
 $background-colors: (
-  "green": #ECFDF5,
-  "red": #FDF2F8,
-  "purple": #FAF5FD,
+  "green": #ecddf5,
+  "red": #fdf2f8,
+  "purple": #faf5fd,
 );
 
 $spacer: 1rem;
@@ -61,7 +61,7 @@ $sizes: (
   --chos-bodrer-color: rgba(0, 0, 0, 0.125);
   --chos-border: var(--chos-border-size) var(--chos-border-style) var(--chos-border-color);
 
-  --chos-text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+  --chos-text-shadow: 0.0625rem 0.0625rem 0 rgba(0, 0, 0, 0.25);
   --chos-box-shadow: 0 0.125rem 0.375rem rgba(0,0,0,0.125);
 
   --chos-padding: 2rem;
