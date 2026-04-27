@@ -113,10 +113,8 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
         overlayColor="rgb(0,0,0,0.6)"
       >
         <h2 className="h3">Your Design Certification</h2>
-
         <p><strong>Turn your training into a client-ready career.</strong></p>
         <p>Upon completion of the Interior {designRestricted ? 'Decorating' : 'Design'} Career Accelerator, you'll earn your International Design and Decorating Professional (IDDP™) designation—your globally recognized credential and professional mark of expertise. Yours for life, it signals that you're ready to work with clients, manage projects, and operate at a professional standard.</p>
-
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
           <li><strong>Start booking paying clients</strong> with the skills, tools, and confidence to deliver professional results from day one</li>
