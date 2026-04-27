@@ -93,14 +93,14 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
         overlayColor="rgb(0,0,0,0.6)"
       >
         <h2 className="h3">Your Design Certification</h2>
-        <p>Once you've completed the Interior Decorating Course online, you'll graduate with the International Design and Decorating Professional (IDDP) certificate. This internationally recognized professional designation is yours to use for life.</p>
-        <p>Your certificate demonstrates that you have successfully completed professional training in the design & decorating industry and you possess all the skills and knowledge required to be successful in the industry.</p>
+        <p><strong>Turn your training into a client-ready career.</strong></p>
+        <p>Upon completion of the Interior Decorating Career Accelerator, you'll earn your International Design and Decorating Professional (IDDP™) designation—your globally recognized credential and professional mark of expertise. Yours for life, it signals that you're ready to work with clients, manage projects, and operate at a professional standard.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
-          <li>Launch your own home design and decorating business with comprehensive business training included in your course</li>
-          <li>Secure a position at an established design and decorating firm</li>
-          <li>Design corporate offices, conference rooms, and retail stores</li>
-          <li>Offer expert consulting services to both residential and commercial clients</li>
+         <li><strong>Start booking paying clients</strong> with the skills, tools, and confidence to deliver professional results from day one</li>
+          <li><strong>Launch a profitable design business</strong> with proven systems for pricing, branding, and client management</li>
+          <li><strong>Take on residential and commercial projects</strong>—from full-service home design to office and retail spaces</li>
+          <li><strong>Offer high-value consulting services</strong> to increase your income and expand your earning potential</li>
         </ul>
         {countryCode === 'CA' && (
           <div className="mt-5">
