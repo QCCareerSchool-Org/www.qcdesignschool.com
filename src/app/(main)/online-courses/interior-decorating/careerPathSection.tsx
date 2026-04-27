@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import styles from './careerPathSection.module.scss';
 import { CareerPathComparisonTable } from '@/components/comparisonTable/careerPaths';
 import type { Price } from '@/domain/price';
 
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const CareerPathSection: FC<Props> = ({ price }) => (
-  <section>
+  <section className={styles.section}>
     <div className="container">
       <div className="row justify-content-center text-center mb-5">
         <div className="col-12 col-lg-10 col-xl-8">

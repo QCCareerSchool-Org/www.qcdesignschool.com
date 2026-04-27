@@ -8,10 +8,17 @@
   border-radius: var(--qc-border-radius);
 }
 
+.mobileSwitcherSticky {
+  position: sticky;
+  top: calc(4.25rem + 0.75rem);
+  z-index: 100;
+}
+
 .mobileSwitcher {
   width: 100%;
-  border: var(--qc-border);
-  background: #020025;
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  background: #fff;
+  box-shadow: var(--bs-box-shadow-sm);
 }
 
 .mobileSwitcherButton {
@@ -20,7 +27,7 @@
   padding-right: 1rem;
   padding-left: 1rem;
   border-color: transparent;
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--bs-secondary-color);
   transition: background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
   white-space: normal;
 }
@@ -33,14 +40,15 @@
 
 .mobileSwitcherButton:hover,
 .mobileSwitcherButton:focus-visible {
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: var(--bs-light);
   border-color: transparent;
-  color: #fff !important;
+  color: var(--bs-body-color) !important;
 }
 
 .mobileSwitcherButton[aria-pressed='true']:hover,
 .mobileSwitcherButton[aria-pressed='true']:focus-visible {
   background-color: var(--qc-color-primary);
+  color: #fff !important;
 }
 
 .table {
