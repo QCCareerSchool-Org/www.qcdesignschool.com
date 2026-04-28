@@ -24,22 +24,22 @@ export const JoinQCSection: FC<Props> = ({ className = 'bg-light', subheading })
         <div className="col-12 col-md-6 col-lg-4">
           <ChatIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
           <h3 className="h6 mb-4">One-on-One Mentorship</h3>
-          <p className="mb-0">Personalized one-on-one feedback from a design professional invested in your success</p>
+          <p className="mb-0">Gain the confidence to launch your business with personalized feedback from a design professional</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BookWithBookmarkIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
           <h3 className="h6 mb-4">Flexible Payment Options</h3>
-          <p className="mb-0">Get practical design knowledge and more with flexible payment options and affordable tuition</p>
+          <p className="mb-0">Launch your career quickly with flexible, interest-free payment options and affordable tuition</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <BarChartIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
-          <h3 className="h6 mb-4">Business Training</h3>
-          <p className="mb-0">The training and tools you need to launch your own business as soon as you graduate</p>
+          <h3 className="h6 mb-4">Complete Business Training</h3>
+          <p className="mb-0">Gain exclusive professional training and tools designed to help you launch a profitable design business</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <CertIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
           <h3 className="h6 mb-4">Professional Certification</h3>
-          <p className="mb-0">A professional certification and designation upon graduation of your course</p>
+          <p className="mb-0">Earn a globally recognized professional designation upon graduation - with no annual renewal fees</p>
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <InfinityIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
@@ -48,8 +48,8 @@ export const JoinQCSection: FC<Props> = ({ className = 'bg-light', subheading })
         </div>
         <div className="col-12 col-md-6 col-lg-4">
           <CoinsIcon height={iconHeight} className={`${styles.icon} mt-3 mb-4`} />
-          <h3 className="h6 mb-4">Virtual Community</h3>
-          <p className="mb-0">Join a vibrant virtual community of designers and access expert-led webinars</p>
+          <h3 className="h6 mb-4">Global Design Community</h3>
+          <p className="mb-0">Join a community of design entrepreneurs and experts for industry insights, collaboration and professional support</p>
         </div>
       </div>
     </div>
