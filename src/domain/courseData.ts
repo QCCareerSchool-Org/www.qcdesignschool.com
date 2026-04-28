@@ -13,7 +13,7 @@ const baseUrl = 'https://www.qcdesignschool.com';
 
 export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   i2: {
-    name: 'Interior Design & Decorating',
+    name: 'Interior Design Career Accelerator',
     url: `${baseUrl}/online-courses/interior-decorating`,
     description: 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
     certification: 'International Design and Decorating Professional™',

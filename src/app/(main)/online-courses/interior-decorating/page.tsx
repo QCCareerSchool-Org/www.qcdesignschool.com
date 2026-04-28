@@ -62,8 +62,8 @@ const InteriorDecoratingPage: PageComponent = async () => {
               <h1 className="text-shadow">Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
               <p className="lead text-shadow mb-5">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                <a href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></a>
-                <Link href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</Link>
+                <Link href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></Link>
+                <a href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</a>
               </div>
             </div>
           </div>
