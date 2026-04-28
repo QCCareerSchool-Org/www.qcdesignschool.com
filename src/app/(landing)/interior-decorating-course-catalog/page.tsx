@@ -38,7 +38,7 @@ const brevoEmailTemplateId = 1598; // Decorating
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const InteriorDecoratingCatalogPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -60,7 +60,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5">
               <FormCard>
-                <h1 className="h2 mb-3 text-navy">Become an Interior Decorator</h1>
+                <h1 className="h2 mb-3 text-navy">Launch Your Interior Decorating Career</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
@@ -86,7 +86,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon title="International Design and Decorating Professional (IDDP) certification" />}
@@ -97,7 +97,7 @@ const InteriorDecoratingCatalogPage: PageComponent = async props => {
         <p>Upon completion of the Interior Decorating Career Accelerator, you'll earn your International Design and Decorating Professional (IDDP™) designation—your globally recognized credential and professional mark of expertise. Yours for life, it signals that you're ready to work with clients, manage projects, and operate at a professional standard.</p>
         <h3 className="h5">What Your Certification Unlocks</h3>
         <ul className="mb-0">
-         <li><strong>Start booking paying clients</strong> with the skills, tools, and confidence to deliver professional results from day one</li>
+          <li><strong>Start booking paying clients</strong> with the skills, tools, and confidence to deliver professional results from day one</li>
           <li><strong>Launch a profitable design business</strong> with proven systems for pricing, branding, and client management</li>
           <li><strong>Take on residential and commercial projects</strong>—from full-service home design to office and retail spaces</li>
           <li><strong>Offer high-value consulting services</strong> to increase your income and expand your earning potential</li>

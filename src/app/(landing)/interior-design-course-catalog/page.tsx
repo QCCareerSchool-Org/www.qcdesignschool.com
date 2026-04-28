@@ -80,7 +80,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
           <div className="row g-0">
             <div className="col-12 col-md-7 col-lg-6 col-xl-5">
               <FormCard>
-                <h1 className="h2 mb-3 text-navy">Become an Interior {designRestricted ? 'Decorator' : 'Designer'}</h1>
+                <h1 className="h2 mb-3 text-navy">Launch Your Interior {designRestricted ? 'Decorating' : 'Design'} Career</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
                   <BrevoForm
@@ -106,7 +106,7 @@ const InteriorDesignCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon title="International Design and Decorating Professional (IDDP) certification" />}
