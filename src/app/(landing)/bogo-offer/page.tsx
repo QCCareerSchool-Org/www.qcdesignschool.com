@@ -36,12 +36,8 @@ const CoursesPage: PageComponent = async props => {
           <div className="row justify-content-center">
             <div className="col-12 col-md-10 col-lg-9 col-xl-8 text-center text-white">
               <div className="mb-3"><Subtitle>Limited-Time Offer</Subtitle></div>
-              <h1 className="h2 mb-4">Maximize Your Earning Potential</h1>
-              <h2 className="h4 mb-4">Get 50% Off Additional Certifications + Bonus Business Training</h2>
-              <p className="mb-4">Enroll in the Interior Design certification program today and build your business with <strong>50% off each additional certification</strong>. You’ll also get the Accelerate Your Business and Virtual Design workshops ($1,896 value) at no extra cost.</p>
-              <p className="mb-4">
-                <strong>Graduate with more than just design skills—build a complete, income-ready business in under 6 months.</strong>
-              </p>
+              <h1 className="h2 mb-4">Your Second Certification Is Free!</h1>
+              <p className="mb-4">Enroll in any design course and get <strong>{discount} off your tuition plus a second course free.</strong> This is the perfect opportunity to specialize your training and become a certified expert. <strong>We've helped 45,000+ students and graduates start their own successful design businesses!</strong></p>
               <Link href="#courses" className="btn btn-outline-light"><QIcon height="16" style={{ position: 'relative', top: -1, marginRight: '0.5rem' }} />View Courses</Link>
             </div>
           </div>
@@ -70,7 +66,7 @@ const CoursesPage: PageComponent = async props => {
               <CourseTuitionCard
                 courseCode="i2"
                 subtitle="IDDP™ Certification"
-                description="Go from aspiring creative to certified pro with QC’s flagship career accelerator course. Master elite design skills under the 1-on-1 guidance of industry mentors, while gaining the essential business systems to launch a successful business."
+                description="Dive into the design industry and create custom interiors that perfectly align with your clients' goals. QC's most popular course is your gateway to mastering essential skills including client consultations, creating floorplans, selecting wall treatments and more."
                 href="/online-courses/interior-decorating"
                 message="Most Popular"
                 showPrice
