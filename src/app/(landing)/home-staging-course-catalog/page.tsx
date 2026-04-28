@@ -36,7 +36,7 @@ const brevoEmailTemplateId = 1985; // Home Staging
 const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -84,7 +84,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Staging and Redesign Professional™ (ISRP™)" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="International Staging and Redesign Professional™ (ISRP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="International Staging and Redesign Professional (ISRP) certification" />}>
         <h2 className="h3">Your Home Staging Certification</h2>
         <p>Once you've completed the Home Staging course online, youll graduate with the International Staging and Redesign Professional  (ISRP) certificate. This internationally recognized professional designation is yours to use for life.</p>

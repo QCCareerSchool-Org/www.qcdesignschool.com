@@ -36,7 +36,7 @@ const brevoEmailTemplateId = 2205; // Feng Shui
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -84,7 +84,7 @@ const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="Advanced Feng Shui Design Professional™ (AFDP™)" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="Advanced Feng Shui Design Professional™ (AFDP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="International Feng Shui Design Professional (IFDP) certification" />}>
         <h2 className="h3">Your Feng Shui Design Certification</h2>
         <p>Once you've completed the Feng Shui Design course online, you'll graduate with the Advanced Feng Shui Design Professional (AFDP) certificate. This internationally recognized professional designation is yours to use for life.</p>

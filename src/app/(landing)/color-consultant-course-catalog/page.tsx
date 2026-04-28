@@ -36,7 +36,7 @@ const brevoEmailTemplateId = 58; // General
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const ColorConsultantCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, date } = await getServerData(props.searchParams);
+  const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
   const msclkid = getParam(searchParams.msclkid);
@@ -84,7 +84,7 @@ const ColorConsultantCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Color Consulting Professional™ (AIOP™)" countryCode={countryCode} />
+      <HowYoullLearnSection graduateTitle="International Color Consulting Professional™ (AIOP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="International Color Consulting Professional (ICCP) certification" />}>
         <h2 className="h3">Your Color Consultant Certification</h2>
         <p>Once you've completed the Color Consultant course online, you'll graduate with the International Color Consulting Professional (AIOP) certificate. This internationally recognized professional designation is yours to use for life.</p>
