@@ -13,8 +13,8 @@ export const CareerPathSection: FC<Props> = ({ price }) => (
     <div className="container">
       <div className="row justify-content-center text-center mb-5">
         <div className="col-12 col-lg-10 col-xl-8">
-          <h2>Choose Your Career Path</h2>
-          <p className="lead mb-0">Selecting the right educational partner can shape your design career. Whether you're switching fields, upskilling, or starting fresh, see how the Professional IDDP&trade; Certification Program compares to traditional degrees and standard online certifications.</p>
+          <h2>Design School Comparison Chart</h2>
+          <p className="lead mb-0">Choose your career path with confidence. Selecting the right educational partner can shape your design career. Whether you're switching fields, upskilling, or starting fresh, see how the Professional IDDP&trade; Certification Program compares to traditional degrees and standard online certifications.</p>
         </div>
       </div>
       <div className="row justify-content-center">
