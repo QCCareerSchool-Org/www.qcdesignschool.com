@@ -26,18 +26,12 @@ import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { GenerateMetadata, PageComponent } from '@/serverComponent';
+import type { PageComponent } from '@/serverComponent';
 
-export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> => {
-  const { countryCode, provinceCode } = await getServerData();
-
-  const designRestricted = getDesignRestricted(countryCode, provinceCode);
-
-  return {
-    title: `Interior Design & Decorating Course`,
-    description: 'QC\'s Interior Design & Decorating course covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
-    alternates: { canonical: '/online-courses/interior-decorating' },
-  };
+export const metadata: Metadata = {
+  title: 'Interior Design & Decorating Course',
+  description: 'QC\'s Interior Design & Decorating course covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
+  alternates: { canonical: '/online-courses/interior-decorating' },
 };
 
 const courseCodes: CourseCode[] = [ 'i2' ];
