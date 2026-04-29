@@ -73,7 +73,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-lg-10">
-              <p className="mb-0 text-center">Most programs teach design theory. <strong>QC helps you turn your skills into a client-ready, income-generating business.</strong> From interactive lessons to mentorship and business tools, every component is designed to get you working professionally as fast as possible.</p>
+              <p className="mb-0 text-center">Most programs teach design theory. <strong>QC helps you turn your skills into a client-ready, income-generating business.</strong> From interactive lessons to mentorship and business tools, you're prepared to start working professionally as a business owner or as a lead consultant in the design industry—either in retail, curating furniture, colour, and textiles, or in custom builds and styled interiors.</p>
             </div>
           </div>
           <div className="row justify-content-center g-4 mb-5">
