@@ -34,8 +34,8 @@ export const generateMetadata: GenerateMetadata = async (): Promise<Metadata> =>
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return {
-    title: `Interior ${designRestricted ? 'Decorating' : 'Design'} Course`,
-    description: 'QC\'s Interior Decorating course covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
+    title: `Interior Design & Decorating Course`,
+    description: 'QC\'s Interior Design & Decorating course covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
     alternates: { canonical: '/online-courses/interior-decorating' },
   };
 };
@@ -60,7 +60,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
             <div className="col-12 col-lg-9 col-xl-7 text-center">
               <p className={styles.eyebrow}>Globally Recognized IDDP&trade; Certification</p>
               <h1 className="text-shadow">Interior {designRestricted ? 'Decorating' : 'Design'}: Career Accelerator</h1>
-              <p className="lead text-shadow mb-5">The only program that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
+              <p className="lead text-shadow mb-5">The only online interior design & decorating course that gives you the IDDP&trade; certification course with professional mentorship and ready-to-use business infrastructure to launch your business in under 6 months.</p>
               <div className="d-flex flex-column flex-sm-row justify-content-center gap-3">
                 <Link href="https://enroll.qcdesignschool.com?c=i2" className="btn btn-lg btn-light">Enroll Now<BiRightArrowAlt size={24} style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></Link>
                 <a href="#whatsIncluded" className="btn btn-lg btn-outline-light">See What's Included</a>
