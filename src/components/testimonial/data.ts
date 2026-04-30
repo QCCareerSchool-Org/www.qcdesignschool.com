@@ -18,6 +18,8 @@ export interface Testimonial {
   stars: 0 | 1 | 2 | 3 | 4 | 5;
 }
 
+type ID = `TD-${number}`;
+
 export const testimonials = {
   'TD-0001': {
     name: 'Natalie Mireault',
@@ -262,6 +264,6 @@ export const testimonials = {
     image: Images.AdrianaDeFreitas, // update image
     stars: 5,
   },
-} as const satisfies Record<string, Testimonial | undefined>;
+} as const satisfies Record<ID, Testimonial | undefined>;
 
 export type TestimonialId = keyof typeof testimonials;
