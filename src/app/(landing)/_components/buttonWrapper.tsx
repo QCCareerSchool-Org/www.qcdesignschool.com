@@ -2,8 +2,9 @@
 
 import type { FC, PropsWithChildren } from 'react';
 
-import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
+import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
 import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
+import type { ScreenSize } from '@/providers/screenSizeProvider';
 
 interface Props {
   alwaysVisible: boolean;
@@ -11,36 +12,32 @@ interface Props {
 
 export const ButtonWrapper: FC<PropsWithChildren<Props>> = ({ alwaysVisible, children }) => {
   const scrollPosition = useScrollPositionContext() ?? 0;
-  const screenWidth = useScreenWidthContext() ?? 0;
+  const { screenSize } = useScreenSizeContext();
 
-  if (alwaysVisible || show(screenWidth, scrollPosition)) {
+  if (alwaysVisible || (screenSize && show(screenSize, scrollPosition))) {
     return <>{children}</>;
   }
 };
 
-const show = (screenWidth: number, scrollPosition: number): boolean => {
-  if (screenWidth >= 1400) {
+const show = (screenSize: ScreenSize, scrollPosition: number): boolean => {
+  if (screenSize === 'xxl') {
     return scrollPosition >= 590;
   }
 
-  if (screenWidth >= 1200) {
+  if (screenSize === 'xl') {
     return scrollPosition >= 610;
   }
 
-  if (screenWidth >= 992) {
+  if (screenSize === 'lg') {
     return scrollPosition >= 590;
   }
 
-  if (screenWidth >= 768) {
+  if (screenSize === 'md') {
     return scrollPosition >= 530;
   }
 
-  if (screenWidth >= 576) {
+  if (screenSize === 'sm') {
     return scrollPosition >= 385;
-  }
-
-  if (screenWidth >= 375) {
-    return scrollPosition >= 420;
   }
 
   return false;

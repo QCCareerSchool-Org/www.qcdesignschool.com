@@ -14,7 +14,7 @@ const columns = [
   {
     key: 'qc',
     eyebrow: 'QC Design School',
-    mobileLabel: 'QC Design School IDDP Program',
+    mobileLabel: 'QC Design School IDDP™ Program',
     heading: <h3>IDDP&trade; Program</h3>,
   },
   {

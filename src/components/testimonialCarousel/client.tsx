@@ -4,7 +4,7 @@ import type { FC, PropsWithChildren } from 'react';
 import type { ResponsiveType } from 'react-multi-carousel';
 import Carousel from 'react-multi-carousel';
 
-import { useScreenWidthContext } from '@/hooks/useScreenWidthContext';
+import { useScreenSizeContext } from '@/hooks/useScreenSizeContext';
 
 const responsive: ResponsiveType = {
   xl: {
@@ -36,11 +36,11 @@ const responsive: ResponsiveType = {
 };
 
 export const TestimonialCarouselClient: FC<PropsWithChildren> = ({ children }) => {
-  const screenSize = useScreenWidthContext() ?? 0;
+  const { gte } = useScreenSizeContext();
 
   return (
     <div style={{ minHeight: 360 }}>
-      <Carousel ssr responsive={responsive} partialVisible infinite showDots={screenSize >= 768}>
+      <Carousel ssr responsive={responsive} partialVisible infinite showDots={gte('md')}>
         {children}
       </Carousel>
     </div>
