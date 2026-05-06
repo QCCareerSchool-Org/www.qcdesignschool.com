@@ -2,7 +2,6 @@
 
 import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
 import type { FC } from 'react';
 
 import emailNotification from './Email Notification.json';
@@ -42,7 +41,7 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, e
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p>From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.</p>
                   <p><strong>Want to leave us for good?</strong> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
-                  <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" /> <Image src={PhoneIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /></button></a>
+                  <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" />   <PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></button></a>
                 </FormWrapper>
               </div>
             </FormCard>

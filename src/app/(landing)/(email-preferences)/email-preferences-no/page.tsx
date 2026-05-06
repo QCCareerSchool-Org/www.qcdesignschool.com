@@ -46,7 +46,7 @@ const emailPreferencesNoPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <EmailPreferencesNoSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
+      <EmailPreferencesNoSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <ThreeReasonsSection />

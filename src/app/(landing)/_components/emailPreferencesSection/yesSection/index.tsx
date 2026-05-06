@@ -2,7 +2,6 @@
 
 import Lottie from 'lottie-react';
 import type { StaticImageData } from 'next/image';
-import Image from 'next/image';
 import type { FC } from 'react';
 
 import emailNotification from './Email Notification.json';
@@ -14,7 +13,6 @@ import { Squiggle } from '@/components/squiggle';
 import { TelephoneLink } from '@/components/telephoneLink';
 
 interface Props {
-  course?: string;
   heroSrc: StaticImageData;
   mobileHeroSrc?: StaticImageData;
   emailAddress?: string;
@@ -41,7 +39,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                   <p>Thanks for updating your preferences. We'll keep sending you design tips, student success stories, exclusive offers, and updates from QC Design School</p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">If you ever have questions about our courses or career training, our team is always happy to help.</p>
-                  <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" /> <Image src={PhoneIcon} height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} alt="" /></button></a>
+                  <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" />   <PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></button></a>
                 </FormWrapper>
               </div>
             </FormCard>
