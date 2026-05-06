@@ -35,9 +35,9 @@ export const EmailPreferencesNoSection: FC<Props> = ({ heroSrc, mobileHeroSrc, e
             <FormCard>
               <div style={{ margin: '0 0 1rem' }}>
                 <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
-                <h1 className="h4 mb-4 text-navy">Thank You! Your Catalog Is Below</h1>
+                <h1 className="h4 mb-4 text-navy">No problem, we'll update your email preferences! </h1>
                 <FormWrapper>
-                  <p>No problem, we'll update your email preferences! Moving forward, you'll only receive information about relevant courses or offers when you engage with QC.</p>
+                  <p>Moving forward, you'll only receive information about relevant courses or offers when you engage with QC.</p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p>From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.</p>
                   <p><strong>Want to leave us for good?</strong> You can find the 'Unsubscribe' link at the bottom of your last email.</p>
