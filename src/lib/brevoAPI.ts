@@ -5,7 +5,7 @@ import { BrevoClient } from '@getbrevo/brevo';
 
 const apiKey = process.env.BREVO_API_KEY ?? '';
 
-const brevo = new BrevoClient({ apiKey, baseUrl: 'https://proxy.qccareerschool.com/brevo/v3', headers: { 'X-Secret': process.env.PROXY_SECRET } });
+export const brevo = new BrevoClient({ apiKey, baseUrl: 'https://proxy.qccareerschool.com/brevo/v3', headers: { 'X-Secret': process.env.PROXY_SECRET } });
 
 interface CustomAttributes {
   STATUS_DESIGN_LEAD?: boolean;
@@ -38,6 +38,28 @@ export const createBrevoContact = async (
   const response = await brevo.contacts.createContact(request, { abortSignal });
 
   return typeof response?.id !== 'undefined';
+};
+
+export const getBrevoContactId = (encoded: string): number | undefined => {
+  const decoded = Buffer.from(encoded, 'base64').toString('utf8');
+  const parts = decoded.split('#');
+  if (parts.length === 2) {
+    const contactId = Number(parts[1]);
+
+    if (Number.isInteger(contactId)) {
+      return contactId;
+    }
+  }
+};
+
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+  const request: Brevo.UpdateContactRequest = {
+    identifier: contactId,
+    identifierType: 'contact_id',
+    listIds: [ listId ],
+  };
+
+  await brevo.contacts.updateContact(request, { abortSignal });
 };
 
 export const sendBrevoEmail = async (
