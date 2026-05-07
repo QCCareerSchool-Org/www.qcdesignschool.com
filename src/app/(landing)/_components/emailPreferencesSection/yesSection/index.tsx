@@ -36,12 +36,12 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
             <FormCard>
               <div style={{ margin: '0 0 1rem' }}>
                 <Lottie animationData={emailNotification} autoplay loop style={{ width: 300, height: 159, margin: '0 auto', paddingLeft: '4%' }} />
-                <h1 className="h4 mb-4 text-navy">You're officially back in the loop</h1>
+                <h1 className="h3 mb-4 text-navy">You're officially back in the loop</h1>
                 <FormWrapper>
-                  <p>Thanks for updating your preferences. We'll keep sending you design tips, student success stories, exclusive offers, and updates from QC Design School</p>
+                  <p><i>Thanks for updating your preferences. We'll keep sending you design tips, student success stories, exclusive offers, and updates from QC Design School</i></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">If you ever have questions about our courses or career training, our team is always happy to help.</p>
-                  <TelephoneLink countryCode={countryCode ?? ''} className="btn btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} />{telephoneNumber}</>} />
+                  <TelephoneLink countryCode={countryCode ?? ''} className="btn btn-lg btn-primary fw-bold" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} />{telephoneNumber}</>} />
                 </FormWrapper>
               </div>
             </FormCard>
