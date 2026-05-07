@@ -11,6 +11,7 @@ import { FormWrapper } from '@/components/formWrapper';
 import PhoneIcon from '@/components/siteLayout/icons/phone.svg';
 import { Squiggle } from '@/components/squiggle';
 import { TelephoneLink } from '@/components/telephoneLink';
+import { getTelephoneNumber } from '@/lib/telephone';
 
 interface Props {
   heroSrc: StaticImageData;
@@ -21,6 +22,7 @@ interface Props {
 
 export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress, countryCode }) => {
   const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
+  const telephoneNumber = getTelephoneNumber(countryCode ?? 'US');
 
   return (
     <section className="text-white">
@@ -39,7 +41,7 @@ export const EmailPreferencesYesSection: FC<Props> = ({ heroSrc, mobileHeroSrc, 
                   <p>Thanks for updating your preferences. We'll keep sending you design tips, student success stories, exclusive offers, and updates from QC Design School</p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">If you ever have questions about our courses or career training, our team is always happy to help.</p>
-                  <a><button className="btn btn-primary"><TelephoneLink countryCode={countryCode ?? ''} className="text-white" />   <PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /></button></a>
+                  <TelephoneLink countryCode={countryCode ?? ''} className="btn btn-primary" linkText={<><PhoneIcon style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} />{telephoneNumber}</>} />
                 </FormWrapper>
               </div>
             </FormCard>
