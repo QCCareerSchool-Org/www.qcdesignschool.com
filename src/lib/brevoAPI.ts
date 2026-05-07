@@ -59,10 +59,10 @@ export const sendBrevoEmail = async (
   return response.messageId;
 };
 
-export const addToBrevoList = async (emailAddress: string, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
   const request: Brevo.UpdateContactRequest = {
-    identifier: emailAddress,
-    identifierType: 'email_id',
+    identifier: contactId,
+    identifierType: 'contact_id',
     listIds: [ listId ],
   };
 
