@@ -15,6 +15,7 @@ import { SupportSection } from '@/components/supportSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
+import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
@@ -28,6 +29,18 @@ const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
 const emailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+  const listId = 103;
+  const searchParamsList = await props.searchParams;
+  const sc = searchParamsList._sc;
+
+  if (typeof sc === 'string') {
+    const contactId = getBrevoContactId(sc) ?? 0;
+    try {
+      await addToBrevoList(contactId, listId);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <>
