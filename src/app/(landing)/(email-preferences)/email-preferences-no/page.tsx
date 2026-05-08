@@ -12,7 +12,7 @@ import { SupportSection } from '@/components/supportSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import { addToBrevoList, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
@@ -31,6 +31,21 @@ const emailPreferencesNoPage: PageComponent = async props => {
   const searchParamsList = await props.searchParams;
   const sc = searchParamsList._sc;
 
+  const getEmailAddress = async (): Promise<string | undefined> => {
+    if (typeof sc === 'string') {
+      const contactId = getBrevoContactId(sc);
+      if(contactId) {
+        const [ , contact ] = await Promise.all([
+          addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
+          getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
+        ]);
+
+        return contact?.emailAddress;
+      }
+    }
+  };
+  const emailAddress = await getEmailAddress();
+
   if (typeof sc === 'string') {
     const contactId = getBrevoContactId(sc) ?? 0;
     try {
@@ -44,7 +59,7 @@ const emailPreferencesNoPage: PageComponent = async props => {
     <>
       <CourseJsonLd courseCode="i2" />
       <Header countryCode={countryCode} logoLink />
-      <EmailPreferencesNoSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} countryCode={countryCode} />
+      <EmailPreferencesNoSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} countryCode={countryCode} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <ThreeReasonsSection />

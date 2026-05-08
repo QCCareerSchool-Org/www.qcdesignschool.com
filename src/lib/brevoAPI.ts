@@ -52,6 +52,36 @@ export const getBrevoContactId = (encoded: string): number | undefined => {
   }
 };
 
+interface BrevoContact {
+  id: number;
+  emailAddress: string;
+  firstName?: string;
+  lastName?: string;
+}
+
+interface BrevoContactAttributes {
+  FIRSTNAME?: string;
+  LASTNAME?: string;
+}
+
+export const getBrevoContact = async (contactId: number, abortSignal?: AbortSignal): Promise<BrevoContact | undefined> => {
+  const request: Brevo.contacts.GetContactInfoRequest = {
+    identifier: contactId,
+    identifierType: 'contact_id',
+  };
+
+  const response = await brevo.contacts.getContactInfo(request, { abortSignal });
+
+  const attributes = response.attributes as BrevoContactAttributes;
+
+  return {
+    id: contactId,
+    emailAddress: response.email ?? '',
+    firstName: attributes.FIRSTNAME,
+    lastName: attributes.LASTNAME,
+  };
+};
+
 export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
   const request: Brevo.UpdateContactRequest = {
     identifier: contactId,
