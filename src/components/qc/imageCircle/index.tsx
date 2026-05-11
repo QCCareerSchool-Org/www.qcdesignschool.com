@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ImageCircle: FC<Props> = ({ src, alt, size = 96 }) => (
-  <div className={styles.imageCircle} style={{ width: size, height: size }}>
+  <div className={styles.imageCircle} style={{ maxWidth: size, aspectRatio: 1 }}>
     <Image src={src} alt={alt} sizes={typeof size === 'number' ? size.toString() : size} />
   </div>
 );

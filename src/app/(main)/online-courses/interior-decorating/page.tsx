@@ -127,7 +127,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <div className="row justify-content-center g-4">
             <div className="col-12 col-lg-6 d-flex">
               <Card>
-                <div className="d-flex align-items-center gap-3 mb-4">
+                <div className="d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-3 mb-4">
                   <ImageCircle src={JaneLockhartImage} alt="Jane Lockhart" size={192} />
                   <div>
                     <Badge className="mb-2">Industry Leader</Badge>
@@ -143,7 +143,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
             </div>
             <div className="col-12 col-lg-6 d-flex">
               <Card>
-                <div className="d-flex align-items-center gap-3 mb-4">
+                <div className="d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-3 mb-4">
                   <ImageCircle src={DeborahSoulierImage} alt="Deborah Soulier" size={192} />
                   <div>
                     <Badge className="mb-2">Dedicated Mentor</Badge>
