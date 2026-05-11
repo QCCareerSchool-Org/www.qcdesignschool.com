@@ -58,3 +58,13 @@ export const sendBrevoEmail = async (
 
   return response.messageId;
 };
+
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+  const request: Brevo.UpdateContactRequest = {
+    identifier: contactId,
+    identifierType: 'contact_id',
+    listIds: [ listId ],
+  };
+
+  await brevo.contacts.updateContact(request, { abortSignal });
+};
