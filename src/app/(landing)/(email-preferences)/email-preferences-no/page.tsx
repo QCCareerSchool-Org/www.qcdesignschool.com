@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
+import type { StaticImageData } from 'next/image';
 
 import { CurrentPromotion } from '../../_components/currentPromotion';
-import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection/noSection';
+import { EmailPreferencesNoSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../../free-course-catalog/hero-small.jpg';
@@ -12,54 +13,44 @@ import { SupportSection } from '@/components/supportSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import { addToBrevoList, getBrevoContact, getBrevoContactId } from '@/lib/brevoAPI';
+import { addToBrevoList } from '@/lib/brevoAPI';
+import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'No problem, we’ll update your email preferences!',
-  description: 'From now on, we’ll only reach out with specific course updates or offers when you’re actively engaging with QC.',
+  title: "No problem, we'll update your email preferences!",
+  description: "From now on, we'll only reach out with specific course updates or offers when you're actively engaging with QC.",
   alternates: { canonical: '/email-preferences-no' },
   robots: { index: false },
 };
 
 const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
-const listId = 103;
+const brevoListId = 103;
 
 const emailPreferencesNoPage: PageComponent = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParamsList = await props.searchParams;
-  const sc = searchParamsList._sc;
 
-  const getEmailAddress = async (): Promise<string | undefined> => {
-    if (typeof sc === 'string') {
-      const contactId = getBrevoContactId(sc);
-      if(contactId) {
-        const [ , contact ] = await Promise.all([
-          addToBrevoList(contactId, listId).catch((err: unknown) => console.log(err)),
-          getBrevoContact(contactId).catch((err: unknown) => console.error(err)),
-        ]);
+  if (typeof searchParamsList._sc !== 'string') {
+    throw new Error('Contact id missing.');
+  }
 
-        return contact?.emailAddress;
-      }
-    }
-  };
-  const emailAddress = await getEmailAddress();
+  const contactId = getBrevoContactId(searchParamsList._sc);
+  if (!contactId) {
+    throw new Error('Invalid contact id.');
+  }
 
-  if (typeof sc === 'string') {
-    const contactId = getBrevoContactId(sc) ?? 0;
-    try {
-      await addToBrevoList(contactId, listId);
-    } catch (err) {
-      console.log(err);
-    }
+  const addResult = await addToBrevoList(contactId, brevoListId);
+  if (!addResult.success) {
+    console.error(addResult.error);
   }
 
   return (
     <>
       <CourseJsonLd courseCode="i2" />
       <Header countryCode={countryCode} logoLink />
-      <EmailPreferencesNoSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} countryCode={countryCode} emailAddress={emailAddress} />
+      <EmailPreferencesNoSection heroSrc={HeroDesktopImage as StaticImageData} mobileHeroSrc={HeroMobileImage as StaticImageData} countryCode={countryCode} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <ThreeReasonsSection />
