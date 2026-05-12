@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import type { StaticImageData } from 'next/image';
 
-import { CurrentPromotion } from '../../_components/currentPromotion';
-import { EmailPreferencesYesSection } from '../../_components/emailPreferencesSection';
 import { Header } from '../../_components/header';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../../free-course-catalog/hero-small.jpg';
+import { EmailPreferencesYesSection } from '../_components/emailPreferencesSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -32,8 +30,7 @@ const emailPreferencesYesPage: PageComponent = async props => {
     <>
       <CourseJsonLd courseCode="i2" />
       <Header countryCode={countryCode} logoLink />
-      <EmailPreferencesYesSection heroSrc={HeroDesktopImage as StaticImageData} mobileHeroSrc={HeroMobileImage as StaticImageData} countryCode={countryCode} />
-      <CurrentPromotion date={date} countryCode={countryCode} />
+      <EmailPreferencesYesSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
