@@ -1,4 +1,4 @@
-import type { CSSProperties, FC } from 'react';
+import type { CSSProperties, FC, ReactNode } from 'react';
 
 import { getTelephoneNumber } from '@/lib/telephone';
 
@@ -6,7 +6,7 @@ interface Props {
   countryCode: string;
   className?: string;
   style?: CSSProperties;
-  linkText?: string;
+  linkText?: ReactNode;
 }
 
 export const TelephoneLink: FC<Props> = ({ countryCode, className, style, linkText }) => {
