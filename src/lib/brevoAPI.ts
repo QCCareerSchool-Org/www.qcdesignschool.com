@@ -10,8 +10,8 @@ const apiKey = process.env.BREVO_API_KEY ?? '';
 const brevo = new BrevoClient({ apiKey, baseUrl: 'https://proxy.qccareerschool.com/brevo/v3/', headers: { 'X-Secret': process.env.PROXY_SECRET } });
 
 interface CustomAttributes {
-  STATUS_PET_LEAD?: boolean;
-  STATUS_PET_STUDENT?: boolean;
+  STATUS_DESIGN_LEAD?: boolean;
+  STATUS_DESIGN_STUDENT?: boolean;
 }
 
 export const createBrevoContact = async (
