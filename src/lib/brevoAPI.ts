@@ -78,24 +78,6 @@ export const sendBrevoEmail = async (
   }
 };
 
-export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<Result> => {
-  const request: Brevo.UpdateContactRequest = {
-    identifier: contactId,
-    identifierType: 'contact_id',
-    listIds: [ listId ],
-  };
-
-  try {
-    await brevo.contacts.updateContact(request, { abortSignal });
-    return success();
-  } catch (err) {
-    if (abortSignal?.aborted) {
-      return failure(Error('Aborted'));
-    }
-    return failure(err instanceof Error ? err : Error(String(err)));
-  }
-};
-
 interface BrevoContact {
   id: number;
   emailAddress: string;
@@ -127,12 +109,20 @@ export const getBrevoContact = async (contactId: number, abortSignal?: AbortSign
   }
 };
 
-export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<void> => {
+export const addToBrevoList = async (contactId: number, listId: number, abortSignal?: AbortSignal): Promise<Result> => {
   const request: Brevo.UpdateContactRequest = {
     identifier: contactId,
     identifierType: 'contact_id',
     listIds: [ listId ],
   };
 
-  await brevo.contacts.updateContact(request, { abortSignal });
+  try {
+    await brevo.contacts.updateContact(request, { abortSignal });
+    return success();
+  } catch (err) {
+    if (abortSignal?.aborted) {
+      return failure(Error('Aborted'));
+    }
+    return failure(err instanceof Error ? err : Error(String(err)));
+  }
 };
