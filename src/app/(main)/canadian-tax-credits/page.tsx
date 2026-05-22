@@ -111,9 +111,8 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
       <section>
         <div className="container">
           <h4 className="text-center">Sample Calculation: How student tax credits can reduce tuition costs</h4>
-          <p>Here's an example of how these credits could work together.</p>
+          <p className="text-center">Here's an example of how these credits could work together.</p>
           <div className={styles.caseHeader}>
-            <small className={`${styles.customOrange} fw-bold`}>CRA CASE EXAMPLE</small>
             <h4 className="text-white">Example student: Tania</h4>
             <p className="text-white">Tania enrolls in a QC course with tuition totaling $1,998</p>
           </div>
@@ -125,7 +124,7 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
               <h6>Step 2: Tuition Tax Credit</h6>
               <p>The remaining $999 in eligible tuition may qualify for the federal Tuition Tax Credit.</p>
               <p>At the federal rate of 15%, this could reduce her taxes by approximately $149.85.</p>
-              <h6>Estimated total savings</h6>
+              <h6>Estimated Total Savings</h6>
               <div className={styles.howItWorks}>
                 <p className="d-flex justify-content-between">
                   <span>Original Tuition:</span>
