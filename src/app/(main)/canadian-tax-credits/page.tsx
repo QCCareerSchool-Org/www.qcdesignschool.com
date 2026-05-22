@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-// import { redirect } from 'next/navigation';
-// import { getServerData } from '@/lib/getServerData';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 
 import styles from './box.module.scss';
 import HeroImage from './hero.jpg';
@@ -11,6 +10,7 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import CheckCircleIcon from '@/components/icons/check-circle.svg';
 import LightbulbIcon from '@/components/icons/lightbulb.svg';
 import MapleLeafIcon from '@/components/icons/maple-leaf.svg';
+import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
 export const metadata: Metadata = {
   title: 'Canadian Tax Credits',
@@ -18,11 +18,11 @@ export const metadata: Metadata = {
 };
 
 const CanadianTaxCreditsPage: PageComponent = async () => {
-  // const { countryCode } = await getServerData();
+  const { countryCode } = await getServerData();
 
-  // if (countryCode !== 'CA') {
-  //   redirect('/');
-  // }
+  if (countryCode !== 'CA') {
+    redirect('/');
+  }
 
   return (
     <>
