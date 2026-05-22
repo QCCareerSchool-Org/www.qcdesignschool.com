@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
@@ -28,6 +29,7 @@ export const TaxCreditsModal: FC = () => {
       </Modal.Body>
       <Modal.Footer>
         <small>Rules for the way the credits work reflect your personal tax situation. Please reach out to your personal accountant for further guidance.</small>
+        <Link className="btn btn-primary" href="/canadian-tax-credits">Learn More</Link>
       </Modal.Footer>
     </Modal>
   );

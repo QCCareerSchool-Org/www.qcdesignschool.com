@@ -77,6 +77,7 @@ export const MainNav: FC<Props> = ({ designRestricted }) => {
                 <Link href="/design-associations" className="dropdown-item" onClick={handleClick}>Associations &amp; Partners</Link>
                 <Link href="/contact-us" className="dropdown-item" onClick={handleClick}>Contact Us</Link>
                 <Link href="/faq" className="dropdown-item" onClick={handleClick}>FAQ</Link>
+                <Link href="/canadian-tax-credits" className="dropdown-item" onClick={handleClick}>Canadian Students Save</Link>
               </NavDropdown>
               <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qcdesignschool.com" className="btn btn-primary">Enroll Now</Link></div>
             </Nav>
