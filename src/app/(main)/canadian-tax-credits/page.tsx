@@ -85,7 +85,7 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
                 <p><CheckCircleIcon width={20} className="text-success" /> Up to 50% of eligible tuition fees, or </p>
                 <p><CheckCircleIcon width={20} className="text-success" /> Your available CTCL balance (whichever is lower)</p>
               </div>
-              <p>Learn more about the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html">Canada Training Credit</a></p>
+              <p>Learn more about the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html" target="_blank" rel="noreferrer">Canada Training Credit</a></p>
             </div>
             <div className={`${styles.CTCbox} col-12 col-lg-5 mb-3 mb-lg-0`}>
               <h4 className="mb-0">2. Tuition Tax Credit</h4>
@@ -103,7 +103,7 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
                 <p>The federal Tuition Tax Credit equals 15% of your eligible tuition amount.</p>
                 <p>You may also qualify for additional provincial tuition tax credits depending on your province of residence.</p>
               </div>
-              <p> Learn more about the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html">Tuition Tax Credit</a></p>
+              <p> Learn more about the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html" target="_blank" rel="noreferrer">Tuition Tax Credit</a></p>
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
           <div className={styles.disclaimerBox}>
             <h6 className={styles.customAmber}>Important Disclaimer</h6>
             <p>Tax rules and eligibility requirements can change and may vary based on your income, province, and tax history.</p>
-            <p>For official guidance regarding the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html">Canadian Training Credit</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html">Tuition Tax Credit</a>, visit Canada Revenue Agency (CRA) Tuition Information or speak with a CPA or qualified tax professional. </p>
+            <p>For official guidance regarding the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html" target="_blank" rel="noreferrer">Canadian Training Credit</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html" target="_blank" rel="noreferrer">Tuition Tax Credit</a>, visit Canada Revenue Agency (CRA) Tuition Information or speak with a CPA or qualified tax professional. </p>
           </div>
         </div>
       </section>
