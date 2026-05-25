@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import { CiWarning } from 'react-icons/ci';
 
 import styles from './box.module.scss';
 import HeroImage from './hero.jpg';
@@ -175,7 +176,7 @@ const CanadianTaxCreditsPage: PageComponent = async () => {
           </AccordionFAQ>
           <div className={styles.disclaimerBox}>
             <h6 className={styles.customAmber}>Important Disclaimer</h6>
-            <p>Tax rules and eligibility requirements can change and may vary based on your income, province, and tax history.</p>
+            <p><CiWarning className={styles.customAmber} />Tax rules and eligibility requirements can change and may vary based on your income, province, and tax history.</p>
             <p>For official guidance regarding the <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-45350-canada-training-credit.html" target="_blank" rel="noreferrer">Canadian Training Credit</a> and <a href="https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/deductions-credits-expenses/line-32300-your-tuition-education-textbook-amounts/eligible-tuition-fees.html" target="_blank" rel="noreferrer">Tuition Tax Credit</a>, visit Canada Revenue Agency (CRA) Tuition Information or speak with a CPA or qualified tax professional. </p>
           </div>
         </div>
