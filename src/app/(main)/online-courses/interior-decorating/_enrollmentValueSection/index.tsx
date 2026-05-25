@@ -7,6 +7,7 @@ import { BiShieldAlt2 } from 'react-icons/bi';
 import { FaRegCheckCircle } from 'react-icons/fa';
 
 import styles from './index.module.scss';
+import { CanadianTax } from '@/components/paymentPlanSection/canadianTax';
 import type { Price } from '@/domain/price';
 import { formatPrice } from '@/lib/formatPrice';
 import { getDesignRestricted } from '@/lib/restrictions';
@@ -84,6 +85,9 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
               </div>
             </div>
             <div className={styles.guarantee}><BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />21-Day No-Risk Money-Back Guarantee</div>
+            <div className="text-center mt-5">
+              <CanadianTax />
+            </div>
           </div>
         </div>
       </div>

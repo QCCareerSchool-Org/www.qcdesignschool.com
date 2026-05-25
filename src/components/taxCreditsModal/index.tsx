@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import type { FC } from 'react';
 import { Modal } from 'react-bootstrap';
 
@@ -20,14 +21,16 @@ export const TaxCreditsModal: FC = () => {
       <Modal.Body>
         <p>QC has proudly been in business since 1984.</p>
         <p><strong>As a certified educational institution</strong> with Employment and Social Development Canada (ESDC), we'll be sending you a T2202 tax receipt for the course fees you paid during the year.</p>
-        <p>You'll may be eligible to claim back 50% or more of your course fees through:</p>
-        <ul className="mb-0">
+        <p>You may be eligible to claim back 50% or more of your course fees through:</p>
+        <ul>
           <li><span className={styles.red}>The Canada Training Credit</span> and</li>
           <li><span className={styles.red}>The Tuition Tax Credit</span></li>
         </ul>
+        <p className="mb-0"><Link href="/canadian-tax-credits">See Sample Calculation Button</Link></p>
       </Modal.Body>
       <Modal.Footer>
         <small>Rules for the way the credits work reflect your personal tax situation. Please reach out to your personal accountant for further guidance.</small>
+        <Link className="btn btn-primary" href="/canadian-tax-credits">Learn More</Link>
       </Modal.Footer>
     </Modal>
   );
