@@ -5,7 +5,6 @@ import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightAr
 import { DesignFilesCarousel } from './_designFilesCarousel';
 import { EnrollmentValueSection } from './_enrollmentValueSection';
 import { RoadmapSection } from './_roadmapSection';
-import { CareerPathSection } from './careerPathSection';
 import { CertificationSection } from './certificationSection';
 import HeroImage from './hero-3.jpg';
 import styles from './page.module.scss';
@@ -102,7 +101,6 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
