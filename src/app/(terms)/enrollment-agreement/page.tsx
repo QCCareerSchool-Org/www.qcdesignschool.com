@@ -16,7 +16,7 @@ const EnrollmentAgreementPage: PageComponent = () => {
     <div className={styles.terms}>
       <h1>Enrollment Agreement</h1>
       <h2>{i++}. Shipping Policy</h2>
-      <p>All applicable course materials will be shipped within two business days of the date of enrollment. Materials will be shipped via courier, and are expected to be delivered within 15 business days.</p>
+      <p>Any applicable course materials and enrollment gifts are shipped via courier after your 21-day review period ends, provided you remain enrolled, and are expected to be delivered within 15 business days.</p>
       <h2>{i++}. 21-Day Money-Back Guarantee</h2>
       <p>You have 21 days from the date of enrollment to examine the course. If you are not entirely satisfied or choose not to complete the course, please notify the School by emailing accounts@qccareerschool.com within 21 days of your date of enrollment. Within two business days the School will review your account and provide you with your options.</p>
       <p>A full refund cannot be granted if you have already submitted course work to your tutor for grading. A partial refund may be offered instead.</p>
