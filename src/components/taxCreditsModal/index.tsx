@@ -26,11 +26,10 @@ export const TaxCreditsModal: FC = () => {
           <li><span className={styles.red}>The Canada Training Credit</span> and</li>
           <li><span className={styles.red}>The Tuition Tax Credit</span></li>
         </ul>
-        <p className="mb-0"><Link href="/canadian-tax-credits">See Sample Calculation Button</Link></p>
+        <p className="mb-0"><Link href="/canadian-tax-credits">See Sample Calculation</Link></p>
       </Modal.Body>
       <Modal.Footer>
         <small>Rules for the way the credits work reflect your personal tax situation. Please reach out to your personal accountant for further guidance.</small>
-        <Link className="btn btn-primary" href="/canadian-tax-credits">Learn More</Link>
       </Modal.Footer>
     </Modal>
   );
