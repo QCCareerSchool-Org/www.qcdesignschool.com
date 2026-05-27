@@ -11,6 +11,7 @@ import HeroImage from './hero-3.jpg';
 import styles from './page.module.scss';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { BookSection } from '@/components/bookSection/booksSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -102,6 +103,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
+      <BookSection />
       {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
