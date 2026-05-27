@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import { BiBookHeart } from 'react-icons/bi';
 
 import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
@@ -105,6 +106,9 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         </div>
       </section>
+      <div className="text-white text-center w-100 p-4" style={{ backgroundColor: 'red' }}>
+        <p className="lead fw-normal mb-0"><strong><BiBookHeart /> Ends Soon:</strong> Complimentary Textbooks Included with Your Enrollment</p>
+      </div>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} withVideo />
       <CertificationSection
