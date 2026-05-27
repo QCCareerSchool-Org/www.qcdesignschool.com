@@ -107,7 +107,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <div className="text-white text-center w-100 p-4" style={{ backgroundColor: 'red' }}>
-        <p className="lead fw-normal mb-0"><strong><BiBookHeart /> Ends Soon:</strong> Complimentary Textbooks Included with Your Enrollment</p>
+        <p className="lead fw-normal mb-0"><strong><BiBookHeart size={20} style={{ position: 'relative', top: -1 }} /> Ends Soon:</strong> Complimentary Textbooks Included with Your Enrollment</p>
       </div>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} withVideo />
