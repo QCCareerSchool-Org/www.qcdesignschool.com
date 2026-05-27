@@ -9,6 +9,7 @@ import HeroImageMobile from './hero-mobile.jpg';
 import styles from './page.module.scss';
 import WhyQCImage from './why-qc.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { BookSection } from '@/components/bookSection/booksSection';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
@@ -140,6 +141,7 @@ const HomePage: PageComponent = async props => {
           </div>
         </div>
       </section>
+      <BookSection />
       <DefaultStatsSection />
       <TestimonialWallSection testimonialIds={testimonialIds} className="bg-light" />
       <DesignPartnerSection countryCode={countryCode} />

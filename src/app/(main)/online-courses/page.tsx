@@ -44,7 +44,7 @@ const CoursesPage: PageComponent = async () => {
                   subtitle="IDDP™ Certification"
                   description="Go from aspiring creative to certified pro with QC’s flagship career accelerator course. Master elite design skills under the 1-on-1 guidance of industry mentors, while gaining the essential business systems to launch a successful business."
                   href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`}
-                  message="Most Popular"
+                  message="Textbooks Included"
                   showPrice
                   showEnrollLink
                 />

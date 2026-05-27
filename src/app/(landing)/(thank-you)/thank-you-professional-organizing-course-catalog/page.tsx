@@ -5,6 +5,7 @@ import { CurrentPromotion } from '../../_components/currentPromotion';
 import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import HeroDesktopImage from '../../professional-organizing-course-catalog/background-po.jpg';
+import { BookSection } from '@/components/bookSection/booksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -48,6 +49,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
       <ThankYouSection course="organizing" heroSrc={HeroDesktopImage} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#course" />
+      <BookSection />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
       <GuaranteeSection />
