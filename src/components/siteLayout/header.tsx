@@ -33,7 +33,7 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
     return (
       <PromoBanner date={date} promotionPeriod={may16.toDTO()}>
         {countryCode === 'US'
-          ? <>Memorial Week Special: Get a Free Second Course</>
+          ? <><span className="d-none d-lg-inline">Ends Soon&mdash;</span>Save up to $700 + get a free course and textbooks</>
           : <><span className="d-none d-lg-inline">Ends Soon&mdash;</span><strong>Get a Free Second Course</strong></>
         }
       </PromoBanner>
