@@ -32,6 +32,7 @@ $sizes: (
   "3": $spacer,
   "4": $spacer * 1.5,
   "5": $spacer * 3,
+  "s": "var(--qc-section-padding)",
 );
 
 $headings: "h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6";

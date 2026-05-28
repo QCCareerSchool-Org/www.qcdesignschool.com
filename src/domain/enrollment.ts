@@ -1,3 +1,4 @@
+import type { CourseCode } from './courseCode';
 import type { CurrencyCode } from './currencyCode';
 import { isCurrencyCode } from './currencyCode';
 import type { PaymentPlan } from './paymentPlan';
@@ -8,7 +9,7 @@ import type { Title } from './title';
 import { isTitle } from './title';
 
 interface Course {
-  code: string;
+  code: CourseCode;
   baseCost: number;
   planDiscount: number;
   discount: number;
