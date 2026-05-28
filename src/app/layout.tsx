@@ -19,6 +19,7 @@ import { OptInMonster } from '@/scripts/optInMonster';
 import { Tiktok } from '@/scripts/tiktok';
 import type { LayoutComponent } from '@/serverComponent';
 
+import './bootstrap.scss';
 import './global.scss';
 import './chos.scss';
 
