@@ -103,7 +103,9 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <BookSection />
+      <div className="mb-0">
+        <BookSection />
+      </div>
       {price && <CareerPathSection price={price} />}
       <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
