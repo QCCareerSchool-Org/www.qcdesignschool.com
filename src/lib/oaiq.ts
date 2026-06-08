@@ -2,24 +2,39 @@
 import type { CurrencyCode } from '@/domain/currencyCode';
 import type { Enrollment } from '@/domain/enrollment';
 
-interface Options {
-  type: string;
+interface Content {
+  id: string;
+  name: string;
+  content_type: string;
+  quantity?: number;
   amount?: number;
   currency?: CurrencyCode;
 }
 
+interface EventProps {
+  type: string;
+  amount?: number;
+  currency?: CurrencyCode;
+  contents?: Content[];
+}
+
+interface EventOptions {
+  custom_event_name: string;
+  event_id: string;
+}
+
 declare global {
   interface Window {
-    oaiq?: (type: string, name: string, options: Options) => void;
+    oaiq?: (type: 'measure', eventName: string, eventProps?: EventProps, eventOptions?: EventOptions) => void;
   }
 }
 
 export const oaiqLead = (): void => {
-  window.oaiq?.('measure', 'lead', { type: 'customer_action' });
+  window.oaiq?.('measure', 'lead_created', { type: 'customer_action' });
 };
 
 export const oaiqSale = (enrollment: Enrollment): void => {
-  window.oaiq?.('measure', 'sale', {
+  window.oaiq?.('measure', 'registration_completed', {
     type: 'customer_action',
     amount: enrollment.cost,
     currency: enrollment.currencyCode,

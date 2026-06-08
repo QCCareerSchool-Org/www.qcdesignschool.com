@@ -13,11 +13,13 @@ export const ChatGPT: FC<Props> = ({ pixelId }) => (
 
 const getScript = (pixelId: string): string => `
 <script>
-!function(w,d,s,u) {
+!function(w, d, s, u) {
   if (w.oaiq) {
     return;
   }
-  var q = function () { q.q.push(arguments); };
+  var q = function () {
+    q.q.push(arguments);
+  };
   q.q = [];
   w.oaiq = q;
   var j = d.createElement(s);
@@ -25,8 +27,8 @@ const getScript = (pixelId: string): string => `
   j.src = u;
   var f = d.getElementsByTagName(s)[0];
   f.parentNode.insertBefore(j, f);
-}(window, document, "script", "https://bzrcdn.openai.com/sdk/oaiq.min.js");
+}(window, document, 'script', 'https://bzrcdn.openai.com/sdk/oaiq.min.js');
 
-oaiq("init", { pixelId: ${safeJSON(pixelId)}, debug:true });
+oaiq('init', { pixelId: ${safeJSON(pixelId)}, debug:true });
 </script>
 `;
