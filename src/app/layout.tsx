@@ -13,6 +13,7 @@ import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
 import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
+import { ChatGPT } from '@/scripts/chatgpt';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
@@ -43,6 +44,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         {process.env.NEXT_PUBLIC_FACEBOOK_ID && <Facebook id={process.env.NEXT_PUBLIC_FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} userValues={userValues} />}
+        {process.env.CHATGPT_PIXEL_ID && <ChatGPT pixelId={process.env.CHATGPT_PIXEL_ID} />}
         <FaviconMeta />
       </head>
       <body className="d-flex flex-column">
