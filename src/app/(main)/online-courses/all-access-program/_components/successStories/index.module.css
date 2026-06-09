@@ -1,0 +1,44 @@
+.box {
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  background: white;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.06);
+}
+
+.inverse {
+  background: #02013f;
+  color: white;
+}
+
+.inverse h3,
+.inverse p {
+  color: white;
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  height: 100%;
+}
+
+.logoCell,
+.highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 9rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: white;
+  box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.06);
+}
+
+.highlight {
+  grid-column: 1 / -1;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}

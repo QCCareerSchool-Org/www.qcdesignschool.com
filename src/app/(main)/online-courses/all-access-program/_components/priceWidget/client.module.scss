@@ -1,0 +1,55 @@
+.client {
+  --gold: #ceb07e;
+  --slate: #94a3b8;
+  text-align: center;
+
+  a { text-decoration: none; }
+
+  &.inverse {
+    color: black;
+
+    .totalValue {
+      color: black;
+
+      .originalPrice {
+        color: black;
+      }
+    }
+
+    .price {
+      color: black;
+    }
+  }
+
+  .totalValue {
+    color: var(--slate);
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .originalPrice {
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1rem;
+      font-weight: 700;
+      text-decoration: 2px rgba(255, 34, 74, 0.7) line-through;
+    }
+  }
+
+  .price {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .details {
+    color: var(--gold);
+  }
+}
