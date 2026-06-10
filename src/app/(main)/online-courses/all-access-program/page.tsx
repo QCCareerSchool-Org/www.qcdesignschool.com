@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { BiBadgeCheck, BiBriefcaseAlt2, BiCheckCircle, BiLayer, BiTrendingUp } from 'react-icons/bi';
 import type { IconType } from 'react-icons';
+import { BiBadgeCheck, BiBriefcaseAlt2, BiCheckCircle, BiLayer, BiTrendingUp } from 'react-icons/bi';
 
 import { Card } from './_components/card';
 import { CourseDescription } from './_components/courseDescription';
 import { PriceWidget } from './_components/priceWidget';
 import { SuccessStoriesSection } from './_components/successStories';
-import HeroDesktop from '../../hero-desktop.jpg';
-import HeroMobile from '../../hero-mobile.jpg';
+import HeroMobile from './hero-mobile.jpg';
+import HeroDesktop from './hero.jpg';
 import { IconCircle } from './iconCircle';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
@@ -48,7 +48,7 @@ const AllAccessProgramPage: PageComponent = async () => {
   return (
     <>
       <section className="bg-navy text-white text-center">
-        <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'md' }} priority />
+        <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'lg' }} priority />
         <div className="container">
           <div className="eyebrow text-shadow mb-3"><strong>Best Value:</strong> Earn Your Elite Design Professional Certification</div>
           <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
