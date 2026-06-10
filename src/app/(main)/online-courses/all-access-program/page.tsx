@@ -52,10 +52,10 @@ const AllAccessProgramPage: PageComponent = async () => {
         <div className="container">
           <div className="eyebrow text-shadow mb-3"><strong>Best Value:</strong> Earn Your Elite Design Professional Certification</div>
           <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
-          <p className="lead fw-medium text-shadow mb-5">Save 60% or More on Tuition &amp; Maximize Your Earning Potential</p>
+          <p className="lead fw-medium text-shadow mb-5">Save 68% or More on Tuition &amp; Maximize Your Earning Potential</p>
           <div className="d-flex justify-content-center gap-4">
             <Link href={enrollHref} className="btn btn-primary shadow">Become an Elite Design Professional</Link>
-            <Link href="#included" className="btn btn-outline-light shadow">See 8 Included Courses</Link>
+            <Link href="#included" className="btn btn-outline-light shadow">See 9 Included Courses</Link>
           </div>
         </div>
       </section>
@@ -85,7 +85,7 @@ const AllAccessProgramPage: PageComponent = async () => {
             ))}
           </div>
           <Link href={enrollHref} className="btn btn-primary">Become an Elite Design Professional</Link>
-          <p className="mt-3 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>Earn multiple professional certifications &bull; Book paying clients in under a year &bull; Learn from industry experts &bull; Enjoy lifetime access</p>
+          <p className="mt-4 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>Earn multiple professional certifications &bull; Book paying clients in under a year &bull; Learn from industry experts &bull; Enjoy lifetime access</p>
         </div>
       </section>
       <section className="bg-light">
@@ -110,7 +110,7 @@ const AllAccessProgramPage: PageComponent = async () => {
             <div className="col-12 col-lg-11 col-xl-10 text-center">
               <div className="eyebrow text-primary mb-4">What&apos;s Included</div>
               <h2 className="h3 mb-4">Get the Most Comprehensive Design Training Available</h2>
-              <p className="mb-0">Gain unlimited access to QC Design School&apos;s complete collection of professional design training programs and graduate with the prestigious Elite Design Professional Certification&mdash;our most comprehensive credential for aspiring design professionals. Develop expertise across all of today&apos;s most in-demand design specialties.</p>
+              <p className="mb-0">Gain unlimited access to QC Design School&apos;s complete collection of professional design training programs and graduate with the prestigious <strong>Elite Design Professional Certification</strong>&mdash;our most comprehensive credential for aspiring design professionals. Develop expertise across all of today&apos;s most in-demand design specialties.</p>
             </div>
           </div>
           <div className="row mb-4">
@@ -142,6 +142,11 @@ const AllAccessProgramPage: PageComponent = async () => {
             <div className={col2}>
               <CourseDescription heading="Color Consulting">
                 Develop expert-level knowledge of color theory, psychology, and lighting to guide confident design decisions.
+              </CourseDescription>
+            </div>
+            <div className={col2}>
+              <CourseDescription heading="Feng Shui">
+                Learn how to create harmonious environments that promote balance, comfort, and well-being.
               </CourseDescription>
             </div>
             <div className={col2}>
