@@ -7,10 +7,12 @@ import { PriceWidgetClient } from './client';
 
 interface Props {
   price: Price;
+  allCoursesPrice: Price;
 }
 
-export const PriceWidget: FC<Props> = ({ price }) => (
+export const PriceWidget: FC<Props> = ({ price, allCoursesPrice }) => (
+
   <div className={styles.wrapper}>
-    <PriceWidgetClient price={price} originalPrice={price.cost} inverse />
+    <PriceWidgetClient price={price} originalPrice={allCoursesPrice.cost} inverse />
   </div>
 );

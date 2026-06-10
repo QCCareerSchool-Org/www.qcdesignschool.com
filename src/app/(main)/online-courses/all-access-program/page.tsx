@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/all-access-program' },
 };
 
-const courseCodes: CourseCode[] = [ 'i2', 'st', 'ld', 'po', 'cc', 'ap', 'db', 'vd' ];
+const courseCodes: CourseCode[] = [ 'ap' ];
+const includedCourseCodes: CourseCode[] = [ 'i2', 'st', 'ld', 'po', 'cc', 'ap', 'db', 'vd' ];
 const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0003', 'TD-0018', 'TD-0002', 'TD-0011', 'TD-0023' ];
 const enrollHref = 'https://enroll.qcdesignschool.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
 
@@ -37,8 +38,12 @@ const col2 = 'col-12 col-lg-6';
 
 const AllAccessProgramPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getServerData();
-  const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
+  const [ priceResult, allCoursesPriceResult ] = await Promise.all([
+    fetchPrice(courseCodes, countryCode, provinceCode),
+    fetchPrice(includedCourseCodes, countryCode, provinceCode),
+  ]);
   const price = priceResult.success ? priceResult.value : undefined;
+  const allCoursesPrice = allCoursesPriceResult.success ? allCoursesPriceResult.value : undefined;
 
   return (
     <>
@@ -155,7 +160,7 @@ const AllAccessProgramPage: PageComponent = async () => {
               </CourseDescription>
             </div>
           </div>
-          {price && <PriceWidget price={price} />}
+          {price && allCoursesPrice && <PriceWidget price={price} allCoursesPrice={allCoursesPrice} />}
         </div>
       </section>
       <SuccessStoriesSection className="bg-light" />
