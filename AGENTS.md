@@ -47,3 +47,9 @@ d-flex flex-column flex-sm-row justify-content-center gap-3
 - Prefer importing shared component types from the component folder barrel/current directory, for example `import type { ComparisonTableColumn, ComparisonTableRow } from '.';`.
 - When fixed campaign content is large or likely to be reused, prefer a baked-in variant; for small one-off cases, it is fine for the page or local section to pass data to the generic primitive directly.
 - If a section needs a reusable rendering pattern plus fixed campaign content, place the generic primitive in `src/components/<component>/index.tsx` and the baked-in variant in a sibling file like `careerPaths.tsx`.
+
+##  Existing Sites
+
+There are other websites that are linked to this project to be used as reference for creating similar pages in this project.
+
+e.g., QC Event Planning: <project_root>/www.qceventplanning.com
