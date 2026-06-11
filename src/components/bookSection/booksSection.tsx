@@ -7,7 +7,7 @@ import HeroImageBookMobile from './background-mobile.jpg';
 import { BackgroundImage } from '../backgroundImage';
 
 export const BookSection: FC = () => (
-  <section className="pb-0 pb-md-s text-white" style={{ backgroundColor: '#161111' }}>
+  <section className="pb-0 pb-md-s text-white" style={{ backgroundColor: '#161111' }} id="tuition">
     <div className="d-none d-md-block"><BackgroundImage priority src={HeroImageBookDesktop} objectPosition="37.5% 25%" /></div>
     <div className="container">
       <div className="row g-5 g-md-s justify-content-center justify-content-md-end">
