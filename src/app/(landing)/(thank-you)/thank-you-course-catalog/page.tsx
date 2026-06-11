@@ -47,7 +47,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
+      <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} download={false} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <BookSection />
