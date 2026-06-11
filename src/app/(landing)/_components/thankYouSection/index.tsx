@@ -9,7 +9,6 @@ import styles from './index.module.scss';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
-import DownloadIcon from '@/components/icons/download.svg';
 import { Squiggle } from '@/components/squiggle';
 
 interface Props {
@@ -19,8 +18,7 @@ interface Props {
   emailAddress?: string;
 }
 
-export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress }) => {
-  const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';
+export const ThankYouSection: FC<Props> = ({ heroSrc, mobileHeroSrc, emailAddress }) => {
   const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
 
   return (
