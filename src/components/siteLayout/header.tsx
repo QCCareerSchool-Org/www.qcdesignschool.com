@@ -5,7 +5,7 @@ import { MainNav } from './mainNav';
 import { PromoBanner } from './promoBanner';
 import { CanadaHeader } from '../canadaHeader';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { may16 } from '@/periods';
+import { june13 } from '@/periods';
 
 interface Props {
   date: number;
@@ -29,9 +29,9 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
     return <CanadaHeader />;
   }
 
-  if (may16.contains(date)) {
+  if (june13.contains(date)) {
     return (
-      <PromoBanner date={date} promotionPeriod={may16.toDTO()}>
+      <PromoBanner date={date} promotionPeriod={june13.toDTO()}>
         {countryCode === 'US'
           ? <><span className="d-none d-lg-inline">Ends Soon&mdash;</span>Save up to $700 + get a free course and textbooks</>
           : <><span className="d-none d-lg-inline">Ends Soon&mdash;</span><strong>Get a Free Second Course</strong></>
