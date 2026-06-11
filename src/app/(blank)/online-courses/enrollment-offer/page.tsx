@@ -50,11 +50,17 @@ const InteriorDecoratingPage: PageComponent = async () => {
       <section className="bg-dark inverted">
         <BackgroundImage src={HeroImage} priority />
         <div
-          className="bg-danger text-white text-center w-100 p-3 d-flex justify-content-center align-items-center gap-4"
-          style={{ position: 'fixed', top: 0, zIndex: 9999 }}
+          className="text-white text-center fw-bold w-100 p-3"
+          style={{ position: 'fixed', top: 0, zIndex: 9999, backgroundColor: '#e00000' }}
         >
-          Ends Soon: Get a FREE Second Certification + $100 Off Tuition
-          <Link href="https://enroll.qcdesignschool.com/bogo-1" className="btn btn-lg btn-light">Enroll Now</Link>
+          <div className="d-flex justify-content-center align-items-center gap-2 d-md-none">
+            <p className="mb-0 fw-bold">ENDS SOON: Get a FREE Second Certification + $100 Off Tuition</p>
+            <Link href="https://enroll.qcdesignschool.com/bogo-1" className="btn btn-sm btn-light">Enroll Now</Link>
+          </div>
+          <div className="d-none d-md-flex justify-content-end align-items-center">
+            <p className="mb-0 fw-bold text-center flex-fill">ENDS SOON: Get a FREE Second Certification + $100 Off Tuition</p>
+            <Link href="https://enroll.qcdesignschool.com/bogo-1" className="btn btn-lg btn-light">Enroll Now</Link>
+          </div>
         </div>
         <div className="container">
           <div className="row justify-content-center">
@@ -109,7 +115,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <BookSection />
+      <BookSection url="https://enroll.qcdesignschool.com/bogo-1" />
       <StatsSection backgroundImage={null} className="bg-dark inverted" stats={stats} />
       {price && <EnrollmentValueSection countryCode={countryCode} price={price} provinceCode={provinceCode} />}
       <RoadmapSection designRestricted={designRestricted} />
