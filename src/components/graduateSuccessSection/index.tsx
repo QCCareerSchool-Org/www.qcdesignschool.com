@@ -15,7 +15,7 @@ interface Props {
 export const GraduateSuccessSection: FC<PropsWithChildren<Props>> = ({ gradKeys, countryCode, provinceCode, className, children }) => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
   return (
-    <section className={className}>
+    <section className={className} id="graduatesuccess">
       <div className="container">
         <div className="row justify-content-center text-center mb-5">
           <div className="col-12 col-lg-10 col-xl-8">
