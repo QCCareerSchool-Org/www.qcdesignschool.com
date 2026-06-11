@@ -40,7 +40,6 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
                   <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">Be sure to check your <strong>spam</strong> or <strong>promotions</strong> folder if you don't see it right away&mdash;you don't want to miss this!</p>
-                  <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> View Catalog</button></a>
                 </FormWrapper>
               </div>
             </FormCard>
