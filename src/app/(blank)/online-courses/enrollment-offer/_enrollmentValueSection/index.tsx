@@ -24,7 +24,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
   const [ paymentPlan, setPaymentPlan ] = useState<PaymentPlan>('full');
   const courseType = getDesignRestricted(countryCode, provinceCode) ? 'Decorating' : 'Design';
 
-  const href = `https://enroll.qcdesignschool.com?c=i2&paymentPlan=${paymentPlan}`;
+  const href = `https://enroll.qcdesignschool.com/bogo-1`;
 
   const handlePayInFullClick = (): void => setPaymentPlan('full');
   const handleMonthlyClick = (): void => setPaymentPlan('part');
