@@ -18,6 +18,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { Testimonial } from '@/components/testimonial';
 import type { TestimonialId } from '@/components/testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
+import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
@@ -28,10 +29,10 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/all-access-program' },
 };
 
-const courseCodes: CourseCode[] = [ 'ap' ];
-const includedCourseCodes: CourseCode[] = [ 'i2', 'st', 'ld', 'po', 'cc', 'ap', 'db', 'vd' ];
+const courseCode: CourseCode = 'ad';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0003', 'TD-0018', 'TD-0002', 'TD-0011', 'TD-0023' ];
-const enrollHref = 'https://enroll.qcdesignschool.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
+const enrollHref = 'https://enroll.qcdesignschool.com/all-access-program';
 
 const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
 const col2 = 'col-12 col-lg-6';
@@ -39,8 +40,8 @@ const col2 = 'col-12 col-lg-6';
 const AllAccessProgramPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getServerData();
   const [ priceResult, allCoursesPriceResult ] = await Promise.all([
-    fetchPrice(courseCodes, countryCode, provinceCode),
-    fetchPrice(includedCourseCodes, countryCode, provinceCode),
+    fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
   const price = priceResult.success ? priceResult.value : undefined;
   const allCoursesPrice = allCoursesPriceResult.success ? allCoursesPriceResult.value : undefined;
@@ -67,48 +68,20 @@ const AllAccessProgramPage: PageComponent = async () => {
               <p className="mb-0">Whether you&apos;re launching a new career, expanding your services, or building a thriving design business, the All-Access Program gives you the skills, certifications, and expert mentorship to get there faster.</p>
             </div>
           </div>
-          <div className="row justify-content-center mb-5 g-3 text-start">
+          <div className="row justify-content-center mb-0 g-3 text-start">
             {highlights.map(item => (
               <div className="col-12 col-sm-6 col-lg-5" key={item}>
                 <p className="mb-0">&#10003; {item}</p>
               </div>
             ))}
           </div>
-          <div className="text-start row g-4 mb-5">
-            {benefits.map(item => (
-              <div className={col1} key={item.heading}>
-                <Card>
-                  <h3 className="h6">{item.heading}</h3>
-                  {item.text}
-                </Card>
-              </div>
-            ))}
-          </div>
-          <Link href={enrollHref} className="btn btn-primary">Become an Elite Design Professional</Link>
-          <p className="mt-4 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>Earn multiple professional certifications &bull; Book paying clients in under a year &bull; Learn from industry experts &bull; Enjoy lifetime access</p>
         </div>
       </section>
-      <section className="bg-light">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
-              <h2 className="mb-4">What Our Students Say</h2>
-            </div>
-          </div>
-          <div className="row justify-content-center g-5">
-            {testimonialIds.map(id => (
-              <div key={id} className="col-12 col-sm-8 col-lg-4">
-                <Testimonial id={id} courseCodes={courseCodes} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section id="included">
+      <section id="included" className="bg-light">
         <div className="container">
           <div className="row justify-content-center mb-5">
             <div className="col-12 col-lg-11 col-xl-10 text-center">
-              <div className="eyebrow text-primary mb-4">What&apos;s Included</div>
+              <div className="eyebrow text-primary mt-0 mb-4">What&apos;s Included</div>
               <h2 className="h3 mb-4">Get the Most Comprehensive Design Training Available</h2>
               <p className="mb-0">Gain unlimited access to QC Design School&apos;s complete collection of professional design training programs and graduate with the prestigious <strong>Elite Design Professional Certification</strong>&mdash;our most comprehensive credential for aspiring design professionals. Develop expertise across all of today&apos;s most in-demand design specialties.</p>
             </div>
@@ -168,8 +141,42 @@ const AllAccessProgramPage: PageComponent = async () => {
           {price && allCoursesPrice && <PriceWidget price={price} allCoursesPrice={allCoursesPrice} />}
         </div>
       </section>
+      <section>
+        <div className="container text-center">
+          <div className="eyebrow text-primary mt-0 mb-4">Why become an Elite Design Professional?</div>
+          <h2 className="h3 mb-5">Build the Skills, Confidence, and Credentials to Stand Out</h2>
+          <div className="text-start row g-4 mt-2 mb-5">
+            {benefits.map(item => (
+              <div className={col1} key={item.heading}>
+                <Card>
+                  <h3 className="h6">{item.heading}</h3>
+                  {item.text}
+                </Card>
+              </div>
+            ))}
+          </div>
+          <Link href={enrollHref} className="btn btn-primary">Become an Elite Design Professional</Link>
+          <p className="mt-4 text-center text-black text-uppercase small fw-bold" style={{ letterSpacing: '1px' }}>Earn multiple professional certifications &bull; Book paying clients in under a year &bull; Learn from industry experts &bull; Enjoy lifetime access</p>
+        </div>
+      </section>
       <SuccessStoriesSection className="bg-light" />
       <section>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
+              <h2 className="mb-4">What Our Students Say</h2>
+            </div>
+          </div>
+          <div className="row justify-content-center g-5">
+            {testimonialIds.map(id => (
+              <div key={id} className="col-12 col-sm-8 col-lg-4">
+                <Testimonial id={id} courseCodes={courseCodes} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-light">
         <div className="container text-center">
           <div className="eyebrow text-primary mb-3">Who Is This Program For</div>
           <h2 className="mb-3">The Strategic Choice for Design Professionals</h2>
@@ -178,7 +185,7 @@ const AllAccessProgramPage: PageComponent = async () => {
           <div className="row justify-content-center g-4">
             {audienceItems.map(item => (
               <div className="col-12 col-md-10 col-lg-4" key={item.text}>
-                <div className="mb-3"><IconCircle><item.icon /></IconCircle></div>
+                <div className="mb-3"><IconCircle><item.icon size={32} /></IconCircle></div>
                 <strong>{item.text}</strong>
               </div>
             ))}
@@ -186,29 +193,13 @@ const AllAccessProgramPage: PageComponent = async () => {
         </div>
       </section>
       <PaymentPlanSection
+        className=""
         courseCodes={courseCodes}
         lead="Exceptional Value"
         heading="Tuition & Payment Plans"
         sub={<><span className="d-block mb-2">Access Complete Professional Design Training for <del>$12,084</del> $4498</span><span>Gain access to every QC Design School course and save 60% or more on your tuition.</span></>}
-        blurb={
-          <div className="row justify-content-center mt-5 g-4">
-            <div className="col-12 text-center">
-              <h3 className="mb-0">Trusted by 30,000+ Students and Graduates</h3>
-            </div>
-            {trustItems.map(item => (
-              <div className="col-12 col-md-6 col-lg-4 d-flex" key={item.heading}>
-                <div className="card bg-light w-100" style={{ borderColor: '#f0f0f0', borderRadius: '0.375rem' }}>
-                  <div className="card-body">
-                    <h4 className="h6">{item.heading}</h4>
-                    <p className="mb-0">{item.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        }
       />
-      <section>
+      <section className="bg-light">
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">
             <div className="row justify-content-center">
@@ -234,7 +225,7 @@ const AllAccessProgramPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <GoogleReviewSection className="bg-light" />
+      <GoogleReviewSection />
       <GetStartedSection
         title="Ready to Become an Elite Design Professional?"
         text="Join the most comprehensive training program QC Design School has to offer and graduate with the skills, confidence, and credentials to build a rewarding design career."
@@ -301,20 +292,5 @@ const audienceItems: { icon: IconType; text: string }[] = [
   {
     icon: BiCheckCircle,
     text: 'Gain practical experience before working with clients',
-  },
-];
-
-const trustItems = [
-  {
-    heading: 'Certification Upon Graduation',
-    text: 'Receive an industry-recognized certification upon completing your course, showcasing your professional skills to future clients and employers.',
-  },
-  {
-    heading: '100% Money-Back Guarantee',
-    text: 'We offer a 21-day money-back guarantee. If you\'re not satisfied with the course, get a full refund, no questions asked.',
-  },
-  {
-    heading: 'Lifetime Access',
-    text: 'Gain lifetime access to all course materials, ensuring you can revisit lessons and refresh your knowledge whenever you need.',
   },
 ];
