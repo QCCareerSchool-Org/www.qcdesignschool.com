@@ -177,7 +177,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     name: 'All Access Program',
     url: `${baseUrl}/online-courses/all-access-program`,
     description: '',
-    certification: undefined,
+    certification: 'International Elite Design Professional',
     subjects: undefined,
     workload: '',
   },
