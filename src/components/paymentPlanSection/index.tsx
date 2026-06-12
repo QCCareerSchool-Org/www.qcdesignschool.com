@@ -28,7 +28,7 @@ const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCo
 
   const price = priceResult.value;
 
-  const href = 'https://enroll.qcdesignschool.com/?' + courseCodes.map(c => `c=${encodeURIComponent(c)}`).join('&');
+  const href = 'https://enroll.qcdesignschool.com/all-access-program';
 
   return (
     <section className={className ?? 'bg-light'} id={id}>
