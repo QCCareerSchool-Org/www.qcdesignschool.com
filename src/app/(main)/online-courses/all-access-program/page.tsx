@@ -15,8 +15,8 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Testimonial } from '@/components/testimonial';
 import type { TestimonialId } from '@/components/testimonial/data';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { CourseCode } from '@/domain/courseCode';
 import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
@@ -49,13 +49,15 @@ const AllAccessProgramPage: PageComponent = async () => {
   return (
     <>
       <section className="bg-navy text-white text-center">
-        <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'lg' }} priority />
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75">
+          <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'lg' }} priority />
+        </div>
         <div className="container">
-          <div className="eyebrow text-shadow mb-3"><strong>Best Value:</strong> Earn Your Elite Design Professional Certification</div>
+          <div className="eyebrow text-shadow mb-3" style={{ color: '#f6d779' }}><strong>Best Value:</strong> Earn Your Elite Design Professional Certification</div>
           <h1 className="text-shadow mb-4">Join the All-Access Program</h1>
           <p className="lead fw-medium text-shadow mb-5">Save 68% or More on Tuition &amp; Maximize Your Earning Potential</p>
           <div className="d-flex justify-content-center gap-4">
-            <Link href={enrollHref} className="btn btn-primary shadow">Become an Elite Design Professional</Link>
+            <Link href={enrollHref} className="btn btn-primary shadow">Enroll Now</Link>
             <Link href="#included" className="btn btn-outline-light shadow">See 9 Included Courses</Link>
           </div>
         </div>
@@ -71,7 +73,9 @@ const AllAccessProgramPage: PageComponent = async () => {
           <div className="row justify-content-center mb-0 g-3 text-start">
             {highlights.map(item => (
               <div className="col-12 col-sm-6 col-lg-5" key={item}>
-                <p className="mb-0">&#10003; {item}</p>
+                <p className="mb-0">
+                  <span className="text-success fw-bold">&#10003;</span> {item}
+                </p>
               </div>
             ))}
           </div>
@@ -92,58 +96,20 @@ const AllAccessProgramPage: PageComponent = async () => {
             </div>
           </div>
           <div className="row g-4">
-            <div className={col2}>
-              <CourseDescription heading="Interior Decorating">
-                Master space planning, furniture layouts, color, lighting, and styling to create beautiful, functional interiors.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Home Staging">
-                Learn proven staging techniques that help properties sell faster and for higher value.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Landscape Design">
-                Expand your expertise outdoors with site planning, plant selection, and outdoor living design.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Professional Organizing">
-                Help clients create organized, efficient spaces that support their lifestyle and goals.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Color Consulting">
-                Develop expert-level knowledge of color theory, psychology, and lighting to guide confident design decisions.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Feng Shui">
-                Learn how to create harmonious environments that promote balance, comfort, and well-being.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Aging in Place Design">
-                Use Universal Design principles to create beautiful, accessible spaces that support independence and long-term comfort.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Accelerate Your Design Business">
-                Learn pricing, marketing, contracts, client management, and business-building strategies.
-              </CourseDescription>
-            </div>
-            <div className={col2}>
-              <CourseDescription heading="Virtual Design Training">
-                Discover how to deliver professional design services online and work with clients anywhere.
-              </CourseDescription>
-            </div>
+            {courseDescriptions.map(({ heading, text }) => (
+              <div key={heading} className={col2}>
+                <CourseDescription heading={heading}>
+                  {text}
+                </CourseDescription>
+              </div>
+            ))}
           </div>
           {price && allCoursesPrice && <PriceWidget price={price} allCoursesPrice={allCoursesPrice} />}
         </div>
       </section>
       <section>
         <div className="container text-center">
-          <div className="eyebrow text-primary mt-0 mb-4">Why become an Elite Design Professional?</div>
+          <div className="eyebrow text-primary mt-0 mb-4">Why Become an Elite Design Professional?</div>
           <h2 className="h3 mb-5">Build the Skills, Confidence, and Credentials to Stand Out</h2>
           <div className="text-start row g-4 mt-2 mb-5">
             {benefits.map(item => (
@@ -164,16 +130,10 @@ const AllAccessProgramPage: PageComponent = async () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
-              <h2 className="mb-4">What Our Students Say</h2>
+              <h2 className="mb-5">What Our Students Say</h2>
             </div>
           </div>
-          <div className="row justify-content-center g-5">
-            {testimonialIds.map(id => (
-              <div key={id} className="col-12 col-sm-8 col-lg-4">
-                <Testimonial id={id} courseCodes={courseCodes} />
-              </div>
-            ))}
-          </div>
+          <TestimonialCarousel testimonialIds={testimonialIds} />
         </div>
       </section>
       <section className="bg-light">
@@ -197,7 +157,6 @@ const AllAccessProgramPage: PageComponent = async () => {
         courseCodes={courseCodes}
         lead="Exceptional Value"
         heading="Tuition & Payment Plans"
-        sub={<><span className="d-block mb-2">Access Complete Professional Design Training for <del>$12,084</del> $4498</span><span>Gain access to every QC Design School course and save 60% or more on your tuition.</span></>}
       />
       <section className="bg-light">
         <div itemScope itemType="https://schema.org/FAQPage">
@@ -269,6 +228,45 @@ const benefits = [
   {
     heading: 'Learn by Doing.',
     text: 'Complete practical design projects and receive personalized feedback from experienced design professionals throughout your training.',
+  },
+];
+
+const courseDescriptions = [
+  {
+    heading: 'Interior Decorating',
+    text: 'Master space planning, furniture layouts, color, lighting, and styling to create beautiful, functional interiors.',
+  },
+  {
+    heading: 'Home Staging',
+    text: 'Learn proven staging techniques that help properties sell faster and for higher value.',
+  },
+  {
+    heading: 'Landscape Design',
+    text: 'Expand your expertise outdoors with site planning, plant selection, and outdoor living design.',
+  },
+  {
+    heading: 'Professional Organizing',
+    text: 'Help clients create organized, efficient spaces that support their lifestyle and goals.',
+  },
+  {
+    heading: 'Color Consulting',
+    text: 'Develop expert-level knowledge of color theory, psychology, and lighting to guide confident design decisions.',
+  },
+  {
+    heading: 'Feng Shui',
+    text: 'Learn how to create harmonious environments that promote balance, comfort, and well-being.',
+  },
+  {
+    heading: 'Aging in Place Design',
+    text: 'Use Universal Design principles to create beautiful, accessible spaces that support independence and long-term comfort.',
+  },
+  {
+    heading: 'Accelerate Your Design Business',
+    text: 'Learn pricing, marketing, contracts, client management, and business-building strategies.',
+  },
+  {
+    heading: 'Virtual Design Training',
+    text: 'Discover how to deliver professional design services online and work with clients anywhere.',
   },
 ];
 

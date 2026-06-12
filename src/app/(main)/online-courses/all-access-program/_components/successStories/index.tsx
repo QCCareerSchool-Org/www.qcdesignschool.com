@@ -18,14 +18,18 @@ interface Props {
 export const SuccessStoriesSection: FC<Props> = ({ className }) => (
   <section className={className}>
     <div className="container">
+      <div className="row justify-content-center mb-5">
+        <div className="col-12 col-lg-10 col-xl-9">
+          <SuccessStoriesCarousel images={carouselImages} />
+        </div>
+      </div>
       <div className="row justify-content-center text-center mb-5">
         <div className="col-12 col-lg-9 col-xl-8">
-          <div className="eyebrow text-primary mb-3">Certifications</div>
           <h2 className="h3 mb-3">Certifications That Build Client Confidence</h2>
           <p className="mb-0">Professional certifications help demonstrate your skills and commitment to excellence.</p>
         </div>
       </div>
-      <div className="row justify-content-center g-4 mb-5">
+      <div className="row justify-content-center g-4">
         {certificationFeatures.map(feature => (
           <div className="col-12 col-md-4" key={feature.title}>
             <div className="text-center">
@@ -35,11 +39,6 @@ export const SuccessStoriesSection: FC<Props> = ({ className }) => (
             </div>
           </div>
         ))}
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-12 col-lg-10 col-xl-9">
-          <SuccessStoriesCarousel images={carouselImages} />
-        </div>
       </div>
     </div>
   </section>
