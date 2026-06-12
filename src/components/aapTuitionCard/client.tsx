@@ -35,8 +35,8 @@ export const AAPClient: FC<Props> = ({ price, originalPrice, inverse }) => {
       <Buttons plan={plan} onFullClick={handleFullClick} onPartClick={handlePartClick} inverse={inverse} />
       <p className={styles.totalValue}>Total Value: <span className={styles.originalPrice}>{price.currency.symbol}{priceFormatter.format(originalPrice)}</span></p>
       <div className={styles.price}>{price.currency.symbol}{plan === 'full'
-        ? priceFormatter.format(price.plans.full.total)
-        : <>{priceFormatter.format(price.plans.part.installmentSize)}/mo</>
+        ? priceFormatter.format(price.cost)
+        : <>{priceFormatter.format(price.plans.full.total)}/mo</>
       }</div>
       <div className={styles.details}>{plan === 'full'
         ? <>One-time Payment</>

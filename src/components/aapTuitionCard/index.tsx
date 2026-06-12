@@ -28,6 +28,9 @@ export const AAPTuitionCard: FC<Props> = async ({ countryCode, provinceCode, hre
     return;
   }
   const originalPrice = parseFloat(combinedPrice.value.courses.reduce((prev, course) => { return prev.plus(course.cost); }, Big(0)).toFixed(2));
+  console.log('price.cost:', price.value.cost);
+  console.log('price.plans.full.total:', price.value.plans.full.total);
+  console.log('price.discountedCost:', price.value.discountedCost);
 
   return (
     <div className={styles.wrapper}>
