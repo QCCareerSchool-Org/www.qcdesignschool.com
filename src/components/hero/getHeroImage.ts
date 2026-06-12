@@ -2,6 +2,7 @@ import type { StaticImageData } from 'next/image';
 
 import EBImage from '../../app/(main)/online-courses/accelerate-your-design-business/hero.jpg';
 import APImage from '../../app/(main)/online-courses/aging-in-place/hero.jpg';
+import ADImage from '../../app/(main)/online-courses/all-access-program/hero.jpg';
 import CCImage from '../../app/(main)/online-courses/color-consultant/hero.jpg';
 import EDImage from '../../app/(main)/online-courses/event-decor/hero.jpg';
 import FSImage from '../../app/(main)/online-courses/feng-shui-design/hero.jpg';
@@ -40,5 +41,7 @@ export const getHeroImage = (courseCode: CourseCode): StaticImageData => {
       return EBImage;
     case 'vd':
       return VDImage;
+    case 'ad':
+      return ADImage;
   }
 };
