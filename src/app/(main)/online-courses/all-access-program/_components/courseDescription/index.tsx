@@ -1,8 +1,7 @@
 import type { FC, PropsWithChildren } from 'react';
 
-import AwardIcon from '@/components/icons/star-award.svg';
-
 import styles from './index.module.css';
+import AwardIcon from '@/components/icons/star-award.svg';
 
 interface Props {
   heading: string;
@@ -10,7 +9,7 @@ interface Props {
 
 export const CourseDescription: FC<PropsWithChildren<Props>> = ({ heading, children }) => (
   <div className={styles.wrapper}>
-    <div className={styles.left}><AwardIcon width="16" style={{ marginTop: '0.375rem' }} /></div>
+    <div className={styles.left}><AwardIcon width={25} style={{ marginTop: '0.2rem' }} /></div>
     <div className={styles.right}>
       <h3 className="h6">{heading}</h3>
       {children}
