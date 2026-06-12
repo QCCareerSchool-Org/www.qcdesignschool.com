@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
+import { DownloadSection } from '.';
 import { getThankyouData } from '../(thank-you)';
 import { CurrentPromotion } from '../_components/currentPromotion';
 import { Header } from '../_components/header';
-import { ThankYouSection } from '../_components/thankYouSection';
 import HeroDesktopImage from '../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../free-course-catalog/hero-small.jpg';
 import { BookSection } from '@/components/bookSection/booksSection';
@@ -47,7 +47,7 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
           leadId={lead.leadId}
         />
       )}
-      <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
+      <DownloadSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
       <BookSection />
