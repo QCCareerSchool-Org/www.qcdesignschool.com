@@ -15,8 +15,8 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
-import { Testimonial } from '@/components/testimonial';
 import type { TestimonialId } from '@/components/testimonial/data';
+import { TestimonialCarousel } from '@/components/testimonialCarousel';
 import type { CourseCode } from '@/domain/courseCode';
 import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
@@ -164,16 +164,10 @@ const AllAccessProgramPage: PageComponent = async () => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-12 col-lg-9 col-xl-8 col-xxl-7 text-lg-center">
-              <h2 className="mb-4">What Our Students Say</h2>
+              <h2 className="mb-5">What Our Students Say</h2>
             </div>
           </div>
-          <div className="row justify-content-center g-5">
-            {testimonialIds.map(id => (
-              <div key={id} className="col-12 col-sm-8 col-lg-4">
-                <Testimonial id={id} courseCodes={courseCodes} />
-              </div>
-            ))}
-          </div>
+          <TestimonialCarousel testimonialIds={testimonialIds} />
         </div>
       </section>
       <section className="bg-light">
