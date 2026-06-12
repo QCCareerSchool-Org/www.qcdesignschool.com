@@ -76,7 +76,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     name: 'Professional Organizing',
     url: `${baseUrl}/online-courses/professional-organizing`,
     description: 'Learn to organize homes and offices, create functional layouts, and build a successful professional organizing business.',
-    certification: 'International Landscape Design Professional™',
+    certification: 'Advanced International Organizing Professional',
     subjects: [
       'Introduction to Professional Organizing',
       'Floorplans and Layouts',
