@@ -1,6 +1,9 @@
 import { dataMap } from './courseData';
 
-export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd' ] as const;
+export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd', 'ad' ] as const;
+
+/** The courses included in the All-Access Program */
+export const aapCourseCodes: CourseCode[] = [ 'i2', 'st', 'ld', 'po', 'cc', 'ap', 'db', 'vd' ] as const;
 
 export type CourseCode = typeof courseCodes[number];
 

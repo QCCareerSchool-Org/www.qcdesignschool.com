@@ -173,4 +173,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     subjects: undefined,
     workload: 'usually completed over 4 to 6 months',
   },
+  ad: {
+    name: 'All Access Program',
+    url: `${baseUrl}/online-courses/all-access-program`,
+    description: '',
+    certification: 'International Elite Design Professional',
+    subjects: undefined,
+    workload: '',
+  },
 };
