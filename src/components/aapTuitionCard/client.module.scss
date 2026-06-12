@@ -1,0 +1,52 @@
+.client {
+  --gold: #Ceb07e;
+  --slate: #94a3b8;
+  text-align: center;
+  
+  a { text-decoration: none; }
+
+  &.inverse {
+    color: black;
+    .totalValue {
+      color: black;
+      .originalPrice { color: black; }
+    }
+    .price { color: black; }
+  }
+
+  .totalValue {
+    // text-slate-400 text-sm font-medium uppercase tracking-widest mb-1 flex items-center gap-2
+    
+    color: var(--slate);
+    font-size: 0.875rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .originalPrice {
+      // text-white text-lg font-bold line-through decoration-[#FF224A]/70 decoration-2
+      color: white;
+      font-size: 1.125rem;
+      line-height: 1rem;
+      font-weight: 700;
+      text-decoration: 2px rgba(255, 34, 74, 0.7) line-through;
+    }
+  }
+
+  .price {
+    // text-white text-4xl lg:text-5xl font-bold tracking-tight min-h-[3.5rem] flex items-center justify-center transition-all duration-300
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  .details {
+    color: var(--gold);
+  }
+}

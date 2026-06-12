@@ -3,6 +3,7 @@ import type { FC, PropsWithChildren } from 'react';
 import { Suspense } from 'react';
 import type { Course, EducationalOrganization, ItemList, WithContext } from 'schema-dts';
 
+import { AAPTuitionCard } from '@/components/aapTuitionCard';
 import { CourseTuitionCard } from '@/components/courseTuitionCard';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
@@ -170,6 +171,9 @@ const CoursesPage: PageComponent = async () => {
                 />
               </Suspense>
             </SmallColumn>
+          </div>
+          <div className="mt-5">
+            <AAPTuitionCard countryCode={countryCode} provinceCode={provinceCode} />
           </div>
         </div>
       </section>
