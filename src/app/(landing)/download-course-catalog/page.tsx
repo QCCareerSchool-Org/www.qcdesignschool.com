@@ -19,15 +19,15 @@ import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
-  title: 'Your Course Catalog Has Been Sent',
-  description: 'Your course catalog has been emailed. Download it to explore QC\'s certifications and online courses!',
-  alternates: { canonical: '/thank-you-course-catalog' },
+  title: 'Catalog Unlocked!',
+  description: 'Your catalog is ready! Download your copy and start exploring course details, career paths, and exclusive student benefits.',
+  alternates: { canonical: '/download-course-catalog' },
   robots: { index: false },
 };
 
 const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
-const ThankYouCourseCatalogPage: PageComponent = async props => {
+const DownloadCourseCatalogPage: PageComponent = async props => {
   const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
 
   return (
@@ -62,4 +62,4 @@ const ThankYouCourseCatalogPage: PageComponent = async props => {
   );
 };
 
-export default ThankYouCourseCatalogPage;
+export default DownloadCourseCatalogPage;
