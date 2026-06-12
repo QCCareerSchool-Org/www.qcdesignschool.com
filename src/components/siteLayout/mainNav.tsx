@@ -15,7 +15,7 @@ import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 interface Props {
   designRestricted: boolean;
   countryCode: string;
-  provinceCode: string;
+  provinceCode: string | null;
 }
 
 export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode }) => {
