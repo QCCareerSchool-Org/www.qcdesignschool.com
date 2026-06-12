@@ -35,7 +35,7 @@ export const PriceWidgetClient: FC<Props> = ({ price, originalPrice, inverse }) 
       <p className={styles.totalValue}>Total Value: <span className={styles.originalPrice}>{price.currency.symbol}{formatPrice(originalPrice)}</span></p>
       <div className={styles.price}>{price.currency.symbol}{plan === 'full'
         ? formatPrice(price.cost)
-        : <>{formatPrice(price.plans.full.total)}/mo</>
+        : <>{formatPrice(price.plans.part.installmentSize)}/mo</>
       }</div>
       <div className={styles.details}>{plan === 'full'
         ? <>One-time Payment</>
