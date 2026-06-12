@@ -18,6 +18,7 @@ import { PaymentPlanSection } from '@/components/paymentPlanSection';
 import { Testimonial } from '@/components/testimonial';
 import type { TestimonialId } from '@/components/testimonial/data';
 import type { CourseCode } from '@/domain/courseCode';
+import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import type { PageComponent } from '@/serverComponent';
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses/all-access-program' },
 };
 
-const courseCodes: CourseCode[] = [ 'ap' ];
-const includedCourseCodes: CourseCode[] = [ 'i2', 'st', 'ld', 'po', 'cc', 'ap', 'db', 'vd' ];
+const courseCode: CourseCode = 'ad';
+const courseCodes: CourseCode[] = [ courseCode ];
 const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0003', 'TD-0018', 'TD-0002', 'TD-0011', 'TD-0023' ];
 const enrollHref = 'https://enroll.qcdesignschool.com/all-access-program';
 
@@ -39,8 +40,8 @@ const col2 = 'col-12 col-lg-6';
 const AllAccessProgramPage: PageComponent = async () => {
   const { countryCode, provinceCode } = await getServerData();
   const [ priceResult, allCoursesPriceResult ] = await Promise.all([
-    fetchPrice(courseCodes, countryCode, provinceCode),
-    fetchPrice(includedCourseCodes, countryCode, provinceCode),
+    fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
+    fetchPrice(aapCourseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),
   ]);
   const price = priceResult.success ? priceResult.value : undefined;
   const allCoursesPrice = allCoursesPriceResult.success ? allCoursesPriceResult.value : undefined;
@@ -192,12 +193,13 @@ const AllAccessProgramPage: PageComponent = async () => {
         </div>
       </section>
       <PaymentPlanSection
+        className=""
         courseCodes={courseCodes}
         lead="Exceptional Value"
         heading="Tuition & Payment Plans"
         sub={<><span className="d-block mb-2">Access Complete Professional Design Training for <del>$12,084</del> $4498</span><span>Gain access to every QC Design School course and save 60% or more on your tuition.</span></>}
       />
-      <section>
+      <section className="bg-light">
         <div itemScope itemType="https://schema.org/FAQPage">
           <div className="container">
             <div className="row justify-content-center">
@@ -223,7 +225,7 @@ const AllAccessProgramPage: PageComponent = async () => {
           </div>
         </div>
       </section>
-      <GoogleReviewSection className="bg-light" />
+      <GoogleReviewSection />
       <GetStartedSection
         title="Ready to Become an Elite Design Professional?"
         text="Join the most comprehensive training program QC Design School has to offer and graduate with the skills, confidence, and credentials to build a rewarding design career."
