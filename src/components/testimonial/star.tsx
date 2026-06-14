@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import StarIcon from './star-icon.svg';
 import styles from './star.module.css';
+import StarIcon from '../icons/star-icon.svg';
 
 interface Props {
   filled?: boolean;
