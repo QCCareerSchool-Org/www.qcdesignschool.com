@@ -11,9 +11,9 @@
   .imageWrapper {
     position: relative;
     height: 140px;
-    @media only screen and (min-width: 576px)  { height: 160px; }
+    @media only screen and (min-width: 576px)  { height: 180px; }
     @media only screen and (min-width: 768px)  { }
-    @media only screen and (min-width: 992px)  { }
+    @media only screen and (min-width: 992px)  { height: 220px; }
     @media only screen and (min-width: 1200px)  { }
     @media only screen and (min-width: 1400px)  { }
   }
@@ -53,6 +53,10 @@
     padding: 0.5rem 1.5rem;
     text-transform: uppercase;
     font-weight: 500;
+    font-size: 0.75rem;
+    @media (min-width: 1200px) {
+      font-size: 1rem;
+    }
   }
 
   .textLink {
