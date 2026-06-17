@@ -177,7 +177,7 @@ const AllAccessProgramPage: PageComponent = async () => {
                   <p>Yes. Flexible payment options make it easy to start your training without delaying your goals.</p>
                 </AccordionFAQ>
                 <AccordionFAQ heading="Is there a refund policy?" className="mb-3">
-                  <p>Yes. Your enrollment is protected by our 21-day money-back guarantee.</p>
+                  <p>Yes. Your enrollment is protected by our 14-day money-back guarantee.</p>
                 </AccordionFAQ>
               </div>
             </div>

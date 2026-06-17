@@ -64,7 +64,7 @@ const FloralDesignPage: PageComponent = async props => {
               <div className="col-12 col-md-10 col-lg-8 text-center">
                 <p className="mb-4">This is your opportunity to earn a professional certification and kickstart the floral design career you&rsquo;ve been dreaming of. Learn directly from award-winning floral experts and turn your passion for flowers into a thriving business. Don&rsquo;t wait&mdash;take the first step toward your future in floral design today!</p>
                 <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
-                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
+                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>14-day</strong> money-back guarantee</p>
               </div>
             </div>
           </div>
