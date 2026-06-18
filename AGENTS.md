@@ -6,6 +6,12 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 # Agent Notes
 
+## Read-Only Default
+- When the user asks a question, provide an answer only.
+- Do not inspect, edit, create, or delete files unless the user explicitly asks for a change.
+- Treat the request as read-only unless it contains a direct action verb like `edit`, `implement`, `modify`, `fix`, `add`, or `remove`.
+- If the intent is ambiguous, ask a clarifying question before making changes.
+
 ## Project Style
 
 - Prefer Bootstrap and existing site utilities before adding CSS module styles.
