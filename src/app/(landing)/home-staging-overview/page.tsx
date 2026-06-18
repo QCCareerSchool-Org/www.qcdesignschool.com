@@ -69,7 +69,7 @@ const HomeStagingPage: PageComponent = async props => {
               <div className="col-12 col-md-10 col-lg-8 text-center">
                 <p className="mb-4">This is your opportunity to earn a professional certification and launch the home staging career you&rsquo;ve been dreaming of, creating beautiful, market-ready homes. Join over 45,000 QC students and graduates worldwide who have turned their passion for design into successful, thriving businesses. Don&rsquo;t wait&mdash;take the first step toward your future in home staging today!</p>
                 <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
-                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
+                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>14-day</strong> money-back guarantee</p>
               </div>
             </div>
           </div>

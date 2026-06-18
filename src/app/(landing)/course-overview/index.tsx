@@ -37,7 +37,7 @@ export const CourseOverview: FC<Props> = ({ countryCode, provinceCode, date }) =
           <div className="col-12 col-md-10 col-lg-9">
             <p className="lead mb-5">This is your chance to gain a professional certification and launch the creative career you've always wanted. <strong>With over 45,000 students and graduates worldwide</strong>, QC has helped aspiring designers turn their passion into thriving businesses in interior decorating, home staging, organizing, floral design, and more. Don't wait—your dream career in design starts now!</p>
             <p><Link href="https://enroll.qcdesignschool.com/all-courses-offer"><button className="btn btn-lg btn-primary">Enroll Now</button></Link></p>
-            <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
+            <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>14-day</strong> money-back guarantee</p>
           </div>
         </div>
       </div>
