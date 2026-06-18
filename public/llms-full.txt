@@ -1,0 +1,62 @@
+# QC Design School
+
+> Full public guide for QC Design School. This companion file gives a broader view of the school, its courses, and the public pages most useful for understanding training and career pathways.
+
+Use this file when a fuller index is helpful. It stays curated and excludes internal callbacks, thank-you pages, and parameter-only routes.
+
+## Main Navigation
+- [Home](https://www.qcdesignschool.com/): Main landing page and overall brand overview.
+- [Online Courses](https://www.qcdesignschool.com/online-courses): Central course catalog for certification and specialty training.
+- [How It Works](https://www.qcdesignschool.com/how-it-works): Self-paced course format, assignments, tutor feedback, and certification flow.
+- [About the School](https://www.qcdesignschool.com/about): Background on QC Design School and QC Career School.
+- [Meet the Team](https://www.qcdesignschool.com/about/meet-the-team): Leadership and support team profiles.
+- [Instructors](https://www.qcdesignschool.com/instructors): Tutors and subject-matter experts who develop and review course content.
+- [Student Success](https://www.qcdesignschool.com/student-success): Graduate stories, testimonials, and student showcases.
+- [FAQ](https://www.qcdesignschool.com/faq): Common questions about enrollment, study, tuition, and support.
+- [Contact Us](https://www.qcdesignschool.com/contact-us): Email, phone, and live chat contact options.
+
+## Course Family
+- [Interior Design & Decorating Course](https://www.qcdesignschool.com/online-courses/interior-decorating): Flagship course for residential decorating and design work.
+- [Landscape Design Course](https://www.qcdesignschool.com/online-courses/landscape-design): Training for garden planning and outdoor design services.
+- [Home Staging Course](https://www.qcdesignschool.com/online-courses/home-staging): Training for preparing homes for sale.
+- [Professional Organizing Course](https://www.qcdesignschool.com/online-courses/professional-organizing): Training for decluttering, storage, and client organization.
+- [Feng Shui Design Course](https://www.qcdesignschool.com/online-courses/feng-shui-design): Feng Shui principles applied to interiors and client spaces.
+- [Color Consultant Course](https://www.qcdesignschool.com/online-courses/color-consultant): Color theory, undertones, lighting, and consulting skills.
+- [Floral Design Course](https://www.qcdesignschool.com/online-courses/floral-design): Floral arranging and floral business training.
+- [Event Decor Course](https://www.qcdesignschool.com/online-courses/event-decor): Event styling, decor planning, and themed visual design.
+- [Aging in Place Course](https://www.qcdesignschool.com/online-courses/aging-in-place): Accessible, age-friendly home design training.
+- [Virtual Design Course](https://www.qcdesignschool.com/online-courses/virtual-design): Remote consultations and online design services.
+- [Accelerate Your Business](https://www.qcdesignschool.com/online-courses/accelerate-your-design-business): Business growth training for design professionals.
+- [Staging for Designers Course](https://www.qcdesignschool.com/online-courses/staging-for-designers): Condensed staging training for trained interior decorators.
+- [All-Access Program](https://www.qcdesignschool.com/online-courses/all-access-program): Multi-course bundle that leads to broader certification options.
+
+## Course Catalogs and Offers
+- [Interior Decorating Course Catalog](https://www.qcdesignschool.com/interior-decorating-course-catalog): Catalog landing page for the interior decorating path.
+- [Interior Design Course Catalog](https://www.qcdesignschool.com/interior-design-course-catalog): Catalog landing page for the interior design path.
+- [Home Staging Course Catalog](https://www.qcdesignschool.com/home-staging-course-catalog): Catalog landing page for home staging.
+- [Landscape Design Course Catalog](https://www.qcdesignschool.com/landscape-design-course-catalog): Catalog landing page for landscape design.
+- [Color Consultant Course Catalog](https://www.qcdesignschool.com/color-consultant-course-catalog): Catalog landing page for color consulting.
+- [Professional Organizing Course Catalog](https://www.qcdesignschool.com/professional-organizing-course-catalog): Catalog landing page for professional organizing.
+- [Feng Shui Design Course Catalog](https://www.qcdesignschool.com/feng-shui-design-course-catalog): Catalog landing page for Feng Shui design.
+- [Free Course Catalog](https://www.qcdesignschool.com/free-course-catalog): Catalog request page for prospective students.
+- [Download Course Catalog](https://www.qcdesignschool.com/download-course-catalog): Download-focused catalog request page.
+- [Course Overview](https://www.qcdesignschool.com/course-overview): General offer and course overview landing page.
+- [Course Overview Offer](https://www.qcdesignschool.com/course-overview-offer): Offer-specific landing page for the course overview funnel.
+- [Bogo Offer](https://www.qcdesignschool.com/bogo-offer): Promotional offer page for course enrollment.
+
+## Topic Guides
+- [Home Staging Overview](https://www.qcdesignschool.com/home-staging-overview): Explains home staging skills, tools, and course content.
+- [Landscape Design Overview](https://www.qcdesignschool.com/landscape-design-overview): Explains landscape design concepts and course content.
+- [Professional Organizing Overview](https://www.qcdesignschool.com/professional-organizing-overview): Explains organizing and decluttering training.
+- [Floral Design Overview](https://www.qcdesignschool.com/floral-design-overview): Explains floral design and business fundamentals.
+- [Feng Shui Overview](https://www.qcdesignschool.com/feng-shui-overview): Explains Feng Shui design principles and applications.
+- [Interior Decorating vs. Interior Design](https://www.qcdesignschool.com/interior-decorating-vs-interior-design): Comparison of the two career paths and their training requirements.
+
+## Career Resources
+- [Become a Home Designer](https://www.qcdesignschool.com/your-career): Career overview page for aspiring design professionals.
+- [Your Design and Decorating Salary](https://www.qcdesignschool.com/your-design-decorating-salary): Salary ranges and sample pricing by service type.
+- [Design Associations](https://www.qcdesignschool.com/design-associations): Professional associations and partner discounts for students and graduates.
+- [Career Essentials Kit](https://www.qcdesignschool.com/career-essentials-kit): Bonus tools, templates, and software access included with enrollment.
+- [Career Catalyst Toolkit](https://www.qcdesignschool.com/career-catalyst-toolkit): Premium toolkit with mentorship, templates, and software access.
+- [Canadian Tax Credits](https://www.qcdesignschool.com/canadian-tax-credits): Canadian tuition tax credit explanation and example savings.
+- [Videos](https://www.qcdesignschool.com/videos): Video library and related media page.

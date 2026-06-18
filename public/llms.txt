@@ -1,0 +1,20 @@
+# QC Design School
+
+> QC Design School is an online school for aspiring design professionals. It offers self-paced certification courses, tutor feedback, business training, and student support.
+
+Use this file as the entry point. For a broader curated index, see `llms-full.txt`.
+
+## Core
+- [Home](https://www.qcdesignschool.com/): Main overview of the school.
+- [Online Courses](https://www.qcdesignschool.com/online-courses): Course catalog and program selection.
+- [How It Works](https://www.qcdesignschool.com/how-it-works): Self-paced study flow and certification process.
+- [About the School](https://www.qcdesignschool.com/about): Background on QC Design School and QC Career School.
+- [Instructors](https://www.qcdesignschool.com/instructors): Tutors and expert instructors.
+- [FAQ](https://www.qcdesignschool.com/faq): Common enrollment and study questions.
+- [Contact Us](https://www.qcdesignschool.com/contact-us): Email, phone, and live chat.
+
+QC's public course catalog covers interior design and decorating, landscape design, home staging, professional organizing, Feng Shui design, color consulting, floral design, event decor, aging in place, virtual design, and business training.
+
+## Detailed Pages
+- [Interior Design & Decorating Course](https://www.qcdesignschool.com/online-courses/interior-decorating): Flagship design and decorating program.
+- [All-Access Program](https://www.qcdesignschool.com/online-courses/all-access-program): Multi-course bundle and broader certification path.
