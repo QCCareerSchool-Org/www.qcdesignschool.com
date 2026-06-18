@@ -84,7 +84,7 @@ export const EnrollmentValueSection: FC<Props> = ({ price, countryCode, province
                 </div>
               </div>
             </div>
-            <div className={styles.guarantee}><BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />21-Day No-Risk Money-Back Guarantee</div>
+            <div className={styles.guarantee}><BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />14-Day No-Risk Money-Back Guarantee</div>
             <div className="text-center mt-5">
               <CanadianTax />
             </div>

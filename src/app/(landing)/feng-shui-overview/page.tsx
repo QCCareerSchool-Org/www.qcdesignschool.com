@@ -68,7 +68,7 @@ const FengShuiDesignPage: PageComponent = async props => {
               <div className="col-12 col-md-10 col-lg-8 text-center">
                 <p className="mb-4">Unlock the power of Feng Shui design so you can bring balance and harmony to every space. Join over 45,000 QC students and graduates worldwide who&rsquo;ve transformed their passion for design into professional-level skills. Don&rsquo;t wait—start your Feng Shui journey today!</p>
                 <Link href={enrollUrl}><button className="btn btn-primary btn-lg mb-5">Enroll Now</button></Link>
-                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>21-day</strong> money-back guarantee</p>
+                <p style={{ textTransform: 'uppercase' }} className="mb-0"><ShieldIcon className="me-2" /><strong>14-day</strong> money-back guarantee</p>
               </div>
             </div>
           </div>

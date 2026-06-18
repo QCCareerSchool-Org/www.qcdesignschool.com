@@ -41,7 +41,7 @@ const FAQPage: PageComponent = async () => {
                   <p>No, you do not need any previous experience in the design industry to succeed in QC's design courses! Whatever career path you choose, QC's courses will teach you everything you need to know, from the fundamentals to advanced techniques, in order to become a qualified design professional.</p>
                 </QuestionAndAnswer>
                 <QuestionAndAnswer heading="What if I decide QC's design course is not for me?">
-                  <p>Once you enroll with QC, you have 21 days to decide if you would like to continue with your online design training. If, for any reason, you decide that the course isn't for you, simply contact QC Design School for a refund of your tuition.</p>
+                  <p>Once you enroll with QC, you have 14 days to decide if you would like to continue with your online design training. If, for any reason, you decide that the course isn't for you, simply contact QC Design School for a refund of your tuition.</p>
                 </QuestionAndAnswer>
                 <QuestionAndAnswer heading="Are flexible payment plans available with each course?">
                   <p>Yes! QC Design School offers flexible extended monthly installment plans that will suit most budgets. You can pay your tuition in monthly payments over one year. If you choose to pay your tuition on an installment plan, you'll have the option to choose the date your payments are processed, adding another level of convenience unique to QC.</p>

@@ -26,7 +26,7 @@ export const FAQ: FC = () => {
           </div>
           <div className="col-12 col-md-10 col-lg-8">
             <QuestionAndAnswer heading="What if the course isn't for me?">
-              No problem! If the course isn't right for you, you're protected by our 21-day money-back guarantee.
+              No problem! If the course isn't right for you, you're protected by our 14-day money-back guarantee.
             </QuestionAndAnswer>
           </div>
         </div>

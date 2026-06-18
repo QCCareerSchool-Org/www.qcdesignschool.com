@@ -293,7 +293,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
           <h2 className="mb-3">Ready to Launch Your {designRestricted ? 'Decorating' : 'Design'} Career?</h2>
           <p className="lead mb-5">Join 45,000+ graduates and build a thriving, client-ready business with the <strong>IDDP™ credential</strong>.</p>
           <div className="mb-3"><Link href="https://enroll.qcdesignschool.com/?c=i2"><button className="btn btn-light btn-lg">Get Started Today<BiRightArrowAlt style={{ position: 'relative', top: -1, marginLeft: '0.125rem' }} /></button></Link></div>
-          <BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />21-Day No-Risk Money-Back Guarantee
+          <BiShieldAlt2 size={20} className="text-green me-2" style={{ position: 'relative', top: -2 }} />14-Day No-Risk Money-Back Guarantee
         </div>
       </section>
     </div>
