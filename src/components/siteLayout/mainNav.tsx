@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import type { FC } from 'react';
 import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
@@ -12,6 +13,10 @@ import Toggle from './toggle.svg';
 import { Logo } from '@/components/logo';
 import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
+const enrollUrls = [
+  { pattern: /^\/online-courses\/all-access-program/u, url: 'https://enroll.qcdesignschool.com/all-access-program' },
+] as const;
+
 interface Props {
   designRestricted: boolean;
   countryCode: string;
@@ -19,9 +24,11 @@ interface Props {
 }
 
 export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode }) => {
+  const path = usePathname();
   const scrollPosition = useScrollPositionContext() ?? 0;
   const [ key, setKey ] = useState(0);
 
+  const url = enrollUrls.find(x => x.pattern.test(path))?.url ?? 'https://enroll.qcdesignschool.com';
   const handleClick = (): void => {
     setTimeout(() => {
       setKey(k => (k < Number.MAX_SAFE_INTEGER ? k + 1 : 0));
@@ -41,8 +48,8 @@ export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode
             </div>
           </Link>
           <div className="d-flex">
-            <div className="d-none d-sm-block d-lg-none me-3"><Link href="https://enroll.qcdesignschool.com" className="btn btn-primary">Enroll Now</Link></div>
-            <div className="d-sm-none me-3"><Link href="https://enroll.qcdesignschool.com" className="btn btn-sm btn-primary">Enroll Now</Link></div>
+            <div className="d-none d-sm-block d-lg-none me-3"><Link href={url} className="btn btn-primary">Enroll Now</Link></div>
+            <div className="d-sm-none me-3"><Link href={url} className="btn btn-sm btn-primary">Enroll Now</Link></div>
             <Navbar.Toggle aria-controls="basic-navbar-nav">
               <Toggle />
             </Navbar.Toggle>
@@ -87,7 +94,7 @@ export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode
                 <Link href="/faq" className="dropdown-item" onClick={handleClick}>FAQ</Link>
                 {countryCode === 'CA' && <Link href="/canadian-tax-credits" className="dropdown-item" onClick={handleClick}>Canadian Students Save</Link>}
               </NavDropdown>
-              <div className="d-none d-lg-block ms-3"><Link href="https://enroll.qcdesignschool.com" className="btn btn-primary">Enroll Now</Link></div>
+              <div className="d-none d-lg-block ms-3"><Link href={url} className="btn btn-primary">Enroll Now</Link></div>
             </Nav>
           </Navbar.Collapse>
         </div>
