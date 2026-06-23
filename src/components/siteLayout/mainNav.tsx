@@ -20,7 +20,7 @@ interface Props {
 
 export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode }) => {
   const scrollPosition = useScrollPositionContext() ?? 0;
-  const [ key, setKey ] = useState(0);
+  const [key, setKey] = useState(0);
 
   const handleClick = (): void => {
     setTimeout(() => {
@@ -66,12 +66,8 @@ export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode
                 <Link href="/online-courses/virtual-design" className="dropdown-item" onClick={handleClick}>Virtual Design</Link>
                 <Link href="/online-courses/accelerate-your-design-business" className="dropdown-item" onClick={handleClick}>Accelerate Your Business</Link>
                 <li><hr className="dropdown-divider" /></li>
-                { provinceCode !== 'ON' && (
-                  <>
-                    <Link href="/online-courses/all-access-program" className="dropdown-item fw-bold" style={{ marginLeft: '-0.375rem' }} onClick={handleClick}><span className="badge bg-primary">New</span>&nbsp; All-Access Program</Link>
-                    <li><hr className="dropdown-divider" /></li>
-                  </>
-                )}
+                <Link href="/online-courses/all-access-program" className="dropdown-item fw-bold" style={{ marginLeft: '-0.375rem' }} onClick={handleClick}><span className="badge bg-primary">New</span>&nbsp; All-Access Program</Link>
+                <li><hr className="dropdown-divider" /></li>
                 <Link href="/online-courses" className="dropdown-item" onClick={handleClick}>View All Courses</Link>
                 <Link href="/how-it-works" className="dropdown-item" onClick={handleClick}>Learning Design Online</Link>
               </NavDropdown>
