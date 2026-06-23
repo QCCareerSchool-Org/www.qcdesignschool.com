@@ -6,17 +6,20 @@ import type { FC } from 'react';
 import styles from './index.module.scss';
 import VideoPlayerImage from './video-player.jpg';
 import { VideoPopup } from '@/components/videoPopup';
+import type { CourseCode } from '@/domain/courseCode';
+import { getCourseName } from '@/domain/courseCode';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
 import { getDesignRestricted } from '@/lib/restrictions';
 
 interface Props {
   graduateTitle: string;
+  courseCode: CourseCode;
   withVideo?: boolean;
   countryCode: string;
   provinceCode: string | null;
 }
 
-export const HowYoullLearnSection: FC<Props> = ({ withVideo = false, countryCode, provinceCode }) => {
+export const HowYoullLearnSection: FC<Props> = ({ courseCode, withVideo = false, countryCode, provinceCode }) => {
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 
   return (
@@ -43,7 +46,14 @@ export const HowYoullLearnSection: FC<Props> = ({ withVideo = false, countryCode
             )}
           </div>
           <div className="col-12 col-md-10 col-lg-7 col-xxl-6">
-            <h2 className="h3 mb-4">Start Your Interior {designRestricted ? 'Decorating' : 'Design'} Career Today</h2>
+            <h2 className="h3 mb-4">
+              Start Your{' '}
+              {courseCode === 'i2'
+                ? (designRestricted ? 'Interior Decorating' : 'Interior Design')
+                : getCourseName(courseCode)
+              }{' '}
+              Career Today
+            </h2>
             <p className="lead mb-4">{countryCode === 'CA' && 'Join Canada\'s trusted school for aspiring design professionals. '}You'll receive industry-recognized design training and career-ready skills without the high cost of a college or university degree.</p>
             <ul className={`${styles.list} list-unstyled mb-0`}>
               {countryCode === 'CA' && (

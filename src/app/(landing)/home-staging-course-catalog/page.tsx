@@ -84,7 +84,7 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
         </div>
       </section>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Staging and Redesign Professional™ (ISRP™)" countryCode={countryCode} provinceCode={provinceCode} />
+      <HowYoullLearnSection courseCode="st" graduateTitle="International Staging and Redesign Professional™ (ISRP™)" countryCode={countryCode} provinceCode={provinceCode} />
       <CertificationSection backgroundImageSrc={CertificationBackgroundImage} certification={<CertificationIcon title="International Staging and Redesign Professional (ISRP) certification" />}>
         <h2 className="h3">Your Home Staging Certification</h2>
         <p>Once you've completed the Home Staging course online, youll graduate with the International Staging and Redesign Professional  (ISRP) certificate. This internationally recognized professional designation is yours to use for life.</p>
