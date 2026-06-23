@@ -110,7 +110,7 @@ const FreeCourseCatalogPage: PageComponent = async props => {
         <p className="lead fw-normal mb-0"><strong><BiBookHeart size={20} style={{ position: 'relative', top: -1 }} /> Ends Soon:</strong> Complimentary Textbooks Included with Your Enrollment</p>
       </div>
       <PromoSection date={date} countryCode={countryCode} />
-      <HowYoullLearnSection graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} withVideo />
+      <HowYoullLearnSection courseCode="i2" graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} withVideo />
       <CertificationSection
         backgroundImageSrc={CertificationBackgroundImage}
         certification={<CertificationIcon title="International Design and Decorating Professional (IDDP) certification" />}
