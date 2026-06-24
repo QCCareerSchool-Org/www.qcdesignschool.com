@@ -149,7 +149,7 @@ const InteriorDecoratingPage: PageComponent = async () => {
                     <Badge className="mb-2">Dedicated Mentor</Badge>
                     <div className="ps-1">
                       <div className="lead fw-bold text-black">Deborah Soulier</div>
-                      <div className="fw-bold small">Founder of Soulier Designs<br />Regional Director&mdash;DDA</div>
+                      <div className="fw-bold small">Founder of Soulier Designs<br />Chair of Education&mdash;DDA</div>
                     </div>
                   </div>
                 </div>
