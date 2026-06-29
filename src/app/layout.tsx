@@ -11,7 +11,7 @@ import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
 import { Provider } from '@/providers';
-import { ActiveCampaign } from '@/scripts/activecampaign';
+import { ActiveCampaign } from '@/scripts/activeCampaign';
 import { Bing } from '@/scripts/bing';
 import { Brevo } from '@/scripts/brevo';
 import { ChatGPT } from '@/scripts/chatgpt';
