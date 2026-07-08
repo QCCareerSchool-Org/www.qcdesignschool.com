@@ -24,7 +24,7 @@ export const Header: FC<Props> = props => {
   );
 };
 
-const InnerBanner: FC<Props> = ({ date, countryCode }) => {
+const InnerBanner: FC<Props> = ({ date }) => {
   // if (countryCode === 'CA') {
   //   return <CanadaHeader />;
   // }
@@ -32,10 +32,7 @@ const InnerBanner: FC<Props> = ({ date, countryCode }) => {
   if (july08.contains(date)) {
     return (
       <PromoBanner date={date} promotionPeriod={july08.toDTO()}>
-        {countryCode === 'US' || countryCode === 'CA'
-          ? <><span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today & Get a 2nd Course Free</>
-          : <><span className="d-none d-lg-inline">Ends Soon&mdash;</span><strong>Get a Free Second Course</strong></>
-        }
+        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today & Get a 2nd Course Free
       </PromoBanner>
     );
   }
