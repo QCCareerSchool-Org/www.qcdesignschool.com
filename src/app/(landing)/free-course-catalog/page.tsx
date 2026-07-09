@@ -10,8 +10,8 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/interior-decorating/cert-bg.jpg';
+import { ActiveCampaignForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/iddp.svg';
 import { DesignRecognition } from '@/components/designRecognition';
 import { FormCard } from '@/components/formCard';
@@ -41,17 +41,6 @@ export const generateMetadata: GenerateMetadata = async (props): Promise<Metadat
   };
 };
 
-const brevo = {
-  design: {
-    brevoListId: 52, // Interior Design Leads
-    brevoEmailTemplateId: 1464, // Design
-  },
-  decorating: {
-    brevoListId: 18, // Interior Decorating Leads
-    brevoEmailTemplateId: 3356, // Decorating
-  },
-};
-
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
 const FreeCourseCatalogPage: PageComponent = async props => {
@@ -67,10 +56,6 @@ const FreeCourseCatalogPage: PageComponent = async props => {
   const headerList = await headers();
   const referrer = headerList.get('referer');
 
-  const designRestricted = getDesignRestricted(countryCode, provinceCode);
-
-  const { brevoListId, brevoEmailTemplateId } = designRestricted ? brevo.decorating : brevo.design;
-
   return (
     <>
       <CourseJsonLd courseCode="i2" />
@@ -84,11 +69,10 @@ const FreeCourseCatalogPage: PageComponent = async props => {
                 <h1 className="h3 mb-3 text-navy">Start a Career in Design</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
-                  <BrevoForm
+                  <ActiveCampaignForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcdesignschool.com'}/thank-you-course-catalog`}
-                    listId={brevoListId}
-                    telephoneListId={50}
-                    emailTemplateId={brevoEmailTemplateId}
+                    requiredIds={[ 33n ]}
+                    optionalIds={[ 28n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}

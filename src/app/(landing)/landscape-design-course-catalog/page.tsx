@@ -10,8 +10,8 @@ import { Header } from '../_components/header';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/landscape-design/cert-bg.jpg';
 import WhatYoullLearnImage from '@/app/(main)/online-courses/landscape-design/what-youll-learn.jpg';
+import { ActiveCampaignForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import CertificationLogoIcon from '@/components/certificationLogos/ildp.svg';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -39,8 +39,6 @@ export const metadata: Metadata = {
 };
 
 const iconHeight = 32;
-const brevoListId = 21; // Landscape Design Leads
-const brevoEmailTemplateId = 1967; // Landscape Design
 const testimonialIds: TestimonialId[] = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
 const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
@@ -70,11 +68,10 @@ const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
                 <h1 className="h2 mb-3 text-navy">Become a Landscape Designer</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
-                  <BrevoForm
+                  <ActiveCampaignForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcdesignschool.com'}/thank-you-landscape-design-course-catalog`}
-                    listId={brevoListId}
-                    telephoneListId={50}
-                    emailTemplateId={brevoEmailTemplateId}
+                    requiredIds={[ 54n ]}
+                    optionalIds={[ 50n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
