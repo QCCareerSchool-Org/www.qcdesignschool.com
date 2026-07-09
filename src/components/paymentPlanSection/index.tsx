@@ -19,7 +19,7 @@ interface Props {
   blurb?: ReactNode;
 }
 
-const PaymentPlanSectionBase: FC<Props> = async ({ id = 'tuition', courseCodes, className, heading, lead, sub, blurb }) => {
+const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb }) => {
   const { countryCode, provinceCode } = await getServerData();
   const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
   if (!priceResult.success) {
