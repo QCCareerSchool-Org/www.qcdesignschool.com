@@ -101,7 +101,7 @@ const LandscapeDesignPage: PageComponent = async props => {
         <section id="whatYoullLearn">
           <div className="container">
             <div className="row align-items-center justify-content-center g-s">
-              <div className="col-12 col-lg-6">
+              <div className="col-12 col-lg-6" id="lessonpreview">
                 <h2>Here's What You'll Learn</h2>
                 <p>QC's comprehensive Landscape Design course will show you how to:</p>
                 <ul className="mb-0">
