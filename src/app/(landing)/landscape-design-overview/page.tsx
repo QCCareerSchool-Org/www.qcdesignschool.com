@@ -129,7 +129,7 @@ const LandscapeDesignPage: PageComponent = async props => {
         <TutorSection className="bg-light" />
         <OutlineSection />
         <CareerEssentialsKitCanvaSection />
-        <PaymentPlanSection courseCodes={courseCodes} />
+        <PaymentPlanSection courseCodes={courseCodes} href={enrollUrl} />
         <CourseCardsSection designRestricted={true} />
         <section className="bg-light">
           <div className="container">
