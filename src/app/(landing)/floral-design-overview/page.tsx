@@ -122,7 +122,7 @@ const FloralDesignPage: PageComponent = async props => {
         <GoogleReviewSection courseCode="fd" schemaCourseId="#course" />
         <TutorSection className="bg-light" />
         <OutlineSection />
-        <PaymentPlanSection courseCodes={courseCodes} />
+        <PaymentPlanSection courseCodes={courseCodes} href={enrollUrl} />
         <CourseCardsSection designRestricted={true} />
         <section className="bg-light">
           <div className="container">

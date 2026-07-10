@@ -17,9 +17,10 @@ interface Props {
   lead?: string;
   sub?: string | ReactNode;
   blurb?: ReactNode;
+  href?: string;
 }
 
-const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb }) => {
+const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCodes, className, heading, lead, sub, blurb, href = 'https://enroll.qcdesignschool.com' }) => {
   const { countryCode, provinceCode } = await getServerData();
   const priceResult = await fetchPrice(courseCodes, countryCode, provinceCode);
   if (!priceResult.success) {
@@ -27,8 +28,6 @@ const PaymentPlanSectionBase: FC<Props> = async ({ id = 'paymentPlans', courseCo
   }
 
   const price = priceResult.value;
-
-  const href = 'https://enroll.qcdesignschool.com/all-access-program';
 
   return (
     <section className={className ?? 'bg-light'} id={id}>
