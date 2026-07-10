@@ -128,7 +128,7 @@ const FengShuiDesignPage: PageComponent = async props => {
         <TutorSection className="bg-light" />
         <OutlineSection />
         <CareerEssentialsKitDesignFilesSection />
-        <PaymentPlanSection courseCodes={courseCodes} />
+        <PaymentPlanSection courseCodes={courseCodes} href={enrollUrl} />
         <section>
           <div className="container">
             <div className="row justify-content-center">

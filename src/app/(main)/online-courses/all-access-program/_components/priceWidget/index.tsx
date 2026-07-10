@@ -1,9 +1,8 @@
 import type { FC } from 'react';
 
-import type { Price } from '@/domain/price';
-
-import styles from './index.module.css';
 import { PriceWidgetClient } from './client';
+import styles from './index.module.css';
+import type { Price } from '@/domain/price';
 
 interface Props {
   price: Price;

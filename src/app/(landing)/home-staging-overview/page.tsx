@@ -127,7 +127,7 @@ const HomeStagingPage: PageComponent = async props => {
         <TutorSection className="bg-light" />
         <OutlineSection />
         <CareerEssentialsKitDesignFilesSection />
-        <PaymentPlanSection courseCodes={courseCodes} />
+        <PaymentPlanSection courseCodes={courseCodes} href={enrollUrl} />
         <CourseCardsSection designRestricted={true} />
         <section className="bg-light">
           <div className="container">
