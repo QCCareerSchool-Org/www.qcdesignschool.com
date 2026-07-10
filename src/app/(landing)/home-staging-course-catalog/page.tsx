@@ -8,8 +8,8 @@ import { Header } from '../_components/header';
 import { HowYoullLearnSection } from '../_components/howYoullLearnSection';
 import { JoinQCSection } from '../_components/joinQCSection';
 import CertificationBackgroundImage from '@/app/(main)/online-courses/home-staging/cert-bg.jpg';
+import { ActiveCampaignForm } from '@/components/activeCampaignForm';
 import { BackgroundImage } from '@/components/backgroundImage';
-import { BrevoForm } from '@/components/brevoForm';
 import CertificationIcon from '@/components/certificationLogos/isrp.svg';
 import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/home-staging-course-catalog' },
 };
 
-const brevoListId = 20; // Home Staging Leads
-const brevoEmailTemplateId = 1985; // Home Staging
 const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0011', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0003' ];
 
 const HomeStagingCourseCatalogPage: PageComponent = async props => {
@@ -61,11 +59,10 @@ const HomeStagingCourseCatalogPage: PageComponent = async props => {
                 <h1 className="h2 mb-3 text-navy">Become a Home Stager</h1>
                 <h3 className="h6 mb-4 text-navy">Download the Free Course Catalog</h3>
                 <FormWrapper>
-                  <BrevoForm
+                  <ActiveCampaignForm
                     successLocation={`${process.env.NEXT_PUBLIC_HOST ?? 'https://www.qcdesignschool.com'}/thank-you-home-staging-course-catalog`}
-                    listId={brevoListId}
-                    telephoneListId={50}
-                    emailTemplateId={brevoEmailTemplateId}
+                    requiredIds={[ 51n ]}
+                    optionalIds={[ 37n ]}
                     gclid={gclid}
                     msclkid={msclkid}
                     utmSource={utmSource}
