@@ -61,7 +61,7 @@ export const tutors: InstructorInformation[] = [
   },
   {
     name: 'Deborah Soulier',
-    description: 'Deborah Soulier is an award-winning interior designer, Regional Director of the DDA, and wellness design expert with over 18 years of experience.  She is passionate about design education, equipping students with real-world insights into wellness, sustainability, and the transformative power of design.',
+    description: 'Deborah Soulier, founder of Soulier Design Studio, is an award-winning designer, Chair of Education on the DDA Board of Directors, and wellness design expert with over 18 years of experience.  She is passionate about design education, equipping students with real-world insights into wellness, sustainability, and the transformative power of design.',
     src: DeborahSoulierImage,
   },
   {
