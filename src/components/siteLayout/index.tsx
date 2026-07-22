@@ -8,7 +8,7 @@ import { getServerData } from '@/lib/getServerData';
 import { LiveChat } from '@/scripts/liveChat';
 
 interface Props {
-  userValues: UserValues;
+  userValues?: UserValues;
 }
 
 export const SiteLayout: FC<PropsWithChildren<Props>> = async ({ userValues, children }) => {
