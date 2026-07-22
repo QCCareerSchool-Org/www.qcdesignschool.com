@@ -71,6 +71,9 @@ export const Footer: FC = () => (
           </div>
           <div className="mb-2 mb-lg-0">
             <Address />
+            <div className="mt-4">
+              <small>This site is protected by reCAPTCHA and the Google <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }} href="https://policies.google.com/privacy">Privacy Policy</a> and <a target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }} href="https://policies.google.com/terms">Terms of Service</a> apply.</small>
+            </div>
           </div>
         </div>
         <div className="d-flex">
