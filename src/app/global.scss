@@ -6,6 +6,8 @@
   --qc-padding: 2rem;
 }
 
+.grecaptcha-badge { visibility: hidden; }
+
 section {
   position: relative;
   overflow: hidden;
@@ -54,6 +56,3 @@ section.Toastify {
 .react-multi-carousel-list .react-multi-carousel-dot-list {
   position: absolute;
 }
-
-
-.grecaptcha-badge { visibility: hidden; }
