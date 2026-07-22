@@ -8,7 +8,7 @@ const purgeCssOptions = {
     './node_modules/yet-another-react-lightbox/**/*.{js,ts,jsx,tsx}',
   ],
   safelist: {
-    standard: [ 'html', 'body', /^PhoneInput/u, 'grecaptcha-badge' ],
+    standard: [ 'html', 'body', /^PhoneInput/u, /grecaptcha-badge/u ],
     deep: [ /modal-/u, /show/u, /fade/u, /nav/u, /^yarl__/u ],
     greedy: [ /^Toastify/u, /^react-multi-carousel/u, /^react-multiple-carousel/u, /^yarl__/u ],
   },
