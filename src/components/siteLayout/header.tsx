@@ -32,7 +32,7 @@ const InnerBanner: FC<Props> = ({ date }) => {
   if (august06.contains(date)) {
     return (
       <PromoBanner date={date} promotionPeriod={august06.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Flash Offer: Enroll Today & Get a 2nd Course Free + $100 OFF
+        <span className="d-none d-lg-inline">Flash Offer&mdash;</span> Enroll Today & Get a 2nd Course Free + $100 OFF
       </PromoBanner>
     );
   }
