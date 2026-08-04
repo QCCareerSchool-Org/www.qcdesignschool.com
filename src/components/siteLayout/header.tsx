@@ -5,7 +5,7 @@ import { MainNav } from './mainNav';
 import { PromoBanner } from './promoBanner';
 // import { CanadaHeader } from '../canadaHeader';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { july08 } from '@/periods';
+import { august06 } from '@/periods';
 
 interface Props {
   date: number;
@@ -29,10 +29,10 @@ const InnerBanner: FC<Props> = ({ date }) => {
   //   return <CanadaHeader />;
   // }
 
-  if (july08.contains(date)) {
+  if (august06.contains(date)) {
     return (
-      <PromoBanner date={date} promotionPeriod={july08.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today & Get a 2nd Course Free
+      <PromoBanner date={date} promotionPeriod={august06.toDTO()}>
+        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today & Get a 2nd Course Free + $100 OFF
       </PromoBanner>
     );
   }
