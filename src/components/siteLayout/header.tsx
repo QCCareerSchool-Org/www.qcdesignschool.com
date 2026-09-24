@@ -4,8 +4,8 @@ import styles from './header.module.css';
 import { MainNav } from './mainNav';
 import { PromoBanner } from './promoBanner';
 // import { CanadaHeader } from '../canadaHeader';
+import { sept23 } from '../../periods';
 import { getDesignRestricted } from '@/lib/restrictions';
-import { july08, july22 } from '@/periods';
 
 interface Props {
   date: number;
@@ -24,23 +24,15 @@ export const Header: FC<Props> = props => {
   );
 };
 
-const InnerBanner: FC<Props> = ({ date }) => {
+const InnerBanner: FC<Props> = ({ date, countryCode }) => {
   // if (countryCode === 'CA') {
   //   return <CanadaHeader />;
   // }
 
-  if (july08.contains(date)) {
+  if (sept23.contains(date)) {
     return (
-      <PromoBanner date={date} promotionPeriod={july08.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today & Get a 2nd Course Free
-      </PromoBanner>
-    );
-  }
-
-  if (july22.contains(date)) {
-    return (
-      <PromoBanner date={date} promotionPeriod={july22.toDTO()}>
-        <span className="d-none d-lg-inline">Ends Soon: </span>Enroll Today & Get a 2nd Course Free
+      <PromoBanner date={date} promotionPeriod={sept23.toDTO()}>
+        <span className="d-none d-lg-inline">Ends Soon&mdash;</span>Enroll Today and Get a 2nd Course FREE + {countryCode === 'GB' ? '£100' : '$100'} Off
       </PromoBanner>
     );
   }
