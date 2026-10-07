@@ -13,14 +13,13 @@ import { Logo } from '@/components/logo';
 import { useScrollPositionContext } from '@/hooks/useScrollPositionContext';
 
 interface Props {
-  designRestricted: boolean;
   countryCode: string;
   provinceCode: string | null;
 }
 
-export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode }) => {
+export const MainNav: FC<Props> = ({ countryCode }) => {
   const scrollPosition = useScrollPositionContext() ?? 0;
-  const [key, setKey] = useState(0);
+  const [ key, setKey ] = useState(0);
 
   const handleClick = (): void => {
     setTimeout(() => {
@@ -51,7 +50,7 @@ export const MainNav: FC<Props> = ({ designRestricted, countryCode, provinceCode
             <Nav className="ms-auto">
               <NavDropdown title="Courses" id="courses-nav-dropdown">
                 {/* <li style={{ padding: '0 1rem', fontWeight: 'bold', margin: '0.5rem 0 0.5rem 0', whiteSpace: 'nowrap' }}>Foundation Courses</li> */}
-                <Link href={`/online-courses/interior-${designRestricted ? 'decorating' : 'design'}`} className="dropdown-item" onClick={handleClick}>Interior {designRestricted ? 'Decorating' : 'Design'}</Link>
+                <Link href="/online-courses/interior-decorating" className="dropdown-item" onClick={handleClick}>Interior Decorating</Link>
                 <Link href="/online-courses/home-staging" className="dropdown-item" onClick={handleClick}>Home Staging</Link>
                 <Link href="/online-courses/landscape-design" className="dropdown-item" onClick={handleClick}>Landscape Design</Link>
                 {/* <li><hr className="dropdown-divider" /></li> */}
