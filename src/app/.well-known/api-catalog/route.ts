@@ -15,5 +15,5 @@ const linkset = {
 };
 
 export const GET: RouteHandler = () => {
-  return NextResponse.json(linkset, { headers: { 'Content-Type': 'application/linkset+json' } });
+  return NextResponse.json(linkset, { headers: { 'Content-Type': 'application/json' } }); // application/linkset+json
 };
