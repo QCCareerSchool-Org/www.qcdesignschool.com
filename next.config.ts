@@ -49,7 +49,7 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 
 const linkHeader = (l: Link): string => {
-  let text = `<${encodeURI(l.href)}>; rel=${quote(l.rel)}`;
+  let text = `<${encodeURI(assertAscii(l.href))}>; rel=${quote(l.rel)}`;
 
   if (l.type) {
     text += `; type=${quote(l.type)}`;
@@ -62,4 +62,13 @@ const linkHeader = (l: Link): string => {
   return text;
 };
 
-const quote = (s: string): string => `"${s.replace(/[\\"]/gu, '\\$&')}"`;
+const quote = (s: string): string => {
+  return `"${assertAscii(s).replace(/[\\"]/gu, '\\$&')}"`;
+};
+
+const assertAscii = (s: string): string => {
+  if (/[^\x20-\x7e]/u.test(s)) {
+    throw Error(`Link header values must be printable ASCII: ${s}`);
+  }
+  return s;
+};
