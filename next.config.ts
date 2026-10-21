@@ -15,6 +15,18 @@ const nextConfig: NextConfig = {
 
     return config;
   },
+  // eslint-disable-next-line @typescript-eslint/require-await
+  headers: async () => {
+    return [
+      {
+        // agent discovery (RFC 8288)
+        source: '/',
+        headers: [
+          { key: 'Link', value: '</llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain"' },
+        ],
+      },
+    ];
+  },
   sassOptions: {
     quietDeps: true, // hide deprecation warnings from node_modules
     // If your sass-loader / Sass version supports it, you can also do:
