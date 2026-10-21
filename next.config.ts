@@ -1,8 +1,8 @@
 import type { NextConfig } from 'next';
 import type { Configuration } from 'webpack';
 
-import type { Link } from './links';
-import { links } from './links';
+import type { Link } from './src/links';
+import { links } from './src/links';
 
 const nextConfig: NextConfig = {
   webpack(config: Configuration) {

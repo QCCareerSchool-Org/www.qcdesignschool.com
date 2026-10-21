@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
-import { links } from '../../links';
+import { links } from '../links';
 import { isUserValues } from '@/domain/userValues';
 import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
