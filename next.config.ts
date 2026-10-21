@@ -49,14 +49,14 @@ const nextConfig: NextConfig = {
 export default nextConfig;
 
 const linkHeader = (l: Link): string => {
-  let text = `<${l.href}>; rel=${l.rel}`;
+  let text = `<${encodeURI(l.href)}>; rel=${quote(l.rel)}`;
 
   if (l.type) {
-    text += `; type="${quote(l.type)}"`;
+    text += `; type=${quote(l.type)}`;
   }
 
   if (l.title) {
-    text += `; title="${quote(l.title)}"`;
+    text += `; title=${quote(l.title)}`;
   }
 
   return text;
