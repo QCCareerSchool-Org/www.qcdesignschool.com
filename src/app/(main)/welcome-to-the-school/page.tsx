@@ -18,6 +18,7 @@ import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
+import { siteUrl } from '@/lib/siteUrl';
 import type { PageComponent } from '@/serverComponent';
 
 const brevoStudentListId = 15;
@@ -79,7 +80,7 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
     // Facebook
     if (enrollment.transactionTime === null || date - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
       try {
-        const source = 'https://www.qcdesignschool.com/welcome-to-the-school';
+        const source = `${siteUrl}/welcome-to-the-school`;
         await fbPostPurchase(enrollment, source, clientIp, userAgent, fbc, fbp);
       } catch (err) {
         console.error(err);

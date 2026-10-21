@@ -13,6 +13,7 @@ import { LinkedInShare } from '@/components/share/linkedIn';
 import { ThreadsShare } from '@/components/share/threads';
 import { TwitterShare } from '@/components/share/twitter';
 import type { School } from '@/domain/school';
+import { siteUrl } from '@/lib/siteUrl';
 import type { GenerateMetadata, PageComponent } from '@/serverComponent';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
@@ -33,14 +34,14 @@ export const generateMetadata: GenerateMetadata<RouteParams> = async ({ params }
 
   const title = `Award of Excellence for ${award.name}`;
   const description = `Awarded in recognition of outstanding performance in ${award.courseName}`;
-  const imageSrc = 'https://www.qcdesignschool.com/images/award-of-excellence.png';
+  const imageSrc = `${siteUrl}/images/award-of-excellence.png`;
 
   return {
     title,
     description,
     alternates: { canonical: `/awards/${submissionId}` },
     openGraph: {
-      url: `https://www.qcdesignschool.com/awards/${award.submissionId}`,
+      url: `${siteUrl}/awards/${award.submissionId}`,
       type: 'website',
       title,
       description,
@@ -63,7 +64,7 @@ const AwardPage: PageComponent<RouteParams> = async ({ params }) => {
     throw Error('Bad request');
   }
 
-  const url = `https://www.qcdesignschool.com/awards/${award.submissionId}`;
+  const url = `${siteUrl}/awards/${award.submissionId}`;
   const suggestedText = `I just earned this Award of Excellence from ${award.schoolName} for my work in ${award.courseName}! I'm so excited to be pursuing my dream career. 💫 #AwardOfExcellence @QCDesignSchool`;
 
   return (

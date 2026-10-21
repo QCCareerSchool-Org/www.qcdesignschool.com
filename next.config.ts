@@ -22,7 +22,13 @@ const nextConfig: NextConfig = {
         // agent discovery (RFC 8288)
         source: '/',
         headers: [
-          { key: 'Link', value: '</llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain"' },
+          { key: 'Link', value: '</.well-known/api-catalog>; rel="api-catalog", </llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain"' },
+        ],
+      },
+      {
+        source: '/(api/.*|\\.well-known/api-catalog)',
+        headers: [
+          { key: 'Access-Control-Allow-Origin', value: '*' },
         ],
       },
     ];

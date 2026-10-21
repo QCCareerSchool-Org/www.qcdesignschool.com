@@ -4,6 +4,7 @@ import type { Course, Offer, WithContext } from 'schema-dts';
 import type { CourseCode } from '@/domain/courseCode';
 import { getCourseCertification, getCourseDescription, getCourseName, getCourseSubjects, getCourseUrl, getCourseWorkload } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
+import { siteUrl } from '@/lib/siteUrl';
 import { educationalOrganization } from '@/qcDesignSchoolEducationalOrganization';
 import { withSuspense } from '@/withSuspense';
 
@@ -47,8 +48,8 @@ export const getCourse = async (courseCode: CourseCode, id?: string, providerId?
       ? { '@id': providerId }
       : {
         '@type': 'EducationalOrganization',
-        '@id': 'https://www.qcdesignschool.com/#school',
-        'url': 'https://www.qcdesignschool.com',
+        '@id': `${siteUrl}/#school`,
+        'url': siteUrl,
         'name': 'QC Design School',
         'sameAs': 'sameAs' in educationalOrganization ? educationalOrganization.sameAs : undefined,
       },

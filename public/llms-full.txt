@@ -60,3 +60,10 @@ Use this file when a fuller index is helpful. It stays curated and excludes inte
 - [Career Catalyst Toolkit](https://www.qcdesignschool.com/career-catalyst-toolkit): Premium toolkit with mentorship, templates, and software access.
 - [Canadian Tax Credits](https://www.qcdesignschool.com/canadian-tax-credits): Canadian tuition tax credit explanation and example savings.
 - [Videos](https://www.qcdesignschool.com/videos): Video library and related media page.
+
+## Course API
+A read-only JSON API with course details and current tuition by country. No authentication is required.
+- [API Documentation](https://www.qcdesignschool.com/api-docs): Endpoints, parameters, and usage notes.
+- [OpenAPI Description](https://www.qcdesignschool.com/api/openapi.json): Machine-readable OpenAPI 3.1 spec.
+- [All Courses](https://www.qcdesignschool.com/api/courses): Every course with its description, certification, subjects, and workload.
+- Tuition: `GET https://www.qcdesignschool.com/api/courses/{courseCode}/tuition?country=US` returns current pricing and payment plans. Tuition varies by country, so always pass the country of the person asking.
