@@ -3,6 +3,7 @@ import type { EducationalOrganization, Review, WithContext } from 'schema-dts';
 
 import { getCourse } from './course';
 import type { CourseCode } from '@/domain/courseCode';
+import { siteUrl } from '@/lib/siteUrl';
 import { withSuspense } from '@/withSuspense';
 
 interface Props {
@@ -26,9 +27,9 @@ export const getReview = async (name: string, rating: number, reviewText: string
     ? await getCourse(courseCode, courseId, undefined, true)
     : {
       '@type': 'EducationalOrganization',
-      '@id': 'https://www.qcdesignschool.com/#school',
+      '@id': `${siteUrl}/#school`,
       'name': 'QC Design School',
-      'url': 'https://www.qcdesignschool.com',
+      'url': siteUrl,
     } satisfies EducationalOrganization;
 
   const review: WithContext<Review> = {

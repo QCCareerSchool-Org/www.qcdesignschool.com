@@ -3,9 +3,8 @@ import type { MetadataRoute } from 'next';
 import path from 'path';
 
 import { siteVideos } from './videos';
+import { siteUrl } from '@/lib/siteUrl';
 import { escapeXmlObject } from '@/lib/xml';
-
-const prefix = 'https://www.qcdesignschool.com';
 
 const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute.Sitemap> => {
   const result: MetadataRoute.Sitemap = [];
@@ -40,23 +39,23 @@ const getUrl = (filePath: string): string => {
     .replaceAll('\\', '/')
     .substring(7)
     .replace(/\/\(.*\)/u, '');
-  return `${prefix}${urlPath}`;
+  return `${siteUrl}${urlPath}`;
 };
 
 const getPriority = (url: string): number => {
-  if (url === prefix) {
+  if (url === siteUrl) {
     return 1;
   }
-  if (url === `${prefix}/free-catalog`) {
+  if (url === `${siteUrl}/free-catalog`) {
     return 1;
   }
-  if (url.startsWith(`${prefix}/online-courses`)) {
+  if (url.startsWith(`${siteUrl}/online-courses`)) {
     return 0.9;
   }
-  if (url === `${prefix}/about`) {
+  if (url === `${siteUrl}/about`) {
     return 0.8;
   }
-  if (url === `${prefix}/contact-us`) {
+  if (url === `${siteUrl}/contact-us`) {
     return 0.8;
   }
   return 0.5;

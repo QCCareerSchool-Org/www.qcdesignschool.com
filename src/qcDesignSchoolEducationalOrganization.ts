@@ -1,5 +1,6 @@
 import type { EducationalOrganization, WithContext } from 'schema-dts';
 
+import { siteUrl } from '@/lib/siteUrl';
 import { getTelephoneNumber } from '@/lib/telephone';
 
 export const educationalOrganization: WithContext<EducationalOrganization> = {
@@ -7,8 +8,8 @@ export const educationalOrganization: WithContext<EducationalOrganization> = {
   '@id': '#school',
   '@type': 'EducationalOrganization',
   'name': 'QC Design School',
-  'url': 'https://www.qcdesignschool.com/',
-  'logo': 'https://www.qcdesignschool.com/logo.svg',
+  'url': `${siteUrl}/`,
+  'logo': `${siteUrl}/logo.svg`,
   'email': 'info@qcdesignschool.com',
   'foundingDate': '2005-03-07T09:00:00-05:00',
   'parentOrganization': { '@id': 'https://www.qccareerschool.com/#school' },

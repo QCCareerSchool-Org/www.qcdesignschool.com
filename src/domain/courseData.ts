@@ -1,4 +1,5 @@
 import type { CourseCode } from './courseCode';
+import { siteUrl } from '@/lib/siteUrl';
 
 interface CourseData {
   name: string;
@@ -9,12 +10,10 @@ interface CourseData {
   workload: string | undefined;
 }
 
-const baseUrl = 'https://www.qcdesignschool.com';
-
 export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   i2: {
     name: 'Interior Design Career Accelerator',
-    url: `${baseUrl}/online-courses/interior-decorating`,
+    url: `${siteUrl}/online-courses/interior-decorating`,
     description: 'Covers design fundamentals, styles, lighting, floorplans, a final project and business strategies to launch your career.',
     certification: 'International Design and Decorating Professional™',
     subjects: [
@@ -30,7 +29,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   st: {
     name: 'Home Staging',
-    url: `${baseUrl}/online-courses/home-staging`,
+    url: `${siteUrl}/online-courses/home-staging`,
     description: 'Learn home staging and transform client spaces into buyer-ready showcases.',
     certification: 'International Staging and Redesign Professional™',
     subjects: [
@@ -45,7 +44,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   ms: {
     name: 'Staging for Designers',
-    url: `${baseUrl}/online-courses/staging-for-designers`,
+    url: `${siteUrl}/online-courses/staging-for-designers`,
     description: 'Expand your interior design skills by learning to stage homes for sale and offer professional home staging services.',
     certification: 'International Staging and Redesign Professional™',
     subjects: [
@@ -59,7 +58,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   fs: {
     name: 'Feng Shui Design',
-    url: `${baseUrl}/online-courses/feng-shui-design`,
+    url: `${siteUrl}/online-courses/feng-shui-design`,
     description: 'Learn to design harmonious spaces using feng shui principles and build a successful feng shui design business.',
     certification: 'Advanced Feng Shui Design Professional™',
     subjects: [
@@ -74,7 +73,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   po: {
     name: 'Professional Organizing',
-    url: `${baseUrl}/online-courses/professional-organizing`,
+    url: `${siteUrl}/online-courses/professional-organizing`,
     description: 'Learn to organize homes and offices, create functional layouts, and build a successful professional organizing business.',
     certification: 'Advanced International Organizing Professional',
     subjects: [
@@ -88,7 +87,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   ed: {
     name: 'Event Decor',
-    url: `${baseUrl}/online-courses/event-decor`,
+    url: `${siteUrl}/online-courses/event-decor`,
     description: 'Learn to design cohesive event layouts with themes, color schemes, and decor elements.',
     certification: 'International Event Decorating Professional™',
     subjects: [
@@ -100,7 +99,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   ld: {
     name: 'Landscape Design',
-    url: `${baseUrl}/online-courses/landscape-design`,
+    url: `${siteUrl}/online-courses/landscape-design`,
     description: 'Learn how to create stunning garden designs and outdoor design concepts.',
     certification: 'International Landscape Design Professional™',
     subjects: [
@@ -114,7 +113,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   cc: {
     name: 'Color Consultant',
-    url: `${baseUrl}/online-courses/color-consultant`,
+    url: `${siteUrl}/online-courses/color-consultant`,
     description: 'Learn to design custom interiors, master color theory, and build a successful color consulting business.',
     certification: 'International Color Consulting Professional™',
     subjects: [
@@ -127,7 +126,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   fd: {
     name: 'Floral Design',
-    url: `${baseUrl}/online-courses/floral-design`,
+    url: `${siteUrl}/online-courses/floral-design`,
     description: 'Learn to create stunning floral arrangements, master plant care and flower selection.',
     certification: 'International Floral Design Professional™',
     subjects: [
@@ -142,7 +141,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   ap: {
     name: 'Aging in Place',
-    url: `${baseUrl}/online-courses/aging-in-place`,
+    url: `${siteUrl}/online-courses/aging-in-place`,
     description: 'Learn to design safe, functional spaces for aging clients and address mobility and lifestyle needs.',
     certification: 'Aging in Place Professional™',
     subjects: [
@@ -154,7 +153,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   db: {
     name: 'Accelerate Your Design Business',
-    url: `${baseUrl}/online-courses/accelerate-your-design-business`,
+    url: `${siteUrl}/online-courses/accelerate-your-design-business`,
     description: 'Learn to build your brand, attract clients, manage design projects effectively, and create a professional portfolio to grow your business.',
     certification: undefined,
     subjects: [
@@ -167,7 +166,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   vd: {
     name: 'Virtual Design',
-    url: `${baseUrl}/online-courses/virtual-design`,
+    url: `${siteUrl}/online-courses/virtual-design`,
     description: 'Learn to offer professional online design services, connect with clients worldwide, and build a thriving virtual design business.',
     certification: undefined,
     subjects: undefined,
@@ -175,7 +174,7 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
   },
   ad: {
     name: 'All Access Program',
-    url: `${baseUrl}/online-courses/all-access-program`,
+    url: `${siteUrl}/online-courses/all-access-program`,
     description: '',
     certification: 'International Elite Design Professional',
     subjects: undefined,

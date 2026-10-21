@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next';
 
+import { siteUrl } from '@/lib/siteUrl';
+
 const robots = (): MetadataRoute.Robots => ({
   rules: [
     {
@@ -18,7 +20,7 @@ const robots = (): MetadataRoute.Robots => ({
       other: { 'Content-Signal': 'search=yes, ai-input=yes, ai-train=yes' },
     },
   ],
-  sitemap: 'https://www.qcdesignschool.com/sitemap_index.xml',
+  sitemap: `${siteUrl}/sitemap_index.xml`,
 });
 
 export default robots;

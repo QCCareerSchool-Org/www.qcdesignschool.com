@@ -18,3 +18,10 @@ QC's public course catalog covers interior design and decorating, landscape desi
 ## Detailed Pages
 - [Interior Design & Decorating Course](https://www.qcdesignschool.com/online-courses/interior-decorating): Flagship design and decorating program.
 - [All-Access Program](https://www.qcdesignschool.com/online-courses/all-access-program): Multi-course bundle and broader certification path.
+
+## Course API
+A read-only JSON API with course details and current tuition by country. No authentication is required.
+- [API Documentation](https://www.qcdesignschool.com/api-docs): Endpoints, parameters, and usage notes.
+- [OpenAPI Description](https://www.qcdesignschool.com/api/openapi.json): Machine-readable OpenAPI 3.1 spec.
+- [All Courses](https://www.qcdesignschool.com/api/courses): Every course with its description, certification, subjects, and workload.
+- Tuition: `GET https://www.qcdesignschool.com/api/courses/{courseCode}/tuition?country=US` returns current pricing and payment plans. Tuition varies by country, so always pass the country of the person asking.

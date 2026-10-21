@@ -10,6 +10,7 @@ import { isUserValues } from '@/domain/userValues';
 import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
 import { decodeJwt } from '@/lib/jwt';
+import { siteUrl } from '@/lib/siteUrl';
 import { Provider } from '@/providers';
 import { ActiveCampaign } from '@/scripts/activeCampaign';
 import { Bing } from '@/scripts/bing';
@@ -28,7 +29,7 @@ import './chos.scss';
 
 export const metadata: Metadata = {
   title: { default: 'QC Design School', template: '%s - QC Design School' },
-  metadataBase: new URL('https://www.qcdesignschool.com'),
+  metadataBase: new URL(siteUrl),
 };
 
 const RootLayout: LayoutComponent = async ({ children }) => {
