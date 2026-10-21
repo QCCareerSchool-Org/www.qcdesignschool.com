@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import { FaviconMeta } from './favicon';
 import styles from './layout.module.scss';
 import { LayoutClient } from './layoutClient';
+import { links } from '../../links';
 import { isUserValues } from '@/domain/userValues';
 import { inter, neueHaasDisplay, neueHaasText } from '@/fonts';
 import { getServerData } from '@/lib/getServerData';
@@ -50,6 +51,7 @@ const RootLayout: LayoutComponent = async ({ children }) => {
         {process.env.PINTEREST_ID && <Pinterest id={process.env.PINTEREST_ID} userValues={userValues} />}
         {process.env.ACTIVE_CAMPAIGN_ID && <ActiveCampaign id={process.env.ACTIVE_CAMPAIGN_ID} userValues={userValues} />}
         {process.env.CHATGPT_PIXEL_ID && <ChatGPT pixelId={process.env.CHATGPT_PIXEL_ID} />}
+        {links.map(l => <link key={l.href} rel={l.rel} href={l.href} type={l.type} title={l.title} />)}
         <FaviconMeta />
       </head>
       <body className="d-flex flex-column">

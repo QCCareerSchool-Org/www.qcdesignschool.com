@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 import type { Configuration } from 'webpack';
 
+import type { Link } from './links';
+import { links } from './links';
+
 const nextConfig: NextConfig = {
   webpack(config: Configuration) {
     config.module ??= { rules: [] };
@@ -20,9 +23,12 @@ const nextConfig: NextConfig = {
     return [
       {
         // agent discovery (RFC 8288)
-        source: '/',
+        source: '/((?!api/|_next/).*)',
         headers: [
-          { key: 'Link', value: '</.well-known/api-catalog>; rel="api-catalog", </.well-known/ai-catalog.json>; rel="ai-catalog"; type="application/ai-catalog+json", </llms.txt>; rel="describedby"; type="text/plain", </llms-full.txt>; rel="describedby"; type="text/plain"' },
+          {
+            key: 'Link',
+            value: links.map(linkHeader).join(', '),
+          },
         ],
       },
       {
@@ -41,3 +47,19 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
+const linkHeader = (l: Link): string => {
+  let text = `<${l.href}>; rel=${l.rel}`;
+
+  if (l.type) {
+    text += `; type="${quote(l.type)}"`;
+  }
+
+  if (l.title) {
+    text += `; title="${quote(l.title)}"`;
+  }
+
+  return text;
+};
+
+const quote = (s: string): string => `"${s.replace(/[\\"]/gu, '\\$&')}"`;
