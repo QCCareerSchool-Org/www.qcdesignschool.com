@@ -145,5 +145,5 @@ const spec = {
 };
 
 export const GET: RouteHandler = () => {
-  return NextResponse.json(spec, { headers: { 'Content-Type': 'application/vnd.oai.openapi+json' } });
+  return NextResponse.json(spec);
 };
