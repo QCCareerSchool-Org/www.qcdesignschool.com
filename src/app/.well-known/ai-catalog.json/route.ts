@@ -40,5 +40,5 @@ const catalog = {
 };
 
 export const GET: RouteHandler = () => {
-  return NextResponse.json(catalog, { headers: { 'Content-Type': 'application/ai-catalog+json' } });
+  return NextResponse.json(catalog, { headers: { 'Content-Type': 'application/json' } }); // application/ai-catalog+json
 };
