@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 
+import { isChatGPTUserAgent } from '@/lib/isChatGPT';
 import { apiBaseUrl, siteUrl } from '@/lib/siteUrl';
 import type { RouteHandler } from '@/serverComponent';
 
@@ -39,6 +40,9 @@ const catalog = {
   ],
 };
 
-export const GET: RouteHandler = () => {
-  return NextResponse.json(catalog, { headers: { 'Content-Type': 'application/json' } }); // application/ai-catalog+json
+export const GET: RouteHandler = req => {
+  const contentType = isChatGPTUserAgent(req.headers.get('user-agent') ?? '')
+    ? 'application/json'
+    : 'application/ai-catalog+json';
+  return NextResponse.json(catalog, { headers: { 'Content-Type': contentType } });
 };
