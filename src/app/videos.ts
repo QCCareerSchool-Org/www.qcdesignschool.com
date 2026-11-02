@@ -10,8 +10,10 @@ export interface Video {
   description: string;
   /** Direct URL to the video file */
   content_loc: string;
-  /** URL to the player page (leave undefined for default) */
-  player_loc: string;
+  /** URL to an embeddable player, if there is one (must not be the watch page) */
+  player_loc?: string;
+  /** URL to the watch page (generated from the slug) */
+  watch_loc: string;
   /** Duration in seconds */
   duration: number;
   expiration_date?: string | Date;
@@ -94,9 +96,9 @@ export const siteVideos: Video[] = ([
     family_friendly: 'yes',
     requires_subscription: 'no',
   },
-] as Video[]).map(v => ({
+] as Omit<Video, 'watch_loc'>[]).map(v => ({
   ...v,
-  player_loc: 'player_loc' in v && v.player_loc ? v.player_loc : `${siteUrl}/videos/${v.slug}`,
+  watch_loc: `${siteUrl}/videos/${v.slug}`,
 }));
 
 // check for duplicate slugs

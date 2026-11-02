@@ -15,7 +15,7 @@ const VideosIndexPage: PageComponent = () => {
     <section>
       <div className="container">
         <h1 className="mb-3">Videos</h1>
-        {siteVideos.map(s => <p key={s.slug}><Link href={s.player_loc}>{s.title}</Link></p>)}
+        {siteVideos.map(s => <p key={s.slug}><Link href={s.watch_loc}>{s.title}</Link></p>)}
       </div>
     </section>
   );

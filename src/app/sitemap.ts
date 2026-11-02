@@ -63,7 +63,7 @@ const getPriority = (url: string): number => {
 
 const getVideoPages = (): MetadataRoute.Sitemap => {
   return siteVideos.map(v => ({
-    url: v.player_loc,
+    url: v.watch_loc,
     lastModified: v.publication_date,
     priority: 0.5,
     images: [ v.thumbnail_loc ],
