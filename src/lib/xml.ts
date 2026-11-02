@@ -16,13 +16,14 @@ export const escapeXmlString = (unsafe: string): string => {
   });
 };
 
-export const escapeXmlObject = <T extends object>(video: T): T => {
-  for (const key in video) {
-    if (Object.hasOwn(video, key)) {
-      if (typeof video[key] === 'string') {
-        (video[key] as string) = escapeXmlString(video[key]);
+export const escapeXmlObject = <T extends object>(obj: T): T => {
+  const result = { ...obj };
+  for (const key in result) {
+    if (Object.hasOwn(result, key)) {
+      if (typeof result[key] === 'string') {
+        (result[key] as string) = escapeXmlString(result[key]);
       }
     }
   }
-  return video;
+  return result;
 };

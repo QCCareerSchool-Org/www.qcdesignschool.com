@@ -1,12 +1,11 @@
 import type { FC } from 'react';
 
 import { StatsSection } from '.';
-import DefaultBackgroundImage from './default-background.jpg';
 import type { Props as StatProps } from './stat';
 
 export const DefaultStatsSection: FC = () => {
   return (
-    <StatsSection backgroundImage={DefaultBackgroundImage} className="inverse" stats={stats} />
+    <StatsSection className="inverse" stats={stats} />
   );
 };
 
