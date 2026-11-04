@@ -7,7 +7,6 @@ import { Header } from '../../_components/header';
 import { ThankYouSection } from '../../_components/thankYouSection';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
 import HeroMobileImage from '../../free-course-catalog/hero-small.jpg';
-import { BookSection } from '@/components/bookSection/booksSection';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GuaranteeSection } from '@/components/guaranteeSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -52,7 +51,6 @@ const ThankYouCourseCatalogPage: FC<PageProps<'/thank-you-course-catalog'>> = as
       <ThankYouSection heroSrc={HeroDesktopImage} mobileHeroSrc={HeroMobileImage} emailAddress={emailAddress} download={false} />
       <CurrentPromotion date={date} countryCode={countryCode} />
       <TestimonialWallSection testimonialIds={testimonialIds} schemaCourseId="#courseId" />
-      <BookSection />
       <ThreeReasonsSection />
       <SupportSection date={date} showLink />
       <GuaranteeSection />
