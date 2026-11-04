@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from '../../online-courses/feng-shui-design/_outlineSection';
 import { CertificationSection } from '../../online-courses/feng-shui-design/certificationSection';
@@ -16,7 +17,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0005', 'TD-0002', 'TD-0006', 'TD-0004', 'TD-0008', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'fs' ];
 
-const FengShuiDesignPage: PageComponent = () => (
+const FengShuiDesignPage: FC<PageProps<'/rm/become-a-feng-shui-designer'>> = () => (
   <>
     <section>
       <div className="container">

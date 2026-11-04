@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { CareerOutcomes } from './_sections/careerOutcomes';
 import { Curriculum } from './_sections/curriculum';
@@ -17,9 +18,8 @@ import './page.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
-const InteriorDecoratingPreviewPage: PageComponent = async props => {
+const InteriorDecoratingPreviewPage: FC<PageProps<'/previews/interior-decorating'>> = async props => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { redirect } from 'next/navigation';
+import type { FC } from 'react';
 
 import AboutImage from './about-qc.png';
 import AlexSignatureImage from './alex-myers.png';
@@ -19,7 +20,6 @@ import { createJwt } from '@/lib/jwt';
 import { pinterestPostPurchase } from '@/lib/pinterestConversionAPI';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { siteUrl } from '@/lib/siteUrl';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Welcome to the School',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/welcome-to-the-school' },
 };
 
-const WelcomeToTheSchoolPage: PageComponent = async props => {
+const WelcomeToTheSchoolPage: FC<PageProps<'/welcome-to-the-school'>> = async props => {
   const { date, clientIp, fbc, fbp, epik, userAgent, userValues } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);

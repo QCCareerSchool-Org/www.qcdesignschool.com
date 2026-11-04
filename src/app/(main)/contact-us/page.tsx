@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import styles from './page.module.scss';
 import { ChatLink } from '@/components/chatLink';
@@ -8,7 +9,6 @@ import MapIcon from '@/components/icons/map.svg';
 import PhoneIcon from '@/components/icons/phone.svg';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const iconHeight = 32;
 
-const ContactPage: PageComponent = async () => {
+const ContactPage: FC<PageProps<'/contact-us'>> = async () => {
   const { countryCode } = await getServerData();
 
   return(

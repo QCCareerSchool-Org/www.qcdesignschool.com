@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import BarChartImage from './bar-chart.png';
 import CollageImage from './collage.jpg';
@@ -16,7 +17,6 @@ import ScreenshotIcon from '@/components/icons/screenshot.svg';
 import { Overlay } from '@/components/overlay';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating vs. Interior Design',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const iconSize = 40;
 
-const HowItWorksPage: PageComponent = async () => {
+const HowItWorksPage: FC<PageProps<'/interior-decorating-vs-interior-design'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from '../../online-courses/interior-decorating/_outlineSection';
 import { CertificationSection } from '../../online-courses/interior-decorating/certificationSection';
@@ -18,7 +19,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Interior Decorating Course',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'i2' ];
 
-const InteriorDecoratingPage: PageComponent = async () => {
+const InteriorDecoratingPage: FC<PageProps<'/rm/become-an-interior-decorator'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);

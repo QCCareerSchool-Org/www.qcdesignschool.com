@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import BarChartIcon from './bar-chart-alt.svg';
 import CertificationIcon from './certification.svg';
@@ -12,7 +13,6 @@ import HomeStagingImage from './staging.png';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import RightArrowIcon from '@/components/icons/right-arrow.svg';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Your Design Decorating Salary',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const iconSize = 48;
 
-const HomePage: PageComponent = () => (
+const HomePage: FC<PageProps<'/your-design-decorating-salary'>> = () => (
   <div>
     <section>
       <BackgroundImage priority src={HeroImage} objectPosition="37.5% 25%" mobile={{ src: HeroImage, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />

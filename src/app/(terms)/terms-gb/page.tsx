@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy and Terms of Service',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/terms-gb' },
 };
 
-const TermsPage: PageComponent = () => (
+const TermsPage: FC<PageProps<'/terms-gb'>> = () => (
   <div className={styles.terms}>
     <h1>Privacy Policy</h1>
     <h2>What information do we collect?</h2>

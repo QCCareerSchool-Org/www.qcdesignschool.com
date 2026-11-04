@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import { CertificationSection } from './certificationSection';
 import HowItWorksImage from './how-it-works.jpg';
@@ -8,7 +9,6 @@ import { GoogleReviewSection } from '@/components/googleReviewSection';
 import BookReaderIcon from '@/components/icons/book-reader.svg';
 import FeedbackIcon from '@/components/icons/check-speech.svg';
 import CheckIcon from '@/components/icons/list-check.svg';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'How It Works',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const iconSize = 24;
 
-const HowItWorksPage: PageComponent = () => (
+const HowItWorksPage: FC<PageProps<'/how-it-works'>> = () => (
   <div>
     <section>
       <div className="container">

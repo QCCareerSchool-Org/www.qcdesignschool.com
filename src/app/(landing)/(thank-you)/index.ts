@@ -2,11 +2,10 @@ import type { Lead } from '@/domain/lead';
 import type { UserValues } from '@/domain/userValues';
 import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { fetchLead } from '@/lib/fetchLead';
-import { getServerData } from '@/lib/getServerData';
+import type { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { pinterestPostLead } from '@/lib/pinterestConversionAPI';
 import { isUUID } from '@/lib/uuid';
-import type { PageProps } from '@/serverComponent';
 
 interface ThankyouPageData {
   emailAddress?: string;
@@ -17,8 +16,7 @@ interface ThankyouPageData {
   date: number;
 }
 
-export const getThankyouData = async (props: PageProps): Promise<ThankyouPageData> => {
-  const data = await getServerData(props.searchParams);
+export const getThankyouData = async (data: Awaited<ReturnType<typeof getServerData>>): Promise<ThankyouPageData> => {
   const date = data.date;
   const lead = isUUID(data.leadId) ? await fetchLead(data.leadId) : undefined;
   let jwt: string | null = null;

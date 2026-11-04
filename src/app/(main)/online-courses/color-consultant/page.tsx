@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -21,7 +22,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Color Consultant Course',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0003', 'TD-0005', 'TD-0002', 'TD-0004', 'TD-0006', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'cc' ];
 
-const ColorConsultantPage: PageComponent = () => (
+const ColorConsultantPage: FC<PageProps<'/online-courses/color-consultant'>> = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">

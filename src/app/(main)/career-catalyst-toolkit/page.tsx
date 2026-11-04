@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import CanvaImage from './canva.jpg';
 import DesignFilesImage from './designfiles.jpg';
@@ -26,7 +27,6 @@ import CircleCheckIcon from '@/components/icons/check-circle.svg';
 import SquareCheckIcon from '@/components/icons/check-square.svg';
 import { DefaultStatsSection } from '@/components/statsSection/default';
 import { Subtitle } from '@/components/subtitle';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Career Catalyst Toolkit',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const iconHeight = 32;
 const enrollLink = 'https://enroll.qcdesignschool.com';
 
-const CareerCatalystToolkitPage: PageComponent = () => (
+const CareerCatalystToolkitPage: FC<PageProps<'/career-catalyst-toolkit'>> = () => (
   <>
     <AlertBar variant="red"><a href={enrollLink} className={styles.alertLink}>Limited Availability! <b>Claim Your Spot Now!</b></a></AlertBar>
     <section className="bg-dark text-white text-shadow">

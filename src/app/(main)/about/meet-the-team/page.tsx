@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { employees } from './data';
 import { EmployeeColumn } from './employeeColumn';
 import { mapToPairs } from './mapToPairs';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Meet the Team',
   description: "Meet the Team at QC Career School. QC's passionate team of experts is dedicated to guiding you through a seamless and effective learning journey.",
 };
 
-const MeetTheTeamPage: PageComponent = () => {
+const MeetTheTeamPage: FC<PageProps<'/about/meet-the-team'>> = () => {
   const employeePairs = employees.flatMap(mapToPairs);
 
   return (

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import styles from './page.module.scss';
 import { QuestionAndAnswer } from './questionAndAnswer';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/faq' },
 };
 
-const FAQPage: PageComponent = async () => {
+const FAQPage: FC<PageProps<'/faq'>> = async () => {
   const { countryCode } = await getServerData();
 
   return (

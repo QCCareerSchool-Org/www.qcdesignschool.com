@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from '../../online-courses/home-staging/_outlineSection';
 import { CertificationSection } from '../../online-courses/home-staging/certificationSection';
@@ -16,7 +17,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Become a Home Stager',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
-const BecomeAHomeDesignerPage: PageComponent = () => (
+const BecomeAHomeDesignerPage: FC<PageProps<'/rm/become-a-home-stager'>> = () => (
   <>
     <section>
       <div className="container">

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import Background from './background.jpg';
 import { BackgroundImage } from '@/components/backgroundImage';
 import { ChatLink } from '@/components/chatLink';
 import { TelephoneLink } from '@/components/telephoneLink';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Offer Expired',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/offer-expired' },
 };
 
-const OfferExpiredPage: PageComponent = async () => {
+const OfferExpiredPage: FC<PageProps<'/offer-expired'>> = async () => {
   const { countryCode } = await getServerData();
   return (
     <section>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 import { BiBookOpen, BiBriefcaseAlt2, BiFile, BiGlobe, BiGroup, BiPen, BiRightArrowAlt, BiShareAlt, BiShieldAlt2, BiSupport, BiTrendingUp } from 'react-icons/bi';
 
 import { DesignFilesCarousel } from './_designFilesCarousel';
@@ -25,7 +26,6 @@ import type { CourseCode } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Interior Design & Decorating Course',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const courseCodes: CourseCode[] = [ 'i2' ];
 
-const InteriorDecoratingPage: PageComponent = async () => {
+const InteriorDecoratingPage: FC<PageProps<'/online-courses/interior-decorating'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);

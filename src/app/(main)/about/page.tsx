@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { CoreValuesSection } from './coreValuesSection';
 import { MeetOurTeamSection } from './meetOurTeamSection';
@@ -9,7 +10,6 @@ import { DesignNetworksSection } from '@/components/designNetworksSection';
 import BBBIcon from '@/components/icons/bbb.svg';
 import ShieldIcon from '@/components/icons/shield.svg';
 import HowYoullLearnImage from '@/images/how-youll-learn.jpg';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'About the School',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const iconSize = 48;
 
-const AboutPage: PageComponent = () => (
+const AboutPage: FC<PageProps<'/about'>> = () => (
   <div className={styles.aboutPage}>
     <section>
       <div className="container">

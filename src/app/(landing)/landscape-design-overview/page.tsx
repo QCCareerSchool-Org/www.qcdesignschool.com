@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -28,7 +29,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Landscape Design Course',
@@ -40,7 +40,7 @@ const testimonialIds: TestimonialId[] = [ 'TD-0020', 'TD-0018', 'TD-0021', 'TD-0
 const courseCodes: CourseCode[] = [ 'ld' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/landscape-design-overview?c=ld';
 
-const LandscapeDesignPage: PageComponent = async props => {
+const LandscapeDesignPage: FC<PageProps<'/landscape-design-overview'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 

@@ -11,7 +11,6 @@ import type { CourseCode } from '@/domain/courseCode';
 import { courseCodes, getCourseCertification, getCourseDescription, getCourseName, getCourseUrl } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Online Courses',
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/online-courses' },
 };
 
-const CoursesPage: PageComponent = async () => {
+const CoursesPage: FC<PageProps<'/online-courses'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);

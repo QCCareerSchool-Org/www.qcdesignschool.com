@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import styles from './index.module.scss';
 import { SuccessTeamModalSection } from './success-team-modal-section';
@@ -10,7 +11,6 @@ import { StudentShowcaseSection } from '@/components/studentShowcase';
 import { students } from '@/components/studentShowcase/data';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Student Success',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TD-0008', 'TD-0003', 'TD-0012', 'TD-0009', 'TD-0005', 'TD-0001' ];
 
-const SuccessPage: PageComponent = () => (
+const SuccessPage: FC<PageProps<'/student-success'>> = () => (
   <div className={styles.page}>
     <section className="bg-light">
       <div className="container">

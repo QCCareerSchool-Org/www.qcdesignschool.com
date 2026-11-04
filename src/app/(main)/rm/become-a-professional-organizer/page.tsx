@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from '../../online-courses/professional-organizing/_outlineSection';
 import { CertificationSection } from '../../online-courses/professional-organizing/certificationSection';
@@ -15,7 +16,6 @@ import { DefaultStatsSection } from '@/components/statsSection/default';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Professional Organizing Course',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0012', 'TD-0011', 'TD-0009', 'TD-0004', 'TD-0003' ];
 const courseCodes: CourseCode[] = [ 'po' ];
 
-const ProfessionalOrganizingPage: PageComponent = () => (
+const ProfessionalOrganizingPage: FC<PageProps<'/rm/become-a-professional-organizer'>> = () => (
   <>
     <section>
       <div className="container">
