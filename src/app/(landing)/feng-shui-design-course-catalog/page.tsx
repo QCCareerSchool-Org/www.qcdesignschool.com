@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import type { FC } from 'react';
 
 import HeroImage from './hero.jpg';
 import { BottomSection } from '../_components/bottomSection';
@@ -23,7 +24,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Feng Shui Design Course Catalog',
@@ -35,7 +35,7 @@ const brevoListId = 64; // Feng Shui Leads
 const brevoEmailTemplateId = 2205; // Feng Shui
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
-const FengShuiDesignCourseCatalogPage: PageComponent = async props => {
+const FengShuiDesignCourseCatalogPage: FC<PageProps<'/feng-shui-design-course-catalog'>> = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import HeroImage from './hero.jpg';
@@ -22,7 +23,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Accelerate Your Business',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0010', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'db' ];
 
-const AccelerateYourBusinessPage: PageComponent = async () => {
+const AccelerateYourBusinessPage: FC<PageProps<'/online-courses/accelerate-your-design-business'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

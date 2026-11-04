@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 import type { IconType } from 'react-icons';
 import { BiBadgeCheck, BiBriefcaseAlt2, BiCheckCircle, BiLayer, BiTrendingUp } from 'react-icons/bi';
 
@@ -21,7 +22,6 @@ import type { CourseCode } from '@/domain/courseCode';
 import { aapCourseCodes } from '@/domain/courseCode';
 import { fetchPrice } from '@/lib/fetchPrice';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'All-Access Program | QC Design School',
@@ -37,7 +37,7 @@ const enrollHref = 'https://enroll.qcdesignschool.com/all-access-program';
 const col1 = 'col-12 col-md-6 col-xl-4 d-flex';
 const col2 = 'col-12 col-lg-6';
 
-const AllAccessProgramPage: PageComponent = async () => {
+const AllAccessProgramPage: FC<PageProps<'/online-courses/all-access-program'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
   const [ priceResult, allCoursesPriceResult ] = await Promise.all([
     fetchPrice(courseCodes, countryCode, provinceCode, undefined, undefined, process.env.FIREWALL_BYPASS_SECRET),

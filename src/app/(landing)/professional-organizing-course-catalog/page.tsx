@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+import type { FC } from 'react';
 
 import HeroImage from './background-po.jpg';
 import { BottomSection } from '../_components/bottomSection';
@@ -23,7 +24,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Professional Organizing Course Catalog',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0016', 'TD-0006', 'TD-0015', 'TD-0011', 'TD-0004' ];
 
-const ProfessionalOrganizingCourseCatalogPage: PageComponent = async props => {
+const ProfessionalOrganizingCourseCatalogPage: FC<PageProps<'/professional-organizing-course-catalog'>> = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);

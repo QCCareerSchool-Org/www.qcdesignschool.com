@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { DownloadSection } from '.';
 import { getThankyouData } from '../(thank-you)';
@@ -16,7 +17,7 @@ import { SupportSection } from '@/components/supportSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
-import type { PageComponent } from '@/serverComponent';
+import { getServerData } from '@/lib/getServerData';
 
 export const metadata: Metadata = {
   title: 'Catalog Unlocked!',
@@ -27,8 +28,9 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
-const DownloadCourseCatalogPage: PageComponent = async props => {
-  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(props);
+const DownloadCourseCatalogPage: FC<PageProps<'/download-course-catalog'>> = async props => {
+  const data = await getServerData(props.searchParams);
+  const { countryCode, emailAddress, lead, jwt, recent, date } = await getThankyouData(data);
 
   return (
     <>

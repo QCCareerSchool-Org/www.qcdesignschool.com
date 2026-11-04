@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -23,7 +24,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Aging in Place Course',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0002', 'TD-0005', 'TD-0003', 'TD-0004', 'TD-0006', 'TD-0011' ];
 const courseCodes: CourseCode[] = [ 'ap' ];
 
-const AgingInPlacePage: PageComponent = async () => {
+const AgingInPlacePage: FC<PageProps<'/online-courses/aging-in-place'>> = async () => {
   const { countryCode, provinceCode } = await getServerData();
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
 

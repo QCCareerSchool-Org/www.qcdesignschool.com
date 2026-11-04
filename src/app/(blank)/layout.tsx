@@ -1,6 +1,6 @@
-import type { LayoutComponent } from '../../serverComponent';
+import type { FC } from 'react';
 
-const BlankLayout: LayoutComponent = ({ children }) => (
+const BlankLayout: FC<LayoutProps<'/'>> = ({ children }) => (
   <>{children}</>
 );
 

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import ChrisTuccioImage from './chris-tuccio.jpg';
 import HeroImage from './hero.jpg';
@@ -30,7 +31,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Free Landscape Design Course Catalog',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
 const iconHeight = 32;
 const testimonialIds: TestimonialId[] = [ 'TD-0018', 'TD-0016', 'TD-0019', 'TD-0006', 'TD-0020', 'TD-0015' ];
 
-const LandscapeDesignCourseCatalogPage: PageComponent = async props => {
+const LandscapeDesignCourseCatalogPage: FC<PageProps<'/landscape-design-course-catalog'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);

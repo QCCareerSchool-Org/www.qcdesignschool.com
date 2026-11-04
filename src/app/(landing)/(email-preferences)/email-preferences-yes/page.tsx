@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { Header } from '../../_components/header';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
@@ -12,7 +13,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: "You're officially back in the loop!",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 
-const emailPreferencesYesPage: PageComponent = async props => {
+const emailPreferencesYesPage: FC<PageProps<'/email-preferences-yes'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
 
   return (

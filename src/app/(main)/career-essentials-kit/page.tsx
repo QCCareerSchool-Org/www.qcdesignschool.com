@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import CanvaImage from './canva.png';
 import DesignFilesImage from './design-files.png';
@@ -21,7 +22,6 @@ import { BackgroundImage } from '@/components/backgroundImage';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Subtitle } from '@/components/subtitle';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Career Essentials Kit',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 const iconHeight = 32;
 
-const CareerCatalystToolkitPage: PageComponent = () => (
+const CareerCatalystToolkitPage: FC<PageProps<'/career-essentials-kit'>> = () => (
   <>
     <section className="bg-dark text-white text-shadow">
       <BackgroundImage src={HeroImage} mobile={{ src: HeroImageMobile, breakpoint: 'lg' }} />

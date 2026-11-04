@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import HeroImageDesktop from '../hero-desktop.jpg';
 import HeroImageMobile from '../hero-mobile.jpg';
@@ -10,7 +11,6 @@ import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
 import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Become a Home Designer',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 
-const YourCareerPage: PageComponent = () => (
+const YourCareerPage: FC<PageProps<'/your-career'>> = () => (
   <>
     <section className={styles.heroSection}>
       <BackgroundImage priority src={HeroImageDesktop} objectPosition="37.5% 25%" mobile={{ src: HeroImageMobile, breakpoint: 'lg', objectPosition: '50% 87.5%' }} />

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -26,7 +27,6 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Floral Design Course',
@@ -38,7 +38,7 @@ const testimonialIds: TestimonialId[] = [ 'TD-0026', 'TD-0020', 'TD-0027', 'TD-0
 const courseCodes: CourseCode[] = [ 'fd' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/floral-design-overview?c=fd';
 
-const FloralDesignPage: PageComponent = async props => {
+const FloralDesignPage: FC<PageProps<'/floral-design-overview'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
 
   return (

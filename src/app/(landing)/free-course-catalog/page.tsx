@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { BiBookHeart } from 'react-icons/bi';
+import type { FC } from 'react';
 
 import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
@@ -27,9 +27,9 @@ import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { getDesignRestricted } from '@/lib/restrictions';
-import type { GenerateMetadata, PageComponent } from '@/serverComponent';
+import type { GenerateMetadata } from '@/serverComponent';
 
-export const generateMetadata: GenerateMetadata = async (props): Promise<Metadata> => {
+export const generateMetadata: GenerateMetadata<'/free-course-catalog'> = async (props): Promise<Metadata> => {
   const { countryCode, provinceCode } = await getServerData(props.searchParams);
 
   const designRestricted = getDesignRestricted(countryCode, provinceCode);
@@ -43,7 +43,7 @@ export const generateMetadata: GenerateMetadata = async (props): Promise<Metadat
 
 const testimonialIds: TestimonialId[] = [ 'TD-0016', 'TD-0015', 'TD-0002', 'TD-0003', 'TD-0006', 'TD-0011' ];
 
-const FreeCourseCatalogPage: PageComponent = async props => {
+const FreeCourseCatalogPage: FC<PageProps<'/free-course-catalog'>> = async props => {
   const { countryCode, provinceCode, date } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const gclid = getParam(searchParams.gclid);
@@ -90,9 +90,6 @@ const FreeCourseCatalogPage: PageComponent = async props => {
           </div>
         </div>
       </section>
-      <div className="text-white text-center w-100 p-4" style={{ backgroundColor: 'red' }}>
-        <p className="lead fw-normal mb-0"><strong><BiBookHeart size={20} style={{ position: 'relative', top: -1 }} /> Ends Soon:</strong> Complimentary Textbooks Included with Your Enrollment</p>
-      </div>
       <PromoSection date={date} countryCode={countryCode} />
       <HowYoullLearnSection courseCode="i2" graduateTitle="International Design and Decorating Professional™ (IDDP™)" countryCode={countryCode} provinceCode={provinceCode} withVideo />
       <CertificationSection

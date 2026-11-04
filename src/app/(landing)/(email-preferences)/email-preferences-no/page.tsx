@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import { Header } from '../../_components/header';
 import HeroDesktopImage from '../../free-course-catalog/hero-large.jpg';
@@ -14,7 +15,6 @@ import { ThreeReasonsSection } from '@/components/threeReasonsSection';
 import { addToBrevoList } from '@/lib/brevoAPI';
 import { getBrevoContactId } from '@/lib/getBrevoContactId';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: "No problem, we'll update your email preferences!",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0015', 'TD-0014', 'TD-0016' ];
 const brevoListId = 103;
 
-const emailPreferencesNoPage: PageComponent = async props => {
+const emailPreferencesNoPage: FC<PageProps<'/email-preferences-no'>> = async props => {
   const { countryCode, date } = await getServerData(props.searchParams);
   const searchParamsList = await props.searchParams;
 

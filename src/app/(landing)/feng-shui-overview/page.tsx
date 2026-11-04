@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -27,7 +28,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Feng Shui Design Course',
@@ -39,7 +39,7 @@ const testimonialIds: TestimonialId[] = [ 'TD-0005', 'TD-0028', 'TD-0029', 'TD-0
 const courseCodes: CourseCode[] = [ 'fs' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/feng-shui-overview?c=fs';
 
-const FengShuiDesignPage: PageComponent = async props => {
+const FengShuiDesignPage: FC<PageProps<'/feng-shui-overview'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 

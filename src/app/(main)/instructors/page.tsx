@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { Blurb } from './blurb';
 import { experts, tutors } from './tutorInformation';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Instructors',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/instructors' },
 };
 
-const TutorsPage: PageComponent = () => (
+const TutorsPage: FC<PageProps<'/instructors'>> = () => (
   <>
     <section>
       <div className="container">

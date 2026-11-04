@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import HeroImage from './hero.jpg';
 import styles from './page.module.scss';
@@ -17,7 +18,6 @@ import type { TestimonialId } from '@/components/testimonial/data';
 import { TestimonialWallSection } from '@/components/testimonialWallSection';
 import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Virtual Design Course',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0003', 'TD-0006', 'TD-0008', 'TD-0009', 'TD-0011', 'TD-0012' ];
 const courseCodes: CourseCode[] = [ 'vd' ];
 
-const VirtualDesignPage: PageComponent = () => (
+const VirtualDesignPage: FC<PageProps<'/online-courses/virtual-design'>> = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCodes[0]} showPrice />
     <section className="half-padding-top">

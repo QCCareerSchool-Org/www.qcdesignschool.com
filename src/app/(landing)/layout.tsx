@@ -1,12 +1,13 @@
+import type { FC } from 'react';
+
 import { Footer } from './_components/footer';
-import type { LayoutComponent } from '@/serverComponent';
 
 import './landing.scss';
 
 /**
  * The header, if any, should be included on the page
  */
-const LandingLayout: LayoutComponent = ({ children }) => (
+const LandingLayout: FC<LayoutProps<'/'>> = ({ children }) => (
   <>
     <main className="flex-shrink-0">{children}</main>
     <Footer />

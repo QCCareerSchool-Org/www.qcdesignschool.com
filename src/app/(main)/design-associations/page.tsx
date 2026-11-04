@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import type { FC } from 'react';
 
 import { HighlightedPartnersSection } from './_highlightedPartnersSection';
 import { preferredPartners, professionalAssociations } from './data';
 import styles from './page.module.scss';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Design Associations',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/design-associations' },
 };
 
-const AssociationsPage: PageComponent = async () => {
+const AssociationsPage: FC<PageProps<'/design-associations'>> = async () => {
   const { countryCode } = await getServerData();
 
   return (

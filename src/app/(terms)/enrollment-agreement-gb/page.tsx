@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
+import type { FC } from 'react';
 
 import styles from '../terms.module.scss';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Enrollment Agreement',
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/enrollment-agreement-gb' },
 };
 
-const EnrollmentAgreementGBPage: PageComponent = () => {
+const EnrollmentAgreementGBPage: FC<PageProps<'/enrollment-agreement-gb'>> = () => {
   let i = 1;
 
   return (

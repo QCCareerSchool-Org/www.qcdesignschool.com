@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { InfoSection } from './infoSection';
 import WhatYoullLearnImage from './what-youll-learn.jpg';
-import type { PageComponent } from '../../../../serverComponent';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { PerksSection } from '@/components/perksSection';
 import { DefaultStatsSection } from '@/components/statsSection/default';
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0002', 'TD-0003', 'TD-0004', 'TD-0005', 'TD-0006' ];
 const courseCodes: CourseCode[] = [ 'st' ];
 
-const BecomeAHomeDesignerPage: PageComponent = async props => {
+const BecomeAHomeDesignerPage: FC<PageProps<'/rm/become-a-home-designer'>> = async props => {
   const { date } = await getServerData(props.searchParams);
 
   return (

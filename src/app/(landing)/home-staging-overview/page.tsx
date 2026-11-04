@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { OutlineSection } from './_outlineSection';
 import { CertificationSection } from './certificationSection';
@@ -28,7 +29,6 @@ import { VirtualCommunitySection } from '@/components/virtualCommunitySection';
 import type { CourseCode } from '@/domain/courseCode';
 import { gbpCountry } from '@/domain/currency';
 import { getServerData } from '@/lib/getServerData';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Home Staging Course',
@@ -40,7 +40,7 @@ const testimonialIds: TestimonialId[] = [ 'TD-0001', 'TD-0003', 'TD-0004', 'TD-0
 const courseCodes: CourseCode[] = [ 'st' ];
 const enrollUrl = 'https://enroll.qcdesignschool.com/home-staging-overview?c=st';
 
-const HomeStagingPage: PageComponent = async props => {
+const HomeStagingPage: FC<PageProps<'/home-staging-overview'>> = async props => {
   const { countryCode } = await getServerData(props.searchParams);
   const badgeSrc = gbpCountry(countryCode) ? BadgeUK : Badge;
 
