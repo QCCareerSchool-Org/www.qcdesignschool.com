@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { BiBookHeart } from 'react-icons/bi';
 
 import HeroDesktopImage from './hero-large.jpg';
 import HeroMobileImage from './hero-small.jpg';
