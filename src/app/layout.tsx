@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
+import type { FC } from 'react';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
@@ -15,14 +16,12 @@ import { siteUrl } from '@/lib/siteUrl';
 import { Provider } from '@/providers';
 import { ActiveCampaign } from '@/scripts/activeCampaign';
 import { Bing } from '@/scripts/bing';
-import { Brevo } from '@/scripts/brevo';
 import { ChatGPT } from '@/scripts/chatgpt';
 import { Facebook } from '@/scripts/facebook';
 import { GoogleAnalytics } from '@/scripts/googleAnalytics';
 import { OptInMonster } from '@/scripts/optInMonster';
 import { Pinterest } from '@/scripts/printerest';
 import { Tiktok } from '@/scripts/tiktok';
-import type { LayoutComponent } from '@/serverComponent';
 
 import './bootstrap.scss';
 import './global.scss';
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 };
 
-const RootLayout: LayoutComponent = async ({ children }) => {
+const RootLayout: FC<LayoutProps<'/'>> = async ({ children }) => {
   const { clientIp } = await getServerData();
   const jwt = (await cookies()).get('user')?.value;
   const result = jwt ? await decodeJwt(jwt) : undefined;
@@ -44,7 +43,6 @@ const RootLayout: LayoutComponent = async ({ children }) => {
     <html lang="en" className={`${neueHaasText.variable} ${neueHaasDisplay.variable} ${inter.variable} h-100`} data-scroll-behavior="smooth">
       <head>
         {process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics id={process.env.GOOGLE_ANALYTICS_ID} adsId={process.env.GOOGLE_ADS_ID} userValues={userValues} />}
-        {process.env.BREVO_CLIENT_KEY && <Brevo clientKey={process.env.BREVO_CLIENT_KEY} userValues={userValues} />}
         {process.env.NEXT_PUBLIC_FACEBOOK_ID && <Facebook id={process.env.NEXT_PUBLIC_FACEBOOK_ID} userValues={userValues} />}
         {process.env.TIKTOK_ID && <Tiktok id={process.env.TIKTOK_ID} />}
         {process.env.BING_ID && <Bing id={process.env.BING_ID} userValues={userValues} />}

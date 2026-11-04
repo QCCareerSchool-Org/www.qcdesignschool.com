@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
 import { ErrorTemplate } from './error-template';
-import type { PageComponent } from '@/serverComponent';
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
 };
 
-const NotFoundPage: PageComponent = () => {
+const NotFoundPage: FC<PageProps<'/'>> = () => {
   return (
     <ErrorTemplate>
       <h1>Page Not Found</h1>

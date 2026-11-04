@@ -1,5 +1,5 @@
-import type { LayoutComponent } from '@/serverComponent';
+import type { FC } from 'react';
 
-const TermsLayout: LayoutComponent = ({ children }) => <main>{children}</main>;
+const TermsLayout: FC<LayoutProps<'/'>> = ({ children }) => <main>{children}</main>;
 
 export default TermsLayout;
