@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import type { FC } from 'react';
 
-import { siteVideos } from '@/app/videos';
-import type { PageComponent } from '@/serverComponent';
+import { siteVideos } from '@/videos';
 
 export const metadata: Metadata = {
   title: 'Videos',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/videos' },
 };
 
-const VideosIndexPage: PageComponent = () => {
+const VideosIndexPage: FC<PageProps<'/videos'>> = () => {
   return (
     <section>
       <div className="container">

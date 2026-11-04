@@ -4,6 +4,7 @@ import { fbPostLead } from '@/lib/facebookConversionAPI';
 import { fetchLead } from '@/lib/fetchLead';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
+import { pinterestPostLead } from '@/lib/pinterestConversionAPI';
 import { isUUID } from '@/lib/uuid';
 import type { PageProps } from '@/serverComponent';
 
@@ -30,6 +31,11 @@ export const getThankyouData = async (props: PageProps): Promise<ThankyouPageDat
       try {
         const response = await fbPostLead(lead.value.leadId, new Date(lead.value.created), lead.value.emailAddress, lead.value.firstName, lead.value.lastName, lead.value.countryCode, data.url, lead.value.ip ?? data.clientIp, data.userAgent, data.fbc, data.fbp);
         console.log('response', response);
+      } catch (err) {
+        console.error(err);
+      }
+      try {
+        await pinterestPostLead(lead.value, data.url, lead.value.ip ?? data.clientIp, data.userAgent, data.epik);
       } catch (err) {
         console.error(err);
       }

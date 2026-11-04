@@ -16,6 +16,7 @@ import { fetchEnrollment } from '@/lib/fetchEnrollment';
 import { getParam } from '@/lib/getParam';
 import { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
+import { pinterestPostPurchase } from '@/lib/pinterestConversionAPI';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { siteUrl } from '@/lib/siteUrl';
 import type { PageComponent } from '@/serverComponent';
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: PageComponent = async props => {
-  const { date, clientIp, fbc, fbp, userAgent, userValues } = await getServerData(props.searchParams);
+  const { date, clientIp, fbc, fbp, epik, userAgent, userValues } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
@@ -67,11 +68,19 @@ const WelcomeToTheSchoolPage: PageComponent = async props => {
       console.error(err);
     }
 
-    // Facebook
     if (enrollment.transactionTime === null || date - enrollment.transactionTime.getTime() < 7 * 24 * 60 * 60 * 1000) {
+      const source = `${siteUrl}/welcome-to-the-school`;
+
+      // Facebook
       try {
-        const source = `${siteUrl}/welcome-to-the-school`;
         await fbPostPurchase(enrollment, source, clientIp, userAgent, fbc, fbp);
+      } catch (err) {
+        console.error(err);
+      }
+
+      // Pinterest
+      try {
+        await pinterestPostPurchase(enrollment, source, clientIp, userAgent, epik);
       } catch (err) {
         console.error(err);
       }
