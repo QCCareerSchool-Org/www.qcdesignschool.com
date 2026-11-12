@@ -11,6 +11,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { CareerEssentialsKitDesignFilesSection } from '@/components/careerEssentialsKitDesignFilesSection';
 import { CourseType } from '@/components/courseType';
+import { GAViewItem } from '@/components/gaViewItem';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
@@ -34,6 +35,7 @@ const courseCodes: CourseCode[] = [ 'ms' ];
 const StagingForDesignersPage: FC<PageProps<'/online-courses/staging-for-designers'>> = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCodes[0]} showPrice />
+    <GAViewItem courseCodes={courseCodes} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">

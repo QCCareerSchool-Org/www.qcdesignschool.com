@@ -27,7 +27,7 @@ interface PriceDetails {
   multiCourseDiscount: number;
   /** additional promotional discount */
   promoDiscount: number;
-  /** the discount for not shipping materials */
+  /** cost − multiCourseDiscount − promoDiscount */
   discountedCost: number;
   /** the payment plans */
   plans: { full: Plan; part: Plan };

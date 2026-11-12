@@ -12,6 +12,7 @@ import WhyQCImage from './why-qc.jpg';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CareerEssentialsKitCanvaSection } from '@/components/careerEssentialsKitCanvaSection';
 import { CourseType } from '@/components/courseType';
+import { GAViewItem } from '@/components/gaViewItem';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
@@ -35,6 +36,7 @@ const courseCodes: CourseCode[] = [ 'ld' ];
 const LandscapeDesignPage: FC<PageProps<'/online-courses/landscape-design'>> = () => (
   <div className={styles.page}>
     <CourseJsonLd courseCode={courseCodes[0]} showPrice />
+    <GAViewItem courseCodes={courseCodes} />
     <section className="half-padding-top">
       <div className="container">
         <div className="row justify-content-center g-s">
