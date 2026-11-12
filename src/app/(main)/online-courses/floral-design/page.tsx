@@ -11,6 +11,7 @@ import WhatYoullLearnImage from './what-youll-learn.jpg';
 import WhyQCImage from './why-qc.jpg';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { CourseType } from '@/components/courseType';
+import { GAViewItem } from '@/components/gaViewItem';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { Hero } from '@/components/hero';
@@ -40,6 +41,7 @@ const FloralDesignPage: FC<PageProps<'/online-courses/floral-design'>> = async (
     <div className={styles.page}>
       <section className="half-padding-top">
         <CourseJsonLd courseCode={courseCodes[0]} showPrice />
+        <GAViewItem courseCodes={courseCodes} />
         <div className="container">
           <div className="row justify-content-center g-s">
             <div className="col-12">

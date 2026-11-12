@@ -11,6 +11,7 @@ import HeroImage from './hero-3.jpg';
 import styles from './page.module.scss';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { GAViewItem } from '@/components/gaViewItem';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { GraduateSuccessSection } from '@/components/graduateSuccessSection';
 import { CourseJsonLd } from '@/components/jsonLd/course';
@@ -46,6 +47,7 @@ const InteriorDecoratingPage: FC<PageProps<'/online-courses/interior-decorating'
   return (
     <div className={`${styles.page} chos`}>
       <CourseJsonLd courseCode={courseCodes[0]} showPrice />
+      <GAViewItem courseCodes={courseCodes} />
       <section className="bg-dark inverted">
         <BackgroundImage src={HeroImage} priority />
         <div className="container">

@@ -21,6 +21,19 @@ export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag?.('event', action, params);
 };
 
+export interface GAItem {
+  item_id: string;
+  item_name: string;
+  affiliation?: string;
+  price: number;
+  discount?: number;
+  quantity?: number;
+}
+
+export const gaViewItem = (currency: string, value: number, items: GAItem[]): void => {
+  gaEvent('view_item', { currency, value, items });
+};
+
 export interface GAUserData {
   email: string;
   phone_number?: string; // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
@@ -96,17 +109,18 @@ export const gaSale = (enrollment: Enrollment): void => {
   // Google Analtytics e-commerce event
   gaEvent('purchase', {
     transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
-    affiliation: enrollment.school,
     value: enrollment.cost,
     currency: enrollment.currencyCode,
     tax: 0,
     shipping: 0,
-    items: enrollment.courses.map(c => {
-      const price = Big(c.baseCost).minus(c.planDiscount).minus(c.discount).toFixed(2);
+    items: enrollment.courses.map((c): GAItem => {
+      const discount = Big(c.planDiscount).plus(c.discount);
       return {
-        id: c.code,
-        name: c.name,
-        price: parseFloat(price),
+        item_id: c.code, // eslint-disable-line camelcase
+        item_name: c.name, // eslint-disable-line camelcase
+        affiliation: enrollment.school,
+        price: parseFloat(Big(c.baseCost).minus(discount).toFixed(2)),
+        discount: parseFloat(discount.toFixed(2)),
         quantity: 1,
       };
     }),

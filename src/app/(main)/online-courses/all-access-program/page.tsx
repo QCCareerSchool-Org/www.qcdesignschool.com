@@ -13,6 +13,7 @@ import HeroDesktop from './hero.jpg';
 import { IconCircle } from './iconCircle';
 import { AccordionFAQ } from '@/components/accordionFAQ';
 import { BackgroundImage } from '@/components/backgroundImage';
+import { GAViewItem } from '@/components/gaViewItem';
 import { GetStartedSection } from '@/components/getStartedSection';
 import { GoogleReviewSection } from '@/components/googleReviewSection';
 import { PaymentPlanSection } from '@/components/paymentPlanSection';
@@ -48,6 +49,7 @@ const AllAccessProgramPage: FC<PageProps<'/online-courses/all-access-program'>> 
 
   return (
     <>
+      <GAViewItem courseCodes={courseCodes} />
       <section className="bg-navy text-white text-center">
         <div className="position-absolute top-0 start-0 w-100 h-100 bg-black opacity-75">
           <BackgroundImage src={HeroDesktop} mobile={{ src: HeroMobile, breakpoint: 'lg' }} priority />
