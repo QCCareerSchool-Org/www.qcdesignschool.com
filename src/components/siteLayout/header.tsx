@@ -4,7 +4,7 @@ import styles from './header.module.css';
 import { MainNav } from './mainNav';
 import { PromoBanner } from './promoBanner';
 // import { CanadaHeader } from '../canadaHeader';
-import { november04 } from '../../periods';
+import { november04, november16 } from '../../periods';
 
 interface Props {
   date: number;
@@ -29,6 +29,13 @@ const InnerBanner: FC<Props> = ({ date }) => {
   if (november04.contains(date)) {
     return (
       <PromoBanner date={date} promotionPeriod={november04.toDTO()}>
+        <span className="d-none d-lg-inline">Black Friday Offer: </span>Get a 2nd Course FREE Today
+      </PromoBanner>
+    );
+  }
+  if (november16.contains(date)) {
+    return (
+      <PromoBanner date={date} promotionPeriod={november16.toDTO()}>
         <span className="d-none d-lg-inline">Black Friday Offer: </span>Get a 2nd Course FREE Today
       </PromoBanner>
     );
