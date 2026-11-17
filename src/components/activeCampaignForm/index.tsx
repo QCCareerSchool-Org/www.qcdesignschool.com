@@ -1,18 +1,16 @@
 'use client';
 
-import 'react-phone-number-input/style.css';
 import Link from 'next/link';
-import type { ChangeEventHandler, FC, ReactElement, SubmitEventHandler } from 'react';
+import type { ChangeEventHandler, FC, ReactElement, ReactNode, SubmitEventHandler } from 'react';
 import { forwardRef, useCallback, useEffect, useId, useRef, useState } from 'react';
 import { GoogleReCaptcha } from 'react-google-recaptcha-v3';
-import type { DefaultInputComponentProps } from 'react-phone-number-input';
-import type { Country, Value } from 'react-phone-number-input/input';
+import type { Country, DefaultInputComponentProps, Value } from 'react-phone-number-input';
 import PhoneInput from 'react-phone-number-input/input';
 import { v1 } from 'uuid';
 
-import { CurrentPageInput } from './currentPageInput';
 import styles from './index.module.scss';
 import { JavasciptInput } from './javascriptInput';
+import { CurrentPageInput } from '@/components/currentPageInput';
 import DownloadIcon from '@/components/icons/download.svg';
 import { useIp } from '@/hooks/useIp';
 
@@ -20,7 +18,7 @@ interface Props {
   successLocation: string;
   requiredIds?: bigint[];
   optionalIds?: bigint[];
-  buttonText?: string;
+  buttonText?: string | ReactNode;
   buttonClassName?: string;
   placeholders?: boolean;
   gclid?: string;
@@ -34,6 +32,7 @@ interface Props {
   button?: ReactElement;
   referrer: string | null;
   countryCode: string;
+  implicitOptIn?: boolean;
 }
 
 export const ActiveCampaignForm: FC<Props> = props => {
@@ -41,7 +40,7 @@ export const ActiveCampaignForm: FC<Props> = props => {
   const [ nonce, setNonce ] = useState(() => v1());
   const randomName = useId();
   const [ telephoneNumber, setTelephoneNumber ] = useState<Value>();
-  const [ token, setToken ] = useState<string>('');
+  const [ token, setToken ] = useState(' ');
   const [ refreshReCaptcha, setRefreshReCaptcha ] = useState(false);
   const submitting = useRef(false);
   const [ disabled, setDisabled ] = useState(true);
@@ -121,6 +120,7 @@ export const ActiveCampaignForm: FC<Props> = props => {
         <input key={automationId} type="hidden" name="optionalAutomations" value={automationId.toString()} />
       ))}
       {props.courseCodes?.map(c => <input key={c} type="hidden" name="courseCodes" value={c} />)}
+      <input type="text" defaultValue="" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="one-time-code" />
       {props.gclid && <input type="hidden" name="gclid" value={props.gclid} />}
       {props.msclkid && <input type="hidden" name="msclkid" value={props.msclkid} />}
       {props.utmSource && <input type="hidden" name="utmSource" value={props.utmSource} />}
@@ -134,41 +134,47 @@ export const ActiveCampaignForm: FC<Props> = props => {
         <input type="text" name="firstName" id={`${id}firstName`} className="form-control" placeholder={props.placeholders ? 'Name' : undefined} autoComplete="given-name" autoCapitalize="words" />
       </div>
       <input type="hidden" name="lastName" id={`${id}lastName`} />
-      <input type="text" name={`hp_${randomName}`} style={{ position: 'absolute', left: -9999, top: 'auto', width: 1, height: 1, overflow: 'hidden' }} tabIndex={-1} autoComplete="off" />
       <div className="mb-3">
         {!props.placeholders && <label htmlFor={`${id}emailAddress`} className="form-label">Email <span className="text-primary">*</span></label>}
         <input type="email" name="emailAddress" id={`${id}emailAddress`} className={`form-control ${styles.emailAddressInput}`} placeholder={props.placeholders ? 'Email *' : undefined} required autoComplete="email" autoCapitalize="none" />
       </div>
       {showTelephone && (
-        <>
-          <div className="mb-3">
-            <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
-            <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
-            {telephoneNumberE164.length > 0 && (
-              <div className="my-3">
-                <div className="form-check">
-                  <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
-                  <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
-                    I agree to receive marketing text messages (e.g. promos) from QC Design School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
-                  </label>
-                </div>
-              </div>
-            )}
-          </div>
-        </>
-      )}
-      <div className="mb-3">
-        <div className="form-check">
-          <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
-          <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
-            I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
-          </label>
+        <div className="mb-3">
+          <PhoneInput id={`${id}telephoneNumber`} value={telephoneNumber} onChange={handleTelephoneNumberChange} defaultCountry={props.countryCode as Country} inputComponent={InputComponent} />
+          <input type="hidden" name="telephoneNumber" value={telephoneNumberE164} />
         </div>
-      </div>
+      )}
+      {props.implicitOptIn
+        ? <input type="hidden" name="emailOptIn" value="on" />
+        : (
+          <div className="mb-3">
+            <div className="form-check">
+              <input type="checkbox" name="emailOptIn" id={`${id}emailOptIn`} className="form-check-input" />
+              <label htmlFor={`${id}emailOptIn`} className="form-check-label small">
+                I agree to receive additional emails from QC, including <span className="d-none d-md-inline">promotions, </span>special offers<span className="d-none d-md-inline"> and more</span>. Unsubscribe anytime!
+              </label>
+            </div>
+          </div>
+        )}
+      {showTelephone && (
+        <div className="mb-3">
+          <div className="form-check">
+            <input type="checkbox" name="smsOptIn" id={`${id}smsOptIn`} className="form-check-input" />
+            <label htmlFor={`${id}smsOptIn`} className="form-check-label small">
+              I agree to receive marketing text messages (e.g. promos) from QC Design School. Message & data rates may apply. Consent is not a condition of purchase. Message frequency varies. Reply HELP for help. Unsubscribe at any time by replying STOP. <Link href="/terms" target="_blank">Terms & Privacy</Link>
+            </label>
+          </div>
+        </div>
+      )}
       {props.button
         ? <>{props.button}</>
         : (
-          <button type="submit" className={`${styles.button} ${props.buttonClassName ?? 'btn btn-primary'}`} disabled={disabled}><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get Your Free Catalog'}</button>
+          <button className={`${styles.button} ${props.buttonClassName ?? 'btn btn-navy'}`} disabled={disabled}>
+            {typeof props.buttonText === 'string' || typeof props.buttonText === 'undefined'
+              ? <><DownloadIcon height="14" className="me-2" style={{ position: 'relative', top: -1 }} />{props.buttonText ?? 'Get Your Free Catalog'}</>
+              : <>{props.buttonText}</>
+            }
+          </button>
         )
       }
       <GoogleReCaptcha onVerify={handleVerify} refreshReCaptcha={refreshReCaptcha} />
