@@ -48,6 +48,15 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
+    vtt: '/videos/your-journey-starts-here.vtt',
+    transcript: [
+      'Unleash your creativity and shape the future of design with QC Design School. Together, we can transform your passion into a dynamic, thriving career.',
+      'With a 40-year legacy, QC Design School has helped over 45,000 students and graduates launch successful design careers around the world. Your design journey starts wherever you are. Learn anytime, anywhere with our immersive online platform.',
+      'Our courses are led by industry professionals who share real-world insights and strategies. Hone your skills with real-world projects. Master space planning, color theory, and stay ahead with the latest industry trends.',
+      'Join a vibrant community and enjoy real support every step of the way. Connect with peers, access exclusive expert-led workshops, and get detailed guidance from QC student advisers.',
+      'Graduate with a globally recognized certification. Unlock endless career opportunities. The world needs your vision.',
+      'Enroll today and transform your passion into a rewarding career.',
+    ],
   },
   {
     slug: 'master-modern-design-styles',
@@ -81,7 +90,7 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
-    vtt: '/vtt/shaping-the-future-of-design.vtt',
+    vtt: '/videos/shaping-the-future-of-design.vtt',
     transcript: [
       '[On-screen text: Why did you choose QC?]',
       'It allows me to work virtually from home while I get to do other things. So, it was able to fit within my schedule.',
