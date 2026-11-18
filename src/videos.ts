@@ -68,7 +68,7 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
-    vtt: '/public/master-modern-design-styles.vtt',
+    vtt: '/videos/master-modern-design-styles.vtt',
     transcript: [
       '...are quite wide. It\'s sometimes difficult to get pieces that are big enough. Usually, little teeny pieces sit too low. So, in order to fill a space, this is a way that I often deal with it.',
       'I\'ll get framed pictures such as this that are tall so that they fill the area. So, I have three of these, and I\'m going to stack these down the center. Now, for most people, when they\'re putting together shelves, they automatically think of shelves as being side to side. They don\'t think about center. I like to start in the middle and work out because, to me, that\'s the best way to eliminate clutter.',
