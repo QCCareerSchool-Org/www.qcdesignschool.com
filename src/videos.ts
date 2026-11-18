@@ -3,8 +3,6 @@
 export interface Video {
   /** unique identifier */
   slug: string;
-  /** the pages this video appears on */
-  pages: string[];
   title: string;
   thumbnail_loc: string;
   description: string;
@@ -42,11 +40,6 @@ import { siteUrl } from '@/lib/siteUrl';
 export const siteVideos: Video[] = ([
   {
     slug: 'your-journey-starts-here',
-    pages: [
-      siteUrl,
-      `${siteUrl}/previews/interior-decorating`,
-      `${siteUrl}/online-courses/interior-decorating`,
-    ],
     title: 'Your Journey Starts Here',
     thumbnail_loc: `${siteUrl}${InteriorDecoratingPreviewPoster.src}`,
     description: 'Unleash your creativity and shape the future of design with QC Design School. Together we can tranform your passion into a dynamic, thriving career.',
@@ -55,12 +48,18 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
+    vtt: '/videos/your-journey-starts-here.vtt',
+    transcript: [
+      'Unleash your creativity and shape the future of design with QC Design School. Together, we can transform your passion into a dynamic, thriving career.',
+      'With a 40-year legacy, QC Design School has helped over 45,000 students and graduates launch successful design careers around the world. Your design journey starts wherever you are. Learn anytime, anywhere with our immersive online platform.',
+      'Our courses are led by industry professionals who share real-world insights and strategies. Hone your skills with real-world projects. Master space planning, color theory, and stay ahead with the latest industry trends.',
+      'Join a vibrant community and enjoy real support every step of the way. Connect with peers, access exclusive expert-led workshops, and get detailed guidance from QC student advisers.',
+      'Graduate with a globally recognized certification. Unlock endless career opportunities. The world needs your vision.',
+      'Enroll today and transform your passion into a rewarding career.',
+    ],
   },
   {
     slug: 'master-modern-design-styles',
-    pages: [
-      `${siteUrl}/previews/interior-decorating`,
-    ],
     title: 'Master Modern Design Styles',
     thumbnail_loc: `${siteUrl}/videos/master-modern-design-styles.png`,
     description: 'Discover how lighting, window treatments, and accessories can completely transform the look and feel of a space. With guidance from industry-leading designer and HGTV star Jane Lockhart, you\'ll learn through engaging instructional videos how to choose and style these finishing touches like a pro.',
@@ -72,9 +71,6 @@ export const siteVideos: Video[] = ([
   },
   {
     slug: 'bring-your-designs-to-life',
-    pages: [
-      `${siteUrl}/previews/interior-decorating`,
-    ],
     title: 'Bring Your Designs to Life',
     thumbnail_loc: `${siteUrl}/videos/bring-your-designs-to-life.png`,
     description: 'Learn one of the most essential skills in interior decorating: bringing your ideas to life through professional drawings. In this unit, you\'ll discover how to create accurate, scaled floor plans and other key visuals using the tools and techniques decorators use every day.',
@@ -86,9 +82,6 @@ export const siteVideos: Video[] = ([
   },
   {
     slug: 'shaping-the-future-of-design',
-    pages: [
-      `${siteUrl}/student-success`,
-    ],
     title: 'Shaping the Future of Design',
     thumbnail_loc: `${siteUrl}/videos/testimonial-thumb.png`,
     description: 'With over 45,000 students & graduates and 40 years in distance education, QC Design School empowers your passion for design and transforms it into a successful career. Learn from the best and join a community that\'s redefining the industry.',
@@ -97,7 +90,7 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
-    vtt: '/vtt/shaping-the-future-of-design.vtt',
+    vtt: '/videos/shaping-the-future-of-design.vtt',
     transcript: [
       '[On-screen text: Why did you choose QC?]',
       'It allows me to work virtually from home while I get to do other things. So, it was able to fit within my schedule.',

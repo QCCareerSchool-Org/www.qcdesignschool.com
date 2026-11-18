@@ -25,11 +25,8 @@ const getAppDirectoryPages = async (filePath = 'src/app'): Promise<MetadataRoute
       const url = getUrl(filePath);
       result.push({
         url,
-        lastModified: stat.mtime,
+        // lastModified: stat.mtime,
         priority: getPriority(url),
-        videos: siteVideos
-          .filter(v => v.pages.includes(url))
-          .map(escapeXmlObject),
       });
     }
   }

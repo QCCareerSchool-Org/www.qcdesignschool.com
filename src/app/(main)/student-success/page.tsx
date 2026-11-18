@@ -33,6 +33,7 @@ const SuccessPage: FC<PageProps<'/student-success'>> = () => (
           <video controls muted loop style={{ width: '500px', height: '300px', borderRadius: '35px' }} poster="/videos/testimonial-thumb.png">
             <source src="https://cdn.qccareerschool.com/design/no-cta-testimonial-ad-montage.mp4" type="video/mp4" />
           </video>
+          <p className="small mt-2 mb-0">Watch <Link href="/videos/shaping-the-future-of-design" target="_blank">Shaping the Future of Design</Link></p>
         </div>
       </div>
     </section>
