@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import type { FC } from 'react';
 
 import { getVideo } from '..';
+import { Transcript } from './transcript';
 import { VideoJsonLD } from '@/components/jsonLd/videoObject';
 import type { GenerateMetadata } from '@/serverComponent';
 
@@ -36,9 +37,16 @@ const VideoPlayerPage: FC<PageProps<'/videos/[slug]'>> = async ({ params }) => {
         <div className="container">
           <h1 className="mb-3">{video.title}</h1>
           <div className="ratio ratio-16x9 mb-3">
-            <video src={video.content_loc} poster={video.thumbnail_loc} controls preload="metadata" />
+            <video src={video.content_loc} poster={video.thumbnail_loc} controls preload="metadata">
+              {video.vtt && <track kind="captions" src={video.vtt} srcLang="en" label="English" />}
+            </video>
           </div>
           <p className="lead mb-0">{video.description}</p>
+          {video.transcript && (
+            <Transcript>
+              {video.transcript.map((t, i) => <p key={i}>{t}</p>)}
+            </Transcript>
+          )}
         </div>
       </section>
     </>

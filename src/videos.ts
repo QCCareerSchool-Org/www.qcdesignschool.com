@@ -32,6 +32,8 @@ export interface Video {
   };
   live?: 'yes' | 'no';
   tag?: string;
+  vtt?: string;
+  transcript?: string[];
 }
 
 import InteriorDecoratingPreviewPoster from '@/app/(blank)/previews/interior-decorating/_sections/platform/poster.jpg';
@@ -95,6 +97,24 @@ export const siteVideos: Video[] = ([
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
     requires_subscription: 'no',
+    vtt: '/vtt/shaping-the-future-of-design.vtt',
+    transcript: [
+      '[On-screen text: Why did you choose QC?]',
+      'It allows me to work virtually from home while I get to do other things. So, it was able to fit within my schedule.',
+      'I could work at the coursework when it was convenient for me.',
+      'I really liked the organized and structured course outline.',
+      'I like the fact that QC provides the opportunity for us to do the work at our own pace, so we don\'t feel like we\'re rushing to get assignments done or to get quizzes done.',
+      'I chose QC because I wanted something that was flexible and allowed me to work at my own pace.',
+      'Now that I\'m building my business and I have clients and I still have a life. I have friends and family and all that stuff. I\'m still able to sit down and say, "Okay, I have 2 hours. I can pick away at it for two hours and then I can leave it for a week and I can come back to it," and that has just been amazing.',
+      'Actually, I really like the flexibility of being able to complete the courses and the assignments really at your own pace.',
+      'They were more than helpful. I mean, they guided me in the right direction. They were telling me exactly what I had to do to answer the question on a particular assignment. And I was also able to reach out to some of the students within the virtual community groups and they were also helpful.',
+      'Everybody is so nice and so helpful. And I\'m so grateful for QC Design School.',
+      'I\'m part of the virtual community now, which is so fun to meet people from all over the world, surrounding myself with people who are like-minded and in the same kind of industry.',
+      'Enrolling in those courses ultimately gave me the sound knowledge base and the foundation I needed for interior decorating, but it also really gave me the confidence I needed to launch my own business.',
+      'QC has helped get me where I am today in owning three businesses, a calligraphy business, an interior decor business, and The Friendly Market, which is something I started with a fellow QC graduate.',
+      'The most rewarding part has been giving me the confidence to say I can totally do this. I never thought that I could do it professionally and make a job out of it. And I think having the support of the staff and having the course material was like my stepping stone to being like, okay, I really could make something out of this.',
+      'I am so grateful for my experience and everything I\'ve learned at QC Design School because I am applying everything to my current job today.',
+    ],
   },
 ] as Omit<Video, 'watch_loc'>[]).map(v => ({
   ...v,
