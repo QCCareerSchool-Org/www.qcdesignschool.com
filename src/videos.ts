@@ -71,7 +71,7 @@ export const siteVideos: Video[] = ([
     vtt: '/public/master-modern-design-styles.vtt',
     transcript: [
       '...are quite wide. It\'s sometimes difficult to get pieces that are big enough. Usually, little teeny pieces sit too low. So, in order to fill a space, this is a way that I often deal with it.',
-      'I\'ll get framed pictures such as this that are tall so that they fill the area. So, I have three of these, and I\'m going to stack these down the center. Now, for most people, when they\'re putting together shelves, they automatically think of shelves as being side to side. They don't think about center.I like to start in the middle and work out because, to me, that's the best way to eliminate clutter.',
+      'I\'ll get framed pictures such as this that are tall so that they fill the area. So, I have three of these, and I\'m going to stack these down the center. Now, for most people, when they\'re putting together shelves, they automatically think of shelves as being side to side. They don\'t think about center. I like to start in the middle and work out because, to me, that\'s the best way to eliminate clutter.',
       'Most people feel comfortable when they have a horizon line and they have symmetry. And that\'s what we\'re trying to create when we\'re looking at these shelves. Adding those pictures to the center do exactly that. So, I start building my vignette out from the—',
     ],
   },
