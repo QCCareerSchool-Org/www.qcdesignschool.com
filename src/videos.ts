@@ -63,7 +63,7 @@ export const siteVideos: Video[] = ([
     title: 'Master Modern Design Styles',
     thumbnail_loc: `${siteUrl}/videos/master-modern-design-styles.png`,
     description: 'Discover how lighting, window treatments, and accessories can completely transform the look and feel of a space. With guidance from industry-leading designer and HGTV star Jane Lockhart, you\'ll learn through engaging instructional videos how to choose and style these finishing touches like a pro.',
-    content_loc: 'https://cdn.qccareerschool.com/design/part%203-clip.mp4',
+    content_loc: 'https://cdn.qccareerschool.com/design/part-3-clip.mp4',
     duration: 66,
     publication_date: new Date(2025, 7, 1, 15, 37).toISOString(),
     family_friendly: 'yes',
