@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: 'Welcome to the School',
   description: 'Welcome to the School',
   alternates: { canonical: '/welcome-to-the-school' },
+  robots: { index: false },
 };
 
 const WelcomeToTheSchoolPage: FC<PageProps<'/welcome-to-the-school'>> = async props => {
