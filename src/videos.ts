@@ -3,8 +3,6 @@
 export interface Video {
   /** unique identifier */
   slug: string;
-  /** the pages this video appears on */
-  pages: string[];
   title: string;
   thumbnail_loc: string;
   description: string;
@@ -42,11 +40,6 @@ import { siteUrl } from '@/lib/siteUrl';
 export const siteVideos: Video[] = ([
   {
     slug: 'your-journey-starts-here',
-    pages: [
-      siteUrl,
-      `${siteUrl}/previews/interior-decorating`,
-      `${siteUrl}/online-courses/interior-decorating`,
-    ],
     title: 'Your Journey Starts Here',
     thumbnail_loc: `${siteUrl}${InteriorDecoratingPreviewPoster.src}`,
     description: 'Unleash your creativity and shape the future of design with QC Design School. Together we can tranform your passion into a dynamic, thriving career.',
@@ -58,9 +51,6 @@ export const siteVideos: Video[] = ([
   },
   {
     slug: 'master-modern-design-styles',
-    pages: [
-      `${siteUrl}/previews/interior-decorating`,
-    ],
     title: 'Master Modern Design Styles',
     thumbnail_loc: `${siteUrl}/videos/master-modern-design-styles.png`,
     description: 'Discover how lighting, window treatments, and accessories can completely transform the look and feel of a space. With guidance from industry-leading designer and HGTV star Jane Lockhart, you\'ll learn through engaging instructional videos how to choose and style these finishing touches like a pro.',
@@ -72,9 +62,6 @@ export const siteVideos: Video[] = ([
   },
   {
     slug: 'bring-your-designs-to-life',
-    pages: [
-      `${siteUrl}/previews/interior-decorating`,
-    ],
     title: 'Bring Your Designs to Life',
     thumbnail_loc: `${siteUrl}/videos/bring-your-designs-to-life.png`,
     description: 'Learn one of the most essential skills in interior decorating: bringing your ideas to life through professional drawings. In this unit, you\'ll discover how to create accurate, scaled floor plans and other key visuals using the tools and techniques decorators use every day.',
@@ -86,9 +73,6 @@ export const siteVideos: Video[] = ([
   },
   {
     slug: 'shaping-the-future-of-design',
-    pages: [
-      `${siteUrl}/student-success`,
-    ],
     title: 'Shaping the Future of Design',
     thumbnail_loc: `${siteUrl}/videos/testimonial-thumb.png`,
     description: 'With over 45,000 students & graduates and 40 years in distance education, QC Design School empowers your passion for design and transforms it into a successful career. Learn from the best and join a community that\'s redefining the industry.',
