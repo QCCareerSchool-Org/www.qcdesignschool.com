@@ -14,6 +14,7 @@ export const GET = (): Response => {
     'Image URL',
     'Area of study',
     'Program description',
+    'Contextual keywords',
   ];
 
   const rows = courseCodes.flatMap(code => {
@@ -33,6 +34,7 @@ export const GET = (): Response => {
         data.imageUrl,
         data.areaOfStudy ?? '',
         data.programDescription,
+        data.contextualKeywords?.join(';') ?? '',
       ],
     ];
   });
