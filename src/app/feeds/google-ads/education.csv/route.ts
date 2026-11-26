@@ -1,5 +1,4 @@
-import { courseCodes, getCourseName, getCourseUrl } from '@/domain/courseCode';
-import { siteUrl } from '@/lib/siteUrl';
+import { courseCodes, getCourseGoogleAdsData, getCourseUrl } from '@/domain/courseCode';
 
 const escapeCSV = (value: string): string => {
   return `"${value.replace(/"/gu, '""')}"`;
@@ -9,16 +8,34 @@ export const GET = (): Response => {
   const headers = [
     'Program ID',
     'Program name',
-    'School name',
     'Final URL',
+    'School name',
+    'Image URL',
+    'Thumbnail image URL',
+    'Area of study',
+    'Program description',
   ];
 
-  const rows = courseCodes.map(code => [
-    code,
-    getCourseName(code),
-    'QC Design School',
-    new URL(getCourseUrl(code), siteUrl).href,
-  ]);
+  const rows = courseCodes.flatMap(code => {
+    const data = getCourseGoogleAdsData(code);
+
+    if (!data) {
+      return [];
+    }
+
+    return [
+      [
+        code,
+        data.programName,
+        getCourseUrl(code),
+        'QC Design School',
+        data.imageUrl,
+        data.imageUrl,
+        data.areaOfStudy ?? '',
+        data.programDescription,
+      ],
+    ];
+  });
 
   const csv = [ headers, ...rows ]
     .map(row => row.map(escapeCSV).join(','))
