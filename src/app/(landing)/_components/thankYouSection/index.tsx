@@ -11,6 +11,7 @@ import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import DownloadIcon from '@/components/icons/download.svg';
 import { Squiggle } from '@/components/squiggle';
+import { gaDownloadBrochure } from '@/lib/gtag';
 
 interface Props {
   course?: string;
@@ -23,6 +24,10 @@ interface Props {
 export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, emailAddress, download = true }) => {
   const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';
   const squiggleWidth = emailAddress ? `${Math.round(emailAddress.length * 0.5)}em` : 220;
+
+  const handleDownloadClick = () => {
+    gaDownloadBrochure(downloadUrl);
+  };
 
   return (
     <section className="text-white">
@@ -41,7 +46,7 @@ export const ThankYouSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc, ema
                   <p className={`lead ${styles.limitedTimeOffer} ${(emailAddress && emailAddress.length > 35) ? styles.long : ''}`}>We've sent a <strong className="text-primary">limited-time offer</strong> to <strong className="text-black">{emailAddress ?? 'your inbox'}</strong></p>
                   <Squiggle variant="tapered" className="text-primary mb-4" style={{ margin: '0 2rem', maxWidth: squiggleWidth }} />
                   <p className="mb-4">Be sure to check your <strong>spam</strong> or <strong>promotions</strong> folder if you don't see it right away&mdash;you don't want to miss this!</p>
-                  {download && <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> View Catalog</button></a>}
+                  {download && <a href={downloadUrl} onClick={handleDownloadClick}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> View Catalog</button></a>}
                 </FormWrapper>
               </div>
             </FormCard>

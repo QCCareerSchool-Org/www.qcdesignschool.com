@@ -34,6 +34,12 @@ export const gaViewItem = (currency: string, value: number, items: GAItem[]): vo
   gaEvent('view_item', { currency, value, items });
 };
 
+export const gaDownloadBrochure = (filename?: string): void => {
+  gaEvent('brochure_download', {
+    ...(filename ? { file_name: filename } : undefined), // eslint-disable-line camelcase
+  });
+};
+
 export interface GAUserData {
   email: string;
   phone_number?: string; // can't include phone_number because it must be in E.164 format and we don't explicitly ask for a telephone country code
