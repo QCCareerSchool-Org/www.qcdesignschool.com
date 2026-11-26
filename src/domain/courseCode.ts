@@ -1,3 +1,4 @@
+import type { GoogleAdsCourseData } from './courseData';
 import { dataMap } from './courseData';
 
 export const courseCodes = [ 'i2', 'st', 'ms', 'fs', 'po', 'ld', 'ed', 'cc', 'fd', 'ap', 'db', 'vd', 'ad' ] as const;
@@ -35,4 +36,8 @@ export const getCourseSubjects = (c: CourseCode): readonly string[] | undefined 
 
 export const getCourseWorkload = (c: CourseCode): string | undefined => {
   return dataMap[c].workload;
+};
+
+export const getCourseGoogleAdsData = (c: CourseCode): GoogleAdsCourseData | undefined => {
+  return dataMap[c].googleAds;
 };

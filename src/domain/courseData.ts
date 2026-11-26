@@ -1,6 +1,16 @@
 import type { CourseCode } from './courseCode';
 import { siteUrl } from '@/lib/siteUrl';
 
+export interface GoogleAdsCourseData {
+  /** Maximum 25 characters */
+  programName: string;
+  /** Maximum 25 characters */
+  programDescription: string;
+  imageUrl: string;
+  /** Maximum 25 characters */
+  areaOfStudy?: string;
+}
+
 interface CourseData {
   name: string;
   url: string;
@@ -8,6 +18,7 @@ interface CourseData {
   certification: string | undefined;
   subjects: string[] | undefined;
   workload: string | undefined;
+  googleAds?: GoogleAdsCourseData;
 }
 
 export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
@@ -25,7 +36,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Your Final Project',
       'The Business of Design',
     ],
-    workload: '28 hours of assignments and 78 minutes of video, ususally completed over 4 to 6 months',
+    workload: '28 hours of assignments and 78 minutes of video, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Interior Design',
+      programDescription: 'Launch Your Design Career',
+      imageUrl: `${siteUrl}/images/courses/i2.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
   st: {
     name: 'Home Staging',
@@ -40,7 +57,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Your Final Project',
       'The Business of Staging',
     ],
-    workload: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
+    workload: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Home Staging',
+      programDescription: 'Stage Homes for Sale',
+      imageUrl: `${siteUrl}/images/courses/st.jpg`,
+      areaOfStudy: 'Home Staging',
+    },
   },
   ms: {
     name: 'Staging for Designers',
@@ -54,7 +77,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Your Final Project',
       'The Business of Staging',
     ],
-    workload: '9 hours of reading and assignments, ususally completed over 4 to 6 months',
+    workload: '9 hours of reading and assignments, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Staging for Designers',
+      programDescription: 'Expand Your Design Skills',
+      imageUrl: `${siteUrl}/images/courses/ms.jpg`,
+      areaOfStudy: 'Home Staging',
+    },
   },
   fs: {
     name: 'Feng Shui Design',
@@ -69,7 +98,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Feng Shui in Private and Public Spaces',
       'The Business of Feng Shui',
     ],
-    workload: '11 hours of assignments, 4 hours of reading, and 4 hours of video, ususally completed over 4 to 6 months',
+    workload: '11 hours of assignments, 4 hours of reading, and 4 hours of video, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Feng Shui Design',
+      programDescription: 'Design Harmonious Spaces',
+      imageUrl: `${siteUrl}/images/courses/fs.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
   po: {
     name: 'Professional Organizing',
@@ -83,7 +118,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Working with Clients',
       'The Business of Professional Organizing',
     ],
-    workload: '10 hours of reading and assignments, ususally completed over 4 to 6 months',
+    workload: '10 hours of reading and assignments, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Professional Organizing',
+      programDescription: 'Create Organized Spaces',
+      imageUrl: `${siteUrl}/images/courses/po.jpg`,
+      areaOfStudy: 'Professional Organizing',
+    },
   },
   ed: {
     name: 'Event Decor',
@@ -96,6 +137,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Build Your Career in Event Decor',
     ],
     workload: 'usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Event Decor',
+      programDescription: 'Design Stunning Events',
+      imageUrl: `${siteUrl}/images/courses/ed.jpg`,
+      areaOfStudy: 'Event Design',
+    },
   },
   ld: {
     name: 'Landscape Design',
@@ -109,7 +156,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'The Principles and Elements of Design',
       'The Business of Landscape Design',
     ],
-    workload: '5 hours of assignments, 6 hours of reading, 3 hours of video, and 72 minutes of quizzes, ususally completed over 4 to 6 months',
+    workload: '5 hours of assignments, 6 hours of reading, 3 hours of video, and 72 minutes of quizzes, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Landscape Design',
+      programDescription: 'Design Outdoor Spaces',
+      imageUrl: `${siteUrl}/images/courses/ld.jpg`,
+      areaOfStudy: 'Landscape Design',
+    },
   },
   cc: {
     name: 'Color Consultant',
@@ -122,7 +175,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Color Consulting Services',
     ],
     workload: 'usually completed over 4 to 6 months',
-
+    googleAds: {
+      programName: 'Color Consultant',
+      programDescription: 'Master Color Theory',
+      imageUrl: `${siteUrl}/images/courses/cc.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
   fd: {
     name: 'Floral Design',
@@ -138,6 +196,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Running Your Floral Design Business',
     ],
     workload: 'usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Floral Design',
+      programDescription: 'Create Floral Designs',
+      imageUrl: `${siteUrl}/images/courses/fd.jpg`,
+      areaOfStudy: 'Floral Design',
+    },
   },
   ap: {
     name: 'Aging in Place',
@@ -150,6 +214,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Final Project',
     ],
     workload: 'usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Aging in Place',
+      programDescription: 'Design Accessible Spaces',
+      imageUrl: `${siteUrl}/images/courses/ap.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
   db: {
     name: 'Accelerate Your Design Business',
@@ -162,7 +232,13 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
       'Showcase Your Business to Prospective Clients',
       'Successful Project Management',
     ],
-    workload: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, ususally completed over 4 to 6 months',
+    workload: '4 hours of assignments, 3 hours of reading, and 30 minutes of quizzes, usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Grow Your Design Business',
+      programDescription: 'Build Your Design Brand',
+      imageUrl: `${siteUrl}/images/courses/db.jpg`,
+      areaOfStudy: 'Business Development',
+    },
   },
   vd: {
     name: 'Virtual Design',
@@ -171,6 +247,12 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     certification: undefined,
     subjects: undefined,
     workload: 'usually completed over 4 to 6 months',
+    googleAds: {
+      programName: 'Virtual Design',
+      programDescription: 'Offer Online Design',
+      imageUrl: `${siteUrl}/images/courses/vd.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
   ad: {
     name: 'All Access Program',
@@ -179,5 +261,11 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     certification: 'International Elite Design Professional',
     subjects: undefined,
     workload: '',
+    googleAds: {
+      programName: 'All Access Program',
+      programDescription: 'Access Multiple Courses',
+      imageUrl: `${siteUrl}/images/courses/ad.jpg`,
+      areaOfStudy: 'Interior Design',
+    },
   },
 };
