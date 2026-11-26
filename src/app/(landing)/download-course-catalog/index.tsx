@@ -8,6 +8,7 @@ import { FormCard } from '@/components/formCard';
 import { FormWrapper } from '@/components/formWrapper';
 import DownloadIcon from '@/components/icons/download.svg';
 import LockIcon from '@/components/icons/q-lock.svg';
+import { gaDownloadBrochure } from '@/lib/gtag';
 
 interface Props {
   course?: string;
@@ -19,6 +20,10 @@ interface Props {
 
 export const DownloadSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc }) => {
   const downloadUrl = course ? `/catalog.pdf?course=${encodeURIComponent(course)}` : '/catalog.pdf';
+
+  const handleDownloadClick = () => {
+    gaDownloadBrochure(downloadUrl);
+  };
 
   return (
     <section className="text-white">
@@ -38,7 +43,7 @@ export const DownloadSection: FC<Props> = ({ course, heroSrc, mobileHeroSrc }) =
                 <FormWrapper>
                   <>
                     <p className="mb-4">Your catalog is ready! Download your copy and start exploring course details, career paths, and exclusive student benefits.</p>
-                    <a href={downloadUrl}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> Download Catalog Now</button></a>
+                    <a href={downloadUrl} onClick={handleDownloadClick}><button className="btn btn-primary"><DownloadIcon height="16" style={{ position: 'relative', top: -2, marginRight: '0.5rem' }} /> Download Catalog Now</button></a>
                   </>
                 </FormWrapper>
               </div>
