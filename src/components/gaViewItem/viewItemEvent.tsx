@@ -3,11 +3,12 @@
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 
+import type { CurrencyCode } from '@/domain/currencyCode';
 import type { GAItem } from '@/lib/gtag';
 import { gaViewItem } from '@/lib/gtag';
 
 interface Props {
-  currency: string;
+  currency: CurrencyCode;
   value: number;
   items: GAItem[];
 }
