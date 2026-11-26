@@ -9,6 +9,7 @@ export interface GoogleAdsCourseData {
   imageUrl: string;
   /** Maximum 25 characters */
   areaOfStudy?: string;
+  contextualKeywords?: string[];
 }
 
 interface CourseData {
@@ -40,8 +41,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Interior Design',
       programDescription: 'Launch Your Design Career',
-      imageUrl: `${siteUrl}/images/courses/i2.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/i2.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'interior design',
+        'interior decorating',
+        'interior design courses',
+        'interior design certification',
+        'interior design career',
+        'residential design',
+        'home decorating',
+        'interior design business',
+        'online interior design school',
+      ],
     },
   },
   st: {
@@ -61,8 +73,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Home Staging',
       programDescription: 'Stage Homes for Sale',
-      imageUrl: `${siteUrl}/images/courses/st.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/st.jpg`,
       areaOfStudy: 'Home Staging',
+      contextualKeywords: [
+        'home staging',
+        'home staging courses',
+        'home staging certification',
+        'professional home stager',
+        'real estate staging',
+        'property staging',
+        'home staging business',
+        'home staging career',
+        'staging homes for sale',
+      ],
     },
   },
   ms: {
@@ -81,8 +104,18 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Staging for Designers',
       programDescription: 'Expand Your Design Skills',
-      imageUrl: `${siteUrl}/images/courses/ms.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/ms.jpg`,
       areaOfStudy: 'Home Staging',
+      contextualKeywords: [
+        'home staging for interior designers',
+        'interior design professional development',
+        'home staging certification',
+        'interior design and home staging',
+        'real estate staging',
+        'property styling',
+        'home staging services',
+        'interior design business',
+      ],
     },
   },
   fs: {
@@ -102,8 +135,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Feng Shui Design',
       programDescription: 'Design Harmonious Spaces',
-      imageUrl: `${siteUrl}/images/courses/fs.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/fs.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'feng shui',
+        'feng shui design',
+        'feng shui courses',
+        'feng shui certification',
+        'feng shui consultant',
+        'feng shui interior design',
+        'bagua map',
+        'feng shui business',
+        'holistic interior design',
+      ],
     },
   },
   po: {
@@ -122,8 +166,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Professional Organizing',
       programDescription: 'Create Organized Spaces',
-      imageUrl: `${siteUrl}/images/courses/po.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/po.jpg`,
       areaOfStudy: 'Professional Organizing',
+      contextualKeywords: [
+        'professional organizing',
+        'professional organizer courses',
+        'professional organizer certification',
+        'home organization',
+        'decluttering',
+        'closet organization',
+        'storage solutions',
+        'professional organizing business',
+        'professional organizer career',
+      ],
     },
   },
   ed: {
@@ -140,8 +195,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Event Decor',
       programDescription: 'Design Stunning Events',
-      imageUrl: `${siteUrl}/images/courses/ed.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/ed.jpg`,
       areaOfStudy: 'Event Design',
+      contextualKeywords: [
+        'event decor',
+        'event decorating',
+        'event design courses',
+        'event decor certification',
+        'wedding decor',
+        'event styling',
+        'event decorator',
+        'event decorating business',
+        'event design career',
+      ],
     },
   },
   ld: {
@@ -160,8 +226,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Landscape Design',
       programDescription: 'Design Outdoor Spaces',
-      imageUrl: `${siteUrl}/images/courses/ld.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/ld.jpg`,
       areaOfStudy: 'Landscape Design',
+      contextualKeywords: [
+        'landscape design',
+        'landscape design courses',
+        'landscape design certification',
+        'garden design',
+        'residential landscape design',
+        'outdoor living spaces',
+        'landscape designer',
+        'landscape design business',
+        'landscape design career',
+      ],
     },
   },
   cc: {
@@ -178,8 +255,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Color Consultant',
       programDescription: 'Master Color Theory',
-      imageUrl: `${siteUrl}/images/courses/cc.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/cc.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'color consulting',
+        'color consultant courses',
+        'color consultant certification',
+        'interior color design',
+        'color theory',
+        'interior paint colors',
+        'color palettes',
+        'professional color consultant',
+        'color consulting business',
+      ],
     },
   },
   fd: {
@@ -199,8 +287,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Floral Design',
       programDescription: 'Create Floral Designs',
-      imageUrl: `${siteUrl}/images/courses/fd.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/fd.jpg`,
       areaOfStudy: 'Floral Design',
+      contextualKeywords: [
+        'floral design',
+        'floral design courses',
+        'floral design certification',
+        'florist training',
+        'flower arranging',
+        'wedding flowers',
+        'professional floral designer',
+        'floral design business',
+        'florist career',
+      ],
     },
   },
   ap: {
@@ -217,8 +316,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Aging in Place',
       programDescription: 'Design Accessible Spaces',
-      imageUrl: `${siteUrl}/images/courses/ap.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/ap.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'aging in place design',
+        'aging in place certification',
+        'aging in place courses',
+        'accessible interior design',
+        'universal design',
+        'accessible home design',
+        'inclusive interior design',
+        'residential accessibility',
+        'interior design professional development',
+      ],
     },
   },
   db: {
@@ -236,8 +346,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Grow Your Design Business',
       programDescription: 'Build Your Design Brand',
-      imageUrl: `${siteUrl}/images/courses/db.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/db.jpg`,
       areaOfStudy: 'Business Development',
+      contextualKeywords: [
+        'interior design business',
+        'design business courses',
+        'interior design marketing',
+        'interior design branding',
+        'interior design entrepreneurship',
+        'interior design portfolio',
+        'interior design project management',
+        'growing a design business',
+        'interior design professional development',
+      ],
     },
   },
   vd: {
@@ -250,8 +371,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'Virtual Design',
       programDescription: 'Offer Online Design',
-      imageUrl: `${siteUrl}/images/courses/vd.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/vd.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'virtual interior design',
+        'virtual design courses',
+        'e-design',
+        'online interior design services',
+        'digital interior design',
+        'virtual interior designer',
+        'remote interior design',
+        'virtual design business',
+        'interior design professional development',
+      ],
     },
   },
   ad: {
@@ -264,8 +396,19 @@ export const dataMap: Readonly<Record<CourseCode, CourseData>> = {
     googleAds: {
       programName: 'All Access Program',
       programDescription: 'Access Multiple Courses',
-      imageUrl: `${siteUrl}/images/courses/ad.jpg`,
+      imageUrl: `${siteUrl}/images/google-ads/ad.jpg`,
       areaOfStudy: 'Interior Design',
+      contextualKeywords: [
+        'interior design education',
+        'online design school',
+        'professional design training',
+        'interior design certification',
+        'interior design career',
+        'interior decorating courses',
+        'home staging courses',
+        'interior design business',
+        'interior design professional development',
+      ],
     },
   },
 };
