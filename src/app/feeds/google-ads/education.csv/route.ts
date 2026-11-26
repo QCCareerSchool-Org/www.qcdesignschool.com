@@ -8,10 +8,10 @@ export const GET = (): Response => {
   const headers = [
     'Program ID',
     'Program name',
-    'Final URL',
     'School name',
-    'Image URL',
+    'Final URL',
     'Thumbnail image URL',
+    'Image URL',
     'Area of study',
     'Program description',
   ];
@@ -27,8 +27,8 @@ export const GET = (): Response => {
       [
         code,
         data.programName,
-        getCourseUrl(code),
         'QC Design School',
+        getCourseUrl(code),
         data.imageUrl,
         data.imageUrl,
         data.areaOfStudy ?? '',
