@@ -5,6 +5,7 @@ import { fetchLead } from '@/lib/fetchLead';
 import type { getServerData } from '@/lib/getServerData';
 import { createJwt } from '@/lib/jwt';
 import { pinterestPostLead } from '@/lib/pinterestConversionAPI';
+import { toE164 } from '@/lib/toE164';
 import { isUUID } from '@/lib/uuid';
 
 interface ThankyouPageData {
@@ -20,6 +21,11 @@ export const getThankyouData = async (data: Awaited<ReturnType<typeof getServerD
   const date = data.date;
   const lead = isUUID(data.leadId) ? await fetchLead(data.leadId) : undefined;
   let jwt: string | null = null;
+
+  if (lead?.success && lead.value.telephoneNumber) {
+    // normalize to E.164 when possible, keeping the original value otherwise
+    lead.value.telephoneNumber = toE164(lead.value.telephoneNumber, lead.value.countryCode) ?? lead.value.telephoneNumber;
+  }
 
   let recent = false;
 
@@ -38,8 +44,10 @@ export const getThankyouData = async (data: Awaited<ReturnType<typeof getServerD
         console.error(err);
       }
     }
+    // only keep the existing cookie's values if they belong to the same person
+    const samePerson = data.userValues?.emailAddress?.toLowerCase() === lead.value.emailAddress.toLowerCase();
     const userValues: UserValues = {
-      ...data.userValues,
+      ...(samePerson ? data.userValues : undefined),
       emailAddress: lead.value.emailAddress,
     };
     if (lead.value.telephoneNumber) {

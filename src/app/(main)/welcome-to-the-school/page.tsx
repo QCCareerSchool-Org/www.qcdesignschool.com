@@ -20,6 +20,7 @@ import { createJwt } from '@/lib/jwt';
 import { pinterestPostPurchase } from '@/lib/pinterestConversionAPI';
 import { sendEnrollmentEmail } from '@/lib/sendEnrollmentEmail';
 import { siteUrl } from '@/lib/siteUrl';
+import { toE164 } from '@/lib/toE164';
 
 export const metadata: Metadata = {
   title: 'Welcome to the School',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const WelcomeToTheSchoolPage: FC<PageProps<'/welcome-to-the-school'>> = async props => {
-  const { date, clientIp, fbc, fbp, epik, userAgent, userValues } = await getServerData(props.searchParams);
+  const { date, clientIp, fbc, fbp, epik, userAgent } = await getServerData(props.searchParams);
   const searchParams = await props.searchParams;
   const enrollmentIdParam = getParam(searchParams.enrollmentId);
   const codeParam = getParam(searchParams.code);
@@ -48,10 +49,15 @@ const WelcomeToTheSchoolPage: FC<PageProps<'/welcome-to-the-school'>> = async pr
     redirect('/');
   }
 
-  const enrollment = enrollmentResult.value;
-  if (!enrollment.success) {
+  if (!enrollmentResult.value.success) {
     redirect('/');
   }
+
+  const enrollment = {
+    ...enrollmentResult.value,
+    // normalize to E.164 when possible, keeping the original value otherwise
+    telephoneNumber: toE164(enrollmentResult.value.telephoneNumber, enrollmentResult.value.countryCode) ?? enrollmentResult.value.telephoneNumber,
+  };
 
   let jwt: string | null = null;
 
@@ -93,8 +99,8 @@ const WelcomeToTheSchoolPage: FC<PageProps<'/welcome-to-the-school'>> = async pr
       console.error(addActiveCampaignResult.error);
     }
 
+    // the enrollment supplies every user value, so nothing is kept from the existing cookie
     const newUserValues: UserValues = {
-      ...userValues,
       emailAddress: enrollment.emailAddress,
       firstName: enrollment.firstName,
       lastName: enrollment.lastName,
