@@ -56,9 +56,24 @@ interface GoogleAdsEducationItem extends GoogleAdsItem {
   google_business_vertical: 'education';
 }
 
+/** Whether a telephone number is already in E.164 format (e.g., +16135551234) */
+export const isE164 = (telephoneNumber: string): boolean => /^\+[1-9]\d{6,14}$/u.test(telephoneNumber);
+
 /** Dispatch an event through the Google tag */
 export const gaEvent = (action: string, params?: unknown): void => {
   window.gtag?.('event', action, params);
+};
+
+/**
+ * Provide customer data for GA4 user-provided data collection and Google Ads Enhanced Conversions.
+ * Call before the events that should include it.
+ *
+ * gtag merges successive user_data values, so the existing value is cleared first. Otherwise
+ * fields set on page load from a previous visitor's cookie could be attached to this visitor.
+ */
+const gaSetUserData = (userData: GAUserData): void => {
+  window.gtag?.('set', 'user_data', null);
+  window.gtag?.('set', 'user_data', userData);
 };
 
 export const gaViewItem = (currency: CurrencyCode, value: number, items: GAItem[]): void => {
@@ -84,6 +99,8 @@ export const gaViewItem = (currency: CurrencyCode, value: number, items: GAItem[
 };
 
 export const gaLead = (leadId: string, userData: GAUserData, courseCode?: CourseCode, googleAdsConversionLabel?: string): void => {
+  gaSetUserData(userData);
+
   // GA4 lead event
   gaEvent('generate_lead', {
     send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
@@ -92,9 +109,6 @@ export const gaLead = (leadId: string, userData: GAUserData, courseCode?: Course
   });
 
   if (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
-    // Provide customer data for Google Ads Enhanced Conversions
-    window.gtag?.('set', 'user_data', userData);
-
     // Google Ads lead conversion event
     gaEvent('conversion', {
       send_to: `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${googleAdsConversionLabel ?? '5nunCL-7PhC_24v_Aw'}`, // eslint-disable-line camelcase
@@ -112,6 +126,28 @@ export const gaDownloadBrochure = (filename?: string): void => {
 };
 
 export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string): void => {
+  const postalCode = enrollment.postalCode === null
+    ? undefined
+    : enrollment.countryCode === 'US'
+      ? enrollment.postalCode.substring(0, 5)
+      : enrollment.postalCode;
+
+  const userData: GAUserData = {
+    email: enrollment.emailAddress.toLowerCase(),
+    ...(isE164(enrollment.telephoneNumber) ? { phone_number: enrollment.telephoneNumber } : undefined), // eslint-disable-line camelcase
+    address: {
+      first_name: enrollment.firstName.toLowerCase(), // eslint-disable-line camelcase
+      last_name: enrollment.lastName.toLowerCase(), // eslint-disable-line camelcase
+      street: enrollment.address1.toLowerCase(),
+      city: enrollment.city.toLowerCase(),
+      ...(postalCode ? { postal_code: postalCode.toLowerCase() } : undefined), // eslint-disable-line camelcase
+      ...(enrollment.provinceCode ? { region: enrollment.provinceCode.toLowerCase() } : undefined),
+      country: enrollment.countryCode.toLowerCase(),
+    },
+  };
+
+  gaSetUserData(userData);
+
   // GA4 e-commerce purchase event
   gaEvent('purchase', {
     send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
@@ -134,25 +170,6 @@ export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string
   });
 
   if (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
-    const postalCode = enrollment.postalCode === null
-      ? undefined
-      : enrollment.countryCode === 'US'
-        ? enrollment.postalCode.substring(0, 5)
-        : enrollment.postalCode;
-
-    const userData: GAUserData = {
-      email: enrollment.emailAddress.toLowerCase(),
-      address: {
-        first_name: enrollment.firstName.toLowerCase(), // eslint-disable-line camelcase
-        last_name: enrollment.lastName.toLowerCase(), // eslint-disable-line camelcase
-        street: enrollment.address1.toLowerCase(),
-        city: enrollment.city.toLowerCase(),
-        ...(postalCode ? { postal_code: postalCode.toLowerCase() } : undefined), // eslint-disable-line camelcase
-        ...(enrollment.provinceCode ? { region: enrollment.provinceCode.toLowerCase() } : undefined),
-        country: enrollment.countryCode.toLowerCase(),
-      },
-    };
-
     // Google Ads dynamic remarketing purchase event
     gaEvent('purchase', {
       send_to: process.env.NEXT_PUBLIC_GOOGLE_ADS_ID, // eslint-disable-line camelcase
@@ -171,9 +188,6 @@ export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string
     const priceModifier = enrollment.paymentPlan === 'full'
       ? 1
       : enrollment.countryCode === 'US' ? 0.5722 : enrollment.countryCode === 'CA' ? 0.6614 : 0.5320;
-
-    // Provide customer data for Google Ads Enhanced Conversions
-    window.gtag?.('set', 'user_data', userData);
 
     // Google Ads sale conversion event
     gaEvent('conversion', {
