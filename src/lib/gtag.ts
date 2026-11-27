@@ -64,16 +64,16 @@ export const gaEvent = (action: string, params?: unknown): void => {
 export const gaViewItem = (currency: CurrencyCode, value: number, items: GAItem[]): void => {
   // GA4 item view event
   gaEvent('view_item', {
-    send_to: process.env.GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
+    send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
     currency,
     value,
     items,
   });
 
-  if (process.env.GOOGLE_ADS_ID) {
+  if (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
     // Google Ads dynamic remarketing event
     gaEvent('view_item', {
-      send_to: process.env.GOOGLE_ADS_ID, // eslint-disable-line camelcase
+      send_to: process.env.NEXT_PUBLIC_GOOGLE_ADS_ID, // eslint-disable-line camelcase
       value,
       items: items.map((item): GoogleAdsEducationItem => ({
         id: item.item_id,
@@ -86,18 +86,18 @@ export const gaViewItem = (currency: CurrencyCode, value: number, items: GAItem[
 export const gaLead = (leadId: string, userData: GAUserData, courseCode?: CourseCode, googleAdsConversionLabel?: string): void => {
   // GA4 lead event
   gaEvent('generate_lead', {
-    send_to: process.env.GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
+    send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
     lead_id: leadId, // eslint-disable-line camelcase
     ...(courseCode ? { course_code: courseCode } : undefined), // eslint-disable-line camelcase
   });
 
-  if (process.env.GOOGLE_ADS_ID) {
+  if (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
     // Provide customer data for Google Ads Enhanced Conversions
     window.gtag?.('set', 'user_data', userData);
 
     // Google Ads lead conversion event
     gaEvent('conversion', {
-      send_to: `${process.env.GOOGLE_ADS_ID}/${googleAdsConversionLabel ?? '5nunCL-7PhC_24v_Aw'}`, // eslint-disable-line camelcase
+      send_to: `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${googleAdsConversionLabel ?? '5nunCL-7PhC_24v_Aw'}`, // eslint-disable-line camelcase
       transaction_id: leadId, // eslint-disable-line camelcase
     });
   }
@@ -106,7 +106,7 @@ export const gaLead = (leadId: string, userData: GAUserData, courseCode?: Course
 export const gaDownloadBrochure = (filename?: string): void => {
   // GA4 brochure download event
   gaEvent('brochure_download', {
-    send_to: process.env.GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
+    send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
     ...(filename ? { file_name: filename } : undefined), // eslint-disable-line camelcase
   });
 };
@@ -114,7 +114,7 @@ export const gaDownloadBrochure = (filename?: string): void => {
 export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string): void => {
   // GA4 e-commerce purchase event
   gaEvent('purchase', {
-    send_to: process.env.GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
+    send_to: process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID, // eslint-disable-line camelcase
     transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
     value: enrollment.cost,
     currency: enrollment.currencyCode,
@@ -133,7 +133,7 @@ export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string
     }),
   });
 
-  if (process.env.GOOGLE_ADS_ID) {
+  if (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID) {
     const postalCode = enrollment.postalCode === null
       ? undefined
       : enrollment.countryCode === 'US'
@@ -155,7 +155,7 @@ export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string
 
     // Google Ads dynamic remarketing purchase event
     gaEvent('purchase', {
-      send_to: process.env.GOOGLE_ADS_ID, // eslint-disable-line camelcase
+      send_to: process.env.NEXT_PUBLIC_GOOGLE_ADS_ID, // eslint-disable-line camelcase
       value: enrollment.cost,
       items: enrollment.courses.map((c): GoogleAdsEducationItem => {
         return {
@@ -177,7 +177,7 @@ export const gaSale = (enrollment: Enrollment, googleAdsConversionLabel?: string
 
     // Google Ads sale conversion event
     gaEvent('conversion', {
-      send_to: `${process.env.GOOGLE_ADS_ID}/${googleAdsConversionLabel ?? 'dnxcCMKIuVkQv9uL_wM'}`, // eslint-disable-line camelcase
+      send_to: `${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}/${googleAdsConversionLabel ?? 'dnxcCMKIuVkQv9uL_wM'}`, // eslint-disable-line camelcase
       value: parseFloat(Big(enrollment.cost).times(priceModifier).toFixed(2)),
       currency: enrollment.currencyCode,
       transaction_id: enrollment.id.toString(), // eslint-disable-line camelcase
